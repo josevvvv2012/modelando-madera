@@ -1,0 +1,18 @@
+= Cronograma =
+
+Plan a seguir para desarrollar la aplicacion
+
+
+= Detalles =
+
+
+||Enero||Febrero||Marzo||Abril||Mayo||Junio||Julio||Agosto||Septiembre||Octubre||Noviembre||Diciembre||
+||Primitivas 2D|| || || || || || || || || || || || 
+||Parser XML||Parser XML||Primitivas 3D ||Primitivas 3D || || || || || || || || || 
+|| || || ||GUI Modelado ||GUI Modelado || || || || || || || || 
+|| || || || || ||Conexion GUI-Robot ||Conexion GUI-Robot|| || || || || || 
+|| || || || || ||  ||  || Version Alpha || || || || || 
+|| || || || || ||  ||  ||  ||Version Beta || || || ||  
+|| || || || || ||  ||  ||  || ||Version Candidata || || || 
+|| || || || || ||  ||  ||  || || ||Realizacion de documentacion|| || 
+|| || || || || ||  ||  ||  || || || || Revision de documentacion|| 
