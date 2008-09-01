@@ -38,7 +38,7 @@ public class Plot {
 		gc.drawPoint(x,y);
 	}
 	public void pixel(Punto punto) {		
-		gc.drawPoint(punto.getX(), punto.getY());
+		gc.drawPoint((int)punto.getX(), (int)punto.getY());
 	}
 	public void dispose() {
 		gc.dispose();		
