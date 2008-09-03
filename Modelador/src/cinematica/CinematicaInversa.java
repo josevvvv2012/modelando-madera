@@ -122,7 +122,7 @@ public class CinematicaInversa {
 				    	int x = Integer.valueOf(textX.getText());
 				    	int y = Integer.valueOf(textY.getText());
 				    	
-				    	Inversa.get_angles(x, y, m);				   				    	
+				    	new Inversa().get_angles(x, y, m);				   				    	
 				    	for(int i=0; i<m.length; i++) {
 				    		s = s+m[i]+" ";				    		
 				    	}

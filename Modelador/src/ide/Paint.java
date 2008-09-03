@@ -423,7 +423,7 @@ public class Paint {
 		ExpandBar bar = new ExpandBar (compositeBarras, SWT.V_SCROLL);
 			
 			tipoFigura = new TipoFigura(bar, SWT.NONE);
-			ExpandItem item0 = new ExpandItem (bar, SWT.NONE, 0);		
+			ExpandItem item0 = new ExpandItem (bar, SWT.NONE, 0);				
 			item0.setText("Primitivas");
 			item0.setHeight(tipoFigura.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
 			item0.setExpanded(true);
