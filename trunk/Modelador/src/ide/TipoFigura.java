@@ -8,6 +8,9 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Scale;
+import org.eclipse.swt.widgets.Slider;
+import org.eclipse.swt.widgets.Label;
 /**
  * 
  * @author Roberto Loaeza Valerio
@@ -28,7 +31,9 @@ public class TipoFigura extends Composite {
 	private Button relleno = null;
 	private Button bRecortar = null;
 	private Button bRellenado = null;
-	
+	private Slider sliderZ = null;
+	private Label labelZ = null;
+	private Label label = null;
 	public int getTipo() {
 		return tipo;
 	}
@@ -42,15 +47,35 @@ public class TipoFigura extends Composite {
 	}
 
 	private void initialize() {
+		GridData gridData3 = new GridData();
+		gridData3.horizontalAlignment = GridData.FILL;
+		gridData3.verticalAlignment = GridData.CENTER;
+		GridData gridData2 = new GridData();
+		gridData2.horizontalAlignment = GridData.FILL;
+		gridData2.verticalAlignment = GridData.CENTER;
+		GridData gridData1 = new GridData();
+		gridData1.verticalSpan = 9;
+		gridData1.horizontalAlignment = GridData.BEGINNING;
+		gridData1.verticalAlignment = GridData.FILL;
+		gridData1.grabExcessVerticalSpace = false;
 		GridData gridData = new GridData();
 		gridData.grabExcessHorizontalSpace = false;
 		gridData.verticalAlignment = GridData.CENTER;
 		gridData.horizontalAlignment = GridData.FILL;
 		GridLayout gridLayout = new GridLayout();
-		gridLayout.numColumns = 1;
+		gridLayout.numColumns = 2;
 		Punto = new Button(this, SWT.RADIO | SWT.LEFT);
 		Punto.setText("         Punto");
 		Punto.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/punto.png")));
+		sliderZ = new Slider(this, SWT.VERTICAL);
+		sliderZ.setThumb(10);
+		sliderZ.setMaximum(100);
+		sliderZ.setLayoutData(gridData1);
+		sliderZ.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				labelZ.setText(String.valueOf(sliderZ.getSelection()));
+			}
+		});
 		Punto.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				tipo = 1;
@@ -104,6 +129,12 @@ public class TipoFigura extends Composite {
 		bRellenado = new Button(this, SWT.TOGGLE);
 		bRellenado.setText("Fig's Rellenas");
 		bRellenado.setLayoutData(gridData);
+		label = new Label(this, SWT.RIGHT);
+		label.setText("Profundidad:");
+		label.setLayoutData(gridData3);
+		labelZ = new Label(this, SWT.CENTER);
+		labelZ.setText("0");
+		labelZ.setLayoutData(gridData2);
 		
 		bRellenado.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {

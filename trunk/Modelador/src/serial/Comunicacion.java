@@ -62,7 +62,7 @@ public class Comunicacion {
 		for(int i=0; i<str.length(); i++) {
 			out.write((int)str.charAt(i));
 		}
-		return leer();
+		return ""; /*leer();*/
 	}
 	
     public static void main ( String[] args )

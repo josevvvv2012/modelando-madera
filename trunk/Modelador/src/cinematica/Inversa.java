@@ -2,45 +2,68 @@ package cinematica;
 
 
 public class Inversa {
-
-	static void get_angles(double x, double y, int M[])
+	
+	double Res_M[] = new double[]{
+			(360.0 / 800.0) * (8.0 / 44.0) * (8.0 / 60.0) * (Math.PI / 180.0),		// en rad	1 u		= 0.010909	grados
+			(360.0 / 800.0) * (8.0 / 32.0) * (8.0 / 36.0) * (Math.PI / 180.0),  	// en rad	1 u		= 0.010909	grados
+			(360.0 / 2000.0) * (1.0 / 19.7) * (8.0 / 20.0) * (Math.PI / 180.0),  	// en rad 	1 u    	= 0.003654 	grados
+			(1.0 / 2000.0) * (1.0 / 6.3) * (25.4 / 11.0)							// en mm 	1000 u 	= 0.18326 	mm
+		};
+	
+	int Def_M[]  = new int[]{
+			   5000, 
+			   5350, 
+			   42500,
+			   150000
+		  };
+	
+	double longs[]= new double[] {
+		200.0,			// mm
+		200				// mm
+	};
+	
+	double teta_global = 90.0*(Math.PI/180.0);
+	
+	
+	public void get_angles(double x, double y, int M[])
 	{
-	   double Res_M0 = (360.0 / 800.0) * (8.0 / 44.0) * (8.0 / 60.0) * (Math.PI / 180.0);  	// en rad	1 u	= 0.010909	grados
-	   double Res_M1 = (360.0 / 800.0) * (8.0 / 32.0) * (8.0 / 36.0) * (Math.PI / 180.0);  	// en rad	1 u 	= 0.025  	grados
-	   double Res_M2 = (360.0 / 2000.0) * (1.0 / 19.7) * (8.0 / 20.0) * (Math.PI / 180.0);  	// en rad 	1 u    	= 0.003654 	grados 
-	   double Res_M3 = (1.0 / 2000.0) * (1.0 / 6.3) * (25.4 / 11.0);  			// en mm 	1000 u 	= 0.18326 	mm 
-	   int Def_M0 = 5000, Def_M1 = 5350, Def_M2 = 42500;
-	   double l1 = 200.0, l2 = 200.0;	//en mm
-	   double teta_global = 90.0*(Math.PI/180.0);
+		double x2 = Math.pow(x, 2);
+		double y2 = Math.pow(y, 2);
+		double l1 = Math.pow(longs[0], 2);
+		double l2 = Math.pow(longs[1], 2);		
+		double angs[] = new double[3];
+		double beta, phi;
+		   	   
+		beta = Math.asin( y / ( Math.sqrt (x2 + y2) ) );
+		if (x < 0) 
+			beta = Math.PI - beta;
 
-	   double ang1, ang2, ang3,  beta, phi;
-
-	   ang2 = Math.acos( (x * x + y * y - l1 * l1 - l2 * l2)/ (2 * l1 * l2) );
-	   
-	   beta = Math.asin( y / ( Math.sqrt (x*x + y*y) ) );
-	   if (x < 0) 
-	      beta = Math.PI - beta;
-
-	   phi = Math.acos ( (x*x + y*y + l1*l1 - l2*l2) /( 2 * l1 * Math.sqrt(x*x + y*y) ) );
-	   ang1 = beta - phi;
-
-	   ang3 = (teta_global - ang1 - ang2);
-	   
-	   M[0] = (int) (ang1 / Res_M0) + Def_M0; 
-	   M[1] = (int) (ang2 / Res_M1) + Def_M1;
-	   M[2] = (int) (ang3 / Res_M2) + Def_M2;
-	   M[3] = 150000;
+		phi = Math.acos ( (x2 + y2 + l1 - l2) /( 2 * longs[0] * Math.sqrt(x2 + y2) ) );
+	   	   
+		angs[0] =beta - phi;		
+		angs[1]= Math.acos( (x2 + y2 - l1 - l2 )/ (2 * longs[0] * longs[1]) );		
+		angs[2]= (teta_global - angs[0] - angs[1]);
+		
+		M[0] = (int) (angs[0] / Res_M[0]) + Def_M[0]; 
+		M[1] = (int) (angs[1] / Res_M[1]) + Def_M[1];
+		M[2] = (int) (angs[2] / Res_M[2]) + Def_M[2];
+		M[3] = Def_M[3];	   
 	}
+		 	
+	
+	
     public static void main ( String[] args )
     {
     	int m[] = new int[4];
     	int x = 1;
-    	int y = 2;    	
-    	get_angles(x, y, m);
+    	int y = 2;
+    	
+    	new Inversa().get_angles(x, y, m);
     	
     	System.out.print("W");
     	for(int i=0; i<m.length; i++) {
     		System.out.print(m[i]+" ");
-    	}
+    	}    	
+    	
     }
 }
