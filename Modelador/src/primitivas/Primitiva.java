@@ -2,7 +2,18 @@ package primitivas;
 
 import java.util.Vector;
 
-public class Primitiva {
+public abstract class Primitiva {
 
-	private double[][] coordenadas = new double[2][3];
+	Vector <Punto> coordenadas= new Vector<Punto>();
+	
+	public void grafPto(Punto p) {
+		coordenadas.add(p);
+	}
+	public Punto getCoordenadas(int index) {
+		return coordenadas.get(index);
+	}
+	
+	public int getSizeCoordenadas() {
+		return coordenadas.size();
+	}
 }

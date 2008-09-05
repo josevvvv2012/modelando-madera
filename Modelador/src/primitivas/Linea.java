@@ -5,7 +5,7 @@ package primitivas;
  * @version 1
  *
  */
-public  class Linea {
+public  class Linea extends Primitiva{
 	int []pts ;
 	public Linea(Plot plot, Punto a, Punto b, int med_X) {
 		Bresenham(plot, a.getX(), a.getY(), b.getX(), b.getY(), med_X);
@@ -56,7 +56,10 @@ public  class Linea {
 		}			
 		int e =2*dy-dx;		
 		for(int i=1; i<=dx; i++) {
-			plot.pixel(new Punto(x, y));
+			grafPto(new Punto(x,y));
+			if ( plot!= null)
+			plot.pixel(getCoordenadas(getSizeCoordenadas()-1));
+			//plot.pixel(new Punto(x, y));
 			
 			while(e>=0) {
 				if(izq_der)
