@@ -582,12 +582,24 @@ public class ListaFiguras extends Composite {
 	
 	private void robotizar() {
 		Vector <primitivas.Punto>puntos;
+		Vector <primitivas.Punto>coordenadas;
+		int []M = new int[4];
+		
 		for(int i=0; i<figuras.size(); i++) {
 			
 			puntos = figuras.get(i).puntos;
 			switch(figuras.get(i).tipoFig) {
 			case 1:
 				mostrar("("+puntos.get(0).getX()+","+puntos.get(0).getY()+","+puntos.get(0).getZ()+")");
+				break;
+			case 2:
+				primitivas.Linea l = new primitivas.Linea(null,puntos.get(0), puntos.get(1));
+				for(int k=0; k<l.getSizeCoordenadas(); k++) {
+					
+					new cinematica.Inversa().get_angles(l.getCoordenadas(k),M);
+					
+					mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]+".");
+				}
 				break;
 			}
 			
@@ -600,6 +612,7 @@ public class ListaFiguras extends Composite {
 	
 	private void mostrar(String str) {
 		System.out.println(str);
+		
 	}
 
 
