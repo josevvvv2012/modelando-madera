@@ -51,6 +51,11 @@ public class ListaFiguras extends Composite {
 	private Recorte rec=new Recorte();  //  @jve:decl-index=0:
 	private Button bReflejar = null;
 	private Button bRellenar = null;
+	private Text textValorZ = null;
+	private Button buttonRobotizar = null;
+
+	
+	
 	
 	public void insertarFigura(int tipo, boolean relleno, Vector<Punto> p) {
 		if(tipo==8) {
@@ -268,6 +273,7 @@ public class ListaFiguras extends Composite {
 		Vector <Punto>p = figuras.get(listFigura.getSelectionIndex()).puntos;
 		textValorX.setText(""+p.get(a).getX() );
 		textValorY.setText(""+p.get(a).getY() );
+		textValorZ.setText(""+p.get(a).getZ() );
 	}
 	
 
@@ -290,6 +296,16 @@ public class ListaFiguras extends Composite {
 	 * 
 	 */
 	private void initialize() {
+		GridData gridData14 = new GridData();
+		gridData14.horizontalAlignment = GridData.FILL;
+		gridData14.grabExcessHorizontalSpace = true;
+		gridData14.horizontalSpan = 2;
+		gridData14.verticalAlignment = GridData.CENTER;
+		GridData gridData23 = new GridData();
+		gridData23.grabExcessHorizontalSpace = true;
+		gridData23.horizontalAlignment = GridData.FILL;
+		gridData23.verticalAlignment = GridData.CENTER;
+		gridData23.horizontalSpan = 2;
 		GridData gridData13 = new GridData();
 		gridData13.horizontalAlignment = GridData.FILL;
 		gridData13.grabExcessHorizontalSpace = true;
@@ -382,6 +398,9 @@ public class ListaFiguras extends Composite {
 		textValorX.setLayoutData(gridData4);
 		textValorY = new Text(this, SWT.BORDER);
 		textValorY.setLayoutData(gridData5);
+		Label filler1 = new Label(this, SWT.NONE);
+		textValorZ = new Text(this, SWT.BORDER | SWT.CENTER);
+		textValorZ.setLayoutData(gridData23);
 		label6 = new Label(this, SWT.NONE);
 		label6.setText("");
 		bFijar = new Button(this, SWT.NONE);
@@ -467,6 +486,16 @@ public class ListaFiguras extends Composite {
 		bRellenar = new Button(this, SWT.NONE);
 		bRellenar.setText("Rellenar/Limpiar");
 		bRellenar.setLayoutData(gridData13);
+		Label filler2 = new Label(this, SWT.NONE);
+		buttonRobotizar = new Button(this, SWT.NONE);
+		buttonRobotizar.setText("Robotizar");
+		buttonRobotizar.setLayoutData(gridData14);
+		buttonRobotizar
+				.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {						
+						robotizar();						
+					}
+				});
 		bRellenar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
@@ -551,6 +580,27 @@ public class ListaFiguras extends Composite {
 				});
 	}
 	
+	private void robotizar() {
+		Vector <primitivas.Punto>puntos;
+		for(int i=0; i<figuras.size(); i++) {
+			
+			puntos = figuras.get(i).puntos;
+			switch(figuras.get(i).tipoFig) {
+			case 1:
+				mostrar("("+puntos.get(0).getX()+","+puntos.get(0).getY()+","+puntos.get(0).getZ()+")");
+				break;
+			}
+			
+			for(int j=0; j<puntos.size(); j++) {
+				System.out.print("("+puntos.get(j).getX()+","+puntos.get(j).getY()+","+puntos.get(j).getZ()+") ");
+			}
+		}
+	}
+	
+	
+	private void mostrar(String str) {
+		System.out.println(str);
+	}
 
 
 } 
