@@ -57,7 +57,7 @@ public class Paint {
 //	private final int clickDer = 3;
 	private boolean redibujar = false;
 	private boolean reiniciarPts = false;
-
+	private int z;
 	
 	private void crearListener2() {
 		Listener listener2 = new Listener() {						
@@ -75,12 +75,6 @@ public class Paint {
 									plot.linea(p.get(i).puntos.get(0), p.get(i).puntos.get(1));
 									break;
 								case 3:
-									/*
-									for(int j=0; j<p.get(i).puntos.size()-1; j++) {
-										plot.linea(p.get(i).puntos.get(j), p.get(i).puntos.get(j+1), p.get(i).puntos.get(1).getX() );	
-									}
-									plot.linea(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).puntos.get(1).getX());
-									*/
 									
 									Polilinea poli = new Polilinea(plot, p.get(i).puntos.get(0), p.get(i).puntos.get(1));
 									for(int j=1; j<p.get(i).puntos.size()-1; j++) {
@@ -115,27 +109,29 @@ public class Paint {
 	private void crearListener() {
 		Listener listener = new Listener() {						
 			public void handleEvent(Event e) {					
-				tipoFigura.getTipo();		
+				tipoFigura.getTipo();
+				z = tipoFigura.getZ();
 				switch(e.type) {
 					case SWT.MouseDown:												
 						switch(e.button) {
-							case clickIzq:											
+							case clickIzq:				
+								z = tipoFigura.getZ();
 								switch(tipoFigura.getTipo()) {
 								case 1:
 									ps.removeAllElements();		
-									ps.add(new Punto(e.x, e.y));
+									ps.add(new Punto(e.x, e.y, z));
 									plot.pixel(ps.get(0));									
 									reiniciarPts=true;
 									redibujar=true;
 									break;
 								case 2:			
 									if(ps.size()==0) {
-										pAnt = new Punto(e.x, e.y);
-										ps.add(new Punto(e.x, e.y));
+										pAnt = new Punto(e.x, e.y, z);
+										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}
 									else {
-										ps.add(new Punto(e.x, e.y));
+										ps.add(new Punto(e.x, e.y, z));
 										plot.linea(ps.get(0), ps.get(1));										
 										reiniciarPts=true;
 										redibujar=true;
@@ -143,24 +139,24 @@ public class Paint {
 									break;
 								case 3:			
 									if(ps.size()==0) {
-										pAnt = new Punto(e.x, e.y);
-										ps.add(new Punto(e.x, e.y));
+										pAnt = new Punto(e.x, e.y, z);
+										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}
 									else {
 										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y));
-										ps.add(new Punto(e.x, e.y));
+										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}						
 									break;
 								case 4:			
 									if(ps.size()==0) {
-										pAnt = new Punto(e.x, e.y);
-										ps.add(new Punto(e.x, e.y));
+										pAnt = new Punto(e.x, e.y, z);
+										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}
 									else {
-										ps.add(new Punto(e.x, e.y));
+										ps.add(new Punto(e.x, e.y, z));
 										plot.circulo(ps.get(0), ps.get(1), tipoFigura.getFill());
 										reiniciarPts=true;
 										redibujar=true;
@@ -168,12 +164,12 @@ public class Paint {
 									break;
 								case 5:			
 									if(ps.size()==0) {
-										pAnt = new Punto(e.x, e.y);
-										ps.add(new Punto(e.x, e.y));
+										pAnt = new Punto(e.x, e.y, z);
+										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}
 									else {
-										ps.add(new Punto(e.x, e.y));
+										ps.add(new Punto(e.x, e.y, z));
 										plot.elipse(ps.get(0), ps.get(1), tipoFigura.getFill());
 										reiniciarPts=true;
 										redibujar=true;
@@ -181,17 +177,17 @@ public class Paint {
 									break;
 								case 6:
 									if(ps.size()==0) {
-										pAnt = new Punto(e.x, e.y);
-										ps.add(new Punto(e.x, e.y));
+										pAnt = new Punto(e.x, e.y, z);
+										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}
 									else if (ps.size()<3){
 										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y));
-										ps.add(new Punto(e.x, e.y));
+										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}
 									else  if (ps.size()==3){
-										ps.add(new Punto(e.x, e.y));
+										ps.add(new Punto(e.x, e.y, z));
 										plot.xOr(true);										
 										for(int i=1; i< ps.size(); i++) {
 											plot.linea(ps.get(i-1), ps.get(i));															
@@ -207,19 +203,19 @@ public class Paint {
 									m.setText("Aviso");
 									m.setMessage("Puede que tarde mucho esta implementacion :(");
 									m.open();						
-									ps.add(new Punto(e.x, e.y));
+									ps.add(new Punto(e.x, e.y, z));
 									plot.relleno(ps.firstElement());
 									reiniciarPts=true;
 									redibujar=true;
 									break;
 								case 8:			
 									if(ps.size()==0) {
-										pAnt = new Punto(e.x, e.y);
-										ps.add(new Punto(e.x, e.y));
+										pAnt = new Punto(e.x, e.y, z);
+										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}
 									else {
-										ps.add(new Punto(e.x, e.y));
+										ps.add(new Punto(e.x, e.y, z));
 										
 										int x1, x2, y1, y2;
 										x1=ps.get(0).getX()<ps.get(1).getX()?ps.get(0).getX():ps.get(1).getX();
@@ -245,9 +241,10 @@ public class Paint {
 					case SWT.MouseDoubleClick:
 						switch(e.button) {
 							case clickIzq:
+								z = tipoFigura.getZ();
 								switch(tipoFigura.getTipo()) {
 								case 3:
-									ps.add(new Punto(e.x, e.y));
+									ps.add(new Punto(e.x, e.y, z));
 									plot.linea(ps.get(0), ps.lastElement());
 									
 									if(tipoFigura.getFill()) {
@@ -271,11 +268,12 @@ public class Paint {
 
 					case SWT.MouseMove:						
 						plot.xOr(true);
+						z = tipoFigura.getZ();
 						switch(tipoFigura.getTipo()) {						
 						case 2:
 							if(ps.size()>0) {								
 								plot.linea(ps.get(0), pAnt);
-								pAnt = new Punto(e.x, e.y);
+								pAnt = new Punto(e.x, e.y, z);
 								plot.linea(ps.get(0), pAnt);
 								redibujar=true;
 							}								
@@ -283,7 +281,7 @@ public class Paint {
 						case 3:
 							if(ps.size()>0) {							
 								plot.linea(ps.get(ps.size()-1), pAnt);
-								pAnt = new Punto(e.x, e.y);
+								pAnt = new Punto(e.x, e.y, z);
 								plot.linea(ps.get(ps.size()-1), pAnt);
 								redibujar=true;
 							}								
@@ -291,7 +289,7 @@ public class Paint {
 						case 4:
 							if(ps.size()>0) {							
 								plot.circulo(ps.get(0), pAnt, false);						
-								pAnt = new Punto(e.x, e.y);
+								pAnt = new Punto(e.x, e.y, z);
 								plot.circulo(ps.get(0), pAnt, false);
 								redibujar=true;
 							}						
@@ -299,7 +297,7 @@ public class Paint {
 						case 5:
 							if(ps.size()>0) {						
 								plot.elipse(ps.get(0), pAnt, false);						
-								pAnt = new Punto(e.x, e.y);
+								pAnt = new Punto(e.x, e.y, z);
 								plot.elipse(ps.get(0), pAnt, false);
 								redibujar=true;
 							}						
@@ -307,7 +305,7 @@ public class Paint {
 						case 6:
 							if(ps.size()>0) {							
 								plot.linea(ps.get(ps.size()-1), pAnt);
-								pAnt = new Punto(e.x, e.y);
+								pAnt = new Punto(e.x, e.y, z);
 								plot.linea(ps.get(ps.size()-1), pAnt);
 								redibujar=true;
 							}
@@ -321,7 +319,7 @@ public class Paint {
 								y2=ps.get(0).getY()>pAnt.getY()?ps.get(0).getY():pAnt.getY();
 								plot.gc.drawRectangle(x1,y1, x2-x1, y2-y1);
 
-								pAnt = new Punto(e.x, e.y);
+								pAnt = new Punto(e.x, e.y, z);
 								x1=ps.get(0).getX()<pAnt.getX()?ps.get(0).getX():pAnt.getX();
 								x2=ps.get(0).getX()>pAnt.getX()?ps.get(0).getX():pAnt.getX();
 								y1=ps.get(0).getY()<pAnt.getY()?ps.get(0).getY():pAnt.getY();
@@ -334,7 +332,7 @@ public class Paint {
 							
 						}
 						plot.xOr(false);						
-						labelInfo.setText("("+e.x+", "+e.y+")");
+						labelInfo.setText("("+e.x+", "+e.y+", "+z+")");
 												
 						break;
 				}

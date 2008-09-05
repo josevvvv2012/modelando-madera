@@ -34,6 +34,11 @@ public class TipoFigura extends Composite {
 	private Slider sliderZ = null;
 	private Label labelZ = null;
 	private Label label = null;
+	
+	private int z;
+	public int getZ() {
+		return z;
+	}
 	public int getTipo() {
 		return tipo;
 	}
@@ -55,8 +60,9 @@ public class TipoFigura extends Composite {
 		gridData2.verticalAlignment = GridData.CENTER;
 		GridData gridData1 = new GridData();
 		gridData1.verticalSpan = 9;
-		gridData1.horizontalAlignment = GridData.BEGINNING;
+		gridData1.horizontalAlignment = GridData.CENTER;
 		gridData1.verticalAlignment = GridData.FILL;
+		gridData1.grabExcessHorizontalSpace = true;
 		gridData1.grabExcessVerticalSpace = false;
 		GridData gridData = new GridData();
 		gridData.grabExcessHorizontalSpace = false;
@@ -74,6 +80,7 @@ public class TipoFigura extends Composite {
 		sliderZ.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				labelZ.setText(String.valueOf(sliderZ.getSelection()));
+				z = Integer.valueOf(sliderZ.getSelection());
 			}
 		});
 		Punto.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
