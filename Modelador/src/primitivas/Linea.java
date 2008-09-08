@@ -8,14 +8,16 @@ package primitivas;
 public  class Linea extends Primitiva{
 	int []pts ;
 	public Linea(Plot plot, Punto a, Punto b, int med_X) {
-		Bresenham(plot, a.getX(), a.getY(), b.getX(), b.getY(), med_X);
+		this.plot = plot;
+		Bresenham(a.getX(), a.getY(), b.getX(), b.getY(), med_X);
 		//DDA(plot, a, b);
 	}
 	public Linea(Plot plot, Punto a, Punto b) {
-		Bresenham(plot, a.getX(), a.getY(), b.getX(), b.getY());
+		this.plot = plot;
+		Bresenham(a.getX(), a.getY(), b.getX(), b.getY());
 		//DDA(plot, a, b);
 	}
-	public void DDA(Plot plot, Punto a, Punto b) {				
+	public void DDA(Punto a, Punto b) {				
 		int dx = b.getX()-a.getX();
 		int dy = b.getY()-a.getY();		
 		int k =(dx>dy)?Math.abs(dx):Math.abs(dy);
@@ -26,17 +28,19 @@ public  class Linea extends Primitiva{
 		float yinc= (float)dy/k;
 				
 		
-		plot.pixel(a);
+		//plot.pixel(a);
+		grafPto(a);	
 		
 		for(int i=0; i<k; i++) {
 			x=x+xinc;
 			y=y+yinc;
-			plot.pixel(new Punto(Math.round(x), Math.round(y)));			
+			grafPto(new Punto(Math.round(x), Math.round(y)));	
+			//plot.pixel(new Punto(Math.round(x), Math.round(y)));			
 		}		
 	}
 	
 	
-	public void Bresenham(Plot plot, int x1, int y1, int x2, int y2)
+	public void Bresenham(int x1, int y1, int x2, int y2)
 	{	
 		int x = x1;
 		int y = y1;
@@ -56,9 +60,7 @@ public  class Linea extends Primitiva{
 		}			
 		int e =2*dy-dx;		
 		for(int i=1; i<=dx; i++) {
-			grafPto(new Punto(x,y));
-			if ( plot!= null)
-			plot.pixel(getCoordenadas(getSizeCoordenadas()-1));
+			grafPto(new Punto(x,y));			
 			//plot.pixel(new Punto(x, y));
 			
 			while(e>=0) {
@@ -77,7 +79,7 @@ public  class Linea extends Primitiva{
 	}
 
 
-	public void Bresenham(Plot plot, int x1, int y1, int x2, int y2, int med_X)
+	public void Bresenham(int x1, int y1, int x2, int y2, int med_X)
 	{	
 		int x = x1;
 		int y = y1;
@@ -97,7 +99,8 @@ public  class Linea extends Primitiva{
 		}			
 		int e =2*dy-dx;		
 		for(int i=1; i<=dx; i++) {
-			plot.pixel(new Punto(x, y));
+			//plot.pixel(new Punto(x, y));
+			grafPto(new Punto(x,y));	
 			if(med_X<x)
 				plot.linea(new Punto(x, y), new Punto(med_X, y));
 			else

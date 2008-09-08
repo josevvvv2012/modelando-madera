@@ -5,19 +5,20 @@ package primitivas;
  * @version 1
  *
  */
-public class Circulo {
+public class Circulo extends Primitiva{
 	public Circulo(Plot plot, Punto orig,int r, boolean relleno) {
-		Bresenham(plot, r, orig, relleno);
+		this.plot = plot;
+		Bresenham(r, orig, relleno);
 	}
-	public void puntoMedio(Plot plot, int r, Punto orig) {
+	public void puntoMedio(int r, Punto orig) {
 		int x0=0;		
 		int y0=r;
 		int pk=5/4-r^2;
 		while(x0<=r) {
-			plot.pixel(new Punto( (orig.getX()+x0)   ,   (orig.getY()+y0))  );
-			plot.pixel(new Punto( (orig.getX()-x0)   ,   (orig.getY()+y0))  );
-			plot.pixel(new Punto( (orig.getX()-x0)   ,   (orig.getY()-y0))  );
-			plot.pixel(new Punto( (orig.getX()+x0)   ,   (orig.getY()-y0))  );
+			grafPto(new Punto( (orig.getX()+x0)   ,   (orig.getY()+y0))  );
+			grafPto(new Punto( (orig.getX()-x0)   ,   (orig.getY()+y0))  );
+			grafPto(new Punto( (orig.getX()-x0)   ,   (orig.getY()-y0))  );
+			grafPto(new Punto( (orig.getX()+x0)   ,   (orig.getY()-y0))  );
 			if(pk<0) {
 				pk=pk+2*(x0+1)+1;
 			}
@@ -32,16 +33,17 @@ public class Circulo {
 			
 		}		
 	}
-	public void Bresenham(Plot plot, int r, Punto orig, boolean relleno ) {
+	public void Bresenham(int r, Punto orig, boolean relleno ) {
 		int x = 0;
 		int y = r;
 		int d = 2-2*r;
 		int d2, d3;
 		while(y>=0) {
-			plot.pixel(new Punto(orig.getX()+x, orig.getY()+y));
-			plot.pixel(new Punto(orig.getX()+x, orig.getY()-y));
-			plot.pixel(new Punto(orig.getX()-x, orig.getY()-y));
-			plot.pixel(new Punto(orig.getX()-x, orig.getY()+y));
+			
+			grafPto(new Punto(orig.getX()+x, orig.getY()+y));
+			grafPto(new Punto(orig.getX()+x, orig.getY()-y));
+			grafPto(new Punto(orig.getX()-x, orig.getY()-y));
+			grafPto(new Punto(orig.getX()-x, orig.getY()+y));
 			
 			
 			if(relleno) {

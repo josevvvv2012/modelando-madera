@@ -6,7 +6,7 @@ import java.util.Hashtable;
  * @version 1
  *
  */
-public  class Polilinea {
+public  class Polilinea extends Primitiva{
 	//int []maxs ;
 	//int []mins ;
 	int miny, maxy;	
@@ -15,12 +15,13 @@ public  class Polilinea {
 	public Polilinea(Plot plot, Punto a, Punto b) {
 		miny=10000000;
 		maxy=0;
-		Bresenham(plot, a.getX(), a.getY(), b.getX(), b.getY());
+		this.plot = plot;
+		Bresenham(a.getX(), a.getY(), b.getX(), b.getY());
 		//DDA(plot, a, b);
 	}
 	
-	public void agregarLinea(Plot plot, Punto a, Punto b) {
-		Bresenham(plot, a.getX(), a.getY(), b.getX(), b.getY());
+	public void agregarLinea(Punto a, Punto b) {
+		Bresenham(a.getX(), a.getY(), b.getX(), b.getY());
 	}
 	
 	public void rellenarPolilinea(Plot plot) {
@@ -28,7 +29,7 @@ public  class Polilinea {
 			plot.linea(new Punto(mins.get(i), i), new Punto(maxs.get(i), i));
 		}
 	}
-	public void Bresenham(Plot plot, int x1, int y1, int x2, int y2)
+	public void Bresenham(int x1, int y1, int x2, int y2)
 	{	
 		int x = x1;
 		int y = y1;
@@ -66,7 +67,7 @@ public  class Polilinea {
 				miny=y;
 			if(maxy<y)
 				maxy=y;						
-			plot.pixel(new Punto(x, y));
+			grafPto(new Punto(x, y));
 			
 			while(e>=0) {
 				if(izq_der)

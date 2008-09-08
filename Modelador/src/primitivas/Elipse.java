@@ -5,11 +5,12 @@ package primitivas;
  * @version 1
  *
  */
-public class Elipse {
+public class Elipse extends Primitiva{
 	public Elipse(Plot plot, Punto orig,int rx, int ry, boolean relleno) {
-		puntoMedio(plot, orig, rx, ry, relleno);
+		this.plot = plot;
+		puntoMedio(orig, rx, ry, relleno);
 	}
-	public void puntoMedio(Plot plot, Punto orig,int rx, int ry, boolean relleno) {
+	public void puntoMedio(Punto orig,int rx, int ry, boolean relleno) {
 		int ry2=ry*ry;
 		int rx2=rx*rx;
 		int x=0;
@@ -44,18 +45,15 @@ public class Elipse {
 				
 				
 			}
-			plot.pixel(new Punto(orig.getX()+x,orig.getY()+y));
-			plot.pixel(new Punto(orig.getX()-x,orig.getY()+y));
-			plot.pixel(new Punto(orig.getX()-x,orig.getY()-y));
-			plot.pixel(new Punto(orig.getX()+x,orig.getY()-y));
+			grafPto(new Punto(orig.getX()+x,orig.getY()+y));
+			grafPto(new Punto(orig.getX()-x,orig.getY()+y));
+			grafPto(new Punto(orig.getX()-x,orig.getY()-y));
+			grafPto(new Punto(orig.getX()+x,orig.getY()-y));
 			if(relleno) {
 				plot.linea(new Punto(orig.getX()+x,orig.getY()+y), new Punto(orig.getX()-x,orig.getY()+y));
 				plot.linea(new Punto(orig.getX()-x,orig.getY()-y),new Punto(orig.getX()+x,orig.getY()-y));
 				
 			}
-		}
-		
-		
-		
+		}						
 	}
 }
