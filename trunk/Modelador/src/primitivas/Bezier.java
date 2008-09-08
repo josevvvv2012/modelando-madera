@@ -5,10 +5,11 @@ package primitivas;
  * @version 1
  *
  */
-public class Bezier {
+public class Bezier extends Primitiva{
 	public Bezier(Plot plot, Punto a, Punto b, Punto c, Punto d) {
+		this.plot = plot;
 		//BezierAproximacion(plot, a, b, c, d);
-		BezierDeCasteljau(plot, a, b, c, d);
+		BezierDeCasteljau(a, b, c, d);
 	}
 	
 	public void BezierAproximacion(Plot plot, Punto a, Punto b, Punto c, Punto d) {
@@ -50,7 +51,7 @@ public class Bezier {
 		interpolacion(bccd, bc,cd,t);    
 		interpolacion(dest, abbc,bccd,t); 
 	}
-	public void BezierDeCasteljau(Plot plot, Punto a, Punto b, Punto c, Punto d) {
+	public void BezierDeCasteljau(Punto a, Punto b, Punto c, Punto d) {
 		double []p1 = new double[]{a.getX(), a.getY()};
 		double []p2 = new double[]{b.getX(), b.getY()};
 		double []p3 = new double[]{c.getX(), c.getY()};
@@ -59,7 +60,7 @@ public class Bezier {
 		double []dest = new double[2];
 		for(double i=1; i<maxPts; i++) {
 			DeCasteljau(dest, i/maxPts, p1, p2, p3, p4);
-			plot.pixel(new Punto((int)dest[0], (int)dest[1]));
+			grafPto(new Punto((int)dest[0], (int)dest[1]));
 		}		
 	}
 }

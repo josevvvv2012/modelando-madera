@@ -78,9 +78,9 @@ public class Paint {
 									
 									Polilinea poli = new Polilinea(plot, p.get(i).puntos.get(0), p.get(i).puntos.get(1));
 									for(int j=1; j<p.get(i).puntos.size()-1; j++) {
-										poli.agregarLinea(plot, p.get(i).puntos.get(j), p.get(i).puntos.get(j+1));
+										poli.agregarLinea(p.get(i).puntos.get(j), p.get(i).puntos.get(j+1));
 									}
-									poli.agregarLinea(plot, p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement());
+									poli.agregarLinea(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement());
 									if(p.get(i).relleno)
 										poli.rellenarPolilinea(plot);
 									break;
@@ -250,9 +250,9 @@ public class Paint {
 									if(tipoFigura.getFill()) {
 										Polilinea poli = new Polilinea(plot, ps.get(0), ps.get(1));
 										for(int j=1; j<ps.size()-1; j++) {
-											poli.agregarLinea(plot, ps.get(j), ps.get(j+1));
+											poli.agregarLinea( ps.get(j), ps.get(j+1));
 										}
-										poli.agregarLinea(plot, ps.firstElement(), ps.lastElement());
+										poli.agregarLinea(ps.firstElement(), ps.lastElement());
 										poli.rellenarPolilinea(plot);
 											
 									}
