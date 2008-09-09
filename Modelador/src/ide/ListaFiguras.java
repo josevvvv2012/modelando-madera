@@ -15,7 +15,10 @@ import primitivas.Figuras;
 import primitivas.Punto;
 import primitivas.Recorte;
 import primitivas.Transformaciones;
+import serial.Comunicacion;
 
+import java.io.IOException;
+import java.util.Timer;
 import java.util.Vector;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
@@ -52,8 +55,8 @@ public class ListaFiguras extends Composite {
 	private Button bReflejar = null;
 	private Button bRellenar = null;
 	private Text textValorZ = null;
-	private Button buttonRobotizar = null;
-
+	public Button buttonRobotizar = null;
+	private Comunicacion comuni = new Comunicacion();  //  @jve:decl-index=0:
 	
 	
 	
@@ -279,7 +282,7 @@ public class ListaFiguras extends Composite {
 
 	public ListaFiguras(Composite parent, int style) {
 		super(parent, style);
-		initialize();
+		initialize();					
 	}
 
 	private void recargarPuntos(int a) {
@@ -296,6 +299,11 @@ public class ListaFiguras extends Composite {
 	 * 
 	 */
 	private void initialize() {
+		
+		
+		
+		
+		
 		GridData gridData14 = new GridData();
 		gridData14.horizontalAlignment = GridData.FILL;
 		gridData14.grabExcessHorizontalSpace = true;
@@ -489,13 +497,7 @@ public class ListaFiguras extends Composite {
 		Label filler2 = new Label(this, SWT.NONE);
 		buttonRobotizar = new Button(this, SWT.NONE);
 		buttonRobotizar.setText("Robotizar");
-		buttonRobotizar.setLayoutData(gridData14);
-		buttonRobotizar
-				.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
-					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {						
-						robotizar();						
-					}
-				});
+		buttonRobotizar.setLayoutData(gridData14);		
 		bRellenar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
@@ -619,21 +621,37 @@ public class ListaFiguras extends Composite {
 				for(int k=0; k<prim.getSizeCoordenadas(); k++) {					
 					new cinematica.Inversa().get_angles(prim.getCoordenadas(k),M);
 					
-					mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]+".");
+					mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]);
 					comandos++;
 				}
 			
-			
+			/*
 			for(int j=0; j<puntos.size(); j++) {
 				System.out.print("("+puntos.get(j).getX()+","+puntos.get(j).getY()+","+puntos.get(j).getZ()+") ");
 			}
+			*/
 		}
-		System.out.println("Comandos enviados: "+comandos);
+		
+		//System.out.println("Comandos enviados: "+comandos);
 	}
 	
+	private void retardo() {
+		try {
+			Thread.sleep(9);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
-	private void mostrar(String str) {
-		System.out.println(str);
+	private void mostrar(String str) {					
+		try {
+			comuni.escribe(str+"\n");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		retardo();
 		
 	}
 

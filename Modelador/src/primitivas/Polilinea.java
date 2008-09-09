@@ -16,6 +16,7 @@ public  class Polilinea extends Primitiva{
 		miny=10000000;
 		maxy=0;
 		this.plot = plot;
+		this.z = a.getZ();
 		Bresenham(a.getX(), a.getY(), b.getX(), b.getY());
 		//DDA(plot, a, b);
 	}

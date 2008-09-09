@@ -8,6 +8,7 @@ package primitivas;
 public class Elipse extends Primitiva{
 	public Elipse(Plot plot, Punto orig,int rx, int ry, boolean relleno) {
 		this.plot = plot;
+		this.z = orig.getZ();
 		puntoMedio(orig, rx, ry, relleno);
 	}
 	public void puntoMedio(Punto orig,int rx, int ry, boolean relleno) {
