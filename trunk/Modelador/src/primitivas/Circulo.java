@@ -8,6 +8,7 @@ package primitivas;
 public class Circulo extends Primitiva{
 	public Circulo(Plot plot, Punto orig,int r, boolean relleno) {
 		this.plot = plot;
+		this.z = orig.getZ();
 		Bresenham(r, orig, relleno);
 	}
 	public void puntoMedio(int r, Punto orig) {

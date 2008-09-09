@@ -5,6 +5,8 @@ import primitivas.Figuras;
 import primitivas.Plot;
 import primitivas.Punto;
 import primitivas.Polilinea;
+import serial.Comunicacion;
+
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.PaintEvent;
@@ -24,6 +26,8 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.layout.GridData;
+
+import java.io.IOException;
 import java.util.Vector;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
@@ -55,9 +59,25 @@ public class Paint {
 	private final int clickIzq = 1;
 //	private final int clickMed = 2;
 //	private final int clickDer = 3;
+	
+	private Comunicacion comuni = new Comunicacion();  //  @jve:decl-index=0:
 	private boolean redibujar = false;
 	private boolean reiniciarPts = false;
 	private int z;
+	private void crearListener3() {
+		Listener listener3 = new Listener() {						
+			public void handleEvent(Event e) {					
+				switch(e.type) {
+					case SWT.MouseDown:
+						robotizar(listaFiguras.figuras);						
+						break;
+				}				
+			}
+		};
+		listaFiguras.buttonRobotizar.addListener(SWT.MouseDown, listener3);
+	}
+	
+	
 	
 	private void crearListener2() {
 		Listener listener2 = new Listener() {						
@@ -114,8 +134,7 @@ public class Paint {
 				switch(e.type) {
 					case SWT.MouseDown:												
 						switch(e.button) {
-							case clickIzq:				
-								z = tipoFigura.getZ();
+							case clickIzq:											
 								switch(tipoFigura.getTipo()) {
 								case 1:
 									ps.removeAllElements();		
@@ -241,7 +260,6 @@ public class Paint {
 					case SWT.MouseDoubleClick:
 						switch(e.button) {
 							case clickIzq:
-								z = tipoFigura.getZ();
 								switch(tipoFigura.getTipo()) {
 								case 3:
 									ps.add(new Punto(e.x, e.y, z));
@@ -267,8 +285,7 @@ public class Paint {
 						break;
 
 					case SWT.MouseMove:						
-						plot.xOr(true);
-						z = tipoFigura.getZ();
+						plot.xOr(true);					
 						switch(tipoFigura.getTipo()) {						
 						case 2:
 							if(ps.size()>0) {								
@@ -495,6 +512,86 @@ public class Paint {
 		
 		crearListener();
 		crearListener2();
+		crearListener3();
+		
+		try {
+			comuni.connect("COM4");
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
+	
+	
+	private void robotizar(Vector<Figuras> figuras) {
+		Vector <primitivas.Punto>puntos;
+		int comandos=0;
+		int []M = new int[4];
+		int dx, dy;
+		primitivas.Primitiva prim = null;
+		for(int i=0; i<figuras.size(); i++) {
+			
+			puntos = figuras.get(i).puntos;
+			switch(figuras.get(i).tipoFig) {
+			case 1:
+				new cinematica.Inversa().get_angles(puntos.get(0),M);				
+				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]+".");
+				break;
+			case 2:
+				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1));				
+				break;
+			case 4:
+				dx = (puntos.get(0).getX()-puntos.get(1).getX());
+				dy = (puntos.get(0).getY()-puntos.get(1).getY());
+				int r = (int)Math.sqrt(dx*dx+dy*dy);	
+				prim = new primitivas.Circulo(null,puntos.get(0), r, false);
+				break;
+			case 5:
+				dx = Math.abs(puntos.get(0).getX()-puntos.get(1).getX());
+				dy = Math.abs(puntos.get(0).getY()-puntos.get(1).getY());
+						
+				if((dx!=0)&&(dy!=0))
+					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false);
+				break;
+			case 6:
+				prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3));
+				break;
+			}
+			
+			if(prim != null)
+				for(int k=0; k<prim.getSizeCoordenadas(); k++) {					
+					new cinematica.Inversa().get_angles(prim.getCoordenadas(k),M);
+					
+					mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]);
+					comandos++;
+				}
+			
+			/*
+			for(int j=0; j<puntos.size(); j++) {
+				System.out.print("("+puntos.get(j).getX()+","+puntos.get(j).getY()+","+puntos.get(j).getZ()+") ");
+			}
+			*/
+		}
+		
+		//System.out.println("Comandos enviados: "+comandos);
+	}
+	
+	private void retardo() {
+		try {
+			Thread.sleep(9);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void mostrar(String str) {					
+		try {
+			comuni.escribe(str+"\n");
+			System.out.println(str);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		retardo();		
 	}
 
 }

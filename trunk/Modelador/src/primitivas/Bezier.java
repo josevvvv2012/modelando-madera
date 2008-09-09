@@ -8,6 +8,7 @@ package primitivas;
 public class Bezier extends Primitiva{
 	public Bezier(Plot plot, Punto a, Punto b, Punto c, Punto d) {
 		this.plot = plot;
+		this.z = a.getZ();
 		//BezierAproximacion(plot, a, b, c, d);
 		BezierDeCasteljau(a, b, c, d);
 	}

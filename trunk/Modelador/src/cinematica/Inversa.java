@@ -25,8 +25,10 @@ public class Inversa {
 	
 	double teta_global = 90.0*(Math.PI/180.0);
 
+	int minx = 200;
+	int miny = 0;
 	public void get_angles(Punto p, int M[]){
-		get_angles(p.getX(), p.getY(), M);
+		get_angles(p.getX()-minx, p.getY()-miny, M);
 		M[3]=p.getZ();
 	}
 	

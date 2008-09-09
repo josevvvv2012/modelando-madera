@@ -6,14 +6,15 @@ package primitivas;
  *
  */
 public  class Linea extends Primitiva{
-	int []pts ;
 	public Linea(Plot plot, Punto a, Punto b, int med_X) {
 		this.plot = plot;
+		this.z = a.getZ();
 		Bresenham(a.getX(), a.getY(), b.getX(), b.getY(), med_X);
 		//DDA(plot, a, b);
 	}
 	public Linea(Plot plot, Punto a, Punto b) {
 		this.plot = plot;
+		this.z = a.getZ();
 		Bresenham(a.getX(), a.getY(), b.getX(), b.getY());
 		//DDA(plot, a, b);
 	}
