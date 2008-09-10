@@ -70,7 +70,7 @@ public class InicializadorRobot extends Composite {
 		super(parent, style);
 		initialize();
 		try {
-		//	comuni.connect("COM4");
+			comuni.connect("COM4");
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -209,13 +209,13 @@ public class InicializadorRobot extends Composite {
 		textSI.setText(String.valueOf(x));
 		textID.setText(String.valueOf(y));
 		textAux.setText("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]);
-	/*	
+		
 		try {			
 			comuni.escribe("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]+"\n");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-*/		
+		
 	}
 }  //  @jve:decl-index=0:visual-constraint="10,10"
