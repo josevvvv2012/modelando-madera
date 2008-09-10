@@ -53,16 +53,27 @@ public class Comunicacion {
 	}
 
 	public String leer() throws IOException {
-		 byte[] buffer = new byte[1024];
-		 int len = in.read(buffer);
-		 return new String(buffer,0,len);
+		
+		 byte[] buffer = new byte[2];
+		 /*
+		 String s="";
+		 do {
+			 in.read(buffer,0, 1);
+			 s=s+new String(buffer);
+		 } while(s.charAt(s.length()-1)!='\n');		
+		 */
+		 
+		 do {
+			 in.read(buffer,0, 1);		
+		 } while(new String(buffer).equalsIgnoreCase("W")==false);
+		 return "W";
 	}
 	public String escribe(String str) throws IOException {
 		
 		for(int i=0; i<str.length(); i++) {
 			out.write((int)str.charAt(i));
 		}
-		return ""; /*leer();*/
+		return leer();
 	}
 	
     public static void main ( String[] args )

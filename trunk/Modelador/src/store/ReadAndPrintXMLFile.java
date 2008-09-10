@@ -23,20 +23,16 @@ public class ReadAndPrintXMLFile{
                  doc.getDocumentElement().getNodeName());
 
             NodeList listFiguras = doc.getElementsByTagName("fig");
-            System.out.println("Numero de figuras : " + listFiguras.getLength());
+            System.out.println("Numero de figuras: " + listFiguras.getLength());
             for(int s=0; s<listFiguras.getLength() ; s++){
             	Node firstFiguraNode = listFiguras.item(s);
             	if(firstFiguraNode.getNodeType() == Node.ELEMENT_NODE){
             		Element firstFiguraElement = (Element)firstFiguraNode;
-            		
-            		
             		NodeList firstNameList = firstFiguraElement.getElementsByTagName("x1");
                     Element firstNameElement = (Element)firstNameList.item(0);
-
                     NodeList textFNList = firstNameElement.getChildNodes();
                     System.out.println("Figura x1 : " + 
                            ((Node)textFNList.item(0)).getNodeValue().trim());
-
 
             	}
             }
@@ -57,7 +53,7 @@ public class ReadAndPrintXMLFile{
         ((x == null) ? e : x).printStackTrace ();
 
         }catch (Throwable t) {
-        t.printStackTrace ();
+        	t.printStackTrace ();
         }
         //System.exit (0);
 

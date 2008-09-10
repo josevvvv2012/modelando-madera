@@ -7,6 +7,7 @@ import primitivas.Punto;
 import primitivas.Polilinea;
 import serial.Comunicacion;
 
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.PaintEvent;
@@ -60,9 +61,12 @@ public class Paint {
 //	private final int clickMed = 2;
 //	private final int clickDer = 3;
 	
-	private Comunicacion comuni = new Comunicacion();  //  @jve:decl-index=0:
+	private String comPort = "COM4";
+	int []M = new int[4];
+	private Comunicacion comuni; 
 	private boolean redibujar = false;
 	private boolean reiniciarPts = false;
+	boolean primera=true;
 	private int z;
 	private void crearListener3() {
 		Listener listener3 = new Listener() {						
@@ -349,7 +353,9 @@ public class Paint {
 							
 						}
 						plot.xOr(false);						
-						labelInfo.setText("("+e.x+", "+e.y+", "+z+")");
+						new cinematica.Inversa().get_angles(new Punto(e.x,e.y,z), M);
+						labelInfo.setText("("+e.x+", "+e.y+", "+z+")" 
+								+"  -> W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]);
 												
 						break;
 				}
@@ -486,7 +492,7 @@ public class Paint {
 		gridData1.grabExcessHorizontalSpace = true;
 		gridData1.verticalAlignment = GridData.CENTER;
 		sShell = new Shell();
-		sShell.setText("Algoritmos de Graficacion  .:: Roberto Loaeza Valerio ::.");
+		sShell.setText(".:: Roberto Loaeza Valerio ::.");
 		createCompositePrincipal();
 		sShell.setLayout(gridLayout1);
 		sShell.setSize(new Point(959, 662));
@@ -495,14 +501,47 @@ public class Paint {
 		MenuItem submenuItemArchivo = new MenuItem(menuBar, SWT.CASCADE);
 		submenuItemArchivo.setText("Archivo");
 		submenu = new Menu(submenuItemArchivo);
+		MenuItem pushNuevo = new MenuItem(submenu, SWT.PUSH);
+		pushNuevo.setText("Nuevo");
+		pushNuevo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/new.png")));
+		MenuItem pushAbrir = new MenuItem(submenu, SWT.PUSH);
+		pushAbrir.setText("Abrir");
+		pushAbrir.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/open.png")));
+		pushAbrir.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				archivoAbrir(sShell);
+			}
+			public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
+			}
+		});
+		MenuItem pushCerrar = new MenuItem(submenu, SWT.PUSH);
+		pushCerrar.setText("Cerrar");
+		MenuItem pushGuardar = new MenuItem(submenu, SWT.PUSH);
+		pushGuardar.setText("Guardar");
+		pushGuardar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/save.png")));
+		MenuItem pushGuardarComo = new MenuItem(submenu, SWT.PUSH);
+		pushGuardarComo.setText("Guardar Como");
+		pushGuardarComo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/saveas.png")));
+		pushGuardarComo
+				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						archivoGuardarComo(sShell);
+					}
+					public void widgetDefaultSelected(
+							org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
 		MenuItem pushSalir = new MenuItem(submenu, SWT.PUSH);
 		pushSalir.setText("Salir");
+		pushSalir.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/exit.png")));
 		pushSalir.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 			public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
 			}
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				System.exit(1);
+				if(pedirConfirmacion("Desea salir?", "Salir")==SWT.YES) 
+					System.exit(0);				 
 			}
+			
 		});
 		submenuItemArchivo.setMenu(submenu);
 		sShell.setMenuBar(menuBar);
@@ -513,21 +552,23 @@ public class Paint {
 		crearListener();
 		crearListener2();
 		crearListener3();
+		inicializarPuerto();
 		
+	}
+	private void inicializarPuerto() {
+		comuni = new Comunicacion();  
 		try {
-			comuni.connect("COM4");
+			comuni.connect(comPort);
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 	}
 	
-	
 	private void robotizar(Vector<Figuras> figuras) {
-		Vector <primitivas.Punto>puntos;
-		int comandos=0;
-		int []M = new int[4];
+		Vector <primitivas.Punto>puntos;		
+		
 		int dx, dy;
+		primera=true;
 		primitivas.Primitiva prim = null;
 		for(int i=0; i<figuras.size(); i++) {
 			
@@ -535,7 +576,7 @@ public class Paint {
 			switch(figuras.get(i).tipoFig) {
 			case 1:
 				new cinematica.Inversa().get_angles(puntos.get(0),M);				
-				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]+".");
+				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]);
 				break;
 			case 2:
 				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1));				
@@ -560,25 +601,20 @@ public class Paint {
 			
 			if(prim != null)
 				for(int k=0; k<prim.getSizeCoordenadas(); k++) {					
-					new cinematica.Inversa().get_angles(prim.getCoordenadas(k),M);
-					
+					new cinematica.Inversa().get_angles(prim.getCoordenadas(k),M);					
 					mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]);
-					comandos++;
-				}
-			
-			/*
-			for(int j=0; j<puntos.size(); j++) {
-				System.out.print("("+puntos.get(j).getX()+","+puntos.get(j).getY()+","+puntos.get(j).getZ()+") ");
-			}
-			*/
+				}						
 		}
-		
-		//System.out.println("Comandos enviados: "+comandos);
 	}
 	
 	private void retardo() {
-		try {
-			Thread.sleep(9);
+		try {		
+			if(primera) {
+				Thread.sleep(9999);
+				primera=false;
+			}
+			else
+				Thread.sleep(60);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -587,12 +623,53 @@ public class Paint {
 	private void mostrar(String str) {					
 		try {
 			comuni.escribe(str+"\n");
-			System.out.println(str);
+			//System.out.println(str);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		retardo();		
 	}
+	
+	private void archivoAbrir(Shell s) {
+		 FileDialog fd = new FileDialog(s, SWT.OPEN);
+	        fd.setText("Abrir");
+	        fd.setFilterPath("/");
+	        String[] filterExt = { "*.xml", "*.dxf", "*.*" };
+	        fd.setFilterExtensions(filterExt);
+	        String selected = fd.open();
+	}
+	
+	private void archivoGuardarComo(Shell s) {
+		 FileDialog fd = new FileDialog(s, SWT.SAVE);
+	        fd.setText("Guardar");	      
+	        String[] filterExt = { "*.xml"};
+	        fd.setFilterExtensions(filterExt);
+	        String selected = fd.open();
+	        if(selected!= null)
+	        	guardar(selected, listaFiguras.figuras);
+	}
+	
+	
+	private boolean guardar(String str, Vector<Figuras> figuras) {
+		System.out.println("Guardando en: "+str);
+		Vector <primitivas.Punto>puntos;
+		for(int i=0; i<figuras.size(); i++) {
+			puntos = figuras.get(i).puntos;
+			System.out.println("Figura: "+figuras.get(i).tipoFig );
+			for(int j=0; j<puntos.size(); j++) {
+				System.out.println("\t ("+puntos.get(j).getX()+", "+puntos.get(j).getY()+", "+puntos.get(j).getZ()+")");
+			}			
+		}
+		return true;
+	}
 
+	private int pedirConfirmacion(String str, String title) {
+		MessageBox messageBox = new MessageBox(sShell, SWT.ICON_QUESTION
+	            | SWT.YES | SWT.NO);
+	        messageBox.setMessage(str);
+	        messageBox.setText(title);
+	        return messageBox.open();
+	        
+	}
 }
 

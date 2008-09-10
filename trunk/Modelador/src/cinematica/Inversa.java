@@ -65,8 +65,12 @@ public class Inversa {
     	int x = 1;
     	int y = 2;
     	
-    	new Inversa().get_angles(x, y, m);
+    	byte[] b = new byte[1];
+    	b="W\n".getBytes();
     	
+    	System.out.println(".::"+new String(b)+"::."+b.length);
+    	
+    	new Inversa().get_angles(x, y, m);
     	System.out.print("W");
     	for(int i=0; i<m.length; i++) {
     		System.out.print(m[i]+" ");

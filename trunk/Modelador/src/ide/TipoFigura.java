@@ -75,7 +75,7 @@ public class TipoFigura extends Composite {
 		Punto.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/punto.png")));
 		sliderZ = new Slider(this, SWT.VERTICAL);
 		sliderZ.setThumb(10);
-		sliderZ.setMaximum(100);
+		sliderZ.setMaximum(480000);
 		sliderZ.setLayoutData(gridData1);
 		sliderZ.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
