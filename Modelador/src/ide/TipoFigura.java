@@ -76,6 +76,7 @@ public class TipoFigura extends Composite {
 		sliderZ = new Slider(this, SWT.VERTICAL);
 		sliderZ.setThumb(10);
 		sliderZ.setMaximum(480000);
+		sliderZ.setMinimum(100000);
 		sliderZ.setLayoutData(gridData1);
 		sliderZ.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {

@@ -49,14 +49,14 @@ public  class relleno {
 	
 
 	
-	public void Semilla(int x, int y) {
+	public void Semilla(double x, double y) {
 		iteraciones++;
 		System.out.println("pixel -> "+x+", "+y);
 		System.out.println("iteraciones= "+iteraciones+"cta= "+ht.size());
 		Double dbl;
 		
-		if(imageBuffer.getPixel(x, y)==0) {
-			p.pixel(x,y);
+		if(imageBuffer.getPixel((int)x, (int)y)==0) {
+			p.pixel((int)x,(int)y);
 			dbl=(double)x;
 			dbl+=(double)y/1000;
 			

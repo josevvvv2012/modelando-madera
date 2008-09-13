@@ -6,27 +6,31 @@ package primitivas;
  *
  */
 public  class Linea extends Primitiva{
-	public Linea(Plot plot, Punto a, Punto b, int med_X) {
+	/*public Linea(Plot plot, Punto a, Punto b, int med_X) {
+		
 		this.plot = plot;
 		this.z = a.getZ();
 		Bresenham(a.getX(), a.getY(), b.getX(), b.getY(), med_X);
 		//DDA(plot, a, b);
 	}
+	*/
 	public Linea(Plot plot, Punto a, Punto b) {
 		this.plot = plot;
 		this.z = a.getZ();
-		Bresenham(a.getX(), a.getY(), b.getX(), b.getY());
-		//DDA(plot, a, b);
+		//Bresenham(a.getX(), a.getY(), b.getX(), b.getY());
+		DDA(a, b);
 	}
+	
+	
 	public void DDA(Punto a, Punto b) {				
-		int dx = b.getX()-a.getX();
-		int dy = b.getY()-a.getY();		
-		int k =(dx>dy)?Math.abs(dx):Math.abs(dy);
+		double dx = b.getX()-a.getX();
+		double dy = b.getY()-a.getY();		
+		double k =1000;//(dx>dy)?dx:dy;
 		
-		float x=a.getX();
-		float y=a.getY();
-		float xinc= (float)dx/k;
-		float yinc= (float)dy/k;
+		double x=a.getX();
+		double y=a.getY();
+		double xinc= dx/k;
+		double yinc= dy/k;
 				
 		
 		//plot.pixel(a);
@@ -35,31 +39,31 @@ public  class Linea extends Primitiva{
 		for(int i=0; i<k; i++) {
 			x=x+xinc;
 			y=y+yinc;
-			grafPto(new Punto(Math.round(x), Math.round(y)));	
+			grafPto(new Punto(x,y));	
 			//plot.pixel(new Punto(Math.round(x), Math.round(y)));			
 		}		
 	}
 	
 	
-	public void Bresenham(int x1, int y1, int x2, int y2)
+	public void Bresenham(double x1, double y1, double x2, double y2)
 	{	
-		int x = x1;
-		int y = y1;
-		int temp;
+		double x = x1;
+		double y = y1;
+		double temp;
 		
 		boolean izq_der=false;
 		if(Math.abs(x1-x2)>Math.abs(y1-y2)) {
 			izq_der=true;
 		}
-		int dx = Math.abs(x2-x1);
-		int dy = Math.abs(y2-y1);		
+		double dx = x2-x1; //Math.abs(x2-x1);
+		double dy = y2-y1;//Math.abs(y2-y1);		
 		
 		if(!izq_der) {
 			temp = dx;
 			dx=dy;
 			dy=temp;
 		}			
-		int e =2*dy-dx;		
+		double e =2*dy-dx;		
 		for(int i=1; i<=dx; i++) {
 			grafPto(new Punto(x,y));			
 			//plot.pixel(new Punto(x, y));

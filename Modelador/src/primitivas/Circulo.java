@@ -6,7 +6,7 @@ package primitivas;
  *
  */
 public class Circulo extends Primitiva{
-	public Circulo(Plot plot, Punto orig,int r, boolean relleno) {
+	public Circulo(Plot plot, Punto orig,double r, boolean relleno) {
 		this.plot = plot;
 		this.z = orig.getZ();
 		Bresenham(r, orig, relleno);
@@ -34,11 +34,11 @@ public class Circulo extends Primitiva{
 			
 		}		
 	}
-	public void Bresenham(int r, Punto orig, boolean relleno ) {
-		int x = 0;
-		int y = r;
-		int d = 2-2*r;
-		int d2, d3;
+	public void Bresenham(double r, Punto orig, boolean relleno ) {
+		double x = 0;
+		double y = r;
+		double d = 2-2*r;
+		double d2, d3;
 		while(y>=0) {
 			
 			grafPto(new Punto(orig.getX()+x, orig.getY()+y));

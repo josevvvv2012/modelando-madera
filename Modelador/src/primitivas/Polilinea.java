@@ -9,9 +9,9 @@ import java.util.Hashtable;
 public  class Polilinea extends Primitiva{
 	//int []maxs ;
 	//int []mins ;
-	int miny, maxy;	
-	Hashtable<Integer, Integer> maxs = new Hashtable<Integer, Integer>();
-	Hashtable<Integer, Integer> mins = new Hashtable<Integer, Integer>();
+	double miny, maxy;	
+	Hashtable<Double, Double> maxs = new Hashtable<Double, Double>();
+	Hashtable<Double, Double> mins = new Hashtable<Double, Double>();
 	public Polilinea(Plot plot, Punto a, Punto b) {
 		miny=10000000;
 		maxy=0;
@@ -26,29 +26,29 @@ public  class Polilinea extends Primitiva{
 	}
 	
 	public void rellenarPolilinea(Plot plot) {
-		for(int i=miny; i<maxy; i++) {
+		for(double i=miny; i<maxy; i++) {
 			plot.linea(new Punto(mins.get(i), i), new Punto(maxs.get(i), i));
 		}
 	}
-	public void Bresenham(int x1, int y1, int x2, int y2)
+	public void Bresenham(double x1, double y1, double x2, double y2)
 	{	
-		int x = x1;
-		int y = y1;
-		int temp;
+		double x = x1;
+		double y = y1;
+		double temp;
 		
 		boolean izq_der=false;
 		if(Math.abs(x1-x2)>Math.abs(y1-y2)) {
 			izq_der=true;
 		}
-		int dx = Math.abs(x2-x1);
-		int dy = Math.abs(y2-y1);		
+		double dx = Math.abs(x2-x1);
+		double dy = Math.abs(y2-y1);		
 		
 		if(!izq_der) {
 			temp = dx;
 			dx=dy;
 			dy=temp;
 		}			
-		int e =2*dy-dx;		
+		double e =2*dy-dx;		
 		for(int i=1; i<=dx; i++) {
 			if(maxs.containsKey(y)) {
 				if(maxs.get(y)<x) {
