@@ -6,9 +6,11 @@ package primitivas;
  *
  */
 public class Bezier extends Primitiva{
-	public Bezier(Plot plot, Punto a, Punto b, Punto c, Punto d) {
+	double maxPts;
+	public Bezier(Plot plot, Punto a, Punto b, Punto c, Punto d, int pts) {
 		this.plot = plot;
 		this.z = a.getZ();
+		maxPts=pts;
 		//BezierAproximacion(plot, a, b, c, d);
 		BezierDeCasteljau(a, b, c, d);
 	}
@@ -60,7 +62,7 @@ public class Bezier extends Primitiva{
 		double []p2 = new double[]{b.getX(), b.getY()};
 		double []p3 = new double[]{c.getX(), c.getY()};
 		double []p4 = new double[]{d.getX(), d.getY()};
-		double maxPts = 1000;
+		
 		double []dest = new double[2];
 		for(double i=1; i<maxPts; i++) {
 			DeCasteljau(dest, i/maxPts, p1, p2, p3, p4);

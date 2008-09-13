@@ -613,7 +613,7 @@ public class ListaFiguras extends Composite {
 				//	prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false);
 				break;
 			case 6:
-				prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3));
+				prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3), 10000);
 				break;
 			}
 			

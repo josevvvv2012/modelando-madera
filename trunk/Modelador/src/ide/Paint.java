@@ -123,7 +123,7 @@ public class Paint {
 									plot.elipse(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno, 1);
 									break;
 								case 6:
-									plot.bezier(p.get(i).puntos.get(0), p.get(i).puntos.get(1), p.get(i).puntos.get(2), p.get(i).puntos.get(3));
+									plot.bezier(p.get(i).puntos.get(0), p.get(i).puntos.get(1), p.get(i).puntos.get(2), p.get(i).puntos.get(3), 1000);
 									break;
 								case 7:
 									plot.relleno(p.get(i).puntos.get(0));
@@ -224,7 +224,7 @@ public class Paint {
 											plot.linea(ps.get(i-1), ps.get(i),1);															
 										}
 										plot.xOr(false);																				
-										plot.bezier(ps.get(0), ps.get(1), ps.get(2), ps.get(3));										
+										plot.bezier(ps.get(0), ps.get(1), ps.get(2), ps.get(3), 1000);										
 										reiniciarPts=true;
 										redibujar = true;
 									}
@@ -650,7 +650,7 @@ public class Paint {
 					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false, incRobot);
 				break;
 			case 6:
-				prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3));
+				prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3), 10000);
 				break;
 			}
 			
