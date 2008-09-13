@@ -14,11 +14,12 @@ public  class Linea extends Primitiva{
 		//DDA(plot, a, b);
 	}
 	*/
-	public Linea(Plot plot, Punto a, Punto b) {
+	public Linea(Plot plot, Punto a, Punto b, double inc) {
 		this.plot = plot;
 		this.z = a.getZ();
-		//Bresenham(a.getX(), a.getY(), b.getX(), b.getY());
-		DDA(a, b);
+		this.inc  = inc;
+		Bresenham(a.getX(), a.getY(), b.getX(), b.getY());
+		//DDA(a, b);
 	}
 	
 	
@@ -55,8 +56,8 @@ public  class Linea extends Primitiva{
 		if(Math.abs(x1-x2)>Math.abs(y1-y2)) {
 			izq_der=true;
 		}
-		double dx = x2-x1; //Math.abs(x2-x1);
-		double dy = y2-y1;//Math.abs(y2-y1);		
+		double dx = Math.abs(x2-x1);
+		double dy = Math.abs(y2-y1);		
 		
 		if(!izq_der) {
 			temp = dx;
@@ -64,21 +65,21 @@ public  class Linea extends Primitiva{
 			dy=temp;
 		}			
 		double e =2*dy-dx;		
-		for(int i=1; i<=dx; i++) {
+		for(double i=1; i<=dx; i+=inc) {
 			grafPto(new Punto(x,y));			
 			//plot.pixel(new Punto(x, y));
 			
 			while(e>=0) {
 				if(izq_der)
-					y=y1>y2?y-1:y+1;
+					y=y1>y2?y-inc:y+inc;
 				else
-					x=x1>x2?x-1:x+1;
+					x=x1>x2?x-inc:x+inc;
 				e=e-2*dx;
 			}
 			if(izq_der)
-				x=x1>x2?x-1:x+1;	
+				x=x1>x2?x-inc:x+inc;	
 			else
-				y=y1>y2?y-1:y+1;
+				y=y1>y2?y-inc:y+inc;
 			e=e+2*dy;
 		}				
 	}
@@ -107,9 +108,9 @@ public  class Linea extends Primitiva{
 			//plot.pixel(new Punto(x, y));
 			grafPto(new Punto(x,y));	
 			if(med_X<x)
-				plot.linea(new Punto(x, y), new Punto(med_X, y));
+				plot.linea(new Punto(x, y), new Punto(med_X, y), inc);
 			else
-				plot.linea( new Punto(med_X, y),new Punto(x, y));
+				plot.linea( new Punto(med_X, y),new Punto(x, y), inc);
 			while(e>=0) {
 				if(izq_der)
 					y=y1>y2?y-1:y+1;

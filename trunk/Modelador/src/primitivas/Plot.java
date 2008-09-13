@@ -44,14 +44,9 @@ public class Plot {
 		gc.dispose();		
 	}
 	
-	public void linea(Punto a, Punto b) {
-		new Linea(this, a, b);
-	}
-	/*
-	public void linea(Punto a, Punto b, int med_X) {
-		new Linea(this, a, b, med_X);
-	}*/
-	
+	public void linea(Punto a, Punto b, double inc) {
+		new Linea(this, a, b, inc);
+	}	
 	
 	public void bezier(Punto a, Punto b, Punto c, Punto d) {
 		new Bezier(this, a, b, c, d);
@@ -60,22 +55,22 @@ public class Plot {
 	public void relleno(Punto a) {
 		new relleno(this, a);
 	}
-	public void circulo(Punto a, Punto b, boolean relleno) {	
+	public void circulo(Punto a, Punto b, boolean relleno, double inc) {	
 		
 		double dx = (a.getX()-b.getX());
 		double dy = (a.getY()-b.getY());
 		double r = (int)Math.sqrt(dx*dx+dy*dy);		
-		new Circulo(this, a, r, relleno);
+		new Circulo(this, a, r, relleno, inc);
 		
 	}
 	
-	public void elipse(Punto a, Punto b, boolean relleno) {
+	public void elipse(Punto a, Punto b, boolean relleno, double inc) {
 		
 		double dx = Math.abs(a.getX()-b.getX());
 		double dy = Math.abs(a.getY()-b.getY());
 				
 		if((dx!=0)&&(dy!=0))
-			new Elipse(this, a, dx, dy, relleno);
+			new Elipse(this, a, dx, dy, relleno, inc);
 		
 	}
 	

@@ -71,6 +71,7 @@ public class Paint {
 	private int z;
 	private Menu submenu1 = null;
 	private Menu submenu2 = null;
+	private double incRobot = 0.1;
 	
 	private void crearListenerRobotizar() {
 		Listener listener3 = new Listener() {						
@@ -103,7 +104,7 @@ public class Paint {
 									plot.pixel(p.get(i).puntos.firstElement());
 									break;
 								case 2:
-									plot.linea(p.get(i).puntos.get(0), p.get(i).puntos.get(1));
+									plot.linea(p.get(i).puntos.get(0), p.get(i).puntos.get(1), 1);
 									break;
 								case 3:
 									
@@ -116,10 +117,10 @@ public class Paint {
 										poli.rellenarPolilinea(plot);
 									break;
 								case 4:
-									plot.circulo(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno);
+									plot.circulo(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno, 1);
 									break;
 								case 5:
-									plot.elipse(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno);
+									plot.elipse(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno, 1);
 									break;
 								case 6:
 									plot.bezier(p.get(i).puntos.get(0), p.get(i).puntos.get(1), p.get(i).puntos.get(2), p.get(i).puntos.get(3));
@@ -162,7 +163,7 @@ public class Paint {
 									}
 									else {
 										ps.add(new Punto(e.x, e.y, z));
-										plot.linea(ps.get(0), ps.get(1));										
+										plot.linea(ps.get(0), ps.get(1),1);										
 										reiniciarPts=true;
 										redibujar=true;
 									}						
@@ -174,7 +175,7 @@ public class Paint {
 										redibujar=true;
 									}
 									else {
-										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y));
+										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y),1);
 										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}						
@@ -187,7 +188,7 @@ public class Paint {
 									}
 									else {
 										ps.add(new Punto(e.x, e.y, z));
-										plot.circulo(ps.get(0), ps.get(1), tipoFigura.getFill());
+										plot.circulo(ps.get(0), ps.get(1), tipoFigura.getFill(),1);
 										reiniciarPts=true;
 										redibujar=true;
 									}						
@@ -200,7 +201,7 @@ public class Paint {
 									}
 									else {
 										ps.add(new Punto(e.x, e.y, z));
-										plot.elipse(ps.get(0), ps.get(1), tipoFigura.getFill());
+										plot.elipse(ps.get(0), ps.get(1), tipoFigura.getFill(), 1);
 										reiniciarPts=true;
 										redibujar=true;
 									}						
@@ -212,7 +213,7 @@ public class Paint {
 										redibujar=true;
 									}
 									else if (ps.size()<3){
-										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y));
+										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y),1);
 										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}
@@ -220,7 +221,7 @@ public class Paint {
 										ps.add(new Punto(e.x, e.y, z));
 										plot.xOr(true);										
 										for(int i=1; i< ps.size(); i++) {
-											plot.linea(ps.get(i-1), ps.get(i));															
+											plot.linea(ps.get(i-1), ps.get(i),1);															
 										}
 										plot.xOr(false);																				
 										plot.bezier(ps.get(0), ps.get(1), ps.get(2), ps.get(3));										
@@ -274,7 +275,7 @@ public class Paint {
 								switch(tipoFigura.getTipo()) {
 								case 3:
 									ps.add(new Punto(e.x, e.y, z));
-									plot.linea(ps.get(0), ps.lastElement());
+									plot.linea(ps.get(0), ps.lastElement(),1);
 									
 									if(tipoFigura.getFill()) {
 										Polilinea poli = new Polilinea(plot, ps.get(0), ps.get(1));
@@ -300,41 +301,41 @@ public class Paint {
 						switch(tipoFigura.getTipo()) {						
 						case 2:
 							if(ps.size()>0) {								
-								plot.linea(ps.get(0), pAnt);
+								plot.linea(ps.get(0), pAnt,1);
 								pAnt = new Punto(e.x, e.y, z);
-								plot.linea(ps.get(0), pAnt);
+								plot.linea(ps.get(0), pAnt,1);
 								redibujar=true;
 							}								
 							break;							
 						case 3:
 							if(ps.size()>0) {							
-								plot.linea(ps.get(ps.size()-1), pAnt);
+								plot.linea(ps.get(ps.size()-1), pAnt,1);
 								pAnt = new Punto(e.x, e.y, z);
-								plot.linea(ps.get(ps.size()-1), pAnt);
+								plot.linea(ps.get(ps.size()-1), pAnt,1);
 								redibujar=true;
 							}								
 							break;							
 						case 4:
 							if(ps.size()>0) {							
-								plot.circulo(ps.get(0), pAnt, false);						
+								plot.circulo(ps.get(0), pAnt, false, 1);						
 								pAnt = new Punto(e.x, e.y, z);
-								plot.circulo(ps.get(0), pAnt, false);
+								plot.circulo(ps.get(0), pAnt, false,1);
 								redibujar=true;
 							}						
 							break;							
 						case 5:
 							if(ps.size()>0) {						
-								plot.elipse(ps.get(0), pAnt, false);						
+								plot.elipse(ps.get(0), pAnt, false, 1);						
 								pAnt = new Punto(e.x, e.y, z);
-								plot.elipse(ps.get(0), pAnt, false);
+								plot.elipse(ps.get(0), pAnt, false, 1);
 								redibujar=true;
 							}						
 							break;
 						case 6:
 							if(ps.size()>0) {							
-								plot.linea(ps.get(ps.size()-1), pAnt);
+								plot.linea(ps.get(ps.size()-1), pAnt,1);
 								pAnt = new Punto(e.x, e.y, z);
-								plot.linea(ps.get(ps.size()-1), pAnt);
+								plot.linea(ps.get(ps.size()-1), pAnt,1);
 								redibujar=true;
 							}
 							break;
@@ -633,20 +634,20 @@ public class Paint {
 				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]);
 				break;
 			case 2:
-				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1));				
+				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1),incRobot);				
 				break;
 			case 4:
 				dx = (puntos.get(0).getX()-puntos.get(1).getX());
 				dy = (puntos.get(0).getY()-puntos.get(1).getY());
 				int r = (int)Math.sqrt(dx*dx+dy*dy);	
-				prim = new primitivas.Circulo(null,puntos.get(0), r, false);
+				prim = new primitivas.Circulo(null,puntos.get(0), r, false, incRobot);
 				break;
 			case 5:
 				dx = Math.abs(puntos.get(0).getX()-puntos.get(1).getX());
 				dy = Math.abs(puntos.get(0).getY()-puntos.get(1).getY());
 						
 				if((dx!=0)&&(dy!=0))
-					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false);
+					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false, incRobot);
 				break;
 			case 6:
 				prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3));

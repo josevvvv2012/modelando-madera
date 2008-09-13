@@ -27,7 +27,7 @@ public  class Polilinea extends Primitiva{
 	
 	public void rellenarPolilinea(Plot plot) {
 		for(double i=miny; i<maxy; i++) {
-			plot.linea(new Punto(mins.get(i), i), new Punto(maxs.get(i), i));
+			plot.linea(new Punto(mins.get(i), i), new Punto(maxs.get(i), i), inc);
 		}
 	}
 	public void Bresenham(double x1, double y1, double x2, double y2)
