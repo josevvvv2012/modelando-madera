@@ -48,8 +48,8 @@ public class Plot {
 		new Linea(this, a, b, inc);
 	}	
 	
-	public void bezier(Punto a, Punto b, Punto c, Punto d) {
-		new Bezier(this, a, b, c, d);
+	public void bezier(Punto a, Punto b, Punto c, Punto d, int pts) {
+		new Bezier(this, a, b, c, d, pts);
 	}
 	
 	public void relleno(Punto a) {

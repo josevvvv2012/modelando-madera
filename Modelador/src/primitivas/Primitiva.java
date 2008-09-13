@@ -16,8 +16,7 @@ public abstract class Primitiva {
 	
 	
 	public void grafPto(Punto p) {	
-		System.out.println("("+p.getX()+", "+p.getY()+")");
-		
+		//System.out.println("("+p.getX()+", "+p.getY()+")");		
 		if(plot instanceof Plot){			
 			plot.pixel(p);	
 		}		
