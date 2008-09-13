@@ -7,9 +7,9 @@ package primitivas;
  */
 public class Transformaciones {
 	private Punto punto;
-	private int [][]m;
-	private int []b;
-	private int []x;
+	private double [][]m;
+	private double []b;
+	private double []x;
 	
 	
 	public void actualizar() {
@@ -18,7 +18,7 @@ public class Transformaciones {
 	}
 	public Transformaciones(Punto p) {
 		punto = p;
-		b = new int[] {punto.getX(), punto.getY(), 1};
+		b = new double[] {punto.getX(), punto.getY(), 1};
 	}
 	public void setPunto(Punto p) {
 		punto = p;
@@ -26,8 +26,8 @@ public class Transformaciones {
 	public Punto getPunto() {
 		return punto;
 	}
-	public void traslacion(int tx, int ty) {
-		m = new int[][]{
+	public void traslacion(double tx, double ty) {
+		m = new double[][]{
 						{1,0,tx},
 						{0,1,ty},
 						{0,0,1 }
@@ -38,7 +38,7 @@ public class Transformaciones {
 	}
 	
 	public void reflexion() {
-		m = new int[][]{
+		m = new double[][]{
 						{1, 0,0},
 						{0,-1,0},
 						{0, 0,1 }
@@ -51,8 +51,8 @@ public class Transformaciones {
 
 	
 	
-	public void escalamiento(int sx, int sy) {
-		m = new int[][]{
+	public void escalamiento(double sx, double sy) {
+		m = new double[][]{
 						{sx,0, 0},
 						{0, sy,0},
 						{0, 0, 1 }
@@ -71,15 +71,15 @@ public class Transformaciones {
 					};
 
 		double []x2 = productoMatricialDouble(m2, b);
-		x = new int[x2.length];		
+		x = new double[x2.length];		
 		x[0] = (int)x2[0];		
 		x[1] = (int)x2[1];		
 		actualizar();
 	}		
 	
-	public int []productoMatricial(int [][]m, int []b) {
-		int []x;
-		x = new int[b.length];
+	public double []productoMatricial(double [][]m, double []b) {
+		double []x;
+		x = new double[b.length];
 		for(int i=0; i<b.length; i++) {
 			x[i]=0;
 			for(int j=0; j<b.length; j++) {
@@ -90,7 +90,7 @@ public class Transformaciones {
 		return x;
 	}
 	
-	public double []productoMatricialDouble(double [][]m, int []b) {
+	public double []productoMatricialDouble(double [][]m, double []b) {
 		double []x;
 		x = new double[b.length];
 		for(int i=0; i<b.length; i++) {

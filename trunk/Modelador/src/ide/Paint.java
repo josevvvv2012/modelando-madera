@@ -61,6 +61,7 @@ public class Paint {
 //	private final int clickMed = 2;
 //	private final int clickDer = 3;
 	
+	private boolean okPort= false;
 	private String comPort = "COM4";
 	int []M = new int[4];
 	private Comunicacion comuni; 
@@ -68,12 +69,18 @@ public class Paint {
 	private boolean reiniciarPts = false;
 	boolean primera=true;
 	private int z;
-	private void crearListener3() {
+	private Menu submenu1 = null;
+	private Menu submenu2 = null;
+	
+	private void crearListenerRobotizar() {
 		Listener listener3 = new Listener() {						
 			public void handleEvent(Event e) {					
 				switch(e.type) {
 					case SWT.MouseDown:
-						robotizar(listaFiguras.figuras);						
+						if(okPort)
+							robotizar(listaFiguras.figuras);
+						else
+							mostrarMSG("No ha activado el puerto","Error");
 						break;
 				}				
 			}
@@ -240,14 +247,14 @@ public class Paint {
 									else {
 										ps.add(new Punto(e.x, e.y, z));
 										
-										int x1, x2, y1, y2;
+										double x1, x2, y1, y2;
 										x1=ps.get(0).getX()<ps.get(1).getX()?ps.get(0).getX():ps.get(1).getX();
 										x2=ps.get(0).getX()>ps.get(1).getX()?ps.get(0).getX():ps.get(1).getX();
 										y1=ps.get(0).getY()<ps.get(1).getY()?ps.get(0).getY():ps.get(1).getY();
 										y2=ps.get(0).getY()>ps.get(1).getY()?ps.get(0).getY():ps.get(1).getY();
 										
 										plot.xOr(true);
-										plot.gc.drawRectangle(x1,y1, x2-x1, y2-y1);										
+										plot.gc.drawRectangle((int)x1,(int)y1, (int)(x2-x1), (int)(y2-y1));										
 										ps.get(0).setX(x1);
 										ps.get(1).setX(x2);
 										ps.get(0).setY(y1);
@@ -333,19 +340,19 @@ public class Paint {
 							break;
 						case 8:
 							if(ps.size()>0) {		
-								int x1, x2, y1, y2;
+								double x1, x2, y1, y2;
 								x1=ps.get(0).getX()<pAnt.getX()?ps.get(0).getX():pAnt.getX();
 								x2=ps.get(0).getX()>pAnt.getX()?ps.get(0).getX():pAnt.getX();
 								y1=ps.get(0).getY()<pAnt.getY()?ps.get(0).getY():pAnt.getY();
 								y2=ps.get(0).getY()>pAnt.getY()?ps.get(0).getY():pAnt.getY();
-								plot.gc.drawRectangle(x1,y1, x2-x1, y2-y1);
+								plot.gc.drawRectangle((int)x1,(int)y1, (int)(x2-x1), (int)(y2-y1));
 
 								pAnt = new Punto(e.x, e.y, z);
 								x1=ps.get(0).getX()<pAnt.getX()?ps.get(0).getX():pAnt.getX();
 								x2=ps.get(0).getX()>pAnt.getX()?ps.get(0).getX():pAnt.getX();
 								y1=ps.get(0).getY()<pAnt.getY()?ps.get(0).getY():pAnt.getY();
 								y2=ps.get(0).getY()>pAnt.getY()?ps.get(0).getY():pAnt.getY();
-								plot.gc.drawRectangle(x1,y1, x2-x1, y2-y1);
+								plot.gc.drawRectangle((int)x1,(int)y1, (int)(x2-x1), (int)(y2-y1));
 
 								redibujar=true;
 							}								
@@ -493,6 +500,7 @@ public class Paint {
 		gridData1.verticalAlignment = GridData.CENTER;
 		sShell = new Shell();
 		sShell.setText(".:: Roberto Loaeza Valerio ::.");
+		sShell.setMaximized(true);
 		createCompositePrincipal();
 		sShell.setLayout(gridLayout1);
 		sShell.setSize(new Point(959, 662));
@@ -500,6 +508,51 @@ public class Paint {
 		menuBar = new Menu(sShell, SWT.BAR);
 		MenuItem submenuItemArchivo = new MenuItem(menuBar, SWT.CASCADE);
 		submenuItemArchivo.setText("Archivo");
+		MenuItem submenuItemHerramientas = new MenuItem(menuBar, SWT.CASCADE);
+		submenuItemHerramientas.setText("Herramientas");
+		MenuItem submenuItemAyuda = new MenuItem(menuBar, SWT.CASCADE);
+		submenuItemAyuda.setText("Ayuda");
+		submenu2 = new Menu(submenuItemAyuda);
+		MenuItem pushAcercaDe = new MenuItem(submenu2, SWT.PUSH);
+		pushAcercaDe.setText("Acerca de...");
+		pushAcercaDe
+				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						mostrarMSG("Elaborado por:\n\tRoberto Loaeza Valerio","Acerca de...");
+					}
+					public void widgetDefaultSelected(
+							org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
+		submenuItemAyuda.setMenu(submenu2);
+		submenu1 = new Menu(submenuItemHerramientas);
+		MenuItem pushActivarRobot = new MenuItem(submenu1, SWT.PUSH);
+		pushActivarRobot.setText("Activar Robot");
+		MenuItem pushRobotizar = new MenuItem(submenu1, SWT.PUSH);
+		pushRobotizar.setText("Robotizar");
+		pushRobotizar
+				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						if(okPort)
+							robotizar(listaFiguras.figuras);
+						else
+							mostrarMSG("No ha activado el puerto","Error");
+					}
+					public void widgetDefaultSelected(
+							org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
+		pushActivarRobot
+				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						if(inicializarPuerto())
+							okPort=true;
+					}
+					public void widgetDefaultSelected(
+							org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
+		submenuItemHerramientas.setMenu(submenu1);
 		submenu = new Menu(submenuItemArchivo);
 		MenuItem pushNuevo = new MenuItem(submenu, SWT.PUSH);
 		pushNuevo.setText("Nuevo");
@@ -551,23 +604,24 @@ public class Paint {
 		
 		crearListener();
 		crearListener2();
-		crearListener3();
-		inicializarPuerto();
-		
+		crearListenerRobotizar();				
 	}
-	private void inicializarPuerto() {
+	private boolean inicializarPuerto() {
 		comuni = new Comunicacion();  
 		try {
 			comuni.connect(comPort);
-		} catch (Exception e1) {
-			e1.printStackTrace();
+		} catch (Exception e) {
+			mostrarMSG(e.toString(), "Error en el puerto");
+			return false;
+			//e1.printStackTrace();
 		}
+		return true;
 	}
 	
 	private void robotizar(Vector<Figuras> figuras) {
 		Vector <primitivas.Punto>puntos;		
 		
-		int dx, dy;
+		double dx, dy;
 		primera=true;
 		primitivas.Primitiva prim = null;
 		for(int i=0; i<figuras.size(); i++) {
@@ -613,10 +667,12 @@ public class Paint {
 				Thread.sleep(9999);
 				primera=false;
 			}
-			else
-				Thread.sleep(60);
+			else {
+				Thread.sleep(160);
+			}
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			mostrarMSG(e.toString(), "Error");
+			//e.printStackTrace();
 		}
 	}
 	
@@ -625,7 +681,8 @@ public class Paint {
 			comuni.escribe(str+"\n");
 			//System.out.println(str);
 		} catch (IOException e) {
-			e.printStackTrace();
+			mostrarMSG(e.toString(), "Error");
+			//e.printStackTrace();
 		}
 		retardo();		
 	}
@@ -670,6 +727,13 @@ public class Paint {
 	        messageBox.setText(title);
 	        return messageBox.open();
 	        
+	}
+	private void mostrarMSG(String str, String title) {
+		MessageBox messageBox = new MessageBox(sShell, SWT.ICON_INFORMATION
+	            | SWT.OK);
+	        messageBox.setMessage(str);
+	        messageBox.setText(title);
+	        messageBox.open();	        
 	}
 }
 

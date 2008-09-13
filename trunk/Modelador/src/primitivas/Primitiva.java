@@ -6,10 +6,13 @@ public abstract class Primitiva {
 
 	Vector <Punto> coordenadas= new Vector<Punto>();
 	Plot plot;
-	int z;
-	public void grafPto(Punto p) {		
-		if(plot instanceof Plot)
-			plot.pixel(p);
+	double z;
+	public void grafPto(Punto p) {	
+		System.out.println("("+p.getX()+", "+p.getY()+")");
+		
+		if(plot instanceof Plot){			
+			plot.pixel(p);	
+		}		
 		else {
 			p.setZ( z );
 			coordenadas.add(p);

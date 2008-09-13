@@ -47,9 +47,10 @@ public class Plot {
 	public void linea(Punto a, Punto b) {
 		new Linea(this, a, b);
 	}
+	/*
 	public void linea(Punto a, Punto b, int med_X) {
 		new Linea(this, a, b, med_X);
-	}
+	}*/
 	
 	
 	public void bezier(Punto a, Punto b, Punto c, Punto d) {
@@ -59,19 +60,23 @@ public class Plot {
 	public void relleno(Punto a) {
 		new relleno(this, a);
 	}
-	public void circulo(Punto a, Punto b, boolean relleno) {		
-		int dx = (a.getX()-b.getX());
-		int dy = (a.getY()-b.getY());
-		int r = (int)Math.sqrt(dx*dx+dy*dy);		
+	public void circulo(Punto a, Punto b, boolean relleno) {	
+		
+		double dx = (a.getX()-b.getX());
+		double dy = (a.getY()-b.getY());
+		double r = (int)Math.sqrt(dx*dx+dy*dy);		
 		new Circulo(this, a, r, relleno);
+		
 	}
 	
-	public void elipse(Punto a, Punto b, boolean relleno) {		
-		int dx = Math.abs(a.getX()-b.getX());
-		int dy = Math.abs(a.getY()-b.getY());
+	public void elipse(Punto a, Punto b, boolean relleno) {
+		
+		double dx = Math.abs(a.getX()-b.getX());
+		double dy = Math.abs(a.getY()-b.getY());
 				
 		if((dx!=0)&&(dy!=0))
 			new Elipse(this, a, dx, dy, relleno);
+		
 	}
 	
 	public void setFondo(org.eclipse.swt.graphics.Color color) {

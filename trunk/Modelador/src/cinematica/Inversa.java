@@ -29,7 +29,7 @@ public class Inversa {
 	int miny = 0;
 	public void get_angles(Punto p, int M[]){
 		get_angles(p.getX()-minx, p.getY()-miny, M);
-		M[3]=p.getZ();
+		M[3]=(int)p.getZ();
 	}
 	
 	public void get_angles(double x, double y, int M[])

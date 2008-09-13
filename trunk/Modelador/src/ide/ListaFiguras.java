@@ -62,7 +62,7 @@ public class ListaFiguras extends Composite {
 	
 	public void insertarFigura(int tipo, boolean relleno, Vector<Punto> p) {
 		if(tipo==8) {
-			recortar(new int[] {p.get(0).getX(), p.get(0).getY(), p.get(1).getX(), p.get(1).getY()});
+			recortar(new double[] {p.get(0).getX(), p.get(0).getY(), p.get(1).getX(), p.get(1).getY()});
 		}
 		else {
 			figuras.add(new Figuras(tipo,relleno, p));
@@ -71,8 +71,8 @@ public class ListaFiguras extends Composite {
 		
 	}
 
-	public void swap(int []lista) {
-		int t= lista[0];
+	public void swap(double []lista) {
+		double t= lista[0];
 		lista[0]=lista[2];
 		lista[2]=t;
 		
@@ -80,9 +80,9 @@ public class ListaFiguras extends Composite {
 		lista[1]=lista[3];
 		lista[3]=t;		
 	}
-	public void recortar(int []ventana) {
-		int []temp;
-		int []linea;
+	public void recortar(double []ventana) {
+		double []temp;
+		double []linea;
 		int c1,c2;
 		boolean borrar;
 		boolean redraw=false;
@@ -90,7 +90,7 @@ public class ListaFiguras extends Composite {
 		for(int i=0; i< figuras.size(); i++){			
 			if(figuras.get(i).tipoFig==2) {
 				borrar = false;				
-				linea = new int[]{figuras.get(i).puntos.get(0).getX(),figuras.get(i).puntos.get(0).getY(),figuras.get(i).puntos.get(1).getX(),figuras.get(i).puntos.get(1).getY()};
+				linea = new double[]{figuras.get(i).puntos.get(0).getX(),figuras.get(i).puntos.get(0).getY(),figuras.get(i).puntos.get(1).getX(),figuras.get(i).puntos.get(1).getY()};
 				c1=0;				
 				System.out.println("linea Modificando\t\t ("+linea[0]+", "+linea[1]+") -> ("+linea[2]+", "+linea[3]+").");
 				if(linea[0]>linea[2]) {
@@ -200,7 +200,7 @@ public class ListaFiguras extends Composite {
 	public void escalar(int sx, int sy) {
 		
 		
-		int ix, iy;
+		double ix, iy;
 		ix = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getX();
 		iy = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getY();
 		
@@ -231,7 +231,7 @@ public class ListaFiguras extends Composite {
 	
 	public void rotar(int theta) {
 		
-		int ix, iy;
+		double ix, iy;
 		ix = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getX();
 		iy = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getY();
 		
@@ -253,7 +253,7 @@ public class ListaFiguras extends Composite {
 	
 	public void reflejar() {
 		
-		int ix, iy;
+		double ix, iy;
 		ix = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getX();
 		iy = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getY();
 		
@@ -586,7 +586,7 @@ public class ListaFiguras extends Composite {
 		Vector <primitivas.Punto>puntos;
 		int comandos=0;
 		int []M = new int[4];
-		int dx, dy;
+		double dx, dy;
 		primitivas.Primitiva prim = null;
 		for(int i=0; i<figuras.size(); i++) {
 			
@@ -609,8 +609,8 @@ public class ListaFiguras extends Composite {
 				dx = Math.abs(puntos.get(0).getX()-puntos.get(1).getX());
 				dy = Math.abs(puntos.get(0).getY()-puntos.get(1).getY());
 						
-				if((dx!=0)&&(dy!=0))
-					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false);
+			//	if((dx!=0)&&(dy!=0))
+				//	prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false);
 				break;
 			case 6:
 				prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3));

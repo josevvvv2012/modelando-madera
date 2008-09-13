@@ -6,18 +6,18 @@ package primitivas;
  *
  */
 public class Elipse extends Primitiva{
-	public Elipse(Plot plot, Punto orig,int rx, int ry, boolean relleno) {
+	public Elipse(Plot plot, Punto orig,double rx, double ry, boolean relleno) {
 		this.plot = plot;
 		this.z = orig.getZ();
 		puntoMedio(orig, rx, ry, relleno);
 	}
-	public void puntoMedio(Punto orig,int rx, int ry, boolean relleno) {
-		int ry2=ry*ry;
-		int rx2=rx*rx;
-		int x=0;
-		int y=ry;
-		int p1k=ry2-rx2*ry+(rx2/4);
-		int p2k=0;
+	public void puntoMedio(Punto orig,double rx, double ry, boolean relleno) {
+		double ry2=ry*ry;
+		double rx2=rx*rx;
+		double x=0;
+		double y=ry;
+		double p1k=ry2-rx2*ry+(rx2/4);
+		double p2k=0;
 		boolean px=true;
 		while(y>0) {
 			if( ((2*ry2*x))<(2*rx2*y)) {

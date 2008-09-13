@@ -55,18 +55,22 @@ public class Comunicacion {
 	public String leer() throws IOException {
 		
 		 byte[] buffer = new byte[2];
+		 in.read(buffer,0, 1);
+		 return "w";
 		 /*
 		 String s="";
 		 do {
 			 in.read(buffer,0, 1);
 			 s=s+new String(buffer);
 		 } while(s.charAt(s.length()-1)!='\n');		
+		 return s;
 		 */
-		 
-		 do {
-			 in.read(buffer,0, 1);		
+		 /*do {
+			 in.read(buffer,0, 2);		
 		 } while(new String(buffer).equalsIgnoreCase("W")==false);
+		 
 		 return "W";
+		 */
 	}
 	public String escribe(String str) throws IOException {
 		
