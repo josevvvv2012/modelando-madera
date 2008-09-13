@@ -57,7 +57,7 @@ public class ListaFiguras extends Composite {
 	private Text textValorZ = null;
 	public Button buttonRobotizar = null;
 	private Comunicacion comuni = new Comunicacion();  //  @jve:decl-index=0:
-	
+	double incRobot = 0.1;
 	
 	
 	public void insertarFigura(int tipo, boolean relleno, Vector<Punto> p) {
@@ -597,13 +597,13 @@ public class ListaFiguras extends Composite {
 				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]+".");
 				break;
 			case 2:
-				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1));				
+				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1), incRobot);				
 				break;
 			case 4:
 				dx = (puntos.get(0).getX()-puntos.get(1).getX());
 				dy = (puntos.get(0).getY()-puntos.get(1).getY());
 				int r = (int)Math.sqrt(dx*dx+dy*dy);	
-				prim = new primitivas.Circulo(null,puntos.get(0), r, false);
+				prim = new primitivas.Circulo(null,puntos.get(0), r, false, incRobot);
 				break;
 			case 5:
 				dx = Math.abs(puntos.get(0).getX()-puntos.get(1).getX());

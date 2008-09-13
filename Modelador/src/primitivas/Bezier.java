@@ -27,7 +27,8 @@ public class Bezier extends Primitiva{
 			a.getY()*t)))+t*(3*b.getY()+t*(-6*b.getY()+
 			b.getY()*3*t))+t*t*(c.getY()*3-c.getY()*3*t)+
 			d.getY()*t*t*t;
-			plot.linea(new Punto((int)x1, (int)y1), new Punto((int)x2, (int)y2));											
+			grafPto(new Punto(x1,y1));
+			//plot.linea(new Punto((int)x1, (int)y1), new Punto((int)x2, (int)y2), 1);											
 			x1 = x2;
 			y1 = y2;
 		}
@@ -52,6 +53,8 @@ public class Bezier extends Primitiva{
 		interpolacion(bccd, bc,cd,t);    
 		interpolacion(dest, abbc,bccd,t); 
 	}
+	
+	
 	public void BezierDeCasteljau(Punto a, Punto b, Punto c, Punto d) {
 		double []p1 = new double[]{a.getX(), a.getY()};
 		double []p2 = new double[]{b.getX(), b.getY()};
@@ -61,7 +64,7 @@ public class Bezier extends Primitiva{
 		double []dest = new double[2];
 		for(double i=1; i<maxPts; i++) {
 			DeCasteljau(dest, i/maxPts, p1, p2, p3, p4);
-			grafPto(new Punto((int)dest[0], (int)dest[1]));
+			grafPto(new Punto(dest[0], dest[1]));
 		}		
 	}
 }

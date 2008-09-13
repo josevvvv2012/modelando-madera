@@ -1,4 +1,7 @@
 package primitivas;
+
+import java.util.Vector;
+
 /**
  * 
  * @author Roberto Loaeza Valerio
@@ -6,10 +9,17 @@ package primitivas;
  *
  */
 public class Elipse extends Primitiva{
-	public Elipse(Plot plot, Punto orig,double rx, double ry, boolean relleno) {
+	public Elipse(Plot plot, Punto orig,double rx, double ry, boolean relleno, double inc) {
 		this.plot = plot;
 		this.z = orig.getZ();
-		puntoMedio(orig, rx, ry, relleno);
+		this.inc  = inc;
+		v1 = new Vector<Punto>();
+		v2 = new Vector<Punto>();
+		v3 = new Vector<Punto>();
+		v4 = new Vector<Punto>();
+		iniciarVectores();
+		puntoMedio(orig, rx, ry, relleno);		
+		graficarVectores();
 	}
 	public void puntoMedio(Punto orig,double rx, double ry, boolean relleno) {
 		double ry2=ry*ry;
@@ -21,12 +31,12 @@ public class Elipse extends Primitiva{
 		boolean px=true;
 		while(y>0) {
 			if( ((2*ry2*x))<(2*rx2*y)) {
-				x++;
+				x+=inc;
 				if(p1k<0) {
 					p1k=p1k+2*(x)*ry2+ry2;
 				}
 				else {
-					y--;
+					y-=inc;
 					p1k=p1k+2*ry2*x-2*rx2*y+ry2;
 				}	
 			}
@@ -35,9 +45,9 @@ public class Elipse extends Primitiva{
 					p2k=ry2*(x+1/2)*(x+1/2)+rx2*(y-1)*(y-1)-rx2*ry2;
 					px=false;
 				}
-				y--;
+				y-=inc;
 				if(p2k<0) {
-					x++;
+					x+=inc;
 					p2k=p2k+2*ry2*x-2*rx2*y+rx2;
 				}
 				else {
@@ -46,13 +56,22 @@ public class Elipse extends Primitiva{
 				
 				
 			}
+			insertarVectores(orig.getX(), orig.getY(),x,y);
+			/*
+			v1.add(new Punto( (orig.getX()+x)   ,   (orig.getY()+y))  );			
+			v2.add(new Punto( (orig.getX()+x)   ,   (orig.getY()-y))  );			
+			v3.add(new Punto( (orig.getX()-x)   ,   (orig.getY()-y))  ); 
+			v4.add(new Punto( (orig.getX()+x)   ,   (orig.getY()-y))  );
+			*/
+			/*
 			grafPto(new Punto(orig.getX()+x,orig.getY()+y));
 			grafPto(new Punto(orig.getX()-x,orig.getY()+y));
 			grafPto(new Punto(orig.getX()-x,orig.getY()-y));
 			grafPto(new Punto(orig.getX()+x,orig.getY()-y));
+			*/
 			if(relleno) {
-				plot.linea(new Punto(orig.getX()+x,orig.getY()+y), new Punto(orig.getX()-x,orig.getY()+y));
-				plot.linea(new Punto(orig.getX()-x,orig.getY()-y),new Punto(orig.getX()+x,orig.getY()-y));
+				plot.linea(new Punto(orig.getX()+x,orig.getY()+y), new Punto(orig.getX()-x,orig.getY()+y), inc);
+				plot.linea(new Punto(orig.getX()-x,orig.getY()-y),new Punto(orig.getX()+x,orig.getY()-y), inc);
 				
 			}
 		}						
