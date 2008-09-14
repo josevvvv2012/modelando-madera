@@ -43,6 +43,11 @@ public class Punto {
 	public void setZ(double z) {
 		this.z = z;
 	}
+	public String getXML(int i) {
+		return "\n\t<x"+i+">"+x+"</x"+i+">" +
+		       "\n\t<y"+i+">"+y+"</y"+i+">" +
+		       "\n\t<z"+i+">"+z+"</z"+i+">";
+	}
 	public double distancia(Punto b) {
 		
 		return Math.sqrt(Math.pow((x-b.getX()), 2)+ Math.pow((y-b.getY()), 2));

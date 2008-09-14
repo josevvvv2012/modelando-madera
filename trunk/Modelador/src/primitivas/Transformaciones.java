@@ -62,7 +62,7 @@ public class Transformaciones {
 		actualizar();
 	}		
 
-	public void rotacion(int theta) {
+	public void rotacion(double theta) {
 		
 		double [][]m2 = new double[][]{
 						{Math.cos(theta*(Math.PI/180)),  -Math.sin(theta*(Math.PI/180)), 0},

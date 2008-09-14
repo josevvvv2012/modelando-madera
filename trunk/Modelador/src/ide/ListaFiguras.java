@@ -65,12 +65,24 @@ public class ListaFiguras extends Composite {
 			recortar(new double[] {p.get(0).getX(), p.get(0).getY(), p.get(1).getX(), p.get(1).getY()});
 		}
 		else {
+
 			figuras.add(new Figuras(tipo,relleno, p));
 			listFigura.add( figuras.get(figuras.size()-1).getText() );
 		}
 		
 	}
 
+	public void limpiarFiguras() {
+		figuras.removeAllElements();
+		comboFigura.removeAll();
+		listFigura.removeAll();
+	}
+	
+	public void limpiarCampos() {
+		textValorX.setText("");
+		textValorY.setText("");
+		textValorZ.setText("");
+	}
 	public void swap(double []lista) {
 		double t= lista[0];
 		lista[0]=lista[2];
@@ -192,12 +204,12 @@ public class ListaFiguras extends Composite {
 	}
 
 	public void fijarPunto(int c) {	
-		figuras.get(listFigura.getSelectionIndex()).puntos.get(c).setX(Integer.valueOf(textValorX.getText()));
-		figuras.get(listFigura.getSelectionIndex()).puntos.get(c).setY(Integer.valueOf(textValorY.getText()));	
+		figuras.get(listFigura.getSelectionIndex()).puntos.get(c).setX(Double.valueOf(textValorX.getText()));
+		figuras.get(listFigura.getSelectionIndex()).puntos.get(c).setY(Double.valueOf(textValorY.getText()));	
 		this.bFijar.notifyListeners(SWT.MouseDown, null);
 	}
 
-	public void escalar(int sx, int sy) {
+	public void escalar(double sx, double sy) {
 		
 		
 		double ix, iy;
@@ -220,7 +232,7 @@ public class ListaFiguras extends Composite {
 		}
 		this.bFijar.notifyListeners(SWT.MouseDown, null);
 	}
-	public void trasladar(int tx, int ty) {
+	public void trasladar(double tx, double ty) {
 		
 		for(int i=0; i<figuras.get(listFigura.getSelectionIndex()).puntos.size(); i++) {			
 			trans = new Transformaciones(figuras.get(listFigura.getSelectionIndex()).puntos.get(i));
@@ -229,7 +241,7 @@ public class ListaFiguras extends Composite {
 		this.bFijar.notifyListeners(SWT.MouseDown, null);
 	}
 	
-	public void rotar(int theta) {
+	public void rotar(double theta) {
 		
 		double ix, iy;
 		ix = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getX();
@@ -291,8 +303,7 @@ public class ListaFiguras extends Composite {
 		for(int i=0; i< p.size(); i++) {
 			comboFigura.add( String.valueOf(i)   );
 		}
-		textValorX.setText("");
-		textValorY.setText("");
+		limpiarCampos();
 		
 	}
 	/**
@@ -429,15 +440,13 @@ public class ListaFiguras extends Composite {
 				}
 			}
 		});
-		buttonEliminar
-				.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+		buttonEliminar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 						try {
 							figuras.remove(listFigura.getSelectionIndex());
 							listFigura.remove(listFigura.getSelectionIndex());
 							comboFigura.removeAll();
-							textValorX.setText("");
-							textValorY.setText("");
+							limpiarCampos();							
 							bFijar.notifyListeners(SWT.MouseDown, null);
 						}
 						catch(java.lang.NumberFormatException ex) {		
@@ -465,7 +474,7 @@ public class ListaFiguras extends Composite {
 		bTrasladar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					trasladar(Integer.valueOf(tX.getText()),Integer.valueOf(tY.getText()));
+					trasladar(Double.valueOf(tX.getText()),Double.valueOf(tY.getText()));
 				}catch(java.lang.NumberFormatException ex) {
 					errorMsg("Error", "Formato incorrecto de entrada, verifique por favor");
 				}
@@ -532,7 +541,7 @@ public class ListaFiguras extends Composite {
 		bRotar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					rotar(Integer.valueOf(tRotar.getText()));
+					rotar(Double.valueOf(tRotar.getText()));
 				}catch(java.lang.NumberFormatException ex) {
 					errorMsg("Error", "Formato incorrecto de entrada, verifique por favor");
 				}
@@ -544,7 +553,7 @@ public class ListaFiguras extends Composite {
 		bEscalar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					escalar(Integer.valueOf(tX.getText()),Integer.valueOf(tY.getText()));
+					escalar(Double.valueOf(tX.getText()),Double.valueOf(tY.getText()));
 				}catch(java.lang.NumberFormatException ex) {
 					errorMsg("Error", "Formato incorrecto de esntrada, verifique por favor");
 				}
@@ -613,7 +622,8 @@ public class ListaFiguras extends Composite {
 				//	prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false);
 				break;
 			case 6:
-				prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3), 10000);
+				//prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3), 10000);
+				prim = new primitivas.Bezier(null, puntos, 10000);
 				break;
 			}
 			
