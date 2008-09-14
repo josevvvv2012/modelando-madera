@@ -7,7 +7,7 @@ import java.util.Vector;
  * @version 1
  *
  */
-public class Figuras {
+public class Figuras  {
 	public int tipoFig;
 	public  boolean relleno;
 	public  Vector<Punto> puntos;
@@ -20,6 +20,17 @@ public class Figuras {
 			  "Relleno",
 			  "Recortar"
 	};
+	
+	
+
+	public Figuras copiar() {
+		Vector <Punto> p = new Vector<Punto>();
+		
+		for(int i=0; i<puntos.size(); i++)
+			p.add(new Punto(puntos.get(i).getX(),puntos.get(i).getY(),puntos.get(i).getZ()));
+		return new Figuras(tipoFig, relleno, p);
+		
+	}
 	
 	@SuppressWarnings("unchecked")
 	public Figuras(int tipo, boolean relle, Vector<Punto> p) {
