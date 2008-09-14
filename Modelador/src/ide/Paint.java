@@ -6,6 +6,7 @@ import primitivas.Plot;
 import primitivas.Punto;
 import primitivas.Polilinea;
 import serial.Comunicacion;
+import store.LecturaEscritura;
 
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.layout.GridLayout;
@@ -64,14 +65,15 @@ public class Paint {
 	private boolean okPort= false;
 	private String comPort = "COM4";
 	int []M = new int[4];
-	private Comunicacion comuni; 
+	private Comunicacion comuni;  //  @jve:decl-index=0:
 	private boolean redibujar = false;
 	private boolean reiniciarPts = false;
 	boolean primera=true;
 	private int z;
 	private Menu submenu1 = null;
 	private Menu submenu2 = null;
-	private double incRobot = 0.1;
+	private double incRobot = 0.04;
+	private LecturaEscritura le = new LecturaEscritura();
 	
 	private void crearListenerRobotizar() {
 		Listener listener3 = new Listener() {						
@@ -91,7 +93,7 @@ public class Paint {
 	
 	
 	
-	private void crearListener2() {
+	private void crearListenerB_Fijar() {
 		Listener listener2 = new Listener() {						
 			public void handleEvent(Event e) {					
 				Vector<Figuras> p = listaFiguras.figuras;
@@ -123,7 +125,8 @@ public class Paint {
 									plot.elipse(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno, 1);
 									break;
 								case 6:
-									plot.bezier(p.get(i).puntos.get(0), p.get(i).puntos.get(1), p.get(i).puntos.get(2), p.get(i).puntos.get(3), 1000);
+									//plot.bezier(p.get(i).puntos.get(0), p.get(i).puntos.get(1), p.get(i).puntos.get(2), p.get(i).puntos.get(3), 1000);
+									plot.bezier(p.get(i).puntos, 1);
 									break;
 								case 7:
 									plot.relleno(p.get(i).puntos.get(0));
@@ -138,7 +141,7 @@ public class Paint {
 		listaFiguras.bFijar.addListener(SWT.MouseDown, listener2);
 	}
 	
-	private void crearListener() {
+	private void crearListenerCanvas() {
 		Listener listener = new Listener() {						
 			public void handleEvent(Event e) {					
 				tipoFigura.getTipo();
@@ -212,12 +215,13 @@ public class Paint {
 										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}
-									else if (ps.size()<3){
+									else /*if (ps.size()>-3)*/{
 										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y),1);
 										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}
-									else  if (ps.size()==3){
+									/*
+									else  if (ps.size()==-3){
 										ps.add(new Punto(e.x, e.y, z));
 										plot.xOr(true);										
 										for(int i=1; i< ps.size(); i++) {
@@ -228,6 +232,7 @@ public class Paint {
 										reiniciarPts=true;
 										redibujar = true;
 									}
+									*/
 									break;
 								case 7:
 									MessageBox m=new MessageBox(sShell, SWT.ICON_INFORMATION);
@@ -283,13 +288,25 @@ public class Paint {
 											poli.agregarLinea( ps.get(j), ps.get(j+1));
 										}
 										poli.agregarLinea(ps.firstElement(), ps.lastElement());
+										//poli.graficar();	
 										poli.rellenarPolilinea(plot);
 											
-									}
-									
-									
+									}																		
 									reiniciarPts=true;
 									redibujar=true;
+									break;
+								case 6:
+									ps.add(new Punto(e.x, e.y, z));
+									plot.xOr(true);										
+									for(int i=1; i< ps.size(); i++) {
+										plot.linea(ps.get(i-1), ps.get(i),1);															
+									}
+									plot.xOr(false);
+									
+									plot.bezier(ps, 1);	
+									
+									reiniciarPts=true;
+									redibujar = true;
 									break;
 								}
 								break;							
@@ -367,7 +384,7 @@ public class Paint {
 												
 						break;
 				}
-				if(reiniciarPts) {
+				if(reiniciarPts) {					
 					listaFiguras.insertarFigura(tipoFigura.getTipo(), tipoFigura.getFill(), ps);
 					ps.removeAllElements();					
 					reiniciarPts=false;
@@ -558,6 +575,13 @@ public class Paint {
 		MenuItem pushNuevo = new MenuItem(submenu, SWT.PUSH);
 		pushNuevo.setText("Nuevo");
 		pushNuevo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/new.png")));
+		pushNuevo.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				archivoNuevo();
+			}
+			public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
+			}
+		});
 		MenuItem pushAbrir = new MenuItem(submenu, SWT.PUSH);
 		pushAbrir.setText("Abrir");
 		pushAbrir.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/open.png")));
@@ -570,9 +594,13 @@ public class Paint {
 		});
 		MenuItem pushCerrar = new MenuItem(submenu, SWT.PUSH);
 		pushCerrar.setText("Cerrar");
-		MenuItem pushGuardar = new MenuItem(submenu, SWT.PUSH);
-		pushGuardar.setText("Guardar");
-		pushGuardar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/save.png")));
+		pushCerrar.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				archivoCerrar();
+			}
+			public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
+			}
+		});
 		MenuItem pushGuardarComo = new MenuItem(submenu, SWT.PUSH);
 		pushGuardarComo.setText("Guardar Como");
 		pushGuardarComo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/saveas.png")));
@@ -603,8 +631,8 @@ public class Paint {
 		labelInfo.setText("Punto ( 0, 0 )");
 		labelInfo.setLayoutData(gridData1);
 		
-		crearListener();
-		crearListener2();
+		crearListenerCanvas();
+		crearListenerB_Fijar();
 		crearListenerRobotizar();				
 	}
 	private boolean inicializarPuerto() {
@@ -650,7 +678,8 @@ public class Paint {
 					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false, incRobot);
 				break;
 			case 6:
-				prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3), 10000);
+				//prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3), 10000);
+				prim = new primitivas.Bezier(null, puntos, 10000);
 				break;
 			}
 			
@@ -669,7 +698,7 @@ public class Paint {
 				primera=false;
 			}
 			else {
-				Thread.sleep(160);
+				Thread.sleep(6);
 			}
 		} catch (InterruptedException e) {
 			mostrarMSG(e.toString(), "Error");
@@ -687,14 +716,32 @@ public class Paint {
 		}
 		retardo();		
 	}
-	
+	private void archivoCerrar() {
+		if(pedirConfirmacion("Desea cerrar el proyecto actual?", "Cerrar Proyecto")==SWT.YES) {
+			listaFiguras.limpiarFiguras();
+			listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);	
+		}
+		
+	}
+	private void archivoNuevo() {
+		if(pedirConfirmacion("Desea cerrar el proyecto actual?", "Cerrar Proyecto")==SWT.YES) {
+			listaFiguras.limpiarFiguras();
+			listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);	
+		}
+	}
 	private void archivoAbrir(Shell s) {
 		 FileDialog fd = new FileDialog(s, SWT.OPEN);
 	        fd.setText("Abrir");
 	        fd.setFilterPath("/");
-	        String[] filterExt = { "*.xml", "*.dxf", "*.*" };
+	        String[] filterExt = { "*.xml", "*.*" };
 	        fd.setFilterExtensions(filterExt);
 	        String selected = fd.open();
+	        if(selected!=null) {
+	        	listaFiguras.limpiarFiguras();
+	        	le.leer(selected, listaFiguras);	        	
+	        	listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
+	        	canvas.redraw();
+	        }
 	}
 	
 	private void archivoGuardarComo(Shell s) {
@@ -708,16 +755,17 @@ public class Paint {
 	}
 	
 	
+	
 	private boolean guardar(String str, Vector<Figuras> figuras) {
-		System.out.println("Guardando en: "+str);
-		Vector <primitivas.Punto>puntos;
-		for(int i=0; i<figuras.size(); i++) {
-			puntos = figuras.get(i).puntos;
-			System.out.println("Figura: "+figuras.get(i).tipoFig );
-			for(int j=0; j<puntos.size(); j++) {
-				System.out.println("\t ("+puntos.get(j).getX()+", "+puntos.get(j).getY()+", "+puntos.get(j).getZ()+")");
-			}			
+		
+		try {
+			le.escribe(str, figuras);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		
+		
+		
 		return true;
 	}
 

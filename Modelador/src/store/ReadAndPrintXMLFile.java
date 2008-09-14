@@ -1,7 +1,6 @@
 package store;
 
 import java.io.File;
-import org.w3c.dom.Document;
 import org.w3c.dom.*;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -18,21 +17,33 @@ public class ReadAndPrintXMLFile{
             Document doc = docBuilder.parse (new File("file.xml"));
 
             // normalize text representation
-            doc.getDocumentElement ().normalize ();
-            System.out.println ("Raiz=" + 
-                 doc.getDocumentElement().getNodeName());
+            doc.getDocumentElement ().normalize ();      
 
-            NodeList listFiguras = doc.getElementsByTagName("fig");
+            
+            NodeList listFiguras = doc.getElementsByTagName("fig");            
+            Element firstNameElement ;
+            NodeList firstNameList;
+            Element firstFiguraElement;
+            Node firstFiguraNode ;
+            
             System.out.println("Numero de figuras: " + listFiguras.getLength());
             for(int s=0; s<listFiguras.getLength() ; s++){
-            	Node firstFiguraNode = listFiguras.item(s);
+            	firstFiguraNode = listFiguras.item(s);            	
+            	System.out.println("tipo: "+firstFiguraNode.getAttributes().getNamedItem("name").getNodeValue());
             	if(firstFiguraNode.getNodeType() == Node.ELEMENT_NODE){
-            		Element firstFiguraElement = (Element)firstFiguraNode;
-            		NodeList firstNameList = firstFiguraElement.getElementsByTagName("x1");
-                    Element firstNameElement = (Element)firstNameList.item(0);
-                    NodeList textFNList = firstNameElement.getChildNodes();
-                    System.out.println("Figura x1 : " + 
-                           ((Node)textFNList.item(0)).getNodeValue().trim());
+            		firstFiguraElement = (Element)firstFiguraNode;
+            		firstNameList = firstFiguraElement.getElementsByTagName("*");            		
+            		for(int i=0; i<firstNameList.getLength(); i++) {
+            			firstNameElement = (Element)firstNameList.item(i);
+            			NodeList textFNList = firstNameElement.getChildNodes();                      
+                        	System.out.println("\tFigura "+i+": " + 
+                                    ((Node)textFNList.item(0)).getNodeValue().trim());
+                        
+            			
+            		}                    
+                    
+                   
+                    
 
             	}
             }

@@ -1,4 +1,6 @@
 package primitivas;
+import java.util.Vector;
+
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
 /**
@@ -50,6 +52,10 @@ public class Plot {
 	
 	public void bezier(Punto a, Punto b, Punto c, Punto d, int pts) {
 		new Bezier(this, a, b, c, d, pts);
+	}
+	
+	public void bezier(Vector<Punto> p, int pts) {
+		new Bezier(this, p, pts);
 	}
 	
 	public void relleno(Punto a) {

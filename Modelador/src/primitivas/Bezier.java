@@ -1,4 +1,7 @@
 package primitivas;
+
+import java.util.Vector;
+
 /**
  * 
  * @author Roberto Loaeza Valerio
@@ -7,6 +10,16 @@ package primitivas;
  */
 public class Bezier extends Primitiva{
 	double maxPts;
+	public Bezier(Plot plot, Vector<Punto> puntos, int pts) {
+		this.plot = plot;
+		this.z = puntos.get(0).getZ();
+		if(pts==1)
+			maxPts=50000;
+		else
+			maxPts = pts;
+		graficar(puntos);
+		
+	}
 	public Bezier(Plot plot, Punto a, Punto b, Punto c, Punto d, int pts) {
 		this.plot = plot;
 		this.z = a.getZ();
@@ -68,5 +81,32 @@ public class Bezier extends Primitiva{
 			DeCasteljau(dest, i/maxPts, p1, p2, p3, p4);
 			grafPto(new Punto(dest[0], dest[1]));
 		}		
+	}
+	
+	
+	
+	public void graficar(Vector<Punto> v) {
+		double step= 1/maxPts;
+		double t = step;
+		
+		double[] Pxi, Pyi;
+		Pxi = new double[v.size()];
+		Pyi = new double[v.size()];
+		double X, Y;	
+		for(int i=0; i<v.size(); i++) {
+			Pxi[i]=v.get(i).getX();
+			Pyi[i]=v.get(i).getY();
+		}
+		 for (int k = 1; k < maxPts; k++){			   
+
+			   for (int j = Pxi.length-1; j > 0; j--)
+			    for (int i = 0; i < j; i++){
+			     Pxi[i] = (1-t)*Pxi[i] + t*Pxi[i+1];
+			     Pyi[i] = (1-t)*Pyi[i] + t*Pyi[i+1];}
+
+			   X = Pxi[0];  Y = Pyi[0];
+			   grafPto(new Punto(X,Y, z));
+			   t += step;
+			  }
 	}
 }

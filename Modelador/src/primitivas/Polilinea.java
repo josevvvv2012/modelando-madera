@@ -1,5 +1,7 @@
 package primitivas;
 import java.util.Hashtable;
+import java.util.Vector;
+
 /**
  * 
  * @author Roberto Loaeza Valerio
@@ -12,16 +14,51 @@ public  class Polilinea extends Primitiva{
 	double miny, maxy;	
 	Hashtable<Double, Double> maxs = new Hashtable<Double, Double>();
 	Hashtable<Double, Double> mins = new Hashtable<Double, Double>();
+	Vector <Punto> v = new Vector<Punto>();
 	public Polilinea(Plot plot, Punto a, Punto b) {
 		miny=10000000;
 		maxy=0;
 		this.plot = plot;
 		this.z = a.getZ();
+		v = new Vector<Punto>();
+		v.add(a);
+		v.add(b);
 		Bresenham(a.getX(), a.getY(), b.getX(), b.getY());
 		//DDA(plot, a, b);
 	}
 	
+	public void graficar() {
+		double maxPts = 100000;
+		double step= 1/maxPts;
+		double t = step;
+		
+		double[] Pxi, Pyi;
+		Pxi = new double[v.size()];
+		Pyi = new double[v.size()];
+		double X, Y;
+		
+		System.out.println("-....");
+		for(int i=0; i<v.size(); i++) {
+			Pxi[i]=v.get(i).getX();
+			Pyi[i]=v.get(i).getY();
+		}
+		 for (int k = 1; k < maxPts; k++){			   
+
+			   for (int j = Pxi.length-1; j > 0; j--)        //  points calculation
+			    for (int i = 0; i < j; i++){
+			     Pxi[i] = (1-t)*Pxi[i] + t*Pxi[i+1];
+			     Pyi[i] = (1-t)*Pyi[i] + t*Pyi[i+1];}
+
+			   X = Pxi[0];  Y = Pyi[0];
+			   grafPto(new Punto(X,Y, z));
+			   //System.out.println("("+X+","+Y+","+t+")");
+			   t += step;
+			  }
+	}
+	
 	public void agregarLinea(Punto a, Punto b) {
+		v.add(b);
+		//graficar();
 		Bresenham(a.getX(), a.getY(), b.getX(), b.getY());
 	}
 	
