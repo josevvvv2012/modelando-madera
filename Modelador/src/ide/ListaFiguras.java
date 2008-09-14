@@ -58,6 +58,7 @@ public class ListaFiguras extends Composite {
 	public Button buttonRobotizar = null;
 	private Comunicacion comuni = new Comunicacion();  //  @jve:decl-index=0:
 	double incRobot = 0.1;
+	private Button buttonDuplicar = null;
 	
 	
 	public void insertarFigura(int tipo, boolean relleno, Vector<Punto> p) {
@@ -315,6 +316,11 @@ public class ListaFiguras extends Composite {
 		
 		
 		
+		GridData gridData15 = new GridData();
+		gridData15.horizontalAlignment = GridData.FILL;
+		gridData15.grabExcessHorizontalSpace = false;
+		gridData15.grabExcessVerticalSpace = false;
+		gridData15.verticalAlignment = GridData.CENTER;
 		GridData gridData14 = new GridData();
 		gridData14.horizontalAlignment = GridData.FILL;
 		gridData14.grabExcessHorizontalSpace = true;
@@ -324,7 +330,6 @@ public class ListaFiguras extends Composite {
 		gridData23.grabExcessHorizontalSpace = true;
 		gridData23.horizontalAlignment = GridData.FILL;
 		gridData23.verticalAlignment = GridData.CENTER;
-		gridData23.horizontalSpan = 2;
 		GridData gridData13 = new GridData();
 		gridData13.horizontalAlignment = GridData.FILL;
 		gridData13.grabExcessHorizontalSpace = true;
@@ -420,14 +425,31 @@ public class ListaFiguras extends Composite {
 		Label filler1 = new Label(this, SWT.NONE);
 		textValorZ = new Text(this, SWT.BORDER | SWT.CENTER);
 		textValorZ.setLayoutData(gridData23);
+		buttonEliminar = new Button(this, SWT.NONE);
+		buttonEliminar.setText("Eliminar");
+		buttonEliminar.setLayoutData(gridData2);
 		label6 = new Label(this, SWT.NONE);
 		label6.setText("");
 		bFijar = new Button(this, SWT.NONE);
 		bFijar.setText("Fijar");
 		bFijar.setLayoutData(gridData41);
-		buttonEliminar = new Button(this, SWT.NONE);
-		buttonEliminar.setText("Eliminar");
-		buttonEliminar.setLayoutData(gridData2);
+		buttonDuplicar = new Button(this, SWT.NONE);
+		buttonDuplicar.setText("Duplicar");
+		buttonDuplicar.setLayoutData(gridData15);
+		buttonDuplicar
+				.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						try {
+							figuras.add(figuras.get(listFigura.getSelectionIndex()).copiar());							
+							listFigura.add( figuras.get(figuras.size()-1).getText() );	
+						}
+						catch( java.lang.ArrayIndexOutOfBoundsException ex2) {			
+							errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+						}
+						
+						
+					}
+				});
 		bFijar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
