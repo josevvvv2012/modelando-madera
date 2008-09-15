@@ -454,7 +454,7 @@ public class Paint {
 		gridData2.verticalSpan = 2;
 		gridData2.verticalAlignment = GridData.FILL;
 		gridData2.heightHint = -1;
-		gridData2.widthHint = 260;
+		gridData2.widthHint = 300;
 		
 		
 		GridData gridData3 = new GridData();

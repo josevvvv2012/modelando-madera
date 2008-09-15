@@ -22,6 +22,10 @@ import java.util.Timer;
 import java.util.Vector;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Scale;
+import org.eclipse.swt.widgets.Slider;
+import org.eclipse.swt.widgets.Spinner;
+import org.eclipse.swt.custom.CLabel;
 /**
  * 
  * @author Roberto Loaeza Valerio
@@ -41,15 +45,8 @@ public class ListaFiguras extends Composite {
 	private Text textValorY = null;
 	private Button buttonEliminar = null;
 	private Button bEscalar = null;
-	private Button bTrasladar = null;
-	private Text tX = null;
-	private Text tY = null;
 	private Transformaciones trans;
-	private Text tRotar = null;
 	private Button bRotar = null;
-	private Label label3 = null;
-	private Label label4 = null;
-	private Label label5 = null;
 	private Label label6 = null;
 	private Recorte rec=new Recorte();  //  @jve:decl-index=0:
 	private Button bReflejar = null;
@@ -59,8 +56,12 @@ public class ListaFiguras extends Composite {
 	private Comunicacion comuni = new Comunicacion();  //  @jve:decl-index=0:
 	double incRobot = 0.1;
 	private Button buttonDuplicar = null;
-	
-	
+	private Button buttonIzq = null;
+	private Button buttonDer = null;
+	private Button buttonUp = null;
+	private Button buttonDown = null;
+	private Spinner spinnerEscala = null;
+	private Spinner spinnerRotar = null;
 	public void insertarFigura(int tipo, boolean relleno, Vector<Punto> p) {
 		if(tipo==8) {
 			recortar(new double[] {p.get(0).getX(), p.get(0).getY(), p.get(1).getX(), p.get(1).getY()});
@@ -316,10 +317,34 @@ public class ListaFiguras extends Composite {
 		
 		
 		
+		GridData gridData151 = new GridData();
+		gridData151.horizontalAlignment = GridData.BEGINNING;
+		gridData151.grabExcessHorizontalSpace = true;
+		gridData151.verticalAlignment = GridData.CENTER;
+		GridData gridData9 = new GridData();
+		gridData9.horizontalAlignment = GridData.CENTER;
+		gridData9.verticalAlignment = GridData.CENTER;
+		GridData gridData8 = new GridData();
+		gridData8.horizontalAlignment = GridData.CENTER;
+		gridData8.verticalAlignment = GridData.CENTER;
+		GridData gridData33 = new GridData();
+		gridData33.horizontalAlignment = GridData.CENTER;
+		gridData33.horizontalSpan = 2;
+		gridData33.verticalAlignment = GridData.CENTER;
+		GridData gridData24 = new GridData();
+		gridData24.horizontalAlignment = GridData.END;
+		gridData24.grabExcessHorizontalSpace = true;
+		gridData24.verticalAlignment = GridData.CENTER;
+		GridData gridData16 = new GridData();
+		gridData16.verticalAlignment = GridData.CENTER;
+		gridData16.grabExcessHorizontalSpace = false;
+		gridData16.horizontalSpan = 2;
+		gridData16.horizontalAlignment = GridData.CENTER;
 		GridData gridData15 = new GridData();
 		gridData15.horizontalAlignment = GridData.FILL;
 		gridData15.grabExcessHorizontalSpace = false;
 		gridData15.grabExcessVerticalSpace = false;
+		gridData15.horizontalSpan = 2;
 		gridData15.verticalAlignment = GridData.CENTER;
 		GridData gridData14 = new GridData();
 		gridData14.horizontalAlignment = GridData.FILL;
@@ -329,50 +354,40 @@ public class ListaFiguras extends Composite {
 		GridData gridData23 = new GridData();
 		gridData23.grabExcessHorizontalSpace = true;
 		gridData23.horizontalAlignment = GridData.FILL;
+		gridData23.horizontalSpan = 2;
 		gridData23.verticalAlignment = GridData.CENTER;
 		GridData gridData13 = new GridData();
 		gridData13.horizontalAlignment = GridData.FILL;
 		gridData13.grabExcessHorizontalSpace = true;
+		gridData13.horizontalSpan = 2;
 		gridData13.verticalAlignment = GridData.CENTER;
 		GridData gridData12 = new GridData();
 		gridData12.horizontalAlignment = GridData.FILL;
 		gridData12.grabExcessHorizontalSpace = true;
+		gridData12.horizontalSpan = 2;
 		gridData12.verticalAlignment = GridData.CENTER;
 		GridData gridData6 = new GridData();
 		gridData6.grabExcessHorizontalSpace = true;
 		gridData6.verticalAlignment = GridData.CENTER;
 		gridData6.horizontalAlignment = GridData.FILL;
-		GridData gridData51 = new GridData();
-		gridData51.horizontalAlignment = GridData.FILL;
-		gridData51.grabExcessHorizontalSpace = true;
-		gridData51.verticalAlignment = GridData.CENTER;
-		GridData gridData42 = new GridData();
-		gridData42.grabExcessHorizontalSpace = true;
-		gridData42.verticalAlignment = GridData.CENTER;
-		gridData42.horizontalAlignment = GridData.FILL;
-		GridData gridData32 = new GridData();
-		gridData32.horizontalAlignment = GridData.FILL;
-		gridData32.grabExcessHorizontalSpace = true;
-		gridData32.verticalAlignment = GridData.CENTER;
 		GridData gridData22 = new GridData();
 		gridData22.horizontalAlignment = GridData.FILL;
 		gridData22.grabExcessHorizontalSpace = true;
 		gridData22.verticalAlignment = GridData.CENTER;
-		GridData gridData1 = new GridData();
-		gridData1.horizontalAlignment = GridData.FILL;
-		gridData1.grabExcessHorizontalSpace = true;
-		gridData1.verticalAlignment = GridData.CENTER;
 		GridData gridData2 = new GridData();
 		gridData2.grabExcessHorizontalSpace = true;
 		gridData2.verticalAlignment = GridData.CENTER;
+		gridData2.horizontalSpan = 2;
 		gridData2.horizontalAlignment = GridData.FILL;
 		GridData gridData5 = new GridData();
 		gridData5.horizontalAlignment = GridData.FILL;
 		gridData5.grabExcessHorizontalSpace = true;
+		gridData5.horizontalSpan = 2;
 		gridData5.verticalAlignment = GridData.CENTER;
 		GridData gridData41 = new GridData();
 		gridData41.horizontalAlignment = GridData.FILL;
 		gridData41.grabExcessHorizontalSpace = true;
+		gridData41.horizontalSpan = 2;
 		gridData41.verticalAlignment = GridData.CENTER;
 		GridData gridData31 = new GridData();
 		gridData31.horizontalAlignment = GridData.END;
@@ -386,11 +401,12 @@ public class ListaFiguras extends Composite {
 		GridData gridData4 = new GridData();
 		gridData4.verticalAlignment = GridData.CENTER;
 		gridData4.grabExcessHorizontalSpace = true;
+		gridData4.horizontalSpan = 2;
 		gridData4.horizontalAlignment = GridData.FILL;
 		GridData gridData = new GridData();
 		gridData.horizontalAlignment = GridData.FILL;
 		gridData.grabExcessHorizontalSpace = true;
-		gridData.horizontalSpan = 2;
+		gridData.horizontalSpan = 4;
 		gridData.grabExcessVerticalSpace = true;
 		gridData.verticalAlignment = GridData.FILL;
 		label = new Label(this, SWT.NONE);
@@ -398,6 +414,82 @@ public class ListaFiguras extends Composite {
 		label.setLayoutData(gridData31);
 		listFigura = new List(this, SWT.V_SCROLL);
 		listFigura.setLayoutData(gridData);
+		Label filler15 = new Label(this, SWT.NONE);
+		buttonEliminar = new Button(this, SWT.NONE);
+		buttonEliminar.setText("Eliminar");
+		buttonEliminar.setLayoutData(gridData2);
+		buttonDuplicar = new Button(this, SWT.NONE);
+		buttonDuplicar.setText("Duplicar");
+		buttonDuplicar.setLayoutData(gridData15);
+		Label filler16 = new Label(this, SWT.NONE);
+		buttonUp = new Button(this, SWT.NONE);
+		buttonUp.setText("/\\");
+		buttonUp.setLayoutData(gridData16);
+		bReflejar = new Button(this, SWT.NONE);
+		buttonUp.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				try {
+					trasladar(0,-1);
+				}
+				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
+					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+				}
+			}
+		});		
+		Label filler4 = new Label(this, SWT.NONE);
+		buttonIzq = new Button(this, SWT.NONE);
+		buttonIzq.setText("<");
+		buttonIzq.setLayoutData(gridData24);
+		buttonIzq.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				try {
+					trasladar(-1,0);
+				}
+				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
+					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+				}
+			}
+		});
+		buttonDer = new Button(this, SWT.NONE);
+		buttonDer.setText(">");
+		buttonDer.setLayoutData(gridData151);
+		spinnerEscala = new Spinner(this, SWT.NONE);
+		spinnerEscala.setDigits(2);
+		spinnerEscala.setMinimum(-10000);
+		spinnerEscala.setMaximum(10000);
+		spinnerEscala.setSelection(100);
+		spinnerEscala.setLayoutData(gridData9);
+		buttonDer.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				try {
+					trasladar(1,0);
+				}
+				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
+					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+				}
+			}
+		});
+		bEscalar = new Button(this, SWT.NONE);
+		Label filler3 = new Label(this, SWT.NONE);
+		buttonDown = new Button(this, SWT.NONE);
+		buttonDown.setText("\\/");
+		buttonDown.setLayoutData(gridData33);
+		buttonDown.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				try {
+					trasladar(0,1);
+				}
+				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
+					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+				}
+			}
+		});
+		spinnerRotar = new Spinner(this, SWT.NONE);
+		spinnerRotar.setDigits(2);
+		spinnerRotar.setMinimum(-36000);
+		spinnerRotar.setMaximum(36000);
+		spinnerRotar.setLayoutData(gridData8);
+		bRotar = new Button(this, SWT.NONE);
 		listFigura.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
@@ -411,10 +503,10 @@ public class ListaFiguras extends Composite {
 		label1.setText("Punto");
 		label1.setLayoutData(gridData21);
 		GridLayout gridLayout = new GridLayout();
-		gridLayout.numColumns = 3;
+		gridLayout.numColumns = 5;
 		this.setLayout(gridLayout);
 		createComboFigura();
-		this.setSize(new Point(300, 278));
+		this.setSize(new Point(300, 407));
 		label2 = new Label(this, SWT.NONE);
 		label2.setText("Valor");
 		label2.setLayoutData(gridData11);
@@ -425,17 +517,17 @@ public class ListaFiguras extends Composite {
 		Label filler1 = new Label(this, SWT.NONE);
 		textValorZ = new Text(this, SWT.BORDER | SWT.CENTER);
 		textValorZ.setLayoutData(gridData23);
-		buttonEliminar = new Button(this, SWT.NONE);
-		buttonEliminar.setText("Eliminar");
-		buttonEliminar.setLayoutData(gridData2);
-		label6 = new Label(this, SWT.NONE);
-		label6.setText("");
 		bFijar = new Button(this, SWT.NONE);
 		bFijar.setText("Fijar");
 		bFijar.setLayoutData(gridData41);
-		buttonDuplicar = new Button(this, SWT.NONE);
-		buttonDuplicar.setText("Duplicar");
-		buttonDuplicar.setLayoutData(gridData15);
+		label6 = new Label(this, SWT.NONE);
+		label6.setText("");
+		buttonRobotizar = new Button(this, SWT.NONE);
+		buttonRobotizar.setText("Robotizar");
+		buttonRobotizar.setLayoutData(gridData14);		
+		bRellenar = new Button(this, SWT.NONE);
+		bRellenar.setText("Rellenar/Limpiar");
+		bRellenar.setLayoutData(gridData13);
 		buttonDuplicar
 				.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -479,56 +571,17 @@ public class ListaFiguras extends Composite {
 						}
 					}
 				});
-		label3 = new Label(this, SWT.NONE);
-		label3.setText("");
-		tX = new Text(this, SWT.BORDER);
-		tX.setLayoutData(gridData32);
-		tY = new Text(this, SWT.BORDER);
-		tY.setLayoutData(gridData42);
-		label4 = new Label(this, SWT.NONE);
-		label4.setText("");
 		
-		bTrasladar = new Button(this, SWT.NONE);
-		bTrasladar.setText("Trasladar");
-		bTrasladar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/trasladar.png")));
-		bTrasladar.setLayoutData(gridData1);
 			
-		bTrasladar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
-			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				try {
-					trasladar(Double.valueOf(tX.getText()),Double.valueOf(tY.getText()));
-				}catch(java.lang.NumberFormatException ex) {
-					errorMsg("Error", "Formato incorrecto de entrada, verifique por favor");
-				}
-				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
-					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
-				}
-			}
-		});
-		bEscalar = new Button(this, SWT.NONE);
 		bEscalar.setText("Escalar");
-		bEscalar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/escalar.png")));
 		bEscalar.setLayoutData(gridData22);
-		label5 = new Label(this, SWT.NONE);
-		label5.setText("");
-		tRotar = new Text(this, SWT.BORDER);
-		tRotar.setLayoutData(gridData51);
-		bRotar = new Button(this, SWT.NONE);
+		bEscalar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/escalar.png")));
 		bRotar.setText("Rotar");
-		bRotar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/rotar.png")));
 		bRotar.setLayoutData(gridData6);
-		Label filler = new Label(this, SWT.NONE);
-		bReflejar = new Button(this, SWT.NONE);
+		bRotar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/rotar.png")));
 		bReflejar.setText("Reflejar");
-		bReflejar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/reflejar.png")));
 		bReflejar.setLayoutData(gridData12);
-		bRellenar = new Button(this, SWT.NONE);
-		bRellenar.setText("Rellenar/Limpiar");
-		bRellenar.setLayoutData(gridData13);
-		Label filler2 = new Label(this, SWT.NONE);
-		buttonRobotizar = new Button(this, SWT.NONE);
-		buttonRobotizar.setText("Robotizar");
-		buttonRobotizar.setLayoutData(gridData14);		
+		bReflejar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/reflejar.png")));
 		bRellenar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
@@ -563,7 +616,7 @@ public class ListaFiguras extends Composite {
 		bRotar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					rotar(Double.valueOf(tRotar.getText()));
+					rotar(Double.valueOf(spinnerRotar.getText()));
 				}catch(java.lang.NumberFormatException ex) {
 					errorMsg("Error", "Formato incorrecto de entrada, verifique por favor");
 				}
@@ -575,7 +628,7 @@ public class ListaFiguras extends Composite {
 		bEscalar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					escalar(Double.valueOf(tX.getText()),Double.valueOf(tY.getText()));
+					escalar(Double.valueOf(spinnerEscala.getText()),Double.valueOf(spinnerEscala.getText()));
 				}catch(java.lang.NumberFormatException ex) {
 					errorMsg("Error", "Formato incorrecto de esntrada, verifique por favor");
 				}
@@ -597,7 +650,7 @@ public class ListaFiguras extends Composite {
 	 */
 	private void createComboFigura() {
 		GridData gridData3 = new GridData();
-		gridData3.horizontalSpan = 2;
+		gridData3.horizontalSpan = 4;
 		gridData3.horizontalAlignment = GridData.FILL;
 		gridData3.verticalAlignment = GridData.CENTER;
 		gridData3.grabExcessHorizontalSpace = true;
@@ -688,5 +741,5 @@ public class ListaFiguras extends Composite {
 	}
 
 
-} 
+}  //  @jve:decl-index=0:visual-constraint="10,10" 
 
