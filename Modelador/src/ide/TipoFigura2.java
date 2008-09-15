@@ -52,7 +52,7 @@ public class TipoFigura2 extends Composite {
 	
 	
 	public String getArchivoGaleria() {
-		return cg.sDirectorio+"/"+cg.getGaleria(archivoID)+cg.ext;
+		return cg.sDirectorio+"/"+cg.getGaleria(archivoID)+DEF.ext;
 	}
 	public int getZ() {
 		return Integer.valueOf(cZ.getText());
@@ -100,7 +100,7 @@ public class TipoFigura2 extends Composite {
 			}
 		});
 		cLabel1 = new CLabel(this, SWT.NONE);
-		cLabel1.setText("Profundidad:");
+		cLabel1.setText(DEF.lProfundidad);
 		cLabel1.setLayoutData(gridData2);
 		cZ = new CLabel(this, SWT.NONE);
 		cZ.setText(String.valueOf(sZ.getSelection()));
@@ -124,10 +124,10 @@ public class TipoFigura2 extends Composite {
 		createPrimitivas();
 		createBiblioteca();
 		CTabItem cTabItem = new CTabItem(cTabFolder, SWT.CLOSE);
-		cTabItem.setText("Primitivas");
+		cTabItem.setText(DEF.tPrimitivasBasicas);
 		cTabItem.setControl(Primitivas);
 		CTabItem cTabItem1 = new CTabItem(cTabFolder, SWT.CLOSE);
-		cTabItem1.setText("Biblioteca");
+		cTabItem1.setText(DEF.tBiblioteca);
 		cTabItem1.setControl(Biblioteca);
 		cTabFolder.setSelection(0);
 	
@@ -141,7 +141,7 @@ public class TipoFigura2 extends Composite {
 		Primitivas = new Composite(cTabFolder, SWT.NONE);
 		Primitivas.setLayout(new GridLayout());
 		rbPunto = new Button(Primitivas, SWT.RADIO);
-		rbPunto.setText("         Punto");
+		rbPunto.setText(DEF.pPunto);
 		rbPunto.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/punto.png")));
 		rbPunto.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -149,7 +149,7 @@ public class TipoFigura2 extends Composite {
 			}
 		});
 		rbLinea = new Button(Primitivas, SWT.RADIO);
-		rbLinea.setText("        Linea");
+		rbLinea.setText(DEF.pLinea);
 		rbLinea.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/linea.png")));
 		rbLinea.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -157,7 +157,7 @@ public class TipoFigura2 extends Composite {
 			}
 		});
 		rbPoliLinea = new Button(Primitivas, SWT.RADIO);
-		rbPoliLinea.setText("       Polilinea");
+		rbPoliLinea.setText(DEF.pPolilinea);
 		rbPoliLinea.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/poligono.png")));
 		rbPoliLinea.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -165,7 +165,7 @@ public class TipoFigura2 extends Composite {
 			}
 		});
 		rbCirculo = new Button(Primitivas, SWT.RADIO);
-		rbCirculo.setText("       Circulo");
+		rbCirculo.setText(DEF.pCirculo);
 		rbCirculo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/circulo.png")));
 		rbCirculo.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -173,7 +173,7 @@ public class TipoFigura2 extends Composite {
 			}
 		});
 		rbElipse = new Button(Primitivas, SWT.RADIO);
-		rbElipse.setText("    Elipse");
+		rbElipse.setText(DEF.pElipse);
 		rbElipse.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/elipse.png")));
 		rbElipse.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -181,7 +181,7 @@ public class TipoFigura2 extends Composite {
 			}
 		});
 		rbBezier = new Button(Primitivas, SWT.RADIO);
-		rbBezier.setText("      Bezier");
+		rbBezier.setText(DEF.pBezier);
 		rbBezier.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/bezier.png")));
 		rbBezier.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
