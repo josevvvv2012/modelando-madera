@@ -49,7 +49,7 @@ public class Paint {
 	private Canvas canvas = null;
 	private Image imageBuffer;
 	private Composite compositeBarras = null;
-	private TipoFigura tipoFigura = null;
+	private TipoFigura2 tipoFigura = null;
 	private ListaFiguras listaFiguras = null;
 	private Plot plot = null;  //  @jve:decl-index=0:
 	private Punto pAnt = null;
@@ -151,6 +151,12 @@ public class Paint {
 						switch(e.button) {
 							case clickIzq:											
 								switch(tipoFigura.getTipo()) {
+								case -1:									
+									le.leer(tipoFigura.getArchivoGaleria(), listaFiguras);									
+									listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
+						        	canvas.redraw();
+						        	
+									break;
 								case 1:
 									ps.removeAllElements();		
 									ps.add(new Punto(e.x, e.y, z));
@@ -468,10 +474,11 @@ public class Paint {
 		
 		ExpandBar bar = new ExpandBar (compositeBarras, SWT.V_SCROLL);
 			
-			tipoFigura = new TipoFigura(bar, SWT.NONE);
+			tipoFigura = new TipoFigura2(bar, SWT.NONE);
 			ExpandItem item0 = new ExpandItem (bar, SWT.NONE, 0);				
 			item0.setText("Primitivas");
-			item0.setHeight(tipoFigura.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
+			//item0.setHeight(tipoFigura.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
+			item0.setHeight(250);
 			item0.setExpanded(true);
 			item0.setControl(tipoFigura);
 			
@@ -702,17 +709,16 @@ public class Paint {
 			}
 		} catch (InterruptedException e) {
 			mostrarMSG(e.toString(), "Error");
-			//e.printStackTrace();
 		}
 	}
 	
 	private void mostrar(String str) {					
 		try {
 			comuni.escribe(str+"\n");
-			//System.out.println(str);
+			
 		} catch (IOException e) {
 			mostrarMSG(e.toString(), "Error");
-			//e.printStackTrace();
+			
 		}
 		retardo();		
 	}
