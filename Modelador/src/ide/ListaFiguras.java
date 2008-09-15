@@ -16,16 +16,11 @@ import primitivas.Punto;
 import primitivas.Recorte;
 import primitivas.Transformaciones;
 import serial.Comunicacion;
-
 import java.io.IOException;
-import java.util.Timer;
 import java.util.Vector;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Scale;
-import org.eclipse.swt.widgets.Slider;
 import org.eclipse.swt.widgets.Spinner;
-import org.eclipse.swt.custom.CLabel;
 /**
  * 
  * @author Roberto Loaeza Valerio

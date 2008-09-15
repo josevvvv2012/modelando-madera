@@ -4,11 +4,9 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 

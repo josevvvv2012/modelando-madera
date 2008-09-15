@@ -8,7 +8,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.widgets.Scale;
 import org.eclipse.swt.widgets.Slider;
 import org.eclipse.swt.widgets.Label;
 /**

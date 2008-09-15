@@ -1,6 +1,6 @@
 package primitivas;
 
-import java.util.Vector;
+
 /**
  * 
  * @author Roberto Loaeza Valerio
