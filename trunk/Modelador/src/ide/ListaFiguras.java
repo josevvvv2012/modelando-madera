@@ -410,20 +410,20 @@ public class ListaFiguras extends Composite {
 		gridData.grabExcessVerticalSpace = true;
 		gridData.verticalAlignment = GridData.FILL;
 		label = new Label(this, SWT.NONE);
-		label.setText("Figura");
+		label.setText(DEF.lFiguras);
 		label.setLayoutData(gridData31);
 		listFigura = new List(this, SWT.V_SCROLL);
 		listFigura.setLayoutData(gridData);
 		Label filler15 = new Label(this, SWT.NONE);
 		buttonEliminar = new Button(this, SWT.NONE);
-		buttonEliminar.setText("Eliminar");
+		buttonEliminar.setText(DEF.bEliminar);
 		buttonEliminar.setLayoutData(gridData2);
 		buttonDuplicar = new Button(this, SWT.NONE);
-		buttonDuplicar.setText("Duplicar");
+		buttonDuplicar.setText(DEF.bDuplicar);
 		buttonDuplicar.setLayoutData(gridData15);
 		Label filler16 = new Label(this, SWT.NONE);
 		buttonUp = new Button(this, SWT.NONE);
-		buttonUp.setText("/\\");
+		buttonUp.setText(DEF.bUp);
 		buttonUp.setLayoutData(gridData16);
 		bReflejar = new Button(this, SWT.NONE);
 		buttonUp.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
@@ -432,13 +432,13 @@ public class ListaFiguras extends Composite {
 					trasladar(0,-1);
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
-					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+					errorMsg(DEF.error, DEF.errorNoFiguraSel);
 				}
 			}
 		});		
 		Label filler4 = new Label(this, SWT.NONE);
 		buttonIzq = new Button(this, SWT.NONE);
-		buttonIzq.setText("<");
+		buttonIzq.setText(DEF.bIzq);
 		buttonIzq.setLayoutData(gridData24);
 		buttonIzq.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -446,12 +446,12 @@ public class ListaFiguras extends Composite {
 					trasladar(-1,0);
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
-					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+					errorMsg(DEF.error, DEF.errorNoFiguraSel);
 				}
 			}
 		});
 		buttonDer = new Button(this, SWT.NONE);
-		buttonDer.setText(">");
+		buttonDer.setText(DEF.bDer);
 		buttonDer.setLayoutData(gridData151);
 		spinnerEscala = new Spinner(this, SWT.NONE);
 		spinnerEscala.setDigits(2);
@@ -465,14 +465,14 @@ public class ListaFiguras extends Composite {
 					trasladar(1,0);
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
-					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+					errorMsg(DEF.error, DEF.errorNoFiguraSel);
 				}
 			}
 		});
 		bEscalar = new Button(this, SWT.NONE);
 		Label filler3 = new Label(this, SWT.NONE);
 		buttonDown = new Button(this, SWT.NONE);
-		buttonDown.setText("\\/");
+		buttonDown.setText(DEF.bDown);
 		buttonDown.setLayoutData(gridData33);
 		buttonDown.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -480,7 +480,7 @@ public class ListaFiguras extends Composite {
 					trasladar(0,1);
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
-					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+					errorMsg(DEF.error, DEF.errorNoFiguraSel);
 				}
 			}
 		});
@@ -495,7 +495,7 @@ public class ListaFiguras extends Composite {
 				try {
 					recargarPuntos(listFigura.getSelectionIndex());
 				}catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
-					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+					errorMsg(DEF.error, DEF.errorNoFiguraSel);
 				}
 			}
 		});
@@ -508,7 +508,7 @@ public class ListaFiguras extends Composite {
 		createComboFigura();
 		this.setSize(new Point(300, 407));
 		label2 = new Label(this, SWT.NONE);
-		label2.setText("Valor");
+		label2.setText(DEF.lValor);
 		label2.setLayoutData(gridData11);
 		textValorX = new Text(this, SWT.BORDER);
 		textValorX.setLayoutData(gridData4);
@@ -518,12 +518,12 @@ public class ListaFiguras extends Composite {
 		textValorZ = new Text(this, SWT.BORDER | SWT.CENTER);
 		textValorZ.setLayoutData(gridData23);
 		bFijar = new Button(this, SWT.NONE);
-		bFijar.setText("Fijar");
+		bFijar.setText(DEF.bFijar);
 		bFijar.setLayoutData(gridData41);
 		label6 = new Label(this, SWT.NONE);
 		label6.setText("");
 		buttonRobotizar = new Button(this, SWT.NONE);
-		buttonRobotizar.setText("Robotizar");
+		buttonRobotizar.setText(DEF.mHerramientasRobotizar);
 		buttonRobotizar.setLayoutData(gridData14);		
 		bRellenar = new Button(this, SWT.NONE);
 		bRellenar.setText("Rellenar/Limpiar");
@@ -536,7 +536,7 @@ public class ListaFiguras extends Composite {
 							listFigura.add( figuras.get(figuras.size()-1).getText() );	
 						}
 						catch( java.lang.ArrayIndexOutOfBoundsException ex2) {			
-							errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+							errorMsg(DEF.error, DEF.errorNoFiguraSel);
 						}
 						
 						
@@ -547,10 +547,10 @@ public class ListaFiguras extends Composite {
 				try {
 					fijarPunto(comboFigura.getSelectionIndex());									
 				}catch(java.lang.NumberFormatException ex) {	
-					errorMsg("Error", "Formato incorrecto de entrada, verifique por favor");
+					errorMsg(DEF.error, DEF.errorFormatoConv);
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {			
-					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+					errorMsg(DEF.error, DEF.errorNoFiguraSel);
 				}
 			}
 		});
@@ -564,22 +564,22 @@ public class ListaFiguras extends Composite {
 							bFijar.notifyListeners(SWT.MouseDown, null);
 						}
 						catch(java.lang.NumberFormatException ex) {		
-							errorMsg("Error", "Formato incorrecto de entrada, verifique por favor");
+							errorMsg(DEF.error, DEF.errorFormatoConv);
 						}
 						catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
-							errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+							errorMsg(DEF.error, DEF.errorNoFiguraSel);
 						}
 					}
 				});
 		
 			
-		bEscalar.setText("Escalar");
+		bEscalar.setText(DEF.bEscalar);
 		bEscalar.setLayoutData(gridData22);
 		bEscalar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/escalar.png")));
-		bRotar.setText("Rotar");
+		bRotar.setText(DEF.bRotar);
 		bRotar.setLayoutData(gridData6);
 		bRotar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/rotar.png")));
-		bReflejar.setText("Reflejar");
+		bReflejar.setText(DEF.bReflejar);
 		bReflejar.setLayoutData(gridData12);
 		bReflejar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/reflejar.png")));
 		bRellenar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
@@ -591,7 +591,7 @@ public class ListaFiguras extends Composite {
 						figuras.get(listFigura.getSelectionIndex()).relleno = true;
 					
 				}catch( java.lang.ArrayIndexOutOfBoundsException ex2) {
-					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+					errorMsg(DEF.error, DEF.errorNoFiguraSel);
 				}
 			
 				
@@ -605,10 +605,10 @@ public class ListaFiguras extends Composite {
 				try {
 					reflejar();
 				}catch(java.lang.NumberFormatException ex) {
-					errorMsg("Error", "Formato incorrecto de entrada, verifique por favor");
+					errorMsg(DEF.error, DEF.errorFormatoConv);
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {
-					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+					errorMsg(DEF.error, DEF.errorNoFiguraSel);
 				}
 				
 			}
@@ -618,10 +618,10 @@ public class ListaFiguras extends Composite {
 				try {
 					rotar(Double.valueOf(spinnerRotar.getText()));
 				}catch(java.lang.NumberFormatException ex) {
-					errorMsg("Error", "Formato incorrecto de entrada, verifique por favor");
+					errorMsg(DEF.error, DEF.errorFormatoConv);
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {
-					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+					errorMsg(DEF.error, DEF.errorNoFiguraSel);
 				}
 			}
 		});
@@ -630,10 +630,10 @@ public class ListaFiguras extends Composite {
 				try {
 					escalar(Double.valueOf(spinnerEscala.getText()),Double.valueOf(spinnerEscala.getText()));
 				}catch(java.lang.NumberFormatException ex) {
-					errorMsg("Error", "Formato incorrecto de esntrada, verifique por favor");
+					errorMsg(DEF.error, DEF.errorFormatoConv);
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {
-					errorMsg("Error", "No ha seleccionado figura, verifique por favor");
+					errorMsg(DEF.error, DEF.errorNoFiguraSel);
 				}
 			}
 		});
@@ -708,16 +708,8 @@ public class ListaFiguras extends Composite {
 					
 					mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]);
 					comandos++;
-				}
-			
-			/*
-			for(int j=0; j<puntos.size(); j++) {
-				System.out.print("("+puntos.get(j).getX()+","+puntos.get(j).getY()+","+puntos.get(j).getZ()+") ");
-			}
-			*/
-		}
-		
-		//System.out.println("Comandos enviados: "+comandos);
+				}						
+		}		
 	}
 	
 	private void retardo() {

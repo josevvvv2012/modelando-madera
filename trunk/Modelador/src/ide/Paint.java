@@ -74,6 +74,7 @@ public class Paint {
 	private Menu submenu2 = null;
 	private double incRobot = 0.04;
 	private LecturaEscritura le = new LecturaEscritura();
+
 	
 	private void crearListenerRobotizar() {
 		Listener listener3 = new Listener() {						
@@ -83,7 +84,7 @@ public class Paint {
 						if(okPort)
 							robotizar(listaFiguras.figuras);
 						else
-							mostrarMSG("No ha activado el puerto","Error");
+							mostrarMSG(DEF.errorNoConexion,DEF.error);
 						break;
 				}				
 			}
@@ -152,7 +153,7 @@ public class Paint {
 							case clickIzq:											
 								switch(tipoFigura.getTipo()) {
 								case -1:									
-									le.leer(tipoFigura.getArchivoGaleria(), listaFiguras);									
+									le.leer(tipoFigura.getArchivoGaleria(), listaFiguras, tipoFigura.getZ());									
 									listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
 						        	canvas.redraw();
 						        	
@@ -476,7 +477,7 @@ public class Paint {
 			
 			tipoFigura = new TipoFigura2(bar, SWT.NONE);
 			ExpandItem item0 = new ExpandItem (bar, SWT.NONE, 0);				
-			item0.setText("Primitivas");
+			item0.setText(DEF.tPrimitivasBasicas);
 			//item0.setHeight(tipoFigura.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
 			item0.setHeight(250);
 			item0.setExpanded(true);
@@ -485,7 +486,7 @@ public class Paint {
 			
 			listaFiguras = new ListaFiguras(bar, SWT.NONE);
 			ExpandItem item1 = new ExpandItem (bar, SWT.NONE, 1);		
-			item1.setText("Figuras");
+			item1.setText(DEF.tFigurasProyecto);
 			item1.setHeight(listaFiguras.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
 			item1.setExpanded(true);
 			item1.setControl(listaFiguras);
@@ -532,18 +533,18 @@ public class Paint {
 		createCompositeBarras();
 		menuBar = new Menu(sShell, SWT.BAR);
 		MenuItem submenuItemArchivo = new MenuItem(menuBar, SWT.CASCADE);
-		submenuItemArchivo.setText("Archivo");
+		submenuItemArchivo.setText(DEF.mArchivo);
 		MenuItem submenuItemHerramientas = new MenuItem(menuBar, SWT.CASCADE);
-		submenuItemHerramientas.setText("Herramientas");
+		submenuItemHerramientas.setText(DEF.mHerramientas);
 		MenuItem submenuItemAyuda = new MenuItem(menuBar, SWT.CASCADE);
-		submenuItemAyuda.setText("Ayuda");
+		submenuItemAyuda.setText(DEF.mAyuda);
 		submenu2 = new Menu(submenuItemAyuda);
 		MenuItem pushAcercaDe = new MenuItem(submenu2, SWT.PUSH);
-		pushAcercaDe.setText("Acerca de...");
+		pushAcercaDe.setText(DEF.mAyudaAcercaDe);
 		pushAcercaDe
 				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-						mostrarMSG("Elaborado por:\n\tRoberto Loaeza Valerio","Acerca de...");
+						mostrarMSG("Elaborado por:\n\tRoberto Loaeza Valerio",DEF.mAyudaAcercaDe);
 					}
 					public void widgetDefaultSelected(
 							org.eclipse.swt.events.SelectionEvent e) {
@@ -552,16 +553,16 @@ public class Paint {
 		submenuItemAyuda.setMenu(submenu2);
 		submenu1 = new Menu(submenuItemHerramientas);
 		MenuItem pushActivarRobot = new MenuItem(submenu1, SWT.PUSH);
-		pushActivarRobot.setText("Activar Robot");
+		pushActivarRobot.setText(DEF.mHerramientasActivarRobot);
 		MenuItem pushRobotizar = new MenuItem(submenu1, SWT.PUSH);
-		pushRobotizar.setText("Robotizar");
+		pushRobotizar.setText(DEF.mHerramientasRobotizar);
 		pushRobotizar
 				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 						if(okPort)
 							robotizar(listaFiguras.figuras);
 						else
-							mostrarMSG("No ha activado el puerto","Error");
+							mostrarMSG(DEF.errorNoConexion,DEF.error);
 					}
 					public void widgetDefaultSelected(
 							org.eclipse.swt.events.SelectionEvent e) {
@@ -580,7 +581,7 @@ public class Paint {
 		submenuItemHerramientas.setMenu(submenu1);
 		submenu = new Menu(submenuItemArchivo);
 		MenuItem pushNuevo = new MenuItem(submenu, SWT.PUSH);
-		pushNuevo.setText("Nuevo");
+		pushNuevo.setText(DEF.mArchivoNuevo);
 		pushNuevo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/new.png")));
 		pushNuevo.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -590,7 +591,7 @@ public class Paint {
 			}
 		});
 		MenuItem pushAbrir = new MenuItem(submenu, SWT.PUSH);
-		pushAbrir.setText("Abrir");
+		pushAbrir.setText(DEF.mArchivoAbrir);
 		pushAbrir.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/open.png")));
 		pushAbrir.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -600,7 +601,7 @@ public class Paint {
 			}
 		});
 		MenuItem pushCerrar = new MenuItem(submenu, SWT.PUSH);
-		pushCerrar.setText("Cerrar");
+		pushCerrar.setText(DEF.mArchivoCerrar);
 		pushCerrar.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				archivoCerrar();
@@ -609,7 +610,7 @@ public class Paint {
 			}
 		});
 		MenuItem pushGuardarComo = new MenuItem(submenu, SWT.PUSH);
-		pushGuardarComo.setText("Guardar Como");
+		pushGuardarComo.setText(DEF.mArchivoGuardarComo);
 		pushGuardarComo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/saveas.png")));
 		pushGuardarComo
 				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
@@ -621,13 +622,13 @@ public class Paint {
 					}
 				});
 		MenuItem pushSalir = new MenuItem(submenu, SWT.PUSH);
-		pushSalir.setText("Salir");
+		pushSalir.setText(DEF.mArchivoSalir);
 		pushSalir.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/exit.png")));
 		pushSalir.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 			public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
 			}
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				if(pedirConfirmacion("Desea salir?", "Salir")==SWT.YES) 
+				if(pedirConfirmacion(DEF.pSalir, DEF.mArchivoSalir)==SWT.YES) 
 					System.exit(0);				 
 			}
 			
@@ -635,7 +636,7 @@ public class Paint {
 		submenuItemArchivo.setMenu(submenu);
 		sShell.setMenuBar(menuBar);
 		labelInfo = new Label(sShell, SWT.NONE);
-		labelInfo.setText("Punto ( 0, 0 )");
+		labelInfo.setText("Punto ( 0, 0, 0 )");
 		labelInfo.setLayoutData(gridData1);
 		
 		crearListenerCanvas();
@@ -647,7 +648,7 @@ public class Paint {
 		try {
 			comuni.connect(comPort);
 		} catch (Exception e) {
-			mostrarMSG(e.toString(), "Error en el puerto");
+			mostrarMSG(DEF.errorConexionPuerto+e.toString(), DEF.error);
 			return false;
 			//e1.printStackTrace();
 		}
@@ -708,7 +709,7 @@ public class Paint {
 				Thread.sleep(6);
 			}
 		} catch (InterruptedException e) {
-			mostrarMSG(e.toString(), "Error");
+			mostrarMSG(e.toString(), DEF.error);
 		}
 	}
 	
@@ -717,34 +718,34 @@ public class Paint {
 			comuni.escribe(str+"\n");
 			
 		} catch (IOException e) {
-			mostrarMSG(e.toString(), "Error");
+			mostrarMSG(e.toString(), DEF.error);
 			
 		}
 		retardo();		
 	}
 	private void archivoCerrar() {
-		if(pedirConfirmacion("Desea cerrar el proyecto actual?", "Cerrar Proyecto")==SWT.YES) {
+		if(pedirConfirmacion(DEF.pCerrar, DEF.mArchivoCerrar)==SWT.YES) {
 			listaFiguras.limpiarFiguras();
 			listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);	
 		}
 		
 	}
 	private void archivoNuevo() {
-		if(pedirConfirmacion("Desea cerrar el proyecto actual?", "Cerrar Proyecto")==SWT.YES) {
+		if(pedirConfirmacion(DEF.pCerrar, DEF.mArchivoCerrar)==SWT.YES) {
 			listaFiguras.limpiarFiguras();
 			listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);	
 		}
 	}
 	private void archivoAbrir(Shell s) {
 		 FileDialog fd = new FileDialog(s, SWT.OPEN);
-	        fd.setText("Abrir");
+	        fd.setText(DEF.mArchivoAbrir);
 	        fd.setFilterPath("/");
-	        String[] filterExt = { "*.xml", "*.*" };
+	        String[] filterExt = { DEF.ext, "*.*" };
 	        fd.setFilterExtensions(filterExt);
 	        String selected = fd.open();
 	        if(selected!=null) {
 	        	listaFiguras.limpiarFiguras();
-	        	le.leer(selected, listaFiguras);	        	
+	        	le.leer(selected, listaFiguras, -1);	        	
 	        	listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
 	        	canvas.redraw();
 	        }
@@ -752,8 +753,8 @@ public class Paint {
 	
 	private void archivoGuardarComo(Shell s) {
 		 FileDialog fd = new FileDialog(s, SWT.SAVE);
-	        fd.setText("Guardar");	      
-	        String[] filterExt = { "*.xml"};
+	        fd.setText(DEF.mArchivoGuardarComo);	      
+	        String[] filterExt = {DEF.ext};
 	        fd.setFilterExtensions(filterExt);
 	        String selected = fd.open();
 	        if(selected!= null)
