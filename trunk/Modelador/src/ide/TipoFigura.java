@@ -167,7 +167,7 @@ public class TipoFigura extends Composite {
 			}
 		});
 		this.setLayout(gridLayout);
-		setSize(new Point(300, 282));
+		setSize(new Point(300, 225));
 	}
 
 }  //  @jve:decl-index=0:visual-constraint="10,10"
