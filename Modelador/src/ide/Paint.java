@@ -1,6 +1,5 @@
 package ide;
 
-import ide.TipoFigura;
 import primitivas.Figuras;
 import primitivas.Plot;
 import primitivas.Punto;
