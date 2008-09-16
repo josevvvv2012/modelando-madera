@@ -4,6 +4,7 @@ import primitivas.Figuras;
 import primitivas.Plot;
 import primitivas.Punto;
 import primitivas.Polilinea;
+import primitivas.Transformaciones;
 import serial.Comunicacion;
 import store.LecturaEscritura;
 
@@ -71,7 +72,7 @@ public class Paint {
 	private int z;
 	private Menu submenu1 = null;
 	private Menu submenu2 = null;
-	private double incRobot = 0.04;
+	private double incRobot = 0.12;
 	private LecturaEscritura le = new LecturaEscritura();
 
 	
@@ -127,6 +128,10 @@ public class Paint {
 								case 6:
 									//plot.bezier(p.get(i).puntos.get(0), p.get(i).puntos.get(1), p.get(i).puntos.get(2), p.get(i).puntos.get(3), 1000);
 									plot.bezier(p.get(i).puntos, 1);
+									
+									
+									
+									
 									break;
 								case 7:
 									plot.relleno(p.get(i).puntos.get(0));
@@ -309,8 +314,35 @@ public class Paint {
 									}
 									plot.xOr(false);
 									
-									plot.bezier(ps, 1);	
+									plot.bezier(ps, 1);
 									
+									/*
+									double ix, iy;																		
+									Vector<Punto> psNuevo = new Vector<Punto>();
+									Transformaciones trans;
+									//psNuevo.add(new Punto(ps.get(0).getX()-ix, ps.get(0).getY()-iy));
+									//trans.escalamiento(.9, .9);
+									
+									ix = ps.get(0).getX();
+									iy = ps.get(0).getY();
+									psNuevo = (Vector<Punto>) ps.clone();
+									for(double ik =.01;ik<1; ik+=.01) {
+										//psNuevo = (Vector<Punto>) ps.clone();
+										for(int ii=0; ii<ps.size(); ii++) {											
+											//psNuevo.add(new Punto(ps.get(ii).getX()-ix, ps.get(ii).getY()-iy));
+											psNuevo.get(ii).setX(psNuevo.get(ii).getX()-ix);
+											psNuevo.get(ii).setY(psNuevo.get(ii).getY()-iy);
+											trans = new Transformaciones(psNuevo.get(ii));
+											trans.escalamiento(1-ik, 1-ik);
+											psNuevo.get(ii).setX(psNuevo.get(ii).getX()+ix);
+											psNuevo.get(ii).setY(psNuevo.get(ii).getY()+iy);
+											//System.out.println(ps.get(ii).getXML(1));
+											//p2 =  (Vector<Punto>)p.get(i).puntos.clone();											
+										}
+										System.out.println("Ejecutando: "+ik);										
+										plot.bezier(psNuevo,1);
+									}									
+									*/
 									reiniciarPts=true;
 									redibujar = true;
 									break;
@@ -666,7 +698,7 @@ public class Paint {
 			switch(figuras.get(i).tipoFig) {
 			case 1:
 				new cinematica.Inversa().get_angles(puntos.get(0),M);				
-				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]);
+				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,"");
 				break;
 			case 2:
 				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1),incRobot);				
@@ -686,18 +718,35 @@ public class Paint {
 				break;
 			case 6:
 				//prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3), 10000);
-				prim = new primitivas.Bezier(null, puntos, 10000);
+				prim = new primitivas.Bezier(null, puntos, 100000);
+				
+				
 				break;
 			}
 			
 			if(prim != null)
+			{
+				int [] mtemp= new int[4];
 				for(int k=0; k<prim.getSizeCoordenadas(); k++) {					
-					new cinematica.Inversa().get_angles(prim.getCoordenadas(k),M);					
-					mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]);
-				}						
+					copiarM(M, mtemp);
+					new cinematica.Inversa().get_angles(prim.getCoordenadas(k),M);
+					if(!igualM(M, mtemp))
+						mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3], k, prim.getSizeCoordenadas(), "("+prim.getCoordenadas(k).getX()+", "+prim.getCoordenadas(k).getY()+")");
+				}
+			}
 		}
 	}
 	
+	private boolean igualM(int[] orig, int[] dest) {
+		for(int i=0; i<orig.length; i++)
+			if(orig[i]!=dest[i])
+				return false;
+		return true;
+	}
+	private void copiarM(int[] orig, int [] dest) {
+		for(int i=0; i<orig.length; i++)
+			dest[i]=orig[i];
+	}
 	private void retardo() {
 		try {		
 			if(primera) {
@@ -705,14 +754,15 @@ public class Paint {
 				primera=false;
 			}
 			else {
-				Thread.sleep(6);
+				Thread.sleep(10);
 			}
 		} catch (InterruptedException e) {
 			mostrarMSG(e.toString(), DEF.error);
 		}
 	}
 	
-	private void mostrar(String str) {					
+	private void mostrar(String str, int act, int max, String cor) {
+		labelInfo.setText(act+" de "+max+" = "+cor+": "+str);
 		try {
 			comuni.escribe(str+"\n");
 			

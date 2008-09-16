@@ -189,6 +189,12 @@ public class InicializadorRobot extends Composite {
 		buttonFixSI = new Button(this, SWT.NONE);
 		buttonFixSI.setText("Fijar");
 		buttonFixSI.setLayoutData(gridData7);
+		buttonFixSI.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				x=Double.valueOf(textSI.getText());
+				calculaComando();
+			}
+		});
 		label2 = new Label(this, SWT.NONE);
 		label2.setText("InferiorDerecha:");
 		label2.setLayoutData(gridData);
@@ -197,6 +203,12 @@ public class InicializadorRobot extends Composite {
 		buttonFixID = new Button(this, SWT.NONE);
 		buttonFixID.setText("Fijar");
 		buttonFixID.setLayoutData(gridData8);
+		buttonFixID.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				y=Double.valueOf(textID.getText());
+				calculaComando();
+			}
+		});
 		textAux = new Text(this, SWT.BORDER);
 		textAux.setLayoutData(gridData12);
 		this.setLayout(gridLayout);

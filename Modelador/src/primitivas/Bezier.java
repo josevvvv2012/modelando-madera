@@ -17,7 +17,20 @@ public class Bezier extends Primitiva{
 			maxPts=50000;
 		else
 			maxPts = pts;
+		iniciarLimites();
 		graficar(puntos);
+		
+		if(plot==null) {
+			
+			double iter=(limX[1]-limX[0])<(limY[1]-limY[0])?limX[1]-limX[0]:limY[1]-limY[0];
+			//System.out.println("Iteraciones: "+iter);
+			for(double ix =1; ix<iter; ix+=5) {
+				//System.out.println("Iteraciones: "+ix);
+				graficar(getPts(puntos, ix));	
+			}
+			
+		}
+		
 		
 	}
 	public Bezier(Plot plot, Punto a, Punto b, Punto c, Punto d, int pts) {
@@ -87,8 +100,9 @@ public class Bezier extends Primitiva{
 	
 	public void graficar(Vector<Punto> v) {
 		double step= 1/maxPts;
+		double Xant, Yant;
 		double t = step;
-		
+		//System.out.println("t="+step);
 		double[] Pxi, Pyi;
 		Pxi = new double[v.size()];
 		Pyi = new double[v.size()];
@@ -97,16 +111,39 @@ public class Bezier extends Primitiva{
 			Pxi[i]=v.get(i).getX();
 			Pyi[i]=v.get(i).getY();
 		}
-		 for (int k = 1; k < maxPts; k++){			   
+		Xant = -1;
+		Yant = -1;
+		 //for (int k = 1; k < 2; k++){			   
+			 while(t<1) {
+				 for (int j = Pxi.length-1; j > 0; j--)
+					    for (int i = 0; i < j; i++){
+					     Pxi[i] = (1-t)*Pxi[i] + t*Pxi[i+1];
+					     Pyi[i] = (1-t)*Pyi[i] + t*Pyi[i+1];}
 
-			   for (int j = Pxi.length-1; j > 0; j--)
-			    for (int i = 0; i < j; i++){
-			     Pxi[i] = (1-t)*Pxi[i] + t*Pxi[i+1];
-			     Pyi[i] = (1-t)*Pyi[i] + t*Pyi[i+1];}
-
-			   X = Pxi[0];  Y = Pyi[0];
-			   grafPto(new Punto(X,Y, z));
-			   t += step;
-			  }
+					   X = Pxi[0];  Y = Pyi[0];
+					   if(Xant!=-1&&Yant!=-1)
+						   linea(Xant, Yant, X, Y, 20);
+					   Xant = X;
+					   Yant = Y;
+					   //grafPto(new Punto(X,Y, z));
+					   
+					   t += step;
+				 
+			// }
+		}
 	}
+	
+	public void linea( double x0, double y0, double x1, double y1, int n)
+	{
+	   int i;
+	   double inc_lambda = 1.0 / (n - 1.0);
+
+	   for(i=0; i < n; i++) {
+		   grafPto(new Punto(x0 + (i * inc_lambda) * (x1 - x0),y0 + (i * inc_lambda) * (y1 - y0)));
+		   /*
+	      x[i] = x0 + (i * inc_lambda) * (x1 - x0);
+	      y[i] = y0 + (i * inc_lambda) * (y1 - y0);*/
+	   }
+	}
+
 }

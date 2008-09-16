@@ -24,11 +24,19 @@ public class Inversa {
 	};
 	
 	double teta_global = 90.0*(Math.PI/180.0);
-
-	int minx = 200;
-	int miny = 0;
+/**
+ * 200, 60    *********************************  -200, 60
+ *            *                               *
+ *            *                               *
+ *            *                               *
+ * 200, 346   ********************************* -200, 346  
+ */
+	double minx = -200;
+	double miny = 66;
+	
+	double div = 2.4;
 	public void get_angles(Punto p, int M[]){
-		get_angles(p.getX()-minx, p.getY()-miny, M);
+		get_angles((p.getX()/div)+minx, (p.getY()/div)+miny, M);
 		M[3]=(int)p.getZ();
 	}
 	

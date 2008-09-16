@@ -18,9 +18,27 @@ public class Elipse extends Primitiva{
 		v3 = new Vector<Punto>();
 		v4 = new Vector<Punto>();
 		iniciarVectores();
-		puntoMedio(orig, rx, ry, relleno);		
+		elipse(rx, ry, orig.getX(), orig.getY(), 1000);
+		if(plot==null)
+			while(rx>0&&ry>0) {
+				elipse(--rx, --ry, orig.getX(), orig.getY(), 1000);		
+			}
+		//puntoMedio(orig, rx, ry, relleno);		
 		graficarVectores();
 	}
+	
+	void elipse(double radio_a, double radio_b, double xc, double yc, int n)
+	{
+	    int i;
+	    double inc_ang, ang;
+
+	    inc_ang = 360.0 / n * Math.PI / 180.0;   
+	    for(i=0; i < n; i++) {
+	        ang = inc_ang * i;
+	        grafPto(new Punto( xc + radio_a * Math.cos(ang), yc + radio_b * Math.sin(ang) ));	        
+	    }
+	}
+
 	public void puntoMedio(Punto orig,double rx, double ry, boolean relleno) {
 		double ry2=ry*ry;
 		double rx2=rx*rx;
