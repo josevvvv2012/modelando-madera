@@ -56,6 +56,7 @@ public class Plot {
 	
 	public void bezier(Vector<Punto> p, int pts) {
 		new Bezier(this, p, pts);
+		
 	}
 	
 	public void relleno(Punto a) {
@@ -66,7 +67,9 @@ public class Plot {
 		double dx = (a.getX()-b.getX());
 		double dy = (a.getY()-b.getY());
 		double r = (int)Math.sqrt(dx*dx+dy*dy);		
-		new Circulo(this, a, r, relleno, inc);
+		//new Circulo(this, a, r, relleno, inc);
+		
+		new Elipse(this, a, r, r, relleno, inc);
 		
 	}
 	

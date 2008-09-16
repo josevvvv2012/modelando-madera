@@ -24,6 +24,9 @@ public  class Polilinea extends Primitiva{
 		v.add(a);
 		v.add(b);
 		Bresenham(a.getX(), a.getY(), b.getX(), b.getY());
+		
+		
+		
 		//DDA(plot, a, b);
 	}
 	

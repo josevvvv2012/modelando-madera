@@ -10,19 +10,89 @@ public abstract class Primitiva {
 	Vector<Punto> v4 = new Vector<Punto>();
 	
 	Vector <Punto> coordenadas= new Vector<Punto>();
+	
+	public double[] limX = new double[2];
+	public double[] limY = new double[2];
 	Plot plot;
 	double z;
 	double inc=1;
+	double previoX=0;
+	double previoY=0;
+	public void iniciarLimites() {
+		limX[0]=1000;
+		limX[1]=-limX[0];
+		
+		limY[0]=1000;
+		limY[1]=-limY[0];
+	}
+	public void modLim(double x, double y) {
+		if(limX[0]>x) 
+			limX[0]=x;
+		if(limX[1]<x)
+			limX[1]=x;
+		
+		if(limY[0]>y) 
+			limY[0]=y;
+		if(limY[1]<y)
+			limY[1]=y;
+	}
+	public void mostrarLim() {
+		System.out.println("X {"+limX[0]+", "+limX[1]+"}");
+		System.out.println("Y {"+limY[0]+", "+limY[1]+"}");
+	}
+	public double getMidX() {
+		return (limX[0]+limX[1])/2;
+	}
+	public double getMidY() {
+		return (limY[0]+limY[1])/2;
+	}
 	
+	public Vector<Punto> getPts(Vector<Punto> orig, double inc) {
+		Vector<Punto> p = new Vector<Punto>();
+		double tempX;
+		double tempY;
+		for(int i=0; i<orig.size(); i++) {
+			tempX = orig.get(i).getX()<getMidX()?orig.get(i).getX()+inc:orig.get(i).getX()-inc;
+			if(orig.get(i).getX()<getMidX()) {
+				if(tempX>getMidX())
+					tempX=getMidX();
+			}
+			else
+				if(tempX<getMidX())
+					tempX=getMidX();
+			
+			tempY = orig.get(i).getY()<getMidY()?orig.get(i).getY()+inc:orig.get(i).getY()-inc;
+			if(orig.get(i).getY()<getMidY()) {
+				if(tempY>getMidY())
+					tempY=getMidY();
+			}
+			else
+				if(tempY<getMidY())
+					tempY=getMidY();
+			
+			p.add(new Punto(tempX, tempY, orig.get(i).getZ()));
+			
+		}
+		
+		return p;
+	}
 	
 	public void grafPto(Punto p) {	
-		//System.out.println("("+p.getX()+", "+p.getY()+")");		
-		if(plot instanceof Plot){			
-			plot.pixel(p);	
-		}		
-		else {
-			p.setZ( z );
-			coordenadas.add(p);
+		if((Math.abs(previoX-p.getX())>0.001)&&(Math.abs(previoY-p.getY())>0.001) ) {
+			previoX = p.getX();
+			previoY= p.getY();
+			
+			//System.out.println("("+p.getX()+", "+p.getY()+")");		
+			if(plot instanceof Plot){
+				
+				plot.pixel(p);	
+			}		
+			else {
+				p.setZ( z );
+				modLim(p.getX(), p.getY());
+				//System.out.println(p.getX()+", "+p.getY());
+				coordenadas.add(p);
+			}
 		}
 			
 	}
