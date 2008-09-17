@@ -74,7 +74,7 @@ public class Paint {
 	private Menu submenu2 = null;
 	private double incRobot = 0.12;
 	private LecturaEscritura le = new LecturaEscritura();
-
+	boolean sigFig = false;
 	
 	private void crearListenerRobotizar() {
 		Listener listener3 = new Listener() {						
@@ -695,10 +695,16 @@ public class Paint {
 		for(int i=0; i<figuras.size(); i++) {
 			
 			puntos = figuras.get(i).puntos;
+			
+			new cinematica.Inversa().get_angles(new Punto(puntos.firstElement().getX(), puntos.firstElement().getY(),0),M);
+			mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,  i, figuras.size());
+			primera=true;
+			sigFig=true;
+			
 			switch(figuras.get(i).tipoFig) {
 			case 1:
 				new cinematica.Inversa().get_angles(puntos.get(0),M);				
-				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,"");
+				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,i, figuras.size());
 				break;
 			case 2:
 				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1),incRobot);				
@@ -718,7 +724,7 @@ public class Paint {
 				break;
 			case 6:
 				//prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3), 10000);
-				prim = new primitivas.Bezier(null, puntos, 100000);
+				prim = new primitivas.Bezier(null, puntos, 160);
 				
 				
 				break;
@@ -731,9 +737,15 @@ public class Paint {
 					copiarM(M, mtemp);
 					new cinematica.Inversa().get_angles(prim.getCoordenadas(k),M);
 					if(!igualM(M, mtemp))
-						mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3], k, prim.getSizeCoordenadas(), "("+prim.getCoordenadas(k).getX()+", "+prim.getCoordenadas(k).getY()+")");
+						mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3], k, prim.getSizeCoordenadas(),  i, figuras.size());
 				}
 			}
+			new cinematica.Inversa().get_angles(new Punto(puntos.lastElement().getX(), puntos.lastElement().getY(),0),M);
+			mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1, i, figuras.size());
+			primera=true;
+			sigFig=true;
+			
+			
 		}
 	}
 	
@@ -749,20 +761,25 @@ public class Paint {
 	}
 	private void retardo() {
 		try {		
+			if(sigFig) {
+				Thread.sleep(4999);
+				primera=true;
+				sigFig=false;
+			}
 			if(primera) {
-				Thread.sleep(9999);
+				Thread.sleep(4999);
 				primera=false;
 			}
 			else {
-				Thread.sleep(10);
+				Thread.sleep(4);
 			}
 		} catch (InterruptedException e) {
 			mostrarMSG(e.toString(), DEF.error);
 		}
 	}
 	
-	private void mostrar(String str, int act, int max, String cor) {
-		labelInfo.setText(act+" de "+max+" = "+cor+": "+str);
+	private void mostrar(String str, int act, int max, int iFigura, int totalFigura) {
+		labelInfo.setText("Ejecutando figura "+(iFigura+1)+" de "+totalFigura+".   Enviando: "+act+" de "+max+" instrucciones");
 		try {
 			comuni.escribe(str+"\n");
 			

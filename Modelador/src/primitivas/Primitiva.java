@@ -78,10 +78,10 @@ public abstract class Primitiva {
 	}
 	
 	public void grafPto(Punto p) {	
-		if((Math.abs(previoX-p.getX())>0.001)&&(Math.abs(previoY-p.getY())>0.001) ) {
+		if((Math.abs(previoX-p.getX())>0.01)&&(Math.abs(previoY-p.getY())>0.01) ) {
 			previoX = p.getX();
 			previoY= p.getY();
-			
+			modLim(p.getX(), p.getY());
 			//System.out.println("("+p.getX()+", "+p.getY()+")");		
 			if(plot instanceof Plot){
 				
@@ -89,7 +89,7 @@ public abstract class Primitiva {
 			}		
 			else {
 				p.setZ( z );
-				modLim(p.getX(), p.getY());
+				
 				//System.out.println(p.getX()+", "+p.getY());
 				coordenadas.add(p);
 			}

@@ -14,22 +14,22 @@ public class Bezier extends Primitiva{
 		this.plot = plot;
 		this.z = puntos.get(0).getZ();
 		if(pts==1)
-			maxPts=50000;
+			maxPts=500;
 		else
 			maxPts = pts;
 		iniciarLimites();
 		graficar(puntos);
 		
-		if(plot==null) {
+		//if(plot==null) {
 			
-			double iter=(limX[1]-limX[0])<(limY[1]-limY[0])?limX[1]-limX[0]:limY[1]-limY[0];
+			double iter=Math.abs(limX[1]-limX[0])<Math.abs(limY[1]-limY[0])?Math.abs(limX[1]-limX[0]):Math.abs(limY[1]-limY[0]);
 			//System.out.println("Iteraciones: "+iter);
-			for(double ix =1; ix<iter; ix+=5) {
+			for(double ix =1; ix<iter; ix+=10) {
 				//System.out.println("Iteraciones: "+ix);
 				graficar(getPts(puntos, ix));	
 			}
 			
-		}
+		//}
 		
 		
 	}
@@ -111,17 +111,17 @@ public class Bezier extends Primitiva{
 			Pxi[i]=v.get(i).getX();
 			Pyi[i]=v.get(i).getY();
 		}
-		Xant = -1;
-		Yant = -1;
+		Xant = -1000;
+		Yant = -1000;
 		 //for (int k = 1; k < 2; k++){			   
-			 while(t<1) {
+			 while(t<=1) {
 				 for (int j = Pxi.length-1; j > 0; j--)
 					    for (int i = 0; i < j; i++){
 					     Pxi[i] = (1-t)*Pxi[i] + t*Pxi[i+1];
 					     Pyi[i] = (1-t)*Pyi[i] + t*Pyi[i+1];}
 
 					   X = Pxi[0];  Y = Pyi[0];
-					   if(Xant!=-1&&Yant!=-1)
+					   if(Xant!=-1000&&Yant!=-1000)
 						   linea(Xant, Yant, X, Y, 20);
 					   Xant = X;
 					   Yant = Y;
