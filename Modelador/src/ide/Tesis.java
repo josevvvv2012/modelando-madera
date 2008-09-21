@@ -41,7 +41,7 @@ import org.eclipse.swt.layout.FillLayout;
  * @version 1
  *
  */
-public class Paint {
+public class Tesis {
 
 	private Shell sShell = null;  //  @jve:decl-index=0:visual-constraint="10,10"
 	private Label labelInfo = null;
@@ -534,7 +534,7 @@ public class Paint {
 	 */
 	public static void main(String[] args) {
 		Display display = Display.getDefault();
-		Paint thisClass = new Paint();
+		Tesis thisClass = new Tesis();
 		thisClass.createSShell();
 		thisClass.sShell.open();
 
