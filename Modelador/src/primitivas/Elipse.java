@@ -88,8 +88,8 @@ public class Elipse extends Primitiva{
 			grafPto(new Punto(orig.getX()+x,orig.getY()-y));
 			*/
 			if(relleno) {
-				plot.linea(new Punto(orig.getX()+x,orig.getY()+y), new Punto(orig.getX()-x,orig.getY()+y), inc);
-				plot.linea(new Punto(orig.getX()-x,orig.getY()-y),new Punto(orig.getX()+x,orig.getY()-y), inc);
+				plot.linea(new Punto(orig.getX()+x,orig.getY()+y), new Punto(orig.getX()-x,orig.getY()+y));
+				plot.linea(new Punto(orig.getX()-x,orig.getY()-y),new Punto(orig.getX()+x,orig.getY()-y));
 				
 			}
 		}						

@@ -46,8 +46,8 @@ public class Plot {
 		gc.dispose();		
 	}
 	
-	public void linea(Punto a, Punto b, double inc) {
-		new Linea(this, a, b, inc);
+	public void linea(Punto a, Punto b) {
+		new Linea(this, a, b);
 	}	
 	
 	public void bezier(Punto a, Punto b, Punto c, Punto d, int pts) {

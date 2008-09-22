@@ -71,8 +71,8 @@ public class Circulo extends Primitiva{
 			
 			*/
 			if(relleno) {
-				plot.linea(new Punto(orig.getX()+x, orig.getY()+y), new Punto(orig.getX()-x, orig.getY()+y), inc);
-				plot.linea(new Punto(orig.getX()+x, orig.getY()-y), new Punto(orig.getX()-x, orig.getY()-y), inc);					
+				plot.linea(new Punto(orig.getX()+x, orig.getY()+y), new Punto(orig.getX()-x, orig.getY()+y));
+				plot.linea(new Punto(orig.getX()+x, orig.getY()-y), new Punto(orig.getX()-x, orig.getY()-y));					
 			}
 			
 		

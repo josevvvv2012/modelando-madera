@@ -76,6 +76,8 @@ public class Tesis {
 	private LecturaEscritura le = new LecturaEscritura();
 	boolean sigFig = false;
 	
+	double xAnt, yAnt;
+	
 	private void crearListenerRobotizar() {
 		Listener listener3 = new Listener() {						
 			public void handleEvent(Event e) {					
@@ -107,7 +109,7 @@ public class Tesis {
 									plot.pixel(p.get(i).puntos.firstElement());
 									break;
 								case 2:
-									plot.linea(p.get(i).puntos.get(0), p.get(i).puntos.get(1), 1);
+									plot.linea(p.get(i).puntos.get(0), p.get(i).puntos.get(1));
 									break;
 								case 3:
 									
@@ -177,7 +179,7 @@ public class Tesis {
 									}
 									else {
 										ps.add(new Punto(e.x, e.y, z));
-										plot.linea(ps.get(0), ps.get(1),1);										
+										plot.linea(ps.get(0), ps.get(1));										
 										reiniciarPts=true;
 										redibujar=true;
 									}						
@@ -189,7 +191,7 @@ public class Tesis {
 										redibujar=true;
 									}
 									else {
-										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y),1);
+										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y));
 										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}						
@@ -227,7 +229,7 @@ public class Tesis {
 										redibujar=true;
 									}
 									else /*if (ps.size()>-3)*/{
-										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y),1);
+										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y));
 										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
 									}
@@ -291,7 +293,7 @@ public class Tesis {
 								switch(tipoFigura.getTipo()) {
 								case 3:
 									ps.add(new Punto(e.x, e.y, z));
-									plot.linea(ps.get(0), ps.lastElement(),1);
+									plot.linea(ps.get(0), ps.lastElement());
 									
 									if(tipoFigura.getFill()) {
 										Polilinea poli = new Polilinea(plot, ps.get(0), ps.get(1));
@@ -310,7 +312,7 @@ public class Tesis {
 									ps.add(new Punto(e.x, e.y, z));
 									plot.xOr(true);										
 									for(int i=1; i< ps.size(); i++) {
-										plot.linea(ps.get(i-1), ps.get(i),1);															
+										plot.linea(ps.get(i-1), ps.get(i));															
 									}
 									plot.xOr(false);
 									
@@ -356,17 +358,17 @@ public class Tesis {
 						switch(tipoFigura.getTipo()) {						
 						case 2:
 							if(ps.size()>0) {								
-								plot.linea(ps.get(0), pAnt,1);
+								plot.linea(ps.get(0), pAnt);
 								pAnt = new Punto(e.x, e.y, z);
-								plot.linea(ps.get(0), pAnt,1);
+								plot.linea(ps.get(0), pAnt);
 								redibujar=true;
 							}								
 							break;							
 						case 3:
 							if(ps.size()>0) {							
-								plot.linea(ps.get(ps.size()-1), pAnt,1);
+								plot.linea(ps.get(ps.size()-1), pAnt);
 								pAnt = new Punto(e.x, e.y, z);
-								plot.linea(ps.get(ps.size()-1), pAnt,1);
+								plot.linea(ps.get(ps.size()-1), pAnt);
 								redibujar=true;
 							}								
 							break;							
@@ -388,9 +390,9 @@ public class Tesis {
 							break;
 						case 6:
 							if(ps.size()>0) {							
-								plot.linea(ps.get(ps.size()-1), pAnt,1);
+								plot.linea(ps.get(ps.size()-1), pAnt);
 								pAnt = new Punto(e.x, e.y, z);
-								plot.linea(ps.get(ps.size()-1), pAnt,1);
+								plot.linea(ps.get(ps.size()-1), pAnt);
 								redibujar=true;
 							}
 							break;
@@ -707,7 +709,7 @@ public class Tesis {
 				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,i, figuras.size());
 				break;
 			case 2:
-				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1),incRobot);				
+				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1));				
 				break;
 			case 4:
 				dx = (puntos.get(0).getX()-puntos.get(1).getX());
@@ -739,8 +741,10 @@ public class Tesis {
 					if(!igualM(M, mtemp))
 						mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3], k, prim.getSizeCoordenadas(),  i, figuras.size());
 				}
+				xAnt = prim.getCoordenadas(prim.getSizeCoordenadas()-1).getX();
+				yAnt = prim.getCoordenadas(prim.getSizeCoordenadas()-1).getY();
 			}
-			new cinematica.Inversa().get_angles(new Punto(puntos.lastElement().getX(), puntos.lastElement().getY(),0),M);
+			new cinematica.Inversa().get_angles(new Punto(xAnt, yAnt,0),M);
 			mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1, i, figuras.size());
 			primera=true;
 			sigFig=true;
@@ -806,7 +810,7 @@ public class Tesis {
 		 FileDialog fd = new FileDialog(s, SWT.OPEN);
 	        fd.setText(DEF.mArchivoAbrir);
 	        fd.setFilterPath("/");
-	        String[] filterExt = { DEF.ext, "*.*" };
+	        String[] filterExt = { "*"+DEF.ext, "*.*" };
 	        fd.setFilterExtensions(filterExt);
 	        String selected = fd.open();
 	        if(selected!=null) {
@@ -820,7 +824,7 @@ public class Tesis {
 	private void archivoGuardarComo(Shell s) {
 		 FileDialog fd = new FileDialog(s, SWT.SAVE);
 	        fd.setText(DEF.mArchivoGuardarComo);	      
-	        String[] filterExt = {DEF.ext};
+	        String[] filterExt = {"*"+DEF.ext};
 	        fd.setFilterExtensions(filterExt);
 	        String selected = fd.open();
 	        if(selected!= null)

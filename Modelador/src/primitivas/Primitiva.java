@@ -128,4 +128,11 @@ public abstract class Primitiva {
 		for(int i=0; i<v4.size(); i++)
 			grafPto(v4.get(i));
 	}
+	
+	public double dist(double x0, double y0, double x1, double y1) {
+		double x2 = Math.pow(x0 - x1, 2);
+		double y2 = Math.pow(y0 - y1, 2);
+		return Math.sqrt(x2+y2);
+		
+	}
 }
