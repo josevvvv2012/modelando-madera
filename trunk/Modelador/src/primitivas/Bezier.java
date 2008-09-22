@@ -10,6 +10,8 @@ import java.util.Vector;
  */
 public class Bezier extends Primitiva{
 	double maxPts;
+	double Xant, Yant;
+	double Xant2, Yant2;
 	public Bezier(Plot plot, Vector<Punto> puntos, int pts) {
 		this.plot = plot;
 		this.z = puntos.get(0).getZ();
@@ -18,6 +20,8 @@ public class Bezier extends Primitiva{
 		else
 			maxPts = pts;
 		iniciarLimites();
+		Xant2 = puntos.get(0).getX();
+		Yant2 = puntos.get(0).getY();
 		graficar(puntos);
 		
 		//if(plot==null) {
@@ -26,6 +30,7 @@ public class Bezier extends Primitiva{
 			//System.out.println("Iteraciones: "+iter);
 			for(double ix =1; ix<iter; ix+=10) {
 				//System.out.println("Iteraciones: "+ix);
+				
 				graficar(getPts(puntos, ix));	
 			}
 			
@@ -99,10 +104,8 @@ public class Bezier extends Primitiva{
 	
 	
 	public void graficar(Vector<Punto> v) {
-		double step= 1/maxPts;
-		double Xant, Yant;
+		double step= 1/maxPts;		
 		double t = step;
-		//System.out.println("t="+step);
 		double[] Pxi, Pyi;
 		Pxi = new double[v.size()];
 		Pyi = new double[v.size()];
@@ -111,33 +114,36 @@ public class Bezier extends Primitiva{
 			Pxi[i]=v.get(i).getX();
 			Pyi[i]=v.get(i).getY();
 		}
+			
+		
+		linea(Xant2, Yant2, v.get(0).getX(), v.get(0).getY());
+		Xant2 = v.lastElement().getX();
+		Yant2 = v.lastElement().getY();
+		
 		Xant = -1000;
 		Yant = -1000;
-		 //for (int k = 1; k < 2; k++){			   
-			 while(t<=1) {
-				 for (int j = Pxi.length-1; j > 0; j--)
-					    for (int i = 0; i < j; i++){
-					     Pxi[i] = (1-t)*Pxi[i] + t*Pxi[i+1];
-					     Pyi[i] = (1-t)*Pyi[i] + t*Pyi[i+1];}
-
-					   X = Pxi[0];  Y = Pyi[0];
-					   if(Xant!=-1000&&Yant!=-1000)
-						   linea(Xant, Yant, X, Y, 20);
-					   Xant = X;
-					   Yant = Y;
-					   //grafPto(new Punto(X,Y, z));
-					   
-					   t += step;
-				 
-			// }
+		while(t<=1) {
+			for (int j = Pxi.length-1; j > 0; j--)
+				for (int i = 0; i < j; i++){
+					Pxi[i] = (1-t)*Pxi[i] + t*Pxi[i+1];
+				    Pyi[i] = (1-t)*Pyi[i] + t*Pyi[i+1];
+			    }
+			X = Pxi[0];  Y = Pyi[0];
+			if(Xant!=-1000&&Yant!=-1000) {
+				linea(Xant, Yant, X, Y);
+			}
+			Xant = X;
+			Yant = Y;
+			t += step;
 		}
 	}
 	
-	public void linea( double x0, double y0, double x1, double y1, int n)
+	public void linea( double x0, double y0, double x1, double y1)
 	{
 	   int i;
-	   double inc_lambda = 1.0 / (n - 1.0);
-
+	   int n=(int)(dist(x0, y0, x1, y1)*6);
+	   double inc_lambda = 1.0 / (n - 1.0);	  
+	   
 	   for(i=0; i < n; i++) {
 		   grafPto(new Punto(x0 + (i * inc_lambda) * (x1 - x0),y0 + (i * inc_lambda) * (y1 - y0)));
 		   /*

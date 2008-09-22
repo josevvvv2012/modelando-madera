@@ -676,7 +676,7 @@ public class ListaFiguras extends Composite {
 				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]+".");
 				break;
 			case 2:
-				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1), incRobot);				
+				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1));				
 				break;
 			case 4:
 				dx = (puntos.get(0).getX()-puntos.get(1).getX());
