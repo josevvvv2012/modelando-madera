@@ -75,7 +75,9 @@ public class Tesis {
 	private double incRobot = 0.12;
 	private LecturaEscritura le = new LecturaEscritura();
 	boolean sigFig = false;
-	
+	boolean levantar=false;
+	private int arriba=150000;
+	private int retardo1=0;
 	double xAnt, yAnt;
 	
 	private void crearListenerRobotizar() {
@@ -693,15 +695,20 @@ public class Tesis {
 		
 		double dx, dy;
 		primera=true;
+		sigFig=false;
+		levantar=false;
 		primitivas.Primitiva prim = null;
 		for(int i=0; i<figuras.size(); i++) {
 			
 			puntos = figuras.get(i).puntos;
-			
-			new cinematica.Inversa().get_angles(new Punto(puntos.firstElement().getX(), puntos.firstElement().getY(),0),M);
+			if(i!=0) {
+				retardo1=(int)dist(xAnt, yAnt, puntos.firstElement().getX(), puntos.firstElement().getY())*100;
+				sigFig=true;
+			}
+			new cinematica.Inversa().get_angles(new Punto(puntos.firstElement().getX(), puntos.firstElement().getY(),arriba),M);
 			mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,  i, figuras.size());
-			primera=true;
-			sigFig=true;
+			levantar=true;
+			
 			
 			switch(figuras.get(i).tipoFig) {
 			case 1:
@@ -744,13 +751,11 @@ public class Tesis {
 				xAnt = prim.getCoordenadas(prim.getSizeCoordenadas()-1).getX();
 				yAnt = prim.getCoordenadas(prim.getSizeCoordenadas()-1).getY();
 			}
-			new cinematica.Inversa().get_angles(new Punto(xAnt, yAnt,0),M);
-			mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1, i, figuras.size());
-			primera=true;
-			sigFig=true;
-			
-			
+			new cinematica.Inversa().get_angles(new Punto(xAnt, yAnt,arriba),M);
+			levantar=true;
+			mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1, i, figuras.size());												
 		}
+		primera=true;
 	}
 	
 	private boolean igualM(int[] orig, int[] dest) {
@@ -764,10 +769,15 @@ public class Tesis {
 			dest[i]=orig[i];
 	}
 	private void retardo() {
-		try {		
+		try {
+			if(levantar) {
+				Thread.sleep(3500);
+				levantar=false;
+			}
 			if(sigFig) {
-				Thread.sleep(4999);
-				primera=true;
+				labelInfo.setText("Retardo ="+retardo1);
+				Thread.sleep(retardo1);
+				
 				sigFig=false;
 			}
 			if(primera) {
@@ -861,5 +871,12 @@ public class Tesis {
 	        messageBox.setText(title);
 	        messageBox.open();	        
 	}
+	public double dist(double x0, double y0, double x1, double y1) {
+		double x2 = Math.pow(x0 - x1, 2);
+		double y2 = Math.pow(y0 - y1, 2);
+		return Math.sqrt(x2+y2);
+		
+	}
+
 }
 
