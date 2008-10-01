@@ -49,15 +49,16 @@ public  class Linea extends Primitiva{
 	public void linea( double x0, double y0, double x1, double y1)
 	{
 	   int i;
-	   int n=(int)(dist(x0, y0, x1, y1)*6);
-	   double inc_lambda = 1.0 / (n - 1.0);	  
-	   
+	   int n=(int)(dist(x0, y0, x1, y1)*3);
+	   double inc_lambda = 1.0 / (n - 1.0);	  	   
 	   for(i=0; i < n; i++) {
 		   grafPto(new Punto(x0 + (i * inc_lambda) * (x1 - x0),y0 + (i * inc_lambda) * (y1 - y0)));
+		
 		   /*
 	      x[i] = x0 + (i * inc_lambda) * (x1 - x0);
 	      y[i] = y0 + (i * inc_lambda) * (y1 - y0);*/
 	   }
+	   
 	}
 	
 	public void Bresenham(double x1, double y1, double x2, double y2)
