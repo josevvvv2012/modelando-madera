@@ -3,9 +3,11 @@ package ide;
 public  class DEF {
 
 	public static final String ext = ".xml";
+	public static final String extpgm = ".pgm";
 	public static final String mArchivo = "Archivo";
 	public static final String mArchivoNuevo = "Nuevo";
 	public static final String mArchivoAbrir = "Abrir";
+	public static final String mArchivoImportar = "Importar";
 	public static final String mArchivoCerrar = "Cerrar";
 	public static final String mArchivoGuardarComo = "Guardar Como";
 	public static final String mArchivoSalir = "Salir";

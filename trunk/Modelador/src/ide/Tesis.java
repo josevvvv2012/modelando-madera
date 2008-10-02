@@ -7,6 +7,7 @@ import primitivas.Polilinea;
 import primitivas.Transformaciones;
 import serial.Comunicacion;
 import store.LecturaEscritura;
+import store.PGMRead;
 
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.layout.GridLayout;
@@ -29,6 +30,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.layout.GridData;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Vector;
 import org.eclipse.swt.widgets.Menu;
@@ -73,7 +75,8 @@ public class Tesis {
 	private Menu submenu1 = null;
 	private Menu submenu2 = null;
 	private double incRobot = 0.12;
-	private LecturaEscritura le = new LecturaEscritura();
+	private LecturaEscritura le = new LecturaEscritura();  //  @jve:decl-index=0:
+	private PGMRead pgm;  //  @jve:decl-index=0:
 	boolean sigFig = false;
 	boolean levantar=false;
 	private int arriba=150000;
@@ -628,6 +631,17 @@ public class Tesis {
 		MenuItem pushAbrir = new MenuItem(submenu, SWT.PUSH);
 		pushAbrir.setText(DEF.mArchivoAbrir);
 		pushAbrir.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/open.png")));
+		MenuItem pushImportar = new MenuItem(submenu, SWT.PUSH);
+		pushImportar.setText(DEF.mArchivoImportar);
+		pushImportar
+				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						archivoImportar(sShell);
+					}
+					public void widgetDefaultSelected(
+							org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
 		pushAbrir.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				archivoAbrir(sShell);
@@ -826,6 +840,26 @@ public class Tesis {
 	        if(selected!=null) {
 	        	listaFiguras.limpiarFiguras();
 	        	le.leer(selected, listaFiguras, -1);	        	
+	        	listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
+	        	canvas.redraw();
+	        }
+	}
+	private void archivoImportar(Shell s) {
+		 FileDialog fd = new FileDialog(s, SWT.OPEN);
+	        fd.setText(DEF.mArchivoAbrir);
+	        fd.setFilterPath("/");
+	        String[] filterExt = { "*"+DEF.extpgm, "*.*" };
+	        fd.setFilterExtensions(filterExt);
+	        String selected = fd.open();
+	        if(selected!=null) {
+	        	listaFiguras.limpiarFiguras();
+	        	pgm = new PGMRead(selected);
+	        	try {
+					pgm.cargar(listaFiguras);
+				} catch (FileNotFoundException e) {
+					mostrarMSG(e.toString(), DEF.error);					
+				}
+	        	//le.leer(selected, listaFiguras, -1);	        	
 	        	listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
 	        	canvas.redraw();
 	        }

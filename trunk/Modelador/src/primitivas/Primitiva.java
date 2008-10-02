@@ -88,8 +88,8 @@ public abstract class Primitiva {
 				
 				plot.pixel(p);	
 			}		
-			else if((Math.abs(previoX-p.getX())>0.01)&&(Math.abs(previoY-p.getY())>0.01) ) {
-				p.setZ( z );
+			else /*if((Math.abs(previoX-p.getX())>0.01)&&(Math.abs(previoY-p.getY())>0.01) )*/ {
+				//p.setZ( z );
 				
 				//System.out.println(p.getX()+", "+p.getY());
 				coordenadas.add(p);
