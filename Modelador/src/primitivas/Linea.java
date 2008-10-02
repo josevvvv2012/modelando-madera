@@ -20,7 +20,8 @@ public  class Linea extends Primitiva{
 		this.inc  = inc;
 		//Bresenham(a.getX(), a.getY(), b.getX(), b.getY());
 		//DDA(a, b);
-		this.linea(a.getX(), a.getY(), b.getX(), b.getY());
+		this.linea(a, b);
+		//this.linea(a.getX(), a.getY(), b.getX(), b.getY());
 	}
 	
 	
@@ -56,6 +57,25 @@ public  class Linea extends Primitiva{
 		
 		   /*
 	      x[i] = x0 + (i * inc_lambda) * (x1 - x0);
+	      y[i] = y0 + (i * inc_lambda) * (y1 - y0);*/
+	   }
+	   
+	}
+	
+	public void linea( Punto a, Punto b)
+	{
+	   int i;
+	   int n=(int)(dist(a.getX(),a.getY(), b.getX(),b.getY())*3);
+	   double inc_lambda = 1.0 / (n - 1.0);	  	   
+	   for(i=0; i < n; i++) {
+		   grafPto(new Punto(a.getX() + (i * inc_lambda) * (b.getX() - a.getX()),
+				             a.getY() + (i * inc_lambda) * (b.getY() - a.getY()),
+				             a.getZ() + (i * inc_lambda) * (b.getZ() - a.getZ())
+			             ));
+		
+		   /*
+	      x[i] = x0 + (i * inc_lambda) * (x1 - x0);
+	      
 	      y[i] = y0 + (i * inc_lambda) * (y1 - y0);*/
 	   }
 	   
