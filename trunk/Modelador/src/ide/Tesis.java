@@ -4,7 +4,6 @@ import primitivas.Figuras;
 import primitivas.Plot;
 import primitivas.Punto;
 import primitivas.Polilinea;
-import primitivas.Transformaciones;
 import serial.Comunicacion;
 import store.LecturaEscritura;
 import store.PGMRead;
@@ -699,7 +698,6 @@ public class Tesis {
 		} catch (Exception e) {
 			mostrarMSG(DEF.errorConexionPuerto+e.toString(), DEF.error);
 			return false;
-			//e1.printStackTrace();
 		}
 		return true;
 	}
@@ -746,7 +744,6 @@ public class Tesis {
 					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false, incRobot);
 				break;
 			case 6:
-				//prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3), 10000);
 				prim = new primitivas.Bezier(null, puntos, 160);
 				
 				
@@ -853,13 +850,13 @@ public class Tesis {
 	        String selected = fd.open();
 	        if(selected!=null) {
 	        	listaFiguras.limpiarFiguras();
-	        	pgm = new PGMRead(selected);
+	        	
+	        	pgm = new PGMRead(selected,tipoFigura.getZ());
 	        	try {
 					pgm.cargar(listaFiguras);
 				} catch (FileNotFoundException e) {
 					mostrarMSG(e.toString(), DEF.error);					
-				}
-	        	//le.leer(selected, listaFiguras, -1);	        	
+				}	        	
 	        	listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
 	        	canvas.redraw();
 	        }
@@ -882,11 +879,10 @@ public class Tesis {
 		try {
 			le.escribe(str, figuras);
 		} catch (IOException e) {
-			e.printStackTrace();
+			mostrarMSG(e.toString(), DEF.error);
 		}
 		
-		
-		
+				
 		return true;
 	}
 
