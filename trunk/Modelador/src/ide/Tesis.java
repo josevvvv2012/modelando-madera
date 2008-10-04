@@ -81,6 +81,7 @@ public class Tesis {
 	private int arriba=150000;
 	private int retardo1=0;
 	double xAnt, yAnt;
+	private boolean importar=false;
 	
 	private void crearListenerRobotizar() {
 		Listener listener3 = new Listener() {						
@@ -713,13 +714,16 @@ public class Tesis {
 		for(int i=0; i<figuras.size(); i++) {
 			
 			puntos = figuras.get(i).puntos;
+			
 			if(i!=0) {
 				retardo1=(int)dist(xAnt, yAnt, puntos.firstElement().getX(), puntos.firstElement().getY())*100;
 				sigFig=true;
 			}
-			new cinematica.Inversa().get_angles(new Punto(puntos.firstElement().getX(), puntos.firstElement().getY(),arriba),M);
-			mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,  i, figuras.size());
-			levantar=true;
+			if(!importar||i==0) {				
+				new cinematica.Inversa().get_angles(new Punto(puntos.firstElement().getX(), puntos.firstElement().getY(),arriba),M);
+				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,  i, figuras.size());
+				levantar=true;
+			}
 			
 			
 			switch(figuras.get(i).tipoFig) {
@@ -759,12 +763,19 @@ public class Tesis {
 					if(!igualM(M, mtemp))
 						mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3], k, prim.getSizeCoordenadas(),  i, figuras.size());
 				}
+				try {
 				xAnt = prim.getCoordenadas(prim.getSizeCoordenadas()-1).getX();
 				yAnt = prim.getCoordenadas(prim.getSizeCoordenadas()-1).getY();
+				}
+				catch (java.lang.ArrayIndexOutOfBoundsException e) {
+					mostrarMSG(e.toString(), DEF.error);
+				}
 			}
-			new cinematica.Inversa().get_angles(new Punto(xAnt, yAnt,arriba),M);
-			levantar=true;
-			mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1, i, figuras.size());												
+			if(!importar) {
+				new cinematica.Inversa().get_angles(new Punto(xAnt, yAnt,arriba),M);
+				levantar=true;
+				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1, i, figuras.size());
+			}
 		}
 		primera=true;
 	}
@@ -792,7 +803,7 @@ public class Tesis {
 				sigFig=false;
 			}
 			if(primera) {
-				Thread.sleep(4999);
+				Thread.sleep(8999);
 				primera=false;
 			}
 			else {
@@ -824,7 +835,8 @@ public class Tesis {
 	private void archivoNuevo() {
 		if(pedirConfirmacion(DEF.pCerrar, DEF.mArchivoCerrar)==SWT.YES) {
 			listaFiguras.limpiarFiguras();
-			listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);	
+			listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
+			importar=false;
 		}
 	}
 	private void archivoAbrir(Shell s) {
@@ -854,6 +866,7 @@ public class Tesis {
 	        	pgm = new PGMRead(selected,tipoFigura.getZ());
 	        	try {
 					pgm.cargar(listaFiguras);
+					importar=true;
 				} catch (FileNotFoundException e) {
 					mostrarMSG(e.toString(), DEF.error);					
 				}	        	

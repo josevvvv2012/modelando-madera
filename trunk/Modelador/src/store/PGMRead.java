@@ -10,11 +10,11 @@ public class PGMRead {
 	Vector <Integer> pgm = new Vector<Integer>();
 	private final File fFile;
 	private int max=0;
-	
-	private int pts=4;
-	private int incX = 100;
-	private int incY = 100;
-	private int incZ = 20000;
+	private int pixelPto=3;
+	private int pts=30;
+	private int incX = 130;
+	private int incY = 270;
+	private int incZ = 265000;
 	
 	 public void cargar(ide.ListaFiguras listaFiguras) throws FileNotFoundException {
 		 this.processLineByLine();
@@ -70,8 +70,8 @@ public class PGMRead {
 				p = new Vector<Punto>();
 				if(izqAder) {
 					pos =(x+(y*pgm.get(0)));				  
-					p.add(new Punto(incX+xant, incY+yant, incZ+zant*pts));
-					p.add(new Punto(incX+x, incY+y, incZ+pgm.get(pos+3)*pts));
+					p.add(new Punto(incX+xant*pixelPto, incY+yant*pixelPto, incZ+zant*pts));
+					p.add(new Punto(incX+x*pixelPto, incY+y*pixelPto, incZ+pgm.get(pos+3)*pts));
 				  
 					xant=x; 
 					yant=y;
@@ -80,8 +80,8 @@ public class PGMRead {
 				else {
 					pos =(((y+1)*pgm.get(0))-1-x);
 				  
-					p.add(new Punto(incX+xant, incY+yant, incZ+zant*pts));
-					p.add(new Punto(incX+(pgm.get(0)-x-1), incY+y,incZ+ pgm.get(pos+3)*pts));
+					p.add(new Punto(incX+xant*pixelPto, incY+yant*pixelPto, incZ+zant*pts));
+					p.add(new Punto(incX+(pgm.get(0)-x-1)*pixelPto, incY+y*pixelPto,incZ+ pgm.get(pos+3)*pts));
 				  
 					xant=pgm.get(0)-x-1; 
 					yant=y;
