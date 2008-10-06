@@ -20,7 +20,7 @@ public class Inversa {
 	
 	double longs[]= new double[] {
 		200.0,			// mm
-		200				// mm
+		200				// mm  + ext
 	};
 	
 	double teta_global = 90.0*(Math.PI/180.0);
