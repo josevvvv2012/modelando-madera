@@ -40,6 +40,10 @@ public  class DEF {
 	public static final String lFiguras = "Figuras";
 	public static final String lPunto = "Punto";
 	public static final String lValor = "Valor";
+	public static final String lRobotEnviando = "Enviando a robot SCARA";
+	public static final String lRobotFigura = "Figura";
+	public static final String lRobotDe = "de";
+	public static final String lRobotPunto = "Punto";
 	
 	
 	public static final String pPunto = "         Punto";
@@ -55,6 +59,8 @@ public  class DEF {
 	public static final String bRotar = "Rotar";
 	public static final String bFijar = "Fijar";
 	public static final String bReflejar = "Reflejar";
+	public static final String bCancelar= "Cancelar";
+	public static final String bCerrar= "Cerrar";
 	public static final String bUp = "/\\";
 	public static final String bDown = "\\/";
 	public static final String bIzq = "<";
