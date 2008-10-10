@@ -3,17 +3,16 @@ package store;
 import java.io.*;
 import java.util.Scanner;
 import java.util.Vector;
-
 import primitivas.Punto;
 
 public class PGMRead {
 	Vector <Integer> pgm = new Vector<Integer>();
 	private final File fFile;
 	private int max=0;
-	private int pixelPto=3;
+	private int pixelPto=2;
 	private int pts=30;
-	private int incX = 130;
-	private int incY = 270;
+	private int incX = 100;
+	private int incY = 290;
 	private int incZ = 265000;
 	
 	 public void cargar(ide.ListaFiguras listaFiguras) throws FileNotFoundException {

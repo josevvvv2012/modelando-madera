@@ -65,7 +65,7 @@ public  class Linea extends Primitiva{
 	public void linea( Punto a, Punto b)
 	{
 	   int i;
-	   int n=(int)(dist(a.getX(),a.getY(), b.getX(),b.getY())*3);
+	   int n=(int)(dist(a.getX(),a.getY(), b.getX(),b.getY())*9);
 	   double inc_lambda = 1.0 / (n - 1.0);	  	   
 	   for(i=0; i < n; i++) {
 		   grafPto(new Punto(a.getX() + (i * inc_lambda) * (b.getX() - a.getX()),
