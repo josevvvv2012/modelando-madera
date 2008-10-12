@@ -60,6 +60,7 @@ public  class DEF {
 	public static final String bFijar = "Fijar";
 	public static final String bReflejar = "Reflejar";
 	public static final String bCancelar= "Cancelar";
+	public static final String bIniciar= "Iniciar";
 	public static final String bCerrar= "Cerrar";
 	public static final String bUp = "/\\";
 	public static final String bDown = "\\/";

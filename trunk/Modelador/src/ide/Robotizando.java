@@ -31,18 +31,14 @@ public class Robotizando {
 	
 	private int iFiguras=0;
 	private int iPuntos=0;
+	private Button buttonIniciar = null;
+	private boolean cancelar=true;
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		/* Before this is run, be sure to set up the launch configuration (Arguments->VM Arguments)
-		 * for the correct SWT library path in order to run with the SWT dlls. 
-		 * The dlls are located in the SWT plugin jar.  
-		 * For example, on Windows the Eclipse SWT 3.1 plugin jar is:
-		 *       installation_directory\plugins\org.eclipse.swt.win32_3.1.0.jar
-		 */
+
 		Display display = Display.getDefault();
 		Robotizando thisClass = new Robotizando();
 		thisClass.createSShell();
@@ -59,6 +55,10 @@ public class Robotizando {
 	 * This method initializes sShell
 	 */
 	private void createSShell() {
+		GridData gridData11 = new GridData();
+		gridData11.horizontalAlignment = GridData.FILL;
+		gridData11.grabExcessHorizontalSpace = true;
+		gridData11.verticalAlignment = GridData.CENTER;
 		GridData gridData5 = new GridData();
 		gridData5.horizontalAlignment = GridData.FILL;
 		gridData5.grabExcessHorizontalSpace = true;
@@ -81,7 +81,6 @@ public class Robotizando {
 		gridData1.verticalAlignment = GridData.CENTER;
 		gridData1.horizontalAlignment = GridData.FILL;
 		GridData gridData = new GridData();
-		gridData.horizontalSpan = 2;
 		gridData.horizontalAlignment = GridData.FILL;
 		gridData.verticalAlignment = GridData.CENTER;
 		gridData.grabExcessHorizontalSpace = true;
@@ -116,23 +115,59 @@ public class Robotizando {
 		label6 = new Label(sShell, SWT.NONE);
 		label6.setText("");
 		Label filler4 = new Label(sShell, SWT.NONE);
+		buttonIniciar = new Button(sShell, SWT.NONE);
+		buttonIniciar.setText(DEF.bIniciar);
+		buttonIniciar.setLayoutData(gridData11);
+		buttonIniciar
+				.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						cancelar=false;
+						Thread t = new Thread(new Runnable() {
+							public void run()
+							{
+								m();
+							}
+						});
+						t.start();
+						//m();
+					}
+				});
 		bCancelar = new Button(sShell, SWT.NONE);
 		bCancelar.setText(DEF.bCancelar);
 		bCancelar.setLayoutData(gridData);
 		bCancelar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				actualizarPB(nFiguras, iFiguras++, nPuntos, iPuntos++);
+				cancelar=true;
+				//actualizarPB(nFiguras, iFiguras++, nPuntos, iPuntos++);
 			}
 		});
 		label7 = new Label(sShell, SWT.NONE);
 		label7.setText("");
 	}
 
+	private void m() {
+		for(int i=0; i<10; i++) {
+			for(int j=0; j<50; j++) {
+				if(cancelar==true)
+					return;
+				actualizarPB(9, i, 49, j);
+				try {
+					Thread.sleep(5);
+				} catch (InterruptedException e) {
+
+					e.printStackTrace();
+				}
+	
+			}
+		}
+	}
 	private void actualizarPB(int nFig, int iFig, int nPnt, int iPnt ) {
-		pbPuntos.setMaximum(nPnt);
+		if(pbPuntos.getMaximum()!=nPnt)
+			pbPuntos.setMaximum(nPnt);
 		pbPuntos.setSelection(iPnt);
 		
-		pbFiguras.setMaximum(nFig);
+		if(pbPuntos.getMaximum()!=nFig)
+			pbFiguras.setMaximum(nFig);
 		pbFiguras.setSelection(iFig);
 	}
 }
