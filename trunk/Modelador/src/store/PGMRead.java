@@ -9,7 +9,7 @@ public class PGMRead {
 	Vector <Integer> pgm = new Vector<Integer>();
 	private final File fFile;
 	private int max=0;
-	private int pixelPto=2;
+	private int pixelPto=3;
 	private int pts=30;
 	private int incX = 100;
 	private int incY = 290;
