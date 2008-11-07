@@ -1,0 +1,1639 @@
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass book
+\language spanish
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize 11
+\spacing onehalf
+\papersize letterpaper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\leftmargin 3cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle plain
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+renewcommand{
+\backslash
+tablename}{Tabla}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+renewcommand{
+\backslash
+listtablename}{
+\backslash
+'Indice de tablas}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+frontmatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Desarrollo de software para modelado y fabricación de objetos de madera
+ usando un robot SCARA
+\end_layout
+
+\begin_layout Author
+Roberto Loaeza Valerio
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+mainmatter
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+setcounter{page}{5}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introducción
+\end_layout
+
+\begin_layout Standard
+En la actualidad las empresas madereras requieren tener procesos automatizados
+ tanto en su administración como en la fabricación de sus productos para
+ poder competir en el actual modelo de mercado.
+ Desafortunadamente en la región maderera existen muy pocas empresas que
+ cuenten con una automatización en sus procesos.
+ Para automatizar una empresa dedica a la producción de artefactos de madera
+ se requiere principalmente de:
+\end_layout
+
+\begin_layout Itemize
+Software tipo ERP - CRM para la adminstración.
+\end_layout
+
+\begin_layout Itemize
+Robots industriales para la fabricación de productos.
+\end_layout
+
+\begin_layout Standard
+Por parte la adminstración parece estar automatizada hasta cierto grado
+ haciendo uso de paquetes de software como compiere, contpaq, entre otros;
+ en cambio muy pocas empresas cuentan con robots industriales ya que estos
+ requieren una inversion superior a los 1'000'000.00 pesos y en la mayoría
+ son de origen extranjero lo cual implica que si llega a fallar es muy poco
+ probable que se solucione en poco tiempo lo que conlleva a perdida de dinero
+ y tiempo.
+\end_layout
+
+\begin_layout Standard
+Observando la necesidad de la automatización en los procesos de fabricación
+ de productos se optó por desarrollar una aplicación multiplataforma para
+ el modelado de productos de madera haciendo uso de un robot SCARA.
+\end_layout
+
+\begin_layout Section
+Motivación
+\end_layout
+
+\begin_layout Standard
+En la actualidad la utilización de robots manipuladores en la mayoría de
+ las pequeñas y medianas fábricas, en específico las fábricas de la región
+ maderera del estado de Michoacán, son factor de que estas tengan un menor
+ costo en su proceso de producción y con esto asi puedan así competir en
+ el mercado saturado por productos extranjeros.
+\end_layout
+
+\begin_layout Standard
+Por otra parte el diseño innovador de nuevos productos de madera se ve estancado
+ por la falta de una herramienta para su modelado e implementación en un
+ robot manipulador.
+\end_layout
+
+\begin_layout Section
+Antecedentes
+\end_layout
+
+\begin_layout Standard
+Los antecedentes previos realizados en la División de Estudios de Posgrado
+ de la Facultad de Ingeniería Eléctrica, de la Universidad Michoacana de
+ San Nicolás de Hidalgo, es la construcción de un robot manipulador tipo
+ SCARA de cuatro grados de libertad de plataforma abierta, para el cual
+ se desarrollara la aplicación de la presente tesis.
+\end_layout
+
+\begin_layout Section
+Objetivos
+\end_layout
+
+\begin_layout Standard
+El objetivo general es realizar investigación a fondo en los aspectos computacio
+nales relacionados con el modelado de objetos físicos y desarrollar el software
+ necesario para que el robot SCARA pueda realizarlos, de forma que se desarrolle
+ tecnología propia que promueva una industria robótica y se generen diversas
+ aplicaciones que tengan un importante impacto social como económico.
+\end_layout
+
+\begin_layout Standard
+Se realizarán también estudios sobre implementación de planeadores de movimiento
+s en brazos robóticos para que las acciones se realicen lo más rápido posible.
+\end_layout
+
+\begin_layout Standard
+Finalmente se realizarán pruebas del software desarrollado con el robot
+ SCARA.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/objetivosTesis.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:DiagramaObjetivos"
+
+\end_inset
+
+Diagrama representativo del objetivo de la tesis
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset LatexCommand ref
+reference "fig:DiagramaObjetivos"
+
+\end_inset
+
+ representa gráficamente el objetivo, donde se puede apreciar que el presente
+ proyecto de tesis tiene como entrada el diseño por parte de una persona
+ el cual es interpretado para su futura producción en un robot SCARA.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Objetivos específicos
+\end_layout
+
+\begin_layout Itemize
+Generar una plataforma 3D para el modelado de objetos de madera.
+ 
+\end_layout
+
+\begin_layout Itemize
+Implementar algoritmos de gráficación sobre la plataforma 3D los siguientes
+ elementos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Puntos 
+\end_layout
+
+\begin_layout Itemize
+Lineas
+\end_layout
+
+\begin_layout Itemize
+Curvas de Bezier
+\end_layout
+
+\begin_layout Itemize
+Curvas Spline
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Desarrollar software para modelado implementando los algoritmos anteriores.
+\end_layout
+
+\begin_layout Itemize
+Desarrollar software para comunicación entre el software de modelado y el
+ robot SCARA.
+ 
+\end_layout
+
+\begin_layout Section
+Alcances
+\end_layout
+
+\begin_layout Standard
+Los alcances previstos son:
+\end_layout
+
+\begin_layout Itemize
+Desarrollo de una aplicación multiplataforma capaz de modelar objetos de
+ madera para su producción utilizando un robot SCARA.
+\end_layout
+
+\begin_layout Itemize
+Desarrollo de interfaz entre la aplicación multiplataforma para modelar
+ objetos de madera y el robot SCARA para la producción.
+\end_layout
+
+\begin_layout Section
+Metodología
+\end_layout
+
+\begin_layout Standard
+Para lograr los objetivos mencionados anteriormente se propone desarrollar
+ una aplicación multiplataforma para el modelado de objetos de madera en
+ el lenguaje Java.
+\end_layout
+
+\begin_layout Standard
+Para esto se desarrollarán prototipos de la aplicación, hasta lograr una
+ estabilidad considerable, la cual tenga una velocidad alta a la hora de
+ generar los modelos en diferentes vistas, esto se deberá hacer mediante
+ hardware usando la API de OpenGL.
+\end_layout
+
+\begin_layout Standard
+Con el fin de impulsar este tipo de proyectos, se propone que la aplicación
+ final sea evaluada en los talleres de Paracho.
+\end_layout
+
+\begin_layout Section
+Contribuciones esperadas
+\end_layout
+
+\begin_layout Standard
+A continuación se describen brevemente las contribuciones de este trabajo:
+\end_layout
+
+\begin_layout Itemize
+Aplicación multiplataforma para la construcción de modelos físicos de madera.
+ Se utiliza la API OpenGL para acelerar tanto cálculo como regeneración
+ de vistas 3D.
+\end_layout
+
+\begin_layout Itemize
+Aplicación multiplataforma para la conexion entre el modelador y el robot
+ SCARA.
+ 
+\end_layout
+
+\begin_layout Itemize
+Código fuente, éste se distribuirá bajo la 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+GNU General Public License v2
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ y se puede acceder a él en la siguiente url: modelando-madera.googlecode.com
+\end_layout
+
+\begin_layout Section
+Descripción de los capítulos
+\end_layout
+
+\begin_layout Standard
+En el capítulo 
+\begin_inset LatexCommand ref
+reference "cha:2_Ambiente"
+
+\end_inset
+
+ se presentarán una revisión del estado del arte asociado con la paqueteria
+ de software existente para el modelado/fabricación de objetos de madera.
+ Finalmente se describirá el contenido de cada capítulo.
+\end_layout
+
+\begin_layout Standard
+En el capítulo 
+\begin_inset LatexCommand ref
+reference "cha:3_Interfaces3D"
+
+\end_inset
+
+ se mostrarán las principales interfaces de software para la implementación
+ de software 3D, se mostrarán pros y contras de cada una de estas y finalmente
+ se detallará el funcionamiento de la interfaz OpenGL sobre la cual se realizará
+ la implementación del software.
+\end_layout
+
+\begin_layout Standard
+En el capítulo 
+\begin_inset LatexCommand ref
+reference "cha:4_Modelado3D"
+
+\end_inset
+
+ aborda las partes del software modelador tanto los algoritmos de graficación
+ como la forma de interacción con el usuario final.
+ 
+\end_layout
+
+\begin_layout Standard
+En el capítulo 
+\begin_inset LatexCommand ref
+reference "cha:5_InterfazModelado"
+
+\end_inset
+
+ trata las características del robot SCARA, la forma de conversión del modelo
+ a acciones que el robot entienda así como un algoritmo de planeación para
+ que el robot sea lo más optimo posible.
+ También se describirá la interfaz entre el software de modelado y el robot.
+\end_layout
+
+\begin_layout Standard
+En el capítulo 
+\begin_inset LatexCommand ref
+reference "cha:6_Pruebas"
+
+\end_inset
+
+ se mostrarán resultados de pruebas realizadas en una primera instancia
+ al software modelador, seguido de los resultados de la conectividad entre
+ el software y el robot, y finalmente se verificará que tanta funcionalidad
+ doto el algoritmo de planeación implementado.
+\end_layout
+
+\begin_layout Standard
+En el capítulo 
+\begin_inset LatexCommand ref
+reference "cha:7_Conclusiones"
+
+\end_inset
+
+ se aportarán las conclusiones generales resultado de la investigación abordada
+ e ideas para trabajo de investigación posterior a realizar en el mismo
+ campo del conocimiento.
+ 
+\end_layout
+
+\begin_layout Chapter
+Ambiente de programación de robots manipuladores
+\begin_inset LatexCommand label
+name "cha:2_Ambiente"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Robots
+\end_layout
+
+\begin_layout Standard
+En la actualidad los robots parecen salidos de un mundo de fantasía, esto
+ debido a que el desarrollo de robots se ha visto inspirado por el mundo
+ de la fantasía.
+ Sorpresivamente no existe una definición precisa para el término robot,
+ por un lado 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+es la versión de ciencia ficción de un robot, tipicamente uno de forma humana
+ - un androide o humanoide - con propiedades antropomórficas
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ y por otra parte 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+robot eficiente de automatizacion industrial con propiedades de repetir
+ actividades
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ La ISO 8373 lo define como 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+un manipulador multipropósito automaticamente controlado y reprogramable
+ de mas de tres ejes
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ El Instituto de Robótica de América lo define como 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+manipulador multifuncional y reprogramable diseñado para mover material,
+ partes, herramientas o dispositivos especializados mediante varios movimientos
+ programados para la realización de una variedad de tareas
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Estructura de los robots manipuladores
+\end_layout
+
+\begin_layout Standard
+Básicamente la estructura de un robot manipulador es la de un brazo articulado.
+ De manera más específica un robot manipulador industrial es una cadena
+ cinemática abierta formada por un conjunto de eslabones interrelacionados
+ mediante articulaciones las cuales permiten el movimiento de esta dicha
+ cadena.
+\end_layout
+
+\begin_layout Subsubsection
+Tipos de articulaciones
+\end_layout
+
+\begin_layout Standard
+Existen diferentes tipos de articulaciones como podemos observar en la figura
+ 
+\begin_inset LatexCommand ref
+reference "fig:TiposArticulaciones"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+a) La articulación de rotación suministra un grado de libertad, es decir
+ permite la rotación sobre el eje de la articulación.
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+b) La articulación prismática consiste en una translación a lo largo del
+ eje de la articulación.
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+c) En la articulación cilíndrica existen dos grados de libertad, una rotación
+ y una translación sobre el eje de la articulación.
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+d) La articulación planar se caracteriza por el movimiento de desplazamiento
+ en un plano, tiene dos grados de libertad.
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+e) Por último la articulación esférica combina tres giros en tres direcciones
+ perpendiculares en el espacio.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/articulaciones.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+Tipos de articulaciones: a) rotación b) prismática c) cilíndrica d) planar
+ e) esférica
+\begin_inset LatexCommand label
+name "fig:TiposArticulaciones"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Estructuras básicas
+\end_layout
+
+\begin_layout Standard
+La estructura básica de un robot manipulador consiste en un brazo compuesto
+ por elementos con articulaciones entre ellos.
+ En el último enlace se coloca un efector final como una pinza o un dispositivo
+ especial para realizar operaciones específicas.
+ Estas estructuras tienen ciertas propiedades en cuanto a su espacio de
+ trabajo y accesibilidad a posiciones determinadas.
+ En la figura 
+\begin_inset LatexCommand ref
+reference "fig:Estructuras"
+
+\end_inset
+
+ se muestran algunas configuraciones básicas.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/manipuladores.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+Estructura: a) 3D b) 2D c) 1D d) 3G
+\begin_inset LatexCommand label
+name "fig:Estructuras"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+a) Configuración 3D o PPP tiene tres articulaciones prismáticas.
+ Es bastante usual en la industria para el tansporte de cargas voluminosas.
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+b) Configuración cilíndrica presenta un volumen de trabajo parecido a un
+ cilindro, sin embargo generalmente no tienen una rotación de 360º.
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+c) Configuración polar, los de brazo articulado y los modelos SCARA presentan
+ un volumen de trabajo irregular.
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+d) Configuración angular.
+\end_layout
+
+\begin_layout Subsection
+Clasificación
+\end_layout
+
+\begin_layout Standard
+La Asociación Japonesa de Robots Industriales (JIRA, por sus siglas en inglés)
+ clasificó los robots desde manipuladores simples hasta sistemas avanzados
+ incorporando inteligencia artificial.
+ A continuación se lista dicha clasificación la cual fue realizada a finales
+ del siglo veinte
+\begin_inset LatexCommand cite
+after "p. 267"
+key "key-2"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+Manipuladores operados manualmente.
+ Máquinas que requieren ser operadas por humanos.
+\end_layout
+
+\begin_layout Itemize
+Manipuladores secuenciales.
+ Dispositivos que realizan una serie de tareas en la misma secuencia cada
+ vez que son activados.
+\end_layout
+
+\begin_layout Itemize
+Manipuladores programables.
+ Se incluyen los tipos simples de los robots industriales.
+\end_layout
+
+\begin_layout Itemize
+Robots controlados numéricamente.
+ Servo robots.
+\end_layout
+
+\begin_layout Itemize
+Robots con sensores.
+ Robots que utilizan sensores de cualquier tipo, proximidad, presión, tactil,
+ etc.
+\end_layout
+
+\begin_layout Itemize
+Robots adaptativos.
+ Robots que ajustan la forma en que trabajan para compensar cambios en el
+ entorno.
+\end_layout
+
+\begin_layout Itemize
+Robots inteligentes.
+ Robots con controladores de salida sofisticados que pueden considerarse
+ para procesar inteligencia artificial.
+\end_layout
+
+\begin_layout Itemize
+Sistemas mecatrónicos inteligentes.
+ Computadoras que controlan un conjunto de robots o dispositivos robóticos.
+\end_layout
+
+\begin_layout Subsection
+Generaciones
+\end_layout
+
+\begin_layout Standard
+Ingenieros y cientificos han analizado la evolución de los robots.
+ Marcando su progreso de acuerdo a varias generaciones
+\begin_inset LatexCommand cite
+after "p. 268"
+key "key-2"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+Primer Generación 
+\newline
+Consta de un brazo mecánico simple.
+ Estos robots tienen la habilidad de realizar movimientos precisos a gran
+ velocidad, trabajar mucho tiempo continuo.
+ También pueden trabajar en grupo, como un sistema de manufactura integrada
+ automatizado si sus movimientos son sincronizados.
+\end_layout
+
+\begin_layout Itemize
+Segunda Generación
+\newline
+Estos robots tuvieron inteligencia rudimentaria, es decir,
+ estaban equipados con sensores que los retroalimentaban con información
+ acerca del entorno exterior.
+ 
+\newline
+Estos podían estar sincronizados unos con otros sin la supervisión constante
+ del operador (humano).
+\end_layout
+
+\begin_layout Itemize
+Tercer Generación
+\newline
+Esta generación engloba dos direcciones de evolución de
+ la tecnología de los robots inteligentes: robots autónomos y robot insecto.
+\newline
+Un
+ robot autónomo puede trabajar por si solo.
+ Puede realizar actividades complejas sin supervisión por tiempos prolongados.
+\newline
+El
+ robot insecto trabaja bajo el control de una computadora central.
+ Trabajan como hormigas en un hormigero, o como abejas en una colmena.
+ Estos robots son de poca inteligencia artificial pero en grupo tienen un
+ potencial enorme.
+\end_layout
+
+\begin_layout Section
+Revisión del Estado del Arte
+\end_layout
+
+\begin_layout Standard
+En la actualidad los robots son usados para realizar tareas peligrosas,
+ difíciles, repetitivas o complicadas para los humanos.
+ Esto usualmente toma la forma de un robot industrial usado en las líneas
+ de producción.
+ Algunas aplicaciones incluyen la limpieza de residuos tóxicos, minería
+ y localización de minas terrestres.
+ Sin embargo la manufactura continúa siendo el principal mercado donde los
+ robots son utilizados.
+ En particular, robots articulados son los más usados comúnmente.
+ Las aplicaciones incluyen soldado, pintado y carga de maquinaria.
+ La Industria automotriz ha tomado gran ventaja de esta nueva tecnología
+ donde los robots han sido programados para reemplazar el trabajo de los
+ humanos en muchas tareas repetitivas.
+\end_layout
+
+\begin_layout Subsection
+Programación
+\end_layout
+
+\begin_layout Standard
+Un lenguaje de programación de robots sirve como interfaz entre el usuario
+ humano y el robot industrial.
+ Los manipuladores de robots se diferencian a sí mismos de la automatización
+ fija por ser 
+\begin_inset Quotes eld
+\end_inset
+
+flexibles
+\begin_inset Quotes erd
+\end_inset
+
+, es decir que son programables.
+ No solo son programables los movimientos de los manipuladores sino que,
+ a través del uso de sensores y comunicación con otros tipos de automatización,
+ los manipuladores pueden adaptarse a las variaciones a medida que realizan
+ su tarea.
+\end_layout
+
+\begin_layout Standard
+Generalmente la programación de los robots se realiza fuera de linea, a
+ continuación se listan paquetes existentes para programar:
+\end_layout
+
+\begin_layout Itemize
+MS Robotic Studio ( ~ $ 4 000.00 M.N)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Herramienta de programación visual para crear y depurar aplicaciones robóticas.
+ El desarrollador puede interactuar con los robots mediante interfases basadas
+ en web o nativas al sistema operativo (MS Windows).
+\end_layout
+
+\begin_layout Itemize
+Contiene simulación realística provista por el motor PhysX de AGEIA.
+ Se posibilita la emulación por software o la aceleración por hardware.
+\end_layout
+
+\begin_layout Itemize
+Se permiten varios lenguajes como: Microsoft Visual Studio Express languages
+ (Visual C#® y Visual Basic® .NET), JScript® y Microsoft IronPython 1.0 Beta
+ 1, y lenguajes de terceros que se adecuen a la arquitectura basada en servicios.
+\end_layout
+
+\begin_layout Itemize
+Robots soportados: CoroWare's CoroBot ($3 200), Lego Mindstorms NXT, iRobot
+ Create y Robosoft's robots (38 a 65 K€).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+KUKA.OfficeLite (> $55 000.00 USD) 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Este sistema de programación posee las mismas características que el software
+ de sistema KUKA: para el manejo y la programación se utiliza la interfaz
+ de usuario Original KUKA y la sintaxis KRL: un lenguaje completo.
+\end_layout
+
+\begin_layout Itemize
+Disponibilidad de todo el repertorio de funciones de las respectivas ediciones
+ del software de sistema.
+ Sin embargo, no se pueden conectar dispositivos de hardware periféricos.
+\end_layout
+
+\begin_layout Itemize
+Comprobación de sintaxis mediante el compilador y el interpretador disponibles;
+ creación de programas KRL de usuario ejecutables.
+\end_layout
+
+\begin_layout Itemize
+Control completo de la ejecución de un programa de aplicación de robot.
+ Ello permite optimizar la duración de los ciclos.
+\end_layout
+
+\begin_layout Itemize
+El Techware de KUKA para optimización de programas se puede utilizar e instalar
+ en todo momento.
+ De este modo, en un PC estándar se puede disponer de todo el software de
+ sistema Original, sin necesidad de emulaciones.
+\end_layout
+
+\begin_layout Itemize
+Las entradas originales se pueden simular.
+\end_layout
+
+\begin_layout Itemize
+KUKA.OfficeLite no se puede utilizar para controlar un robot.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Desarrollo tecnológico
+\end_layout
+
+\begin_layout Standard
+Desafortunadamente el desarrollo actual en el país está enfocado generalmente
+ a robots móviles dejando a los manipuladores de lado.
+\end_layout
+
+\begin_layout Standard
+Universidades como el Tecnológico de Monterrey [Dirección de Vinculación
+ y Desarrollo campus Guadalajara] se está enfocando más en la planeación
+ de movimientos para robots, así como el Instituto Tecnológico Autónomo
+ de México[Laboratorio de robótica, ITAM] se enfocan al área de robots móviles
+ pequeños.
+\end_layout
+
+\begin_layout Chapter
+Interfaces de software 3D
+\begin_inset LatexCommand label
+name "cha:3_Interfaces3D"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+La interfaz de usuario es lo más importante en cualquier sistema de cómputo,
+ en la actualidad todo sistema debe contener una herramienta con la que
+ el usuario pueda ordenar al computador que hacer.
+\end_layout
+
+\begin_layout Standard
+Una interfaz mal diseñada puede causar que el mejor sistema de cómputo sea
+ ineficaz y por lo tanto sea deshechado, es por esto que se debe diseñar
+ una interfaz de usuario, la cual incluye:
+\end_layout
+
+\begin_layout Itemize
+Eleccion de un sistema de renderización.
+\end_layout
+
+\begin_layout Itemize
+Diseño de los controles.
+\end_layout
+
+\begin_layout Section
+Elección de sistema de renderización.
+\end_layout
+
+\begin_layout Standard
+La elección debe realizarse tomando en cuenta ventajas y desventajas de
+ las tecnologías disponibles las cuales se muestran en la tabla 
+\begin_inset LatexCommand ref
+reference "tab:Comparativa-entre-Direct3DJava3dOpenGl"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Direct3D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Java3D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+OpenGL
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Plataformas soportadas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Windows
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Multiplataforma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Multiplataforma
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Soporte nativo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Si
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Licencia
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+EULA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+GNU General Public
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+SGI
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+Comparativa entre Direct3D, Java3D y OpenGL
+\begin_inset LatexCommand label
+name "tab:Comparativa-entre-Direct3DJava3dOpenGl"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Debido a que Direct3D solo soporta la plataforma MS-Windows fue deshechada
+ y por otra parte Java3D tiene una dependencia con OpenGL o con Direct3D
+ también fue deshecada dejando como sistema de renderización a OpenGL.
+\end_layout
+
+\begin_layout Subsection
+OpenGL
+\end_layout
+
+\begin_layout Standard
+OpenGL es una especificación estándar que define una API multilenguaje y
+ multiplataforma para escribir aplicaciones que produzcan gráficos 2D y
+ 3D.
+ Fue desarrollada por Silicon Graphics Inc.
+ (SGI) en 1992 .
+\end_layout
+
+\begin_layout Standard
+Las funciones y comandos de esta API están integrados en las tarjetas de
+ aceleración gráfica 3D, o en su defecto son emuladas por el sistema operativo.
+ Es claro que para el propósito específico de modelado 3D no se debe realizar
+ emulación por software sino se debe tener acceso directo al hardware.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/opengl-hw.png
+	lyxscale 50
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Aplicación-OpenGL"
+
+\end_inset
+
+Aplicación utilizando OpenG y aceleración gráfica por hardware
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset LatexCommand ref
+reference "fig:Aplicación-OpenGL"
+
+\end_inset
+
+ se muestra una aplicación utilizando OpenGL y aceleración gráfica por hardware;
+ se puede observar que las llamadas a la interfaz de aplicación OpenGL pasan
+ directamente al hardware de aceleración y no pasan a tavés de la interfaz
+ de dispositivo de gráfico (GDI) que sería el caso si se tratara de simulación
+ por software.
+\end_layout
+
+\begin_layout Subsubsection
+GLUT
+\end_layout
+
+\begin_layout Standard
+Es un conjunto de herramientas OpenGL, un sistema de ventanas independientes
+ para escribir programas OpenGL en lenguajes C y FORTRAN.
+ Implementa un simple interfaz de programación para aplicaciones (API) para
+ OpenGL.
+ Por su parte GLUT hace considerablemente fácil la programación OpenGL.
+\end_layout
+
+\begin_layout Standard
+GLUT provee un soporte para las plataformas Windows, Linux, Mac.
+ Con la única desventaja de tener que recompilar para ser usado en otra
+ plataforma.
+\end_layout
+
+\begin_layout Subsubsection
+JOGL (JSR-231)
+\end_layout
+
+\begin_layout Standard
+Jogl es un enlace del lenguaje de programación Java para la API de OpenGL.
+ Soporta integración con los estándares de Java AWT y Swing.
+ Jogl provee aceso a las más recientes rutinas de OpenGL (OpenGL 2.0 con
+ extenciones de fabricante) asi como una pataforma independiente para accesar
+ a hardware acelerador.
+ 
+\end_layout
+
+\begin_layout Standard
+Jogl tambien prvee algunas de las mas populares características introducidas
+ por otros enlaces existentes para OpenGL como son GL4Java, LWJGL, GLUT
+ entre otros.
+\end_layout
+
+\begin_layout Standard
+Es importante mencionar que esta tecnologia es código abierto y fue iniciada
+ por Game Technology Group.
+\end_layout
+
+\begin_layout Chapter
+Modelado de objetos en 3D 
+\begin_inset LatexCommand label
+name "cha:4_Modelado3D"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Section
+Elementos básicos
+\end_layout
+
+\begin_layout Subsection
+Puntos
+\end_layout
+
+\begin_layout Subsection
+Lineas
+\end_layout
+
+\begin_layout Subsection
+Curvas de Bezier
+\end_layout
+
+\begin_layout Subsection
+Curvas Spline
+\end_layout
+
+\begin_layout Chapter
+Interfaz entre modelado y el robot SCARA
+\begin_inset LatexCommand label
+name "cha:5_InterfazModelado"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Section
+Robot SCARA
+\end_layout
+
+\begin_layout Subsection
+Características
+\end_layout
+
+\begin_layout Subsection
+Diseño
+\end_layout
+
+\begin_layout Subsection
+Limitantes
+\end_layout
+
+\begin_layout Section
+Conversión de modelado a acciones SCARA
+\end_layout
+
+\begin_layout Section
+Implementación de software de planeación
+\end_layout
+
+\begin_layout Section
+Conectividad mediante puerto serie
+\end_layout
+
+\begin_layout Chapter
+Pruebas
+\begin_inset LatexCommand label
+name "cha:6_Pruebas"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción 
+\end_layout
+
+\begin_layout Section
+Funcionalidad multiplataforma del software 3D
+\end_layout
+
+\begin_layout Section
+Conectividad multiplataforma entre software y el robot
+\end_layout
+
+\begin_layout Section
+Funcionalidad de la planeacion de acciones
+\end_layout
+
+\begin_layout Section
+Pruebas en campo
+\end_layout
+
+\begin_layout Chapter
+Conclusiones
+\begin_inset LatexCommand label
+name "cha:7_Conclusiones"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusiones
+\end_layout
+
+\begin_layout Section
+Trabajos futuros 
+\end_layout
+
+\begin_layout Chapter*
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+newpage
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+addcontentsline{toc}{chapter}{Anexo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Anexo Glosario
+\end_layout
+
+\begin_layout Description
+CRM Customer Relationship Management
+\end_layout
+
+\begin_layout Description
+ERP Enterprise Resource Planning.
+\end_layout
+
+\begin_layout Description
+ISO International Organization for Standardization
+\end_layout
+
+\begin_layout Description
+JIRA Japan Industrial Robot Association
+\end_layout
+
+\begin_layout Description
+OpenGL Open Graphics Library.
+\end_layout
+
+\begin_layout Description
+SCARA Selective Compliant Articulated Robot Arm.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "WIKI-ROBOT"
+key "key-3"
+
+\end_inset
+
+http://en.wikipedia.org/wiki/Industrial_robot
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "GLUT"
+key "key-4"
+
+\end_inset
+
+http://www.opengl.org/resources/libraries/glut/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "JOGL"
+key "key-5"
+
+\end_inset
+
+https://jogl.dev.java.net/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "RAH"
+key "key-1"
+
+\end_inset
+
+Thomas R.
+ Kurfess, Robotics and Automation Handbook, E.U.A.: ed.
+ CRC PRESS, 2005.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "CER"
+key "key-2"
+
+\end_inset
+
+Stan Gibilisco, Concise Encyclopedia of Robotics, E.U.A.: ed.
+ McGraw-Hill, 2003
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "PJGD"
+key "key-3"
+
+\end_inset
+
+Andrew Davison, Pro Java 6 3D Game Development Java 3D, JOGL, JInput and
+ JOAL APIs, E.U.A.: ed.
+ Apress, 2007
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "RMRM"
+key "key-1"
+
+\end_inset
+
+Aníbal Ollero Baturone, Robótica: Manipuladores y robots móviles, Marcombo
+ Editorial.
+\end_layout
+
+\end_body
+\end_document

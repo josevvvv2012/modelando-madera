@@ -122,6 +122,8 @@ public class Robotizando {
 				.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 						cancelar=false;
+						m();
+						/*
 						Thread t = new Thread(new Runnable() {
 							public void run()
 							{
@@ -130,6 +132,7 @@ public class Robotizando {
 						});
 						t.start();
 						//m();
+						 * */
 					}
 				});
 		bCancelar = new Button(sShell, SWT.NONE);
