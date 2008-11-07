@@ -5,6 +5,6 @@
 || || || || || ||Conexion GUI-Robot ||Conexion GUI-Robot|| || || || || || 
 || || || || || ||  ||  || Version Alpha || || || || || 
 || || || || || ||  ||  ||  ||Version Candidata || || || ||  
-|| || || || || ||  ||  ||  || ||Version Final|| || || 
+|| || || || || ||  ||  ||  || ||Version Candidata||Version Final || || 
 || || || || || ||  ||  ||  || || Realizacion de documentacion||Realizacion de documentacion|| || 
 || || || || || ||  ||  ||  || || || || Revision de documentacion|| 
