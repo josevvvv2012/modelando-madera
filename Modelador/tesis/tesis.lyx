@@ -1,4 +1,4 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -145,8 +145,8 @@ En la actualidad las empresas madereras requieren tener procesos automatizados
  poder competir en el actual modelo de mercado.
  Desafortunadamente en la región maderera existen muy pocas empresas que
  cuenten con una automatización en sus procesos.
- Para automatizar una empresa dedica a la producción de artefactos de madera
- se requiere principalmente de:
+ Para automatizar una empresa dedicada a la producción de artefactos de
+ madera se requiere principalmente de:
 \end_layout
 
 \begin_layout Itemize
@@ -170,7 +170,9 @@ Por parte la adminstración parece estar automatizada hasta cierto grado
 \begin_layout Standard
 Observando la necesidad de la automatización en los procesos de fabricación
  de productos se optó por desarrollar una aplicación multiplataforma para
- el modelado de productos de madera haciendo uso de un robot SCARA.
+ el modelado de productos de madera haciendo uso de un robot SCARA realizado
+ en la Facultad de Ingenieria Eléctrica de la Universidad Michoacana de
+ San Nicolas de Hidalgo.
 \end_layout
 
 \begin_layout Section
@@ -181,8 +183,8 @@ Motivación
 En la actualidad la utilización de robots manipuladores en la mayoría de
  las pequeñas y medianas fábricas, en específico las fábricas de la región
  maderera del estado de Michoacán, son factor de que estas tengan un menor
- costo en su proceso de producción y con esto asi puedan así competir en
- el mercado saturado por productos extranjeros.
+ costo en su proceso de producción y con esto puedan así competir en el
+ mercado saturado por productos extranjeros.
 \end_layout
 
 \begin_layout Standard
@@ -200,7 +202,7 @@ Los antecedentes previos realizados en la División de Estudios de Posgrado
  de la Facultad de Ingeniería Eléctrica, de la Universidad Michoacana de
  San Nicolás de Hidalgo, es la construcción de un robot manipulador tipo
  SCARA de cuatro grados de libertad de plataforma abierta, para el cual
- se desarrollara la aplicación de la presente tesis.
+ se desarrollará la aplicación de la presente tesis.
 \end_layout
 
 \begin_layout Section
@@ -491,42 +493,61 @@ name "cha:2_Ambiente"
 \end_layout
 
 \begin_layout Section
-Robots
+Robot
 \end_layout
 
 \begin_layout Standard
-En la actualidad los robots parecen salidos de un mundo de fantasía, esto
- debido a que el desarrollo de robots se ha visto inspirado por el mundo
- de la fantasía.
- Sorpresivamente no existe una definición precisa para el término robot,
- por un lado 
+Un robot, es un agente artificial mecánico o virtual.
+ Los primeros son maquinas usadas para realizar un trabajo automaticamente
+ y son controlados por una computadora; por otro lado tenemos a los robots
+ virtuales también conocidos como 
 \begin_inset Quotes eld
 \end_inset
 
-
-\emph on
-es la versión de ciencia ficción de un robot, tipicamente uno de forma humana
- - un androide o humanoide - con propiedades antropomórficas
-\emph default
-
+bots
 \begin_inset Quotes erd
 \end_inset
 
- y por otra parte 
-\begin_inset Quotes eld
-\end_inset
+ que son agentes virtuales de software.
+\end_layout
 
+\begin_layout Standard
+En general para considerar a un agente artificial como robot, este debe
+ cumplir algunas propiedades:
+\end_layout
 
-\emph on
-robot eficiente de automatizacion industrial con propiedades de repetir
- actividades
-\emph default
+\begin_layout Itemize
+Manipular cosas de su entorno.
+\end_layout
 
-\begin_inset Quotes erd
-\end_inset
+\begin_layout Itemize
+Sentir cosas del entorno.
+\end_layout
 
-.
- La ISO 8373 lo define como 
+\begin_layout Itemize
+Contar con cierta inteligencia para tomar decisiones basadas en el ambiente
+ o en una secuencia previamente programada.
+\end_layout
+
+\begin_layout Itemize
+Ser programable
+\end_layout
+
+\begin_layout Itemize
+Moverse en uno o más ejes.
+\end_layout
+
+\begin_layout Itemize
+Realizar movimientos coordinados.
+\end_layout
+
+\begin_layout Standard
+A continuación se presentan algunas definiciones realizadas por diferentes
+ institutos:
+\end_layout
+
+\begin_layout Itemize
+La ISO 8373 lo define como 
 \begin_inset Quotes eld
 \end_inset
 
@@ -540,7 +561,11 @@ un manipulador multipropósito automaticamente controlado y reprogramable
 \end_inset
 
 .
- El Instituto de Robótica de América lo define como 
+ 
+\end_layout
+
+\begin_layout Itemize
+El Instituto de Robótica de América lo define como 
 \begin_inset Quotes eld
 \end_inset
 
@@ -555,6 +580,69 @@ manipulador multifuncional y reprogramable diseñado para mover material,
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection
+Clasificación
+\end_layout
+
+\begin_layout Standard
+La Asociación Japonesa de Robots Industriales (JIRA, por sus siglas en inglés)
+ clasificó los robots desde manipuladores simples hasta sistemas avanzados
+ incorporando inteligencia artificial.
+ A continuación se lista dicha clasificación la cual fue realizada a finales
+ del siglo veinte
+\begin_inset LatexCommand cite
+after "p. 267"
+key "key-2"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+Manipuladores operados manualmente.
+ Máquinas que requieren ser operadas por humanos.
+\end_layout
+
+\begin_layout Itemize
+Manipuladores secuenciales.
+ Dispositivos que realizan una serie de tareas en la misma secuencia cada
+ vez que son activados.
+\end_layout
+
+\begin_layout Itemize
+Manipuladores programables.
+ Se incluyen los tipos simples de los robots industriales.
+\end_layout
+
+\begin_layout Itemize
+Robots controlados numéricamente.
+ Servo robots.
+\end_layout
+
+\begin_layout Itemize
+Robots con sensores.
+ Robots que utilizan sensores de cualquier tipo, proximidad, presión, tactil,
+ etc.
+\end_layout
+
+\begin_layout Itemize
+Robots adaptativos.
+ Robots que ajustan la forma en que trabajan para compensar cambios en el
+ entorno.
+\end_layout
+
+\begin_layout Itemize
+Robots inteligentes.
+ Robots con controladores de salida sofisticados que pueden considerarse
+ para procesar inteligencia artificial.
+\end_layout
+
+\begin_layout Itemize
+Sistemas mecatrónicos inteligentes.
+ Computadoras que controlan un conjunto de robots o dispositivos robóticos.
 \end_layout
 
 \begin_layout Subsection
@@ -746,142 +834,24 @@ c) Configuración polar, los de brazo articulado y los modelos SCARA presentan
 d) Configuración angular.
 \end_layout
 
-\begin_layout Subsection
-Clasificación
-\end_layout
-
-\begin_layout Standard
-La Asociación Japonesa de Robots Industriales (JIRA, por sus siglas en inglés)
- clasificó los robots desde manipuladores simples hasta sistemas avanzados
- incorporando inteligencia artificial.
- A continuación se lista dicha clasificación la cual fue realizada a finales
- del siglo veinte
-\begin_inset LatexCommand cite
-after "p. 267"
-key "key-2"
-
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Itemize
-Manipuladores operados manualmente.
- Máquinas que requieren ser operadas por humanos.
-\end_layout
-
-\begin_layout Itemize
-Manipuladores secuenciales.
- Dispositivos que realizan una serie de tareas en la misma secuencia cada
- vez que son activados.
-\end_layout
-
-\begin_layout Itemize
-Manipuladores programables.
- Se incluyen los tipos simples de los robots industriales.
-\end_layout
-
-\begin_layout Itemize
-Robots controlados numéricamente.
- Servo robots.
-\end_layout
-
-\begin_layout Itemize
-Robots con sensores.
- Robots que utilizan sensores de cualquier tipo, proximidad, presión, tactil,
- etc.
-\end_layout
-
-\begin_layout Itemize
-Robots adaptativos.
- Robots que ajustan la forma en que trabajan para compensar cambios en el
- entorno.
-\end_layout
-
-\begin_layout Itemize
-Robots inteligentes.
- Robots con controladores de salida sofisticados que pueden considerarse
- para procesar inteligencia artificial.
-\end_layout
-
-\begin_layout Itemize
-Sistemas mecatrónicos inteligentes.
- Computadoras que controlan un conjunto de robots o dispositivos robóticos.
-\end_layout
-
-\begin_layout Subsection
-Generaciones
-\end_layout
-
-\begin_layout Standard
-Ingenieros y cientificos han analizado la evolución de los robots.
- Marcando su progreso de acuerdo a varias generaciones
-\begin_inset LatexCommand cite
-after "p. 268"
-key "key-2"
-
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Itemize
-Primer Generación 
-\newline
-Consta de un brazo mecánico simple.
- Estos robots tienen la habilidad de realizar movimientos precisos a gran
- velocidad, trabajar mucho tiempo continuo.
- También pueden trabajar en grupo, como un sistema de manufactura integrada
- automatizado si sus movimientos son sincronizados.
-\end_layout
-
-\begin_layout Itemize
-Segunda Generación
-\newline
-Estos robots tuvieron inteligencia rudimentaria, es decir,
- estaban equipados con sensores que los retroalimentaban con información
- acerca del entorno exterior.
- 
-\newline
-Estos podían estar sincronizados unos con otros sin la supervisión constante
- del operador (humano).
-\end_layout
-
-\begin_layout Itemize
-Tercer Generación
-\newline
-Esta generación engloba dos direcciones de evolución de
- la tecnología de los robots inteligentes: robots autónomos y robot insecto.
-\newline
-Un
- robot autónomo puede trabajar por si solo.
- Puede realizar actividades complejas sin supervisión por tiempos prolongados.
-\newline
-El
- robot insecto trabaja bajo el control de una computadora central.
- Trabajan como hormigas en un hormigero, o como abejas en una colmena.
- Estos robots son de poca inteligencia artificial pero en grupo tienen un
- potencial enorme.
-\end_layout
-
 \begin_layout Section
 Revisión del Estado del Arte
 \end_layout
 
 \begin_layout Standard
 En la actualidad los robots son usados para realizar tareas peligrosas,
- difíciles, repetitivas o complicadas para los humanos.
+ difíciles, repetitivas y/o complicadas para los humanos.
  Esto usualmente toma la forma de un robot industrial usado en las líneas
  de producción.
  Algunas aplicaciones incluyen la limpieza de residuos tóxicos, minería
  y localización de minas terrestres.
  Sin embargo la manufactura continúa siendo el principal mercado donde los
- robots son utilizados.
- En particular, robots articulados son los más usados comúnmente.
+ robots son utilizados, en particular, robots articulados son los más usados
+ comúnmente.
  Las aplicaciones incluyen soldado, pintado y carga de maquinaria.
- La Industria automotriz ha tomado gran ventaja de esta nueva tecnología
- donde los robots han sido programados para reemplazar el trabajo de los
- humanos en muchas tareas repetitivas.
+ En este ramo la industria automotriz ha tomado gran ventaja de esta nueva
+ tecnología donde los robots han sido programados para reemplazar el trabajo
+ de los humanos en muchas tareas repetitivas.
 \end_layout
 
 \begin_layout Subsection
@@ -1396,6 +1366,10 @@ name "cha:4_Modelado3D"
 
 \begin_layout Section
 Introducción
+\end_layout
+
+\begin_layout Standard
+Para modelar
 \end_layout
 
 \begin_layout Section
