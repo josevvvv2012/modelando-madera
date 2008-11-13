@@ -122,17 +122,13 @@ public class Robotizando {
 				.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 						cancelar=false;
-						m();
-						/*
-						Thread t = new Thread(new Runnable() {
-							public void run()
-							{
-								m();
-							}
-						});
-						t.start();
 						//m();
-						 * */
+						System.out.println("corriendo...");
+						getTask2(pbPuntos, pbFiguras).start();
+						System.out.println("finalizado...");
+						
+						//m();
+						
 					}
 				});
 		bCancelar = new Button(sShell, SWT.NONE);
@@ -148,29 +144,49 @@ public class Robotizando {
 		label7.setText("");
 	}
 
-	private void m() {
-		for(int i=0; i<10; i++) {
-			for(int j=0; j<50; j++) {
-				if(cancelar==true)
-					return;
-				actualizarPB(9, i, 49, j);
-				try {
-					Thread.sleep(5);
-				} catch (InterruptedException e) {
-
-					e.printStackTrace();
-				}
 	
-			}
-		}
-	}
-	private void actualizarPB(int nFig, int iFig, int nPnt, int iPnt ) {
-		if(pbPuntos.getMaximum()!=nPnt)
-			pbPuntos.setMaximum(nPnt);
-		pbPuntos.setSelection(iPnt);
-		
-		if(pbPuntos.getMaximum()!=nFig)
-			pbFiguras.setMaximum(nFig);
-		pbFiguras.setSelection(iFig);
+	  public Thread getTask2(ProgressBar pbP, ProgressBar pbF) {
+		    final ProgressBar pbP1=pbP;
+		    final ProgressBar pbF1=pbF;
+		    final int nFig=9; 
+		    final int nPnt=49;
+		    return new Thread() {
+
+		      public void run() {
+
+		 		for(int i=0; i<=nFig; i++) {
+					for(int j=0; j<=nPnt; j++) {
+						final int iFig=i;
+						final int iPnt=j;
+						if(cancelar==true)
+							return;
+						
+						sShell.getDisplay().asyncExec(new Runnable() {
+					          public void run() {		            		            		             
+					        	  actualizarPB(pbF1,nFig, iFig, pbP1, nPnt, iPnt);					        	  
+					          }
+					        });
+						
+						try {
+							Thread.sleep(5);
+						} catch (InterruptedException e) {
+
+							e.printStackTrace();
+						}			
+					}
+				}		 		
+		      }
+		    };
+		  }
+	  
+
+	private void actualizarPB(ProgressBar pbF1, int nFig, int iFig, ProgressBar pbP1, int nPnt, int iPnt ) {
+		  if(pbP1.getMaximum()!=nPnt)
+    		  pbP1.setMaximum(nPnt);
+    	  pbP1.setSelection(iPnt);
+  		
+  		if(pbF1.getMaximum()!=nFig)
+  			pbF1.setMaximum(nFig);
+  		pbF1.setSelection(iFig);
 	}
 }

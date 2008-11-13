@@ -52,6 +52,7 @@ public class Tesis {
 	private Composite compositeBarras = null;
 	private TipoFigura2 tipoFigura = null;
 	private ListaFiguras listaFiguras = null;
+	private EnviaRobot enviaRobot = null;
 	private Plot plot = null;  //  @jve:decl-index=0:
 	private Punto pAnt = null;
 	private Vector<Punto> ps=new Vector<Punto>();  //  @jve:decl-index=0:
@@ -99,7 +100,23 @@ public class Tesis {
 		listaFiguras.buttonRobotizar.addListener(SWT.MouseDown, listener3);
 	}
 	
-	
+	private void crearListenerEnviarRobot() {
+		Listener listener = new Listener() {						
+			public void handleEvent(Event e) {					
+				switch(e.type) {
+					case SWT.MouseDown:
+						if(okPort) {
+							enviaRobot.setFiguras(listaFiguras.figuras);
+							enviaRobot.setComuni(comuni);							
+						}
+						else
+							mostrarMSG(DEF.errorNoConexion,DEF.error);
+						break;
+				}				
+			}
+		};
+		enviaRobot.bEnviar.addListener(SWT.MouseDown, listener);		
+	}
 	
 	private void crearListenerB_Fijar() {
 		Listener listener2 = new Listener() {						
@@ -531,6 +548,14 @@ public class Tesis {
 			
 			
 			
+			
+			enviaRobot = new EnviaRobot(bar, SWT.NONE);
+			ExpandItem item2 = new ExpandItem (bar, SWT.NONE, 2);		
+			item2.setText(DEF.tEnviaRobot);
+			item2.setHeight(enviaRobot.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
+			item2.setExpanded(false);
+			item2.setControl(enviaRobot);
+			
 		
 		bar.setSpacing(8);		
 	}
@@ -690,7 +715,8 @@ public class Tesis {
 		
 		crearListenerCanvas();
 		crearListenerB_Fijar();
-		crearListenerRobotizar();				
+		crearListenerRobotizar();
+		crearListenerEnviarRobot();
 	}
 	private boolean inicializarPuerto() {
 		comuni = new Comunicacion();  
