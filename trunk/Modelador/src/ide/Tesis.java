@@ -88,7 +88,7 @@ public class Tesis {
 			public void handleEvent(Event e) {					
 				switch(e.type) {
 					case SWT.MouseDown:
-						enviarRobot(false);						
+						enviarRobot(true);						
 						break;
 				}				
 			}
