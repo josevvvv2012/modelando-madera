@@ -1215,10 +1215,6 @@ name "tab:Comparativa-entre-Direct3DJava3dOpenGl"
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \end_inset
 
 
@@ -1286,10 +1282,6 @@ Aplicación utilizando OpenG y aceleración gráfica por hardware
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
@@ -1373,7 +1365,7 @@ Para modelar
 \end_layout
 
 \begin_layout Section
-Elementos básicos
+Algoritmos de graficación
 \end_layout
 
 \begin_layout Subsection
@@ -1385,11 +1377,40 @@ Lineas
 \end_layout
 
 \begin_layout Subsection
-Curvas de Bezier
+Circulos
 \end_layout
 
 \begin_layout Subsection
-Curvas Spline
+Elipses
+\end_layout
+
+\begin_layout Subsection
+Curvas de Bezier
+\end_layout
+
+\begin_layout Section
+Almacenamiento y recuperacion
+\end_layout
+
+\begin_layout Subsection
+Almacenamiento en formato xml
+\end_layout
+
+\begin_layout Section
+Importacion de otros formatos
+\end_layout
+
+\begin_layout Subsection
+Imágenes PGM
+\end_layout
+
+\begin_layout Standard
+Una imagen PGM es la representacion a escala de grises de una imagen.
+ 
+\end_layout
+
+\begin_layout Subsection
+Archivos CAD (dxf)
 \end_layout
 
 \begin_layout Chapter
@@ -1404,6 +1425,12 @@ name "cha:5_InterfazModelado"
 
 \begin_layout Section
 Introducción
+\end_layout
+
+\begin_layout Standard
+La interfaz entre el software modelador y el robot es una parte muy importante,
+ ya que si esta llega a colapsar o mal-funcionar se verá reflejado en un
+ trabajo final(objeto de madera) no satisfactorio.
 \end_layout
 
 \begin_layout Section
@@ -1426,8 +1453,8 @@ Limitantes
 Conversión de modelado a acciones SCARA
 \end_layout
 
-\begin_layout Section
-Implementación de software de planeación
+\begin_layout Subsection
+Cinemática inversa
 \end_layout
 
 \begin_layout Section
@@ -1452,16 +1479,40 @@ Introducción
 Funcionalidad multiplataforma del software 3D
 \end_layout
 
+\begin_layout Subsection
+Windows
+\end_layout
+
+\begin_layout Subsection
+Linux
+\end_layout
+
 \begin_layout Section
 Conectividad multiplataforma entre software y el robot
 \end_layout
 
-\begin_layout Section
-Funcionalidad de la planeacion de acciones
+\begin_layout Subsection
+Windows
+\end_layout
+
+\begin_layout Subsection
+Linux
 \end_layout
 
 \begin_layout Section
 Pruebas en campo
+\end_layout
+
+\begin_layout Subsection
+Realizacion de primitivas
+\end_layout
+
+\begin_layout Subsection
+Imagenes PGM
+\end_layout
+
+\begin_layout Subsection
+Archivos CAD
 \end_layout
 
 \begin_layout Chapter
@@ -1527,6 +1578,10 @@ JIRA Japan Industrial Robot Association
 
 \begin_layout Description
 OpenGL Open Graphics Library.
+\end_layout
+
+\begin_layout Description
+PGM Portable GrayMap.
 \end_layout
 
 \begin_layout Description

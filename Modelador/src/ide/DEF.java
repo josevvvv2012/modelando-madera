@@ -2,6 +2,9 @@ package ide;
 
 public  class DEF {
 
+	public static final double incRobot = 0.12;
+	public static final int arriba = 150000;
+	
 	public static final String ext = ".xml";
 	public static final String extpgm = ".pgm";
 	public static final String mArchivo = "Archivo";
@@ -28,6 +31,7 @@ public  class DEF {
 	public static final String tGaleria = "Galeria";
 	public static final String tBiblioteca = "Biblioteca";
 	public static final String tFigurasProyecto = "Figuras en proyecto";
+	public static final String tEnviaRobot = "Envia a Robot";
 	
 	public static final String error = "Error";
 	public static final String errorConexionPuerto = "Error al intentar conectar el puerto\n";
