@@ -73,26 +73,22 @@ public class Tesis {
 	boolean primera=true;
 	private int z;
 	private Menu submenu1 = null;
-	private Menu submenu2 = null;
-	private double incRobot = 0.12;
+	private Menu submenu2 = null;	
 	private LecturaEscritura le = new LecturaEscritura();  //  @jve:decl-index=0:
 	private PGMRead pgm;  //  @jve:decl-index=0:
 	boolean sigFig = false;
 	boolean levantar=false;
-	private int arriba=150000;
-	private int retardo1=0;
+	
 	double xAnt, yAnt;
 	private boolean importar=false;
+	
 	
 	private void crearListenerRobotizar() {
 		Listener listener3 = new Listener() {						
 			public void handleEvent(Event e) {					
 				switch(e.type) {
 					case SWT.MouseDown:
-						if(okPort)
-							robotizar(listaFiguras.figuras);
-						else
-							mostrarMSG(DEF.errorNoConexion,DEF.error);
+						enviarRobot(false);						
 						break;
 				}				
 			}
@@ -100,17 +96,34 @@ public class Tesis {
 		listaFiguras.buttonRobotizar.addListener(SWT.MouseDown, listener3);
 	}
 	
+	
+	
+	private void enviarRobot(boolean menu) {
+		if(!okPort) {
+			if(!enviaRobot.enviando) {
+				enviaRobot.setFiguras(listaFiguras.figuras);
+				enviaRobot.setComuni(comuni);
+				enviaRobot.setImportar(importar);
+				enviaRobot.bEnviar.setText(DEF.bDetieneRobot);
+				if(menu) {
+					enviaRobot.iniciarProcesoEnvio();
+				}
+			}
+			else
+				if(DEF.pedirConfirmacion(DEF.errorEnviando,DEF.error, sShell)==SWT.YES) {
+					enviaRobot.detenerEnvio();																											
+				}
+		}
+		else
+			DEF.mostrarMSG(DEF.errorNoConexion,DEF.error, sShell);
+	}
+	
 	private void crearListenerEnviarRobot() {
 		Listener listener = new Listener() {						
 			public void handleEvent(Event e) {					
 				switch(e.type) {
 					case SWT.MouseDown:
-						if(okPort) {
-							enviaRobot.setFiguras(listaFiguras.figuras);
-							enviaRobot.setComuni(comuni);							
-						}
-						else
-							mostrarMSG(DEF.errorNoConexion,DEF.error);
+							enviarRobot(false);
 						break;
 				}				
 			}
@@ -127,14 +140,13 @@ public class Tesis {
 						plot.gc.fillRectangle(0, 0, 1200, 800);
 						for(int i=0; i<p.size(); i++) {														
 							switch(p.get(i).tipoFig) {
-								case 1:
+								case DEF.punto:
 									plot.pixel(p.get(i).puntos.firstElement());
 									break;
-								case 2:
+								case DEF.linea:
 									plot.linea(p.get(i).puntos.get(0), p.get(i).puntos.get(1));
 									break;
-								case 3:
-									
+								case DEF.polilinea:									
 									Polilinea poli = new Polilinea(plot, p.get(i).puntos.get(0), p.get(i).puntos.get(1));
 									for(int j=1; j<p.get(i).puntos.size()-1; j++) {
 										poli.agregarLinea(p.get(i).puntos.get(j), p.get(i).puntos.get(j+1));
@@ -143,13 +155,13 @@ public class Tesis {
 									if(p.get(i).relleno)
 										poli.rellenarPolilinea(plot);
 									break;
-								case 4:
+								case DEF.circulo:
 									plot.circulo(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno, 1);
 									break;
-								case 5:
+								case DEF.elipse:
 									plot.elipse(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno, 1);
 									break;
-								case 6:
+								case DEF.bezier:
 									//plot.bezier(p.get(i).puntos.get(0), p.get(i).puntos.get(1), p.get(i).puntos.get(2), p.get(i).puntos.get(3), 1000);
 									plot.bezier(p.get(i).puntos, 1);
 									
@@ -186,14 +198,14 @@ public class Tesis {
 						        	canvas.redraw();
 						        	
 									break;
-								case 1:
+								case DEF.punto:
 									ps.removeAllElements();		
 									ps.add(new Punto(e.x, e.y, z));
 									plot.pixel(ps.get(0));									
 									reiniciarPts=true;
 									redibujar=true;
 									break;
-								case 2:			
+								case DEF.linea:			
 									if(ps.size()==0) {
 										pAnt = new Punto(e.x, e.y, z);
 										ps.add(new Punto(e.x, e.y, z));
@@ -206,7 +218,7 @@ public class Tesis {
 										redibujar=true;
 									}						
 									break;
-								case 3:			
+								case DEF.polilinea:			
 									if(ps.size()==0) {
 										pAnt = new Punto(e.x, e.y, z);
 										ps.add(new Punto(e.x, e.y, z));
@@ -218,7 +230,7 @@ public class Tesis {
 										redibujar=true;
 									}						
 									break;
-								case 4:			
+								case DEF.circulo:			
 									if(ps.size()==0) {
 										pAnt = new Punto(e.x, e.y, z);
 										ps.add(new Punto(e.x, e.y, z));
@@ -231,7 +243,7 @@ public class Tesis {
 										redibujar=true;
 									}						
 									break;
-								case 5:			
+								case DEF.elipse:			
 									if(ps.size()==0) {
 										pAnt = new Punto(e.x, e.y, z);
 										ps.add(new Punto(e.x, e.y, z));
@@ -244,7 +256,7 @@ public class Tesis {
 										redibujar=true;
 									}						
 									break;
-								case 6:
+								case DEF.bezier:
 									if(ps.size()==0) {
 										pAnt = new Punto(e.x, e.y, z);
 										ps.add(new Punto(e.x, e.y, z));
@@ -254,20 +266,7 @@ public class Tesis {
 										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y));
 										ps.add(new Punto(e.x, e.y, z));
 										redibujar=true;
-									}
-									/*
-									else  if (ps.size()==-3){
-										ps.add(new Punto(e.x, e.y, z));
-										plot.xOr(true);										
-										for(int i=1; i< ps.size(); i++) {
-											plot.linea(ps.get(i-1), ps.get(i),1);															
-										}
-										plot.xOr(false);																				
-										plot.bezier(ps.get(0), ps.get(1), ps.get(2), ps.get(3), 1000);										
-										reiniciarPts=true;
-										redibujar = true;
-									}
-									*/
+									}									
 									break;
 								case 7:
 									MessageBox m=new MessageBox(sShell, SWT.ICON_INFORMATION);
@@ -313,7 +312,7 @@ public class Tesis {
 						switch(e.button) {
 							case clickIzq:
 								switch(tipoFigura.getTipo()) {
-								case 3:
+								case DEF.polilinea:
 									ps.add(new Punto(e.x, e.y, z));
 									plot.linea(ps.get(0), ps.lastElement());
 									
@@ -330,7 +329,7 @@ public class Tesis {
 									reiniciarPts=true;
 									redibujar=true;
 									break;
-								case 6:
+								case DEF.bezier:
 									ps.add(new Punto(e.x, e.y, z));
 									plot.xOr(true);										
 									for(int i=1; i< ps.size(); i++) {
@@ -338,35 +337,7 @@ public class Tesis {
 									}
 									plot.xOr(false);
 									
-									plot.bezier(ps, 1);
-									
-									/*
-									double ix, iy;																		
-									Vector<Punto> psNuevo = new Vector<Punto>();
-									Transformaciones trans;
-									//psNuevo.add(new Punto(ps.get(0).getX()-ix, ps.get(0).getY()-iy));
-									//trans.escalamiento(.9, .9);
-									
-									ix = ps.get(0).getX();
-									iy = ps.get(0).getY();
-									psNuevo = (Vector<Punto>) ps.clone();
-									for(double ik =.01;ik<1; ik+=.01) {
-										//psNuevo = (Vector<Punto>) ps.clone();
-										for(int ii=0; ii<ps.size(); ii++) {											
-											//psNuevo.add(new Punto(ps.get(ii).getX()-ix, ps.get(ii).getY()-iy));
-											psNuevo.get(ii).setX(psNuevo.get(ii).getX()-ix);
-											psNuevo.get(ii).setY(psNuevo.get(ii).getY()-iy);
-											trans = new Transformaciones(psNuevo.get(ii));
-											trans.escalamiento(1-ik, 1-ik);
-											psNuevo.get(ii).setX(psNuevo.get(ii).getX()+ix);
-											psNuevo.get(ii).setY(psNuevo.get(ii).getY()+iy);
-											//System.out.println(ps.get(ii).getXML(1));
-											//p2 =  (Vector<Punto>)p.get(i).puntos.clone();											
-										}
-										System.out.println("Ejecutando: "+ik);										
-										plot.bezier(psNuevo,1);
-									}									
-									*/
+									plot.bezier(ps, 1);									
 									reiniciarPts=true;
 									redibujar = true;
 									break;
@@ -378,7 +349,7 @@ public class Tesis {
 					case SWT.MouseMove:						
 						plot.xOr(true);					
 						switch(tipoFigura.getTipo()) {						
-						case 2:
+						case DEF.linea:
 							if(ps.size()>0) {								
 								plot.linea(ps.get(0), pAnt);
 								pAnt = new Punto(e.x, e.y, z);
@@ -386,7 +357,7 @@ public class Tesis {
 								redibujar=true;
 							}								
 							break;							
-						case 3:
+						case DEF.polilinea:
 							if(ps.size()>0) {							
 								plot.linea(ps.get(ps.size()-1), pAnt);
 								pAnt = new Punto(e.x, e.y, z);
@@ -394,7 +365,7 @@ public class Tesis {
 								redibujar=true;
 							}								
 							break;							
-						case 4:
+						case DEF.circulo:
 							if(ps.size()>0) {							
 								plot.circulo(ps.get(0), pAnt, false, 1);						
 								pAnt = new Punto(e.x, e.y, z);
@@ -402,7 +373,7 @@ public class Tesis {
 								redibujar=true;
 							}						
 							break;							
-						case 5:
+						case DEF.elipse:
 							if(ps.size()>0) {						
 								plot.elipse(ps.get(0), pAnt, false, 1);						
 								pAnt = new Punto(e.x, e.y, z);
@@ -410,7 +381,7 @@ public class Tesis {
 								redibujar=true;
 							}						
 							break;
-						case 6:
+						case DEF.bezier:
 							if(ps.size()>0) {							
 								plot.linea(ps.get(ps.size()-1), pAnt);
 								pAnt = new Punto(e.x, e.y, z);
@@ -543,17 +514,15 @@ public class Tesis {
 			ExpandItem item1 = new ExpandItem (bar, SWT.NONE, 1);		
 			item1.setText(DEF.tFigurasProyecto);
 			item1.setHeight(listaFiguras.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
-			item1.setExpanded(true);
+			item1.setExpanded(false);
 			item1.setControl(listaFiguras);
-			
-			
 			
 			
 			enviaRobot = new EnviaRobot(bar, SWT.NONE);
 			ExpandItem item2 = new ExpandItem (bar, SWT.NONE, 2);		
 			item2.setText(DEF.tEnviaRobot);
 			item2.setHeight(enviaRobot.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
-			item2.setExpanded(false);
+			item2.setExpanded(true);
 			item2.setControl(enviaRobot);
 			
 		
@@ -607,7 +576,7 @@ public class Tesis {
 		pushAcercaDe
 				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-						mostrarMSG("Elaborado por:\n\tRoberto Loaeza Valerio",DEF.mAyudaAcercaDe);
+						DEF.mostrarMSG("Elaborado por:\n\tRoberto Loaeza Valerio",DEF.mAyudaAcercaDe, sShell);
 					}
 					public void widgetDefaultSelected(
 							org.eclipse.swt.events.SelectionEvent e) {
@@ -621,11 +590,8 @@ public class Tesis {
 		pushRobotizar.setText(DEF.mHerramientasRobotizar);
 		pushRobotizar
 				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
-					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-						if(okPort)
-							robotizar(listaFiguras.figuras);
-						else
-							mostrarMSG(DEF.errorNoConexion,DEF.error);
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {						
+							enviarRobot(true);													
 					}
 					public void widgetDefaultSelected(
 							org.eclipse.swt.events.SelectionEvent e) {
@@ -702,7 +668,7 @@ public class Tesis {
 			public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
 			}
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				if(pedirConfirmacion(DEF.pSalir, DEF.mArchivoSalir)==SWT.YES) 
+				if(DEF.pedirConfirmacion(DEF.pSalir, DEF.mArchivoSalir, sShell)==SWT.YES) 
 					System.exit(0);				 
 			}
 			
@@ -723,143 +689,22 @@ public class Tesis {
 		try {
 			comuni.connect(comPort);
 		} catch (Exception e) {
-			mostrarMSG(DEF.errorConexionPuerto+e.toString(), DEF.error);
+			DEF.mostrarMSG(DEF.errorConexionPuerto+e.toString(), DEF.error, sShell);
 			return false;
 		}
 		return true;
 	}
 	
-	private void robotizar(Vector<Figuras> figuras) {
-		Vector <primitivas.Punto>puntos;		
-		
-		double dx, dy;
-		primera=true;
-		sigFig=false;
-		levantar=false;
-		primitivas.Primitiva prim = null;
-		for(int i=0; i<figuras.size(); i++) {
-			
-			puntos = figuras.get(i).puntos;
-			
-			if(i!=0) {
-				retardo1=(int)dist(xAnt, yAnt, puntos.firstElement().getX(), puntos.firstElement().getY())*100;
-				sigFig=true;
-			}
-			if(!importar||i==0) {				
-				new cinematica.Inversa().get_angles(new Punto(puntos.firstElement().getX(), puntos.firstElement().getY(),arriba),M);
-				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,  i, figuras.size());
-				levantar=true;
-			}
-			
-			
-			switch(figuras.get(i).tipoFig) {
-			case 1:
-				new cinematica.Inversa().get_angles(puntos.get(0),M);				
-				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,i, figuras.size());
-				break;
-			case 2:
-				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1));				
-				break;
-			case 4:
-				dx = (puntos.get(0).getX()-puntos.get(1).getX());
-				dy = (puntos.get(0).getY()-puntos.get(1).getY());
-				int r = (int)Math.sqrt(dx*dx+dy*dy);	
-				prim = new primitivas.Circulo(null,puntos.get(0), r, false, incRobot);
-				break;
-			case 5:
-				dx = Math.abs(puntos.get(0).getX()-puntos.get(1).getX());
-				dy = Math.abs(puntos.get(0).getY()-puntos.get(1).getY());
-						
-				if((dx!=0)&&(dy!=0))
-					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false, incRobot);
-				break;
-			case 6:
-				prim = new primitivas.Bezier(null, puntos, 160);
-				
-				
-				break;
-			}
-			
-			if(prim != null)
-			{
-				int [] mtemp= new int[4];
-				for(int k=0; k<prim.getSizeCoordenadas(); k++) {					
-					copiarM(M, mtemp);
-					new cinematica.Inversa().get_angles(prim.getCoordenadas(k),M);
-					if(!igualM(M, mtemp))
-						mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3], k, prim.getSizeCoordenadas(),  i, figuras.size());
-				}
-				try {
-				xAnt = prim.getCoordenadas(prim.getSizeCoordenadas()-1).getX();
-				yAnt = prim.getCoordenadas(prim.getSizeCoordenadas()-1).getY();
-				}
-				catch (java.lang.ArrayIndexOutOfBoundsException e) {
-					mostrarMSG(e.toString(), DEF.error);
-				}
-			}
-			if(!importar) {
-				new cinematica.Inversa().get_angles(new Punto(xAnt, yAnt,arriba),M);
-				levantar=true;
-				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1, i, figuras.size());
-			}
-		}
-		primera=true;
-	}
 	
-	private boolean igualM(int[] orig, int[] dest) {
-		for(int i=0; i<orig.length; i++)
-			if(orig[i]!=dest[i])
-				return false;
-		return true;
-	}
-	private void copiarM(int[] orig, int [] dest) {
-		for(int i=0; i<orig.length; i++)
-			dest[i]=orig[i];
-	}
-	private void retardo() {
-		try {
-			if(levantar) {
-				Thread.sleep(3500);
-				levantar=false;
-			}
-			if(sigFig) {
-				labelInfo.setText("Retardo ="+retardo1);
-				Thread.sleep(retardo1);
-				
-				sigFig=false;
-			}
-			if(primera) {
-				Thread.sleep(8999);
-				primera=false;
-			}
-			else {
-				Thread.sleep(4);
-			}
-		} catch (InterruptedException e) {
-			mostrarMSG(e.toString(), DEF.error);
-		}
-	}
-	
-	private void mostrar(String str, int act, int max, int iFigura, int totalFigura) {
-		labelInfo.setText("Ejecutando figura "+(iFigura+1)+" de "+totalFigura+".   Enviando: "+act+" de "+max+" instrucciones");
-		try {
-			comuni.escribe(str+"\n");
-			
-		} catch (IOException e) {
-			mostrarMSG(e.toString(), DEF.error);
-			
-		}
-		retardo();		
-	}
 	private void archivoCerrar() {
-		if(pedirConfirmacion(DEF.pCerrar, DEF.mArchivoCerrar)==SWT.YES) {
+		if(DEF.pedirConfirmacion(DEF.pCerrar, DEF.mArchivoCerrar, sShell)==SWT.YES) {
 			listaFiguras.limpiarFiguras();
 			listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);	
 		}
 		
 	}
 	private void archivoNuevo() {
-		if(pedirConfirmacion(DEF.pCerrar, DEF.mArchivoCerrar)==SWT.YES) {
+		if(DEF.pedirConfirmacion(DEF.pCerrar, DEF.mArchivoCerrar,sShell)==SWT.YES) {
 			listaFiguras.limpiarFiguras();
 			listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
 			importar=false;
@@ -894,7 +739,7 @@ public class Tesis {
 					pgm.cargar(listaFiguras);
 					importar=true;
 				} catch (FileNotFoundException e) {
-					mostrarMSG(e.toString(), DEF.error);					
+					DEF.mostrarMSG(e.toString(), DEF.error, sShell);					
 				}	        	
 	        	listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
 	        	canvas.redraw();
@@ -918,34 +763,17 @@ public class Tesis {
 		try {
 			le.escribe(str, figuras);
 		} catch (IOException e) {
-			mostrarMSG(e.toString(), DEF.error);
+			DEF.mostrarMSG(e.toString(), DEF.error, sShell);
 		}
 		
 				
 		return true;
 	}
 
-	private int pedirConfirmacion(String str, String title) {
-		MessageBox messageBox = new MessageBox(sShell, SWT.ICON_QUESTION
-	            | SWT.YES | SWT.NO);
-	        messageBox.setMessage(str);
-	        messageBox.setText(title);
-	        return messageBox.open();
-	        
-	}
-	private void mostrarMSG(String str, String title) {
-		MessageBox messageBox = new MessageBox(sShell, SWT.ICON_INFORMATION
-	            | SWT.OK);
-	        messageBox.setMessage(str);
-	        messageBox.setText(title);
-	        messageBox.open();	        
-	}
 	public double dist(double x0, double y0, double x1, double y1) {
 		double x2 = Math.pow(x0 - x1, 2);
 		double y2 = Math.pow(y0 - y1, 2);
-		return Math.sqrt(x2+y2);
-		
+		return Math.sqrt(x2+y2);	
 	}
-
 }
 
