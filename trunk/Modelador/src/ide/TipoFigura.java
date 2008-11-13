@@ -85,7 +85,7 @@ public class TipoFigura extends Composite {
 		});
 		Punto.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				tipo = 1;
+				tipo = DEF.punto;
 			}
 		});
 		Linea = new Button(this, SWT.RADIO);
@@ -93,7 +93,7 @@ public class TipoFigura extends Composite {
 		Linea.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/linea.png")));
 		Linea.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				tipo = 2;
+				tipo = DEF.linea;
 			}
 		});
 		
@@ -102,7 +102,7 @@ public class TipoFigura extends Composite {
 		PoliLinea.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/poligono.png")));
 		PoliLinea.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				tipo = 3;
+				tipo = DEF.polilinea;
 			}
 		});
 		
@@ -111,7 +111,7 @@ public class TipoFigura extends Composite {
 		Circulo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/circulo.png")));
 		Circulo.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				tipo = 4;
+				tipo = DEF.circulo;
 			}
 		});
 		
@@ -120,7 +120,7 @@ public class TipoFigura extends Composite {
 		Elipse.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/elipse.png")));
 		Elipse.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				tipo = 5;
+				tipo = DEF.elipse;
 			}
 		});
 		
@@ -162,7 +162,7 @@ public class TipoFigura extends Composite {
 		});
 		Bezier.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				tipo = 6;
+				tipo = DEF.bezier;
 			}
 		});
 		this.setLayout(gridLayout);

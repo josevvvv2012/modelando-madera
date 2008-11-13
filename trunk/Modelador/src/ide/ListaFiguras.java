@@ -627,13 +627,13 @@ public class ListaFiguras extends Composite {
 				}catch(java.lang.NumberFormatException ex) {
 					errorMsg(DEF.error, DEF.errorFormatoConv);
 				}
-				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {
+				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {					
 					errorMsg(DEF.error, DEF.errorNoFiguraSel);
 				}
 			}
 		});
 	}
-	public void errorMsg(String titulo, String msg) {
+	public void errorMsg(String titulo, String msg) {				
 		MessageBox m=new MessageBox(this.getShell(), SWT.ICON_ERROR);
 		m.setText(titulo);
 		m.setMessage(msg);
@@ -661,72 +661,6 @@ public class ListaFiguras extends Composite {
 				});
 	}
 	
-	private void robotizar() {
-		Vector <primitivas.Punto>puntos;
-		int comandos=0;
-		int []M = new int[4];
-		double dx, dy;
-		primitivas.Primitiva prim = null;
-		for(int i=0; i<figuras.size(); i++) {
-			
-			puntos = figuras.get(i).puntos;
-			switch(figuras.get(i).tipoFig) {
-			case 1:
-				new cinematica.Inversa().get_angles(puntos.get(0),M);				
-				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]+".");
-				break;
-			case 2:
-				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1));				
-				break;
-			case 4:
-				dx = (puntos.get(0).getX()-puntos.get(1).getX());
-				dy = (puntos.get(0).getY()-puntos.get(1).getY());
-				int r = (int)Math.sqrt(dx*dx+dy*dy);	
-				prim = new primitivas.Circulo(null,puntos.get(0), r, false, incRobot);
-				break;
-			case 5:
-				dx = Math.abs(puntos.get(0).getX()-puntos.get(1).getX());
-				dy = Math.abs(puntos.get(0).getY()-puntos.get(1).getY());
-						
-			//	if((dx!=0)&&(dy!=0))
-				//	prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false);
-				break;
-			case 6:
-				//prim = new primitivas.Bezier(null, puntos.get(0), puntos.get(1), puntos.get(2), puntos.get(3), 10000);
-				prim = new primitivas.Bezier(null, puntos, 10000);
-				break;
-			}
-			
-			if(prim != null)
-				for(int k=0; k<prim.getSizeCoordenadas(); k++) {					
-					new cinematica.Inversa().get_angles(prim.getCoordenadas(k),M);
-					
-					mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]);
-					comandos++;
-				}						
-		}		
-	}
-	
-	private void retardo() {
-		try {
-			Thread.sleep(9);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	private void mostrar(String str) {					
-		try {
-			comuni.escribe(str+"\n");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		retardo();
-		
-	}
-
 
 }  //  @jve:decl-index=0:visual-constraint="10,10" 
 

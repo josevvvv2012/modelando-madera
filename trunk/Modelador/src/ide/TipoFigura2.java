@@ -143,7 +143,7 @@ public class TipoFigura2 extends Composite {
 		rbPunto.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/punto.png")));
 		rbPunto.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				tipo = 1;
+				tipo = DEF.punto;
 			}
 		});
 		rbLinea = new Button(Primitivas, SWT.RADIO);
@@ -151,7 +151,7 @@ public class TipoFigura2 extends Composite {
 		rbLinea.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/linea.png")));
 		rbLinea.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				tipo = 2;
+				tipo = DEF.linea;
 			}
 		});
 		rbPoliLinea = new Button(Primitivas, SWT.RADIO);
@@ -159,7 +159,7 @@ public class TipoFigura2 extends Composite {
 		rbPoliLinea.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/poligono.png")));
 		rbPoliLinea.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				tipo = 3;
+				tipo = DEF.polilinea;
 			}
 		});
 		rbCirculo = new Button(Primitivas, SWT.RADIO);
@@ -167,7 +167,7 @@ public class TipoFigura2 extends Composite {
 		rbCirculo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/circulo.png")));
 		rbCirculo.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				tipo = 4;
+				tipo = DEF.circulo;
 			}
 		});
 		rbElipse = new Button(Primitivas, SWT.RADIO);
@@ -175,7 +175,7 @@ public class TipoFigura2 extends Composite {
 		rbElipse.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/elipse.png")));
 		rbElipse.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				tipo = 5;
+				tipo = DEF.elipse;
 			}
 		});
 		rbBezier = new Button(Primitivas, SWT.RADIO);
@@ -183,7 +183,7 @@ public class TipoFigura2 extends Composite {
 		rbBezier.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/imgs/bezier.png")));
 		rbBezier.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				tipo = 6;
+				tipo = DEF.bezier;
 			}
 		});
 	}

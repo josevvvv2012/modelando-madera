@@ -1,7 +1,19 @@
 package ide;
 
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.MessageBox;
+import org.eclipse.swt.widgets.Shell;
+
 public  class DEF {
 
+	
+	public static final int punto = 1;
+	public static final int linea = 2;
+	public static final int polilinea = 3;
+	public static final int circulo = 4;
+	public static final int elipse = 5;
+	public static final int bezier = 6;
+	
 	public static final double incRobot = 0.12;
 	public static final int arriba = 150000;
 	
@@ -36,8 +48,11 @@ public  class DEF {
 	public static final String error = "Error";
 	public static final String errorConexionPuerto = "Error al intentar conectar el puerto\n";
 	public static final String errorNoConexion = "No hay conexion, intente activar el puerto";
+	public static final String errorEnviando = "Existe un envio en curso, ¿Desea cancelarlo?";
 	public static final String errorNoFiguraSel = "No ha seleccionado una figura, verifique por favor";
 	public static final String errorFormatoConv = "Formato incorrecto de entrada, verifique por favor";
+	public static final String robotFinalizado = "Se ha completado el envio satisfactoriamente";
+	public static final String robotMSG = "Robot";
 	
 	
 	public static final String lProfundidad = "Profundidad:";
@@ -70,6 +85,22 @@ public  class DEF {
 	public static final String bDown = "\\/";
 	public static final String bIzq = "<";
 	public static final String bDer= ">";
+	public static final String bEnviaRobot= "Enviar ...";
+	public static final String bDetieneRobot= "Detener ...";
 	
+	public static final void mostrarMSG(String str, String title,Shell sShell ) {
+		MessageBox messageBox = new MessageBox(sShell, SWT.ICON_INFORMATION
+	            | SWT.OK);
+	        messageBox.setMessage(str);
+	        messageBox.setText(title);
+	        messageBox.open();	        
+	}
 	
+	public static final int pedirConfirmacion(String str, String title, Shell sShell) {
+		MessageBox messageBox = new MessageBox(sShell, SWT.ICON_QUESTION
+	            | SWT.YES | SWT.NO);
+	        messageBox.setMessage(str);
+	        messageBox.setText(title);
+	        return messageBox.open();	        
+	}
 }

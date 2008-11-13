@@ -29,25 +29,47 @@ public class EnviaRobot extends Composite {
 	private Label label1 = null;
 	private ProgressBar pbFiguras = null;
 	private ProgressBar pbPuntos = null;
-	private Label label2 = null;
-	public Button bEnviar = null;
-	Vector<Figuras> figuras;
+	private Label label2 = null;	
+	private Vector<Figuras> figuras;  //  @jve:decl-index=0:
+	private Vector <primitivas.Punto>puntos;
+	private primitivas.Primitiva prim;
 	private Comunicacion comuni;
+	private boolean importar=false;	
+	private double xAnt;
+	private double yAnt;
+	private double dx, dy;
+	private int retardo1;
+	private boolean primera=true;
+	private boolean sigFig=false;
+	private boolean levantar=false;
+	private int []M = new int[4];
+	private boolean detener= false;
 	
+	public void detenerEnvio() {
+		detener=true;
+		bEnviar.setText(DEF.bEnviaRobot);
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			mostrarMSG(e.toString(), DEF.error);
+		}
+		pbFiguras.setSelection(0);
+		pbPuntos.setSelection(0);
+		
+	}
 	
-	double xAnt;
-	double yAnt;
-	double dx, dy;
-	int retardo1;
-	boolean primera=true;
-	boolean sigFig=false;
-	boolean levantar=false;
+	public Button bEnviar = null;
+	public boolean enviando= false;
+	
 	
 	public void setComuni( Comunicacion com) {
 		this.comuni = com;
 	}
 	public void setFiguras(Vector<Figuras> fig) {
 		this.figuras= fig;
+	}
+	public void setImportar(boolean imp) {
+		this.importar = imp;
 	}
 	
 	public EnviaRobot(Composite parent, int style) {
@@ -88,7 +110,7 @@ public class EnviaRobot extends Composite {
 		GridLayout gridLayout = new GridLayout();
 		gridLayout.numColumns = 2;
 		cLabel = new CLabel(this, SWT.NONE);
-		cLabel.setText("Figuras");
+		cLabel.setText(DEF.lFiguras);
 		cLabel.setLayoutData(gridData21);
 		pbFiguras = new ProgressBar(this, SWT.NONE);
 		pbFiguras.setLayoutData(gridData2);
@@ -96,7 +118,7 @@ public class EnviaRobot extends Composite {
 		label1.setText("");
 		Label filler = new Label(this, SWT.NONE);
 		label = new Label(this, SWT.NONE);
-		label.setText("Puntos");
+		label.setText(DEF.lPunto);
 		label.setLayoutData(gridData11);
 		pbPuntos = new ProgressBar(this, SWT.NONE);
 		pbPuntos.setLayoutData(gridData1);
@@ -104,12 +126,12 @@ public class EnviaRobot extends Composite {
 		label2.setText("");
 		Label filler1 = new Label(this, SWT.NONE);
 		bEnviar = new Button(this, SWT.NONE);
-		bEnviar.setText("Enviar");
+		bEnviar.setText(DEF.bEnviaRobot);
 		bEnviar.setLayoutData(gridData);
 		
 		bEnviar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				enviandoCodigos(pbPuntos, pbFiguras).start();
+				iniciarProcesoEnvio();
 			}
 		});
 		
@@ -117,47 +139,138 @@ public class EnviaRobot extends Composite {
 		setSize(new Point(300, 200));
 	}
 
-	
+	public void iniciarProcesoEnvio() {
+		enviandoCodigos(pbPuntos, pbFiguras).start();		
+	}
 
 	  public Thread enviandoCodigos(ProgressBar pbP, ProgressBar pbF) {
 		    final ProgressBar pbP1=pbP;
 		    final ProgressBar pbF1=pbF;
-		    final int nFig=9; 
-		    final int nPnt=49;
+		    final Button bSend= this.bEnviar;
 		    return new Thread() {
 
 		      public void run() {
+		    	enviando = true;
+		    	primera=true;
+		  		sigFig=false;
+		  		levantar=false;
+		  				  		
+		  		prim = null;
+		  		final int nFig = figuras.size();
+		  		for(int i=0; i<nFig&&detener==false; i++) {
+		  			final int iFig = i;
+		  			puntos = figuras.get(i).puntos;		  			
+		  			if(i!=0) {
+		  				retardo1=(int)dist(xAnt, yAnt, puntos.firstElement().getX(), puntos.firstElement().getY())*100;
+		  				sigFig=true;
+		  			}
+		  			if(!importar||i==0) {				
+		  				new cinematica.Inversa().get_angles(new Punto(puntos.firstElement().getX(), puntos.firstElement().getY(),DEF.arriba),M);
+		  				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,  i, figuras.size());
+		  				levantar=true;
+		  			}
+		  			
+		  			
+		  			switch(figuras.get(i).tipoFig) {
+		  			case DEF.punto:
+		  				new cinematica.Inversa().get_angles(puntos.get(0),M);				
+		  				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,i, figuras.size());
+		  				break;
+		  			case DEF.linea:
+		  				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1));				
+		  				break;
+		  			case DEF.circulo:
+		  				dx = (puntos.get(0).getX()-puntos.get(1).getX());
+		  				dy = (puntos.get(0).getY()-puntos.get(1).getY());
+		  				int r = (int)Math.sqrt(dx*dx+dy*dy);	
+		  				prim = new primitivas.Circulo(null,puntos.get(0), r, false, DEF.incRobot);
+		  				break;
+		  			case DEF.elipse:
+		  				dx = Math.abs(puntos.get(0).getX()-puntos.get(1).getX());
+		  				dy = Math.abs(puntos.get(0).getY()-puntos.get(1).getY());
+		  						
+		  				if((dx!=0)&&(dy!=0))
+		  					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false, DEF.incRobot);
+		  				break;
+		  			case DEF.bezier:
+		  				prim = new primitivas.Bezier(null, puntos, 160);
+		  				
+		  				
+		  				break;
+		  			}
+		  			
+		  			if(prim != null)
+		  			{
+		  				int [] mtemp= new int[4];
+		  				final int nPnt= prim.getSizeCoordenadas();
+		  				for(int k=0; k<nPnt&&detener==false; k++) {
+		  					final int iPnt = k;
+		  					copiarM(M, mtemp);
+		  					new cinematica.Inversa().get_angles(prim.getCoordenadas(k),M);
+		  					if(!igualM(M, mtemp)) {
+		  						
+		  						getDisplay().asyncExec(new Runnable() {
+							          public void run() {
+							        	  
+							        	  
+							        	  actualizarPB(pbF1,nFig, iFig, pbP1, nPnt, iPnt);
+							        	  
+							        	  if((iFig==(nFig-1))&&(iPnt==(nPnt-1))) {
+							        		  actualizarPB(pbF1,nFig, nFig, pbP1, nPnt, nPnt);
+							        		  mostrarMSG(DEF.robotFinalizado, DEF.robotMSG);
+						        			  bSend.setText(DEF.bEnviaRobot);
+						        			  pbF1.setSelection(0);
+							        		  pbP1.setSelection(0);
 
-		 		for(int i=0; i<=nFig; i++) {
-					for(int j=0; j<=nPnt; j++) {
-						final int iFig=i;
-						final int iPnt=j;
-						//if(cancelar==true)
-							//return;
-						
-						getDisplay().asyncExec(new Runnable() {
-					          public void run() {		            		            		             
-					        	  actualizarPB(pbF1,nFig, iFig, pbP1, nPnt, iPnt);					        	  
-					          }
-					        });
-						
-						try {
-							Thread.sleep(5);
-						} catch (InterruptedException e) {
+							        	  }
+							        	  
+							          }
+							    });
+		  						mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3], k, prim.getSizeCoordenadas(),  i, figuras.size());
+		  					}
+		  				}
+		  				try {
+		  				xAnt = prim.getCoordenadas(prim.getSizeCoordenadas()-1).getX();
+		  				yAnt = prim.getCoordenadas(prim.getSizeCoordenadas()-1).getY();
+		  				}
+		  				catch (java.lang.ArrayIndexOutOfBoundsException e) {
+		  					if(!importar)
+		  						mostrarMSG(e.toString(), DEF.error);
+		  				}
+		  			}
+		  			if(!importar) {
+		  				new cinematica.Inversa().get_angles(new Punto(xAnt, yAnt,DEF.arriba),M);
+		  				levantar=true;
+		  				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1, i, figuras.size());
+		  			}
+		  		}
+		  		primera=true;
 
-							e.printStackTrace();
-						}			
-					}
-				}		 		
+								/***
+						 * 
+						 */
+						
+						/***
+						 * 
+						 */
+						
+						
+						
+		  		enviando = false;
+		  		detener=false;
+		  		
 		      }
+		      
 		    };
+		    
 		  }
 	  
 
 	private void actualizarPB(ProgressBar pbF1, int nFig, int iFig, ProgressBar pbP1, int nPnt, int iPnt ) {
+		
 		  if(pbP1.getMaximum()!=nPnt)
-  		  pbP1.setMaximum(nPnt);
-  	  pbP1.setSelection(iPnt);
+			  pbP1.setMaximum(nPnt);
+		  pbP1.setSelection(iPnt);
 		
 		if(pbF1.getMaximum()!=nFig)
 			pbF1.setMaximum(nFig);
@@ -169,97 +282,19 @@ public class EnviaRobot extends Composite {
 	
 	
 	
-	private void robotizar(Vector<Figuras> figuras, boolean importar) {
-		Vector <primitivas.Punto>puntos;		
-		
-		double dx, dy;
-		
-		primera=true;
-		sigFig=false;
-		levantar=false;
-		int []M = new int[4];
-		
-		primitivas.Primitiva prim = null;
-		for(int i=0; i<figuras.size(); i++) {
-			
-			puntos = figuras.get(i).puntos;
-			
-			if(i!=0) {
-				retardo1=(int)dist(xAnt, yAnt, puntos.firstElement().getX(), puntos.firstElement().getY())*100;
-				sigFig=true;
-			}
-			if(!importar||i==0) {				
-				new cinematica.Inversa().get_angles(new Punto(puntos.firstElement().getX(), puntos.firstElement().getY(),DEF.arriba),M);
-				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,  i, figuras.size());
-				levantar=true;
-			}
-			
-			
-			switch(figuras.get(i).tipoFig) {
-			case 1:
-				new cinematica.Inversa().get_angles(puntos.get(0),M);				
-				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,i, figuras.size());
-				break;
-			case 2:
-				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1));				
-				break;
-			case 4:
-				dx = (puntos.get(0).getX()-puntos.get(1).getX());
-				dy = (puntos.get(0).getY()-puntos.get(1).getY());
-				int r = (int)Math.sqrt(dx*dx+dy*dy);	
-				prim = new primitivas.Circulo(null,puntos.get(0), r, false, DEF.incRobot);
-				break;
-			case 5:
-				dx = Math.abs(puntos.get(0).getX()-puntos.get(1).getX());
-				dy = Math.abs(puntos.get(0).getY()-puntos.get(1).getY());
-						
-				if((dx!=0)&&(dy!=0))
-					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false, DEF.incRobot);
-				break;
-			case 6:
-				prim = new primitivas.Bezier(null, puntos, 160);
-				
-				
-				break;
-			}
-			
-			if(prim != null)
-			{
-				int [] mtemp= new int[4];
-				for(int k=0; k<prim.getSizeCoordenadas(); k++) {					
-					copiarM(M, mtemp);
-					new cinematica.Inversa().get_angles(prim.getCoordenadas(k),M);
-					if(!igualM(M, mtemp))
-						mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3], k, prim.getSizeCoordenadas(),  i, figuras.size());
-				}
-				try {
-				xAnt = prim.getCoordenadas(prim.getSizeCoordenadas()-1).getX();
-				yAnt = prim.getCoordenadas(prim.getSizeCoordenadas()-1).getY();
-				}
-				catch (java.lang.ArrayIndexOutOfBoundsException e) {
-					mostrarMSG(e.toString(), DEF.error);
-				}
-			}
-			if(!importar) {
-				new cinematica.Inversa().get_angles(new Punto(xAnt, yAnt,DEF.arriba),M);
-				levantar=true;
-				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1, i, figuras.size());
-			}
-		}
-		primera=true;
-	}
-	
 	
 	private void mostrar(String str, int act, int max, int iFigura, int totalFigura) {
-	//	labelInfo.setText("Ejecutando figura "+(iFigura+1)+" de "+totalFigura+".   Enviando: "+act+" de "+max+" instrucciones");
+		//System.out.println(str);
+		/*
 		try {
-			System.out.println(str);
+	
 			comuni.escribe(str+"\n");
 			
 		} catch (IOException e) {
 			//mostrarMSG(e.toString(), DEF.error);
 			
 		}
+		*/
 		retardo();		
 	}
 	
