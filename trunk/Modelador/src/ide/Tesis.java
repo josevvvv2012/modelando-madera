@@ -550,7 +550,7 @@ public class Tesis {
 			
 			preview = new Previsualizacion(bar, SWT.NONE);
 			ExpandItem item3 = new ExpandItem (bar, SWT.NONE, 3);		
-			item3.setText(DEF.tEnviaRobot);
+			item3.setText(DEF.tPreviewOpengl);
 			item3.setHeight(preview.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
 			item3.setExpanded(true);
 			item3.setControl(preview);

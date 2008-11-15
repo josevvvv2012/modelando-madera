@@ -45,6 +45,7 @@ public  class DEF {
 	public static final String tBiblioteca = "Biblioteca";
 	public static final String tFigurasProyecto = "Figuras en proyecto";
 	public static final String tEnviaRobot = "Envia a Robot";
+	public static final String tPreviewOpengl = "Preview OpenGL";
 	
 	public static final String error = "Error";
 	public static final String errorConexionPuerto = "Error al intentar conectar el puerto\n";
