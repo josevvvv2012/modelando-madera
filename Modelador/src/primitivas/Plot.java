@@ -26,7 +26,7 @@ public class Plot {
 	public Plot(GC gc, Image id, org.eclipse.swt.graphics.Color backColor, org.eclipse.swt.graphics.Color foreColor) {
 		this.gc = gc;
 		this.id = id;
-		this.gc.setForeground(foreColor);
+		this.gc.setForeground(foreColor);		
 		this.gc.setBackground(backColor);
 	}
 	
