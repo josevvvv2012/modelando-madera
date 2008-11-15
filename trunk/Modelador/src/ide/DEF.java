@@ -6,13 +6,14 @@ import org.eclipse.swt.widgets.Shell;
 
 public  class DEF {
 
-	
+	public static final int galeria = -1;
 	public static final int punto = 1;
 	public static final int linea = 2;
 	public static final int polilinea = 3;
 	public static final int circulo = 4;
 	public static final int elipse = 5;
 	public static final int bezier = 6;
+	
 	
 	public static final double incRobot = 0.12;
 	public static final int arriba = 150000;

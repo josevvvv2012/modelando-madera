@@ -42,7 +42,7 @@ public class TipoFigura2 extends Composite {
 	private Slider sZ = null;
 	private CLabel cZ = null;
 	private CLabel cLabel1 = null;
-	private Hashtable<String, Integer> hGaleria = new Hashtable<String, Integer>();  //  @jve:decl-index=0:
+	private Hashtable<String, Integer> hGalerias = new Hashtable<String, Integer>();  //  @jve:decl-index=0:
 	private int oGaleria=-1;
 	Vector <Button>p = new Vector<Button>();  //  @jve:decl-index=0:
 	private List lBiblioteca = null;
@@ -210,7 +210,7 @@ public class TipoFigura2 extends Composite {
 	}
 	
 	protected void cargarGaleria(int selectionIndex) {
-		tipo = -1;
+		tipo = DEF.galeria;
 		archivoID=selectionIndex;
 		
 	}
@@ -222,7 +222,7 @@ public class TipoFigura2 extends Composite {
 		
 		for(int i=0; i<cg.getSize(); i++) {			
 			lBiblioteca.add(cg.getGaleria(i));
-			hGaleria.put( lBiblioteca.getItem(i), oGaleria--);
+			//hGaleria.put( lBiblioteca.getItem(i), oGaleria--);
 		}					
 	}
 

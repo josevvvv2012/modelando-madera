@@ -13,6 +13,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Color;
@@ -36,6 +37,8 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.layout.FillLayout;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
 /**
  * 
  * @author Roberto Loaeza Valerio
@@ -43,7 +46,7 @@ import org.eclipse.swt.layout.FillLayout;
  *
  */
 public class Tesis {
-
+	
 	private Shell sShell = null;  //  @jve:decl-index=0:visual-constraint="10,10"
 	private Label labelInfo = null;
 	private Composite compositePrincipal = null;
@@ -53,8 +56,10 @@ public class Tesis {
 	private TipoFigura2 tipoFigura = null;
 	private ListaFiguras listaFiguras = null;
 	private EnviaRobot enviaRobot = null;
+	private Previsualizacion preview = null;
 	private Plot plot = null;  //  @jve:decl-index=0:
 	private Punto pAnt = null;
+	private Punto pAnt2 = new Punto(0,0);  //  @jve:decl-index=0:
 	private Vector<Punto> ps=new Vector<Punto>();  //  @jve:decl-index=0:
 	private Menu menuBar = null;
 	private Menu submenu = null;
@@ -131,6 +136,20 @@ public class Tesis {
 		enviaRobot.bEnviar.addListener(SWT.MouseDown, listener);		
 	}
 	
+	private void crearListenerPanel() {
+		Listener listener = new Listener() {						
+			public void handleEvent(Event e) {					
+				switch(e.type) {
+					case SWT.MouseMove:
+						sShell.setCursor(new Cursor(sShell.getDisplay(), SWT.CURSOR_ARROW));
+						break;
+				}				
+			}
+		};
+		
+		compositePrincipal.addListener(SWT.MouseMove, listener);		
+	}
+	
 	private void crearListenerB_Fijar() {
 		Listener listener2 = new Listener() {						
 			public void handleEvent(Event e) {					
@@ -182,9 +201,10 @@ public class Tesis {
 		listaFiguras.bFijar.addListener(SWT.MouseDown, listener2);
 	}
 	
-	private void crearListenerCanvas() {
+	private void crearListenerCanvas() {				
 		Listener listener = new Listener() {						
 			public void handleEvent(Event e) {					
+				
 				tipoFigura.getTipo();
 				z = tipoFigura.getZ();
 				switch(e.type) {
@@ -192,7 +212,7 @@ public class Tesis {
 						switch(e.button) {
 							case clickIzq:											
 								switch(tipoFigura.getTipo()) {
-								case -1:									
+								case DEF.galeria:									
 									le.leer(tipoFigura.getArchivoGaleria(), listaFiguras, tipoFigura.getZ());									
 									listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
 						        	canvas.redraw();
@@ -344,10 +364,12 @@ public class Tesis {
 								}
 								break;							
 						}
-						break;
-
-					case SWT.MouseMove:						
-						plot.xOr(true);					
+						break;					
+					case SWT.MouseMove:
+						
+						sShell.setCursor(new Cursor(sShell.getDisplay(), SWT.CURSOR_CROSS));
+						plot.xOr(true);
+					
 						switch(tipoFigura.getTipo()) {						
 						case DEF.linea:
 							if(ps.size()>0) {								
@@ -525,6 +547,13 @@ public class Tesis {
 			item2.setExpanded(true);
 			item2.setControl(enviaRobot);
 			
+			
+			preview = new Previsualizacion(bar, SWT.NONE);
+			ExpandItem item3 = new ExpandItem (bar, SWT.NONE, 3);		
+			item3.setText(DEF.tEnviaRobot);
+			item3.setHeight(preview.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
+			item3.setExpanded(true);
+			item3.setControl(preview);
 		
 		bar.setSpacing(8);		
 	}
@@ -683,6 +712,7 @@ public class Tesis {
 		crearListenerB_Fijar();
 		crearListenerRobotizar();
 		crearListenerEnviarRobot();
+		crearListenerPanel();
 	}
 	private boolean inicializarPuerto() {
 		comuni = new Comunicacion();  
