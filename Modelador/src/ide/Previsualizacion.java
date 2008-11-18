@@ -39,7 +39,7 @@ public class Previsualizacion extends Composite {
 		canvas.setCurrent();
 		final GLContext context = GLDrawableFactory.getFactory().createExternalGLContext();
 
-		canvas.addListener(SWT.Resize, new Listener() {
+		/*canvas.addListener(SWT.Resize, new Listener() {
 			public void handleEvent(Event event) {
 				Rectangle bounds = canvas.getBounds();
 				float fAspect = (float) bounds.width / (float) bounds.height;
@@ -94,7 +94,7 @@ public class Previsualizacion extends Composite {
 		});
 
 
-		
+		*/
 		
 	}
 	

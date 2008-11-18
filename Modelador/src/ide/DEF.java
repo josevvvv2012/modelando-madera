@@ -47,6 +47,8 @@ public  class DEF {
 	public static final String tEnviaRobot = "Envia a Robot";
 	public static final String tPreviewOpengl = "Preview OpenGL";
 	
+	public static final String tVistasDiseno = "Vistas Diseño";
+	
 	public static final String error = "Error";
 	public static final String errorConexionPuerto = "Error al intentar conectar el puerto\n";
 	public static final String errorNoConexion = "No hay conexion, intente activar el puerto";

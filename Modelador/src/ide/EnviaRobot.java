@@ -60,8 +60,6 @@ public class EnviaRobot extends Composite {
 	
 	public Button bEnviar = null;
 	public boolean enviando= false;
-	
-	
 	public void setComuni( Comunicacion com) {
 		this.comuni = com;
 	}
@@ -234,8 +232,11 @@ public class EnviaRobot extends Composite {
 		  				yAnt = prim.getCoordenadas(prim.getSizeCoordenadas()-1).getY();
 		  				}
 		  				catch (java.lang.ArrayIndexOutOfBoundsException e) {
-		  					if(!importar)
+		  					if(!importar) {
 		  						mostrarMSG(e.toString(), DEF.error);
+		  						
+		  					}
+		  				
 		  				}
 		  			}
 		  			if(!importar) {
@@ -284,6 +285,7 @@ public class EnviaRobot extends Composite {
 	
 	
 	private void mostrar(String str, int act, int max, int iFigura, int totalFigura) {
+
 		//System.out.println(str);
 		/*
 		try {

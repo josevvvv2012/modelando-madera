@@ -56,6 +56,7 @@ public class Tesis {
 	private TipoFigura2 tipoFigura = null;
 	private ListaFiguras listaFiguras = null;
 	private EnviaRobot enviaRobot = null;
+	private Vistas vistasDiseno = null;
 	private Previsualizacion preview = null;
 	private Plot plot = null;  //  @jve:decl-index=0:
 	private Punto pAnt = null;
@@ -104,7 +105,7 @@ public class Tesis {
 	
 	
 	private void enviarRobot(boolean menu) {
-		if(!okPort) {
+		if(okPort) {
 			if(!enviaRobot.enviando) {
 				enviaRobot.setFiguras(listaFiguras.figuras);
 				enviaRobot.setComuni(comuni);
@@ -547,13 +548,12 @@ public class Tesis {
 			item2.setExpanded(true);
 			item2.setControl(enviaRobot);
 			
-			
-			preview = new Previsualizacion(bar, SWT.NONE);
+			vistasDiseno = new Vistas(bar,SWT.NONE);			
 			ExpandItem item3 = new ExpandItem (bar, SWT.NONE, 3);		
-			item3.setText(DEF.tPreviewOpengl);
-			item3.setHeight(preview.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
+			item3.setText(DEF.tVistasDiseno);
+			item3.setHeight(vistasDiseno.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
 			item3.setExpanded(true);
-			item3.setControl(preview);
+			item3.setControl(vistasDiseno);
 		
 		bar.setSpacing(8);		
 	}
@@ -629,7 +629,7 @@ public class Tesis {
 		pushActivarRobot
 				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-						if(inicializarPuerto()&&!okPort)
+						if(inicializarPuerto()&&okPort)
 							okPort=true;
 					}
 					public void widgetDefaultSelected(
