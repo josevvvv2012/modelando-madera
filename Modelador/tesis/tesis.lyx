@@ -1388,14 +1388,154 @@ Elipses
 Curvas de Bezier
 \end_layout
 
+\begin_layout Subsection
+Elementos compuestos
+\end_layout
+
 \begin_layout Section
-Almacenamiento y recuperacion
+Almacenamiento y recuperación
+\end_layout
+
+\begin_layout Standard
+El almacenamiento y recuperación es una de las operaciones más importantes
+ en un sistema, 
 \end_layout
 
 \begin_layout Subsection
-Almacenamiento en formato xml
+Almacenamiento en formato XML
 \end_layout
 
+\begin_layout Standard
+El formato XML
+\end_layout
+
+\begin_layout Standard
+Algunas de las ventajas de este formato son:
+\end_layout
+
+\begin_layout Itemize
+Independiente de la plataforma.
+\end_layout
+
+\begin_layout Itemize
+Soporta código Unicode.
+\end_layout
+
+\begin_layout Itemize
+El mismo documento define la estructura y los campos asi como los valores
+ respectivos.
+\end_layout
+
+\begin_layout Itemize
+Es basado en estándares internacionales.
+\end_layout
+
+\begin_layout Subsection
+Estructura de almacenamiento
+\end_layout
+
+\begin_layout Standard
+La estructura de almacenamiento puede observarse en la figura 
+\begin_inset LatexCommand ref
+reference "fig:EstructuraXML"
+
+\end_inset
+
+.
+ Como puede observar la estructura es simple, compacta y fácil de entender.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/estructura_xml.png
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:EstructuraXML"
+
+\end_inset
+
+Estructura de almacenamiento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset LatexCommand ref
+reference "fig:EstructuraXML"
+
+\end_inset
+
+ puede observarse:
+\end_layout
+
+\begin_layout Itemize
+No existe límite en la cantidad de primitivas usadas en un diseño.
+\end_layout
+
+\begin_layout Itemize
+Los puntos de control de una primitiva pueden no tener límite, es decir
+ una primitiva puede tener N puntos de control.
+ 
+\end_layout
+
+\begin_layout Itemize
+Cada primitiva es identificada mediante mediante un número entero (tipo):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Punto (1)
+\end_layout
+
+\begin_layout Itemize
+Línea (2)
+\end_layout
+
+\begin_layout Itemize
+Poli-Línea (3)
+\end_layout
+
+\begin_layout Itemize
+Círculo (4)
+\end_layout
+
+\begin_layout Itemize
+Elipse (5)
+\end_layout
+
+\begin_layout Itemize
+Curva de Bezier (6)
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Importacion de otros formatos
 \end_layout
@@ -1586,6 +1726,10 @@ PGM Portable GrayMap.
 
 \begin_layout Description
 SCARA Selective Compliant Articulated Robot Arm.
+\end_layout
+
+\begin_layout Description
+XML Extensible Markup Language
 \end_layout
 
 \begin_layout Bibliography
