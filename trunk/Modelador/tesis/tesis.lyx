@@ -421,7 +421,7 @@ reference "cha:2_Ambiente"
 \begin_layout Standard
 En el capítulo 
 \begin_inset LatexCommand ref
-reference "cha:3_Interfaces3D"
+reference "cha:4_Interfaces3D"
 
 \end_inset
 
@@ -434,7 +434,7 @@ reference "cha:3_Interfaces3D"
 \begin_layout Standard
 En el capítulo 
 \begin_inset LatexCommand ref
-reference "cha:4_Modelado3D"
+reference "cha:3_Modelado3D"
 
 \end_inset
 
@@ -971,9 +971,257 @@ Universidades como el Tecnológico de Monterrey [Dirección de Vinculación
 \end_layout
 
 \begin_layout Chapter
-Interfaces de software 3D
+Modelado de objetos
 \begin_inset LatexCommand label
-name "cha:3_Interfaces3D"
+name "cha:3_Modelado3D"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Para modelar
+\end_layout
+
+\begin_layout Section
+Algoritmos de graficación
+\end_layout
+
+\begin_layout Subsection
+Puntos
+\end_layout
+
+\begin_layout Subsection
+Lineas
+\end_layout
+
+\begin_layout Subsection
+Circulos
+\end_layout
+
+\begin_layout Subsection
+Elipses
+\end_layout
+
+\begin_layout Subsection
+Curvas de Bezier
+\end_layout
+
+\begin_layout Subsection
+Elementos compuestos
+\end_layout
+
+\begin_layout Section
+Almacenamiento y recuperación
+\end_layout
+
+\begin_layout Standard
+El almacenamiento y recuperación es una de las operaciones más importantes
+ en un sistema, 
+\end_layout
+
+\begin_layout Subsection
+Almacenamiento en formato XML
+\end_layout
+
+\begin_layout Standard
+El formato XML
+\end_layout
+
+\begin_layout Standard
+Algunas de las ventajas de este formato son:
+\end_layout
+
+\begin_layout Itemize
+Independiente de la plataforma.
+\end_layout
+
+\begin_layout Itemize
+Soporta código Unicode.
+\end_layout
+
+\begin_layout Itemize
+El mismo documento define la estructura y los campos asi como los valores
+ respectivos.
+\end_layout
+
+\begin_layout Itemize
+Es basado en estándares internacionales.
+\end_layout
+
+\begin_layout Subsection
+Estructura de almacenamiento
+\end_layout
+
+\begin_layout Standard
+La estructura de almacenamiento puede observarse en la figura 
+\begin_inset LatexCommand ref
+reference "fig:EstructuraXML"
+
+\end_inset
+
+.
+ Como puede observar la estructura es simple, compacta y fácil de entender.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/estructura_xml.png
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:EstructuraXML"
+
+\end_inset
+
+Estructura de almacenamiento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset LatexCommand ref
+reference "fig:EstructuraXML"
+
+\end_inset
+
+ puede observarse:
+\end_layout
+
+\begin_layout Itemize
+No existe límite en la cantidad de primitivas usadas en un diseño.
+\end_layout
+
+\begin_layout Itemize
+Los puntos de control de una primitiva pueden no tener límite, es decir
+ una primitiva puede tener N puntos de control.
+ 
+\end_layout
+
+\begin_layout Itemize
+Cada primitiva es identificada mediante mediante un número entero (tipo):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Punto (1)
+\end_layout
+
+\begin_layout Itemize
+Línea (2)
+\end_layout
+
+\begin_layout Itemize
+Poli-Línea (3)
+\end_layout
+
+\begin_layout Itemize
+Círculo (4)
+\end_layout
+
+\begin_layout Itemize
+Elipse (5)
+\end_layout
+
+\begin_layout Itemize
+Curva de Bezier (6)
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Importacion de otros formatos
+\end_layout
+
+\begin_layout Subsection
+Imágenes PGM
+\end_layout
+
+\begin_layout Standard
+Una imagen PGM es la representacion a escala de grises de una imagen.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/logo_a_robot.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:pgm_a_robot"
+
+\end_inset
+
+PGM a Robot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Archivos CAD (dxf)
+\end_layout
+
+\begin_layout Chapter
+Interfaces de software
+\begin_inset LatexCommand label
+name "cha:4_Interfaces3D"
 
 \end_inset
 
@@ -997,11 +1245,487 @@ Una interfaz mal diseñada puede causar que el mejor sistema de cómputo sea
 \end_layout
 
 \begin_layout Itemize
-Eleccion de un sistema de renderización.
+Eleccion de lenguaje de programación.
 \end_layout
 
 \begin_layout Itemize
-Diseño de los controles.
+Diseño de la interfaz gráfica.
+\end_layout
+
+\begin_layout Itemize
+Elección de sistema de renderización.
+\end_layout
+
+\begin_layout Section
+Lenguaje de programación
+\end_layout
+
+\begin_layout Standard
+En la actualidad existe una gran cantidad de lenguajes de programación,
+ la mayoría de propósito general y el resto de propósito específico, a continuac
+ión se listan los más populares de ambas categorías:
+\end_layout
+
+\begin_layout Itemize
+C.
+\end_layout
+
+\begin_layout Itemize
+Basic.
+\end_layout
+
+\begin_layout Itemize
+Java.
+\end_layout
+
+\begin_layout Itemize
+.Net.
+\end_layout
+
+\begin_layout Itemize
+Perl.
+\end_layout
+
+\begin_layout Itemize
+PHP.
+\end_layout
+
+\begin_layout Standard
+Estos podrían ser los más utilizados hoy por hoy, pero debido a la heterogeneida
+d de sistemas operativos y arquitecturas, no todos los lenguajes de programación
+ son aplicables.
+ 
+\end_layout
+
+\begin_layout Standard
+En el caso de los lenguajes compilados es poco probable su funcionalidad
+ en diferentes plataformas debido a la dependencia de tipo de procesador
+ que adquieren al momento de compilar, por ejemplo si se compila en un procesado
+r tipo RISC (Reduced-Intruction-Set Computing) es imposible ejecutarlo en
+ un procesador tipo CISC (Complex-Intruction-Set Computing).
+\end_layout
+
+\begin_layout Standard
+Por otro lado los lenguajes interpretados son muy portables a todas las
+ arquitecturas y sistemas operativos debido a que no dependen de un tipo
+ de arquitectura pero requieren de que exista un progama nativo que los
+ interprete, es decir, que si la empresa desarrolladora del lenguaje interpretad
+o no libera una versión de su intérprete para un sistema operativo en una
+ arquitectura determinada los programas escritos en este lenguaje no se
+ ejecutarán.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="4">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Windows
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Linux
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+MacOS
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Basic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Java
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+.Net
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Perl
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+PHP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "tablaLenguajesProgramacion"
+
+\end_inset
+
+Lenguajes Sistemas Operativos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la tabla 
+\begin_inset LatexCommand ref
+reference "tablaLenguajesProgramacion"
+
+\end_inset
+
+ se puede apreciar los alcances de los lenguajes de programación más desarrollad
+os y más difundidos en la actualidad, dejando claro que Java es el lenguaje
+ de programación con mayor portabilidad, debido a que se cuenta con intérpretes
+ para todas las arquitecturas y además que no se requiere modificar el código
+ fuente para ejecutarse en éstas.
+\end_layout
+
+\begin_layout Subsection
+Java
+\end_layout
+
+\begin_layout Standard
+Java es una plataforma de software desarrollada por Sun Microsystem, de
+ forma que los programas creados en ella puedan ejecutarse sin cambios en
+ diferentes tipos de arquitecturas y dispositivos computacionales.
+ 
+\end_layout
+
+\begin_layout Standard
+Esta plataforma está compuesta por:
+\end_layout
+
+\begin_layout Itemize
+El Lenguaje de programación.
+\end_layout
+
+\begin_layout Itemize
+La máquina virtual de Java (JVM).
+\end_layout
+
+\begin_layout Itemize
+Un conjunto de bibliotecas estándar, conocidas como API.
+\end_layout
+
+\begin_layout Standard
+El lenguaje de programación usa la sintaxis de C++, incorpora sincronización,
+ manejo de tareas e interfaces como un mecanismo alternativo a la herencia
+ múltiple de C++.
+\end_layout
+
+\begin_layout Standard
+La máquina virtual de Java (JVM) es un programa nativo (un ejecutable de
+ una plataforma específica) capaz de interpretar y ejecutar código binario
+ especial (llamado Java Bytecode), el cual es generado a partir del compilador
+ de Java.
+ Es por esto que Sun Microsystem ha liberado versiones de su JVM para las
+ arquitecturas y sistemas operativos más utilizados, volviendo así a las
+ aplicaciones desarrolladas en Java multiplataforma.
+\end_layout
+
+\begin_layout Section
+Diseño de la interfaz gráfica
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/igu_tesis.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:igu_diseño"
+
+\end_inset
+
+Diseño de la interfaz gráfica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1344,213 +2068,6 @@ Jogl tambien prvee algunas de las mas populares características introducidas
 \begin_layout Standard
 Es importante mencionar que esta tecnologia es código abierto y fue iniciada
  por Game Technology Group.
-\end_layout
-
-\begin_layout Chapter
-Modelado de objetos en 3D 
-\begin_inset LatexCommand label
-name "cha:4_Modelado3D"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Introducción
-\end_layout
-
-\begin_layout Standard
-Para modelar
-\end_layout
-
-\begin_layout Section
-Algoritmos de graficación
-\end_layout
-
-\begin_layout Subsection
-Puntos
-\end_layout
-
-\begin_layout Subsection
-Lineas
-\end_layout
-
-\begin_layout Subsection
-Circulos
-\end_layout
-
-\begin_layout Subsection
-Elipses
-\end_layout
-
-\begin_layout Subsection
-Curvas de Bezier
-\end_layout
-
-\begin_layout Subsection
-Elementos compuestos
-\end_layout
-
-\begin_layout Section
-Almacenamiento y recuperación
-\end_layout
-
-\begin_layout Standard
-El almacenamiento y recuperación es una de las operaciones más importantes
- en un sistema, 
-\end_layout
-
-\begin_layout Subsection
-Almacenamiento en formato XML
-\end_layout
-
-\begin_layout Standard
-El formato XML
-\end_layout
-
-\begin_layout Standard
-Algunas de las ventajas de este formato son:
-\end_layout
-
-\begin_layout Itemize
-Independiente de la plataforma.
-\end_layout
-
-\begin_layout Itemize
-Soporta código Unicode.
-\end_layout
-
-\begin_layout Itemize
-El mismo documento define la estructura y los campos asi como los valores
- respectivos.
-\end_layout
-
-\begin_layout Itemize
-Es basado en estándares internacionales.
-\end_layout
-
-\begin_layout Subsection
-Estructura de almacenamiento
-\end_layout
-
-\begin_layout Standard
-La estructura de almacenamiento puede observarse en la figura 
-\begin_inset LatexCommand ref
-reference "fig:EstructuraXML"
-
-\end_inset
-
-.
- Como puede observar la estructura es simple, compacta y fácil de entender.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status collapsed
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Graphics
-	filename imagenes/estructura_xml.png
-	width 50page%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:EstructuraXML"
-
-\end_inset
-
-Estructura de almacenamiento
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-En la figura 
-\begin_inset LatexCommand ref
-reference "fig:EstructuraXML"
-
-\end_inset
-
- puede observarse:
-\end_layout
-
-\begin_layout Itemize
-No existe límite en la cantidad de primitivas usadas en un diseño.
-\end_layout
-
-\begin_layout Itemize
-Los puntos de control de una primitiva pueden no tener límite, es decir
- una primitiva puede tener N puntos de control.
- 
-\end_layout
-
-\begin_layout Itemize
-Cada primitiva es identificada mediante mediante un número entero (tipo):
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Punto (1)
-\end_layout
-
-\begin_layout Itemize
-Línea (2)
-\end_layout
-
-\begin_layout Itemize
-Poli-Línea (3)
-\end_layout
-
-\begin_layout Itemize
-Círculo (4)
-\end_layout
-
-\begin_layout Itemize
-Elipse (5)
-\end_layout
-
-\begin_layout Itemize
-Curva de Bezier (6)
-\end_layout
-
-\end_deeper
-\begin_layout Section
-Importacion de otros formatos
-\end_layout
-
-\begin_layout Subsection
-Imágenes PGM
-\end_layout
-
-\begin_layout Standard
-Una imagen PGM es la representacion a escala de grises de una imagen.
- 
-\end_layout
-
-\begin_layout Subsection
-Archivos CAD (dxf)
 \end_layout
 
 \begin_layout Chapter

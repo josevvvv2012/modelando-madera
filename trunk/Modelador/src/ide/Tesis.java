@@ -528,7 +528,7 @@ public class Tesis {
 			ExpandItem item0 = new ExpandItem (bar, SWT.NONE, 0);				
 			item0.setText(DEF.tPrimitivasBasicas);
 			//item0.setHeight(tipoFigura.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
-			item0.setHeight(250);
+			item0.setHeight(300);
 			item0.setExpanded(true);
 			item0.setControl(tipoFigura);
 			
@@ -541,19 +541,21 @@ public class Tesis {
 			item1.setControl(listaFiguras);
 			
 			
+			vistasDiseno = new Vistas(bar,SWT.NONE);			
+			ExpandItem item3 = new ExpandItem (bar, SWT.NONE, 2);		
+			item3.setText(DEF.tVistasDiseno);
+			item3.setHeight(vistasDiseno.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
+			item3.setExpanded(true);
+			item3.setControl(vistasDiseno);
+			
 			enviaRobot = new EnviaRobot(bar, SWT.NONE);
-			ExpandItem item2 = new ExpandItem (bar, SWT.NONE, 2);		
+			ExpandItem item2 = new ExpandItem (bar, SWT.NONE, 3);		
 			item2.setText(DEF.tEnviaRobot);
 			item2.setHeight(enviaRobot.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
 			item2.setExpanded(true);
 			item2.setControl(enviaRobot);
 			
-			vistasDiseno = new Vistas(bar,SWT.NONE);			
-			ExpandItem item3 = new ExpandItem (bar, SWT.NONE, 3);		
-			item3.setText(DEF.tVistasDiseno);
-			item3.setHeight(vistasDiseno.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
-			item3.setExpanded(true);
-			item3.setControl(vistasDiseno);
+			
 		
 		bar.setSpacing(8);		
 	}
@@ -587,7 +589,7 @@ public class Tesis {
 		gridData1.verticalAlignment = GridData.CENTER;
 		sShell = new Shell();
 		sShell.setText(".:: Roberto Loaeza Valerio ::.");
-		sShell.setMaximized(true);
+		sShell.setMaximized(false);
 		createCompositePrincipal();
 		sShell.setLayout(gridLayout1);
 		sShell.setSize(new Point(959, 662));
