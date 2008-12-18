@@ -631,7 +631,7 @@ public class Tesis {
 		pushActivarRobot
 				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-						if(inicializarPuerto()&&okPort)
+						if(inicializarPuerto()&&!okPort)
 							okPort=true;
 					}
 					public void widgetDefaultSelected(

@@ -287,16 +287,16 @@ public class EnviaRobot extends Composite {
 	private void mostrar(String str, int act, int max, int iFigura, int totalFigura) {
 
 		//System.out.println(str);
-		/*
+		
 		try {
 	
 			comuni.escribe(str+"\n");
 			
 		} catch (IOException e) {
-			//mostrarMSG(e.toString(), DEF.error);
+			mostrarMSG(e.toString(), DEF.error);
 			
 		}
-		*/
+		
 		retardo();		
 	}
 	
