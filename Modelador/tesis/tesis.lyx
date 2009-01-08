@@ -1233,15 +1233,15 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-La interfaz de usuario es lo más importante en cualquier sistema de cómputo,
- en la actualidad todo sistema debe contener una herramienta con la que
- el usuario pueda ordenar al computador que hacer.
+La interfaz de usuario es uno de los apartados con más relevancia de un
+ sistema de computo, en la actualidad todo sistema debe contener una herramienta
+ con la que el usuario pueda ordenar al computador que hacer.
 \end_layout
 
 \begin_layout Standard
-Una interfaz mal diseñada puede causar que el mejor sistema de cómputo sea
- ineficaz y por lo tanto sea deshechado, es por esto que se debe diseñar
- una interfaz de usuario, la cual incluye:
+Una interfaz de usuario mal diseñada puede causar que el mejor sistema de
+ cómputo sea ineficaz y por lo tanto sea deshechado, es por esto que se
+ debe realizar un buen diseño de la interfaz de usuario, la cual incluye:
 \end_layout
 
 \begin_layout Itemize
@@ -1301,8 +1301,7 @@ d de sistemas operativos y arquitecturas, no todos los lenguajes de programació
 En el caso de los lenguajes compilados es poco probable su funcionalidad
  en diferentes plataformas debido a la dependencia de tipo de procesador
  que adquieren al momento de compilar, por ejemplo si se compila en un procesado
-r tipo RISC (Reduced-Intruction-Set Computing) es imposible ejecutarlo en
- un procesador tipo CISC (Complex-Intruction-Set Computing).
+r tipo RISC es imposible ejecutarlo en un procesador tipo CISC.
 \end_layout
 
 \begin_layout Standard
@@ -1635,7 +1634,7 @@ reference "tablaLenguajesProgramacion"
 
  se puede apreciar los alcances de los lenguajes de programación más desarrollad
 os y más difundidos en la actualidad, dejando claro que Java es el lenguaje
- de programación con mayor portabilidad, debido a que se cuenta con intérpretes
+ de programación con mayor portabilidad debido a que se cuenta con intérpretes
  para todas las arquitecturas y además que no se requiere modificar el código
  fuente para ejecutarse en éstas.
 \end_layout
@@ -2218,7 +2217,11 @@ Anexo Glosario
 \end_layout
 
 \begin_layout Description
-CRM Customer Relationship Management
+CISC Complex-Intruction-Set Computing.
+\end_layout
+
+\begin_layout Description
+CRM Customer Relationship Management.
 \end_layout
 
 \begin_layout Description
@@ -2226,11 +2229,11 @@ ERP Enterprise Resource Planning.
 \end_layout
 
 \begin_layout Description
-ISO International Organization for Standardization
+ISO International Organization for Standardization.
 \end_layout
 
 \begin_layout Description
-JIRA Japan Industrial Robot Association
+JIRA Japan Industrial Robot Association.
 \end_layout
 
 \begin_layout Description
@@ -2242,11 +2245,15 @@ PGM Portable GrayMap.
 \end_layout
 
 \begin_layout Description
+RISC Reduced-Intruction-Set Computing.
+\end_layout
+
+\begin_layout Description
 SCARA Selective Compliant Articulated Robot Arm.
 \end_layout
 
 \begin_layout Description
-XML Extensible Markup Language
+XML Extensible Markup Language.
 \end_layout
 
 \begin_layout Bibliography
