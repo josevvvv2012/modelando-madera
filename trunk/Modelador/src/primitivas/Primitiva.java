@@ -16,8 +16,10 @@ public abstract class Primitiva {
 	Plot plot;
 	double z;
 	double inc=1;
+	double ptosPixel=4;
 	double previoX=0;
 	double previoY=0;
+	
 	public void iniciarLimites() {
 		limX[0]=1000;
 		limX[1]=-limX[0];
@@ -78,23 +80,16 @@ public abstract class Primitiva {
 	}
 	
 	public void grafPto(Punto p) {	
-		//if((Math.abs(previoX-p.getX())>0.01)&&(Math.abs(previoY-p.getY())>0.01) ) {
-		if(true) {
-			previoX = p.getX();
-			previoY= p.getY();
-			modLim(p.getX(), p.getY());
-			//System.out.println("("+p.getX()+", "+p.getY()+")");		
-			if(plot instanceof Plot){
-				
-				plot.pixel(p);	
-			}		
-			else /*if((Math.abs(previoX-p.getX())>0.01)&&(Math.abs(previoY-p.getY())>0.01) )*/ {
-				//p.setZ( z );
-				
-				//System.out.println(p.getX()+", "+p.getY());
-				coordenadas.add(p);
-			}
+		previoX = p.getX();
+		previoY= p.getY();
+		modLim(p.getX(), p.getY());
+		if(plot instanceof Plot){			
+			plot.pixel(p);	
+		}		
+		else  {			
+			coordenadas.add(p);
 		}
+
 			
 	}
 	public Punto getCoordenadas(int index) {

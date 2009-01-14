@@ -9,22 +9,11 @@ import java.util.Vector;
  *
  */
 public class Elipse extends Primitiva{
-	public Elipse(Plot plot, Punto orig,double rx, double ry, boolean relleno, double inc) {
+	public Elipse(Plot plot, Punto orig,double rx, double ry, boolean relleno) {
 		this.plot = plot;
 		this.z = orig.getZ();
-		this.inc  = inc;
-		v1 = new Vector<Punto>();
-		v2 = new Vector<Punto>();
-		v3 = new Vector<Punto>();
-		v4 = new Vector<Punto>();
-		iniciarVectores();
-		elipse(rx, ry, orig.getX(), orig.getY(), 1000);
-		if(plot==null)
-			while(rx>0&&ry>0) {
-				elipse(--rx, --ry, orig.getX(), orig.getY(), 1000);		
-			}
-		//puntoMedio(orig, rx, ry, relleno);		
-		graficarVectores();
+		
+		elipse(rx, ry, orig.getX(), orig.getY(), 10);		
 	}
 	
 	void elipse(double radio_a, double radio_b, double xc, double yc, int n)
@@ -32,12 +21,16 @@ public class Elipse extends Primitiva{
 	    int i;
 	    double inc_ang, ang;
 
-	    inc_ang = 360.0 / n * Math.PI / 180.0;   
+	    inc_ang = 360.0 / n * Math.PI / 180.0;
+	    System.out.println("\n\n\nInciando");
 	    for(i=0; i < n; i++) {
 	        ang = inc_ang * i;
-	        grafPto(new Punto( xc + radio_a * Math.cos(ang), yc + radio_b * Math.sin(ang) ));	        
+	        grafPto(new Punto( xc + radio_a * Math.cos(ang), yc + radio_b * Math.sin(ang), this.z ));
+	        System.out.println(""+(xc + radio_a * Math.cos(ang))+","+ (yc + radio_b * Math.sin(ang))+","+ this.z);
 	    }
+	    System.out.println("Fin\n\n\n");
 	}
+	
 
 	public void puntoMedio(Punto orig,double rx, double ry, boolean relleno) {
 		double ry2=ry*ry;
@@ -74,24 +67,7 @@ public class Elipse extends Primitiva{
 				
 				
 			}
-			insertarVectores(orig.getX(), orig.getY(),x,y);
-			/*
-			v1.add(new Punto( (orig.getX()+x)   ,   (orig.getY()+y))  );			
-			v2.add(new Punto( (orig.getX()+x)   ,   (orig.getY()-y))  );			
-			v3.add(new Punto( (orig.getX()-x)   ,   (orig.getY()-y))  ); 
-			v4.add(new Punto( (orig.getX()+x)   ,   (orig.getY()-y))  );
-			*/
-			/*
-			grafPto(new Punto(orig.getX()+x,orig.getY()+y));
-			grafPto(new Punto(orig.getX()-x,orig.getY()+y));
-			grafPto(new Punto(orig.getX()-x,orig.getY()-y));
-			grafPto(new Punto(orig.getX()+x,orig.getY()-y));
-			*/
-			if(relleno) {
-				plot.linea(new Punto(orig.getX()+x,orig.getY()+y), new Punto(orig.getX()-x,orig.getY()+y));
-				plot.linea(new Punto(orig.getX()-x,orig.getY()-y),new Punto(orig.getX()+x,orig.getY()-y));
-				
-			}
+			insertarVectores(orig.getX(), orig.getY(),x,y);			
 		}						
 	}
 }
