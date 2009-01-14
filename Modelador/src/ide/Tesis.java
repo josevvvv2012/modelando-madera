@@ -176,10 +176,10 @@ public class Tesis {
 										poli.rellenarPolilinea(plot);
 									break;
 								case DEF.circulo:
-									plot.circulo(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno, 1);
+									plot.circulo(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno);
 									break;
 								case DEF.elipse:
-									plot.elipse(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno, 1);
+									plot.elipse(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno);
 									break;
 								case DEF.bezier:
 									//plot.bezier(p.get(i).puntos.get(0), p.get(i).puntos.get(1), p.get(i).puntos.get(2), p.get(i).puntos.get(3), 1000);
@@ -259,7 +259,7 @@ public class Tesis {
 									}
 									else {
 										ps.add(new Punto(e.x, e.y, z));
-										plot.circulo(ps.get(0), ps.get(1), tipoFigura.getFill(),1);
+										plot.circulo(ps.get(0), ps.get(1), tipoFigura.getFill());
 										reiniciarPts=true;
 										redibujar=true;
 									}						
@@ -272,7 +272,7 @@ public class Tesis {
 									}
 									else {
 										ps.add(new Punto(e.x, e.y, z));
-										plot.elipse(ps.get(0), ps.get(1), tipoFigura.getFill(), 1);
+										plot.elipse(ps.get(0), ps.get(1), tipoFigura.getFill());
 										reiniciarPts=true;
 										redibujar=true;
 									}						
@@ -390,17 +390,17 @@ public class Tesis {
 							break;							
 						case DEF.circulo:
 							if(ps.size()>0) {							
-								plot.circulo(ps.get(0), pAnt, false, 1);						
+								plot.circulo(ps.get(0), pAnt, false);						
 								pAnt = new Punto(e.x, e.y, z);
-								plot.circulo(ps.get(0), pAnt, false,1);
+								plot.circulo(ps.get(0), pAnt, false);
 								redibujar=true;
 							}						
 							break;							
 						case DEF.elipse:
 							if(ps.size()>0) {						
-								plot.elipse(ps.get(0), pAnt, false, 1);						
+								plot.elipse(ps.get(0), pAnt, false);						
 								pAnt = new Punto(e.x, e.y, z);
-								plot.elipse(ps.get(0), pAnt, false, 1);
+								plot.elipse(ps.get(0), pAnt, false);
 								redibujar=true;
 							}						
 							break;

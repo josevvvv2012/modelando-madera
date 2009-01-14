@@ -188,7 +188,7 @@ public class EnviaRobot extends Composite {
 		  				dy = Math.abs(puntos.get(0).getY()-puntos.get(1).getY());
 		  						
 		  				if((dx!=0)&&(dy!=0))
-		  					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false, DEF.incRobot);
+		  					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false/*, DEF.incRobot*/);
 		  				break;
 		  			case DEF.bezier:
 		  				prim = new primitivas.Bezier(null, puntos, 160);

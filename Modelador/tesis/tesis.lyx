@@ -2093,8 +2093,76 @@ La interfaz entre el software modelador y el robot es una parte muy importante,
 Robot SCARA
 \end_layout
 
+\begin_layout Standard
+El robot con el cual se trabajó se puede apreciar en la figura 
+\begin_inset LatexCommand ref
+reference "fig:RobotScara"
+
+\end_inset
+
+.
+ Este robot cuenta con 4 grados de libertad construido en el departamento
+ de robótica de la FIE, fijo en su base y hecho de acero y aluminio
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:RobotScara"
+
+\end_inset
+
+Robot SCARA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Características
+\end_layout
+
+\begin_layout Standard
+Entre las características más relevantes acerca del robot se tiene:
+\end_layout
+
+\begin_layout Itemize
+4 Grados de libertad.
+\end_layout
+
+\begin_layout Itemize
+Alcance máximo de su brazo 50 cm.
+\end_layout
+
+\begin_layout Itemize
+Construido en acero y aluminio.
+\end_layout
+
+\begin_layout Itemize
+Peso alrededor de 45 Kg.
 \end_layout
 
 \begin_layout Subsection
@@ -2114,7 +2182,7 @@ Cinemática inversa
 \end_layout
 
 \begin_layout Section
-Conectividad mediante puerto serie
+Conectividad PC-Robot
 \end_layout
 
 \begin_layout Chapter
@@ -2330,6 +2398,16 @@ key "key-1"
 
 Aníbal Ollero Baturone, Robótica: Manipuladores y robots móviles, Marcombo
  Editorial.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Wilbert O.
+ Galitz, The Essential Guide to User Interface Design, E.U.A.: ed.: Wiley, 2007.
 \end_layout
 
 \end_body
