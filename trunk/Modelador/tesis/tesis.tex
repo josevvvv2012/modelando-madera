@@ -1,0 +1,933 @@
+%% LyX 1.5.6 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[11pt,oneside,spanish]{book}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,letterpaper,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=2cm}
+\pagestyle{plain}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{setspace}
+\onehalfspacing
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\newenvironment{lyxlist}[1]
+{\begin{list}{}
+{\settowidth{\labelwidth}{#1}
+ \setlength{\leftmargin}{\labelwidth}
+ \addtolength{\leftmargin}{\labelsep}
+ \renewcommand{\makelabel}[1]{##1\hfil}}}
+{\end{list}}
+
+\makeatother
+
+\usepackage{babel}
+\deactivatetilden
+
+\begin{document}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\listtablename}{\'Indice de tablas}
+\frontmatter
+
+
+\title{Desarrollo de software para modelado y fabricación de objetos de
+madera usando un robot SCARA}
+
+
+\author{Roberto Loaeza Valerio}
+
+\maketitle
+\tableofcontents{}
+
+\listoffigures
+
+
+\listoftables
+
+
+\mainmatter
+\setcounter{page}{6}
+
+
+\chapter{Introducción}
+
+En la actualidad las empresas madereras requieren tener procesos automatizados
+tanto en su administración como en la fabricación de sus productos
+para poder competir en el actual modelo de mercado. Desafortunadamente
+en la región maderera existen muy pocas empresas que cuenten con una
+automatización en sus procesos. Para automatizar una empresa dedicada
+a la producción de artefactos de madera se requiere principalmente
+de:
+
+\begin{itemize}
+\item Software tipo ERP - CRM para la adminstración.
+\item Robots industriales para la fabricación de productos.
+\end{itemize}
+Por parte la adminstración parece estar automatizada hasta cierto
+grado haciendo uso de paquetes de software como compiere, contpaq,
+entre otros; en cambio muy pocas empresas cuentan con robots industriales
+ya que estos requieren una inversion superior a los 1'000'000.00 pesos
+y en la mayoría son de origen extranjero lo cual implica que si llega
+a fallar es muy poco probable que se solucione en poco tiempo lo que
+conlleva a perdida de dinero y tiempo.
+
+Observando la necesidad de la automatización en los procesos de fabricación
+de productos se optó por desarrollar una aplicación multiplataforma
+para el modelado de productos de madera haciendo uso de un robot SCARA
+realizado en la Facultad de Ingenieria Eléctrica de la Universidad
+Michoacana de San Nicolas de Hidalgo.
+
+
+\section{Motivación}
+
+En la actualidad la utilización de robots manipuladores en la mayoría
+de las pequeñas y medianas fábricas, en específico las fábricas de
+la región maderera del estado de Michoacán, son factor de que estas
+tengan un menor costo en su proceso de producción y con esto puedan
+así competir en el mercado saturado por productos extranjeros.
+
+Por otra parte el diseño innovador de nuevos productos de madera se
+ve estancado por la falta de una herramienta para su modelado e implementación
+en un robot manipulador.
+
+
+\section{Antecedentes}
+
+Los antecedentes previos realizados en la División de Estudios de
+Posgrado de la Facultad de Ingeniería Eléctrica, de la Universidad
+Michoacana de San Nicolás de Hidalgo, es la construcción de un robot
+manipulador tipo SCARA de cuatro grados de libertad de plataforma
+abierta, para el cual se desarrollará la aplicación de la presente
+tesis.
+
+
+\section{Objetivos}
+
+El objetivo general es realizar investigación a fondo en los aspectos
+computacionales relacionados con el modelado de objetos físicos y
+desarrollar el software necesario para que el robot SCARA pueda realizarlos,
+de forma que se desarrolle tecnología propia que promueva una industria
+robótica y se generen diversas aplicaciones que tengan un importante
+impacto social como económico.
+
+Se realizarán también estudios sobre implementación de planeadores
+de movimientos en brazos robóticos para que las acciones se realicen
+lo más rápido posible.
+
+Finalmente se realizarán pruebas del software desarrollado con el
+robot SCARA. 
+
+\noindent \begin{center}
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.7\paperwidth]{imagenes/objetivosTesis}
+\par\end{centering}
+
+\caption{\label{fig:DiagramaObjetivos}Diagrama representativo del objetivo
+de la tesis}
+
+\end{figure}
+
+\par\end{center}
+
+En la figura \ref{fig:DiagramaObjetivos} representa gráficamente
+el objetivo, donde se puede apreciar que el presente proyecto de tesis
+tiene como entrada el diseño por parte de una persona el cual es interpretado
+para su futura producción en un robot SCARA. 
+
+
+\subsection*{Objetivos específicos}
+
+\begin{itemize}
+\item Generar una plataforma 3D para el modelado de objetos de madera. 
+\item Implementar algoritmos de gráficación sobre la plataforma 3D los siguientes
+elementos:
+
+\begin{itemize}
+\item Puntos 
+\item Lineas
+\item Curvas de Bezier
+\item Curvas Spline
+\end{itemize}
+\item Desarrollar software para modelado implementando los algoritmos anteriores.
+\item Desarrollar software para comunicación entre el software de modelado
+y el robot SCARA. 
+\end{itemize}
+
+\section{Alcances}
+
+Los alcances previstos son:
+
+\begin{itemize}
+\item Desarrollo de una aplicación multiplataforma capaz de modelar objetos
+de madera para su producción utilizando un robot SCARA.
+\item Desarrollo de interfaz entre la aplicación multiplataforma para modelar
+objetos de madera y el robot SCARA para la producción.
+\end{itemize}
+
+\section{Metodología}
+
+Para lograr los objetivos mencionados anteriormente se propone desarrollar
+una aplicación multiplataforma para el modelado de objetos de madera
+en el lenguaje Java.
+
+Para esto se desarrollarán prototipos de la aplicación, hasta lograr
+una estabilidad considerable, la cual tenga una velocidad alta a la
+hora de generar los modelos en diferentes vistas, esto se deberá hacer
+mediante hardware usando la API de OpenGL.
+
+Con el fin de impulsar este tipo de proyectos, se propone que la aplicación
+final sea evaluada en los talleres de Paracho.
+
+
+\section{Contribuciones esperadas}
+
+A continuación se describen brevemente las contribuciones de este
+trabajo:
+
+\begin{itemize}
+\item Aplicación multiplataforma para la construcción de modelos físicos
+de madera. Se utiliza la API OpenGL para acelerar tanto cálculo como
+regeneración de vistas 3D.
+\item Aplicación multiplataforma para la conexion entre el modelador y el
+robot SCARA. 
+\item Código fuente, éste se distribuirá bajo la {}``\emph{GNU General
+Public License v2}'' y se puede acceder a él en la siguiente url:
+modelando-madera.googlecode.com
+\end{itemize}
+
+\section{Descripción de los capítulos}
+
+En el capítulo \ref{cha:2_Ambiente} se presentarán una revisión del
+estado del arte asociado con la paqueteria de software existente para
+el modelado/fabricación de objetos de madera. Finalmente se describirá
+el contenido de cada capítulo.
+
+En el capítulo \ref{cha:4_Interfaces3D} se mostrarán las principales
+interfaces de software para la implementación de software 3D, se mostrarán
+pros y contras de cada una de estas y finalmente se detallará el funcionamiento
+de la interfaz OpenGL sobre la cual se realizará la implementación
+del software.
+
+En el capítulo \ref{cha:3_Modelado3D} aborda las partes del software
+modelador tanto los algoritmos de graficación como la forma de interacción
+con el usuario final. 
+
+En el capítulo \ref{cha:5_InterfazModelado} trata las características
+del robot SCARA, la forma de conversión del modelo a acciones que
+el robot entienda así como un algoritmo de planeación para que el
+robot sea lo más optimo posible. También se describirá la interfaz
+entre el software de modelado y el robot.
+
+En el capítulo \ref{cha:6_Pruebas} se mostrarán resultados de pruebas
+realizadas en una primera instancia al software modelador, seguido
+de los resultados de la conectividad entre el software y el robot,
+y finalmente se verificará que tanta funcionalidad doto el algoritmo
+de planeación implementado.
+
+En el capítulo \ref{cha:7_Conclusiones} se aportarán las conclusiones
+generales resultado de la investigación abordada e ideas para trabajo
+de investigación posterior a realizar en el mismo campo del conocimiento. 
+
+
+\chapter{Ambiente de programación de robots manipuladores\label{cha:2_Ambiente}}
+
+
+\section{Robot}
+
+Un robot, es un agente artificial mecánico o virtual. Los primeros
+son maquinas usadas para realizar un trabajo automaticamente y son
+controlados por una computadora; por otro lado tenemos a los robots
+virtuales también conocidos como {}``bots'' que son agentes virtuales
+de software.
+
+En general para considerar a un agente artificial como robot, este
+debe cumplir algunas propiedades:
+
+\begin{itemize}
+\item Manipular cosas de su entorno.
+\item Sentir cosas del entorno.
+\item Contar con cierta inteligencia para tomar decisiones basadas en el
+ambiente o en una secuencia previamente programada.
+\item Ser programable
+\item Moverse en uno o más ejes.
+\item Realizar movimientos coordinados.
+\end{itemize}
+A continuación se presentan algunas definiciones realizadas por diferentes
+institutos:
+
+\begin{itemize}
+\item La ISO 8373 lo define como {}``\emph{un manipulador multipropósito
+automaticamente controlado y reprogramable de mas de tres ejes}''. 
+\item El Instituto de Robótica de América lo define como {}``\emph{manipulador
+multifuncional y reprogramable diseñado para mover material, partes,
+herramientas o dispositivos especializados mediante varios movimientos
+programados para la realización de una variedad de tareas}''.
+\end{itemize}
+
+\subsection{Clasificación}
+
+La Asociación Japonesa de Robots Industriales (JIRA, por sus siglas
+en inglés) clasificó los robots desde manipuladores simples hasta
+sistemas avanzados incorporando inteligencia artificial. A continuación
+se lista dicha clasificación la cual fue realizada a finales del siglo
+veinte\cite[p. 267]{key-2}:
+
+\begin{itemize}
+\item Manipuladores operados manualmente. Máquinas que requieren ser operadas
+por humanos.
+\item Manipuladores secuenciales. Dispositivos que realizan una serie de
+tareas en la misma secuencia cada vez que son activados.
+\item Manipuladores programables. Se incluyen los tipos simples de los robots
+industriales.
+\item Robots controlados numéricamente. Servo robots.
+\item Robots con sensores. Robots que utilizan sensores de cualquier tipo,
+proximidad, presión, tactil, etc.
+\item Robots adaptativos. Robots que ajustan la forma en que trabajan para
+compensar cambios en el entorno.
+\item Robots inteligentes. Robots con controladores de salida sofisticados
+que pueden considerarse para procesar inteligencia artificial.
+\item Sistemas mecatrónicos inteligentes. Computadoras que controlan un
+conjunto de robots o dispositivos robóticos.
+\end{itemize}
+
+\subsection{Estructura de los robots manipuladores}
+
+Básicamente la estructura de un robot manipulador es la de un brazo
+articulado. De manera más específica un robot manipulador industrial
+es una cadena cinemática abierta formada por un conjunto de eslabones
+interrelacionados mediante articulaciones las cuales permiten el movimiento
+de esta dicha cadena.
+
+
+\subsubsection{Tipos de articulaciones}
+
+Existen diferentes tipos de articulaciones como podemos observar en
+la figura \ref{fig:TiposArticulaciones}:
+
+\begin{lyxlist}{00.00.0000}
+\item [{a)}] La articulación de rotación suministra un grado de libertad,
+es decir permite la rotación sobre el eje de la articulación.
+\item [{b)}] La articulación prismática consiste en una translación a lo
+largo del eje de la articulación.
+\item [{c)}] En la articulación cilíndrica existen dos grados de libertad,
+una rotación y una translación sobre el eje de la articulación.
+\item [{d)}] La articulación planar se caracteriza por el movimiento de
+desplazamiento en un plano, tiene dos grados de libertad.
+\item [{e)}] Por último la articulación esférica combina tres giros en
+tres direcciones perpendiculares en el espacio.
+\end{lyxlist}
+\noindent \begin{center}
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[scale=0.8]{imagenes/articulaciones}
+\par\end{centering}
+
+\caption{Tipos de articulaciones: a) rotación b) prismática c) cilíndrica d)
+planar e) esférica\label{fig:TiposArticulaciones}}
+
+\end{figure}
+
+\par\end{center}
+
+
+\subsubsection{Estructuras básicas}
+
+La estructura básica de un robot manipulador consiste en un brazo
+compuesto por elementos con articulaciones entre ellos. En el último
+enlace se coloca un efector final como una pinza o un dispositivo
+especial para realizar operaciones específicas. Estas estructuras
+tienen ciertas propiedades en cuanto a su espacio de trabajo y accesibilidad
+a posiciones determinadas. En la figura \ref{fig:Estructuras} se
+muestran algunas configuraciones básicas.
+
+\noindent \begin{center}
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[scale=0.8]{imagenes/manipuladores}
+\par\end{centering}
+
+\caption{Estructura: a) 3D b) 2D c) 1D d) 3G\label{fig:Estructuras}}
+
+\end{figure}
+
+\par\end{center}
+
+\begin{lyxlist}{00.00.0000}
+\item [{a)}] Configuración 3D o PPP tiene tres articulaciones prismáticas.
+Es bastante usual en la industria para el tansporte de cargas voluminosas.
+\item [{b)}] Configuración cilíndrica presenta un volumen de trabajo parecido
+a un cilindro, sin embargo generalmente no tienen una rotación de
+360º.
+\item [{c)}] Configuración polar, los de brazo articulado y los modelos
+SCARA presentan un volumen de trabajo irregular.
+\item [{d)}] Configuración angular.
+\end{lyxlist}
+
+\section{Revisión del Estado del Arte}
+
+En la actualidad los robots son usados para realizar tareas peligrosas,
+difíciles, repetitivas y/o complicadas para los humanos. Esto usualmente
+toma la forma de un robot industrial usado en las líneas de producción.
+Algunas aplicaciones incluyen la limpieza de residuos tóxicos, minería
+y localización de minas terrestres. Sin embargo la manufactura continúa
+siendo el principal mercado donde los robots son utilizados, en particular,
+robots articulados son los más usados comúnmente. Las aplicaciones
+incluyen soldado, pintado y carga de maquinaria. En este ramo la industria
+automotriz ha tomado gran ventaja de esta nueva tecnología donde los
+robots han sido programados para reemplazar el trabajo de los humanos
+en muchas tareas repetitivas.
+
+
+\subsection{Programación}
+
+Un lenguaje de programación de robots sirve como interfaz entre el
+usuario humano y el robot industrial. Los manipuladores de robots
+se diferencian a sí mismos de la automatización fija por ser {}``flexibles'',
+es decir que son programables. No solo son programables los movimientos
+de los manipuladores sino que, a través del uso de sensores y comunicación
+con otros tipos de automatización, los manipuladores pueden adaptarse
+a las variaciones a medida que realizan su tarea.
+
+Generalmente la programación de los robots se realiza fuera de linea,
+a continuación se listan paquetes existentes para programar:
+
+\begin{itemize}
+\item MS Robotic Studio ( \textasciitilde{} \$ 4 000.00 M.N)
+
+\begin{itemize}
+\item Herramienta de programación visual para crear y depurar aplicaciones
+robóticas. El desarrollador puede interactuar con los robots mediante
+interfases basadas en web o nativas al sistema operativo (MS Windows).
+\item Contiene simulación realística provista por el motor PhysX de AGEIA.
+Se posibilita la emulación por software o la aceleración por hardware.
+\item Se permiten varios lenguajes como: Microsoft Visual Studio Express
+languages (Visual C\#\textregistered{} y Visual Basic\textregistered{}
+.NET), JScript\textregistered{} y Microsoft IronPython 1.0 Beta 1,
+y lenguajes de terceros que se adecuen a la arquitectura basada en
+servicios.
+\item Robots soportados: CoroWare's CoroBot (\$3 200), Lego Mindstorms NXT,
+iRobot Create y Robosoft's robots (38 a 65 K¤).
+\end{itemize}
+\item KUKA.OfficeLite (> \$55 000.00 USD) 
+
+\begin{itemize}
+\item Este sistema de programación posee las mismas características que
+el software de sistema KUKA: para el manejo y la programación se utiliza
+la interfaz de usuario Original KUKA y la sintaxis KRL: un lenguaje
+completo.
+\item Disponibilidad de todo el repertorio de funciones de las respectivas
+ediciones del software de sistema. Sin embargo, no se pueden conectar
+dispositivos de hardware periféricos.
+\item Comprobación de sintaxis mediante el compilador y el interpretador
+disponibles; creación de programas KRL de usuario ejecutables.
+\item Control completo de la ejecución de un programa de aplicación de robot.
+Ello permite optimizar la duración de los ciclos.
+\item El Techware de KUKA para optimización de programas se puede utilizar
+e instalar en todo momento. De este modo, en un PC estándar se puede
+disponer de todo el software de sistema Original, sin necesidad de
+emulaciones.
+\item Las entradas originales se pueden simular.
+\item KUKA.OfficeLite no se puede utilizar para controlar un robot.
+\end{itemize}
+\end{itemize}
+
+\subsection{Desarrollo tecnológico}
+
+Desafortunadamente el desarrollo actual en el país está enfocado generalmente
+a robots móviles dejando a los manipuladores de lado.
+
+Universidades como el Tecnológico de Monterrey {[}Dirección de Vinculación
+y Desarrollo campus Guadalajara] se está enfocando más en la planeación
+de movimientos para robots, así como el Instituto Tecnológico Autónomo
+de México{[}Laboratorio de robótica, ITAM] se enfocan al área de robots
+móviles pequeños.
+
+
+\chapter{Modelado de objetos\label{cha:3_Modelado3D}}
+
+
+\section{Introducción}
+
+Para modelar
+
+
+\section{Algoritmos de graficación}
+
+
+\subsection{Puntos}
+
+
+\subsection{Lineas}
+
+
+\subsection{Circulos}
+
+
+\subsection{Elipses}
+
+
+\subsection{Curvas de Bezier}
+
+
+\subsection{Elementos compuestos}
+
+
+\section{Almacenamiento y recuperación}
+
+El almacenamiento y recuperación es una de las operaciones más importantes
+en un sistema, 
+
+
+\subsection{Almacenamiento en formato XML}
+
+El formato XML
+
+Algunas de las ventajas de este formato son:
+
+\begin{itemize}
+\item Independiente de la plataforma.
+\item Soporta código Unicode.
+\item El mismo documento define la estructura y los campos asi como los
+valores respectivos.
+\item Es basado en estándares internacionales.
+\end{itemize}
+
+\subsection{Estructura de almacenamiento}
+
+La estructura de almacenamiento puede observarse en la figura \ref{fig:EstructuraXML}.
+Como puede observar la estructura es simple, compacta y fácil de entender.
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.5\paperwidth]{imagenes/estructura_xml}
+\par\end{centering}
+
+\caption{\label{fig:EstructuraXML}Estructura de almacenamiento}
+
+\end{figure}
+
+
+En la figura \ref{fig:EstructuraXML} puede observarse:
+
+\begin{itemize}
+\item No existe límite en la cantidad de primitivas usadas en un diseño.
+\item Los puntos de control de una primitiva pueden no tener límite, es
+decir una primitiva puede tener N puntos de control. 
+\item Cada primitiva es identificada mediante mediante un número entero
+(tipo):
+
+\begin{itemize}
+\item Punto (1)
+\item Línea (2)
+\item Poli-Línea (3)
+\item Círculo (4)
+\item Elipse (5)
+\item Curva de Bezier (6)
+\end{itemize}
+\end{itemize}
+
+\section{Importacion de otros formatos}
+
+
+\subsection{Imágenes PGM}
+
+Una imagen PGM es la representacion a escala de grises de una imagen. 
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.7\paperwidth]{imagenes/logo_a_robot}
+\par\end{centering}
+
+\caption{\label{fig:pgm_a_robot}PGM a Robot}
+
+\end{figure}
+
+
+
+\subsection{Archivos CAD (dxf)}
+
+
+\chapter{Interfaces de software\label{cha:4_Interfaces3D}}
+
+
+\section{Introducción}
+
+La interfaz de usuario es uno de los apartados con más relevancia
+de un sistema de computo, en la actualidad todo sistema debe contener
+una herramienta con la que el usuario pueda ordenar al computador
+que hacer.
+
+Una interfaz de usuario mal diseñada puede causar que el mejor sistema
+de cómputo sea ineficaz y por lo tanto sea deshechado, es por esto
+que se debe realizar un buen diseño de la interfaz de usuario, la
+cual incluye:
+
+\begin{itemize}
+\item Eleccion de lenguaje de programación.
+\item Diseño de la interfaz gráfica.
+\item Elección de sistema de renderización.
+\end{itemize}
+
+\section{Lenguaje de programación}
+
+En la actualidad existe una gran cantidad de lenguajes de programación,
+la mayoría de propósito general y el resto de propósito específico,
+a continuación se listan los más populares de ambas categorías:
+
+\begin{itemize}
+\item C.
+\item Basic.
+\item Java.
+\item .Net.
+\item Perl.
+\item PHP.
+\end{itemize}
+Estos podrían ser los más utilizados hoy por hoy, pero debido a la
+heterogeneidad de sistemas operativos y arquitecturas, no todos los
+lenguajes de programación son aplicables. 
+
+En el caso de los lenguajes compilados es poco probable su funcionalidad
+en diferentes plataformas debido a la dependencia de tipo de procesador
+que adquieren al momento de compilar, por ejemplo si se compila en
+un procesador tipo RISC es imposible ejecutarlo en un procesador tipo
+CISC.
+
+Por otro lado los lenguajes interpretados son muy portables a todas
+las arquitecturas y sistemas operativos debido a que no dependen de
+un tipo de arquitectura pero requieren de que exista un progama nativo
+que los interprete, es decir, que si la empresa desarrolladora del
+lenguaje interpretado no libera una versión de su intérprete para
+un sistema operativo en una arquitectura determinada los programas
+escritos en este lenguaje no se ejecutarán.
+
+%
+\begin{table}[h]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+ & Windows & Linux & MacOS\tabularnewline
+\hline
+C & X & X & X\tabularnewline
+\hline 
+Basic & X &  & \tabularnewline
+\hline 
+Java & X & X & X\tabularnewline
+\hline 
+.Net & X & X & \tabularnewline
+\hline
+Perl & X & X & X\tabularnewline
+\hline
+PHP & X & X & \tabularnewline
+\hline
+\end{tabular}
+\par\end{centering}
+
+\caption{\label{tablaLenguajesProgramacion}Lenguajes Sistemas Operativos}
+
+\end{table}
+
+
+En la tabla \ref{tablaLenguajesProgramacion} se puede apreciar los
+alcances de los lenguajes de programación más desarrollados y más
+difundidos en la actualidad, dejando claro que Java es el lenguaje
+de programación con mayor portabilidad debido a que se cuenta con
+intérpretes para todas las arquitecturas y además que no se requiere
+modificar el código fuente para ejecutarse en éstas.
+
+
+\subsection{Java}
+
+Java es una plataforma de software desarrollada por Sun Microsystem,
+de forma que los programas creados en ella puedan ejecutarse sin cambios
+en diferentes tipos de arquitecturas y dispositivos computacionales. 
+
+Esta plataforma está compuesta por:
+
+\begin{itemize}
+\item El Lenguaje de programación.
+\item La máquina virtual de Java (JVM).
+\item Un conjunto de bibliotecas estándar, conocidas como API.
+\end{itemize}
+El lenguaje de programación usa la sintaxis de C++, incorpora sincronización,
+manejo de tareas e interfaces como un mecanismo alternativo a la herencia
+múltiple de C++.
+
+La máquina virtual de Java (JVM) es un programa nativo (un ejecutable
+de una plataforma específica) capaz de interpretar y ejecutar código
+binario especial (llamado Java Bytecode), el cual es generado a partir
+del compilador de Java. Es por esto que Sun Microsystem ha liberado
+versiones de su JVM para las arquitecturas y sistemas operativos más
+utilizados, volviendo así a las aplicaciones desarrolladas en Java
+multiplataforma.
+
+
+\section{Diseño de la interfaz gráfica}
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.7\paperwidth]{imagenes/igu_tesis}
+\par\end{centering}
+
+\caption{\label{fig:igu_dise=0000F1o}Diseño de la interfaz gráfica}
+
+\end{figure}
+
+
+
+\section{Elección de sistema de renderización.}
+
+La elección debe realizarse tomando en cuenta ventajas y desventajas
+de las tecnologías disponibles las cuales se muestran en la tabla
+\ref{tab:Comparativa-entre-Direct3DJava3dOpenGl}.
+
+\noindent \begin{center}
+%
+\begin{table}[h]
+\noindent \begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+ & Direct3D & Java3D & OpenGL\tabularnewline
+\hline
+\hline 
+Plataformas soportadas & Windows & Multiplataforma & Multiplataforma\tabularnewline
+\hline 
+Soporte nativo & Si & No & Si\tabularnewline
+\hline 
+Licencia & EULA & GNU General Public & SGI\tabularnewline
+\hline
+\end{tabular}
+\par\end{centering}
+
+\caption{Comparativa entre Direct3D, Java3D y OpenGL\label{tab:Comparativa-entre-Direct3DJava3dOpenGl}}
+
+\end{table}
+
+\par\end{center}
+
+Debido a que Direct3D solo soporta la plataforma MS-Windows fue deshechada
+y por otra parte Java3D tiene una dependencia con OpenGL o con Direct3D
+también fue deshecada dejando como sistema de renderización a OpenGL.
+
+
+\subsection{OpenGL}
+
+OpenGL es una especificación estándar que define una API multilenguaje
+y multiplataforma para escribir aplicaciones que produzcan gráficos
+2D y 3D. Fue desarrollada por Silicon Graphics Inc. (SGI) en 1992
+.
+
+Las funciones y comandos de esta API están integrados en las tarjetas
+de aceleración gráfica 3D, o en su defecto son emuladas por el sistema
+operativo. Es claro que para el propósito específico de modelado 3D
+no se debe realizar emulación por software sino se debe tener acceso
+directo al hardware. 
+
+\noindent \begin{center}
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.7\paperwidth]{imagenes/opengl-hw}
+\par\end{centering}
+
+\caption{\label{fig:Aplicaci=0000F3n-OpenGL}Aplicación utilizando OpenG y
+aceleración gráfica por hardware}
+
+\end{figure}
+
+\par\end{center}
+
+En la figura \ref{fig:Aplicaci=0000F3n-OpenGL} se muestra una aplicación
+utilizando OpenGL y aceleración gráfica por hardware; se puede observar
+que las llamadas a la interfaz de aplicación OpenGL pasan directamente
+al hardware de aceleración y no pasan a tavés de la interfaz de dispositivo
+de gráfico (GDI) que sería el caso si se tratara de simulación por
+software.
+
+
+\subsubsection{GLUT}
+
+Es un conjunto de herramientas OpenGL, un sistema de ventanas independientes
+para escribir programas OpenGL en lenguajes C y FORTRAN. Implementa
+un simple interfaz de programación para aplicaciones (API) para OpenGL.
+Por su parte GLUT hace considerablemente fácil la programación OpenGL.
+
+GLUT provee un soporte para las plataformas Windows, Linux, Mac. Con
+la única desventaja de tener que recompilar para ser usado en otra
+plataforma.
+
+
+\subsubsection{JOGL (JSR-231)}
+
+Jogl es un enlace del lenguaje de programación Java para la API de
+OpenGL. Soporta integración con los estándares de Java AWT y Swing.
+Jogl provee aceso a las más recientes rutinas de OpenGL (OpenGL 2.0
+con extenciones de fabricante) asi como una pataforma independiente
+para accesar a hardware acelerador. 
+
+Jogl tambien prvee algunas de las mas populares características introducidas
+por otros enlaces existentes para OpenGL como son GL4Java, LWJGL,
+GLUT entre otros.
+
+Es importante mencionar que esta tecnologia es código abierto y fue
+iniciada por Game Technology Group.
+
+
+\chapter{Interfaz entre modelado y el robot SCARA\label{cha:5_InterfazModelado}}
+
+
+\section{Introducción}
+
+La interfaz entre el software modelador y el robot es una parte muy
+importante, ya que si esta llega a colapsar o mal-funcionar se verá
+reflejado en un trabajo final(objeto de madera) no satisfactorio.
+
+
+\section{Robot SCARA}
+
+El robot con el cual se trabajó se puede apreciar en la figura \ref{fig:RobotScara}.
+Este robot cuenta con 4 grados de libertad construido en el departamento
+de robótica de la FIE, fijo en su base y hecho de acero y aluminio
+
+%
+\begin{figure}
+
+
+\caption{\label{fig:RobotScara}Robot SCARA}
+
+
+
+\end{figure}
+
+
+
+\subsection{Características}
+
+Entre las características más relevantes acerca del robot se tiene:
+
+\begin{itemize}
+\item 4 Grados de libertad.
+\item Alcance máximo de su brazo 50 cm.
+\item Construido en acero y aluminio.
+\item Peso alrededor de 45 Kg.
+\end{itemize}
+
+\subsection{Diseño}
+
+
+\subsection{Limitantes}
+
+
+\section{Conversión de modelado a acciones SCARA}
+
+
+\subsection{Cinemática inversa}
+
+
+\section{Conectividad PC-Robot}
+
+
+\chapter{Pruebas\label{cha:6_Pruebas}}
+
+
+\section{Introducción }
+
+
+\section{Funcionalidad multiplataforma del software 3D}
+
+
+\subsection{Windows}
+
+
+\subsection{Linux}
+
+
+\section{Conectividad multiplataforma entre software y el robot}
+
+
+\subsection{Windows}
+
+
+\subsection{Linux}
+
+
+\section{Pruebas en campo}
+
+
+\subsection{Realizacion de primitivas}
+
+
+\subsection{Imagenes PGM}
+
+
+\subsection{Archivos CAD}
+
+
+\chapter{Conclusiones\label{cha:7_Conclusiones}}
+
+
+\section{Conclusiones}
+
+
+\section{Trabajos futuros }
+
+
+\chapter*{\newpage
+\addcontentsline{toc}{chapter}{Anexo}}
+
+
+\subsection*{Anexo Glosario}
+
+\begin{description}
+\item [{CISC}] Complex-Intruction-Set Computing.
+\item [{CRM}] Customer Relationship Management.
+\item [{ERP}] Enterprise Resource Planning.
+\item [{ISO}] International Organization for Standardization.
+\item [{JIRA}] Japan Industrial Robot Association.
+\item [{OpenGL}] Open Graphics Library.
+\item [{PGM}] Portable GrayMap.
+\item [{RISC}] Reduced-Intruction-Set Computing.
+\item [{SCARA}] Selective Compliant Articulated Robot Arm.
+\item [{XML}] Extensible Markup Language.
+\end{description}
+\begin{thebibliography}{WIKI-ROBOT}
+\bibitem[WIKI-ROBOT]{key-3}http://en.wikipedia.org/wiki/Industrial\_robot
+
+\bibitem[GLUT]{key-4}http://www.opengl.org/resources/libraries/glut/
+
+\bibitem[JOGL]{key-5}https://jogl.dev.java.net/
+
+\bibitem[RAH]{key-1}Thomas R. Kurfess, Robotics and Automation Handbook,
+E.U.A.: ed. CRC PRESS, 2005.
+
+\bibitem[CER]{key-2}Stan Gibilisco, Concise Encyclopedia of Robotics,
+E.U.A.: ed. McGraw-Hill, 2003
+
+\bibitem[PJGD]{key-3}Andrew Davison, Pro Java 6 3D Game Development
+Java 3D, JOGL, JInput and JOAL APIs, E.U.A.: ed. Apress, 2007
+
+\bibitem[RMRM]{key-1}Aníbal Ollero Baturone, Robótica: Manipuladores
+y robots móviles, Marcombo Editorial.
+
+\bibitem{key-1}Wilbert O. Galitz, The Essential Guide to User Interface
+Design, E.U.A.: ed.: Wiley, 2007.
+\end{thebibliography}
+
+\end{document}
