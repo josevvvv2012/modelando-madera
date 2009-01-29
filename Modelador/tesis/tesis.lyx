@@ -985,31 +985,57 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-Para modelar
+Una aplicación de modelado de objetos proporciona una biblioteca de funciones
+ que pueden utilizarse para crear diseños de objetos que posteriormente
+ se pueden plasmar en madera o algún otro tipo de material que pueda ser
+ moldeado por alguna de las herramientas soportadas por el robot.
+ Estas funciones se denominan primitivas gráficas o simplemente primitivas.
+\end_layout
+
+\begin_layout Standard
+Para describir un modelo, primero es necesario seleccionar un sistema de
+ coordenadas cartesianas adecuado, que puede ser bidimensional o tridimensional.
+ Después se describen los objetos del modelo proporcionando sus especificaciones
+ geométricas.
+ Por ejemplo se define una línea recta proporcionando la posicion de los
+ dos puntos extremos.
 \end_layout
 
 \begin_layout Section
-Algoritmos de graficación
+Primitivas de graficación
+\end_layout
+
+\begin_layout Standard
+Las primitivas gráficas que describen la geometría de los objetos se denominan
+ normalmente primitrivas gemétricas.
+ Entre las primitivas geométricas más simples son las que indican posiciones
+ de puntos y segmentos de líneas rectas.
+ Adicionalmente se pueden incluir circulos, elipses y curvas tipo bezier.
 \end_layout
 
 \begin_layout Subsection
-Puntos
+Punto
+\end_layout
+
+\begin_layout Standard
+El punto es el objeto más simple que puede representarse, solo se necesita
+ un punto dentro del sistema de coordenadas.
 \end_layout
 
 \begin_layout Subsection
-Lineas
+Linea
 \end_layout
 
 \begin_layout Subsection
-Circulos
+Círculo
 \end_layout
 
 \begin_layout Subsection
-Elipses
+Elipse
 \end_layout
 
 \begin_layout Subsection
-Curvas de Bezier
+Curva de Bezier
 \end_layout
 
 \begin_layout Subsection
@@ -2129,10 +2155,6 @@ Robot SCARA
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
