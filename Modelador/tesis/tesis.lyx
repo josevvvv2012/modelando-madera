@@ -141,36 +141,313 @@ Introducción
 
 \begin_layout Standard
 En la actualidad las pequeñas y medianas empresas de la región maderera
- de michoacán, más preciso en Paracho, que requieren tener la mayoría de
- sus procesos automatizados para poder competir en el actual mercado competido.
+ del estado de Michoacán, más preciso en la localidad de Paracho, requieren
+ tener la totalidad de sus procesos automatizados para poder competir en
+ el mercado tan saturado actualmente.
+ Desafortunadamente la mayoría de estas empresas no cuentan con todos los
+ procesos automatizados.
 \end_layout
 
 \begin_layout Standard
-En la actualidad las empresas madereras requieren tener procesos automatizados
- tanto en su administración como en la fabricación de sus productos para
- poder competir en el actual modelo de mercado.
- Desafortunadamente en la región maderera existen muy pocas empresas que
- cuenten con una automatización en sus procesos.
- Para automatizar una empresa dedicada a la producción de artefactos de
- madera se requiere principalmente de:
+Los procesos que pueden automatizarse los dividiremos en dos categorías
+ para fines de su estudio:
 \end_layout
 
 \begin_layout Itemize
-Software tipo ERP - CRM para la adminstración.
+Procesos administrativos
 \end_layout
 
 \begin_layout Itemize
-Robots industriales para la fabricación de productos.
+Procesos industriales
 \end_layout
 
 \begin_layout Standard
-Por parte la adminstración parece estar automatizada hasta cierto grado
- haciendo uso de paquetes de software como compiere, contpaq, entre otros;
- en cambio muy pocas empresas cuentan con robots industriales ya que estos
- requieren una inversion superior a los 1'000'000.00 pesos y en la mayoría
- son de origen extranjero lo cual implica que si llega a fallar es muy poco
- probable que se solucione en poco tiempo lo que conlleva a perdida de dinero
- y tiempo.
+Los procesos administrativos abarca todo proceso relacionado con documentación
+ de la empresa, algunos ejemplos de estos procesos son los siguientes departamen
+tos: recursos humanos, recursos financieros, ventas, compras, entre otros.
+ Estos procesos o departamentos estan parcial o totalmente cubiertos por
+ aplicaciones ofrecidas por el gobierno de forma gratuita o haciendo uso
+ de aplicaciones de terceros, algunas de las aplicaciones utilizadas son:
+\end_layout
+
+\begin_layout Itemize
+ContPAQ
+\end_layout
+
+\begin_layout Itemize
+Compiere
+\end_layout
+
+\begin_layout Itemize
+NomiPAQ
+\end_layout
+
+\begin_layout Itemize
+SUA
+\end_layout
+
+\begin_layout Standard
+Por otra parte los procesos industriales son todos los procesos en los que
+ se manipula una materia prima y es transformada en un producto final mediante
+ el uso de maquinaria industrial, y es en estos procesos donde se centra
+ el trabajo de la presente tesis.
+\end_layout
+
+\begin_layout Standard
+Teniendo las empresas la necesidad de contar con maquinaria industrial de
+ precisión se ven en la necesidad de adquirir esta maquinaria en el extrajero
+ debido a que en el país no existen empresas presten estos servicios.
+\end_layout
+
+\begin_layout Standard
+Al usar maquinaria extranjera es evidente que los costos de compra, instalación,
+ mantenimiento y programación son elevados, en la tabla 
+\begin_inset LatexCommand ref
+reference "tab:Costos-de-adquisición"
+
+\end_inset
+
+ se muestran algunas maquinarias adquiridas por empresas de la localidad
+ de Paracho Michoacán.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Empresa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Maquinaria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Costo de Adquisición
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Costo de mantenimiento
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+PROCART
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "tab:Costos-de-adquisición"
+
+\end_inset
+
+Costos de adquisición de maquina industrial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
