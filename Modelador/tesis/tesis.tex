@@ -1,13 +1,11 @@
-%% LyX 1.5.6 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 1.6.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[11pt,oneside,spanish]{book}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
-\usepackage{geometry}
-\geometry{verbose,letterpaper,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=2cm}
+\usepackage[letterpaper]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=2cm}
 \pagestyle{plain}
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
 \setlength{\parskip}{\medskipamount}
 \setlength{\parindent}{0pt}
 \usepackage{textcomp}
@@ -15,7 +13,6 @@
 \usepackage{setspace}
 \onehalfspacing
 
-\makeatletter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
 %% Because html converters don't know tabularnewline
@@ -30,10 +27,8 @@
  \renewcommand{\makelabel}[1]{##1\hfil}}}
 {\end{list}}
 
-\makeatother
-
 \usepackage{babel}
-\deactivatetilden
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
 
 \begin{document}
 \renewcommand{\tablename}{Tabla}
@@ -62,25 +57,72 @@ madera usando un robot SCARA}
 
 \chapter{Introducción}
 
-En la actualidad las empresas madereras requieren tener procesos automatizados
-tanto en su administración como en la fabricación de sus productos
-para poder competir en el actual modelo de mercado. Desafortunadamente
-en la región maderera existen muy pocas empresas que cuenten con una
-automatización en sus procesos. Para automatizar una empresa dedicada
-a la producción de artefactos de madera se requiere principalmente
-de:
+En la actualidad las pequeñas y medianas empresas de la región maderera
+del estado de Michoacán, más preciso en la localidad de Paracho, requieren
+tener la totalidad de sus procesos automatizados para poder competir
+en el mercado tan saturado actualmente. Desafortunadamente la mayoría
+de estas empresas no cuentan con todos los procesos automatizados.
 
+Los procesos que pueden automatizarse los dividiremos en dos categorías
+para fines de su estudio:
 \begin{itemize}
-\item Software tipo ERP - CRM para la adminstración.
-\item Robots industriales para la fabricación de productos.
+\item Procesos administrativos
+\item Procesos industriales
 \end{itemize}
-Por parte la adminstración parece estar automatizada hasta cierto
-grado haciendo uso de paquetes de software como compiere, contpaq,
-entre otros; en cambio muy pocas empresas cuentan con robots industriales
-ya que estos requieren una inversion superior a los 1'000'000.00 pesos
-y en la mayoría son de origen extranjero lo cual implica que si llega
-a fallar es muy poco probable que se solucione en poco tiempo lo que
-conlleva a perdida de dinero y tiempo.
+Los procesos administrativos abarca todo proceso relacionado con documentación
+de la empresa, algunos ejemplos de estos procesos son los siguientes
+departamentos: recursos humanos, recursos financieros, ventas, compras,
+entre otros. Estos procesos o departamentos estan parcial o totalmente
+cubiertos por aplicaciones ofrecidas por el gobierno de forma gratuita
+o haciendo uso de 7aplicaciones de terceros, algunas de las aplicaciones
+utilizadas son:
+\begin{itemize}
+\item ContPAQ
+\item Compiere
+\item NomiPAQ
+\item SUA
+\end{itemize}
+Por otra parte los procesos industriales son todos los procesos en
+los que se manipula una materia prima y es transformada en un producto
+final mediante el uso de maquinaria industrial, y es en estos procesos
+donde se centra el trabajo de la presente tesis.
+
+Teniendo las empresas la necesidad de contar con maquinaria industrial
+de precisión se ven en la necesidad de adquirir esta maquinaria en
+el extrajero debido a que en el país no existen empresas presten estos
+servicios.
+
+Al usar maquinaria extranjera es evidente que los costos de compra,
+instalación, mantenimiento y programación son elevados, en la tabla
+\ref{tab:Costos-de-adquisici=0000F3n} se muestran algunas maquinarias
+adquiridas por empresas de la localidad de Paracho Michoacán.
+
+%
+\begin{table}
+\noindent \begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Empresa & Maquinaria & Costo de Adquisición & Costo de mantenimiento\tabularnewline
+\hline
+\hline 
+PROCART &  &  & \tabularnewline
+\hline 
+ &  &  & \tabularnewline
+\hline 
+ &  &  & \tabularnewline
+\hline 
+ &  &  & \tabularnewline
+\hline
+\end{tabular}
+\par\end{centering}
+
+\caption{\label{tab:Costos-de-adquisici=0000F3n}Costos de adquisición de maquina
+industrial}
+
+
+
+\end{table}
+
 
 Observando la necesidad de la automatización en los procesos de fabricación
 de productos se optó por desarrollar una aplicación multiplataforma
@@ -91,15 +133,13 @@ Michoacana de San Nicolas de Hidalgo.
 
 \section{Motivación}
 
-En la actualidad la utilización de robots manipuladores en la mayoría
-de las pequeñas y medianas fábricas, en específico las fábricas de
-la región maderera del estado de Michoacán, son factor de que estas
-tengan un menor costo en su proceso de producción y con esto puedan
-así competir en el mercado saturado por productos extranjeros.
+En la actualidad la mayoría de las pequeñas empresas de la región
+de Michoacán, en específico las de Paracho, no cuentan con procesos
+automatizados en la manufactura de sus materias primas.
 
-Por otra parte el diseño innovador de nuevos productos de madera se
-ve estancado por la falta de una herramienta para su modelado e implementación
-en un robot manipulador.
+Por otra parte, existen personas que tienen diseños muy innovadores
+pero por falta de una máquina que lo realize así como una aplicación
+para su diseño.
 
 
 \section{Antecedentes}
@@ -108,25 +148,18 @@ Los antecedentes previos realizados en la División de Estudios de
 Posgrado de la Facultad de Ingeniería Eléctrica, de la Universidad
 Michoacana de San Nicolás de Hidalgo, es la construcción de un robot
 manipulador tipo SCARA de cuatro grados de libertad de plataforma
-abierta, para el cual se desarrollará la aplicación de la presente
-tesis.
+abierta\cite{OMAR}, para el cual se desarrollará la aplicación de
+la presente tesis.
 
 
 \section{Objetivos}
 
-El objetivo general es realizar investigación a fondo en los aspectos
-computacionales relacionados con el modelado de objetos físicos y
-desarrollar el software necesario para que el robot SCARA pueda realizarlos,
-de forma que se desarrolle tecnología propia que promueva una industria
-robótica y se generen diversas aplicaciones que tengan un importante
-impacto social como económico.
-
-Se realizarán también estudios sobre implementación de planeadores
-de movimientos en brazos robóticos para que las acciones se realicen
-lo más rápido posible.
-
-Finalmente se realizarán pruebas del software desarrollado con el
-robot SCARA. 
+El objetivo general es realizar investigación en los aspectos computacionales
+relacionados con el modelado 3D de objetos físicos y su conversión
+en instrucciones que el robot SCARA pueda seguir para construir físicamente
+los modelos en madera, de forma que se desarrolle tecnología propia
+que promueva una industria robótica y se generen diversas aplicaciones
+que tengan un importante impacto social como económico.
 
 \noindent \begin{center}
 %
@@ -142,88 +175,84 @@ de la tesis}
 
 \par\end{center}
 
-En la figura \ref{fig:DiagramaObjetivos} representa gráficamente
-el objetivo, donde se puede apreciar que el presente proyecto de tesis
+La figura \ref{fig:DiagramaObjetivos} representa gráficamente el
+objetivo, donde se puede apreciar que el presente proyecto de tesis
 tiene como entrada el diseño por parte de una persona el cual es interpretado
 para su futura producción en un robot SCARA. 
 
 
 \subsection*{Objetivos específicos}
-
 \begin{itemize}
-\item Generar una plataforma 3D para el modelado de objetos de madera. 
-\item Implementar algoritmos de gráficación sobre la plataforma 3D los siguientes
-elementos:
-
-\begin{itemize}
-\item Puntos 
-\item Lineas
-\item Curvas de Bezier
-\item Curvas Spline
-\end{itemize}
-\item Desarrollar software para modelado implementando los algoritmos anteriores.
-\item Desarrollar software para comunicación entre el software de modelado
-y el robot SCARA. 
+\item Desarrollar una aplicación para diseñar objetos de madera.
+\item Desarrollar una aplicación para transferir el diseño elaborado hacía
+el robot SCARA. 
 \end{itemize}
 
 \section{Alcances}
 
 Los alcances previstos son:
+\begin{itemize}
+\item Implementación de algoritmos de gráficación sobre la aplicación de
+diseño:
 
 \begin{itemize}
-\item Desarrollo de una aplicación multiplataforma capaz de modelar objetos
-de madera para su producción utilizando un robot SCARA.
+\item Puntos 
+\item Lineas
+\item Círculos
+\item Elipses
+\item Curvas de Bezier
+\end{itemize}
+\item Desarrollo de una aplicación multiplataforma(que pueda ejecutarse
+en la mayoría de los sistemas operativos actuales) capaz de modelar
+objetos de madera para su producción utilizando un robot SCARA.
 \item Desarrollo de interfaz entre la aplicación multiplataforma para modelar
 objetos de madera y el robot SCARA para la producción.
 \end{itemize}
 
 \section{Metodología}
 
-Para lograr los objetivos mencionados anteriormente se propone desarrollar
+Para cumplir los objetivos mencionados anteriormente se propone desarrollar
 una aplicación multiplataforma para el modelado de objetos de madera
-en el lenguaje Java.
+en el lenguaje de programación Java.
 
-Para esto se desarrollarán prototipos de la aplicación, hasta lograr
-una estabilidad considerable, la cual tenga una velocidad alta a la
-hora de generar los modelos en diferentes vistas, esto se deberá hacer
-mediante hardware usando la API de OpenGL.
+Para lograr una aplicación aceptable se desarrollarán prototipos de
+la aplicación hasta lograr una estabilidad considerable, la cual tenga
+una velocidad aceptable a la hora de generar los modelos en diferentes
+vistas.
 
-Con el fin de impulsar este tipo de proyectos, se propone que la aplicación
-final sea evaluada en los talleres de Paracho.
+Con el fin de mejorar el diseño se evaluará la aplicación continuamente
+en la empresa de Rafael Cardiel.
 
 
-\section{Contribuciones esperadas}
+\section{Contribuciones }
 
 A continuación se describen brevemente las contribuciones de este
 trabajo:
-
 \begin{itemize}
-\item Aplicación multiplataforma para la construcción de modelos físicos
-de madera. Se utiliza la API OpenGL para acelerar tanto cálculo como
-regeneración de vistas 3D.
+\item Desarrollo de una aplicación multiplataforma para la construcción
+de modelos físicos de madera. 
 \item Aplicación multiplataforma para la conexion entre el modelador y el
 robot SCARA. 
 \item Código fuente, éste se distribuirá bajo la {}``\emph{GNU General
-Public License v2}'' y se puede acceder a él en la siguiente url:
-modelando-madera.googlecode.com
+Public License v2}'' y puede ser accedido en la siguiente url: modelando-madera.googlecode.com
+para su mejoramiento y/o ser tomado como base para futuros proyectos.
 \end{itemize}
 
 \section{Descripción de los capítulos}
 
 En el capítulo \ref{cha:2_Ambiente} se presentarán una revisión del
 estado del arte asociado con la paqueteria de software existente para
-el modelado/fabricación de objetos de madera. Finalmente se describirá
-el contenido de cada capítulo.
+el modelado/fabricación de objetos de madera.
+
+En el capítulo \ref{cha:3_Modelado3D} aborda las partes del software
+modelador tanto los algoritmos de graficación como la forma de interacción
+con el usuario final. 
 
 En el capítulo \ref{cha:4_Interfaces3D} se mostrarán las principales
 interfaces de software para la implementación de software 3D, se mostrarán
 pros y contras de cada una de estas y finalmente se detallará el funcionamiento
 de la interfaz OpenGL sobre la cual se realizará la implementación
 del software.
-
-En el capítulo \ref{cha:3_Modelado3D} aborda las partes del software
-modelador tanto los algoritmos de graficación como la forma de interacción
-con el usuario final. 
 
 En el capítulo \ref{cha:5_InterfazModelado} trata las características
 del robot SCARA, la forma de conversión del modelo a acciones que
@@ -255,7 +284,6 @@ de software.
 
 En general para considerar a un agente artificial como robot, este
 debe cumplir algunas propiedades:
-
 \begin{itemize}
 \item Manipular cosas de su entorno.
 \item Sentir cosas del entorno.
@@ -267,7 +295,6 @@ ambiente o en una secuencia previamente programada.
 \end{itemize}
 A continuación se presentan algunas definiciones realizadas por diferentes
 institutos:
-
 \begin{itemize}
 \item La ISO 8373 lo define como {}``\emph{un manipulador multipropósito
 automaticamente controlado y reprogramable de mas de tres ejes}''. 
@@ -284,7 +311,6 @@ en inglés) clasificó los robots desde manipuladores simples hasta
 sistemas avanzados incorporando inteligencia artificial. A continuación
 se lista dicha clasificación la cual fue realizada a finales del siglo
 veinte\cite[p. 267]{key-2}:
-
 \begin{itemize}
 \item Manipuladores operados manualmente. Máquinas que requieren ser operadas
 por humanos.
@@ -312,11 +338,27 @@ interrelacionados mediante articulaciones las cuales permiten el movimiento
 de esta dicha cadena.
 
 
+\subsubsection{Area de trabajo}
+
+%
+\begin{figure}[th]
+\noindent \begin{centering}
+\includegraphics[width=0.6\paperwidth]{imagenes/manipulador_alcance}
+\par\end{centering}
+
+\caption{Categorías de los robots manipuladores y sus respectivas áreas de
+trabajo{[}PDF{]}}
+
+
+
+\end{figure}
+
+
+
 \subsubsection{Tipos de articulaciones}
 
 Existen diferentes tipos de articulaciones como podemos observar en
 la figura \ref{fig:TiposArticulaciones}:
-
 \begin{lyxlist}{00.00.0000}
 \item [{a)}] La articulación de rotación suministra un grado de libertad,
 es decir permite la rotación sobre el eje de la articulación.
@@ -344,39 +386,44 @@ planar e) esférica\label{fig:TiposArticulaciones}}
 \par\end{center}
 
 
-\subsubsection{Estructuras básicas}
+\subsection{Programación de tareas}
 
-La estructura básica de un robot manipulador consiste en un brazo
-compuesto por elementos con articulaciones entre ellos. En el último
-enlace se coloca un efector final como una pinza o un dispositivo
-especial para realizar operaciones específicas. Estas estructuras
-tienen ciertas propiedades en cuanto a su espacio de trabajo y accesibilidad
-a posiciones determinadas. En la figura \ref{fig:Estructuras} se
-muestran algunas configuraciones básicas.
+La secuencia que se tiene que realizar para programar una tarea en
+un robot manipulador generalmente sigue los pasos mostrados en la
+figura \ref{fig:ProgramacionRobot}.
 
-\noindent \begin{center}
 %
 \begin{figure}[h]
 \noindent \begin{centering}
-\includegraphics[scale=0.8]{imagenes/manipuladores}
+\includegraphics[width=0.3\paperwidth]{imagenes/dCNC}
 \par\end{centering}
 
-\caption{Estructura: a) 3D b) 2D c) 1D d) 3G\label{fig:Estructuras}}
+\caption{\label{fig:ProgramacionRobot}Programación de un robot manipulador}
 
 \end{figure}
 
-\par\end{center}
 
-\begin{lyxlist}{00.00.0000}
-\item [{a)}] Configuración 3D o PPP tiene tres articulaciones prismáticas.
-Es bastante usual en la industria para el tansporte de cargas voluminosas.
-\item [{b)}] Configuración cilíndrica presenta un volumen de trabajo parecido
-a un cilindro, sin embargo generalmente no tienen una rotación de
-360º.
-\item [{c)}] Configuración polar, los de brazo articulado y los modelos
-SCARA presentan un volumen de trabajo irregular.
-\item [{d)}] Configuración angular.
-\end{lyxlist}
+
+\subsubsection{Software CAD}
+
+El software CAD(Diseño Asistido por Computadora, del inglés Computer
+Aided Design) es la aplicación donde el programador realiza un modelo/tarea
+que desea que realice el robot.
+
+
+\subsubsection{Software CAM}
+
+El software CAM(Manufactura Asistida por Computadora, del inglés Computer
+Aided Manufacturing) convierte el modelo/tarea en un código estandar
+para la mayoría del software de control CNC denominado código G.
+
+
+\subsubsection{Software CNC }
+
+El software CNC generalmente lee código G y realiza las operaciones
+de comunicación con el robot necesarias para convertirlas en el movimiento
+deseado. 
+
 
 \section{Revisión del Estado del Arte}
 
@@ -384,14 +431,42 @@ En la actualidad los robots son usados para realizar tareas peligrosas,
 difíciles, repetitivas y/o complicadas para los humanos. Esto usualmente
 toma la forma de un robot industrial usado en las líneas de producción.
 Algunas aplicaciones incluyen la limpieza de residuos tóxicos, minería
-y localización de minas terrestres. Sin embargo la manufactura continúa
-siendo el principal mercado donde los robots son utilizados, en particular,
-robots articulados son los más usados comúnmente. Las aplicaciones
-incluyen soldado, pintado y carga de maquinaria. En este ramo la industria
-automotriz ha tomado gran ventaja de esta nueva tecnología donde los
-robots han sido programados para reemplazar el trabajo de los humanos
-en muchas tareas repetitivas.
+y localización de minas terrestres. 
 
+En la actualidad los robots son usados para realizar una gran cantidad
+de tareas entre las cuales se encuentran las de realizar actividades
+peligrosas, difíciles, repetitivas y/o complicadas para los humanos.
+
+Sin embargo la manufactura continúa siendo el principal mercado donde
+los robots son utilizados, en particular los robots articulados son
+los más usados comúnmente. Las aplicaciones incluyen soldado, pintado
+y carga de maquinaria. En este ramo la industria automotriz ha tomado
+gran ventaja de esta nueva tecnología donde los robots han sido programados
+para reemplazar el trabajo de los humanos en muchas tareas repetitivas.
+
+
+\subsection{Programación de tareas}
+
+Software CAD
+\begin{itemize}
+\item AutoCAD
+\item SolidWorks
+\item RhinoCAD
+\item TurboCAD
+\item Graphite One CAD
+\end{itemize}
+Software CAM
+\begin{itemize}
+\item ArtCAM
+\item DeskCNC
+\item MeshCAM
+\end{itemize}
+Software CNC
+\begin{itemize}
+\item TurboCNC
+\item EMC
+\item DeskCNC
+\end{itemize}
 
 \subsection{Programación}
 
@@ -405,7 +480,6 @@ a las variaciones a medida que realizan su tarea.
 
 Generalmente la programación de los robots se realiza fuera de linea,
 a continuación se listan paquetes existentes para programar:
-
 \begin{itemize}
 \item MS Robotic Studio ( \textasciitilde{} \$ 4 000.00 M.N)
 
@@ -452,36 +526,131 @@ Desafortunadamente el desarrollo actual en el país está enfocado generalmente
 a robots móviles dejando a los manipuladores de lado.
 
 Universidades como el Tecnológico de Monterrey {[}Dirección de Vinculación
-y Desarrollo campus Guadalajara] se está enfocando más en la planeación
+y Desarrollo campus Guadalajara{]} se está enfocando más en la planeación
 de movimientos para robots, así como el Instituto Tecnológico Autónomo
-de México{[}Laboratorio de robótica, ITAM] se enfocan al área de robots
-móviles pequeños.
+de México{[}Laboratorio de robótica, ITAM{]} se enfocan al área de
+robots móviles pequeños.
 
 
 \chapter{Modelado de objetos\label{cha:3_Modelado3D}}
 
+Una aplicación de modelado de objetos proporciona una biblioteca de
+funciones que pueden utilizarse para crear diseños de objetos que
+posteriormente se pueden plasmar en madera o algún otro tipo de material
+que pueda ser moldeado por alguna de las herramientas soportadas por
+el robot. Estas funciones se denominan primitivas gráficas o simplemente
+primitivas.
 
-\section{Introducción}
-
-Para modelar
-
-
-\section{Algoritmos de graficación}
-
-
-\subsection{Puntos}
-
-
-\subsection{Lineas}
-
-
-\subsection{Circulos}
+Para describir un modelo, primero es necesario seleccionar un sistema
+de coordenadas cartesianas adecuado, que puede ser bidimensional o
+tridimensional. Después se describen los objetos del modelo proporcionando
+sus especificaciones geométricas. Por ejemplo se define una línea
+recta proporcionando la posicion de los dos puntos extremos.
 
 
-\subsection{Elipses}
+\section{Sistemas de coordenadas}
+
+Un sistema de coordenadas es un conjunto de valores que permiten definir
+exactamente la posición de un punto cualesquiera en el espacio, debido
+a que se requiere poder realizar un modelo de un objeto real se requieren
+el sistema de coordenadas de tres dimensiones como se muestra en la
+figura \ref{fig:Sistema-de-coordenadas3d}.
+
+%
+\begin{figure}
+\noindent \begin{centering}
+\includegraphics[width=0.3\paperwidth]{imagenes/tCoordenadas}
+\par\end{centering}
+
+\caption{\label{fig:Sistema-de-coordenadas3d}Sistema de coordenadas de 3 dimensiones}
+
+\end{figure}
 
 
-\subsection{Curvas de Bezier}
+Sin embargo la aplicación desarrollada utiliza solo dos dimensiones
+al mismo tiempo para el desarrollo de modelos.
+
+
+\section{Primitivas de graficación}
+
+Las primitivas gráficas que describen la geometría de los objetos
+se denominan normalmente primitrivas geométricas. Entre las primitivas
+geométricas más simples son las que indican posiciones de puntos y
+segmentos de líneas rectas. Adicionalmente se pueden incluir circulos,
+elipses y curvas tipo bezier.
+
+
+\subsection{Punto}
+
+El punto es el objeto más simple que puede representarse, solo se
+necesita un punto dentro del sistema de coordenadas.
+
+\begin{equation}
+Punto\left(x,\, y,\, z\right)\end{equation}
+
+
+
+\subsection{Linea}
+
+\begin{equation}
+L\acute{\imath}nea\left(Punto\, origen,\, Punto\, destino\right)\end{equation}
+
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.4\paperwidth]{imagenes/tLinea}
+\par\end{centering}
+
+\caption{Linea}
+
+
+
+\end{figure}
+
+
+
+\subsection{Círculo}
+
+\begin{equation}
+C\acute{\imath}rculo\left(Punto\, origen,\, radio\right)\end{equation}
+
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.4\paperwidth]{imagenes/tCirculo}
+\par\end{centering}
+
+\caption{Círculo}
+
+
+
+\end{figure}
+
+
+
+\subsection{Elipse}
+
+\begin{equation}
+Elipse\left(Punto\, origen,\, radio\, a,\, radio\, b\right)\end{equation}
+
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.4\paperwidth]{imagenes/tElipse}
+\par\end{centering}
+
+\caption{Elipse}
+
+
+
+\end{figure}
+
+
+
+\subsection{Curva de Bezier}
 
 
 \subsection{Elementos compuestos}
@@ -498,7 +667,6 @@ en un sistema,
 El formato XML
 
 Algunas de las ventajas de este formato son:
-
 \begin{itemize}
 \item Independiente de la plataforma.
 \item Soporta código Unicode.
@@ -524,7 +692,6 @@ Como puede observar la estructura es simple, compacta y fácil de entender.
 
 
 En la figura \ref{fig:EstructuraXML} puede observarse:
-
 \begin{itemize}
 \item No existe límite en la cantidad de primitivas usadas en un diseño.
 \item Los puntos de control de una primitiva pueden no tener límite, es
@@ -561,13 +728,7 @@ Una imagen PGM es la representacion a escala de grises de una imagen.
 
 
 
-\subsection{Archivos CAD (dxf)}
-
-
 \chapter{Interfaces de software\label{cha:4_Interfaces3D}}
-
-
-\section{Introducción}
 
 La interfaz de usuario es uno de los apartados con más relevancia
 de un sistema de computo, en la actualidad todo sistema debe contener
@@ -578,7 +739,6 @@ Una interfaz de usuario mal diseñada puede causar que el mejor sistema
 de cómputo sea ineficaz y por lo tanto sea deshechado, es por esto
 que se debe realizar un buen diseño de la interfaz de usuario, la
 cual incluye:
-
 \begin{itemize}
 \item Eleccion de lenguaje de programación.
 \item Diseño de la interfaz gráfica.
@@ -590,7 +750,6 @@ cual incluye:
 En la actualidad existe una gran cantidad de lenguajes de programación,
 la mayoría de propósito general y el resto de propósito específico,
 a continuación se listan los más populares de ambas categorías:
-
 \begin{itemize}
 \item C.
 \item Basic.
@@ -659,7 +818,6 @@ de forma que los programas creados en ella puedan ejecutarse sin cambios
 en diferentes tipos de arquitecturas y dispositivos computacionales. 
 
 Esta plataforma está compuesta por:
-
 \begin{itemize}
 \item El Lenguaje de programación.
 \item La máquina virtual de Java (JVM).
@@ -792,12 +950,9 @@ iniciada por Game Technology Group.
 
 \chapter{Interfaz entre modelado y el robot SCARA\label{cha:5_InterfazModelado}}
 
-
-\section{Introducción}
-
 La interfaz entre el software modelador y el robot es una parte muy
 importante, ya que si esta llega a colapsar o mal-funcionar se verá
-reflejado en un trabajo final(objeto de madera) no satisfactorio.
+reflejado en un trabajo final no satisfactorio.
 
 
 \section{Robot SCARA}
@@ -807,12 +962,12 @@ Este robot cuenta con 4 grados de libertad construido en el departamento
 de robótica de la FIE, fijo en su base y hecho de acero y aluminio
 
 %
-\begin{figure}
-
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.5\paperwidth]{imagenes/robot-scara}
+\par\end{centering}
 
 \caption{\label{fig:RobotScara}Robot SCARA}
-
-
 
 \end{figure}
 
@@ -821,7 +976,6 @@ de robótica de la FIE, fijo en su base y hecho de acero y aluminio
 \subsection{Características}
 
 Entre las características más relevantes acerca del robot se tiene:
-
 \begin{itemize}
 \item 4 Grados de libertad.
 \item Alcance máximo de su brazo 50 cm.
@@ -837,8 +991,129 @@ Entre las características más relevantes acerca del robot se tiene:
 
 \section{Conversión de modelado a acciones SCARA}
 
+Debido a que en el modelo solo contamos con puntos definidos dentro
+del sistema de coordenadas cartesianas de tres dimensiones es necesario
+calcular el conjunto de ángulos de las articulaciones para logar el
+resultado deseado. Esto lo solucionaremos usando cinemática inversa.
+
 
 \subsection{Cinemática inversa}
+
+En la cinemática inversa se conoce la posición y la orientación del
+elemento terminal referido a la base y se desea determinar los angulos
+articulares para alcanzar dicha posición.
+
+Existen varias soluciones a este problema:
+\begin{itemize}
+\item Soluciones Cerradas(analíticas)
+
+\begin{itemize}
+\item Solución algebraica
+\item Solución geométrica
+\end{itemize}
+\item Soluciones Numéricas
+
+\begin{itemize}
+\item Iterativas
+\end{itemize}
+\end{itemize}
+Debido a su naturaleza iterativa, las soluciones numéricas son generalmente
+mucho más lentas que las solución de forma cerrada, en algunos casos
+las soluciones numéricas son tan lentas que pueden ocasionar problemas
+de cinemática es por esto que solo nos enfocaremos en las soluciones
+analíticas.
+
+
+\subsubsection{Solución Algebraica}
+
+
+\subsubsection{Solución Geométrica}
+
+Recordando algunas identidades trigonométricas:
+
+\begin{equation}
+\frac{sin\left(A\right)}{a}=\frac{sin\left(B\right)}{b}=\frac{sin\left(C\right)}{c}\label{eq:leycos1}\end{equation}
+
+
+\begin{equation}
+a^{2}=b^{2}+c^{2}-\left(2bc\right)cos\left(A\right)\label{eq:leycos2}\end{equation}
+
+
+Primero se sabe que la orientación del ultimo eslabón es la suma de
+las variables articulares, como se muestra en la figura \ref{fig:Orientaci=0000F3n-del-ultimo}.
+
+\begin{equation}
+\Theta=\Theta_{1}+\Theta_{2}+\Theta_{3}\label{eq:geo-teta}\end{equation}
+
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.4\paperwidth]{imagenes/tcinematica1}
+\par\end{centering}
+
+\caption{\label{fig:Orientaci=0000F3n-del-ultimo}Orientación del ultimo eslabon}
+
+\end{figure}
+
+
+Se calcula $\theta_{2}$ aplicando ec. \ref{eq:leycos2}:
+
+\begin{equation}
+x^{2}+y^{2}=l_{1}^{2}+l_{2}^{2}-\left(2l_{1}l_{2}\right)\cos\left(180-\Theta_{2}\right)\end{equation}
+
+
+debido a que:
+
+\begin{equation}
+cos\left(180-\Theta_{2}\right)=-cos\left(\Theta_{2}\right)\end{equation}
+
+
+Resulta:
+
+\begin{equation}
+cos\left(\Theta_{2}\right)=\frac{x^{2}+y^{2}-l_{1}^{2}-l_{2}^{2}}{2l_{1}l_{2}}\end{equation}
+
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.3\paperwidth]{imagenes/tcinematica2}
+\par\end{centering}
+
+\caption{\label{fig:CinematicaAngulos}Ángulos $\beta,\,\psi\, y\,\Theta_{1}$ }
+
+
+
+\end{figure}
+
+
+Se calcula $\theta_{1}$ :
+
+Si se definen dos ángulos como se muestra en la figura \ref{fig:CinematicaAngulos}
+se cumple:
+
+\begin{equation}
+\Theta_{1}=\beta-\psi\end{equation}
+
+
+El ángulo $\beta$ se calcula:
+
+\begin{equation}
+sin\left(\beta\right)=\frac{y}{\sqrt{x^{2}+y^{2}}}\end{equation}
+
+
+y para el ángulo $\psi$ se usa ec. \ref{eq:leycos1} y se tiene:
+
+\begin{equation}
+cos\left(\psi\right)=\frac{x^{2}+y^{2}+l_{1}^{2}-l_{2}^{2}}{2l_{1}\sqrt{x^{2}+y^{2}}}\end{equation}
+
+
+Finalmente se calcula $\theta_{3}$ usando la siguiente ecuación:
+
+\begin{equation}
+\Theta_{3}=\Theta-\Theta_{1}-\Theta_{2}\label{eq:geo-teta3}\end{equation}
+
 
 
 \section{Conectividad PC-Robot}
@@ -877,9 +1152,6 @@ Entre las características más relevantes acerca del robot se tiene:
 \subsection{Imagenes PGM}
 
 
-\subsection{Archivos CAD}
-
-
 \chapter{Conclusiones\label{cha:7_Conclusiones}}
 
 
@@ -894,7 +1166,6 @@ Entre las características más relevantes acerca del robot se tiene:
 
 
 \subsection*{Anexo Glosario}
-
 \begin{description}
 \item [{CISC}] Complex-Intruction-Set Computing.
 \item [{CRM}] Customer Relationship Management.
@@ -905,9 +1176,8 @@ Entre las características más relevantes acerca del robot se tiene:
 \item [{PGM}] Portable GrayMap.
 \item [{RISC}] Reduced-Intruction-Set Computing.
 \item [{SCARA}] Selective Compliant Articulated Robot Arm.
-\item [{XML}] Extensible Markup Language.
-\end{description}
-\begin{thebibliography}{WIKI-ROBOT}
+\item [{XML}] Extensible Markup Language.\end{description}
+\begin{thebibliography}{robotumich}
 \bibitem[WIKI-ROBOT]{key-3}http://en.wikipedia.org/wiki/Industrial\_robot
 
 \bibitem[GLUT]{key-4}http://www.opengl.org/resources/libraries/glut/
@@ -928,6 +1198,8 @@ y robots móviles, Marcombo Editorial.
 
 \bibitem{key-1}Wilbert O. Galitz, The Essential Guide to User Interface
 Design, E.U.A.: ed.: Wiley, 2007.
+
+\bibitem[robotumich]{OMAR}Robot michoacan
 \end{thebibliography}
 
 \end{document}
