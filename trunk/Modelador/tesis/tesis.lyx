@@ -1,8 +1,9 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass book
+\use_default_options false
 \language spanish
 \inputencoding auto
 \font_roman default
@@ -13,9 +14,11 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize 11
 \spacing onehalf
+\use_hyperref false
 \papersize letterpaper
 \use_geometry true
 \use_amsmath 1
@@ -27,8 +30,8 @@
 \topmargin 2cm
 \rightmargin 2cm
 \bottommargin 2cm
-\secnumdepth 3
-\tocdepth 3
+\secnumdepth 2
+\tocdepth 2
 \paragraph_separation skip
 \defskip medskip
 \quotes_language english
@@ -47,7 +50,7 @@
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -56,7 +59,7 @@ renewcommand{
 tablename}{Tabla}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -67,7 +70,7 @@ listtablename}{
 'Indice de tablas}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -89,7 +92,8 @@ Roberto Loaeza Valerio
 \end_layout
 
 \begin_layout Standard
-\begin_inset LatexCommand tableofcontents
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
 
 \end_inset
 
@@ -116,14 +120,14 @@ Roberto Loaeza Valerio
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 mainmatter
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -167,7 +171,7 @@ Los procesos administrativos abarca todo proceso relacionado con documentación
 tos: recursos humanos, recursos financieros, ventas, compras, entre otros.
  Estos procesos o departamentos estan parcial o totalmente cubiertos por
  aplicaciones ofrecidas por el gobierno de forma gratuita o haciendo uso
- de aplicaciones de terceros, algunas de las aplicaciones utilizadas son:
+ de 7aplicaciones de terceros, algunas de las aplicaciones utilizadas son:
 \end_layout
 
 \begin_layout Itemize
@@ -202,7 +206,8 @@ Teniendo las empresas la necesidad de contar con maquinaria industrial de
 \begin_layout Standard
 Al usar maquinaria extranjera es evidente que los costos de compra, instalación,
  mantenimiento y programación son elevados, en la tabla 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "tab:Costos-de-adquisición"
 
 \end_inset
@@ -217,59 +222,59 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="4">
 <features>
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Empresa
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Maquinaria
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Costo de Adquisición
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Costo de mantenimiento
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row topline="true">
+<row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 PROCART
 \end_layout
 
@@ -278,7 +283,7 @@ PROCART
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -287,7 +292,7 @@ PROCART
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -296,18 +301,18 @@ PROCART
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row topline="true">
+<row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -316,7 +321,7 @@ PROCART
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -325,7 +330,7 @@ PROCART
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -334,18 +339,18 @@ PROCART
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row topline="true">
+<row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -354,7 +359,7 @@ PROCART
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -363,7 +368,7 @@ PROCART
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -372,45 +377,45 @@ PROCART
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -424,11 +429,12 @@ PROCART
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "tab:Costos-de-adquisición"
 
 \end_inset
@@ -441,7 +447,7 @@ Costos de adquisición de maquina industrial
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -463,17 +469,15 @@ Motivación
 \end_layout
 
 \begin_layout Standard
-En la actualidad la utilización de robots manipuladores en la mayoría de
- las pequeñas y medianas fábricas, en específico las fábricas de la región
- maderera del estado de Michoacán, son factor de que estas tengan un menor
- costo en su proceso de producción y con esto puedan así competir en el
- mercado saturado por productos extranjeros.
+En la actualidad la mayoría de las pequeñas empresas de la región de Michoacán,
+ en específico las de Paracho, no cuentan con procesos automatizados en
+ la manufactura de sus materias primas.
 \end_layout
 
 \begin_layout Standard
-Por otra parte el diseño innovador de nuevos productos de madera se ve estancado
- por la falta de una herramienta para su modelado e implementación en un
- robot manipulador.
+Por otra parte, existen personas que tienen diseños muy innovadores pero
+ por falta de una máquina que lo realize así como una aplicación para su
+ diseño.
 \end_layout
 
 \begin_layout Section
@@ -484,8 +488,14 @@ Antecedentes
 Los antecedentes previos realizados en la División de Estudios de Posgrado
  de la Facultad de Ingeniería Eléctrica, de la Universidad Michoacana de
  San Nicolás de Hidalgo, es la construcción de un robot manipulador tipo
- SCARA de cuatro grados de libertad de plataforma abierta, para el cual
- se desarrollará la aplicación de la presente tesis.
+ SCARA de cuatro grados de libertad de plataforma abierta
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OMAR"
+
+\end_inset
+
+, para el cual se desarrollará la aplicación de la presente tesis.
 \end_layout
 
 \begin_layout Section
@@ -493,22 +503,12 @@ Objetivos
 \end_layout
 
 \begin_layout Standard
-El objetivo general es realizar investigación a fondo en los aspectos computacio
-nales relacionados con el modelado de objetos físicos y desarrollar el software
- necesario para que el robot SCARA pueda realizarlos, de forma que se desarrolle
- tecnología propia que promueva una industria robótica y se generen diversas
- aplicaciones que tengan un importante impacto social como económico.
-\end_layout
-
-\begin_layout Standard
-Se realizarán también estudios sobre implementación de planeadores de movimiento
-s en brazos robóticos para que las acciones se realicen lo más rápido posible.
-\end_layout
-
-\begin_layout Standard
-Finalmente se realizarán pruebas del software desarrollado con el robot
- SCARA.
- 
+El objetivo general es realizar investigación en los aspectos computacionales
+ relacionados con el modelado 3D de objetos físicos y su conversión en instrucci
+ones que el robot SCARA pueda seguir para construir físicamente los modelos
+ en madera, de forma que se desarrolle tecnología propia que promueva una
+ industria robótica y se generen diversas aplicaciones que tengan un importante
+ impacto social como económico.
 \end_layout
 
 \begin_layout Standard
@@ -518,9 +518,9 @@ Finalmente se realizarán pruebas del software desarrollado con el robot
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
@@ -532,11 +532,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:DiagramaObjetivos"
 
 \end_inset
@@ -555,8 +556,9 @@ Diagrama representativo del objetivo de la tesis
 \end_layout
 
 \begin_layout Standard
-En la figura 
-\begin_inset LatexCommand ref
+La figura 
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:DiagramaObjetivos"
 
 \end_inset
@@ -572,39 +574,11 @@ Objetivos específicos
 \end_layout
 
 \begin_layout Itemize
-Generar una plataforma 3D para el modelado de objetos de madera.
- 
+Desarrollar una aplicación para diseñar objetos de madera.
 \end_layout
 
 \begin_layout Itemize
-Implementar algoritmos de gráficación sobre la plataforma 3D los siguientes
- elementos:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Puntos 
-\end_layout
-
-\begin_layout Itemize
-Lineas
-\end_layout
-
-\begin_layout Itemize
-Curvas de Bezier
-\end_layout
-
-\begin_layout Itemize
-Curvas Spline
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Desarrollar software para modelado implementando los algoritmos anteriores.
-\end_layout
-
-\begin_layout Itemize
-Desarrollar software para comunicación entre el software de modelado y el
+Desarrollar una aplicación para transferir el diseño elaborado hacía el
  robot SCARA.
  
 \end_layout
@@ -618,7 +592,34 @@ Los alcances previstos son:
 \end_layout
 
 \begin_layout Itemize
-Desarrollo de una aplicación multiplataforma capaz de modelar objetos de
+Implementación de algoritmos de gráficación sobre la aplicación de diseño:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Puntos 
+\end_layout
+
+\begin_layout Itemize
+Lineas
+\end_layout
+
+\begin_layout Itemize
+Círculos
+\end_layout
+
+\begin_layout Itemize
+Elipses
+\end_layout
+
+\begin_layout Itemize
+Curvas de Bezier
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Desarrollo de una aplicación multiplataforma(que pueda ejecutarse en la
+ mayoría de los sistemas operativos actuales) capaz de modelar objetos de
  madera para su producción utilizando un robot SCARA.
 \end_layout
 
@@ -632,25 +633,24 @@ Metodología
 \end_layout
 
 \begin_layout Standard
-Para lograr los objetivos mencionados anteriormente se propone desarrollar
+Para cumplir los objetivos mencionados anteriormente se propone desarrollar
  una aplicación multiplataforma para el modelado de objetos de madera en
- el lenguaje Java.
+ el lenguaje de programación Java.
 \end_layout
 
 \begin_layout Standard
-Para esto se desarrollarán prototipos de la aplicación, hasta lograr una
- estabilidad considerable, la cual tenga una velocidad alta a la hora de
- generar los modelos en diferentes vistas, esto se deberá hacer mediante
- hardware usando la API de OpenGL.
+Para lograr una aplicación aceptable se desarrollarán prototipos de la aplicació
+n hasta lograr una estabilidad considerable, la cual tenga una velocidad
+ aceptable a la hora de generar los modelos en diferentes vistas.
 \end_layout
 
 \begin_layout Standard
-Con el fin de impulsar este tipo de proyectos, se propone que la aplicación
- final sea evaluada en los talleres de Paracho.
+Con el fin de mejorar el diseño se evaluará la aplicación continuamente
+ en la empresa de Rafael Cardiel.
 \end_layout
 
 \begin_layout Section
-Contribuciones esperadas
+Contribuciones 
 \end_layout
 
 \begin_layout Standard
@@ -658,9 +658,9 @@ A continuación se describen brevemente las contribuciones de este trabajo:
 \end_layout
 
 \begin_layout Itemize
-Aplicación multiplataforma para la construcción de modelos físicos de madera.
- Se utiliza la API OpenGL para acelerar tanto cálculo como regeneración
- de vistas 3D.
+Desarrollo de una aplicación multiplataforma para la construcción de modelos
+ físicos de madera.
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -682,7 +682,8 @@ GNU General Public License v2
 \begin_inset Quotes erd
 \end_inset
 
- y se puede acceder a él en la siguiente url: modelando-madera.googlecode.com
+ y puede ser accedido en la siguiente url: modelando-madera.googlecode.com
+ para su mejoramiento y/o ser tomado como base para futuros proyectos.
 \end_layout
 
 \begin_layout Section
@@ -691,19 +692,33 @@ Descripción de los capítulos
 
 \begin_layout Standard
 En el capítulo 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "cha:2_Ambiente"
 
 \end_inset
 
  se presentarán una revisión del estado del arte asociado con la paqueteria
  de software existente para el modelado/fabricación de objetos de madera.
- Finalmente se describirá el contenido de cada capítulo.
 \end_layout
 
 \begin_layout Standard
 En el capítulo 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:3_Modelado3D"
+
+\end_inset
+
+ aborda las partes del software modelador tanto los algoritmos de graficación
+ como la forma de interacción con el usuario final.
+ 
+\end_layout
+
+\begin_layout Standard
+En el capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "cha:4_Interfaces3D"
 
 \end_inset
@@ -716,19 +731,8 @@ reference "cha:4_Interfaces3D"
 
 \begin_layout Standard
 En el capítulo 
-\begin_inset LatexCommand ref
-reference "cha:3_Modelado3D"
-
-\end_inset
-
- aborda las partes del software modelador tanto los algoritmos de graficación
- como la forma de interacción con el usuario final.
- 
-\end_layout
-
-\begin_layout Standard
-En el capítulo 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "cha:5_InterfazModelado"
 
 \end_inset
@@ -741,7 +745,8 @@ reference "cha:5_InterfazModelado"
 
 \begin_layout Standard
 En el capítulo 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "cha:6_Pruebas"
 
 \end_inset
@@ -754,7 +759,8 @@ reference "cha:6_Pruebas"
 
 \begin_layout Standard
 En el capítulo 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "cha:7_Conclusiones"
 
 \end_inset
@@ -767,7 +773,8 @@ reference "cha:7_Conclusiones"
 
 \begin_layout Chapter
 Ambiente de programación de robots manipuladores
-\begin_inset LatexCommand label
+\begin_inset CommandInset label
+LatexCommand label
 name "cha:2_Ambiente"
 
 \end_inset
@@ -875,7 +882,8 @@ La Asociación Japonesa de Robots Industriales (JIRA, por sus siglas en inglés)
  incorporando inteligencia artificial.
  A continuación se lista dicha clasificación la cual fue realizada a finales
  del siglo veinte
-\begin_inset LatexCommand cite
+\begin_inset CommandInset citation
+LatexCommand cite
 after "p. 267"
 key "key-2"
 
@@ -941,13 +949,58 @@ Básicamente la estructura de un robot manipulador es la de un brazo articulado.
 \end_layout
 
 \begin_layout Subsubsection
+Area de trabajo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement th
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/manipulador_alcance.png
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Categorías de los robots manipuladores y sus respectivas áreas de trabajo[PDF]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Tipos de articulaciones
 \end_layout
 
 \begin_layout Standard
 Existen diferentes tipos de articulaciones como podemos observar en la figura
  
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:TiposArticulaciones"
 
 \end_inset
@@ -994,7 +1047,7 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
@@ -1006,13 +1059,14 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Tipos de articulaciones: a) rotación b) prismática c) cilíndrica d) planar
  e) esférica
-\begin_inset LatexCommand label
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:TiposArticulaciones"
 
 \end_inset
@@ -1030,91 +1084,93 @@ name "fig:TiposArticulaciones"
 
 \end_layout
 
-\begin_layout Subsubsection
-Estructuras básicas
+\begin_layout Subsection
+Programación de tareas
 \end_layout
 
 \begin_layout Standard
-La estructura básica de un robot manipulador consiste en un brazo compuesto
- por elementos con articulaciones entre ellos.
- En el último enlace se coloca un efector final como una pinza o un dispositivo
- especial para realizar operaciones específicas.
- Estas estructuras tienen ciertas propiedades en cuanto a su espacio de
- trabajo y accesibilidad a posiciones determinadas.
- En la figura 
-\begin_inset LatexCommand ref
-reference "fig:Estructuras"
+La secuencia que se tiene que realizar para programar una tarea en un robot
+ manipulador generalmente sigue los pasos mostrados en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ProgramacionRobot"
 
 \end_inset
 
- se muestran algunas configuraciones básicas.
+.
 \end_layout
 
 \begin_layout Standard
-\noindent
-\align center
 \begin_inset Float figure
 placement h
 wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename imagenes/manipuladores.png
-	scale 80
+	filename imagenes/dCNC.png
+	lyxscale 50
+	width 30page%
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ProgramacionRobot"
+
+\end_inset
+
+Programación de un robot manipulador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Software CAD
+\end_layout
+
 \begin_layout Standard
-Estructura: a) 3D b) 2D c) 1D d) 3G
-\begin_inset LatexCommand label
-name "fig:Estructuras"
-
-\end_inset
-
-
+El software CAD(Diseño Asistido por Computadora, del inglés Computer Aided
+ Design) es la aplicación donde el programador realiza un modelo/tarea que
+ desea que realice el robot.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Subsubsection
+Software CAM
 \end_layout
 
-\end_inset
-
-
+\begin_layout Standard
+El software CAM(Manufactura Asistida por Computadora, del inglés Computer
+ Aided Manufacturing) convierte el modelo/tarea en un código estandar para
+ la mayoría del software de control CNC denominado código G.
 \end_layout
 
-\begin_layout List
-\labelwidthstring 00.00.0000
-a) Configuración 3D o PPP tiene tres articulaciones prismáticas.
- Es bastante usual en la industria para el tansporte de cargas voluminosas.
+\begin_layout Subsubsection
+Software CNC 
 \end_layout
 
-\begin_layout List
-\labelwidthstring 00.00.0000
-b) Configuración cilíndrica presenta un volumen de trabajo parecido a un
- cilindro, sin embargo generalmente no tienen una rotación de 360º.
-\end_layout
-
-\begin_layout List
-\labelwidthstring 00.00.0000
-c) Configuración polar, los de brazo articulado y los modelos SCARA presentan
- un volumen de trabajo irregular.
-\end_layout
-
-\begin_layout List
-\labelwidthstring 00.00.0000
-d) Configuración angular.
+\begin_layout Standard
+El software CNC generalmente lee código G y realiza las operaciones de comunicac
+ión con el robot necesarias para convertirlas en el movimiento deseado.
+ 
 \end_layout
 
 \begin_layout Section
@@ -1128,13 +1184,83 @@ En la actualidad los robots son usados para realizar tareas peligrosas,
  de producción.
  Algunas aplicaciones incluyen la limpieza de residuos tóxicos, minería
  y localización de minas terrestres.
- Sin embargo la manufactura continúa siendo el principal mercado donde los
- robots son utilizados, en particular, robots articulados son los más usados
- comúnmente.
+ 
+\end_layout
+
+\begin_layout Standard
+En la actualidad los robots son usados para realizar una gran cantidad de
+ tareas entre las cuales se encuentran las de realizar actividades peligrosas,
+ difíciles, repetitivas y/o complicadas para los humanos.
+\end_layout
+
+\begin_layout Standard
+Sin embargo la manufactura continúa siendo el principal mercado donde los
+ robots son utilizados, en particular los robots articulados son los más
+ usados comúnmente.
  Las aplicaciones incluyen soldado, pintado y carga de maquinaria.
  En este ramo la industria automotriz ha tomado gran ventaja de esta nueva
  tecnología donde los robots han sido programados para reemplazar el trabajo
  de los humanos en muchas tareas repetitivas.
+\end_layout
+
+\begin_layout Subsection
+Programación de tareas
+\end_layout
+
+\begin_layout Standard
+Software CAD
+\end_layout
+
+\begin_layout Itemize
+AutoCAD
+\end_layout
+
+\begin_layout Itemize
+SolidWorks
+\end_layout
+
+\begin_layout Itemize
+RhinoCAD
+\end_layout
+
+\begin_layout Itemize
+TurboCAD
+\end_layout
+
+\begin_layout Itemize
+Graphite One CAD
+\end_layout
+
+\begin_layout Standard
+Software CAM
+\end_layout
+
+\begin_layout Itemize
+ArtCAM
+\end_layout
+
+\begin_layout Itemize
+DeskCNC
+\end_layout
+
+\begin_layout Itemize
+MeshCAM
+\end_layout
+
+\begin_layout Standard
+Software CNC
+\end_layout
+
+\begin_layout Itemize
+TurboCNC
+\end_layout
+
+\begin_layout Itemize
+EMC
+\end_layout
+
+\begin_layout Itemize
+DeskCNC
 \end_layout
 
 \begin_layout Subsection
@@ -1255,16 +1381,13 @@ Universidades como el Tecnológico de Monterrey [Dirección de Vinculación
 
 \begin_layout Chapter
 Modelado de objetos
-\begin_inset LatexCommand label
+\begin_inset CommandInset label
+LatexCommand label
 name "cha:3_Modelado3D"
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Introducción
 \end_layout
 
 \begin_layout Standard
@@ -1285,12 +1408,77 @@ Para describir un modelo, primero es necesario seleccionar un sistema de
 \end_layout
 
 \begin_layout Section
+Sistemas de coordenadas
+\end_layout
+
+\begin_layout Standard
+Un sistema de coordenadas es un conjunto de valores que permiten definir
+ exactamente la posición de un punto cualesquiera en el espacio, debido
+ a que se requiere poder realizar un modelo de un objeto real se requieren
+ el sistema de coordenadas de tres dimensiones como se muestra en la figura
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sistema-de-coordenadas3d"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tCoordenadas.png
+	width 30page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sistema-de-coordenadas3d"
+
+\end_inset
+
+Sistema de coordenadas de 3 dimensiones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sin embargo la aplicación desarrollada utiliza solo dos dimensiones al mismo
+ tiempo para el desarrollo de modelos.
+\end_layout
+
+\begin_layout Section
 Primitivas de graficación
 \end_layout
 
 \begin_layout Standard
 Las primitivas gráficas que describen la geometría de los objetos se denominan
- normalmente primitrivas gemétricas.
+ normalmente primitrivas geométricas.
  Entre las primitivas geométricas más simples son las que indican posiciones
  de puntos y segmentos de líneas rectas.
  Adicionalmente se pueden incluir circulos, elipses y curvas tipo bezier.
@@ -1305,16 +1493,175 @@ El punto es el objeto más simple que puede representarse, solo se necesita
  un punto dentro del sistema de coordenadas.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+Punto\left(x,\, y,\, z\right)\end{equation}
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Linea
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+Línea\left(Punto\, origen,\, Punto\, destino\right)\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tLinea.png
+	lyxscale 50
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Linea
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 Círculo
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+Círculo\left(Punto\, origen,\, radio\right)\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tCirculo.png
+	lyxscale 50
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Círculo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Elipse
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+Elipse\left(Punto\, origen,\, radio\, a,\, radio\, b\right)\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tElipse.png
+	lyxscale 50
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Elipse
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1369,7 +1716,8 @@ Estructura de almacenamiento
 
 \begin_layout Standard
 La estructura de almacenamiento puede observarse en la figura 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:EstructuraXML"
 
 \end_inset
@@ -1385,7 +1733,7 @@ wide false
 sideways false
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
@@ -1397,11 +1745,12 @@ status collapsed
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:EstructuraXML"
 
 \end_inset
@@ -1421,7 +1770,8 @@ Estructura de almacenamiento
 
 \begin_layout Standard
 En la figura 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:EstructuraXML"
 
 \end_inset
@@ -1489,7 +1839,7 @@ wide false
 sideways false
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
@@ -1501,11 +1851,12 @@ status collapsed
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:pgm_a_robot"
 
 \end_inset
@@ -1523,22 +1874,15 @@ PGM a Robot
 
 \end_layout
 
-\begin_layout Subsection
-Archivos CAD (dxf)
-\end_layout
-
 \begin_layout Chapter
 Interfaces de software
-\begin_inset LatexCommand label
+\begin_inset CommandInset label
+LatexCommand label
 name "cha:4_Interfaces3D"
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Introducción
 \end_layout
 
 \begin_layout Standard
@@ -1630,48 +1974,86 @@ wide false
 sideways false
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="4">
 <features>
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Windows
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Linux
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 MacOS
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
 \end_layout
 
 \end_inset
@@ -1681,45 +2063,7 @@ MacOS
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
-C
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-X
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-X
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-X
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
+\begin_layout Plain Layout
 Basic
 \end_layout
 
@@ -1728,7 +2072,7 @@ Basic
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 X
 \end_layout
 
@@ -1737,7 +2081,7 @@ X
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1746,18 +2090,18 @@ X
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row topline="true">
+<row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Java
 \end_layout
 
@@ -1766,7 +2110,7 @@ Java
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 X
 \end_layout
 
@@ -1775,7 +2119,7 @@ X
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 X
 \end_layout
 
@@ -1784,121 +2128,121 @@ X
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 X
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 .Net
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 X
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 X
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Perl
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 X
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 X
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 X
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 PHP
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 X
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 X
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1912,11 +2256,12 @@ X
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "tablaLenguajesProgramacion"
 
 \end_inset
@@ -1936,7 +2281,8 @@ Lenguajes Sistemas Operativos
 
 \begin_layout Standard
 En la tabla 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "tablaLenguajesProgramacion"
 
 \end_inset
@@ -2000,9 +2346,9 @@ Diseño de la interfaz gráfica
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
@@ -2014,11 +2360,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:igu_diseño"
 
 \end_inset
@@ -2043,7 +2390,8 @@ Elección de sistema de renderización.
 \begin_layout Standard
 La elección debe realizarse tomando en cuenta ventajas y desventajas de
  las tecnologías disponibles las cuales se muestran en la tabla 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "tab:Comparativa-entre-Direct3DJava3dOpenGl"
 
 \end_inset
@@ -2058,61 +2406,61 @@ reference "tab:Comparativa-entre-Direct3DJava3dOpenGl"
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features>
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Direct3D
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Java3D
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 OpenGL
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row topline="true">
+<row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Plataformas soportadas
 \end_layout
 
@@ -2121,7 +2469,7 @@ Plataformas soportadas
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Windows
 \end_layout
 
@@ -2130,7 +2478,7 @@ Windows
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Multiplataforma
 \end_layout
 
@@ -2139,18 +2487,18 @@ Multiplataforma
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Multiplataforma
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row topline="true">
+<row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Soporte nativo
 \end_layout
 
@@ -2159,7 +2507,7 @@ Soporte nativo
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Si
 \end_layout
 
@@ -2168,7 +2516,7 @@ Si
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 No
 \end_layout
 
@@ -2177,45 +2525,45 @@ No
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Si
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Licencia
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 EULA
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 GNU General Public
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 SGI
 \end_layout
 
@@ -2229,12 +2577,13 @@ SGI
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Comparativa entre Direct3D, Java3D y OpenGL
-\begin_inset LatexCommand label
+\begin_inset CommandInset label
+LatexCommand label
 name "tab:Comparativa-entre-Direct3DJava3dOpenGl"
 
 \end_inset
@@ -2287,7 +2636,7 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
@@ -2300,11 +2649,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:Aplicación-OpenGL"
 
 \end_inset
@@ -2324,7 +2674,8 @@ Aplicación utilizando OpenG y aceleración gráfica por hardware
 
 \begin_layout Standard
 En la figura 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:Aplicación-OpenGL"
 
 \end_inset
@@ -2380,7 +2731,8 @@ Es importante mencionar que esta tecnologia es código abierto y fue iniciada
 
 \begin_layout Chapter
 Interfaz entre modelado y el robot SCARA
-\begin_inset LatexCommand label
+\begin_inset CommandInset label
+LatexCommand label
 name "cha:5_InterfazModelado"
 
 \end_inset
@@ -2388,14 +2740,10 @@ name "cha:5_InterfazModelado"
 
 \end_layout
 
-\begin_layout Section
-Introducción
-\end_layout
-
 \begin_layout Standard
 La interfaz entre el software modelador y el robot es una parte muy importante,
  ya que si esta llega a colapsar o mal-funcionar se verá reflejado en un
- trabajo final(objeto de madera) no satisfactorio.
+ trabajo final no satisfactorio.
 \end_layout
 
 \begin_layout Section
@@ -2404,7 +2752,8 @@ Robot SCARA
 
 \begin_layout Standard
 El robot con el cual se trabajó se puede apreciar en la figura 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:RobotScara"
 
 \end_inset
@@ -2416,19 +2765,30 @@ reference "fig:RobotScara"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
-status open
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/robot-scara.png
+	lyxscale 10
+	width 50page%
+
+\end_inset
+
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:RobotScara"
 
 \end_inset
@@ -2482,8 +2842,338 @@ Limitantes
 Conversión de modelado a acciones SCARA
 \end_layout
 
+\begin_layout Standard
+Debido a que en el modelo solo contamos con puntos definidos dentro del
+ sistema de coordenadas cartesianas de tres dimensiones es necesario calcular
+ el conjunto de ángulos de las articulaciones para logar el resultado deseado.
+ Esto lo solucionaremos usando cinemática inversa.
+\end_layout
+
 \begin_layout Subsection
 Cinemática inversa
+\end_layout
+
+\begin_layout Standard
+En la cinemática inversa se conoce la posición y la orientación del elemento
+ terminal referido a la base y se desea determinar los angulos articulares
+ para alcanzar dicha posición.
+\end_layout
+
+\begin_layout Standard
+Existen varias soluciones a este problema:
+\end_layout
+
+\begin_layout Itemize
+Soluciones Cerradas(analíticas)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Solución algebraica
+\end_layout
+
+\begin_layout Itemize
+Solución geométrica
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Soluciones Numéricas
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Iterativas
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Debido a su naturaleza iterativa, las soluciones numéricas son generalmente
+ mucho más lentas que las solución de forma cerrada, en algunos casos las
+ soluciones numéricas son tan lentas que pueden ocasionar problemas de cinemátic
+a es por esto que solo nos enfocaremos en las soluciones analíticas.
+\end_layout
+
+\begin_layout Subsubsection
+Solución Algebraica
+\end_layout
+
+\begin_layout Subsubsection
+Solución Geométrica
+\end_layout
+
+\begin_layout Standard
+Recordando algunas identidades trigonométricas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\frac{sin\left(A\right)}{a}=\frac{sin\left(B\right)}{b}=\frac{sin\left(C\right)}{c}\label{eq:leycos1}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+a^{2}=b^{2}+c^{2}-\left(2bc\right)cos\left(A\right)\label{eq:leycos2}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Primero se sabe que la orientación del ultimo eslabón es la suma de las
+ variables articulares, como se muestra en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Orientación-del-ultimo"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\Theta=\Theta_{1}+\Theta_{2}+\Theta_{3}\label{eq:geo-teta}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tcinematica1.png
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Orientación-del-ultimo"
+
+\end_inset
+
+Orientación del ultimo eslabon
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se calcula 
+\begin_inset Formula $\theta_{2}$
+\end_inset
+
+ aplicando ec.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:leycos2"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+x^{2}+y^{2}=l_{1}^{2}+l_{2}^{2}-\left(2l_{1}l_{2}\right)\cos\left(180-\Theta_{2}\right)\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+debido a que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+cos\left(180-\Theta_{2}\right)=-cos\left(\Theta_{2}\right)\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Resulta:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+cos\left(\Theta_{2}\right)=\frac{x^{2}+y^{2}-l_{1}^{2}-l_{2}^{2}}{2l_{1}l_{2}}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tcinematica2.png
+	lyxscale 50
+	width 30page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:CinematicaAngulos"
+
+\end_inset
+
+Ángulos 
+\begin_inset Formula $\beta,\,\psi\, y\,\Theta_{1}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se calcula 
+\begin_inset Formula $\theta_{1}$
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+Si se definen dos ángulos como se muestra en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:CinematicaAngulos"
+
+\end_inset
+
+ se cumple:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\Theta_{1}=\beta-\psi\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El ángulo 
+\begin_inset Formula $\beta$
+\end_inset
+
+ se calcula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+sin\left(\beta\right)=\frac{y}{\sqrt{x^{2}+y^{2}}}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+y para el ángulo 
+\begin_inset Formula $\psi$
+\end_inset
+
+ se usa ec.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:leycos1"
+
+\end_inset
+
+ y se tiene:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+cos\left(\psi\right)=\frac{x^{2}+y^{2}+l_{1}^{2}-l_{2}^{2}}{2l_{1}\sqrt{x^{2}+y^{2}}}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente se calcula 
+\begin_inset Formula $\theta_{3}$
+\end_inset
+
+ usando la siguiente ecuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\Theta_{3}=\Theta-\Theta_{1}-\Theta_{2}\label{eq:geo-teta3}\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2492,7 +3182,8 @@ Conectividad PC-Robot
 
 \begin_layout Chapter
 Pruebas
-\begin_inset LatexCommand label
+\begin_inset CommandInset label
+LatexCommand label
 name "cha:6_Pruebas"
 
 \end_inset
@@ -2540,13 +3231,10 @@ Realizacion de primitivas
 Imagenes PGM
 \end_layout
 
-\begin_layout Subsection
-Archivos CAD
-\end_layout
-
 \begin_layout Chapter
 Conclusiones
-\begin_inset LatexCommand label
+\begin_inset CommandInset label
+LatexCommand label
 name "cha:7_Conclusiones"
 
 \end_inset
@@ -2566,14 +3254,14 @@ Trabajos futuros
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 newpage
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2630,7 +3318,8 @@ XML Extensible Markup Language.
 \end_layout
 
 \begin_layout Bibliography
-\begin_inset LatexCommand bibitem
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
 label "WIKI-ROBOT"
 key "key-3"
 
@@ -2640,7 +3329,8 @@ http://en.wikipedia.org/wiki/Industrial_robot
 \end_layout
 
 \begin_layout Bibliography
-\begin_inset LatexCommand bibitem
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
 label "GLUT"
 key "key-4"
 
@@ -2650,7 +3340,8 @@ http://www.opengl.org/resources/libraries/glut/
 \end_layout
 
 \begin_layout Bibliography
-\begin_inset LatexCommand bibitem
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
 label "JOGL"
 key "key-5"
 
@@ -2660,7 +3351,8 @@ https://jogl.dev.java.net/
 \end_layout
 
 \begin_layout Bibliography
-\begin_inset LatexCommand bibitem
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
 label "RAH"
 key "key-1"
 
@@ -2672,7 +3364,8 @@ Thomas R.
 \end_layout
 
 \begin_layout Bibliography
-\begin_inset LatexCommand bibitem
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
 label "CER"
 key "key-2"
 
@@ -2683,7 +3376,8 @@ Stan Gibilisco, Concise Encyclopedia of Robotics, E.U.A.: ed.
 \end_layout
 
 \begin_layout Bibliography
-\begin_inset LatexCommand bibitem
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
 label "PJGD"
 key "key-3"
 
@@ -2695,7 +3389,8 @@ Andrew Davison, Pro Java 6 3D Game Development Java 3D, JOGL, JInput and
 \end_layout
 
 \begin_layout Bibliography
-\begin_inset LatexCommand bibitem
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
 label "RMRM"
 key "key-1"
 
@@ -2706,13 +3401,25 @@ Aníbal Ollero Baturone, Robótica: Manipuladores y robots móviles, Marcombo
 \end_layout
 
 \begin_layout Bibliography
-\begin_inset LatexCommand bibitem
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
 key "key-1"
 
 \end_inset
 
 Wilbert O.
  Galitz, The Essential Guide to User Interface Design, E.U.A.: ed.: Wiley, 2007.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "robotumich"
+key "OMAR"
+
+\end_inset
+
+Robot michoacan
 \end_layout
 
 \end_body
