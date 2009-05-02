@@ -1741,6 +1741,22 @@ Elementos compuestos
 \end_layout
 
 \begin_layout Section
+Transformaciones
+\end_layout
+
+\begin_layout Subsection
+Escalado
+\end_layout
+
+\begin_layout Subsection
+Translación
+\end_layout
+
+\begin_layout Subsection
+Rotacion
+\end_layout
+
+\begin_layout Section
 Almacenamiento y recuperación
 \end_layout
 
@@ -1943,7 +1959,7 @@ PGM a Robot
 \end_layout
 
 \begin_layout Chapter
-Interfaces de software
+Interfaz de software
 \begin_inset CommandInset label
 LatexCommand label
 name "cha:4_Interfaces3D"
@@ -2406,7 +2422,180 @@ La máquina virtual de Java (JVM) es un programa nativo (un ejecutable de
 \end_layout
 
 \begin_layout Section
-Diseño de la interfaz gráfica
+Diseño de la interfaz de usuario
+\end_layout
+
+\begin_layout Standard
+La interfaz gráfica de usuario (IGU) es la parte más importante de los sistemas
+ computarizados debido aque es con la que el usuario interactua de forma
+ directa.
+ Las metas de una interfaz de ususario son: hacer que el trabajo con la
+ computadora sea fácil, productivo y agradable
+\begin_inset CommandInset citation
+LatexCommand cite
+key "disenoInterface"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La interfaz de usaurio se conforman de dos componentes: entrada y salida.
+ La entrada es la forma en que los usuarios comunican sus necesidades a
+ la computadora.
+ La salida es el medio por el cual la computadora muestra los resultados
+ de las operaciones requeridas por el usuario.
+\end_layout
+
+\begin_layout Standard
+Propiamente, una interfaz de usuario provee la mezcla de: mecanismo de entrada
+ y salida que de manera eficiente satisfagan las necesidades del usaurio,
+ capabilities, y limitaciones en la forma más eficiente.
+\end_layout
+
+\begin_layout Subsection
+Principios generales de un buen diseño
+\end_layout
+
+\begin_layout Standard
+Estos principios son características generales para la interfaz en todos
+ sus aspectos:
+\end_layout
+
+\begin_layout Subsubsection
+Accesibilidad
+\end_layout
+
+\begin_layout Standard
+El sistema deberá de ser usado por usuarios de diversas capacidades sin
+ diseños especiales ni modificaciones.
+ Originalmente este término fue usado para referirse a sistemas accesibles
+ a usuarios con discapacidades.
+ Actualmente el término accesibilidad se refiere a cubrir la mayoría de
+ los usuarios.
+\end_layout
+
+\begin_layout Standard
+Las principales caracterísitcas de un sistema accesible son:
+\end_layout
+
+\begin_layout Itemize
+Perceptibilidad
+\end_layout
+
+\begin_layout Itemize
+Operatibilidad
+\end_layout
+
+\begin_layout Itemize
+Simplicidad
+\end_layout
+
+\begin_layout Subsubsection
+Disponibilidad
+\end_layout
+
+\begin_layout Standard
+Todos los aspectos de un sistema deberán de estar disponibles en cualquier
+ momento en cualquier tarea.
+ Solo deberán de no estar disponibles en aquellas tareas que así se definan.
+\end_layout
+
+\begin_layout Subsubsection
+Claridad
+\end_layout
+
+\begin_layout Standard
+La interfaz debe ser clara en apariencia visual y concepto.
+ Los elementos visuales deben ser entendibles, relacionados con objetos
+ del mundo real.
+ Los coneptos y textos deben ser simples y no consfusos.
+\end_layout
+
+\begin_layout Subsubsection
+Configurabilidad
+\end_layout
+
+\begin_layout Subsubsection
+Consistencia
+\end_layout
+
+\begin_layout Standard
+Consistency is uniformity in appearance, placement, and behavior within
+ the user interface.
+ 
+\end_layout
+
+\begin_layout Standard
+Es importante ya que puede reducir la necesidad de adquirir nuevas skills
+ para una actividad que puede ser similar a otra.
+ Si un nuevo sistema impone necesidades de aprender nuevas skills en los
+ usuarios, este puede convertirse en un sistema no productivo e innecesario.
+\end_layout
+
+\begin_layout Standard
+Un sistema deberá lucir y operar de forma normal(throughout), es decir:
+\end_layout
+
+\begin_layout Itemize
+Una función siempre deberá devolver el mismo resultado.
+\end_layout
+
+\begin_layout Itemize
+La posición de los elementos estándares no cambiará.
+\end_layout
+
+\begin_layout Subsubsection
+Control
+\end_layout
+
+\begin_layout Subsubsection
+Eficiencia
+\end_layout
+
+\begin_layout Subsubsection
+Flexibilidad
+\end_layout
+
+\begin_layout Subsubsection
+Familiaridad
+\end_layout
+
+\begin_layout Subsubsection
+Forgiveness
+\end_layout
+
+\begin_layout Subsubsection
+Operativilidad
+\end_layout
+
+\begin_layout Subsubsection
+Predictivilidad
+\end_layout
+
+\begin_layout Subsubsection
+Recuperacion
+\end_layout
+
+\begin_layout Subsubsection
+Responsiveness
+\end_layout
+
+\begin_layout Subsubsection
+Seguridad
+\end_layout
+
+\begin_layout Subsubsection
+Simplicidad
+\end_layout
+
+\begin_layout Subsubsection
+Transparencia
+\end_layout
+
+\begin_layout Subsubsection
+Visibilidad
 \end_layout
 
 \begin_layout Standard
@@ -2933,6 +3122,112 @@ key "tesisCarlosE"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+Conexion:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Puerto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RS232
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Velocidad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+125000 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Paridad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bit
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Conexión PC-Robot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -3590,6 +3885,33 @@ key "IRA"
 \end_inset
 
 Instituto de Robótica de América
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Kurfess05"
+key "roboticayautomatizacion"
+
+\end_inset
+
+Kurfess, T .Robotics and automation handbook.
+ Ed.
+ CRC Press, 2005
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Delrieux00"
+key "compgrafica"
+
+\end_inset
+
+Delrieux, C.
+ Introducción a la Computación Gráfica.
+ Dpto Ingeniería Eléctrica, Universidad nacional del sur.
+ 2000.
 \end_layout
 
 \end_body
