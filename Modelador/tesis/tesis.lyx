@@ -782,58 +782,55 @@ name "cha:2_Ambiente"
 
 \end_layout
 
+\begin_layout Standard
+Por mucho tiempo el hombre ha elaborado máquinas que imitan las partes del
+ cuerpo humano.
+ Los antiguos egipcios unieron brazos mecánicos a las estatuas de sus dioses,
+ estos brazos fueron operados por sacerdotes quienes clamaban que el movimiento
+ de estos era inspiración de sus dioses.
+ Los griegos contruyeron estatuas que operaban con sistemas hidráulicos
+ para fascinar s los adoradores de los templos.
+\end_layout
+
 \begin_layout Section
 Robot
 \end_layout
 
 \begin_layout Standard
-Un robot, es un agente artificial mecánico o virtual.
- Los primeros son maquinas usadas para realizar un trabajo automaticamente
- y son controlados por una computadora; por otro lado tenemos a los robots
- virtuales también conocidos como 
-\begin_inset Quotes eld
-\end_inset
+El inicio de la robótica actual puede fijarse en la industria textil del
+ siglo XVIII, cuando Joseph Jacquard inventa en 1801 una máquina textil
+ programable mediante tarjetas perforadas.
+ La revolución industrial impulsó el desarrollo de estos agentes mecánicos,
+ entre los cuales se destacaron el torno mecánico motorizado de Babbitt
+ (1892) y el mecanismo programable para pintar con spray de Pollard y Roselund
+ (1939).
+ Además de esto durante los siglos XVII y XVIII en Europa fueron construidos
+ muñecos mecánicos muy ingeniosos que tenían algunas características de
+ robots.
+ En 1805, Henri Maillardert construyó una muñeca mecánica que era capaz
+ de hacer dibujos.
+ 
+\end_layout
 
-bots
+\begin_layout Standard
+La palabra robot se empleó por primera vez en una obra de teatro llamada
+ "Ros-sum´s Universal Robota
 \begin_inset Quotes erd
 \end_inset
 
- que son agentes virtuales de software.
+ (Los Robots Universales de Rossum) escrita por el dramaturgo checo Karel
+ Capek en 1920.
+ La palabra checa 'Robota' significa servidumbre o trabajador forzado, y
+ cuando se tradujo al ingles se convirtió en el término 
+\series bold
+robot
+\series default
+.
 \end_layout
 
 \begin_layout Standard
-En general para considerar a un agente artificial como robot, este debe
- cumplir algunas propiedades:
-\end_layout
-
-\begin_layout Itemize
-Manipular cosas de su entorno.
-\end_layout
-
-\begin_layout Itemize
-Sentir cosas del entorno.
-\end_layout
-
-\begin_layout Itemize
-Contar con cierta inteligencia para tomar decisiones basadas en el ambiente
- o en una secuencia previamente programada.
-\end_layout
-
-\begin_layout Itemize
-Ser programable
-\end_layout
-
-\begin_layout Itemize
-Moverse en uno o más ejes.
-\end_layout
-
-\begin_layout Itemize
-Realizar movimientos coordinados.
-\end_layout
-
-\begin_layout Standard
-A continuación se presentan algunas definiciones realizadas por diferentes
- institutos:
+Sin embargo el término robot con el paso de los años ha cambiado, a continuación
+ se listan algunas de las definiciones más aceptadas:
 \end_layout
 
 \begin_layout Itemize
@@ -855,85 +852,55 @@ un manipulador multipropósito automaticamente controlado y reprogramable
 \end_layout
 
 \begin_layout Itemize
-El Instituto de Robótica de América lo define como 
-\begin_inset Quotes eld
-\end_inset
-
-
-\emph on
-manipulador multifuncional y reprogramable diseñado para mover material,
+Manipulador multifuncional y reprogramable diseñado para mover material,
  partes, herramientas o dispositivos especializados mediante varios movimientos
  programados para la realización de una variedad de tareas
-\emph default
+\emph on
 
-\begin_inset Quotes erd
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IRA"
+
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Subsection
-Clasificación
-\end_layout
-
-\begin_layout Standard
-La Asociación Japonesa de Robots Industriales (JIRA, por sus siglas en inglés)
- clasificó los robots desde manipuladores simples hasta sistemas avanzados
- incorporando inteligencia artificial.
- A continuación se lista dicha clasificación la cual fue realizada a finales
- del siglo veinte
+\begin_layout Itemize
+Mecanismo formado generalmente por elementos en serie, articulados entre
+ sí, destinado al agarre y desplazamiento de objetos.
+ Es multifuncionaly puede ser gobernado directamente por un operador humano
+ o dispositivo lógico
 \begin_inset CommandInset citation
 LatexCommand cite
-after "p. 267"
-key "key-2"
+key "paperRobot"
 
 \end_inset
 
-:
+.
+\end_layout
+
+\begin_layout Standard
+Para fines de estudio clasificaremos los robots en: 
 \end_layout
 
 \begin_layout Itemize
-Manipuladores operados manualmente.
- Máquinas que requieren ser operadas por humanos.
+Manipuladores.
+ Generalmente estan montados sobre una base fija que les sirve para definir
+ su área de trabajo y su posición en la misma.
+ Su estructura básica es la de un brazo humano.
 \end_layout
 
 \begin_layout Itemize
-Manipuladores secuenciales.
- Dispositivos que realizan una serie de tareas en la misma secuencia cada
- vez que son activados.
+Móviles.
+ Este tipo de robots tienen la capacidad de cambiar de posición por si mismos
+ para realizar alguna tarea determinada.
+ Para lograrlo, tienen sensores que le permiten conocer su ambiente así
+ como actuadores que le permiten desplazarse.
 \end_layout
 
-\begin_layout Itemize
-Manipuladores programables.
- Se incluyen los tipos simples de los robots industriales.
-\end_layout
-
-\begin_layout Itemize
-Robots controlados numéricamente.
- Servo robots.
-\end_layout
-
-\begin_layout Itemize
-Robots con sensores.
- Robots que utilizan sensores de cualquier tipo, proximidad, presión, tactil,
- etc.
-\end_layout
-
-\begin_layout Itemize
-Robots adaptativos.
- Robots que ajustan la forma en que trabajan para compensar cambios en el
- entorno.
-\end_layout
-
-\begin_layout Itemize
-Robots inteligentes.
- Robots con controladores de salida sofisticados que pueden considerarse
- para procesar inteligencia artificial.
-\end_layout
-
-\begin_layout Itemize
-Sistemas mecatrónicos inteligentes.
- Computadoras que controlan un conjunto de robots o dispositivos robóticos.
+\begin_layout Standard
+La gran mayoría de los robots usados en la industria son de tipo manipuladores.
 \end_layout
 
 \begin_layout Subsection
@@ -942,58 +909,40 @@ Estructura de los robots manipuladores
 
 \begin_layout Standard
 Básicamente la estructura de un robot manipulador es la de un brazo articulado.
- De manera más específica un robot manipulador industrial es una cadena
- cinemática abierta formada por un conjunto de eslabones interrelacionados
- mediante articulaciones las cuales permiten el movimiento de esta dicha
- cadena.
-\end_layout
-
-\begin_layout Subsubsection
-Area de trabajo
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement th
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename imagenes/manipulador_alcance.png
-	width 60page%
-
-\end_inset
-
-
+Para describir la estructura de un robot manipulador:
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Categorías de los robots manipuladores y sus respectivas áreas de trabajo[PDF]
+\begin_layout Itemize
+Estructura mecánica.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Itemize
+Sistema de accionamiento.
 \end_layout
 
-\begin_layout Plain Layout
-
+\begin_layout Itemize
+Sistema sensorial.
 \end_layout
 
-\end_inset
+\begin_layout Itemize
+Sistema de control.
+\end_layout
 
-
+\begin_layout Itemize
+Elementos terminales.
 \end_layout
 
 \begin_layout Subsubsection
-Tipos de articulaciones
+Estructura mecánica
+\end_layout
+
+\begin_layout Standard
+Desde el punto de vista mecánico, el robot estáformado por una serie de
+ elementos o eslabones unidos mediante articulaciones que permiten un movimiento
+ relativo entre cada dos eslabones consecutivos.
 \end_layout
 
 \begin_layout Standard
@@ -1084,6 +1033,103 @@ name "fig:TiposArticulaciones"
 
 \end_layout
 
+\begin_layout Subsubsection
+Sistema de accionamiento.
+\end_layout
+
+\begin_layout Subsubsection
+Sistema sensorial.
+\end_layout
+
+\begin_layout Subsubsection
+Sistema de control.
+\end_layout
+
+\begin_layout Subsubsection
+Elementos terminales.
+\end_layout
+
+\begin_layout Subsection
+Clasificación
+\end_layout
+
+\begin_layout Standard
+Existe una gran variedad de tipos de brazos manipuladores y se pueden clasificar
+ de distintas formas: por su estructura, por su forma de control, por su
+ área de aplicación, por su fuente de potencia, por su geometría, por su
+ movimiento cinemático, etc.
+ [Spong89, Ramırez98].
+ Hoy en d´ıa, los manipuladores est´an agrupados en clases de acuerdo a
+ la combinaci´on de uniones usadas en su construcci´on [Petriu06]
+\end_layout
+
+\begin_layout Standard
+Según la Asociación Internacional de Robótica(IFR):
+\end_layout
+
+\begin_layout Itemize
+Robot secuencial.
+\end_layout
+
+\begin_layout Itemize
+Robot de trayectoria controlable.
+\end_layout
+
+\begin_layout Itemize
+Robot adaptativo.
+\end_layout
+
+\begin_layout Itemize
+Robot telemanipulado.
+\end_layout
+
+\begin_layout Subsubsection
+Area de trabajo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement th
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/manipulador_alcance.png
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Categorías de los robots manipuladores y sus respectivas áreas de trabajo
+\begin_inset CommandInset citation
+LatexCommand cite
+key "paperCinematica"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Programación de tareas
 \end_layout
@@ -1097,7 +1143,7 @@ reference "fig:ProgramacionRobot"
 
 \end_inset
 
-.
+:
 \end_layout
 
 \begin_layout Standard
@@ -1105,7 +1151,7 @@ reference "fig:ProgramacionRobot"
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1130,7 +1176,7 @@ name "fig:ProgramacionRobot"
 
 \end_inset
 
-Programación de un robot manipulador
+Programación de un robot manipulador.
 \end_layout
 
 \end_inset
@@ -1149,8 +1195,8 @@ Software CAD
 
 \begin_layout Standard
 El software CAD(Diseño Asistido por Computadora, del inglés Computer Aided
- Design) es la aplicación donde el programador realiza un modelo/tarea que
- desea que realice el robot.
+ Design) son sitemas informáticos para realizar tareas de creación, modificación
+, análisis y optimización de un diseño.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1159,8 +1205,30 @@ Software CAM
 
 \begin_layout Standard
 El software CAM(Manufactura Asistida por Computadora, del inglés Computer
- Aided Manufacturing) convierte el modelo/tarea en un código estandar para
- la mayoría del software de control CNC denominado código G.
+ Aided Manufacturing) son sistemas informáticos para la planificación, gestión
+ y control de las operaciones de una planta de fabricación mediante una
+ interfaz directa o indirecta entre el sistema informático y los recursos
+ de producción.
+ 
+\end_layout
+
+\begin_layout Itemize
+Interfaz directa.
+ Son aquellos donde la computadora se conecta directamente con el proceso
+ de producción para monitorizar su actividad y realizar tareas de supervisión
+ y control.
+\end_layout
+
+\begin_layout Itemize
+Interfaz indirecta.
+ Se trata de de aquellos en las que la computadora se utiliza como herramienta
+ de ayuda para la fabricación, pero en las que no existe conexión directa
+ con el proceso de producción.
+\end_layout
+
+\begin_layout Standard
+La entrada de estos softwares son generalmente los diseños generados con
+ software CAD.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2759,8 +2827,25 @@ reference "fig:RobotScara"
 \end_inset
 
 .
- Este robot cuenta con 4 grados de libertad construido en el departamento
- de robótica de la FIE, fijo en su base y hecho de acero y aluminio
+ Este robot cuenta con 4 grados de libertad construido en la Factultad de
+ Ingeniería Electrica de la Universidad Michoacan de San Nicolas de Hidalgo,
+ fijo en su base y hecho de acero y aluminio.
+\end_layout
+
+\begin_layout Standard
+La estructura física fue realizada por una empresa dedicada a la robótica
+ denominada Cervantes Co., ubicada en Paracho Michoacán.
+\end_layout
+
+\begin_layout Standard
+La programación del controlador fue realizada por Omar Rodríguez Páez
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tesisOmar"
+
+\end_inset
+
+ .
 \end_layout
 
 \begin_layout Standard
@@ -2819,6 +2904,10 @@ Entre las características más relevantes acerca del robot se tiene:
 \end_layout
 
 \begin_layout Itemize
+Altura 60 cm.
+\end_layout
+
+\begin_layout Itemize
 Alcance máximo de su brazo 50 cm.
 \end_layout
 
@@ -2831,7 +2920,19 @@ Peso alrededor de 45 Kg.
 \end_layout
 
 \begin_layout Subsection
-Diseño
+Arquitectura
+\end_layout
+
+\begin_layout Standard
+La arquitectura de un robot es la disposición de los elementos que conforman
+ o integran
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tesisCarlosE"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -2918,6 +3019,16 @@ Recordando algunas identidades trigonométricas:
 \begin_layout Standard
 \begin_inset Formula \begin{equation}
 a^{2}=b^{2}+c^{2}-\left(2bc\right)cos\left(A\right)\label{eq:leycos2}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula \begin{equation}
+cos\left(\Theta\right)=cos\left(-\Theta\right)\end{equation}
 
 \end_inset
 
@@ -3353,73 +3464,132 @@ https://jogl.dev.java.net/
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-label "RAH"
-key "key-1"
+label "Kurfess05"
+key "roboAutomata"
 
 \end_inset
 
-Thomas R.
- Kurfess, Robotics and Automation Handbook, E.U.A.: ed.
+Kurfess, T.
+ Robotics and Automation Handbook.
+ Ed.
  CRC PRESS, 2005.
 \end_layout
 
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-label "CER"
-key "key-2"
+label "Gibilisco03"
+key "encicloRobot"
 
 \end_inset
 
-Stan Gibilisco, Concise Encyclopedia of Robotics, E.U.A.: ed.
+Gibilisco, S.
+ Concise Encyclopedia of Robotics,Ed.
  McGraw-Hill, 2003
 \end_layout
 
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-label "PJGD"
-key "key-3"
+label "Davison07"
+key "java.joglj3d"
 
 \end_inset
 
-Andrew Davison, Pro Java 6 3D Game Development Java 3D, JOGL, JInput and
- JOAL APIs, E.U.A.: ed.
+Davison, A.
+ Pro Java 6 3D Game Development Java 3D, JOGL, JInput and JOAL APIs.
+ Ed.
  Apress, 2007
 \end_layout
 
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-label "RMRM"
-key "key-1"
+label "Ollero"
+key "manipuladores"
 
 \end_inset
 
-Aníbal Ollero Baturone, Robótica: Manipuladores y robots móviles, Marcombo
- Editorial.
+Ollero, A.
+ Robótica: Manipuladores y robots móviles, Marcombo Editorial.
 \end_layout
 
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "key-1"
+label "Galitz07"
+key "disenoInterface"
 
 \end_inset
 
-Wilbert O.
- Galitz, The Essential Guide to User Interface Design, E.U.A.: ed.: Wiley, 2007.
+Galitz, W.
+ The Essential Guide to User Interface Design, Ed.
+ Wiley, 2007.
 \end_layout
 
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-label "robotumich"
-key "OMAR"
+label "Rodriguez08"
+key "tesisOmar"
 
 \end_inset
 
-Robot michoacan
+Rodriguez, O.
+ Diseño y Construcción de un Robot SCARA utilizando motores de CD de pasos
+ y con escobillas, Tesis de Licenciatura, UMSNH, 2008
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Estrada06"
+key "tesisCarlosE"
+
+\end_inset
+
+Estrada, C.
+ Diseño de un sistema de control de seguimiento de trayectorias para un
+ robot móvil.
+ Tesis de Maerstría.
+ UMSNH, 2006.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Sanchez07"
+key "paperCinematica"
+
+\end_inset
+
+Sanchéz, O.
+ Cinemática de los manipuladores, Universidad Huelva, Huelva España.
+ 2007
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Sanchez06"
+key "paperRobot"
+
+\end_inset
+
+Sanchéz, O.
+ Robot, Universidad Huelva, Huelva España.
+ 2006
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Instituto"
+key "IRA"
+
+\end_inset
+
+Instituto de Robótica de América
 \end_layout
 
 \end_body
