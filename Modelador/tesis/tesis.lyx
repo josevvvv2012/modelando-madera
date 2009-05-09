@@ -166,12 +166,12 @@ Procesos industriales
 \end_layout
 
 \begin_layout Standard
-Los procesos administrativos abarca todo proceso relacionado con documentación
+Los procesos administrativos abarcan todo proceso relacionado con documentación
  de la empresa, algunos ejemplos de estos procesos son los siguientes departamen
 tos: recursos humanos, recursos financieros, ventas, compras, entre otros.
  Estos procesos o departamentos estan parcial o totalmente cubiertos por
  aplicaciones ofrecidas por el gobierno de forma gratuita o haciendo uso
- de 7aplicaciones de terceros, algunas de las aplicaciones utilizadas son:
+ de aplicaciones de terceros, algunas de las aplicaciones utilizadas son:
 \end_layout
 
 \begin_layout Itemize
@@ -191,16 +191,16 @@ SUA
 \end_layout
 
 \begin_layout Standard
-Por otra parte los procesos industriales son todos los procesos en los que
- se manipula una materia prima y es transformada en un producto final mediante
- el uso de maquinaria industrial, y es en estos procesos donde se centra
- el trabajo de la presente tesis.
+Por otra parte, los procesos industriales son todos los procesos en los
+ que se manipula una materia prima y es transformada en un producto final,
+ mediante el uso de maquinaria industrial, es en estos procesos donde se
+ centra el trabajo de la presente tesis.
 \end_layout
 
 \begin_layout Standard
 Teniendo las empresas la necesidad de contar con maquinaria industrial de
- precisión se ven en la necesidad de adquirir esta maquinaria en el extrajero
- debido a que en el país no existen empresas presten estos servicios.
+ precisión se ven en la necesidad de adquirir esta maquinaria en el extrajero,
+ debido a que en el país no existen empresas que presten estos servicios.
 \end_layout
 
 \begin_layout Standard
@@ -213,7 +213,7 @@ reference "tab:Costos-de-adquisición"
 \end_inset
 
  se muestran algunas maquinarias adquiridas por empresas de la localidad
- de Paracho Michoacán.
+ de Paracho, Michoacán.
 \end_layout
 
 \begin_layout Standard
@@ -459,7 +459,7 @@ Costos de adquisición de maquina industrial
 \begin_layout Standard
 Observando la necesidad de la automatización en los procesos de fabricación
  de productos se optó por desarrollar una aplicación multiplataforma para
- el modelado de productos de madera haciendo uso de un robot SCARA realizado
+ el modelado de productos de madera haciendo uso de un robot SCARA, construido
  en la Facultad de Ingenieria Eléctrica de la Universidad Michoacana de
  San Nicolas de Hidalgo.
 \end_layout
@@ -469,15 +469,25 @@ Motivación
 \end_layout
 
 \begin_layout Standard
-En la actualidad la mayoría de las pequeñas empresas de la región de Michoacán,
- en específico las de Paracho, no cuentan con procesos automatizados en
- la manufactura de sus materias primas.
+Dos han sido las razones que motivaron la elaboración de la presente tesis:
 \end_layout
 
 \begin_layout Standard
-Por otra parte, existen personas que tienen diseños muy innovadores pero
- por falta de una máquina que lo realize así como una aplicación para su
- diseño.
+En la actualidad la mayoría de las pequeñas empresas de las regiónes de
+ Michoacán, en particular las de Paracho, no cuentan con procesos automatizados
+ en la manufactura de sus materias primas.
+\end_layout
+
+\begin_layout Standard
+Por otra parte, existen personas que tienen diseños muy innovadores; pero
+ por falta de recursos económicos para adquirir una máquina industrial que
+ lo realize, así como una aplicación para su diseño.
+\end_layout
+
+\begin_layout Standard
+La segunda razón es la que más me ha impulsado a trabajar en este campo,
+ toda vez que nos permite aplicar los conocimientos adquiridos en la Maestría
+ y la oportunidad de aportar la solución tecnológica a estos casos.
 \end_layout
 
 \begin_layout Section
@@ -485,13 +495,13 @@ Antecedentes
 \end_layout
 
 \begin_layout Standard
-Los antecedentes previos realizados en la División de Estudios de Posgrado
- de la Facultad de Ingeniería Eléctrica, de la Universidad Michoacana de
- San Nicolás de Hidalgo, es la construcción de un robot manipulador tipo
- SCARA de cuatro grados de libertad de plataforma abierta
+El antecedente más cercano que se tiene, es el trabajo realizado en la División
+ de Estudios de Posgrado de la Facultad de Ingeniería Eléctrica, de la Universid
+ad Michoacana de San Nicolás de Hidalgo, que es la construcción de un robot
+ manipulador tipo SCARA, de cuatro grados de libertad de plataforma abierta
 \begin_inset CommandInset citation
 LatexCommand cite
-key "OMAR"
+key "tesisOmar"
 
 \end_inset
 
@@ -508,7 +518,7 @@ El objetivo general es realizar investigación en los aspectos computacionales
 ones que el robot SCARA pueda seguir para construir físicamente los modelos
  en madera, de forma que se desarrolle tecnología propia que promueva una
  industria robótica y se generen diversas aplicaciones que tengan un importante
- impacto social como económico.
+ impacto social y económico.
 \end_layout
 
 \begin_layout Standard
@@ -564,7 +574,7 @@ reference "fig:DiagramaObjetivos"
 \end_inset
 
  representa gráficamente el objetivo, donde se puede apreciar que el presente
- proyecto de tesis tiene como entrada el diseño por parte de una persona
+ proyecto de tesis, tiene como entrada el diseño por parte de una persona
  el cual es interpretado para su futura producción en un robot SCARA.
  
 \end_layout
@@ -633,7 +643,7 @@ Metodología
 \end_layout
 
 \begin_layout Standard
-Para cumplir los objetivos mencionados anteriormente se propone desarrollar
+Para cumplir los objetivos mencionados anteriormente, se propone desarrollar
  una aplicación multiplataforma para el modelado de objetos de madera en
  el lenguaje de programación Java.
 \end_layout
@@ -646,7 +656,7 @@ n hasta lograr una estabilidad considerable, la cual tenga una velocidad
 
 \begin_layout Standard
 Con el fin de mejorar el diseño se evaluará la aplicación continuamente
- en la empresa de Rafael Cardiel.
+ en la empresa de señor Rafael Cardiel, domiciliado en esta población.
 \end_layout
 
 \begin_layout Section
@@ -698,19 +708,19 @@ reference "cha:2_Ambiente"
 
 \end_inset
 
- se presentarán una revisión del estado del arte asociado con la paqueteria
+ se presentará una revisión del estado del arte asociado con la paqueteria
  de software existente para el modelado/fabricación de objetos de madera.
 \end_layout
 
 \begin_layout Standard
-En el capítulo 
+El capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cha:3_Modelado3D"
 
 \end_inset
 
- aborda las partes del software modelador tanto los algoritmos de graficación
+ aborda las partes del software modelador, tanto los algoritmos de graficación
  como la forma de interacción con el usuario final.
  
 \end_layout
@@ -724,13 +734,12 @@ reference "cha:4_Interfaces3D"
 \end_inset
 
  se mostrarán las principales interfaces de software para la implementación
- de software 3D, se mostrarán pros y contras de cada una de estas y finalmente
- se detallará el funcionamiento de la interfaz OpenGL sobre la cual se realizará
- la implementación del software.
+ de software 3D, se mostrarán pros y contras de cada una de éstas y finalmente
+ se detallará el funcionamiento de la interfaz realizada.
 \end_layout
 
 \begin_layout Standard
-En el capítulo 
+El capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cha:5_InterfazModelado"
@@ -738,8 +747,7 @@ reference "cha:5_InterfazModelado"
 \end_inset
 
  trata las características del robot SCARA, la forma de conversión del modelo
- a acciones que el robot entienda así como un algoritmo de planeación para
- que el robot sea lo más optimo posible.
+ a acciones que el robot entienda.
  También se describirá la interfaz entre el software de modelado y el robot.
 \end_layout
 
@@ -753,8 +761,7 @@ reference "cha:6_Pruebas"
 
  se mostrarán resultados de pruebas realizadas en una primera instancia
  al software modelador, seguido de los resultados de la conectividad entre
- el software y el robot, y finalmente se verificará que tanta funcionalidad
- doto el algoritmo de planeación implementado.
+ el software y el robot.
 \end_layout
 
 \begin_layout Standard
@@ -765,9 +772,9 @@ reference "cha:7_Conclusiones"
 
 \end_inset
 
- se aportarán las conclusiones generales resultado de la investigación abordada
- e ideas para trabajo de investigación posterior a realizar en el mismo
- campo del conocimiento.
+ se aportarán las conclusiones generales, resultado de la investigación
+ abordada e ideas para trabajo de investigación posterior a realizar en
+ el mismo campo del conocimiento.
  
 \end_layout
 
@@ -786,10 +793,10 @@ name "cha:2_Ambiente"
 Por mucho tiempo el hombre ha elaborado máquinas que imitan las partes del
  cuerpo humano.
  Los antiguos egipcios unieron brazos mecánicos a las estatuas de sus dioses,
- estos brazos fueron operados por sacerdotes quienes clamaban que el movimiento
+ estos brazos fueron operados por sacerdotes, quienes clamaban que el movimiento
  de estos era inspiración de sus dioses.
  Los griegos contruyeron estatuas que operaban con sistemas hidráulicos
- para fascinar s los adoradores de los templos.
+ para fascinar a los adoradores de los templos.
 \end_layout
 
 \begin_layout Section
@@ -821,7 +828,7 @@ La palabra robot se empleó por primera vez en una obra de teatro llamada
  (Los Robots Universales de Rossum) escrita por el dramaturgo checo Karel
  Capek en 1920.
  La palabra checa 'Robota' significa servidumbre o trabajador forzado, y
- cuando se tradujo al ingles se convirtió en el término 
+ cuando se tradujo al inglés se convirtió en el término 
 \series bold
 robot
 \series default
@@ -841,7 +848,7 @@ La ISO 8373 lo define como
 
 \emph on
 un manipulador multipropósito automaticamente controlado y reprogramable
- de mas de tres ejes
+ de más de tres ejes
 \emph default
 
 \begin_inset Quotes erd
@@ -886,7 +893,7 @@ Para fines de estudio clasificaremos los robots en:
 
 \begin_layout Itemize
 Manipuladores.
- Generalmente estan montados sobre una base fija que les sirve para definir
+ Generalmente están montados sobre una base fija que les sirve para definir
  su área de trabajo y su posición en la misma.
  Su estructura básica es la de un brazo humano.
 \end_layout
@@ -895,7 +902,7 @@ Manipuladores.
 Móviles.
  Este tipo de robots tienen la capacidad de cambiar de posición por si mismos
  para realizar alguna tarea determinada.
- Para lograrlo, tienen sensores que le permiten conocer su ambiente así
+ Para lograrlo, tienen sensores que les permiten conocer su ambiente así
  como actuadores que le permiten desplazarse.
 \end_layout
 
@@ -912,7 +919,7 @@ Básicamente la estructura de un robot manipulador es la de un brazo articulado.
 \end_layout
 
 \begin_layout Standard
-Para describir la estructura de un robot manipulador:
+Se describe la estructura de un robot manipulador:
 \end_layout
 
 \begin_layout Itemize
@@ -920,19 +927,15 @@ Estructura mecánica.
 \end_layout
 
 \begin_layout Itemize
-Sistema de accionamiento.
-\end_layout
-
-\begin_layout Itemize
 Sistema sensorial.
 \end_layout
 
 \begin_layout Itemize
-Sistema de control.
+Elementos terminales.
 \end_layout
 
 \begin_layout Itemize
-Elementos terminales.
+Sistema de control.
 \end_layout
 
 \begin_layout Subsubsection
@@ -940,9 +943,9 @@ Estructura mecánica
 \end_layout
 
 \begin_layout Standard
-Desde el punto de vista mecánico, el robot estáformado por una serie de
- elementos o eslabones unidos mediante articulaciones que permiten un movimiento
- relativo entre cada dos eslabones consecutivos.
+Desde el punto de vista mecánico, el robot está formado por una serie de
+ elementos o eslabones unidos mediante articulaciones, que permiten un movimient
+o relativo entre cada dos eslabones consecutivos.
 \end_layout
 
 \begin_layout Standard
@@ -959,31 +962,31 @@ reference "fig:TiposArticulaciones"
 
 \begin_layout List
 \labelwidthstring 00.00.0000
-a) La articulación de rotación suministra un grado de libertad, es decir
+a) La articulación de rotación suministra un grado de libertad, es decir,
  permite la rotación sobre el eje de la articulación.
 \end_layout
 
 \begin_layout List
 \labelwidthstring 00.00.0000
-b) La articulación prismática consiste en una translación a lo largo del
+b) La articulación prismática, consiste en una traslación a lo largo del
  eje de la articulación.
 \end_layout
 
 \begin_layout List
 \labelwidthstring 00.00.0000
-c) En la articulación cilíndrica existen dos grados de libertad, una rotación
- y una translación sobre el eje de la articulación.
+c) En la articulación cilíndrica, existen dos grados de libertad, una rotación
+ y una traslación sobre el eje de la articulación.
 \end_layout
 
 \begin_layout List
 \labelwidthstring 00.00.0000
-d) La articulación planar se caracteriza por el movimiento de desplazamiento
+d) La articulación planar, se caracteriza por el movimiento de desplazamiento
  en un plano, tiene dos grados de libertad.
 \end_layout
 
 \begin_layout List
 \labelwidthstring 00.00.0000
-e) Por último la articulación esférica combina tres giros en tres direcciones
+e) Por último, la articulación esférica, combina tres giros en tres direcciones
  perpendiculares en el espacio.
 \end_layout
 
@@ -1034,19 +1037,82 @@ name "fig:TiposArticulaciones"
 \end_layout
 
 \begin_layout Subsubsection
-Sistema de accionamiento.
+Sistema sensorial.
+\end_layout
+
+\begin_layout Standard
+Los sensores son transductores que convierten algún fenómeno físico en señales
+ eléctricas que el microcontrolador puede leer
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jones98"
+
+\end_inset
+
+.
+ La principal función es trasladar la información del mundo real al mundo
+ abstracto de la unidad lógica de procesamiento, para que ésta pueda responder
+ de forma correcta.
+ 
+\end_layout
+
+\begin_layout Standard
+Algunos de los tipos de sensores son:
+\end_layout
+
+\begin_layout Itemize
+Proporcionan datos de movimiento
+\end_layout
+
+\begin_layout Itemize
+Cambios inerciales
+\end_layout
+
+\begin_layout Itemize
+Estructura externa del ambiente
+\end_layout
+
+\begin_layout Itemize
+Los interruptores de contacto son dispositivos simples que reportan un valor
+ binario: cerrado o abierto.
+ 
 \end_layout
 
 \begin_layout Subsubsection
-Sistema sensorial.
+Elementos terminales.
+\end_layout
+
+\begin_layout Standard
+Existen muchos tipos de motores, pero sólo unos cuantos son útiles en robótica,
+ y dentro de éstos se encuentran los motores de corriente directa
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jones98"
+
+\end_inset
+
+.
+ Los motores o servomotores de CD son preferidos debido a su relativa facilidad
+ para ser controlados, comparados con otros tipos de motores de CD y con
+ los motores de CA
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tesisCarlosE"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
 Sistema de control.
 \end_layout
 
-\begin_layout Subsubsection
-Elementos terminales.
+\begin_layout Standard
+El sistema de control en un robot es la parte más importante, ya que es
+ aquí donde las acciones lógicas son convertidas en acciones físicas.
+ Estas acciones son realizadas por actuadores y pueden depender de un evento
+ del exterior captado por algún sensor.
 \end_layout
 
 \begin_layout Subsection
@@ -1059,32 +1125,41 @@ Existe una gran variedad de tipos de brazos manipuladores y se pueden clasificar
  área de aplicación, por su fuente de potencia, por su geometría, por su
  movimiento cinemático, etc.
  [Spong89, Ramırez98].
- Hoy en d´ıa, los manipuladores est´an agrupados en clases de acuerdo a
- la combinaci´on de uniones usadas en su construcci´on [Petriu06]
-\end_layout
+ Hoy en día, los manipuladores están agrupados en clases de acuerdo a la
+ combinación de uniones usadas en su construcción [Petriu06] como puede
+ observarse en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Categorias-robot"
 
-\begin_layout Standard
-Según la Asociación Internacional de Robótica(IFR):
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-Robot secuencial.
-\end_layout
-
-\begin_layout Itemize
-Robot de trayectoria controlable.
+:
 \end_layout
 
 \begin_layout Itemize
-Robot adaptativo.
+Cilíndrico.
+ Cuenta con dos articulaciones de rotación y una tipo planar.
 \end_layout
 
 \begin_layout Itemize
-Robot telemanipulado.
+Esférico.
+ Cuenta con una articulación de rotación y dos de tipo planar.
 \end_layout
 
-\begin_layout Subsubsection
-Area de trabajo
+\begin_layout Itemize
+S.C.A.R.A.
+ Cuenta con dos articulaciones de rotación y una tipo planar.
+\end_layout
+
+\begin_layout Itemize
+Cartesiano.
+ Cuenta con tres articulaciones de tipo planar.
+\end_layout
+
+\begin_layout Itemize
+Antropomórfico.
+ Cuenta con tres articulaciones de tipo rotación.
 \end_layout
 
 \begin_layout Standard
@@ -1092,7 +1167,7 @@ Area de trabajo
 placement th
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1110,6 +1185,12 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Categorias-robot"
+
+\end_inset
+
 Categorías de los robots manipuladores y sus respectivas áreas de trabajo
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1136,7 +1217,7 @@ Programación de tareas
 
 \begin_layout Standard
 La secuencia que se tiene que realizar para programar una tarea en un robot
- manipulador generalmente sigue los pasos mostrados en la figura 
+ manipulador, generalmente sigue los pasos mostrados en la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:ProgramacionRobot"
@@ -1206,7 +1287,7 @@ Software CAM
 \begin_layout Standard
 El software CAM(Manufactura Asistida por Computadora, del inglés Computer
  Aided Manufacturing) son sistemas informáticos para la planificación, gestión
- y control de las operaciones de una planta de fabricación mediante una
+ y control de las operaciones de una planta de fabricación, mediante una
  interfaz directa o indirecta entre el sistema informático y los recursos
  de producción.
  
@@ -1276,66 +1357,6 @@ Programación de tareas
 \end_layout
 
 \begin_layout Standard
-Software CAD
-\end_layout
-
-\begin_layout Itemize
-AutoCAD
-\end_layout
-
-\begin_layout Itemize
-SolidWorks
-\end_layout
-
-\begin_layout Itemize
-RhinoCAD
-\end_layout
-
-\begin_layout Itemize
-TurboCAD
-\end_layout
-
-\begin_layout Itemize
-Graphite One CAD
-\end_layout
-
-\begin_layout Standard
-Software CAM
-\end_layout
-
-\begin_layout Itemize
-ArtCAM
-\end_layout
-
-\begin_layout Itemize
-DeskCNC
-\end_layout
-
-\begin_layout Itemize
-MeshCAM
-\end_layout
-
-\begin_layout Standard
-Software CNC
-\end_layout
-
-\begin_layout Itemize
-TurboCNC
-\end_layout
-
-\begin_layout Itemize
-EMC
-\end_layout
-
-\begin_layout Itemize
-DeskCNC
-\end_layout
-
-\begin_layout Subsection
-Programación
-\end_layout
-
-\begin_layout Standard
 Un lenguaje de programación de robots sirve como interfaz entre el usuario
  humano y el robot industrial.
  Los manipuladores de robots se diferencian a sí mismos de la automatización
@@ -1348,7 +1369,7 @@ flexibles
 \end_inset
 
 , es decir que son programables.
- No solo son programables los movimientos de los manipuladores sino que,
+ No sólo son programables los movimientos de los manipuladores sino que,
  a través del uso de sensores y comunicación con otros tipos de automatización,
  los manipuladores pueden adaptarse a las variaciones a medida que realizan
  su tarea.
@@ -1366,7 +1387,7 @@ MS Robotic Studio ( ~ $ 4 000.00 M.N)
 \begin_deeper
 \begin_layout Itemize
 Herramienta de programación visual para crear y depurar aplicaciones robóticas.
- El desarrollador puede interactuar con los robots mediante interfases basadas
+ El desarrollador puede interactuar con los robots mediante interfaces basadas
  en web o nativas al sistema operativo (MS Windows).
 \end_layout
 
@@ -1430,21 +1451,81 @@ KUKA.OfficeLite no se puede utilizar para controlar un robot.
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+Algunos software que pueden ser aplicados a la programación de tareas son:
+\end_layout
+
+\begin_layout Standard
+Software CAD
+\end_layout
+
+\begin_layout Itemize
+AutoCAD
+\end_layout
+
+\begin_layout Itemize
+SolidWorks
+\end_layout
+
+\begin_layout Itemize
+RhinoCAD
+\end_layout
+
+\begin_layout Itemize
+TurboCAD
+\end_layout
+
+\begin_layout Itemize
+Graphite One CAD
+\end_layout
+
+\begin_layout Standard
+Software CAM
+\end_layout
+
+\begin_layout Itemize
+ArtCAM
+\end_layout
+
+\begin_layout Itemize
+DeskCNC
+\end_layout
+
+\begin_layout Itemize
+MeshCAM
+\end_layout
+
+\begin_layout Standard
+Software CNC
+\end_layout
+
+\begin_layout Itemize
+TurboCNC
+\end_layout
+
+\begin_layout Itemize
+EMC
+\end_layout
+
+\begin_layout Itemize
+DeskCNC
+\end_layout
+
 \begin_layout Subsection
 Desarrollo tecnológico
 \end_layout
 
 \begin_layout Standard
-Desafortunadamente el desarrollo actual en el país está enfocado generalmente
+Desafortunadamente, el desarrollo actual en el país está enfocado generalmente
  a robots móviles dejando a los manipuladores de lado.
 \end_layout
 
 \begin_layout Standard
-Universidades como el Tecnológico de Monterrey [Dirección de Vinculación
- y Desarrollo campus Guadalajara] se está enfocando más en la planeación
- de movimientos para robots, así como el Instituto Tecnológico Autónomo
- de México[Laboratorio de robótica, ITAM] se enfocan al área de robots móviles
- pequeños.
+Instituciones de nivel superior como el Tecnológico de Monterrey [Dirección
+ de Vinculación y Desarrollo campus Guadalajara] se está enfocando más en
+ la planeación de movimientos para robots, así como el Instituto Tecnológico
+ Autónomo de México[Laboratorio de robótica, ITAM] se enfocan al área de
+ robots móviles pequeños.
 \end_layout
 
 \begin_layout Chapter
@@ -1459,8 +1540,8 @@ name "cha:3_Modelado3D"
 \end_layout
 
 \begin_layout Standard
-Una aplicación de modelado de objetos proporciona una biblioteca de funciones
- que pueden utilizarse para crear diseños de objetos que posteriormente
+Una aplicación de modelado de objetos proporciona una biblioteca de funciones,
+ que pueden utilizarse para crear diseños de objetos, que posteriormente
  se pueden plasmar en madera o algún otro tipo de material que pueda ser
  moldeado por alguna de las herramientas soportadas por el robot.
  Estas funciones se denominan primitivas gráficas o simplemente primitivas.
@@ -1471,7 +1552,7 @@ Para describir un modelo, primero es necesario seleccionar un sistema de
  coordenadas cartesianas adecuado, que puede ser bidimensional o tridimensional.
  Después se describen los objetos del modelo proporcionando sus especificaciones
  geométricas.
- Por ejemplo se define una línea recta proporcionando la posicion de los
+ Por ejemplo, se define una línea recta proporcionando la posicion de los
  dos puntos extremos.
 \end_layout
 
@@ -1482,7 +1563,7 @@ Sistemas de coordenadas
 \begin_layout Standard
 Un sistema de coordenadas es un conjunto de valores que permiten definir
  exactamente la posición de un punto cualesquiera en el espacio, debido
- a que se requiere poder realizar un modelo de un objeto real se requieren
+ a que se requiere poder realizar un modelo de un objeto real, se requieren
  el sistema de coordenadas de tres dimensiones como se muestra en la figura
  
 \begin_inset CommandInset ref
@@ -1536,8 +1617,8 @@ Sistema de coordenadas de 3 dimensiones
 \end_layout
 
 \begin_layout Standard
-Sin embargo la aplicación desarrollada utiliza solo dos dimensiones al mismo
- tiempo para el desarrollo de modelos.
+Sin embargo, la aplicación desarrollada utiliza sólo dos dimensiones al
+ mismo tiempo para el desarrollo de modelos.
 \end_layout
 
 \begin_layout Section
@@ -1546,7 +1627,7 @@ Primitivas de graficación
 
 \begin_layout Standard
 Las primitivas gráficas que describen la geometría de los objetos se denominan
- normalmente primitrivas geométricas.
+ normalmente primitivas geométricas.
  Entre las primitivas geométricas más simples son las que indican posiciones
  de puntos y segmentos de líneas rectas.
  Adicionalmente se pueden incluir circulos, elipses y curvas tipo bezier.
@@ -1557,17 +1638,20 @@ Punto
 \end_layout
 
 \begin_layout Standard
-El punto es el objeto más simple que puede representarse, solo se necesita
- un punto dentro del sistema de coordenadas.
+El punto es el objeto más simple que puede representarse, es un elemento
+ geométrico adimensional que describe una posición en el espacio.
+ Un punto puede determinarse en el sistema de coordenadas cartesianas mediante
+ las distancias a los ejes principales, que se indican con dos variables
+ (x, y) en el plano y con tres variables (x, y, z) en el espacio tridimensional.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \begin{equation}
-Punto\left(x,\, y,\, z\right)\end{equation}
-
+Para fines de programación se definió un punto en el espacio con el predicado
+ 
+\begin_inset Formula $Punto\left(x,\, y,\, z\right)$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Subsection
@@ -1575,12 +1659,81 @@ Linea
 \end_layout
 
 \begin_layout Standard
+Euclides, en su tratado denominado 
+\begin_inset Quotes eld
+\end_inset
+
+Los elementos
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "euclidesweb"
+
+\end_inset
+
+ ,establece varias definiciones para línea:
+\end_layout
+
+\begin_layout Itemize
+Los extremos de una linea son puntos.
+\end_layout
+
+\begin_layout Itemize
+Una linea es una longitud sin anchura.
+\end_layout
+
+\begin_layout Standard
+La línea recta es la sucesión continua e indefinida de puntos en una sola
+ dimensión
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wikipediarecta"
+
+\end_inset
+
+.
+ Su ecuación general es: 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula \begin{equation}
-Línea\left(Punto\, origen,\, Punto\, destino\right)\end{equation}
+y=mx+B\end{equation}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+m=\frac{\left(y_{n}-y_{0}\right)}{\left(x_{n}-x_{0}\right)}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+donde 
+\begin_inset Formula $m$
+\end_inset
+
+ es la pendiente y 
+\begin_inset Formula $y$
+\end_inset
+
+ es la intercepción con el eje Y.
+ En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Linea"
+
+\end_inset
+
+ se puede observar un ejemplo de ésta.
 \end_layout
 
 \begin_layout Standard
@@ -1607,7 +1760,14 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Linea
+Línea
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Linea"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1615,13 +1775,26 @@ Linea
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Para fines de programación se definió con el predicado 
+\begin_inset Formula $Línea\left(a,\, b\right)$
+\end_inset
+
+, donde 
+\begin_inset Formula $a$
+\end_inset
+
+ y 
+\begin_inset Formula $b$
+\end_inset
+
+ son dos puntos diferentes cualesquiera en el espacio.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -1629,8 +1802,32 @@ Círculo
 \end_layout
 
 \begin_layout Standard
+Es una secuncia de puntos infinitos del plano equidistantes de otro fijo,
+ llamado centro; la distancia del centro a cualquier punto se denomina radio(r).
+ Su ecuación paramétrica puede apreciarse en la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Circulo"
+
+\end_inset
+
+.
+ En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Circulo"
+
+\end_inset
+
+ se puede observa un ejemplo.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula \begin{equation}
-Círculo\left(Punto\, origen,\, radio\right)\end{equation}
+\begin{array}{c}
+x=r*cos\left(\Theta\right)\\
+x=r*sin\left(\Theta\right)\\
+\Theta\in\left[0,2\pi\right]\end{array}\label{eq:Circulo}\end{equation}
 
 \end_inset
 
@@ -1662,6 +1859,13 @@ status open
 
 \begin_layout Plain Layout
 Círculo
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Circulo"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1669,13 +1873,25 @@ Círculo
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Para fines de programación se definió con el predicado 
+\begin_inset Formula $Circulo\left(c,\, r\right)$
+\end_inset
+
+ donde 
+\begin_inset Formula $c$
+\end_inset
+
+ es el punto definido como centro y 
+\begin_inset Formula $r$
+\end_inset
+
+ es el radio o distancia del centro a cualquier otro punto.
 \end_layout
 
 \begin_layout Subsection
@@ -1683,8 +1899,33 @@ Elipse
 \end_layout
 
 \begin_layout Standard
+Es una secuncia de puntos infinitos del plano tales que la suma de la distancia
+ a dos puntos fijos llamados focos es una constante positiva e igual a la
+ distancia entre los vértices.
+ Su ecuación paramétrica puede apreciarse en la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Elipse"
+
+\end_inset
+
+.
+ En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Elipse"
+
+\end_inset
+
+ se puede observa un ejemplo.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula \begin{equation}
-Elipse\left(Punto\, origen,\, radio\, a,\, radio\, b\right)\end{equation}
+\begin{array}{c}
+x=r_{1}*cos\left(\Theta\right)\\
+x=r_{2}*sin\left(\Theta\right)\\
+\Theta\in\left[0,2\pi\right]\end{array}\label{eq:Elipse}\end{equation}
 
 \end_inset
 
@@ -1696,7 +1937,7 @@ Elipse\left(Punto\, origen,\, radio\, a,\, radio\, b\right)\end{equation}
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1716,6 +1957,195 @@ status collapsed
 
 \begin_layout Plain Layout
 Elipse
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Elipse"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para fines de programación se definió con el predicado 
+\begin_inset Formula $Elipse\left(c,\, r_{1},\, r_{2}\right)$
+\end_inset
+
+ donde 
+\begin_inset Formula $c$
+\end_inset
+
+ es el punto definido como centro, 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+ es la distancia al punto más alejado en el eje horizontal y 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ es la distancia al punto más alejado sobre el eje vertical.
+\end_layout
+
+\begin_layout Subsection
+Curva de Bezier
+\end_layout
+
+\begin_layout Subsection
+Elementos compuestos
+\end_layout
+
+\begin_layout Standard
+Es un objeto compuesto por una o más primitivas para formar un elemento
+ compuesto.
+ Este elemento puede contener infinitas primitivas dentro de si misma.
+ En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Elemento-compuesto"
+
+\end_inset
+
+ se muestra un ejemplo de un elemento compuesto, este elemento contiene
+ tres líneas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tCompuesto.png
+	lyxscale 50
+	width 20page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Elemento compuesto
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Elemento-compuesto"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Transformaciones
+\end_layout
+
+\begin_layout Standard
+Como se mostró en las secciones anteriores, las primitivas se están definiendo
+ mediante puntos de control, un punto en el espacio 3D homogéneo será un
+ vector columna como el que se muestra en la ec.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TransPunto"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+p=\left[\begin{array}{c}
+x\\
+y\\
+z\\
+1\end{array}\right]\label{eq:TransPunto}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Escalado
+\end_layout
+
+\begin_layout Standard
+A continuación se muestra como quedaría el escalado de un punto de control.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\left[\begin{array}{c}
+x´\\
+y´\\
+z´\\
+1\end{array}\right]=\left[\begin{array}{cccc}
+e_{x} & 0 & 0 & 0\\
+0 & e_{y} & 0 & 0\\
+0 & 0 & e_{z} & 0\\
+0 & 0 & 0 & 1\end{array}\right]\left[\begin{array}{c}
+x\\
+y\\
+z\\
+1\end{array}\right]\label{eq:TransEscalamiento}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tEscalamiento.png
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Escalamiento
 \end_layout
 
 \end_inset
@@ -1733,27 +2163,219 @@ Elipse
 \end_layout
 
 \begin_layout Subsection
-Curva de Bezier
+Traslación
+\end_layout
+
+\begin_layout Standard
+La traslación 
+\begin_inset Formula $x´=x+t_{x}$
+\end_inset
+
+, 
+\begin_inset Formula $y´=y+t_{y}$
+\end_inset
+
+, 
+\begin_inset Formula $z´=z+t_{z}$
+\end_inset
+
+ puede ser expresada como el producto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\left[\begin{array}{c}
+x´\\
+y´\\
+z´\\
+1\end{array}\right]=\left[\begin{array}{cccc}
+1 & 0 & 0 & t_{x}\\
+0 & 1 & 0 & t_{y}\\
+0 & 0 & 1 & t_{z}\\
+0 & 0 & 0 & 1\end{array}\right]\left[\begin{array}{c}
+x\\
+y\\
+z\\
+1\end{array}\right]\label{eq:TransTrans}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tTraslacion.png
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Traslación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Elementos compuestos
+Rotación
 \end_layout
 
-\begin_layout Section
-Transformaciones
+\begin_layout Standard
+La rotación un ángulo 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ alrededor del eje 
+\begin_inset Formula $z$
+\end_inset
+
+ es:
 \end_layout
 
-\begin_layout Subsection
-Escalado
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\left[\begin{array}{c}
+x´\\
+y´\\
+z´\\
+1\end{array}\right]=\left[\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & cos\left(\Theta\right) & -sin\left(\Theta\right) & 0\\
+0 & sin\left(\Theta\right) & cos\left(\Theta\right) & 0\\
+0 & 0 & 0 & 1\end{array}\right]\left[\begin{array}{c}
+x\\
+y\\
+z\\
+1\end{array}\right]\label{eq:TransRotaZ}\end{equation}
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsection
-Translación
+\begin_layout Standard
+La rotación un ángulo 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ alrededor del eje 
+\begin_inset Formula $y$
+\end_inset
+
+ es:
 \end_layout
 
-\begin_layout Subsection
-Rotacion
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\left[\begin{array}{c}
+x´\\
+y´\\
+z´\\
+1\end{array}\right]=\left[\begin{array}{cccc}
+cos\left(\Theta\right) & 0 & -sin\left(\Theta\right) & 0\\
+0 & 1 & 0 & 0\\
+sin\left(\Theta\right) & 0 & cos\left(\Theta\right) & 0\\
+0 & 0 & 0 & 1\end{array}\right]\left[\begin{array}{c}
+x\\
+y\\
+z\\
+1\end{array}\right]\label{eq:TransRotaY}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La rotación un ángulo 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ alrededor del eje 
+\begin_inset Formula $x$
+\end_inset
+
+ es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\left[\begin{array}{c}
+x´\\
+y´\\
+z´\\
+1\end{array}\right]=\left[\begin{array}{cccc}
+cos\left(\Theta\right) & -sin\left(\Theta\right) & 0 & 0\\
+sin\left(\Theta\right) & cos\left(\Theta\right) & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1\end{array}\right]\left[\begin{array}{c}
+x\\
+y\\
+z\\
+1\end{array}\right]\label{eq:TransRotaX}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tRotacion.png
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Rotación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1807,7 +2429,7 @@ reference "fig:EstructuraXML"
 \end_inset
 
 .
- Como puede observar la estructura es simple, compacta y fácil de entender.
+ Como puede verse la estructura es simple, compacta y fácil de entender.
 \end_layout
 
 \begin_layout Standard
@@ -1868,13 +2490,13 @@ No existe límite en la cantidad de primitivas usadas en un diseño.
 \end_layout
 
 \begin_layout Itemize
-Los puntos de control de una primitiva pueden no tener límite, es decir
+Los puntos de control de una primitiva pueden no tener límite, es decir,
  una primitiva puede tener N puntos de control.
  
 \end_layout
 
 \begin_layout Itemize
-Cada primitiva es identificada mediante mediante un número entero (tipo):
+Cada primitiva es identificada mediante un número entero (tipo):
 \end_layout
 
 \begin_deeper
@@ -1904,7 +2526,7 @@ Curva de Bezier (6)
 
 \end_deeper
 \begin_layout Section
-Importacion de otros formatos
+Importación de otros formatos
 \end_layout
 
 \begin_layout Subsection
@@ -1912,7 +2534,7 @@ Imágenes PGM
 \end_layout
 
 \begin_layout Standard
-Una imagen PGM es la representacion a escala de grises de una imagen.
+Una imagen PGM es la representación a escala de grises de una imagen.
  
 \end_layout
 
@@ -1971,8 +2593,8 @@ name "cha:4_Interfaces3D"
 
 \begin_layout Standard
 La interfaz de usuario es uno de los apartados con más relevancia de un
- sistema de computo, en la actualidad todo sistema debe contener una herramienta
- con la que el usuario pueda ordenar al computador que hacer.
+ sistema de cómputo, en la actualidad todo sistema debe contener una herramienta
+ con la que el usuario pueda ordenar a la computadora qué hacer.
 \end_layout
 
 \begin_layout Standard
@@ -1982,15 +2604,248 @@ Una interfaz de usuario mal diseñada puede causar que el mejor sistema de
 \end_layout
 
 \begin_layout Itemize
-Eleccion de lenguaje de programación.
-\end_layout
-
-\begin_layout Itemize
 Diseño de la interfaz gráfica.
 \end_layout
 
 \begin_layout Itemize
+Eleccion de lenguaje de programación.
+\end_layout
+
+\begin_layout Itemize
 Elección de sistema de renderización.
+\end_layout
+
+\begin_layout Section
+Diseño de la interfaz de usuario
+\end_layout
+
+\begin_layout Standard
+La interfaz gráfica de usuario (IGU) es la parte más importante de los sistemas
+ computarizados debido aque es con la que el usuario interactúa de forma
+ directa.
+ Las metas de una interfaz de ususario son: hacer que el trabajo con la
+ computadora sea fácil, productivo y agradable
+\begin_inset CommandInset citation
+LatexCommand cite
+key "disenoInterface"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La interfaz de usaurio se conforma de dos componentes: entrada y salida.
+ La entrada es la forma en que los usuarios comunican sus necesidades a
+ la computadora.
+ La salida es el medio por el cual la computadora muestra los resultados
+ de las operaciones requeridas por el usuario.
+\end_layout
+
+\begin_layout Standard
+Propiamente, una interfaz de usuario provee la mezcla de: mecanismo de entrada
+ y salida que de manera eficiente satisfagan las necesidades del usaurio,
+ capabilities, y limitaciones en la forma más eficiente.
+\end_layout
+
+\begin_layout Subsection
+Principios generales de un buen diseño
+\end_layout
+
+\begin_layout Standard
+Estos principios son características generales para la interfaz en todos
+ sus aspectos:
+\end_layout
+
+\begin_layout Subsubsection
+Accesibilidad
+\end_layout
+
+\begin_layout Standard
+El sistema deberá de ser usado por usuarios de diversas capacidades sin
+ diseños especiales ni modificaciones.
+ Originalmente este término fue usado para referirse a sistemas accesibles
+ a usuarios con discapacidades.
+ Actualmente el término accesibilidad se refiere a cubrir la mayoría de
+ los usuarios.
+\end_layout
+
+\begin_layout Standard
+Las principales caracterísitcas de un sistema accesible son:
+\end_layout
+
+\begin_layout Itemize
+Perceptibilidad
+\end_layout
+
+\begin_layout Itemize
+Operatibilidad
+\end_layout
+
+\begin_layout Itemize
+Simplicidad
+\end_layout
+
+\begin_layout Subsubsection
+Disponibilidad
+\end_layout
+
+\begin_layout Standard
+Todos los aspectos de un sistema deberán de estar disponibles en cualquier
+ momento en cualquier tarea.
+ Solo deberán de no estar disponibles en aquellas tareas que así se definan.
+\end_layout
+
+\begin_layout Subsubsection
+Claridad
+\end_layout
+
+\begin_layout Standard
+La interfaz debe ser clara en apariencia visual y concepto.
+ Los elementos visuales deben ser entendibles, relacionados con objetos
+ del mundo real.
+ Los coneptos y textos deben ser simples y no consfusos.
+\end_layout
+
+\begin_layout Subsubsection
+Consistencia
+\end_layout
+
+\begin_layout Standard
+Consistency is uniformity in appearance, placement, and behavior within
+ the user interface.
+ 
+\end_layout
+
+\begin_layout Standard
+Es importante ya que puede reducir la necesidad de adquirir nuevas habilidades
+ para una actividad que puede ser similar a otra.
+ Si un nuevo sistema impone necesidades de aprender nuevas habilidades en
+ los usuarios, este puede convertirse en un sistema no productivo e innecesario.
+\end_layout
+
+\begin_layout Standard
+Un sistema deberá lucir y operar de forma normal(throughout), es decir:
+\end_layout
+
+\begin_layout Itemize
+Una función siempre deberá devolver el mismo resultado.
+\end_layout
+
+\begin_layout Itemize
+La posición de los elementos estándares no cambiará.
+\end_layout
+
+\begin_layout Subsubsection
+Control
+\end_layout
+
+\begin_layout Standard
+El usuario debe tener control sobre las acciones que esta realizando el
+ sistema.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Eficiencia
+\end_layout
+
+\begin_layout Standard
+En cada paso de un proceso, se debe mostrar al usuario toda la información
+ y herramientas necesarias para terminar el proceso.
+ El usuario no debe tener la necesidad de buscar información ni herramientas
+ en lugares externos al proceso activo.
+\end_layout
+
+\begin_layout Subsubsection
+Tiempo de respuesta
+\end_layout
+
+\begin_layout Standard
+Cuando un usuario realice una solicitud el sistema debe contestar lo más
+ rápido que le sea posible.
+ Si al realizar una solicitud el sistema no responde en un tiempo considerable,
+ puede ser considerado como que el sistema ha fallado.
+\end_layout
+
+\begin_layout Subsubsection
+Recuperacion
+\end_layout
+
+\begin_layout Standard
+El sistema debe contar con un sistema de recuperación que permita deshacer
+ una acción.
+ Con este mecanismo se reduce en gran medida los errores de usuarios nuevos.
+ El punto de retorno puede ser hacia la acción anterior, pantalla anterior
+ o al inicio de un determinado periodo de tiempo.
+\end_layout
+
+\begin_layout Standard
+El ojetivo es mantener la estabilidad, es decir, cuando el usuario realice
+ una acción errónea que pueda llevar a una situación peligrosa exista alguna
+ forma de regresar al puto anterior estable.
+ La recuperación debe ser obvia, automática, y simple de realizar.
+\end_layout
+
+\begin_layout Subsubsection
+Simplicidad
+\end_layout
+
+\begin_layout Standard
+La simplicidad es reconocida cuando cualquier usuario puede de manera simple
+ entender y usar un sistema con la mínima experiencia y documentación.
+\end_layout
+
+\begin_layout Subsubsection
+Visibilidad
+\end_layout
+
+\begin_layout Standard
+Los sistemas son más usables cuando de una manera clara indican el estado
+ y los resultados de las acciones realizadas por los usuarios.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/igu_tesis.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:igu_diseño"
+
+\end_inset
+
+Diseño de la interfaz gráfica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2042,12 +2897,12 @@ r tipo RISC es imposible ejecutarlo en un procesador tipo CISC.
 \end_layout
 
 \begin_layout Standard
-Por otro lado los lenguajes interpretados son muy portables a todas las
- arquitecturas y sistemas operativos debido a que no dependen de un tipo
- de arquitectura pero requieren de que exista un progama nativo que los
+Por otro lado, los lenguajes interpretados son muy portables a todas las
+ arquitecturas y sistemas operativos, debido a que no dependen de un tipo
+ de arquitectura, pero requieren de que exista un progama nativo que los
  interprete, es decir, que si la empresa desarrolladora del lenguaje interpretad
 o no libera una versión de su intérprete para un sistema operativo en una
- arquitectura determinada los programas escritos en este lenguaje no se
+ arquitectura determinada, los programas escritos en este lenguaje no se
  ejecutarán.
 \end_layout
 
@@ -2373,7 +3228,7 @@ reference "tablaLenguajesProgramacion"
 
  se puede apreciar los alcances de los lenguajes de programación más desarrollad
 os y más difundidos en la actualidad, dejando claro que Java es el lenguaje
- de programación con mayor portabilidad debido a que se cuenta con intérpretes
+ de programación con mayor portabilidad, debido a que se cuenta con intérpretes
  para todas las arquitecturas y además que no se requiere modificar el código
  fuente para ejecutarse en éstas.
 \end_layout
@@ -2384,8 +3239,8 @@ Java
 
 \begin_layout Standard
 Java es una plataforma de software desarrollada por Sun Microsystem, de
- forma que los programas creados en ella puedan ejecutarse sin cambios en
- diferentes tipos de arquitecturas y dispositivos computacionales.
+ forma que los programas creados en ella, puedan ejecutarse sin cambios
+ en diferentes tipos de arquitecturas y dispositivos computacionales.
  
 \end_layout
 
@@ -2422,231 +3277,12 @@ La máquina virtual de Java (JVM) es un programa nativo (un ejecutable de
 \end_layout
 
 \begin_layout Section
-Diseño de la interfaz de usuario
-\end_layout
-
-\begin_layout Standard
-La interfaz gráfica de usuario (IGU) es la parte más importante de los sistemas
- computarizados debido aque es con la que el usuario interactua de forma
- directa.
- Las metas de una interfaz de ususario son: hacer que el trabajo con la
- computadora sea fácil, productivo y agradable
-\begin_inset CommandInset citation
-LatexCommand cite
-key "disenoInterface"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-La interfaz de usaurio se conforman de dos componentes: entrada y salida.
- La entrada es la forma en que los usuarios comunican sus necesidades a
- la computadora.
- La salida es el medio por el cual la computadora muestra los resultados
- de las operaciones requeridas por el usuario.
-\end_layout
-
-\begin_layout Standard
-Propiamente, una interfaz de usuario provee la mezcla de: mecanismo de entrada
- y salida que de manera eficiente satisfagan las necesidades del usaurio,
- capabilities, y limitaciones en la forma más eficiente.
-\end_layout
-
-\begin_layout Subsection
-Principios generales de un buen diseño
-\end_layout
-
-\begin_layout Standard
-Estos principios son características generales para la interfaz en todos
- sus aspectos:
-\end_layout
-
-\begin_layout Subsubsection
-Accesibilidad
-\end_layout
-
-\begin_layout Standard
-El sistema deberá de ser usado por usuarios de diversas capacidades sin
- diseños especiales ni modificaciones.
- Originalmente este término fue usado para referirse a sistemas accesibles
- a usuarios con discapacidades.
- Actualmente el término accesibilidad se refiere a cubrir la mayoría de
- los usuarios.
-\end_layout
-
-\begin_layout Standard
-Las principales caracterísitcas de un sistema accesible son:
-\end_layout
-
-\begin_layout Itemize
-Perceptibilidad
-\end_layout
-
-\begin_layout Itemize
-Operatibilidad
-\end_layout
-
-\begin_layout Itemize
-Simplicidad
-\end_layout
-
-\begin_layout Subsubsection
-Disponibilidad
-\end_layout
-
-\begin_layout Standard
-Todos los aspectos de un sistema deberán de estar disponibles en cualquier
- momento en cualquier tarea.
- Solo deberán de no estar disponibles en aquellas tareas que así se definan.
-\end_layout
-
-\begin_layout Subsubsection
-Claridad
-\end_layout
-
-\begin_layout Standard
-La interfaz debe ser clara en apariencia visual y concepto.
- Los elementos visuales deben ser entendibles, relacionados con objetos
- del mundo real.
- Los coneptos y textos deben ser simples y no consfusos.
-\end_layout
-
-\begin_layout Subsubsection
-Configurabilidad
-\end_layout
-
-\begin_layout Subsubsection
-Consistencia
-\end_layout
-
-\begin_layout Standard
-Consistency is uniformity in appearance, placement, and behavior within
- the user interface.
- 
-\end_layout
-
-\begin_layout Standard
-Es importante ya que puede reducir la necesidad de adquirir nuevas skills
- para una actividad que puede ser similar a otra.
- Si un nuevo sistema impone necesidades de aprender nuevas skills en los
- usuarios, este puede convertirse en un sistema no productivo e innecesario.
-\end_layout
-
-\begin_layout Standard
-Un sistema deberá lucir y operar de forma normal(throughout), es decir:
-\end_layout
-
-\begin_layout Itemize
-Una función siempre deberá devolver el mismo resultado.
-\end_layout
-
-\begin_layout Itemize
-La posición de los elementos estándares no cambiará.
-\end_layout
-
-\begin_layout Subsubsection
-Control
-\end_layout
-
-\begin_layout Subsubsection
-Eficiencia
-\end_layout
-
-\begin_layout Subsubsection
-Flexibilidad
-\end_layout
-
-\begin_layout Subsubsection
-Familiaridad
-\end_layout
-
-\begin_layout Subsubsection
-Forgiveness
-\end_layout
-
-\begin_layout Subsubsection
-Operativilidad
-\end_layout
-
-\begin_layout Subsubsection
-Predictivilidad
-\end_layout
-
-\begin_layout Subsubsection
-Recuperacion
-\end_layout
-
-\begin_layout Subsubsection
-Responsiveness
-\end_layout
-
-\begin_layout Subsubsection
-Seguridad
-\end_layout
-
-\begin_layout Subsubsection
-Simplicidad
-\end_layout
-
-\begin_layout Subsubsection
-Transparencia
-\end_layout
-
-\begin_layout Subsubsection
-Visibilidad
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename imagenes/igu_tesis.png
-	width 70page%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:igu_diseño"
-
-\end_inset
-
-Diseño de la interfaz gráfica
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
 Elección de sistema de renderización.
 \end_layout
 
 \begin_layout Standard
 La elección debe realizarse tomando en cuenta ventajas y desventajas de
- las tecnologías disponibles las cuales se muestran en la tabla 
+ las tecnologías disponibles, las cuales se muestran en la tabla 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Comparativa-entre-Direct3DJava3dOpenGl"
@@ -2939,7 +3575,7 @@ reference "fig:Aplicación-OpenGL"
 
  se muestra una aplicación utilizando OpenGL y aceleración gráfica por hardware;
  se puede observar que las llamadas a la interfaz de aplicación OpenGL pasan
- directamente al hardware de aceleración y no pasan a tavés de la interfaz
+ directamente al hardware de aceleración y no pasan a través de la interfaz
  de dispositivo de gráfico (GDI) que sería el caso si se tratara de simulación
  por software.
 \end_layout
@@ -2951,8 +3587,8 @@ GLUT
 \begin_layout Standard
 Es un conjunto de herramientas OpenGL, un sistema de ventanas independientes
  para escribir programas OpenGL en lenguajes C y FORTRAN.
- Implementa un simple interfaz de programación para aplicaciones (API) para
- OpenGL.
+ Implementa una simple interfaz de programación para aplicaciones (API)
+ para OpenGL.
  Por su parte GLUT hace considerablemente fácil la programación OpenGL.
 \end_layout
 
@@ -2970,13 +3606,13 @@ JOGL (JSR-231)
 Jogl es un enlace del lenguaje de programación Java para la API de OpenGL.
  Soporta integración con los estándares de Java AWT y Swing.
  Jogl provee aceso a las más recientes rutinas de OpenGL (OpenGL 2.0 con
- extenciones de fabricante) asi como una pataforma independiente para accesar
+ extensiones de fabricante) asi como una plataforma independiente para accesar
  a hardware acelerador.
  
 \end_layout
 
 \begin_layout Standard
-Jogl tambien prvee algunas de las mas populares características introducidas
+Jogl tambien prvee algunas de las mas populares características, introducidas
  por otros enlaces existentes para OpenGL como son GL4Java, LWJGL, GLUT
  entre otros.
 \end_layout
@@ -2999,7 +3635,7 @@ name "cha:5_InterfazModelado"
 
 \begin_layout Standard
 La interfaz entre el software modelador y el robot es una parte muy importante,
- ya que si esta llega a colapsar o mal-funcionar se verá reflejado en un
+ ya que si ésta llega a colapsar o mal-funcionar, se verá reflejado en un
  trabajo final no satisfactorio.
 \end_layout
 
@@ -3022,8 +3658,16 @@ reference "fig:RobotScara"
 \end_layout
 
 \begin_layout Standard
-La estructura física fue realizada por una empresa dedicada a la robótica
- denominada Cervantes Co., ubicada en Paracho Michoacán.
+La estructura física fue realizada por una empresa dedicada a la robótica,
+ denominada 
+\begin_inset Quotes eld
+\end_inset
+
+Cervantes Co.
+\begin_inset Quotes erd
+\end_inset
+
+, ubicada en Paracho Michoacán.
 \end_layout
 
 \begin_layout Standard
@@ -3042,7 +3686,7 @@ key "tesisOmar"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -3097,7 +3741,7 @@ Altura 60 cm.
 \end_layout
 
 \begin_layout Itemize
-Alcance máximo de su brazo 50 cm.
+Alcance máximo de su brazo, 50 cm.
 \end_layout
 
 \begin_layout Itemize
@@ -3113,11 +3757,59 @@ Arquitectura
 \end_layout
 
 \begin_layout Standard
-La arquitectura de un robot es la disposición de los elementos que conforman
- o integran
-\begin_inset CommandInset citation
-LatexCommand cite
-key "tesisCarlosE"
+Como se mencionó en la seccion++ la arquitectura de un robot es:
+\end_layout
+
+\begin_layout Subsubsection
+Estructura mecánica.
+\end_layout
+
+\begin_layout Subsubsection
+Sistema sensorial.
+\end_layout
+
+\begin_layout Standard
+El robot cuenta con sensores:
+\end_layout
+
+\begin_layout Itemize
+Sensores Odométricos.
+ Estos sensores mide la posición o rango de rotación de un eje.
+\end_layout
+
+\begin_layout Itemize
+Sensores de límite o de posición límite de cada articulación.
+ Es un dispositivo muy simple que provee una gran fiabilidad para conocer
+ con certeza las posiciones de inicio y final de cada uno de los ejes del
+ robot SCARA.
+\end_layout
+
+\begin_layout Standard
+Además los convertidores analógico-digitales del microcontrolador, se usan
+ como sensores de voltaje para medir indirectamente la corriente que circula
+ por los motores a través de los controladores.
+\end_layout
+
+\begin_layout Subsubsection
+Elementos terminales.
+\end_layout
+
+\begin_layout Standard
+El robot cuenta con dos motores de pasos, uno para el hombro y otro para
+ el codo, éstos permiten un movimiento sobre los ejes X y Y; y dos motores
+ de CD con escobillas para el eje Theta y Theta-Z.
+\end_layout
+
+\begin_layout Subsubsection
+Sistema de control.
+\end_layout
+
+\begin_layout Standard
+El robot utiliza un sólo módulo Adapt9S12DP256 con el microcontrolador 9S12DP256
+C de Motorola [Arts04], el cual se muestra en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modulo-Adapt9S12DP256"
 
 \end_inset
 
@@ -3125,84 +3817,17 @@ key "tesisCarlosE"
 \end_layout
 
 \begin_layout Standard
-Conexion:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
+\begin_inset Float figure
+placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
 \align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
-<features>
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Puerto
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-RS232
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Velocidad
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-125000 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Paridad
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Bit
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+\begin_inset Graphics
+	filename imagenes/tAdap.png
 
 \end_inset
 
@@ -3213,7 +3838,20 @@ Bit
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Conexión PC-Robot
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Modulo-Adapt9S12DP256"
+
+\end_inset
+
+Módulo Adapt9S12DP256 del microcontrolador 68hcs12
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tesisOmar"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3228,6 +3866,10 @@ Conexión PC-Robot
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+El lenguaje soportado se lista en el apendice A.
 \end_layout
 
 \begin_layout Subsection
@@ -3239,7 +3881,7 @@ Conversión de modelado a acciones SCARA
 \end_layout
 
 \begin_layout Standard
-Debido a que en el modelo solo contamos con puntos definidos dentro del
+Debido a que en el modelo sólo contamos con puntos definidos dentro del
  sistema de coordenadas cartesianas de tres dimensiones es necesario calcular
  el conjunto de ángulos de las articulaciones para logar el resultado deseado.
  Esto lo solucionaremos usando cinemática inversa.
@@ -3251,7 +3893,7 @@ Cinemática inversa
 
 \begin_layout Standard
 En la cinemática inversa se conoce la posición y la orientación del elemento
- terminal referido a la base y se desea determinar los angulos articulares
+ terminal, referido a la base y se desea determinar los ángulos articulares
  para alcanzar dicha posición.
 \end_layout
 
@@ -3287,11 +3929,8 @@ Iterativas
 Debido a su naturaleza iterativa, las soluciones numéricas son generalmente
  mucho más lentas que las solución de forma cerrada, en algunos casos las
  soluciones numéricas son tan lentas que pueden ocasionar problemas de cinemátic
-a es por esto que solo nos enfocaremos en las soluciones analíticas.
-\end_layout
-
-\begin_layout Subsubsection
-Solución Algebraica
+a, es por esto que sólo nos enfocaremos en las soluciones analíticas, en
+ particular en la solución geométrica.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3331,7 +3970,7 @@ cos\left(\Theta\right)=cos\left(-\Theta\right)\end{equation}
 \end_layout
 
 \begin_layout Standard
-Primero se sabe que la orientación del ultimo eslabón es la suma de las
+Primero se sabe que la orientación del último eslabón es la suma de las
  variables articulares, como se muestra en la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3380,7 +4019,7 @@ name "fig:Orientación-del-ultimo"
 
 \end_inset
 
-Orientación del ultimo eslabon
+Orientación del último eslabón
 \end_layout
 
 \end_inset
@@ -3586,6 +4225,239 @@ Finalmente se calcula
 Conectividad PC-Robot
 \end_layout
 
+\begin_layout Standard
+Debido a que el robot SCARA usa conexión mediante el puerto serial (RS232)
+ primero se realizó una interfaz capaz de comunicar la aplicación desarrollada
+ en lenguaje Java, con el sistema de control del robot SCARA.
+\end_layout
+
+\begin_layout Standard
+Existen varias bibliotecas para la comunicación serial compatibles con lenguaje
+ Java, algunas bibliotecas aún están en desarrollo, otras sólo son para
+ un determinado sistema operativo.
+ En la tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Bibliotecas-para-comuniación"
+
+\end_inset
+
+ se muestran algunas de las bibliotecas más usadas para la conexión mediante
+ puerto serial.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Biblioteca
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multiplataforma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tipo de licencia
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+javaconn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GPL
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rxtx
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GPL
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Bibliotecas para comuniación RS232
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Bibliotecas-para-comuniación"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se utilizó la biblioteca RXTX para realizar la conexión con el robot.
+\end_layout
+
 \begin_layout Chapter
 Pruebas
 \begin_inset CommandInset label
@@ -3654,6 +4526,41 @@ Conclusiones
 
 \begin_layout Section
 Trabajos futuros 
+\end_layout
+
+\begin_layout Chapter*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Comandos soportados por el robot SCARA}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Comandos soportados por el robot SCARA
+\end_layout
+
+\begin_layout Standard
+A continuación se listan los comandos soportados por el robot SCARA
+\end_layout
+
+\begin_layout Subsubsection
+Comando para mover los motores del robot
 \end_layout
 
 \begin_layout Chapter*
@@ -3912,6 +4819,44 @@ Delrieux, C.
  Introducción a la Computación Gráfica.
  Dpto Ingeniería Eléctrica, Universidad nacional del sur.
  2000.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "euclides09"
+key "euclidesweb"
+
+\end_inset
+
+www.euclides.org: Los elementos
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "wikipedia09"
+key "wikipediarecta"
+
+\end_inset
+
+www.wikipedia.org: Recta
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Jones98"
+key "Jones98"
+
+\end_inset
+
+Jones, J.
+ L., Flynn, A.
+ M., y Seiger, B.
+ A.
+ Mobile Robots.
+ Cambridge University Press, 1998.
 \end_layout
 
 \end_body
