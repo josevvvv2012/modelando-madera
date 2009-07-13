@@ -22,13 +22,13 @@ public class Elipse extends Primitiva{
 	    double inc_ang, ang;
 
 	    inc_ang = 360.0 / n * Math.PI / 180.0;
-	    System.out.println("\n\n\nInciando");
+//	    System.out.println("\n\n\nInciando");
 	    for(i=0; i < n; i++) {
 	        ang = inc_ang * i;
 	        grafPto(new Punto( xc + radio_a * Math.cos(ang), yc + radio_b * Math.sin(ang), this.z ));
-	        System.out.println(""+(xc + radio_a * Math.cos(ang))+","+ (yc + radio_b * Math.sin(ang))+","+ this.z);
+//	        System.out.println(""+(xc + radio_a * Math.cos(ang))+","+ (yc + radio_b * Math.sin(ang))+","+ this.z);
 	    }
-	    System.out.println("Fin\n\n\n");
+//	    System.out.println("Fin\n\n\n");
 	}
 	
 
