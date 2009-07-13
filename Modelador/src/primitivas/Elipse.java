@@ -13,7 +13,7 @@ public class Elipse extends Primitiva{
 		this.plot = plot;
 		this.z = orig.getZ();
 		
-		elipse(rx, ry, orig.getX(), orig.getY(), 10);		
+		elipse(rx, ry, orig.getX(), orig.getY(), 100);		
 	}
 	
 	void elipse(double radio_a, double radio_b, double xc, double yc, int n)
