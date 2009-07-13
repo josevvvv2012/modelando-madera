@@ -145,9 +145,8 @@ Introducción
 
 \begin_layout Standard
 En la actualidad las pequeñas y medianas empresas de la región maderera
- del estado de Michoacán, más preciso en la localidad de Paracho, requieren
- tener la totalidad de sus procesos automatizados para poder competir en
- el mercado tan saturado actualmente.
+ del estado de Michoacán requieren tener sus procesos automatizados para
+ poder competir en el mercado tan saturado actualmente.
  Desafortunadamente la mayoría de estas empresas no cuentan con todos los
  procesos automatizados.
 \end_layout
@@ -167,45 +166,35 @@ Procesos industriales
 
 \begin_layout Standard
 Los procesos administrativos abarcan todo proceso relacionado con documentación
- de la empresa, algunos ejemplos de estos procesos son los siguientes departamen
-tos: recursos humanos, recursos financieros, ventas, compras, entre otros.
- Estos procesos o departamentos estan parcial o totalmente cubiertos por
- aplicaciones ofrecidas por el gobierno de forma gratuita o haciendo uso
- de aplicaciones de terceros, algunas de las aplicaciones utilizadas son:
-\end_layout
-
-\begin_layout Itemize
-ContPAQ
-\end_layout
-
-\begin_layout Itemize
-Compiere
-\end_layout
-
-\begin_layout Itemize
-NomiPAQ
-\end_layout
-
-\begin_layout Itemize
-SUA
+ de la empresa.
+ Algunos ejemplos de estos procesos se dan en los siguientes departamentos:
+ recursos humanos, recursos financieros, ventas, compras, entre otros.
+ Estos procesos estan parcial o totalmente automatizados por aplicaciones
+ de computo ofrecidas por el gobierno de forma gratuita o haciendo uso de
+ aplicaciones de terceros
 \end_layout
 
 \begin_layout Standard
-Por otra parte, los procesos industriales son todos los procesos en los
- que se manipula una materia prima y es transformada en un producto final,
- mediante el uso de maquinaria industrial, es en estos procesos donde se
- centra el trabajo de la presente tesis.
+Algunas de las aplicaciones mas comunes utilizadas en esta áre administrativa
+ son: ContPAQ, Compiere, NomiPAQ, SUA entre otras.
+\end_layout
+
+\begin_layout Standard
+Por otra parte, los procesos industriales normalmente manipulan una materia
+ prima y la transforman en un producto final, mediante el uso de maquinaria
+ industrial.
+ Precisamente en estos procesos se centra el trabajo de la presente tesis.
 \end_layout
 
 \begin_layout Standard
 Teniendo las empresas la necesidad de contar con maquinaria industrial de
  precisión se ven en la necesidad de adquirir esta maquinaria en el extrajero,
- debido a que en el país no existen empresas que presten estos servicios.
+ debido a que en el país no existen empresas que ofrezcan estos productos.
 \end_layout
 
 \begin_layout Standard
-Al usar maquinaria extranjera es evidente que los costos de compra, instalación,
- mantenimiento y programación son elevados, en la tabla 
+Al usar maquinaria de importación es evidente que los costos de compra,
+ instalación y mantenimiento son elevados, en la tabla 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Costos-de-adquisición"
@@ -469,25 +458,21 @@ Motivación
 \end_layout
 
 \begin_layout Standard
-Dos han sido las razones que motivaron la elaboración de la presente tesis:
+Las razones principales que motivaron la elaboración de la presente tesis
+ son las siguientes:
 \end_layout
 
-\begin_layout Standard
-En la actualidad la mayoría de las pequeñas empresas de las regiónes de
+\begin_layout Itemize
+En la actualidad la mayoría de las pequeñas empresas de las regiones de
  Michoacán, en particular las de Paracho, no cuentan con procesos automatizados
  en la manufactura de sus materias primas.
 \end_layout
 
-\begin_layout Standard
-Por otra parte, existen personas que tienen diseños muy innovadores; pero
- por falta de recursos económicos para adquirir una máquina industrial que
- lo realize, así como una aplicación para su diseño.
-\end_layout
-
-\begin_layout Standard
-La segunda razón es la que más me ha impulsado a trabajar en este campo,
- toda vez que nos permite aplicar los conocimientos adquiridos en la Maestría
- y la oportunidad de aportar la solución tecnológica a estos casos.
+\begin_layout Itemize
+Por otra parte, existen personas que tienen diseños muy innovadores de productos
+; pero por falta de recursos económicos para adquirir un robot que lo realize,
+ así como un programa ed cómputo para su realización se han quedado solo
+ en ideas que no llegan a materializarse.
 \end_layout
 
 \begin_layout Section
@@ -552,7 +537,7 @@ name "fig:DiagramaObjetivos"
 
 \end_inset
 
-Diagrama representativo del objetivo de la tesis
+Diagrama representativo de sistema de software desarrollado en esta tesis
 \end_layout
 
 \end_inset
@@ -573,10 +558,11 @@ reference "fig:DiagramaObjetivos"
 
 \end_inset
 
- representa gráficamente el objetivo, donde se puede apreciar que el presente
- proyecto de tesis, tiene como entrada el diseño por parte de una persona
- el cual es interpretado para su futura producción en un robot SCARA.
- 
+ representa gráficamente la ubicación del software de desarrollado; etiquetado
+ como aplicacion modeladora.
+ Donde se puede apreciar que el presente trabajo de tesis, tiene como entrada
+ el diseño por parte de una persona el cual es interpretado para su futura
+ producción en un robot SCARA.
 \end_layout
 
 \begin_layout Subsection*
@@ -584,13 +570,11 @@ Objetivos específicos
 \end_layout
 
 \begin_layout Itemize
-Desarrollar una aplicación para diseñar objetos de madera.
+Desarrollar una aplicación de software para modelado de objetos 3D.
 \end_layout
 
 \begin_layout Itemize
-Desarrollar una aplicación para transferir el diseño elaborado hacía el
- robot SCARA.
- 
+Desarrollar una interface de comunicación con el robot SCARA.
 \end_layout
 
 \begin_layout Section
@@ -602,7 +586,7 @@ Los alcances previstos son:
 \end_layout
 
 \begin_layout Itemize
-Implementación de algoritmos de gráficación sobre la aplicación de diseño:
+Implementación de algoritmos de gráficación en 3D.
 \end_layout
 
 \begin_deeper
@@ -611,7 +595,7 @@ Puntos
 \end_layout
 
 \begin_layout Itemize
-Lineas
+Líneas
 \end_layout
 
 \begin_layout Itemize
@@ -628,7 +612,7 @@ Curvas de Bezier
 
 \end_deeper
 \begin_layout Itemize
-Desarrollo de una aplicación multiplataforma(que pueda ejecutarse en la
+Desarrollo de una aplicación multiplataforma (que pueda ejecutarse en la
  mayoría de los sistemas operativos actuales) capaz de modelar objetos de
  madera para su producción utilizando un robot SCARA.
 \end_layout
@@ -650,13 +634,14 @@ Para cumplir los objetivos mencionados anteriormente, se propone desarrollar
 
 \begin_layout Standard
 Para lograr una aplicación aceptable se desarrollarán prototipos de la aplicació
-n hasta lograr una estabilidad considerable, la cual tenga una velocidad
- aceptable a la hora de generar los modelos en diferentes vistas.
+n hasta lograr una versión que tenga una velocidad aceptable a la hora de
+ generar los modelos en diferentes vistas, así mismo que se genere con rapidez
+ aceptable los movimientos del robot.
 \end_layout
 
 \begin_layout Standard
 Con el fin de mejorar el diseño se evaluará la aplicación continuamente
- en la empresa de señor Rafael Cardiel, domiciliado en esta población.
+ en la empresa de la familia Cardiel.
 \end_layout
 
 \begin_layout Section
@@ -669,18 +654,18 @@ A continuación se describen brevemente las contribuciones de este trabajo:
 
 \begin_layout Itemize
 Desarrollo de una aplicación multiplataforma para la construcción de modelos
- físicos de madera.
+ 3D en madera.
  
 \end_layout
 
 \begin_layout Itemize
-Aplicación multiplataforma para la conexion entre el modelador y el robot
- SCARA.
+Aplicación multiplataforma para la conexión entre la aplicacion de software
+ 3D y el robot SCARA.
  
 \end_layout
 
 \begin_layout Itemize
-Código fuente, éste se distribuirá bajo la 
+Aplicación abierta, el código fuente se distribuirá bajo la 
 \begin_inset Quotes eld
 \end_inset
 
@@ -720,7 +705,7 @@ reference "cha:3_Modelado3D"
 
 \end_inset
 
- aborda las partes del software modelador, tanto los algoritmos de graficación
+ aborda las partes del software 3D, tanto los algoritmos de graficación
  como la forma de interacción con el usuario final.
  
 \end_layout
@@ -759,9 +744,8 @@ reference "cha:6_Pruebas"
 
 \end_inset
 
- se mostrarán resultados de pruebas realizadas en una primera instancia
- al software modelador, seguido de los resultados de la conectividad entre
- el software y el robot.
+ se mostrarán resultados de pruebas realizadas al software 3D, seguido de
+ los resultados de las pruebas de conectividad entre el software y el robot.
 \end_layout
 
 \begin_layout Standard
@@ -836,12 +820,13 @@ robot
 \end_layout
 
 \begin_layout Standard
-Sin embargo el término robot con el paso de los años ha cambiado, a continuación
- se listan algunas de las definiciones más aceptadas:
+Sin embargo el término robot con el paso de los años ha cambiado su significado,
+ a continuación se listan algunas de las definiciones más aceptadas:
 \end_layout
 
 \begin_layout Itemize
-La ISO 8373 lo define como 
+La Organización Internacional de Estandares en su norma 8373 lo define como
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -876,7 +861,7 @@ key "IRA"
 \begin_layout Itemize
 Mecanismo formado generalmente por elementos en serie, articulados entre
  sí, destinado al agarre y desplazamiento de objetos.
- Es multifuncionaly puede ser gobernado directamente por un operador humano
+ Es multifuncional y puede ser gobernado directamente por un operador humano
  o dispositivo lógico
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -907,7 +892,8 @@ Móviles.
 \end_layout
 
 \begin_layout Standard
-La gran mayoría de los robots usados en la industria son de tipo manipuladores.
+La gran mayoría de los robots usados en la industria son de tipo manipuladores
+ y en adelante solamente nos referiremos a éstos.
 \end_layout
 
 \begin_layout Subsection
@@ -916,10 +902,7 @@ Estructura de los robots manipuladores
 
 \begin_layout Standard
 Básicamente la estructura de un robot manipulador es la de un brazo articulado.
-\end_layout
-
-\begin_layout Standard
-Se describe la estructura de un robot manipulador:
+ Un robot manipulador consta de las siguientes partes:
 \end_layout
 
 \begin_layout Itemize
@@ -936,6 +919,10 @@ Elementos terminales.
 
 \begin_layout Itemize
 Sistema de control.
+\end_layout
+
+\begin_layout Standard
+Las cuales se describen brevemente a continuación.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1042,7 +1029,7 @@ Sistema sensorial.
 
 \begin_layout Standard
 Los sensores son transductores que convierten algún fenómeno físico en señales
- eléctricas que el microcontrolador puede leer
+ eléctricas que el microcontrolador puede leer 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Jones98"
@@ -1051,8 +1038,7 @@ key "Jones98"
 
 .
  La principal función es trasladar la información del mundo real al mundo
- abstracto de la unidad lógica de procesamiento, para que ésta pueda responder
- de forma correcta.
+ abstracto de la computadora, para que ésta pueda responder de forma correcta.
  
 \end_layout
 
@@ -1061,21 +1047,27 @@ Algunos de los tipos de sensores son:
 \end_layout
 
 \begin_layout Itemize
-Proporcionan datos de movimiento
+De medición de desplazamiento.
 \end_layout
 
 \begin_layout Itemize
-Cambios inerciales
+De velocidad y aceleración.
 \end_layout
 
 \begin_layout Itemize
-Estructura externa del ambiente
+Detectores de estructuras del ambiente del robot.
 \end_layout
 
 \begin_layout Itemize
+De contacto.
+\end_layout
+
+\begin_layout Standard
 Los interruptores de contacto son dispositivos simples que reportan un valor
- binario: cerrado o abierto.
- 
+ binario: cerrado o abierto, dependiendo de la ubicación de un elemento
+ mecánico.
+ En particular, el robot SCARA utilia estos sensores para ubicar los límites
+ de trabajo de cada articulación.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1084,7 +1076,7 @@ Elementos terminales.
 
 \begin_layout Standard
 Existen muchos tipos de motores, pero sólo unos cuantos son útiles en robótica,
- y dentro de éstos se encuentran los motores de corriente directa
+ y dentro de éstos se encuentran los motores de corriente directa 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Jones98"
@@ -1094,7 +1086,7 @@ key "Jones98"
 .
  Los motores o servomotores de CD son preferidos debido a su relativa facilidad
  para ser controlados, comparados con otros tipos de motores de CD y con
- los motores de CA
+ los motores de CA 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "tesisCarlosE"
@@ -1116,7 +1108,7 @@ El sistema de control en un robot es la parte más importante, ya que es
 \end_layout
 
 \begin_layout Subsection
-Clasificación
+Clasificación de los robots
 \end_layout
 
 \begin_layout Standard
@@ -1139,22 +1131,22 @@ reference "fig:Categorias-robot"
 
 \begin_layout Itemize
 Cilíndrico.
- Cuenta con dos articulaciones de rotación y una tipo planar.
+ Cuenta con dos articulaciones de rotación y una tipo prismática.
 \end_layout
 
 \begin_layout Itemize
 Esférico.
- Cuenta con una articulación de rotación y dos de tipo planar.
+ Cuenta con una articulación de rotación y dos de tipo prismática.
 \end_layout
 
 \begin_layout Itemize
 S.C.A.R.A.
- Cuenta con dos articulaciones de rotación y una tipo planar.
+ Cuenta con dos articulaciones de rotación y una tipo prismática.
 \end_layout
 
 \begin_layout Itemize
 Cartesiano.
- Cuenta con tres articulaciones de tipo planar.
+ Cuenta con tres articulaciones de tipo prismática.
 \end_layout
 
 \begin_layout Itemize
@@ -1275,9 +1267,16 @@ Software CAD
 \end_layout
 
 \begin_layout Standard
-El software CAD(Diseño Asistido por Computadora, del inglés Computer Aided
- Design) son sitemas informáticos para realizar tareas de creación, modificación
-, análisis y optimización de un diseño.
+El software CAD (Diseño Asistido por Computadora, del inglés 
+\begin_inset Quotes eld
+\end_inset
+
+Computer Aided Design
+\begin_inset Quotes erd
+\end_inset
+
+) son sitemas informáticos para realizar tareas de creación, modificación,
+ análisis y optimización de un diseño.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1285,11 +1284,17 @@ Software CAM
 \end_layout
 
 \begin_layout Standard
-El software CAM(Manufactura Asistida por Computadora, del inglés Computer
- Aided Manufacturing) son sistemas informáticos para la planificación, gestión
- y control de las operaciones de una planta de fabricación, mediante una
- interfaz directa o indirecta entre el sistema informático y los recursos
- de producción.
+El software CAM (Manufactura Asistida por Computadora, del inglés 
+\begin_inset Quotes eld
+\end_inset
+
+Computer Aided Manufacturing
+\begin_inset Quotes erd
+\end_inset
+
+) son sistemas informáticos para la planificación, gestión y control de
+ las operaciones de una planta de fabricación, mediante una interfaz directa
+ o indirecta entre el sistema informático y los recursos de producción.
  
 \end_layout
 
@@ -1317,8 +1322,17 @@ Software CNC
 \end_layout
 
 \begin_layout Standard
-El software CNC generalmente lee código G y realiza las operaciones de comunicac
-ión con el robot necesarias para convertirlas en el movimiento deseado.
+El software CNC (Control Numérico por Computadora, del inglés 
+\begin_inset Quotes eld
+\end_inset
+
+Computer Numerical Control
+\begin_inset Quotes erd
+\end_inset
+
+) generalmente lee archivos generados en las aplicaciones CAM y realiza
+ las operaciones de comunicación con el robot necesarias para convertirlas
+ en el movimiento deseado.
  
 \end_layout
 
@@ -1329,27 +1343,21 @@ Revisión del Estado del Arte
 \begin_layout Standard
 En la actualidad los robots son usados para realizar tareas peligrosas,
  difíciles, repetitivas y/o complicadas para los humanos.
- Esto usualmente toma la forma de un robot industrial usado en las líneas
- de producción.
+ En industrias grandes se utilizan frecuentemente robots industriales en
+ las líneas de producción.
  Algunas aplicaciones incluyen la limpieza de residuos tóxicos, minería
  y localización de minas terrestres.
  
 \end_layout
 
 \begin_layout Standard
-En la actualidad los robots son usados para realizar una gran cantidad de
- tareas entre las cuales se encuentran las de realizar actividades peligrosas,
- difíciles, repetitivas y/o complicadas para los humanos.
-\end_layout
-
-\begin_layout Standard
-Sin embargo la manufactura continúa siendo el principal mercado donde los
+Sin embargo, la manufactura continúa siendo el principal mercado donde los
  robots son utilizados, en particular los robots articulados son los más
  usados comúnmente.
  Las aplicaciones incluyen soldado, pintado y carga de maquinaria.
  En este ramo la industria automotriz ha tomado gran ventaja de esta nueva
  tecnología donde los robots han sido programados para reemplazar el trabajo
- de los humanos en muchas tareas repetitivas.
+ de los humanos en muchas tareas repetitivas y peligrosas.
 \end_layout
 
 \begin_layout Subsection
@@ -1357,8 +1365,8 @@ Programación de tareas
 \end_layout
 
 \begin_layout Standard
-Un lenguaje de programación de robots sirve como interfaz entre el usuario
- humano y el robot industrial.
+Para utilizar un robot se requiere, como ya se describió una aplicación
+ CAD-CAM-CNC que sirve de interfaz entre el usuario humano y el robot industrial.
  Los manipuladores de robots se diferencian a sí mismos de la automatización
  fija por ser 
 \begin_inset Quotes eld
@@ -1368,20 +1376,23 @@ flexibles
 \begin_inset Quotes erd
 \end_inset
 
-, es decir que son programables.
+, es decir, son programables.
  No sólo son programables los movimientos de los manipuladores sino que,
  a través del uso de sensores y comunicación con otros tipos de automatización,
- los manipuladores pueden adaptarse a las variaciones a medida que realizan
+ los manipuladores pueden adaptarse a las variaciones requeridas para realizar
  su tarea.
 \end_layout
 
 \begin_layout Standard
-Generalmente la programación de los robots se realiza fuera de linea, a
- continuación se listan paquetes existentes para programar:
+Generalmente la programación de los robots se realiza fuera de línea y no
+ en tiempo real.
+ A continuación se listan paquetes de sofware existentes para programar
+ los robots:
 \end_layout
 
 \begin_layout Itemize
-MS Robotic Studio ( ~ $ 4 000.00 M.N)
+Microsoft Robotic Studio con un costo aproximado de $ 4 000.00 M.N.
+ consta de:
 \end_layout
 
 \begin_deeper
@@ -1405,11 +1416,13 @@ Se permiten varios lenguajes como: Microsoft Visual Studio Express languages
 \begin_layout Itemize
 Robots soportados: CoroWare's CoroBot ($3 200), Lego Mindstorms NXT, iRobot
  Create y Robosoft's robots (38 a 65 K€).
+ Estos robots son de entretenimiento o de propósito educativo.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-KUKA.OfficeLite (> $55 000.00 USD) 
+KUKA.OfficeLite con un costo superior a los $5 500 000.00 M.N.
+ consta de: 
 \end_layout
 
 \begin_deeper
@@ -1447,12 +1460,15 @@ Las entradas originales se pueden simular.
 \end_layout
 
 \begin_layout Itemize
-KUKA.OfficeLite no se puede utilizar para controlar un robot.
+KUKA.OfficeLite no se puede utilizar para controlar un robot, solo para desarroll
+ar aplicaciones.
+ De la versión profesional el autor no encontró más información.
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-Algunos software que pueden ser aplicados a la programación de tareas son:
+Algunos programas de software que pueden ser aplicados a la programación
+ de tareas de robots son:
 \end_layout
 
 \begin_layout Standard
@@ -1516,8 +1532,8 @@ Desarrollo tecnológico
 \end_layout
 
 \begin_layout Standard
-Desafortunadamente, el desarrollo actual en el país está enfocado generalmente
- a robots móviles dejando a los manipuladores de lado.
+La tecnología robótica propia en México no se ha desarrollado.
+ Existen casos aislados de avance en manipuladores y en móviles.
 \end_layout
 
 \begin_layout Standard
@@ -1526,6 +1542,12 @@ Instituciones de nivel superior como el Tecnológico de Monterrey [Dirección
  la planeación de movimientos para robots, así como el Instituto Tecnológico
  Autónomo de México[Laboratorio de robótica, ITAM] se enfocan al área de
  robots móviles pequeños.
+\end_layout
+
+\begin_layout Standard
+En el Departamento de Estudios de Posgrados de la Factuldad de Ingeniería
+ Electrica de la Universidad Michoacana de San Nicolas de Hidalgo se han
+ tenido avances significativos tanto en robots móviles así como en manipuladores.
 \end_layout
 
 \begin_layout Chapter
@@ -1562,10 +1584,10 @@ Sistemas de coordenadas
 
 \begin_layout Standard
 Un sistema de coordenadas es un conjunto de valores que permiten definir
- exactamente la posición de un punto cualesquiera en el espacio, debido
- a que se requiere poder realizar un modelo de un objeto real, se requieren
- el sistema de coordenadas de tres dimensiones como se muestra en la figura
- 
+ exactamente la posición de un punto cualesquiera en el espacio.
+ Debido a que se requiere poder realizar un modelo de un objeto real, se
+ requieren el sistema de coordenadas de tres dimensiones como se muestra
+ en la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Sistema-de-coordenadas3d"
@@ -1616,21 +1638,17 @@ Sistema de coordenadas de 3 dimensiones
 
 \end_layout
 
-\begin_layout Standard
-Sin embargo, la aplicación desarrollada utiliza sólo dos dimensiones al
- mismo tiempo para el desarrollo de modelos.
-\end_layout
-
 \begin_layout Section
 Primitivas de graficación
 \end_layout
 
 \begin_layout Standard
-Las primitivas gráficas que describen la geometría de los objetos se denominan
- normalmente primitivas geométricas.
+Los elementos que describen la geometría de los objetos se denominan normalmente
+ primitivas geométricas.
  Entre las primitivas geométricas más simples son las que indican posiciones
  de puntos y segmentos de líneas rectas.
- Adicionalmente se pueden incluir circulos, elipses y curvas tipo bezier.
+ Adicionalmente se pueden incluir círculos, elipses y curvas tipo bezier,
+ las cuales se abordan a continuación.
 \end_layout
 
 \begin_layout Subsection
@@ -1639,14 +1657,14 @@ Punto
 
 \begin_layout Standard
 El punto es el objeto más simple que puede representarse, es un elemento
- geométrico adimensional que describe una posición en el espacio.
+ geométrico que describe una ubicación o posición en el espacio.
  Un punto puede determinarse en el sistema de coordenadas cartesianas mediante
  las distancias a los ejes principales, que se indican con dos variables
  (x, y) en el plano y con tres variables (x, y, z) en el espacio tridimensional.
 \end_layout
 
 \begin_layout Standard
-Para fines de programación se definió un punto en el espacio con el predicado
+Para fines de programación se definió un punto en el espacio con el primitiva
  
 \begin_inset Formula $Punto\left(x,\, y,\, z\right)$
 \end_inset
@@ -1667,14 +1685,14 @@ Los elementos
 \begin_inset Quotes erd
 \end_inset
 
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "euclidesweb"
 
 \end_inset
 
- ,establece varias definiciones para línea:
+,establece varias definiciones para línea:
 \end_layout
 
 \begin_layout Itemize
@@ -1682,7 +1700,7 @@ Los extremos de una linea son puntos.
 \end_layout
 
 \begin_layout Itemize
-Una linea es una longitud sin anchura.
+Una línea es una longitud sin anchura.
 \end_layout
 
 \begin_layout Standard
@@ -1695,7 +1713,7 @@ key "wikipediarecta"
 \end_inset
 
 .
- Su ecuación general es: 
+ La ecuación general es: 
 \end_layout
 
 \begin_layout Standard
@@ -2620,11 +2638,11 @@ Diseño de la interfaz de usuario
 \end_layout
 
 \begin_layout Standard
-La interfaz gráfica de usuario (IGU) es la parte más importante de los sistemas
- computarizados debido aque es con la que el usuario interactúa de forma
- directa.
- Las metas de una interfaz de ususario son: hacer que el trabajo con la
- computadora sea fácil, productivo y agradable
+La Interfaz Gráfica de Usuario (IGU) es la parte más importante de los sistemas
+ computarizados debido a que el usuario interactúa de forma directa con
+ ella.
+ Las metas de una IGU son logar que el trabajo con la computadora sea fácil,
+ productivo y agradable
 \begin_inset CommandInset citation
 LatexCommand cite
 key "disenoInterface"
@@ -2635,7 +2653,7 @@ key "disenoInterface"
 \end_layout
 
 \begin_layout Standard
-La interfaz de usaurio se conforma de dos componentes: entrada y salida.
+La IGU se conforma de dos componentes: entrada y salida.
  La entrada es la forma en que los usuarios comunican sus necesidades a
  la computadora.
  La salida es el medio por el cual la computadora muestra los resultados
@@ -2644,8 +2662,8 @@ La interfaz de usaurio se conforma de dos componentes: entrada y salida.
 
 \begin_layout Standard
 Propiamente, una interfaz de usuario provee la mezcla de: mecanismo de entrada
- y salida que de manera eficiente satisfagan las necesidades del usaurio,
- capabilities, y limitaciones en la forma más eficiente.
+ y salida que de manera eficiente satisfagan las necesidades del usuario,
+ capacidades, y limitaciones en la forma más eficiente.
 \end_layout
 
 \begin_layout Subsection
@@ -2653,8 +2671,15 @@ Principios generales de un buen diseño
 \end_layout
 
 \begin_layout Standard
-Estos principios son características generales para la interfaz en todos
- sus aspectos:
+Enseguida se revizan algunos principios generales para la IGU que deben
+ ser tomados en cuenta 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "disenoInterface"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Subsubsection
@@ -2662,28 +2687,17 @@ Accesibilidad
 \end_layout
 
 \begin_layout Standard
-El sistema deberá de ser usado por usuarios de diversas capacidades sin
- diseños especiales ni modificaciones.
+El sistema deberá poder ser usado por personas de diversas capacidades y
+ limitantes.
  Originalmente este término fue usado para referirse a sistemas accesibles
  a usuarios con discapacidades.
- Actualmente el término accesibilidad se refiere a cubrir la mayoría de
- los usuarios.
+ Actualmente el término accesibilidad se refiere a cubrir las necesidades
+ de la mayoría de los usuarios.
 \end_layout
 
 \begin_layout Standard
-Las principales caracterísitcas de un sistema accesible son:
-\end_layout
-
-\begin_layout Itemize
-Perceptibilidad
-\end_layout
-
-\begin_layout Itemize
-Operatibilidad
-\end_layout
-
-\begin_layout Itemize
-Simplicidad
+Las principales caracterísitcas de un sistema accesible son: Perceptibilidad,
+ Operatibilidad y Simplicidad.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2692,8 +2706,9 @@ Disponibilidad
 
 \begin_layout Standard
 Todos los aspectos de un sistema deberán de estar disponibles en cualquier
- momento en cualquier tarea.
- Solo deberán de no estar disponibles en aquellas tareas que así se definan.
+ momento.
+ Solo deberán de no estar disponibles en aquellas situaciones que no tenga
+ sentido.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2704,7 +2719,7 @@ Claridad
 La interfaz debe ser clara en apariencia visual y concepto.
  Los elementos visuales deben ser entendibles, relacionados con objetos
  del mundo real.
- Los coneptos y textos deben ser simples y no consfusos.
+ Los conceptos y textos deben ser simples y no confusos.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2712,24 +2727,21 @@ Consistencia
 \end_layout
 
 \begin_layout Standard
-Consistency is uniformity in appearance, placement, and behavior within
- the user interface.
- 
-\end_layout
-
-\begin_layout Standard
-Es importante ya que puede reducir la necesidad de adquirir nuevas habilidades
+Consistencia es la uniformidad en apariencia y localizacion de los objetos
+ dentro de la IGU.
+ Es importante ya que puede reducir la necesidad de adquirir nuevas habilidades
  para una actividad que puede ser similar a otra.
  Si un nuevo sistema impone necesidades de aprender nuevas habilidades en
  los usuarios, este puede convertirse en un sistema no productivo e innecesario.
 \end_layout
 
 \begin_layout Standard
-Un sistema deberá lucir y operar de forma normal(throughout), es decir:
+Un sistema deberá lucir y operar de forma normal, es decir:
 \end_layout
 
 \begin_layout Itemize
-Una función siempre deberá devolver el mismo resultado.
+Una acción realizada sobre los mismos datos siempre deberá devolver el mismo
+ resultado.
 \end_layout
 
 \begin_layout Itemize
@@ -2855,37 +2867,14 @@ Lenguaje de programación
 \begin_layout Standard
 En la actualidad existe una gran cantidad de lenguajes de programación,
  la mayoría de propósito general y el resto de propósito específico, a continuac
-ión se listan los más populares de ambas categorías:
-\end_layout
-
-\begin_layout Itemize
-C.
-\end_layout
-
-\begin_layout Itemize
-Basic.
-\end_layout
-
-\begin_layout Itemize
-Java.
-\end_layout
-
-\begin_layout Itemize
-.Net.
-\end_layout
-
-\begin_layout Itemize
-Perl.
-\end_layout
-
-\begin_layout Itemize
-PHP.
+ión se listan los más populares de ambas categorías: C, Basic, Java, MS
+ .Net, Perl y PHP.
 \end_layout
 
 \begin_layout Standard
-Estos podrían ser los más utilizados hoy por hoy, pero debido a la heterogeneida
-d de sistemas operativos y arquitecturas, no todos los lenguajes de programación
- son aplicables.
+Estos podrían ser los más utilizados en la actualidad, pero debido a la
+ heterogeneidad de sistemas operativos y arquitecturas, no todos los lenguajes
+ de programación son aplicables en todos los casos.
  
 \end_layout
 
@@ -2911,13 +2900,14 @@ o no libera una versión de su intérprete para un sistema operativo en una
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="4">
+<lyxtabular version="3" rows="7" columns="5">
 <features>
+<column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -2950,11 +2940,20 @@ Linux
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 MacOS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Portabilidad
 \end_layout
 
 \end_inset
@@ -2988,11 +2987,20 @@ X
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -3026,6 +3034,15 @@ X
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -3042,6 +3059,15 @@ X
 
 \begin_layout Plain Layout
 Java
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
 \end_layout
 
 \end_inset
@@ -3102,6 +3128,15 @@ X
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -3140,11 +3175,20 @@ X
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -3178,11 +3222,20 @@ X
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
 \end_layout
 
 \end_inset
@@ -3205,7 +3258,7 @@ name "tablaLenguajesProgramacion"
 
 \end_inset
 
-Lenguajes Sistemas Operativos
+Lenguajes de programación y Sistemas Operativos
 \end_layout
 
 \end_inset
@@ -3552,7 +3605,7 @@ name "fig:Aplicación-OpenGL"
 
 \end_inset
 
-Aplicación utilizando OpenG y aceleración gráfica por hardware
+Aplicación utilizando OpenGL y aceleración gráfica por hardware
 \end_layout
 
 \end_inset
@@ -3995,7 +4048,7 @@ reference "fig:Orientación-del-ultimo"
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -4088,7 +4141,7 @@ cos\left(\Theta_{2}\right)=\frac{x^{2}+y^{2}-l_{1}^{2}-l_{2}^{2}}{2l_{1}l_{2}}\e
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -4251,11 +4304,7 @@ reference "tab:Bibliotecas-para-comuniación"
 placement h
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \noindent
