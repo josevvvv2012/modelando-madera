@@ -26,10 +26,10 @@
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
-\leftmargin 3cm
-\topmargin 2cm
-\rightmargin 2cm
-\bottommargin 2cm
+\leftmargin 3.5cm
+\topmargin 3cm
+\rightmargin 3cm
+\bottommargin 2.5cm
 \secnumdepth 2
 \tocdepth 2
 \paragraph_separation skip
@@ -48,7 +48,7 @@
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -68,6 +68,15 @@ renewcommand{
 listtablename}{
 \backslash
 'Indice de tablas}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+floatname{algorithm}{C
+\backslash
+'odigo}
 \end_layout
 
 \begin_layout Plain Layout
@@ -118,7 +127,27 @@ LatexCommand tableofcontents
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+listof{algorithm}{
+\backslash
+'Indice de c
+\backslash
+'odigos}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -209,7 +238,7 @@ reference "tab:Costos-de-adquisición"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1156,7 +1185,15 @@ Antropomórfico.
 
 \begin_layout Standard
 \begin_inset Float figure
-placement th
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
 wide false
 sideways false
 status collapsed
@@ -1165,8 +1202,168 @@ status collapsed
 \noindent
 \align center
 \begin_inset Graphics
-	filename imagenes/manipulador_alcance.png
-	width 50page%
+	filename imagenes/espacio_cilindrico.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Cilíndrico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/espacio_esferico.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Esférico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/espacio_scara.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+S.C.A.R.A.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/espacio_cartesiano.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Cartesiano
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/espacio_antropomorfico.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Antropomórfico
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1224,7 +1421,7 @@ reference "fig:ProgramacionRobot"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1601,7 +1798,7 @@ reference "fig:Sistema-de-coordenadas3d"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1670,6 +1867,176 @@ Para fines de programación se definió un punto en el espacio con el primitiva
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout LyX-Code
+
+\size scriptsize
+public class Punto { 	
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  private double x; 	
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  private double y; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  private double z; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  public Punto(double x, double y, double z) { 		
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+    this.x = x;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+    this.y = y;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+	this.z = z; 	
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  } 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  public double getX() { return x; }
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  public double getY() { return y; }
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  public double getZ() { return z; }
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  public void setX(double x) { this.x = x; }
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  public void setY(double y) { this.y = y; }
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  public void setZ(double z) { this.z = z; }
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  public String getXML(int i) { 		
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+    return "
+\backslash
+n
+\backslash
+t<x"+i+">"+x+"</x"+i+">" +
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+	       "
+\backslash
+n
+\backslash
+t<y"+i+">"+y+"</y"+i+">" +
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+           "
+\backslash
+n
+\backslash
+t<z"+i+">"+z+"</z"+i+">";
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  } 	
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+} 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Punto (primitivas.Punto)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1759,7 +2126,7 @@ reference "fig:Linea"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1812,7 +2179,102 @@ Para fines de programación se definió con el predicado
 \end_inset
 
  son dos puntos diferentes cualesquiera en el espacio.
- 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout LyX-Code
+
+\size scriptsize
+public void linea( Punto a, Punto b)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+{
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  int i;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  int n=(int)(dist(a.getX(),a.getY(), b.getX(),b.getY())*ptosPixel);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  double inc_lambda = 1.0 / (n - 1.0);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  for(i=0; i < n; i++) {
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+    grafPto(new Punto(a.getX() + (i * inc_lambda) * (b.getX() - a.getX()),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+                      a.getY() + (i * inc_lambda) * (b.getY() - a.getY()),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+                      a.getZ() + (i * inc_lambda) * (b.getZ() - a.getZ())
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+    )); 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  } 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+}
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Línea (primitivas.Linea)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1857,7 +2319,7 @@ x=r*sin\left(\Theta\right)\\
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1955,7 +2417,7 @@ x=r_{2}*sin\left(\Theta\right)\\
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -2014,6 +2476,89 @@ Para fines de programación se definió con el predicado
  es la distancia al punto más alejado sobre el eje vertical.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout LyX-Code
+
+\size scriptsize
+void elipse(double radio_a, double radio_b, double xc, double yc, int n){
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  int i;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  double inc_ang, ang;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  inc_ang = 360.0 / n * Math.PI / 180.0;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  for(i=0; i < n; i++) {
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+    ang = inc_ang * i;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+    grafPto(new Punto( xc + radio_a * Math.cos(ang), yc + radio_b * Math.sin(ang),
+ this.z ));
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  }
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+}
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Elipse (primitivas.Elipse.java)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Curva de Bezier
 \end_layout
@@ -2041,7 +2586,7 @@ reference "fig:Elemento-compuesto"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -2396,6 +2941,78 @@ Rotación
 
 \end_layout
 
+\begin_layout Subsection
+Proyección isométrica
+\end_layout
+
+\begin_layout Standard
+Es un método de representación visual de objetos de 3 dimensiones en 2 dimension
+es.
+\end_layout
+
+\begin_layout Standard
+Existen 8 diferentes vistas isómetricas, dependiendo del octante que se
+ haya elejido.
+ Esta transformación transforma un punto en 3 dimenciones en un punto en
+ 2 dimenciones visto desde el primer octante.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\left[\begin{array}{c}
+x´\\
+y´\\
+0\\
+1\end{array}\right]=\left[\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1\end{array}\right]\left[\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & cos\left(\alpha\right) & sin(\alpha) & 0\\
+0 & -sin(\alpha) & cos(\alpha) & 0\\
+0 & 0 & 0 & 1\end{array}\right]\left[\begin{array}{cccc}
+cos\left(\beta\right) & 0 & -sin(\beta) & 0\\
+0 & 1 & 0 & 0\\
+sin(\beta) & 0 & cos(\beta) & 0\\
+0 & 0 & 0 & 1\end{array}\right]\left[\begin{array}{c}
+x\\
+y\\
+z\\
+1\end{array}\right]\label{eq:Perspectiva}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+donde 
+\begin_inset Formula $\alpha=arcsin(tan(30))$
+\end_inset
+
+ y 
+\begin_inset Formula $\beta=45$
+\end_inset
+
+ En la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Perspectiva"
+
+\end_inset
+
+ se realiza un rotación vertical (eje y) dado por 
+\begin_inset Formula $\beta$
+\end_inset
+
+, seguido por una rotación horizontal (eje x) dado por 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, y finalmente se realiza una proyección sobre el plano x-y.
+\end_layout
+
 \begin_layout Section
 Almacenamiento y recuperación
 \end_layout
@@ -2451,22 +3068,158 @@ reference "fig:EstructuraXML"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
+\begin_inset Float algorithm
 placement h
 wide false
 sideways false
 status collapsed
 
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename imagenes/estructura_xml.png
-	width 50page%
+\begin_layout LyX-Code
+<modelador>
+\end_layout
 
-\end_inset
+\begin_deeper
+\begin_layout LyX-Code
+<fig tipo="5" >
+\end_layout
 
+\begin_deeper
+\begin_layout LyX-Code
+	<x0>183.0</x0>
+\end_layout
 
+\begin_layout LyX-Code
+	<y0>211.0</y0>
+\end_layout
+
+\begin_layout LyX-Code
+	<z0>130.0</z0>
+\end_layout
+
+\begin_layout LyX-Code
+	<x1>265.0</x1>
+\end_layout
+
+\begin_layout LyX-Code
+	<y1>251.0</y1>
+\end_layout
+
+\begin_layout LyX-Code
+	<z1>130.0</z1>
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+</fig>
+\end_layout
+
+\begin_layout LyX-Code
+<fig tipo="2" >
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+	<x0>101.0</x0>
+\end_layout
+
+\begin_layout LyX-Code
+	<y0>211.0</y0>
+\end_layout
+
+\begin_layout LyX-Code
+	<z0>190.0</z0>
+\end_layout
+
+\begin_layout LyX-Code
+	<x1>187.0</x1>
+\end_layout
+
+\begin_layout LyX-Code
+	<y1>250.0</y1>
+\end_layout
+
+\begin_layout LyX-Code
+	<z1>190.0</z1>
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+</fig>
+\end_layout
+
+\begin_layout LyX-Code
+<fig tipo="6" >
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+	<x0>245.0</x0>
+\end_layout
+
+\begin_layout LyX-Code
+	<y0>237.0</y0>
+\end_layout
+
+\begin_layout LyX-Code
+	<z0>190.0</z0>
+\end_layout
+
+\begin_layout LyX-Code
+	<x1>210.0</x1>
+\end_layout
+
+\begin_layout LyX-Code
+	<y1>232.0</y1>
+\end_layout
+
+\begin_layout LyX-Code
+	<z1>190.0</z1>
+\end_layout
+
+\begin_layout LyX-Code
+	<x2>186.0</x2>
+\end_layout
+
+\begin_layout LyX-Code
+	<y2>213.0</y2>
+\end_layout
+
+\begin_layout LyX-Code
+	<z2>190.0</z2>
+\end_layout
+
+\begin_layout LyX-Code
+	<x3>175.0</x3>
+\end_layout
+
+\begin_layout LyX-Code
+	<y3>189.0</y3>
+\end_layout
+
+\begin_layout LyX-Code
+	<z3>190.0</z3>
+\end_layout
+
+\begin_layout LyX-Code
+	<x4>180.0</x4>
+\end_layout
+
+\begin_layout LyX-Code
+	<y4>171.0</y4>
+\end_layout
+
+\begin_layout LyX-Code
+	<z4>190.0</z4>
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+</fig>
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+</modelador>
 \end_layout
 
 \begin_layout Plain Layout
@@ -2493,7 +3246,7 @@ Estructura de almacenamiento
 \end_layout
 
 \begin_layout Standard
-En la figura 
+En el segmento de codigo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:EstructuraXML"
@@ -2818,48 +3571,6 @@ Los sistemas son más usables cuando de una manera clara indican el estado
  
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename imagenes/igu_tesis.png
-	width 70page%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:igu_diseño"
-
-\end_inset
-
-Diseño de la interfaz gráfica
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Lenguaje de programación
 \end_layout
@@ -2900,7 +3611,7 @@ o no libera una versión de su intérprete para un sistema operativo en una
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3675,8 +4386,317 @@ Es importante mencionar que esta tecnologia es código abierto y fue iniciada
  por Game Technology Group.
 \end_layout
 
+\begin_layout Section
+Software desarrollado
+\end_layout
+
+\begin_layout Standard
+El software desarrollado fue elaborado en lenguaje de programación Java
+ debido a sus ventajas mencionadas anteriormente, sin embargo el uso de
+ Java en ambiente gráfico tiene desventajas visuales tales como la no integració
+n de colores y formas en los objetos visuales con los propios del sistema
+ operativo, esto se puede apreciar en la figura X.
+ Debido a esta característica visual se optó por utilizar las biblioteca
+ SWT desarrollada por IBM la cual obtiene una apariencia idéntica a las
+ aplicaciones nativas al sistema operativo logrando cumplir asi unos de
+ los principios fundametales de un buen diseño de interfaz gráfica 
+\begin_inset Quotes eld
+\end_inset
+
+consistencia
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Iniciando el software
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/herramientasdiseno.png
+	lyxscale 50
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pantalla inicial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/figurasproyecto.png
+	lyxscale 50
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pestaña Figuras en proyecto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/vistaarriba.png
+	lyxscale 50
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Arriba
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/vistafrente.png
+	lyxscale 50
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Frente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/vistalaterar.png
+	lyxscale 50
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Lateral
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/vistaperspectiva.png
+	lyxscale 50
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Perspectiva
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vistas disponibles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/enviarobot.png
+	lyxscale 50
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Envia Robot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
-Interfaz entre modelado y el robot SCARA
+Interfaz con el robot SCARA
 \begin_inset CommandInset label
 LatexCommand label
 name "cha:5_InterfazModelado"
@@ -3739,7 +4759,7 @@ key "tesisOmar"
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -4274,6 +5294,269 @@ Finalmente se calcula
 
 \end_layout
 
+\begin_layout Subsection
+Implementación de cinemática inversa.
+\end_layout
+
+\begin_layout Standard
+La implementación de la solución geométrica para la cinemática inversa se
+ muestra a continuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout LyX-Code
+
+\size scriptsize
+package cinematica;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+import primitivas.Punto;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+public class Inversa { 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ double Res_M[] = new double[]{ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  (360.0 / 800.0) * (8.0 / 44.0) * (8.0 / 60.0) * (Math.PI / 180.0),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  (360.0 / 800.0) * (8.0 / 32.0) * (8.0 / 36.0) * (Math.PI / 180.0),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  (360.0 / 2000.0) * (1.0 / 19.7) * (8.0 / 20.0) * (Math.PI / 180.0),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  (1.0 / 2000.0) * (1.0 / 6.3) * (25.4 / 11.0) 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ }; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ int Def_M[] = new int[]{ 5000, 5350, 42500, 150000 }; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ double longs[]= new double[] { 200.0, 200.0}; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ double teta_global = 90.0*(Math.PI/180.0); 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ double minx = -200; double miny = 66; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ double div = 2.4; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ public void get_angles(Punto p, int M[]){ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+   get_angles((p.getX()/div)+minx, (p.getY()/div)+miny, M);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+   M[3]=(int)p.getZ(); 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ } 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ public void get_angles(double x, double y, int M[]) { 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  double x2 = Math.pow(x, 2); 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  double y2 = Math.pow(y, 2); 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  double l1 = Math.pow(longs[0], 2); 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  double l2 = Math.pow(longs[1], 2); 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  double angs[] = new double[3]; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  double beta, phi; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  beta = Math.asin( y / ( Math.sqrt (x2 + y2) ) ); 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  if (x < 0) 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+    beta = Math.PI - beta;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  phi = Math.acos ( (x2 + y2 + l1 - l2) /( 2 * longs[0] * Math.sqrt(x2 + y2)
+ ) ); 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  angs[0] =beta - phi; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  angs[1]= Math.acos( (x2 + y2 - l1 - l2 )/ (2 * longs[0] * longs[1]) );
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  angs[2]= (teta_global - angs[0] - angs[1]); 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  M[0] = (int) (angs[0] / Res_M[0]) + Def_M[0]; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  M[1] = (int) (angs[1] / Res_M[1]) + Def_M[1]; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  M[2] = (int) (angs[2] / Res_M[2]) + Def_M[2]; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+  M[3] = Def_M[3]; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+ } 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size scriptsize
+} 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Cinemática inversa (cinematica.Inversa.java)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Conectividad PC-Robot
 \end_layout
@@ -4304,7 +5587,7 @@ reference "tab:Bibliotecas-para-comuniación"
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -4494,10 +5777,6 @@ name "tab:Bibliotecas-para-comuniación"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -4505,6 +5784,311 @@ name "tab:Bibliotecas-para-comuniación"
 
 \begin_layout Standard
 Se utilizó la biblioteca RXTX para realizar la conexión con el robot.
+\end_layout
+
+\begin_layout Standard
+A continuación se muestra el código realizado para la conexión con el robot
+ (serial.Comuniacion.java):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+package serial;
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+/*  ...
+  */
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+public class Comunicacion { 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+ /*  ...
+  */
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+ public void connect (String nombrePuerto) throws Exception { 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  CommPortIdentifier portIdentifier = CommPortIdentifier.getPortIdentifier(nombre
+Puerto); 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+ if ( portIdentifier.isCurrentlyOwned() ) { 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  System.out.println("Error: El puerto está en uso"); 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+ } 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+ else { 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  CommPort commPort = portIdentifier.open(this.getClass().getName(),2000);
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  if ( commPort instanceof SerialPort ) { 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+    SerialPort serialPort = (SerialPort) commPort;
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+   serialPort.setSerialPortParams(velPto,SerialPort.DATABITS_8,
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+SerialPort.STOPBITS_1,SerialPort.PARITY_NONE); 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+   in = serialPort.getInputStream(); 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+   out = serialPort.getOutputStream(); 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  } 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  else { 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+   System.out.println("Error: Solo soporta puerto serial."); 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  } 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+ } 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+ } 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+ public String leer() throws IOException { 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  byte[] buffer = new byte[2]; 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  in.read(buffer,0, 1); 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  String s=""; 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  do { 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+   in.read(buffer,0, 2); 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  } while(new String(buffer).equalsIgnoreCase("W")==false); 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  return "W";  
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+ } 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+ public String escribe(String str) throws IOException { 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  for(int i=0; i<str.length(); i++) { 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+   out.write((int)str.charAt(i)); 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  } 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+  return leer(); 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+ } 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+
+\size scriptsize
+} 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Conexión mediante puerto serial (serial.Conexion.java)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -4573,13 +6157,72 @@ name "cha:7_Conclusiones"
 Conclusiones
 \end_layout
 
+\begin_layout Standard
+La aplicacion desarrollada termina con una gran cantidad de esfuerzos realizados
+ para tener un primer robot industrial de bajo costo realizado completamente
+ con tecnología y conocimiento nacional.
+ Este desarrollo consta de: 
+\end_layout
+
+\begin_layout Itemize
+Desarrollo mecánico de un robot SCARA
+\end_layout
+
+\begin_layout Itemize
+Desarrollo electrónico/lógico de un robot SCARA
+\end_layout
+
+\begin_layout Itemize
+Desarrollo de una aplicación para diseñar y realizar tareas en un robot
+ SCARA, esta tesis.
+\end_layout
+
 \begin_layout Section
 Trabajos futuros 
 \end_layout
 
+\begin_layout Standard
+Las limitaciones mecánicas y electrónicas del robot para el cual fue desarrollad
+a la aplicación de este trabajo mostró puntos interesantes en los cuales
+ se tiene que desarrollar nuevas soluciones.
+ A continuación se listan algunos puntos en los que se podría mejorar o
+ desarrollar.
+\end_layout
+
+\begin_layout Subsection
+Aplicación desarrollada
+\end_layout
+
+\begin_layout Enumerate
+Finalizar el importador/exportador de código G para la aplicación, actualmente
+ su desarrollo se encuentra en fase de prueba y no fue incluido en esta
+ tesis por no ser parte de la propuesta inicial de esta tesis.
+\end_layout
+
+\begin_layout Enumerate
+Revizar los códigos fuentes disponibles del software EMC2, software ampliamente
+ desarrollado por la comunidad de software libre para robots CNC.
+\end_layout
+
+\begin_layout Subsection
+Electrónica del robot SCARA
+\end_layout
+
+\begin_layout Enumerate
+Acondicionar la conexión actual del robot SCARA de serial (rs232) a serial,
+ ya que ésta última es utilizada por la mayoría de los programas actules
+ de CNC.
+\end_layout
+
+\begin_layout Enumerate
+Reprogramar el controlador del robot SCARA para realizar movimientos simultáneos
+, debido a que actualmente los realiza en secuencia y esto ocaciona movimientos
+ no deseados.
+\end_layout
+
 \begin_layout Chapter*
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
