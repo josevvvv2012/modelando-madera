@@ -57,16 +57,17 @@ public class ListaFiguras extends Composite {
 	private Button buttonDown = null;
 	private Spinner spinnerEscala = null;
 	private Spinner spinnerRotar = null;
-	public void insertarFigura(int tipo, boolean relleno, Vector<Punto> p) {
-		if(tipo==8) {
-			recortar(new double[] {p.get(0).getX(), p.get(0).getY(), p.get(1).getX(), p.get(1).getY()});
-		}
-		else {
+	private int opcVisual=1;
 
+	
+	
+	public void setOpcVisual(int opcVisual) {
+		this.opcVisual = opcVisual;
+	}
+
+	public void insertarFigura(int tipo, boolean relleno, Vector<Punto> p) {
 			figuras.add(new Figuras(tipo,relleno, p));
 			listFigura.add( figuras.get(figuras.size()-1).getText() );
-		}
-		
 	}
 
 	public void limpiarFiguras() {
@@ -89,117 +90,7 @@ public class ListaFiguras extends Composite {
 		lista[1]=lista[3];
 		lista[3]=t;		
 	}
-	public void recortar(double []ventana) {
-		double []temp;
-		double []linea;
-		int c1,c2;
-		boolean borrar;
-		boolean redraw=false;
-		System.out.println("Ventana  \t\t\t ("+ventana[0]+", "+ventana[1]+") -> ("+ventana[2]+", "+ventana[3]+").");
-		for(int i=0; i< figuras.size(); i++){			
-			if(figuras.get(i).tipoFig==2) {
-				borrar = false;				
-				linea = new double[]{figuras.get(i).puntos.get(0).getX(),figuras.get(i).puntos.get(0).getY(),figuras.get(i).puntos.get(1).getX(),figuras.get(i).puntos.get(1).getY()};
-				c1=0;				
-				System.out.println("linea Modificando\t\t ("+linea[0]+", "+linea[1]+") -> ("+linea[2]+", "+linea[3]+").");
-				if(linea[0]>linea[2]) {
-					swap(linea);
-					System.out.println("linea (swap) \t\t\t("+linea[0]+", "+linea[1]+") -> ("+linea[2]+", "+linea[3]+").");					
-				}
-				if( rec.puntosDentro(linea, ventana)!=2 ) {
-					if(rec.puntosDentroRango(linea, ventana)) {						
-						temp=rec.recorteHoriz(linea, ventana[0]);
-						if(temp[0]!=-1) {
-							linea[0]=temp[0];
-							linea[1]=temp[1];
-						} else{
-							c1++;
-						}
-						temp=rec.recorteHoriz(linea, ventana[2]);
-						if(temp[0]!=-1) {
-							linea[2]=temp[0];
-							linea[3]=temp[1];
-						} else{
-							c1++;
-						}
-						
-						//if(c1!=2) {
-						if(true) {
-							System.out.println("linea (rec 1) \t\t\t("+linea[0]+", "+linea[1]+") -> ("+linea[2]+", "+linea[3]+").");
-							if(linea[1]>linea[3]) {
-								swap(linea);
-								System.out.println("linea (swap) \t\t\t("+linea[0]+", "+linea[1]+") -> ("+linea[2]+", "+linea[3]+").");
-							}
-								
-							c2=0;
-							
-							
-							if(rec.puntosDentro(linea, ventana)!=2) {
-						
-								temp=rec.recorteVert(linea, ventana[1]);
-								if(temp[0]!=-1) {
-									linea[0]=temp[0];
-									linea[1]=temp[1];									
-								}
-								else {
-									c2++;
-								}
-								temp=rec.recorteVert(linea, ventana[3]);
-								if(temp[0]!=-1) {
-									linea[2]=temp[0];
-									linea[3]=temp[1];									
-								}else {
-									c2++;
-								}	
-								if((c2!=2)||(c1!=2)) {
-									redraw=true;
-									figuras.get(i).puntos.get(0).setX(linea[0]);
-									figuras.get(i).puntos.get(0).setY(linea[1]);
-									figuras.get(i).puntos.get(1).setX(linea[2]);
-									figuras.get(i).puntos.get(1).setY(linea[3]);
-									
-								}else {
-									borrar=true;
-								}
-								
-							}
-							else {								
-								redraw=true;
-								figuras.get(i).puntos.get(0).setX(linea[0]);
-								figuras.get(i).puntos.get(0).setY(linea[1]);
-								figuras.get(i).puntos.get(1).setX(linea[2]);
-								figuras.get(i).puntos.get(1).setY(linea[3]);
-							}																					
-						}else {
-							borrar=true;
-						}												
-					} else {
-						borrar=true;
-					}
-				}
-				if(rec.puntosDentro(linea, ventana)==2 ) {
-					redraw=true;
-					figuras.get(i).puntos.get(0).setX(linea[0]);
-					figuras.get(i).puntos.get(0).setY(linea[1]);
-					figuras.get(i).puntos.get(1).setX(linea[2]);
-					figuras.get(i).puntos.get(1).setY(linea[3]);
-				}else 
-				
-				if(borrar) {
-					figuras.remove(i);
-					listFigura.remove(i);
-					comboFigura.removeAll();
-					redraw=true;
-					i=i-1;
-				}				
-			
-			}
-		
-		}
-		if(redraw)
-			this.bFijar.notifyListeners(SWT.MouseDown, null);
-	}
-
+	
 	public void fijarPunto(int c) {	
 		figuras.get(listFigura.getSelectionIndex()).puntos.get(c).setX(Double.valueOf(textValorX.getText()));
 		figuras.get(listFigura.getSelectionIndex()).puntos.get(c).setY(Double.valueOf(textValorY.getText()));	
@@ -209,51 +100,90 @@ public class ListaFiguras extends Composite {
 	public void escalar(double sx, double sy) {
 		
 		
-		double ix, iy;
+		double ix, iy, iz;
 		ix = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getX();
 		iy = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getY();
-		
+		iz = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getZ();
 		
 		
 		for(int i=0; i<figuras.get(listFigura.getSelectionIndex()).puntos.size(); i++) {
 			
 			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()-ix);
 			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()-iy);
+			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setZ(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getZ()-iz);
 			
 			
 			trans = new Transformaciones(figuras.get(listFigura.getSelectionIndex()).puntos.get(i));
-			trans.escalamiento(sx, sy);
+			switch(opcVisual) {
+				case DEF.vistaYX: trans.escalamiento(sx, sy, 0); break;
+				case DEF.vistaZX: trans.escalamiento(sx, 0, sy); break;
+				case DEF.vistaZY: trans.escalamiento(0, sx, sy); break;		
+			}
+			
 			
 			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()+ix);
 			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()+iy);
+			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setZ(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getZ()+iz);
 		}
 		this.bFijar.notifyListeners(SWT.MouseDown, null);
 	}
-	public void trasladar(double tx, double ty) {
+	
+	
+	public void trasladar(int opc) {
+		int tx, ty, tz;
+		tx = ty = tz = 0;
+		switch(opcVisual) {
+			case DEF.vistaYX:
+				switch(opc) {
+					case 1: ty=-1; break;
+					case 2: ty=1;  break;
+					case 3: tx=-1; break;
+					case 4: tx=1;  break;
+				}
+				break;
+			case DEF.vistaZX:
+				switch(opc) {
+					case 1: tz=-1; break;
+					case 2: tz=1;  break;
+					case 3: tx=-1; break;
+					case 4: tx=1;  break;
+				}
+				break;
+			case DEF.vistaZY:
+				switch(opc) {
+				case 1: tz=-1; break;
+				case 2: tz=1;  break;
+				case 3: ty=-1; break;
+				case 4: ty=1;  break;
+				}
+				break;		
+		}
 		
 		for(int i=0; i<figuras.get(listFigura.getSelectionIndex()).puntos.size(); i++) {			
 			trans = new Transformaciones(figuras.get(listFigura.getSelectionIndex()).puntos.get(i));
-			trans.traslacion(tx, ty);		
+			trans.traslacion(tx, ty, tz);		
 		}
 		this.bFijar.notifyListeners(SWT.MouseDown, null);
 	}
 	
 	public void rotar(double theta) {
 		
-		double ix, iy;
+		double ix, iy, iz;
 		ix = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getX();
 		iy = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getY();
-		
+		iz = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getZ();
 		for(int i=0; i<figuras.get(listFigura.getSelectionIndex()).puntos.size(); i++) {
 			
 			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()-ix);
 			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()-iy);
+			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setZ(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getZ()-iz);
 			
 			trans = new Transformaciones(figuras.get(listFigura.getSelectionIndex()).puntos.get(i));
-			trans.rotacion(theta);
+			trans.rotacion(theta, opcVisual);
 			
 			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()+ix);
 			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()+iy);
+			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setZ(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getZ()+iz);
 			
 		}
 		this.bFijar.notifyListeners(SWT.MouseDown, null);
@@ -424,7 +354,7 @@ public class ListaFiguras extends Composite {
 		buttonUp.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					trasladar(0,-1);
+					trasladar(1);
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
 					errorMsg(DEF.error, DEF.errorNoFiguraSel);
@@ -438,7 +368,7 @@ public class ListaFiguras extends Composite {
 		buttonIzq.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					trasladar(-1,0);
+					trasladar(3);
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
 					errorMsg(DEF.error, DEF.errorNoFiguraSel);
@@ -457,7 +387,7 @@ public class ListaFiguras extends Composite {
 		buttonDer.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					trasladar(1,0);
+					trasladar(4);
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
 					errorMsg(DEF.error, DEF.errorNoFiguraSel);
@@ -472,7 +402,7 @@ public class ListaFiguras extends Composite {
 		buttonDown.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					trasladar(0,1);
+					trasladar(2);
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
 					errorMsg(DEF.error, DEF.errorNoFiguraSel);

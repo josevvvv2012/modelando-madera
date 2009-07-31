@@ -9,12 +9,16 @@ import org.eclipse.swt.layout.GridData;
 
 public class Vistas extends Composite {
 
-	private Button bFrente = null;
-	private Button bArriba = null;
-	private Button bLado = null;
-	private Button bOpenGL = null;
+	public Button bFrente = null;
+	public Button bArriba = null;
+	public Button bLado = null;
+	public Button bOpenGL = null;
 
 	public int opcion=1;
+	public int getOpcion() {
+		return opcion;
+	}
+
 	public Vistas(Composite parent, int style) {
 		super(parent, style);
 		initialize();
@@ -44,36 +48,36 @@ public class Vistas extends Composite {
 		GridLayout gridLayout = new GridLayout();
 		gridLayout.numColumns = 2;
 		bFrente = new Button(this, SWT.TOGGLE);
-		bFrente.setText("Frente");
+		bFrente.setText(DEF.vistaZXs);
 		bFrente.setLayoutData(gridData);
 		bFrente.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				desactivarTodo(2);
+				desactivarTodo(DEF.vistaZX);
 				
 			}
 		});
 		bArriba = new Button(this, SWT.TOGGLE);
-		bArriba.setText("Arriba");		
+		bArriba.setText(DEF.vistaYXs);		
 		bArriba.setLayoutData(gridData2);
 		bArriba.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				desactivarTodo(1);
+				desactivarTodo(DEF.vistaYX);
 			}
 		});
 		bLado = new Button(this, SWT.TOGGLE);
-		bLado.setText("Lateral");
+		bLado.setText(DEF.vistaZYs);
 		bLado.setLayoutData(gridData1);
 		bLado.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				desactivarTodo(3);
+				desactivarTodo(DEF.vistaZY);
 			}
 		});
 		bOpenGL = new Button(this, SWT.TOGGLE);
-		bOpenGL.setText("OpenGL");
+		bOpenGL.setText(DEF.vistaPerspectivas);
 		bOpenGL.setLayoutData(gridData3);
 		bOpenGL.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				desactivarTodo(4);
+				desactivarTodo(DEF.vistaPerspectiva);
 			}
 		});
 		this.setLayout(gridLayout);
@@ -87,20 +91,24 @@ public class Vistas extends Composite {
 		bFrente.setSelection(false);
 		bOpenGL.setSelection(false);
 		switch(opc) {
-			case 1:
+			case DEF.vistaYX:
 				bArriba.setSelection(true);
 				break;
-			case 2:
+			case DEF.vistaZX:
 				bFrente.setSelection(true);
 				break;
-			case 3:
+			case DEF.vistaZY:
 				bLado.setSelection(true);
 				break;
-			case 4:
+			case DEF.vistaPerspectiva:
 				bOpenGL.setSelection(true);
 				break;	
 		}
 		opcion = opc;
+		this.bArriba.notifyListeners(SWT.MouseDown, null);
+		this.notifyListeners(SWT.MouseDown, null);
+		this.notifyListeners(SWT.MouseDown, null);
+		
 		
 	}
 
