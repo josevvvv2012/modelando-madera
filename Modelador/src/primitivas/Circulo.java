@@ -11,7 +11,7 @@ public class Circulo extends Primitiva{
 	
 	
 	
-	public Circulo(Plot plot, Punto orig,double r, boolean relleno,double inc) {
+	public Circulo(Plot plot, Punto orig,double r, boolean relleno,double inc, int vista) {
 		this.plot = plot;
 		this.z = orig.getZ();
 		this.inc = inc;
@@ -71,8 +71,8 @@ public class Circulo extends Primitiva{
 			
 			*/
 			if(relleno) {
-				plot.linea(new Punto(orig.getX()+x, orig.getY()+y), new Punto(orig.getX()-x, orig.getY()+y));
-				plot.linea(new Punto(orig.getX()+x, orig.getY()-y), new Punto(orig.getX()-x, orig.getY()-y));					
+				plot.linea(new Punto(orig.getX()+x, orig.getY()+y), new Punto(orig.getX()-x, orig.getY()+y),1 );
+				plot.linea(new Punto(orig.getX()+x, orig.getY()-y), new Punto(orig.getX()-x, orig.getY()-y), 1);					
 			}
 			
 		

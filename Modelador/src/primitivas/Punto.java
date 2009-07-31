@@ -10,6 +10,9 @@ public class Punto {
 	private double y;
 	private double z;
 	
+	
+	
+	
 	public Punto(double x, double y, double z) {
 		this.x = x;
 		this.y = y;
