@@ -107,6 +107,7 @@ public class CinematicaInversa {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 						textX.setText("");
 						textY.setText("");
+						textComando.setText("");
 					}
 				});
 		buttonCalcular = new Button(sShell, SWT.NONE);

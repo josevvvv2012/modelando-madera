@@ -20,7 +20,7 @@ public class Inversa {
 	
 	double longs[]= new double[] {
 		200.0,			// mm
-		200				// mm  + ext
+		200.0				// mm  + ext
 	};
 	
 	double teta_global = 90.0*(Math.PI/180.0);
@@ -64,25 +64,4 @@ public class Inversa {
 		M[2] = (int) (angs[2] / Res_M[2]) + Def_M[2];
 		M[3] = Def_M[3];	   
 	}
-		 	
-	
-	
-    public static void main ( String[] args )
-    {
-    	int m[] = new int[4];
-    	int x = 1;
-    	int y = 2;
-    	
-    	byte[] b = new byte[1];
-    	b="W\n".getBytes();
-    	
-    	System.out.println(".::"+new String(b)+"::."+b.length);
-    	
-    	new Inversa().get_angles(x, y, m);
-    	System.out.print("W");
-    	for(int i=0; i<m.length; i++) {
-    		System.out.print(m[i]+" ");
-    	}    	
-    	
-    }
 }
