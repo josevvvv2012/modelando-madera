@@ -11,6 +11,8 @@ public abstract class Primitiva {
 	
 	Vector <Punto> coordenadas= new Vector<Punto>();
 	
+	public  int vista=1;
+	
 	public double[] limX = new double[2];
 	public double[] limY = new double[2];
 	Plot plot;
@@ -84,7 +86,7 @@ public abstract class Primitiva {
 		previoY= p.getY();
 		modLim(p.getX(), p.getY());
 		if(plot instanceof Plot){			
-			plot.pixel(p);	
+			plot.pixel(p, vista);	
 		}		
 		else  {			
 			coordenadas.add(p);
