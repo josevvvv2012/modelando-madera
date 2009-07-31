@@ -3310,6 +3310,120 @@ Una imagen PGM es la representación a escala de grises de una imagen.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout LyX-Code
+P2
+\end_layout
+
+\begin_layout LyX-Code
+# CREATOR: Filter Version 1.1
+\end_layout
+
+\begin_layout LyX-Code
+9 5
+\end_layout
+
+\begin_layout LyX-Code
+255
+\end_layout
+
+\begin_layout LyX-Code
+0  	255	255	255	0	255	255	255	0
+\end_layout
+
+\begin_layout LyX-Code
+255	0  	255	251	0	251	255	0	  255
+\end_layout
+
+\begin_layout LyX-Code
+255	255	0	  0	  0	0	  0	  255	255
+\end_layout
+
+\begin_layout LyX-Code
+255	255	255	0	  0	0	  255	255	255
+\end_layout
+
+\begin_layout LyX-Code
+255	255	255	255	0	255	255	255	255
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Código PGM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/ejemplopgm.png
+	width 20page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Ejemplo PGM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement h
 wide false
