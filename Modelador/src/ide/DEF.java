@@ -1,6 +1,8 @@
 package ide;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 
@@ -14,6 +16,20 @@ public  class DEF {
 	public static final int elipse = 5;
 	public static final int bezier = 6;
 	
+	public static final int vistaYX = 1;	
+	public static final int vistaZY = 2;
+	public static final int vistaZX = 3;
+	public static final int vistaPerspectiva = 4;
+	
+	
+	
+	public static final String vistaYXs = "Arriba";	
+	public static final String vistaZYs = "Lateral";
+	public static final String vistaZXs = "Frente";
+	public static final String vistaPerspectivas = "Perspectiva";
+	
+	public static final Color fondoColor = new Color(Display.getCurrent(), 255, 255,255);
+	public static final Color frenteColor= new Color(Display.getCurrent(), 0, 0,0);
 	
 	public static final double incRobot = 0.12;
 	public static final int arriba = 150000;
@@ -39,8 +55,8 @@ public  class DEF {
 	public static final String pCerrar = "¿Desea cerrar el Proyecto actual?";
 	public static final String pSalir = "¿Desea salir del programa?";
 	
-	public static final String tPrimitivas = "Primitivas";
-	public static final String tPrimitivasBasicas = "Básicas";
+	public static final String tPrimitivas = "Herramientas de diseño";
+	public static final String tPrimitivasBasicas = "Prim. Básicas";
 	public static final String tGaleria = "Galeria";
 	public static final String tBiblioteca = "Biblioteca";
 	public static final String tFigurasProyecto = "Figuras en proyecto";

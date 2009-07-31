@@ -1,6 +1,7 @@
 package ide;
 
 import primitivas.Figuras;
+
 import primitivas.Plot;
 import primitivas.Punto;
 import primitivas.Polilinea;
@@ -37,7 +38,6 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.layout.FillLayout;
 
-//import com.sun.org.apache.bcel.internal.generic.NEW;
 
 /**
  * 
@@ -63,12 +63,9 @@ public class Tesis {
 	private Punto pAnt2 = new Punto(0,0);  //  @jve:decl-index=0:
 	private Vector<Punto> ps=new Vector<Punto>();  //  @jve:decl-index=0:
 	private Menu menuBar = null;
-	private Menu submenu = null;
-	private Color negro= new Color(Display.getCurrent(), 0, 0,0);
-	private Color blanco= new Color(Display.getCurrent(), 255, 255,255);	
+	private Menu submenu = null;	
 	private final int clickIzq = 1;
-//	private final int clickMed = 2;
-//	private final int clickDer = 3;
+
 	
 	private boolean okPort= false;
 	private String comPort = "COM4";
@@ -84,10 +81,30 @@ public class Tesis {
 	private PGMRead pgm;  //  @jve:decl-index=0:
 	boolean sigFig = false;
 	boolean levantar=false;
-	
+	private int vistaActual=1;
 	double xAnt, yAnt;
 	private boolean importar=false;
 	
+	
+	private Punto puntoActual = new Punto(1,1,1);  //  @jve:decl-index=0:
+	
+	private void actualizarPuntoActual(Event e) {
+		vistaActual = vistasDiseno.getOpcion();
+		switch(vistaActual) {
+		case DEF.vistaYX:
+			puntoActual = new Punto(e.x, e.y, z);
+			break;
+		case DEF.vistaZX:
+			puntoActual = new Punto(e.x, z, e.y);
+			break;
+		case DEF.vistaZY:
+			puntoActual = new Punto(z, e.x, e.y);
+			break;
+		}
+	}
+	private Punto getPuntoActual() {
+		return new Punto(puntoActual.getX(), puntoActual.getY(), puntoActual.getZ());
+	}
 	
 	private void crearListenerRobotizar() {
 		Listener listener3 = new Listener() {						
@@ -152,45 +169,42 @@ public class Tesis {
 	}
 	
 	private void crearListenerB_Fijar() {
-		Listener listener2 = new Listener() {						
-			public void handleEvent(Event e) {					
+		vistaActual = vistasDiseno.getOpcion();
+		Listener listener2 = new Listener() {
+			
+			public void handleEvent(Event e) {
+
+				actualizarPuntoActual(e);
 				Vector<Figuras> p = listaFiguras.figuras;
+				listaFiguras.setOpcVisual(vistaActual);
 				switch(e.type) {
 					case SWT.MouseDown:												
 						plot.gc.fillRectangle(0, 0, 1200, 800);
+						
 						for(int i=0; i<p.size(); i++) {														
 							switch(p.get(i).tipoFig) {
 								case DEF.punto:
-									plot.pixel(p.get(i).puntos.firstElement());
+									plot.pixel(p.get(i).puntos.firstElement(), vistaActual);
 									break;
 								case DEF.linea:
-									plot.linea(p.get(i).puntos.get(0), p.get(i).puntos.get(1));
+									plot.linea(p.get(i).puntos.get(0), p.get(i).puntos.get(1), vistaActual);
 									break;
 								case DEF.polilinea:									
-									Polilinea poli = new Polilinea(plot, p.get(i).puntos.get(0), p.get(i).puntos.get(1));
+									Polilinea poli = new Polilinea(plot, p.get(i).puntos.get(0), p.get(i).puntos.get(1), vistaActual);
 									for(int j=1; j<p.get(i).puntos.size()-1; j++) {
 										poli.agregarLinea(p.get(i).puntos.get(j), p.get(i).puntos.get(j+1));
 									}
 									poli.agregarLinea(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement());
-									if(p.get(i).relleno)
-										poli.rellenarPolilinea(plot);
+									
 									break;
 								case DEF.circulo:
-									plot.circulo(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno);
+									plot.circulo(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno, vistaActual);
 									break;
 								case DEF.elipse:
-									plot.elipse(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno);
+									plot.elipse(p.get(i).puntos.firstElement(), p.get(i).puntos.lastElement(), p.get(i).relleno, vistaActual);
 									break;
-								case DEF.bezier:
-									//plot.bezier(p.get(i).puntos.get(0), p.get(i).puntos.get(1), p.get(i).puntos.get(2), p.get(i).puntos.get(3), 1000);
-									plot.bezier(p.get(i).puntos, 1);
-									
-									
-									
-									
-									break;
-								case 7:
-									plot.relleno(p.get(i).puntos.get(0));
+								case DEF.bezier:								
+									plot.bezier(p.get(i).puntos, 1, vistaActual);			
 									break;
 							}
 						}
@@ -200,6 +214,9 @@ public class Tesis {
 			}
 		};
 		listaFiguras.bFijar.addListener(SWT.MouseDown, listener2);
+		vistasDiseno.bArriba.addListener(SWT.MouseDown, listener2);
+		vistasDiseno.bFrente.addListener(SWT.MouseDown, listener2);
+		vistasDiseno.bLado.addListener(SWT.MouseDown, listener2);
 	}
 	
 	private void crearListenerCanvas() {				
@@ -208,8 +225,10 @@ public class Tesis {
 				
 				tipoFigura.getTipo();
 				z = tipoFigura.getZ();
+				actualizarPuntoActual(e);
 				switch(e.type) {
-					case SWT.MouseDown:												
+					case SWT.MouseDown:					
+						
 						switch(e.button) {
 							case clickIzq:											
 								switch(tipoFigura.getTipo()) {
@@ -221,110 +240,74 @@ public class Tesis {
 									break;
 								case DEF.punto:
 									ps.removeAllElements();		
-									ps.add(new Punto(e.x, e.y, z));
-									plot.pixel(ps.get(0));									
+									ps.add(getPuntoActual());
+									plot.pixel(ps.get(0), vistaActual);									
 									reiniciarPts=true;
 									redibujar=true;
 									break;
 								case DEF.linea:			
 									if(ps.size()==0) {
-										pAnt = new Punto(e.x, e.y, z);
-										ps.add(new Punto(e.x, e.y, z));
+										pAnt = getPuntoActual();
+										ps.add(getPuntoActual());
 										redibujar=true;
 									}
 									else {
-										ps.add(new Punto(e.x, e.y, z));
-										plot.linea(ps.get(0), ps.get(1));										
+										ps.add(getPuntoActual());
+										plot.linea(ps.get(0), ps.get(1), vistaActual);										
 										reiniciarPts=true;
 										redibujar=true;
 									}						
 									break;
 								case DEF.polilinea:			
 									if(ps.size()==0) {
-										pAnt = new Punto(e.x, e.y, z);
-										ps.add(new Punto(e.x, e.y, z));
+										pAnt = getPuntoActual();
+										ps.add(getPuntoActual());
 										redibujar=true;
 									}
 									else {
-										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y));
-										ps.add(new Punto(e.x, e.y, z));
+										plot.linea(ps.get(ps.size()-1), getPuntoActual(), vistaActual);
+										ps.add(getPuntoActual());
 										redibujar=true;
 									}						
 									break;
 								case DEF.circulo:			
 									if(ps.size()==0) {
-										pAnt = new Punto(e.x, e.y, z);
-										ps.add(new Punto(e.x, e.y, z));
+										pAnt = getPuntoActual();
+										ps.add(getPuntoActual());
 										redibujar=true;
 									}
 									else {
-										ps.add(new Punto(e.x, e.y, z));
-										plot.circulo(ps.get(0), ps.get(1), tipoFigura.getFill());
+										ps.add(getPuntoActual());
+										plot.circulo(ps.get(0), ps.get(1), tipoFigura.getFill(), vistaActual);
 										reiniciarPts=true;
 										redibujar=true;
 									}						
 									break;
 								case DEF.elipse:			
 									if(ps.size()==0) {
-										pAnt = new Punto(e.x, e.y, z);
-										ps.add(new Punto(e.x, e.y, z));
+										pAnt = getPuntoActual();
+										ps.add(getPuntoActual());
 										redibujar=true;
 									}
 									else {
-										ps.add(new Punto(e.x, e.y, z));
-										plot.elipse(ps.get(0), ps.get(1), tipoFigura.getFill());
+										ps.add(getPuntoActual());
+										plot.elipse(ps.get(0), ps.get(1), tipoFigura.getFill(), vistaActual);
 										reiniciarPts=true;
 										redibujar=true;
 									}						
 									break;
 								case DEF.bezier:
 									if(ps.size()==0) {
-										pAnt = new Punto(e.x, e.y, z);
-										ps.add(new Punto(e.x, e.y, z));
+										pAnt = getPuntoActual();
+										ps.add(getPuntoActual());
 										redibujar=true;
 									}
 									else /*if (ps.size()>-3)*/{
-										plot.linea(ps.get(ps.size()-1), new Punto(e.x, e.y));
-										ps.add(new Punto(e.x, e.y, z));
+										ps.add(getPuntoActual());
+										plot.linea(ps.get(ps.size()-2), ps.get(ps.size()-1), vistaActual);
 										redibujar=true;
 									}									
-									break;
-								case 7:
-									MessageBox m=new MessageBox(sShell, SWT.ICON_INFORMATION);
-									m.setText("Aviso");
-									m.setMessage("Puede que tarde mucho esta implementacion :(");
-									m.open();						
-									ps.add(new Punto(e.x, e.y, z));
-									plot.relleno(ps.firstElement());
-									reiniciarPts=true;
-									redibujar=true;
-									break;
-								case 8:			
-									if(ps.size()==0) {
-										pAnt = new Punto(e.x, e.y, z);
-										ps.add(new Punto(e.x, e.y, z));
-										redibujar=true;
-									}
-									else {
-										ps.add(new Punto(e.x, e.y, z));
-										
-										double x1, x2, y1, y2;
-										x1=ps.get(0).getX()<ps.get(1).getX()?ps.get(0).getX():ps.get(1).getX();
-										x2=ps.get(0).getX()>ps.get(1).getX()?ps.get(0).getX():ps.get(1).getX();
-										y1=ps.get(0).getY()<ps.get(1).getY()?ps.get(0).getY():ps.get(1).getY();
-										y2=ps.get(0).getY()>ps.get(1).getY()?ps.get(0).getY():ps.get(1).getY();
-										
-										plot.xOr(true);
-										plot.gc.drawRectangle((int)x1,(int)y1, (int)(x2-x1), (int)(y2-y1));										
-										ps.get(0).setX(x1);
-										ps.get(1).setX(x2);
-										ps.get(0).setY(y1);
-										ps.get(1).setY(y2);
-										plot.xOr(false);																				
-										reiniciarPts=true;
-										redibujar=true;
-									}						
-									break;
+									break;								
 								}								
 								break;							
 						}
@@ -334,31 +317,30 @@ public class Tesis {
 							case clickIzq:
 								switch(tipoFigura.getTipo()) {
 								case DEF.polilinea:
-									ps.add(new Punto(e.x, e.y, z));
-									plot.linea(ps.get(0), ps.lastElement());
+									ps.add(getPuntoActual());
+									plot.linea(ps.get(0), ps.lastElement(), vistaActual);
 									
 									if(tipoFigura.getFill()) {
-										Polilinea poli = new Polilinea(plot, ps.get(0), ps.get(1));
+										Polilinea poli = new Polilinea(plot, ps.get(0), ps.get(1), vistaActual);
 										for(int j=1; j<ps.size()-1; j++) {
 											poli.agregarLinea( ps.get(j), ps.get(j+1));
 										}
 										poli.agregarLinea(ps.firstElement(), ps.lastElement());
 										//poli.graficar();	
-										poli.rellenarPolilinea(plot);
+										//poli.rellenarPolilinea(plot);
 											
 									}																		
 									reiniciarPts=true;
 									redibujar=true;
 									break;
 								case DEF.bezier:
-									ps.add(new Punto(e.x, e.y, z));
-									plot.xOr(true);										
-									for(int i=1; i< ps.size(); i++) {
-										plot.linea(ps.get(i-1), ps.get(i));															
+									ps.add(getPuntoActual());
+									plot.xOr(true);						
+									for(int i=1; i< ps.size()-1; i++) {												
+										plot.linea(ps.get(i-1), ps.get(i), vistaActual);											
 									}
 									plot.xOr(false);
-									
-									plot.bezier(ps, 1);									
+									plot.bezier(ps, 1, vistaActual);									
 									reiniciarPts=true;
 									redibujar = true;
 									break;
@@ -374,68 +356,49 @@ public class Tesis {
 						switch(tipoFigura.getTipo()) {						
 						case DEF.linea:
 							if(ps.size()>0) {								
-								plot.linea(ps.get(0), pAnt);
-								pAnt = new Punto(e.x, e.y, z);
-								plot.linea(ps.get(0), pAnt);
+								plot.linea(ps.get(0), pAnt, vistaActual);
+								pAnt = getPuntoActual();
+								plot.linea(ps.get(0), pAnt, vistaActual);
 								redibujar=true;
 							}								
 							break;							
 						case DEF.polilinea:
 							if(ps.size()>0) {							
-								plot.linea(ps.get(ps.size()-1), pAnt);
-								pAnt = new Punto(e.x, e.y, z);
-								plot.linea(ps.get(ps.size()-1), pAnt);
+								plot.linea(ps.get(ps.size()-1), pAnt, vistaActual);
+								pAnt = getPuntoActual();
+								plot.linea(ps.get(ps.size()-1), pAnt, vistaActual);
 								redibujar=true;
 							}								
 							break;							
 						case DEF.circulo:
 							if(ps.size()>0) {							
-								plot.circulo(ps.get(0), pAnt, false);						
-								pAnt = new Punto(e.x, e.y, z);
-								plot.circulo(ps.get(0), pAnt, false);
+								plot.circulo(ps.get(0), pAnt, false, vistaActual
+					);						
+								pAnt = getPuntoActual();
+								plot.circulo(ps.get(0), pAnt, false, vistaActual);
 								redibujar=true;
 							}						
 							break;							
 						case DEF.elipse:
 							if(ps.size()>0) {						
-								plot.elipse(ps.get(0), pAnt, false);						
-								pAnt = new Punto(e.x, e.y, z);
-								plot.elipse(ps.get(0), pAnt, false);
+								plot.elipse(ps.get(0), pAnt, false, vistaActual);						
+								pAnt = getPuntoActual();
+								plot.elipse(ps.get(0), pAnt, false, vistaActual);
 								redibujar=true;
 							}						
 							break;
 						case DEF.bezier:
 							if(ps.size()>0) {							
-								plot.linea(ps.get(ps.size()-1), pAnt);
-								pAnt = new Punto(e.x, e.y, z);
-								plot.linea(ps.get(ps.size()-1), pAnt);
+								plot.linea(ps.get(ps.size()-1), pAnt, vistaActual);
+								pAnt = getPuntoActual();
+								plot.linea(ps.get(ps.size()-1), pAnt, vistaActual);
 								redibujar=true;
 							}
-							break;
-						case 8:
-							if(ps.size()>0) {		
-								double x1, x2, y1, y2;
-								x1=ps.get(0).getX()<pAnt.getX()?ps.get(0).getX():pAnt.getX();
-								x2=ps.get(0).getX()>pAnt.getX()?ps.get(0).getX():pAnt.getX();
-								y1=ps.get(0).getY()<pAnt.getY()?ps.get(0).getY():pAnt.getY();
-								y2=ps.get(0).getY()>pAnt.getY()?ps.get(0).getY():pAnt.getY();
-								plot.gc.drawRectangle((int)x1,(int)y1, (int)(x2-x1), (int)(y2-y1));
-
-								pAnt = new Punto(e.x, e.y, z);
-								x1=ps.get(0).getX()<pAnt.getX()?ps.get(0).getX():pAnt.getX();
-								x2=ps.get(0).getX()>pAnt.getX()?ps.get(0).getX():pAnt.getX();
-								y1=ps.get(0).getY()<pAnt.getY()?ps.get(0).getY():pAnt.getY();
-								y2=ps.get(0).getY()>pAnt.getY()?ps.get(0).getY():pAnt.getY();
-								plot.gc.drawRectangle((int)x1,(int)y1, (int)(x2-x1), (int)(y2-y1));
-
-								redibujar=true;
-							}								
-							break;		
-							
+							break;															
 						}
 						plot.xOr(false);						
-						new cinematica.Inversa().get_angles(new Punto(e.x,e.y,z), M);
-						labelInfo.setText("("+e.x+", "+e.y+", "+z+")" 
+						new cinematica.Inversa().get_angles(getPuntoActual(), M);
+						labelInfo.setText("("+puntoActual.getX()+", "+puntoActual.getY()+", "+puntoActual.getZ()+")" 
 								+"  -> W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]);
 												
 						break;
@@ -479,8 +442,8 @@ public class Tesis {
 		canvas = new Canvas(compositePrincipal, SWT.NONE);
 		
 		
-		canvas.setBackground(negro);
-		canvas.setForeground(blanco);
+		canvas.setBackground(DEF.fondoColor);
+		canvas.setForeground(DEF.frenteColor);
 		canvas.setLayoutData(gridData11);
 
 		canvas.addPaintListener(new PaintListener() {
@@ -491,7 +454,7 @@ public class Tesis {
 		);
 		
 		imageBuffer = new Image(canvas.getDisplay(), 1200, 800);
-		plot = new Plot(new GC(imageBuffer), imageBuffer,  negro, blanco);
+		plot = new Plot(new GC(imageBuffer), imageBuffer,  DEF.fondoColor, DEF.frenteColor);
 		
 		plot.gc.fillRectangle(0, 0, 1200, 800);
 		canvas.redraw();
@@ -510,7 +473,7 @@ public class Tesis {
 		gridData2.verticalSpan = 2;
 		gridData2.verticalAlignment = GridData.FILL;
 		gridData2.heightHint = -1;
-		gridData2.widthHint = 300;
+		gridData2.widthHint = 350;
 		
 		
 		GridData gridData3 = new GridData();
@@ -526,9 +489,9 @@ public class Tesis {
 			
 			tipoFigura = new TipoFigura2(bar, SWT.NONE);
 			ExpandItem item0 = new ExpandItem (bar, SWT.NONE, 0);				
-			item0.setText(DEF.tPrimitivasBasicas);
-			//item0.setHeight(tipoFigura.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
-			item0.setHeight(300);
+			item0.setText(DEF.tPrimitivas);
+			item0.setHeight(tipoFigura.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
+			//item0.setHeight(300);
 			item0.setExpanded(true);
 			item0.setControl(tipoFigura);
 			

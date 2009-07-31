@@ -175,23 +175,23 @@ public class EnviaRobot extends Composite {
 		  				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,i, figuras.size());
 		  				break;
 		  			case DEF.linea:
-		  				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1));				
+		  				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1), DEF.vistaYX);				
 		  				break;
 		  			case DEF.circulo:
 		  				dx = (puntos.get(0).getX()-puntos.get(1).getX());
 		  				dy = (puntos.get(0).getY()-puntos.get(1).getY());
 		  				int r = (int)Math.sqrt(dx*dx+dy*dy);	
-		  				prim = new primitivas.Circulo(null,puntos.get(0), r, false, DEF.incRobot);
+		  				prim = new primitivas.Circulo(null,puntos.get(0), r, false, DEF.incRobot, DEF.vistaYX);
 		  				break;
 		  			case DEF.elipse:
 		  				dx = Math.abs(puntos.get(0).getX()-puntos.get(1).getX());
 		  				dy = Math.abs(puntos.get(0).getY()-puntos.get(1).getY());
 		  						
 		  				if((dx!=0)&&(dy!=0))
-		  					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false/*, DEF.incRobot*/);
+		  					prim = new primitivas.Elipse(null,puntos.get(0),dx, dy, false, DEF.vistaYX, 1);
 		  				break;
 		  			case DEF.bezier:
-		  				prim = new primitivas.Bezier(null, puntos, 160);
+		  				prim = new primitivas.Bezier(null, puntos, 160, DEF.vistaYX);
 		  				
 		  				
 		  				break;
