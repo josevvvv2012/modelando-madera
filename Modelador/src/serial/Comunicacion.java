@@ -9,8 +9,10 @@ import java.io.OutputStream;
 
 public class Comunicacion {
 	
-	InputStream in;
-	OutputStream out;
+	
+	private InputStream in;
+	private OutputStream out;
+	private static final int velPto = 115200;
 
 	public Comunicacion() {
 		super();
@@ -32,7 +34,7 @@ public class Comunicacion {
             if ( commPort instanceof SerialPort )
             {
                 SerialPort serialPort = (SerialPort) commPort;
-                serialPort.setSerialPortParams(115200,SerialPort.DATABITS_8,SerialPort.STOPBITS_1,SerialPort.PARITY_NONE);
+                serialPort.setSerialPortParams(velPto,SerialPort.DATABITS_8,SerialPort.STOPBITS_1,SerialPort.PARITY_NONE);
                 
                 in = serialPort.getInputStream();
                 out = serialPort.getOutputStream();
@@ -75,18 +77,5 @@ public class Comunicacion {
 			out.write((int)str.charAt(i));
 		}
 		return "W";//leer();
-	}
-	
-    public static void main ( String[] args )
-    {
-    	Comunicacion comuni = new Comunicacion();
-    	try {
-			comuni.connect("COM4");
-			comuni.escribe("hola mundo");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println("fin");
-    }
-
+	}	  
 }
