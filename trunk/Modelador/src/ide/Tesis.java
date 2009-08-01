@@ -68,7 +68,7 @@ public class Tesis {
 
 	
 	private boolean okPort= false;
-	private String comPort = "COM4";
+	private String comPort = "COM5";
 	int []M = new int[4];
 	private Comunicacion comuni;  //  @jve:decl-index=0:
 	private boolean redibujar = false;

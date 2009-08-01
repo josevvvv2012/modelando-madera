@@ -16,6 +16,10 @@ public  class DEF {
 	public static final int elipse = 5;
 	public static final int bezier = 6;
 	
+	public static final int retardoPto= 40;
+	public static final int retardoInicial= 15999;
+	public static final int retardoLevantar= 1500;
+	
 	public static final int vistaYX = 1;	
 	public static final int vistaZY = 2;
 	public static final int vistaZX = 3;
@@ -28,11 +32,11 @@ public  class DEF {
 	public static final String vistaZXs = "Frente";
 	public static final String vistaPerspectivas = "Perspectiva";
 	
-	public static final Color fondoColor = new Color(Display.getCurrent(), 255, 255,255);
-	public static final Color frenteColor= new Color(Display.getCurrent(), 0, 0,0);
+	public static final Color fondoColor = new Color(Display.getCurrent(), 0, 0,0);
+	public static final Color frenteColor= new Color(Display.getCurrent(), 255, 255,255);
 	
 	public static final double incRobot = 0.12;
-	public static final int arriba = 150000;
+	public static final int arriba = 430000;
 	
 	public static final String ext = ".xml";
 	public static final String extpgm = ".pgm";

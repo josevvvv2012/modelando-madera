@@ -15,6 +15,8 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Slider;
 
+import primitivas.Punto;
+
 import cinematica.Inversa;
 
 public class InicializadorRobot extends Composite {
@@ -70,7 +72,7 @@ public class InicializadorRobot extends Composite {
 		super(parent, style);
 		initialize();
 		try {
-			comuni.connect("COM4");
+			comuni.connect("COM5");
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -216,7 +218,7 @@ public class InicializadorRobot extends Composite {
 	}
 
 	private void calculaComando() {
-		new Inversa().get_angles(x, y, M);
+		new Inversa().get_angles(new Punto(x, y,1), M);
 		M[3]=(int)z;
 		textSI.setText(String.valueOf(x));
 		textID.setText(String.valueOf(y));
