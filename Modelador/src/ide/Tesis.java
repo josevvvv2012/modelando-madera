@@ -184,7 +184,7 @@ public class Tesis {
 						for(int i=0; i<p.size(); i++) {														
 							switch(p.get(i).tipoFig) {
 								case DEF.punto:
-									plot.pixel(p.get(i).puntos.firstElement(), vistaActual);
+									plot.pixel(new Punto(p.get(i).puntos.firstElement().getX(),p.get(i).puntos.firstElement().getY(), p.get(i).puntos.firstElement().getZ()), vistaActual);
 									break;
 								case DEF.linea:
 									plot.linea(p.get(i).puntos.get(0), p.get(i).puntos.get(1), vistaActual);
