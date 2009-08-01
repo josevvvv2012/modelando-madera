@@ -31,10 +31,10 @@ public class Inversa {
  *            *                               *
  * 200, 346   ********************************* -200, 346  
  */
-	double minx = -200;
-	double miny = 66;
+	double minx = -150;
+	double miny = 200;
 	
-	double div = 2.4;
+	double div = 2;
 	public void get_angles(Punto p, int M[]){
 		get_angles((p.getX()/div)+minx, (p.getY()/div)+miny, M);
 		M[3]=(int)p.getZ();

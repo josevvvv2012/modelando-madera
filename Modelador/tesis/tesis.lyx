@@ -3072,7 +3072,7 @@ reference "fig:EstructuraXML"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout LyX-Code
 <modelador>
@@ -3313,11 +3313,7 @@ Una imagen PGM es la representación a escala de grises de una imagen.
 \begin_inset Float algorithm
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout LyX-Code
 P2
@@ -3328,7 +3324,7 @@ P2
 \end_layout
 
 \begin_layout LyX-Code
-9 5
+10 8
 \end_layout
 
 \begin_layout LyX-Code
@@ -3336,27 +3332,35 @@ P2
 \end_layout
 
 \begin_layout LyX-Code
-0  	255	255	255	0	255	255	255	0
+255  255  255  255  255  255  255  255  255  255  255 
 \end_layout
 
 \begin_layout LyX-Code
-255	0  	255	251	0	251	255	0	  255
+255  0    0    0    0    255  255  159  159  159  255
 \end_layout
 
 \begin_layout LyX-Code
-255	255	0	  0	  0	0	  0	  255	255
+255  0    255  255  0    255  255  159  255  255  255
 \end_layout
 
 \begin_layout LyX-Code
-255	255	255	0	  0	0	  255	255	255
+255  0    255  255  0    255  255  159  159  255  255
 \end_layout
 
 \begin_layout LyX-Code
-255	255	255	255	0	255	255	255	255
+255  0    0    0    0    255  255  159  255  255  255
 \end_layout
 
 \begin_layout LyX-Code
+255  0    255  255  0    255  255  159  255  255  255
+\end_layout
 
+\begin_layout LyX-Code
+255  0    255  255  0    255  255  159  159  159  255
+\end_layout
+
+\begin_layout LyX-Code
+255  255  255  255  255  255  255  255  255  255  255
 \end_layout
 
 \begin_layout Plain Layout
@@ -3368,10 +3372,6 @@ Código PGM
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

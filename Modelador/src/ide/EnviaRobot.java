@@ -159,7 +159,7 @@ public class EnviaRobot extends Composite {
 		  			final int iFig = i;
 		  			puntos = figuras.get(i).puntos;		  			
 		  			if(i!=0) {
-		  				retardo1=(int)dist(xAnt, yAnt, puntos.firstElement().getX(), puntos.firstElement().getY())*100;
+		  				retardo1=(int)dist(xAnt, yAnt, puntos.firstElement().getX(), puntos.firstElement().getY())*20;
 		  				sigFig=true;
 		  			}
 		  			if(!importar||i==0) {				
@@ -171,8 +171,9 @@ public class EnviaRobot extends Composite {
 		  			
 		  			switch(figuras.get(i).tipoFig) {
 		  			case DEF.punto:
-		  				new cinematica.Inversa().get_angles(puntos.get(0),M);				
-		  				mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,i, figuras.size());
+		  				//new cinematica.Inversa().get_angles(puntos.get(0),M);
+		  				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(0), DEF.vistaYX);
+		  				//mostrar("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3],1,1,i, figuras.size());
 		  				break;
 		  			case DEF.linea:
 		  				prim = new primitivas.Linea(null,puntos.get(0), puntos.get(1), DEF.vistaYX);				
@@ -329,7 +330,7 @@ public class EnviaRobot extends Composite {
 	private void retardo() {
 		try {
 			if(levantar) {
-				Thread.sleep(3500);
+				Thread.sleep(DEF.retardoLevantar);
 				levantar=false;
 			}
 			if(sigFig) {
@@ -339,11 +340,11 @@ public class EnviaRobot extends Composite {
 				sigFig=false;
 			}
 			if(primera) {
-				Thread.sleep(8999);
+				Thread.sleep(DEF.retardoInicial);
 				primera=false;
 			}
 			else {
-				Thread.sleep(4);
+				Thread.sleep(DEF.retardoPto);
 			}
 		} catch (InterruptedException e) {
 			mostrarMSG(e.toString(), DEF.error);

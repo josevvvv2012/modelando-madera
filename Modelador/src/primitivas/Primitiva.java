@@ -18,7 +18,7 @@ public abstract class Primitiva {
 	Plot plot;
 	double z;
 	double inc=1;
-	double ptosPixel=4;
+	double ptosPixel=40;
 	double previoX=0;
 	double previoY=0;
 	
