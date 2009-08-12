@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 Sealed: true
-Class-Path: swt.jar
-Main-Class: ide.Paint
+Class-Path: swt.jar RXTXcomm.jar 
+Main-Class: ide.Tesis
 

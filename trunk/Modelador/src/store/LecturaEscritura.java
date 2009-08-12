@@ -45,9 +45,12 @@ public class LecturaEscritura {
         out.close();
 	}
 	
-	public void leer(String archivo, ide.ListaFiguras listaFiguras, int Z) {
+	public void leer(String archivo, ide.ListaFiguras listaFiguras, Punto orig) {
 		int tipoFigura;
 		int pasos;
+		boolean primero = true;
+		double xt, yt, zt;
+		xt=yt=zt=0;
 		double[] coors = new double[3];
 		Vector <Punto> p = new Vector<Punto>();
 		try {
@@ -78,12 +81,18 @@ public class LecturaEscritura {
             			NodeList textFNList = firstNameElement.getChildNodes();  
             			coors[pasos++] = Double.valueOf(((Node)textFNList.item(0)).getNodeValue().trim());
             			if(pasos==3) {
-            				if(Z==-1)
-            					p.add(new Punto(coors[0],coors[1],coors[2]));
-            				else
-            					p.add(new Punto(coors[0],coors[1],Z));
+            				if(orig instanceof Punto) {
+            			
+            					if(primero) {
+                					xt=orig.getX()-coors[0];
+                					yt=orig.getY()-coors[1];
+                					zt=orig.getZ()-coors[2];
+                					primero=false;
+                				}                			
+            				}            				            				
+            				p.add(new Punto(coors[0]+xt,coors[1]+yt,coors[2]+zt));
+            		
             					
-  //          				System.out.println(p.lastElement().getXML(1));
             				pasos=0;
             			}                        	                        
             			
