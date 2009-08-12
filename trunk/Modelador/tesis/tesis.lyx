@@ -549,6 +549,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename imagenes/objetivosTesis.png
+	lyxscale 50
 	width 70page%
 
 \end_inset
@@ -1346,7 +1347,7 @@ Antropomórfico.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1496,7 +1497,7 @@ Cartesiano
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1587,7 +1588,7 @@ status open
 \begin_inset Graphics
 	filename imagenes/dCNC.png
 	lyxscale 50
-	width 30page%
+	width 25page%
 
 \end_inset
 
@@ -2477,7 +2478,7 @@ x=r*sin\left(\Theta\right)\\
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2530,6 +2531,122 @@ Para fines de programación se definió con el predicado
 \end_inset
 
  es el radio o distancia del centro a cualquier otro punto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout LyX-Code
+void circulo(double radio, double oX, double oY, double oZ, int n, int opc)
+\end_layout
+
+\begin_layout LyX-Code
+{
+\end_layout
+
+\begin_layout LyX-Code
+  int i;
+\end_layout
+
+\begin_layout LyX-Code
+  double inc_ang, ang;
+\end_layout
+
+\begin_layout LyX-Code
+  inc_ang = 360.0 / n * Math.PI / 180.0;
+\end_layout
+
+\begin_layout LyX-Code
+  for(i=0; i < n; i++) {
+\end_layout
+
+\begin_layout LyX-Code
+     ang = inc_ang * i;	  
+\end_layout
+
+\begin_layout LyX-Code
+     switch(opc) {
+\end_layout
+
+\begin_layout LyX-Code
+        case DEF.vistaYX: 
+\end_layout
+
+\begin_layout LyX-Code
+             grafPto(new Punto( oX + radio * Math.cos(ang), 
+\end_layout
+
+\begin_layout LyX-Code
+                                oY + radio * Math.sin(ang), oZ ));
+\end_layout
+
+\begin_layout LyX-Code
+             break;								
+\end_layout
+
+\begin_layout LyX-Code
+        case DEF.vistaZX: 
+\end_layout
+
+\begin_layout LyX-Code
+             grafPto(new Punto( oX + radio * Math.cos(ang), 
+\end_layout
+
+\begin_layout LyX-Code
+                                oY, oZ + radio * Math.sin(ang))); 
+\end_layout
+
+\begin_layout LyX-Code
+             break;
+\end_layout
+
+\begin_layout LyX-Code
+        case DEF.vistaZY: 
+\end_layout
+
+\begin_layout LyX-Code
+             grafPto(new Punto( oX, oY + radio * Math.cos(ang), 
+\end_layout
+
+\begin_layout LyX-Code
+             oZ + radio_b * Math.sin(ang))); 
+\end_layout
+
+\begin_layout LyX-Code
+             break;
+\end_layout
+
+\begin_layout LyX-Code
+     }
+\end_layout
+
+\begin_layout LyX-Code
+  }
+\end_layout
+
+\begin_layout LyX-Code
+}	
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Círculo (primitivas.Circulo.java)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2636,79 +2753,117 @@ Para fines de programación se definió con el predicado
 
 \begin_layout Standard
 \begin_inset Float algorithm
+placement h
 wide false
 sideways false
 status collapsed
 
 \begin_layout LyX-Code
-
-\size scriptsize
-void elipse(double radio_a, double radio_b, double xc, double yc, int n){
- 
+void elipse(double radio_a, double radio_b, double oX, double oY, double
+ oZ,
 \end_layout
 
 \begin_layout LyX-Code
+            int n, int opc)
+\end_layout
 
-\size scriptsize
+\begin_layout LyX-Code
+{
+\end_layout
+
+\begin_layout LyX-Code
   int i;
 \end_layout
 
 \begin_layout LyX-Code
-
-\size scriptsize
   double inc_ang, ang;
 \end_layout
 
 \begin_layout LyX-Code
-
-\size scriptsize
   inc_ang = 360.0 / n * Math.PI / 180.0;
 \end_layout
 
 \begin_layout LyX-Code
-
-\size scriptsize
   for(i=0; i < n; i++) {
 \end_layout
 
 \begin_layout LyX-Code
-
-\size scriptsize
-    ang = inc_ang * i;
+     ang = inc_ang * i;	  
 \end_layout
 
 \begin_layout LyX-Code
-
-\size scriptsize
-    grafPto(new Punto( xc + radio_a * Math.cos(ang), yc + radio_b * Math.sin(ang),
- this.z ));
+     switch(opc) {
 \end_layout
 
 \begin_layout LyX-Code
+        case DEF.vistaYX: 
+\end_layout
 
-\size scriptsize
+\begin_layout LyX-Code
+             grafPto(new Punto( oX + radio_a * Math.cos(ang), 
+\end_layout
+
+\begin_layout LyX-Code
+                                oY + radio_b * Math.sin(ang), oZ ));
+\end_layout
+
+\begin_layout LyX-Code
+             break;								
+\end_layout
+
+\begin_layout LyX-Code
+        case DEF.vistaZX: 
+\end_layout
+
+\begin_layout LyX-Code
+             grafPto(new Punto( oX + radio_a * Math.cos(ang), 
+\end_layout
+
+\begin_layout LyX-Code
+                                oY, oZ + radio_b * Math.sin(ang))); 
+\end_layout
+
+\begin_layout LyX-Code
+             break;
+\end_layout
+
+\begin_layout LyX-Code
+        case DEF.vistaZY: 
+\end_layout
+
+\begin_layout LyX-Code
+             grafPto(new Punto( oX, oY + radio_a * Math.cos(ang), 
+\end_layout
+
+\begin_layout LyX-Code
+             oZ + radio_b * Math.sin(ang))); 
+\end_layout
+
+\begin_layout LyX-Code
+             break;
+\end_layout
+
+\begin_layout LyX-Code
+     }
+\end_layout
+
+\begin_layout LyX-Code
   }
 \end_layout
 
 \begin_layout LyX-Code
-
-\size scriptsize
-}
+}	
 \end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Elipse (primitivas.Elipse.java)
+Círculo (primitivas.Circulo.java)
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2719,6 +2874,262 @@ Elipse (primitivas.Elipse.java)
 
 \begin_layout Subsection
 Curva de Bezier
+\end_layout
+
+\begin_layout Standard
+Bézier curves are an important tool used to model smooth curves that can
+ be scaled indefinitely.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/bezier.png
+	lyxscale 50
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Curva de Bezier
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout LyX-Code
+public void graficar(Vector<Punto> v) {
+\end_layout
+
+\begin_layout LyX-Code
+  double step= 1/maxPts;		
+\end_layout
+
+\begin_layout LyX-Code
+  double[] Pxi, Pyi, X, Y, t = step;
+\end_layout
+
+\begin_layout LyX-Code
+  Pxi = new double[v.size()];   Pyi = new double[v.size()];
+\end_layout
+
+\begin_layout LyX-Code
+  for(int i=0; i<v.size(); i++) {	
+\end_layout
+
+\begin_layout LyX-Code
+    switch(opc) {
+\end_layout
+
+\begin_layout LyX-Code
+      case DEF.vistaYX: Pxi[i]=v.get(i).getX(); Pyi[i]=v.get(i).getY(); break;
+\end_layout
+
+\begin_layout LyX-Code
+      case DEF.vistaZY: Pxi[i]=v.get(i).getY(); Pyi[i]=v.get(i).getZ(); break;
+\end_layout
+
+\begin_layout LyX-Code
+      case DEF.vistaZX: Pxi[i]=v.get(i).getX(); Pyi[i]=v.get(i).getZ(); break;
+\end_layout
+
+\begin_layout LyX-Code
+    }
+\end_layout
+
+\begin_layout LyX-Code
+  }
+\end_layout
+
+\begin_layout LyX-Code
+  switch(opc) {
+\end_layout
+
+\begin_layout LyX-Code
+    case DEF.vistaYX: new Linea(plot, new Punto(Xant2, Yant2, z), 
+\end_layout
+
+\begin_layout LyX-Code
+                      new Punto( v.get(0).getX(), v.get(0).getY(), z), vista);
+\end_layout
+
+\begin_layout LyX-Code
+                      Xant2 = v.lastElement().getX(); 
+\end_layout
+
+\begin_layout LyX-Code
+                      Yant2 = v.lastElement().getY(); break;
+\end_layout
+
+\begin_layout LyX-Code
+    case DEF.vistaZY: new Linea(plot, new Punto(x, Xant2, Yant2), 
+\end_layout
+
+\begin_layout LyX-Code
+                      new Punto( x, v.get(0).getY(), v.get(0).getZ()), vista);
+\end_layout
+
+\begin_layout LyX-Code
+                      Xant2 = v.lastElement().getY(); 
+\end_layout
+
+\begin_layout LyX-Code
+                      Yant2 = v.lastElement().getZ(); break;
+\end_layout
+
+\begin_layout LyX-Code
+    case DEF.vistaZX: new Linea(plot, new Punto(Xant2, y, Yant2), 
+\end_layout
+
+\begin_layout LyX-Code
+                      new Punto( v.get(0).getX(), y, v.get(0).getZ()), vista);
+\end_layout
+
+\begin_layout LyX-Code
+                      Xant2 = v.lastElement().getX(); 
+\end_layout
+
+\begin_layout LyX-Code
+                      Yant2 = v.lastElement().getZ(); break;
+\end_layout
+
+\begin_layout LyX-Code
+  }
+\end_layout
+
+\begin_layout LyX-Code
+  Xant = -1000;    Yant = -1000;
+\end_layout
+
+\begin_layout LyX-Code
+  while(t<=1) {
+\end_layout
+
+\begin_layout LyX-Code
+    for (int j = Pxi.length-1; j > 0; j--)
+\end_layout
+
+\begin_layout LyX-Code
+      for (int i = 0; i < j; i++){
+\end_layout
+
+\begin_layout LyX-Code
+        Pxi[i] = (1-t)*Pxi[i] + t*Pxi[i+1];
+\end_layout
+
+\begin_layout LyX-Code
+        Pyi[i] = (1-t)*Pyi[i] + t*Pyi[i+1];
+\end_layout
+
+\begin_layout LyX-Code
+      }
+\end_layout
+
+\begin_layout LyX-Code
+    X = Pxi[0];  Y = Pyi[0];
+\end_layout
+
+\begin_layout LyX-Code
+    if(Xant!=-1000&&Yant!=-1000) {
+\end_layout
+
+\begin_layout LyX-Code
+      switch(opc) {
+\end_layout
+
+\begin_layout LyX-Code
+        case DEF.vistaYX: new Linea(plot, new Punto(Xant, Yant, z), 
+\end_layout
+
+\begin_layout LyX-Code
+                          new Punto(X, Y, z), vista); break;
+\end_layout
+
+\begin_layout LyX-Code
+        case DEF.vistaZY: new Linea(plot, new Punto(x, Xant, Yant), 
+\end_layout
+
+\begin_layout LyX-Code
+                          new Punto(x, X, Y), vista); break;
+\end_layout
+
+\begin_layout LyX-Code
+        case DEF.vistaZX: new Linea(plot, new Punto(Xant, y, Yant), 
+\end_layout
+
+\begin_layout LyX-Code
+                          new Punto(X, y, Y), vista); break;
+\end_layout
+
+\begin_layout LyX-Code
+      }
+\end_layout
+
+\begin_layout LyX-Code
+    }
+\end_layout
+
+\begin_layout LyX-Code
+    Xant = X; Yant = Y; t += step;
+\end_layout
+
+\begin_layout LyX-Code
+  }
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Curva de Bezier (primitivas.Bezier.java)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection

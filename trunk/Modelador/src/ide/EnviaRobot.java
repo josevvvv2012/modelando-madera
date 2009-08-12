@@ -182,7 +182,7 @@ public class EnviaRobot extends Composite {
 		  				dx = (puntos.get(0).getX()-puntos.get(1).getX());
 		  				dy = (puntos.get(0).getY()-puntos.get(1).getY());
 		  				int r = (int)Math.sqrt(dx*dx+dy*dy);	
-		  				prim = new primitivas.Circulo(null,puntos.get(0), r, false, DEF.incRobot, DEF.vistaYX);
+		  				prim = new primitivas.Circulo(null,puntos.get(0), r, false, DEF.incRobot, DEF.vistaYX, 1);
 		  				break;
 		  			case DEF.elipse:
 		  				dx = Math.abs(puntos.get(0).getX()-puntos.get(1).getX());
