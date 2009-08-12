@@ -1,5 +1,7 @@
 package primitivas;
 
+import ide.DEF;
+
 
 /**
  * 
@@ -11,14 +13,33 @@ public class Circulo extends Primitiva{
 	
 	
 	
-	public Circulo(Plot plot, Punto orig,double r, boolean relleno,double inc, int vista) {
+	public Circulo(Plot plot, Punto orig,double r, boolean relleno,double inc, int vista, int opc) {
 		this.plot = plot;
 		this.z = orig.getZ();
-		this.inc = inc;
-		iniciarVectores();
-		Bresenham(r, orig, relleno);
-		graficarVectores();				
+		this.vista = vista;
+		double oX = orig.getX();
+		double oY = orig.getY();
+		double oZ = orig.getZ();	
+		circulo(r, oX, oY, oZ, 1000, opc);
+		
+		
 	}
+	void circulo(double radio, double oX, double oY, double oZ, int n, int opc)
+	{
+	    int i;
+	    double inc_ang, ang;
+	    inc_ang = 360.0 / n * Math.PI / 180.0;
+	    for(i=0; i < n; i++) {
+	        ang = inc_ang * i;	  
+	    	switch(opc) {
+	    		
+				case DEF.vistaYX: grafPto(new Punto( oX + radio * Math.cos(ang), oY + radio * Math.sin(ang), oZ )); break;								
+				case DEF.vistaZX: grafPto(new Punto( oX + radio * Math.cos(ang), oY, oZ + radio * Math.sin(ang))); break;
+				case DEF.vistaZY: grafPto(new Punto( oX, oY + radio * Math.cos(ang), oZ + radio * Math.sin(ang))); break;
+	    	}
+	        	        
+	    }
+	}	
 	public void puntoMedio(int r, Punto orig) {
 		int x0=0;		
 		int y0=r;
