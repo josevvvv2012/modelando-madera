@@ -57,7 +57,7 @@ public class Tesis {
 	private ListaFiguras listaFiguras = null;
 	private EnviaRobot enviaRobot = null;
 	private Vistas vistasDiseno = null;
-	private Previsualizacion preview = null;
+
 	private Plot plot = null;  //  @jve:decl-index=0:
 	private Punto pAnt = null;
 	private Punto pAnt2 = new Punto(0,0);  //  @jve:decl-index=0:
@@ -173,15 +173,27 @@ public class Tesis {
 		Listener listener2 = new Listener() {
 			
 			public void handleEvent(Event e) {
-
 				actualizarPuntoActual(e);
 				Vector<Figuras> p = listaFiguras.figuras;
 				listaFiguras.setOpcVisual(vistaActual);
+
+				
+				
 				switch(e.type) {
 					case SWT.MouseDown:												
 						plot.gc.fillRectangle(0, 0, 1200, 800);
 						
-						for(int i=0; i<p.size(); i++) {														
+						for(int i=0; i<p.size(); i++) {
+						
+							if(listaFiguras.listFigura.getSelectionIndex()==i) {
+								plot.selecColor();
+								
+								System.out.println("Figura: "+i);
+							}else {
+								plot.unselecColor();
+							}
+							
+							 
 							switch(p.get(i).tipoFig) {
 								case DEF.punto:
 									plot.pixel(new Punto(p.get(i).puntos.firstElement().getX(),p.get(i).puntos.firstElement().getY(), p.get(i).puntos.firstElement().getZ()), vistaActual);
@@ -206,7 +218,7 @@ public class Tesis {
 								case DEF.bezier:								
 									plot.bezier(p.get(i).puntos, 1, vistaActual);			
 									break;
-							}
+							}					
 						}
 						canvas.redraw();
 						break;
@@ -233,7 +245,7 @@ public class Tesis {
 							case clickIzq:											
 								switch(tipoFigura.getTipo()) {
 								case DEF.galeria:									
-									le.leer(tipoFigura.getArchivoGaleria(), listaFiguras, tipoFigura.getZ());									
+									le.leer(tipoFigura.getArchivoGaleria(), listaFiguras,/* tipoFigura.getZ()*/ getPuntoActual());									
 									listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
 						        	canvas.redraw();
 						        	
@@ -714,7 +726,7 @@ public class Tesis {
 	        String selected = fd.open();
 	        if(selected!=null) {
 	        	listaFiguras.limpiarFiguras();
-	        	le.leer(selected, listaFiguras, -1);	        	
+	        	le.leer(selected, listaFiguras, /*-1*/ null);	        	
 	        	listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
 	        	canvas.redraw();
 	        }

@@ -34,6 +34,7 @@ public  class DEF {
 	
 	public static final Color fondoColor = new Color(Display.getCurrent(), 0, 0,0);
 	public static final Color frenteColor= new Color(Display.getCurrent(), 255, 255,255);
+	public static final Color colorSelec= new Color(Display.getCurrent(), 0, 0,255);
 	
 	public static final double incRobot = 0.12;
 	public static final int arriba = 430000;

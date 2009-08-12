@@ -30,7 +30,7 @@ import org.eclipse.swt.widgets.Spinner;
 public class ListaFiguras extends Composite {
 
 	private Label label = null;
-	private List listFigura = null;
+	public List listFigura = null;
 	private Label label1 = null;
 	private Combo comboFigura = null;
 	private Label label2 = null;
@@ -97,119 +97,10 @@ public class ListaFiguras extends Composite {
 		this.bFijar.notifyListeners(SWT.MouseDown, null);
 	}
 
-	public void escalar(double sx, double sy) {
-		
-		
-		double ix, iy, iz;
-		ix = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getX();
-		iy = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getY();
-		iz = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getZ();
-		
-		
-		for(int i=0; i<figuras.get(listFigura.getSelectionIndex()).puntos.size(); i++) {
-			
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()-ix);
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()-iy);
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setZ(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getZ()-iz);
-			
-			
-			trans = new Transformaciones(figuras.get(listFigura.getSelectionIndex()).puntos.get(i));
-			switch(opcVisual) {
-				case DEF.vistaYX: trans.escalamiento(sx, sy, 0); break;
-				case DEF.vistaZX: trans.escalamiento(sx, 0, sy); break;
-				case DEF.vistaZY: trans.escalamiento(0, sx, sy); break;		
-			}
-			
-			
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()+ix);
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()+iy);
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setZ(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getZ()+iz);
-		}
-		this.bFijar.notifyListeners(SWT.MouseDown, null);
-	}
 	
 	
-	public void trasladar(int opc) {
-		int tx, ty, tz;
-		tx = ty = tz = 0;
-		switch(opcVisual) {
-			case DEF.vistaYX:
-				switch(opc) {
-					case 1: ty=-1; break;
-					case 2: ty=1;  break;
-					case 3: tx=-1; break;
-					case 4: tx=1;  break;
-				}
-				break;
-			case DEF.vistaZX:
-				switch(opc) {
-					case 1: tz=-1; break;
-					case 2: tz=1;  break;
-					case 3: tx=-1; break;
-					case 4: tx=1;  break;
-				}
-				break;
-			case DEF.vistaZY:
-				switch(opc) {
-				case 1: tz=-1; break;
-				case 2: tz=1;  break;
-				case 3: ty=-1; break;
-				case 4: ty=1;  break;
-				}
-				break;		
-		}
-		
-		for(int i=0; i<figuras.get(listFigura.getSelectionIndex()).puntos.size(); i++) {			
-			trans = new Transformaciones(figuras.get(listFigura.getSelectionIndex()).puntos.get(i));
-			trans.traslacion(tx, ty, tz);		
-		}
-		this.bFijar.notifyListeners(SWT.MouseDown, null);
-	}
-	
-	public void rotar(double theta) {
-		
-		double ix, iy, iz;
-		ix = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getX();
-		iy = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getY();
-		iz = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getZ();
-		for(int i=0; i<figuras.get(listFigura.getSelectionIndex()).puntos.size(); i++) {
-			
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()-ix);
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()-iy);
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setZ(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getZ()-iz);
-			
-			trans = new Transformaciones(figuras.get(listFigura.getSelectionIndex()).puntos.get(i));
-			trans.rotacion(theta, opcVisual);
-			
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()+ix);
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()+iy);
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setZ(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getZ()+iz);
-			
-		}
-		this.bFijar.notifyListeners(SWT.MouseDown, null);
-	}
 	
 	
-	public void reflejar() {
-		
-		double ix, iy;
-		ix = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getX();
-		iy = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getY();
-		
-		for(int i=0; i<figuras.get(listFigura.getSelectionIndex()).puntos.size(); i++) {
-			
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()-ix);
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()-iy);
-			
-			trans = new Transformaciones(figuras.get(listFigura.getSelectionIndex()).puntos.get(i));
-			trans.reflexion();
-			
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()+ix);
-			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()+iy);
-			
-		}
-		this.bFijar.notifyListeners(SWT.MouseDown, null);
-	}
 	
 	private void mostrarPunto(int a) {
 		Vector <Punto>p = figuras.get(listFigura.getSelectionIndex()).puntos;
@@ -337,7 +228,7 @@ public class ListaFiguras extends Composite {
 		label = new Label(this, SWT.NONE);
 		label.setText(DEF.lFiguras);
 		label.setLayoutData(gridData31);
-		listFigura = new List(this, SWT.V_SCROLL);
+		listFigura = new List(this, SWT.V_SCROLL | SWT.MULTI);
 		listFigura.setLayoutData(gridData);
 		Label filler15 = new Label(this, SWT.NONE);
 		buttonEliminar = new Button(this, SWT.NONE);
@@ -354,7 +245,13 @@ public class ListaFiguras extends Composite {
 		buttonUp.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					trasladar(1);
+					
+					int []indices = listFigura.getSelectionIndices();
+					for(int i=0; i<indices.length; i++) {
+						trasladar(1, indices[i]);	
+					}
+						
+					
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
 					errorMsg(DEF.error, DEF.errorNoFiguraSel);
@@ -368,7 +265,10 @@ public class ListaFiguras extends Composite {
 		buttonIzq.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					trasladar(3);
+					int []indices = listFigura.getSelectionIndices();
+					for(int i=0; i<indices.length; i++) {
+						trasladar(3, indices[i]);	
+					}
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
 					errorMsg(DEF.error, DEF.errorNoFiguraSel);
@@ -387,7 +287,10 @@ public class ListaFiguras extends Composite {
 		buttonDer.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					trasladar(4);
+					int []indices = listFigura.getSelectionIndices();
+					for(int i=0; i<indices.length; i++) {
+						trasladar(4, indices[i]);	
+					}
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
 					errorMsg(DEF.error, DEF.errorNoFiguraSel);
@@ -402,7 +305,13 @@ public class ListaFiguras extends Composite {
 		buttonDown.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					trasladar(2);
+					
+					int []indices = listFigura.getSelectionIndices();
+					for(int i=0; i<indices.length; i++) {
+						trasladar(2, indices[i]);	
+					}	
+					
+					
 				}
 				catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
 					errorMsg(DEF.error, DEF.errorNoFiguraSel);
@@ -422,6 +331,11 @@ public class ListaFiguras extends Composite {
 				}catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
 					errorMsg(DEF.error, DEF.errorNoFiguraSel);
 				}
+			}
+		});
+		listFigura.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				bFijar.notifyListeners(SWT.MouseDown, null);
 			}
 		});
 		label1 = new Label(this, SWT.NONE);
@@ -457,8 +371,13 @@ public class ListaFiguras extends Composite {
 				.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 						try {
-							figuras.add(figuras.get(listFigura.getSelectionIndex()).copiar());							
-							listFigura.add( figuras.get(figuras.size()-1).getText() );	
+							int []indices = listFigura.getSelectionIndices();
+							for(int i=0; i<indices.length; i++) {
+								figuras.add(figuras.get(indices[i]).copiar());							
+								listFigura.add( figuras.get(figuras.size()-1).getText() );
+							}
+							//figuras.add(figuras.get(listFigura.getSelectionIndex()).copiar());							
+							//listFigura.add( figuras.get(figuras.size()-1).getText() );	
 						}
 						catch( java.lang.ArrayIndexOutOfBoundsException ex2) {			
 							errorMsg(DEF.error, DEF.errorNoFiguraSel);
@@ -481,9 +400,11 @@ public class ListaFiguras extends Composite {
 		});
 		buttonEliminar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-						try {
-							figuras.remove(listFigura.getSelectionIndex());
-							listFigura.remove(listFigura.getSelectionIndex());
+						try {							
+							while(listFigura.getSelectionIndex()!=-1) {								
+								figuras.remove(listFigura.getSelectionIndex());
+								listFigura.remove(listFigura.getSelectionIndex());	
+							}							
 							comboFigura.removeAll();
 							limpiarCampos();							
 							bFijar.notifyListeners(SWT.MouseDown, null);
@@ -541,7 +462,11 @@ public class ListaFiguras extends Composite {
 		bRotar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					rotar(Double.valueOf(spinnerRotar.getText()));
+					int []indices = listFigura.getSelectionIndices();
+					for(int i=0; i<indices.length; i++) {
+						rotar(Double.valueOf(spinnerRotar.getText()), indices[i]);	
+					}
+					
 				}catch(java.lang.NumberFormatException ex) {
 					errorMsg(DEF.error, DEF.errorFormatoConv);
 				}
@@ -553,7 +478,10 @@ public class ListaFiguras extends Composite {
 		bEscalar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					escalar(Double.valueOf(spinnerEscala.getText()),Double.valueOf(spinnerEscala.getText()));
+					int []indices = listFigura.getSelectionIndices();
+					for(int i=0; i<indices.length; i++) {
+						escalar(Double.valueOf(spinnerEscala.getText()),Double.valueOf(spinnerEscala.getText()), indices[i]);
+					}
 				}catch(java.lang.NumberFormatException ex) {
 					errorMsg(DEF.error, DEF.errorFormatoConv);
 				}
@@ -591,6 +519,125 @@ public class ListaFiguras extends Composite {
 				});
 	}
 	
+	
+	
+	public void trasladar(int opc, int index) {
+		int tx, ty, tz;
+		tx = ty = tz = 0;
+		switch(opcVisual) {
+			case DEF.vistaYX:
+				switch(opc) {
+					case 1: ty=-1; break;
+					case 2: ty=1;  break;
+					case 3: tx=-1; break;
+					case 4: tx=1;  break;
+				}
+				break;
+			case DEF.vistaZX:
+				switch(opc) {
+					case 1: tz=-1; break;
+					case 2: tz=1;  break;
+					case 3: tx=-1; break;
+					case 4: tx=1;  break;
+				}
+				break;
+			case DEF.vistaZY:
+				switch(opc) {
+				case 1: tz=-1; break;
+				case 2: tz=1;  break;
+				case 3: ty=-1; break;
+				case 4: ty=1;  break;
+				}
+				break;		
+		}
+		
+		for(int i=0; i<figuras.get(index).puntos.size(); i++) {			
+			trans = new Transformaciones(figuras.get(index).puntos.get(i));
+			trans.traslacion(tx, ty, tz);		
+		}
+		this.bFijar.notifyListeners(SWT.MouseDown, null);
+	}
+	
+	public void rotar(double theta, int index) {
+		
+		double ix, iy, iz;
+		ix = figuras.get(index).puntos.get(0).getX();
+		iy = figuras.get(index).puntos.get(0).getY();
+		iz = figuras.get(index).puntos.get(0).getZ();
+		for(int i=0; i<figuras.get(index).puntos.size(); i++) {
+			
+			//figuras.get(index).puntos.get(i).setX(figuras.get(index).puntos.get(i).getX()-ix);
+			//figuras.get(index).puntos.get(i).setY(figuras.get(index).puntos.get(i).getY()-iy);
+			//figuras.get(index).puntos.get(i).setZ(figuras.get(index).puntos.get(i).getZ()-iz);
+			trans = new Transformaciones(figuras.get(index).puntos.get(i));
+			trans.traslacion(-ix, -iy, -iz);		
+			
+			trans = new Transformaciones(figuras.get(index).puntos.get(i));
+			trans.rotacion(theta, opcVisual);
+			
+			trans = new Transformaciones(figuras.get(index).puntos.get(i));
+			trans.traslacion(ix, iy, iz);
+			//figuras.get(index).puntos.get(i).setX(figuras.get(index).puntos.get(i).getX()+ix);
+			//figuras.get(index).puntos.get(i).setY(figuras.get(index).puntos.get(i).getY()+iy);
+			//figuras.get(index).puntos.get(i).setZ(figuras.get(index).puntos.get(i).getZ()+iz);
+			
+		}
+		this.bFijar.notifyListeners(SWT.MouseDown, null);
+	}
+	
+	
+	public void reflejar() {
+		
+		double ix, iy;
+		ix = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getX();
+		iy = figuras.get(listFigura.getSelectionIndex()).puntos.get(0).getY();
+		
+		for(int i=0; i<figuras.get(listFigura.getSelectionIndex()).puntos.size(); i++) {
+			
+			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()-ix);
+			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()-iy);
+			
+			trans = new Transformaciones(figuras.get(listFigura.getSelectionIndex()).puntos.get(i));
+			trans.reflexion();
+			
+			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()+ix);
+			figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()+iy);
+			
+		}
+		this.bFijar.notifyListeners(SWT.MouseDown, null);
+	}
+	public void escalar(double sx, double sy, int index) {
+		
+		
+		double ix, iy, iz;
+		ix = figuras.get(index).puntos.get(0).getX();
+		iy = figuras.get(index).puntos.get(0).getY();
+		iz = figuras.get(index).puntos.get(0).getZ();
+		
+		
+		for(int i=0; i<figuras.get(listFigura.getSelectionIndex()).puntos.size(); i++) {
+			
+			//figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()-ix);
+			//figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()-iy);
+			//figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setZ(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getZ()-iz);
+			trans = new Transformaciones(figuras.get(index).puntos.get(i));
+			trans.traslacion(-ix, -iy, -iz);
+			
+			trans = new Transformaciones(figuras.get(index).puntos.get(i));
+			switch(opcVisual) {
+				case DEF.vistaYX: trans.escalamiento(sx, sy, 0); break;
+				case DEF.vistaZX: trans.escalamiento(sx, 0, sy); break;
+				case DEF.vistaZY: trans.escalamiento(0, sx, sy); break;		
+			}
+			trans = new Transformaciones(figuras.get(index).puntos.get(i));
+			trans.traslacion(ix,iy, iz);
+			
+			//figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setX(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getX()+ix);
+			//figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setY(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getY()+iy);
+			//figuras.get(listFigura.getSelectionIndex()).puntos.get(i).setZ(figuras.get(listFigura.getSelectionIndex()).puntos.get(i).getZ()+iz);
+		}
+		this.bFijar.notifyListeners(SWT.MouseDown, null);
+	}
 
 }  //  @jve:decl-index=0:visual-constraint="10,10" 
 

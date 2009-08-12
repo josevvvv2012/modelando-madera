@@ -3,6 +3,8 @@ import ide.DEF;
 
 import java.util.Vector;
 
+import javax.swing.text.StyledEditorKit.ForegroundAction;
+
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
 /**
@@ -38,6 +40,13 @@ public class Plot {
 		this.gc.setForeground(foreColor);
 		this.gc.setBackground(backColor);
 	}
+	public void selecColor() {
+		this.gc.setForeground(DEF.colorSelec);
+	}
+	public void unselecColor() {
+		this.gc.setForeground(DEF.frenteColor);
+	}
+	
 	public void pixel(int x, int y) {
 		gc.drawPoint(x,y);
 	}

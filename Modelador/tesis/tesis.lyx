@@ -1007,8 +1007,6 @@ e) Por último, la articulación esférica, combina tres giros en tres direccion
 \end_layout
 
 \begin_layout Standard
-\noindent
-\align center
 \begin_inset Float figure
 placement h
 wide false
@@ -1018,8 +1016,16 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
-	filename imagenes/articulaciones.png
+	filename imagenes/a_rotacion2.png
 	scale 80
 
 \end_inset
@@ -1031,8 +1037,156 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Tipos de articulaciones: a) rotación b) prismática c) cilíndrica d) planar
- e) esférica
+Rotación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/a_prismatica.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Prismática
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/a_cilindrica.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Cilíndrica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/a_planar.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Planar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/a_esferica2.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Esférica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Tipos de articulaciones
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:TiposArticulaciones"
@@ -1044,6 +1198,10 @@ name "fig:TiposArticulaciones"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1338,7 +1496,7 @@ Cartesiano
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1346,7 +1504,7 @@ status collapsed
 \begin_inset Graphics
 	filename imagenes/espacio_antropomorfico.png
 	lyxscale 30
-	scale 30
+	scale 65
 
 \end_inset
 
@@ -3311,6 +3469,7 @@ Una imagen PGM es la representación a escala de grises de una imagen.
 
 \begin_layout Standard
 \begin_inset Float algorithm
+placement h
 wide false
 sideways false
 status open
@@ -3320,11 +3479,7 @@ P2
 \end_layout
 
 \begin_layout LyX-Code
-# CREATOR: Filter Version 1.1
-\end_layout
-
-\begin_layout LyX-Code
-10 8
+10 7 
 \end_layout
 
 \begin_layout LyX-Code
@@ -3332,35 +3487,35 @@ P2
 \end_layout
 
 \begin_layout LyX-Code
-255  255  255  255  255  255  255  255  255  255  255 
+
 \end_layout
 
 \begin_layout LyX-Code
-255  0    0    0    0    255  255  159  159  159  255
+255   255   255   255   255   255   255   255   255   255	 
 \end_layout
 
 \begin_layout LyX-Code
-255  0    255  255  0    255  255  159  255  255  255
+255    0     0     0    255   255   164   164   164   255
 \end_layout
 
 \begin_layout LyX-Code
-255  0    255  255  0    255  255  159  159  255  255
+255    0    255    0    255   255   164   255   255   255
 \end_layout
 
 \begin_layout LyX-Code
-255  0    0    0    0    255  255  159  255  255  255
+255    0     0     0    255   255   164   164   255   255
 \end_layout
 
 \begin_layout LyX-Code
-255  0    255  255  0    255  255  159  255  255  255
+255    0    255    0    255   255   164   255   255   255
 \end_layout
 
 \begin_layout LyX-Code
-255  0    255  255  0    255  255  159  159  159  255
+255    0    255    0    255   255   164   164   164   255
 \end_layout
 
 \begin_layout LyX-Code
-255  255  255  255  255  255  255  255  255  255  255
+255   255   255   255   255   255   255   255   255   255
 \end_layout
 
 \begin_layout Plain Layout
@@ -3382,13 +3537,10 @@ Código PGM
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \noindent
@@ -3411,10 +3563,6 @@ Ejemplo PGM
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

@@ -218,18 +218,22 @@ public class InicializadorRobot extends Composite {
 	}
 
 	private void calculaComando() {
-		new Inversa().get_angles(new Punto(x, y,1), M);
+		new Inversa().get_angles(x,y, M);
+		//W8891 9153 29491 15000
+		new Inversa().get_angles(new Punto(x,y,1), M);
+		//W13280 9183 16187 15000
 		M[3]=(int)z;
 		textSI.setText(String.valueOf(x));
 		textID.setText(String.valueOf(y));
 		textAux.setText("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]);
-		
+		/*
 		try {			
 			comuni.escribe("W"+M[0]+" "+M[1]+" "+M[2]+" "+M[3]+"\n");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		*/
 		
 	}
 }  //  @jve:decl-index=0:visual-constraint="10,10"

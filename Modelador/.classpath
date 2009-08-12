@@ -6,8 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="lib" path="D:/biblioteca/gluegen-rt.jar"/>
-	<classpathentry kind="lib" path="D:/biblioteca/jogl.jar"/>
 	<classpathentry kind="lib" path="D:/biblioteca/RXTXcomm.jar"/>
 	<classpathentry kind="con" path="SWT_CONTAINER/PLATFORM"/>
 	<classpathentry kind="output" path="bin"/>
