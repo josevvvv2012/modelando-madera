@@ -147,7 +147,7 @@ listof{algorithm}{
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -160,7 +160,7 @@ mainmatter
 
 
 \backslash
-setcounter{page}{6}
+setcounter{page}{8}
 \end_layout
 
 \end_inset
@@ -1955,6 +1955,7 @@ reference "fig:Sistema-de-coordenadas3d"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status collapsed
@@ -1964,7 +1965,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename imagenes/tCoordenadas.png
-	width 30page%
+	width 20page%
 
 \end_inset
 
@@ -2037,73 +2038,73 @@ status collapsed
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
 public class Punto { 	
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   private double x; 	
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   private double y; 
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   private double z; 
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   public Punto(double x, double y, double z) { 		
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
     this.x = x;
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
     this.y = y;
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
 	this.z = z; 	
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   } 
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   public double getX() { return x; }
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   public double getY() { return y; }
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   public double getZ() { return z; }
 \end_layout
 
@@ -2113,19 +2114,19 @@ public class Punto {
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   public void setX(double x) { this.x = x; }
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   public void setY(double y) { this.y = y; }
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   public void setZ(double z) { this.z = z; }
 \end_layout
 
@@ -2135,13 +2136,13 @@ public class Punto {
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   public String getXML(int i) { 		
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
     return "
 \backslash
 n
@@ -2151,7 +2152,7 @@ t<x"+i+">"+x+"</x"+i+">" +
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
 	       "
 \backslash
 n
@@ -2161,7 +2162,7 @@ t<y"+i+">"+y+"</y"+i+">" +
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
            "
 \backslash
 n
@@ -2171,14 +2172,16 @@ t<z"+i+">"+z+"</z"+i+">";
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   } 	
 \end_layout
 
 \begin_layout LyX-Code
 
+\size footnotesize
+}
 \size scriptsize
-} 
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2349,73 +2352,73 @@ status collapsed
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
 public void linea( Punto a, Punto b)
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
 {
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   int i;
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   int n=(int)(dist(a.getX(),a.getY(), b.getX(),b.getY())*ptosPixel);
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   double inc_lambda = 1.0 / (n - 1.0);
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   for(i=0; i < n; i++) {
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
     grafPto(new Punto(a.getX() + (i * inc_lambda) * (b.getX() - a.getX()),
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
                       a.getY() + (i * inc_lambda) * (b.getY() - a.getY()),
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
                       a.getZ() + (i * inc_lambda) * (b.getZ() - a.getZ())
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
     )); 
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
   } 
 \end_layout
 
 \begin_layout LyX-Code
 
-\size scriptsize
+\size footnotesize
 }
 \end_layout
 
@@ -2478,7 +2481,7 @@ x=r*sin\left(\Theta\right)\\
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -2538,98 +2541,128 @@ Para fines de programación se definió con el predicado
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout LyX-Code
+
+\size footnotesize
 void circulo(double radio, double oX, double oY, double oZ, int n, int opc)
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 {
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   int i;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   double inc_ang, ang;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   inc_ang = 360.0 / n * Math.PI / 180.0;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   for(i=0; i < n; i++) {
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
      ang = inc_ang * i;	  
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
      switch(opc) {
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
         case DEF.vistaYX: 
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
              grafPto(new Punto( oX + radio * Math.cos(ang), 
 \end_layout
 
 \begin_layout LyX-Code
-                                oY + radio * Math.sin(ang), oZ ));
+
+\size footnotesize
+                     oY + radio * Math.sin(ang), oZ ));  break;								
 \end_layout
 
 \begin_layout LyX-Code
-             break;								
-\end_layout
 
-\begin_layout LyX-Code
+\size footnotesize
         case DEF.vistaZX: 
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
              grafPto(new Punto( oX + radio * Math.cos(ang), 
 \end_layout
 
 \begin_layout LyX-Code
-                                oY, oZ + radio * Math.sin(ang))); 
+
+\size footnotesize
+                     oY, oZ + radio * Math.sin(ang)));   break;
 \end_layout
 
 \begin_layout LyX-Code
-             break;
-\end_layout
 
-\begin_layout LyX-Code
+\size footnotesize
         case DEF.vistaZY: 
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
              grafPto(new Punto( oX, oY + radio * Math.cos(ang), 
 \end_layout
 
 \begin_layout LyX-Code
-             oZ + radio_b * Math.sin(ang))); 
+
+\size footnotesize
+                    oZ + radio_b * Math.sin(ang)));      break;
 \end_layout
 
 \begin_layout LyX-Code
-             break;
-\end_layout
 
-\begin_layout LyX-Code
+\size footnotesize
      }
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   }
 \end_layout
 
 \begin_layout LyX-Code
-}	
+
+\size footnotesize
+}
+\size default
+	
 \end_layout
 
 \begin_layout Plain Layout
@@ -2689,7 +2722,7 @@ x=r_{2}*sin\left(\Theta\right)\\
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status collapsed
@@ -2756,102 +2789,132 @@ Para fines de programación se definió con el predicado
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout LyX-Code
+
+\size footnotesize
 void elipse(double radio_a, double radio_b, double oX, double oY, double
  oZ,
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
             int n, int opc)
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 {
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   int i;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   double inc_ang, ang;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   inc_ang = 360.0 / n * Math.PI / 180.0;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   for(i=0; i < n; i++) {
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
      ang = inc_ang * i;	  
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
      switch(opc) {
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
         case DEF.vistaYX: 
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
              grafPto(new Punto( oX + radio_a * Math.cos(ang), 
 \end_layout
 
 \begin_layout LyX-Code
-                                oY + radio_b * Math.sin(ang), oZ ));
+
+\size footnotesize
+                     oY + radio_b * Math.sin(ang), oZ ));   break;								
 \end_layout
 
 \begin_layout LyX-Code
-             break;								
-\end_layout
 
-\begin_layout LyX-Code
+\size footnotesize
         case DEF.vistaZX: 
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
              grafPto(new Punto( oX + radio_a * Math.cos(ang), 
 \end_layout
 
 \begin_layout LyX-Code
-                                oY, oZ + radio_b * Math.sin(ang))); 
+
+\size footnotesize
+                     oY, oZ + radio_b * Math.sin(ang)));    break;
 \end_layout
 
 \begin_layout LyX-Code
-             break;
-\end_layout
 
-\begin_layout LyX-Code
+\size footnotesize
         case DEF.vistaZY: 
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
              grafPto(new Punto( oX, oY + radio_a * Math.cos(ang), 
 \end_layout
 
 \begin_layout LyX-Code
-             oZ + radio_b * Math.sin(ang))); 
+
+\size footnotesize
+                     oZ + radio_b * Math.sin(ang)));        break;
 \end_layout
 
 \begin_layout LyX-Code
-             break;
-\end_layout
 
-\begin_layout LyX-Code
+\size footnotesize
      }
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   }
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 }	
 \end_layout
 
@@ -2859,7 +2922,7 @@ void elipse(double radio_a, double radio_b, double oX, double oY, double
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Círculo (primitivas.Circulo.java)
+Elipse (primitivas.Elipse.java)
 \end_layout
 
 \end_inset
@@ -2877,19 +2940,18 @@ Curva de Bezier
 \end_layout
 
 \begin_layout Standard
-Bézier curves are an important tool used to model smooth curves that can
- be scaled indefinitely.
+La curva Bézier es un tipo de línea curva ideada por un ingeniero de Renault
+ en los años 60 por medio de un método de descripción matemática que conseguía
+ definir las transiciones suaves de las curvaturas.
+ 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \noindent
@@ -2909,14 +2971,17 @@ status collapsed
 
 \begin_layout Plain Layout
 Curva de Bezier
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Curva-de-Bezier"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
@@ -2926,192 +2991,225 @@ Curva de Bezier
 \end_layout
 
 \begin_layout Standard
+Una curva de Bézier tiene por lomenos cuatro puntos de control y es de orden
+ cúbico como se puede apreciar en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Curva-de-Bezier"
+
+\end_inset
+
+, dos de los puntos corresponden a los extremos de la línea, son denominados
+ nodos o puntos de anclaje y los otros puntos son denominados puntos de
+ control o manejadores y determinan la dirección con que la curvatura ingresa
+ a los extremos.
+ 
+\end_layout
+
+\begin_layout Standard
+Los manejadores o puntos de control aparecen representados unidos mediante
+ una línea recta con un nodo pero realmente esta línea recta no forma parte
+ de la línea, moviendo este manejador conseguiremos curvar o corregir la
+ curvatura de nuestra línea.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float algorithm
+placement h
 wide false
 sideways false
 status collapsed
 
 \begin_layout LyX-Code
+
+\size footnotesize
 public void graficar(Vector<Punto> v) {
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   double step= 1/maxPts;		
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   double[] Pxi, Pyi, X, Y, t = step;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   Pxi = new double[v.size()];   Pyi = new double[v.size()];
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   for(int i=0; i<v.size(); i++) {	
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
     switch(opc) {
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
       case DEF.vistaYX: Pxi[i]=v.get(i).getX(); Pyi[i]=v.get(i).getY(); break;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
       case DEF.vistaZY: Pxi[i]=v.get(i).getY(); Pyi[i]=v.get(i).getZ(); break;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
       case DEF.vistaZX: Pxi[i]=v.get(i).getX(); Pyi[i]=v.get(i).getZ(); break;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
     }
 \end_layout
 
 \begin_layout LyX-Code
-  }
+
+\size footnotesize
+  }  
 \end_layout
 
 \begin_layout LyX-Code
-  switch(opc) {
-\end_layout
 
-\begin_layout LyX-Code
-    case DEF.vistaYX: new Linea(plot, new Punto(Xant2, Yant2, z), 
-\end_layout
-
-\begin_layout LyX-Code
-                      new Punto( v.get(0).getX(), v.get(0).getY(), z), vista);
-\end_layout
-
-\begin_layout LyX-Code
-                      Xant2 = v.lastElement().getX(); 
-\end_layout
-
-\begin_layout LyX-Code
-                      Yant2 = v.lastElement().getY(); break;
-\end_layout
-
-\begin_layout LyX-Code
-    case DEF.vistaZY: new Linea(plot, new Punto(x, Xant2, Yant2), 
-\end_layout
-
-\begin_layout LyX-Code
-                      new Punto( x, v.get(0).getY(), v.get(0).getZ()), vista);
-\end_layout
-
-\begin_layout LyX-Code
-                      Xant2 = v.lastElement().getY(); 
-\end_layout
-
-\begin_layout LyX-Code
-                      Yant2 = v.lastElement().getZ(); break;
-\end_layout
-
-\begin_layout LyX-Code
-    case DEF.vistaZX: new Linea(plot, new Punto(Xant2, y, Yant2), 
-\end_layout
-
-\begin_layout LyX-Code
-                      new Punto( v.get(0).getX(), y, v.get(0).getZ()), vista);
-\end_layout
-
-\begin_layout LyX-Code
-                      Xant2 = v.lastElement().getX(); 
-\end_layout
-
-\begin_layout LyX-Code
-                      Yant2 = v.lastElement().getZ(); break;
-\end_layout
-
-\begin_layout LyX-Code
-  }
-\end_layout
-
-\begin_layout LyX-Code
+\size footnotesize
   Xant = -1000;    Yant = -1000;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   while(t<=1) {
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
     for (int j = Pxi.length-1; j > 0; j--)
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
       for (int i = 0; i < j; i++){
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
         Pxi[i] = (1-t)*Pxi[i] + t*Pxi[i+1];
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
         Pyi[i] = (1-t)*Pyi[i] + t*Pyi[i+1];
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
       }
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
     X = Pxi[0];  Y = Pyi[0];
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
     if(Xant!=-1000&&Yant!=-1000) {
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
       switch(opc) {
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
         case DEF.vistaYX: new Linea(plot, new Punto(Xant, Yant, z), 
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
                           new Punto(X, Y, z), vista); break;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
         case DEF.vistaZY: new Linea(plot, new Punto(x, Xant, Yant), 
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
                           new Punto(x, X, Y), vista); break;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
         case DEF.vistaZX: new Linea(plot, new Punto(Xant, y, Yant), 
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
                           new Punto(X, y, Y), vista); break;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
       }
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
     }
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
     Xant = X; Yant = Y; t += step;
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
   }
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 }
 \end_layout
 
@@ -3132,6 +3230,18 @@ Curva de Bezier (primitivas.Bezier.java)
 
 \end_layout
 
+\begin_layout Standard
+Para fines de programación se definió con el predicado 
+\begin_inset Formula $Bezier\left(p\right)$
+\end_inset
+
+ donde 
+\begin_inset Formula $p$
+\end_inset
+
+ es un conjunto definido de puntos que conforman la curva.
+\end_layout
+
 \begin_layout Subsection
 Elementos compuestos
 \end_layout
@@ -3139,7 +3249,8 @@ Elementos compuestos
 \begin_layout Standard
 Es un objeto compuesto por una o más primitivas para formar un elemento
  compuesto.
- Este elemento puede contener infinitas primitivas dentro de si misma.
+ Este elemento puede contener un numero ilimitado de primitivas dentro de
+ si misma.
  En la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3148,11 +3259,12 @@ reference "fig:Elemento-compuesto"
 \end_inset
 
  se muestra un ejemplo de un elemento compuesto, este elemento contiene
- tres líneas.
+ cuatro primitivas.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status collapsed
@@ -3199,6 +3311,20 @@ Transformaciones
 \end_layout
 
 \begin_layout Standard
+En principio, uno podría realizar cualquier transformación sobre todos los
+ puntos de un objeto pero aquí trataremos con un conjunto limitado solamente
+ a unas pocas transformaciones continuas: escalado, traslación, rotación
+ y proyección de un objeto.
+ Esas operaciones tienen la ventaja de que se pueden realizar mediante un
+ producto matricial y que se pueden combinar multiplicando de antemano las
+ matrices de transformación, y así evitar la gran cantidad de operaciones
+ que llevaría hacerlas una por una.
+ Cualquier transformación que no sea representable mediante matrices, también
+ puede realizarse, pero en un procedimiento aparte que deberá ser programado
+ para tal fin.
+\end_layout
+
+\begin_layout Standard
 Como se mostró en las secciones anteriores, las primitivas se están definiendo
  mediante puntos de control, un punto en el espacio 3D homogéneo será un
  vector columna como el que se muestra en la ec.
@@ -3223,6 +3349,14 @@ z\\
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+A continuación se muestran los productos matriciales para: escalado, traslación,
+ rotación y proyección de un punto de control.
+ Aplicando dichas transformaciones a todos los puntos de control de una
+ primitiva se realiza la tranformación a todos los puntos que contiene la
+ misma.
 \end_layout
 
 \begin_layout Subsection
@@ -3587,8 +3721,27 @@ Almacenamiento y recuperación
 \end_layout
 
 \begin_layout Standard
-El almacenamiento y recuperación es una de las operaciones más importantes
- en un sistema, 
+A pesar de las mejoras en la tecnología de los dispositivos de almacenamiento,
+ de la mejor protección frente a los virus y de las mejoras en la formación,
+ siguen ocurriendo desastres y caídas de sistemas en mayor número, haciendo
+ de la pérdida de datos un acontecimiento cada vez más habitual.
+\end_layout
+
+\begin_layout Standard
+La recuperación de datos entra en juego porque incluso la protección que
+ proporcionan los sistemas de copias de seguridad no es infalible.
+ El tiempo que lleva restaurar las copias de seguridad puede causar problemas
+ si no es suficientemente rápido, puesto que el proceso puede llevar varios
+ días.
+ Por último, la información puede no estar totalmente al día si la copia
+ de seguridad es demasiado grande, lo que da lugar a la necesidad de recurrir
+ a los servicios de recuperación.
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta lo anterior se eligió usar un formato flexible tanto
+ para la implementación como para la recuperación en caso de alguna perdida
+ parcial de la información, se eligió XML.
 \end_layout
 
 \begin_layout Subsection
@@ -3596,7 +3749,13 @@ Almacenamiento en formato XML
 \end_layout
 
 \begin_layout Standard
-El formato XML
+El formato XML (del inglés eXtensible Markup Language) es un metalenguaje
+ extensible de etiquetas desarrollado por el World Wide Web Consortium como
+ una propuesta de estándar para el intercambio de información estructurada
+ entre diferentes plataformas.
+ Tiene un papel muy importante en la actualidad ya que permite la compatibilidad
+ entre sistemas para compartir la información de una manera segura, fiable
+ y fácil.
 \end_layout
 
 \begin_layout Standard
@@ -3625,7 +3784,7 @@ Estructura de almacenamiento
 \end_layout
 
 \begin_layout Standard
-La estructura de almacenamiento puede observarse en la figura 
+La estructura de almacenamiento puede observarse en el código 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:EstructuraXML"
@@ -3638,156 +3797,122 @@ reference "fig:EstructuraXML"
 
 \begin_layout Standard
 \begin_inset Float algorithm
-placement h
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout LyX-Code
+
+\size footnotesize
 <modelador>
 \end_layout
 
 \begin_deeper
 \begin_layout LyX-Code
+
+\size footnotesize
 <fig tipo="5" >
 \end_layout
 
 \begin_deeper
 \begin_layout LyX-Code
+
+\size footnotesize
 	<x0>183.0</x0>
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 	<y0>211.0</y0>
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 	<z0>130.0</z0>
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 	<x1>265.0</x1>
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 	<y1>251.0</y1>
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 	<z1>130.0</z1>
 \end_layout
 
 \end_deeper
 \begin_layout LyX-Code
+
+\size footnotesize
 </fig>
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 <fig tipo="2" >
 \end_layout
 
 \begin_deeper
 \begin_layout LyX-Code
+
+\size footnotesize
 	<x0>101.0</x0>
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 	<y0>211.0</y0>
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 	<z0>190.0</z0>
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 	<x1>187.0</x1>
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 	<y1>250.0</y1>
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 	<z1>190.0</z1>
 \end_layout
 
 \end_deeper
 \begin_layout LyX-Code
-</fig>
-\end_layout
 
-\begin_layout LyX-Code
-<fig tipo="6" >
-\end_layout
-
-\begin_deeper
-\begin_layout LyX-Code
-	<x0>245.0</x0>
-\end_layout
-
-\begin_layout LyX-Code
-	<y0>237.0</y0>
-\end_layout
-
-\begin_layout LyX-Code
-	<z0>190.0</z0>
-\end_layout
-
-\begin_layout LyX-Code
-	<x1>210.0</x1>
-\end_layout
-
-\begin_layout LyX-Code
-	<y1>232.0</y1>
-\end_layout
-
-\begin_layout LyX-Code
-	<z1>190.0</z1>
-\end_layout
-
-\begin_layout LyX-Code
-	<x2>186.0</x2>
-\end_layout
-
-\begin_layout LyX-Code
-	<y2>213.0</y2>
-\end_layout
-
-\begin_layout LyX-Code
-	<z2>190.0</z2>
-\end_layout
-
-\begin_layout LyX-Code
-	<x3>175.0</x3>
-\end_layout
-
-\begin_layout LyX-Code
-	<y3>189.0</y3>
-\end_layout
-
-\begin_layout LyX-Code
-	<z3>190.0</z3>
-\end_layout
-
-\begin_layout LyX-Code
-	<x4>180.0</x4>
-\end_layout
-
-\begin_layout LyX-Code
-	<y4>171.0</y4>
-\end_layout
-
-\begin_layout LyX-Code
-	<z4>190.0</z4>
-\end_layout
-
-\end_deeper
-\begin_layout LyX-Code
+\size footnotesize
 </fig>
 \end_layout
 
 \end_deeper
 \begin_layout LyX-Code
+
+\size footnotesize
 </modelador>
 \end_layout
 
@@ -3869,13 +3994,64 @@ Curva de Bezier (6)
 Importación de otros formatos
 \end_layout
 
+\begin_layout Standard
+Una herramienta importante en toda aplicación de diseño es la compatibilidad
+ que esta debe tener es la capacidad de importar formatos externos a ella.
+ 
+\end_layout
+
+\begin_layout Standard
+Como primer formato de importación se desarrolló un importador para el formato
+ de imágenes PGM.
+\end_layout
+
 \begin_layout Subsection
 Imágenes PGM
 \end_layout
 
 \begin_layout Standard
-Una imagen PGM es la representación a escala de grises de una imagen.
+El formato PGM (del inglés Portable GrayMap) es un formato sin compresión,
+ diseñados para el fácil intercambio entre plataformas.
  
+\end_layout
+
+\begin_layout Standard
+Este formato esta compuesto por dos partes:
+\end_layout
+
+\begin_layout Itemize
+Un encabezado que da información sobre el tamaño de la imagen así como el
+ máximo colos expresado (0 - 255)
+\end_layout
+
+\begin_layout Itemize
+El cuerpo de la imagen, descripcion de color en cada uno de los pixel's
+\end_layout
+
+\begin_layout Standard
+En el código 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Código-PGM"
+
+\end_inset
+
+ puede pareciarse un pequeño ejemplo de este formato y en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Ejemplo-PGM"
+
+\end_inset
+
+ se aprecia su representación gráfica.
+ En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pgm_a_robot"
+
+\end_inset
+
+ se muestra un ejemplo más complejo y su respectiva implementación en madera.
 \end_layout
 
 \begin_layout Standard
@@ -3883,17 +4059,23 @@ Una imagen PGM es la representación a escala de grises de una imagen.
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout LyX-Code
+
+\size footnotesize
 P2
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 10 7 
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 255
 \end_layout
 
@@ -3902,30 +4084,44 @@ P2
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 255   255   255   255   255   255   255   255   255   255	 
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 255    0     0     0    255   255   164   164   164   255
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 255    0    255    0    255   255   164   255   255   255
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 255    0     0     0    255   255   164   164   255   255
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 255    0    255    0    255   255   164   255   255   255
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 255    0    255    0    255   255   164   164   164   255
 \end_layout
 
 \begin_layout LyX-Code
+
+\size footnotesize
 255   255   255   255   255   255   255   255   255   255
 \end_layout
 
@@ -3934,6 +4130,13 @@ P2
 
 \begin_layout Plain Layout
 Código PGM
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Código-PGM"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3951,7 +4154,7 @@ Código PGM
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -3970,6 +4173,13 @@ status open
 
 \begin_layout Plain Layout
 Ejemplo PGM
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ejemplo-PGM"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5096,10 +5306,110 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename imagenes/herramientasdiseno.png
 	lyxscale 50
-	width 70page%
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Herramientas de diseño
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/figurasproyecto.png
+	lyxscale 50
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Figuras en proyecto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/enviarobot.png
+	lyxscale 50
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Envia Robot
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -5127,47 +5437,7 @@ Pantalla inicial
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename imagenes/figurasproyecto.png
-	lyxscale 50
-	width 70page%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Pestaña Figuras en proyecto
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -5324,42 +5594,6 @@ Vistas disponibles
 \end_layout
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename imagenes/enviarobot.png
-	lyxscale 50
-	width 70page%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Envia Robot
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -6779,6 +7013,59 @@ name "cha:6_Pruebas"
 Introducción 
 \end_layout
 
+\begin_layout Standard
+Para poder ejecutar la aplicación desarrollada es necesario tener un entorno
+ adecuado para su ejecución, esto puede reducirse en los siguiente puntos:
+\end_layout
+
+\begin_layout Enumerate
+Descargar e instalar Java Runtime Enviorement 1.6 o superior.
+\begin_inset Newline newline
+\end_inset
+
+http://java.sun.com/javase/downloads/index.jsp
+\end_layout
+
+\begin_layout Enumerate
+Descargar e instalar las siguientes bibliotecas:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+SWT 3.4 o superior
+\begin_inset Newline newline
+\end_inset
+
+http://eclipse.org/swt/
+\end_layout
+
+\begin_layout Enumerate
+RXTX 2.2 o superior
+\begin_inset Newline newline
+\end_inset
+
+http://users.frii.com/jarvi/rxtx/
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Descargar esta aplicacion
+\begin_inset Newline newline
+\end_inset
+
+http://code.google.com/p/modelando-madera/downloads/
+\end_layout
+
+\begin_layout Standard
+Para realizar las pruebas correspondientes es necesario instalar los requisitos
+ mencionados anteriormente, en un sistema MS-Windows se deben seguir los
+ siguientes paso:
+\end_layout
+
+\begin_layout Itemize
+Descargar e instalar Java: 
+\end_layout
+
 \begin_layout Section
 Funcionalidad multiplataforma del software 3D
 \end_layout
@@ -6809,6 +7096,50 @@ Pruebas en campo
 
 \begin_layout Subsection
 Realizacion de primitivas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/elipse.png
+	lyxscale 20
+	width 30page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Ejemplo realizado 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -6895,42 +7226,7 @@ Reprogramar el controlador del robot SCARA para realizar movimientos simultáneo
 
 \begin_layout Chapter*
 \begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-newpage
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{chapter}{Comandos soportados por el robot SCARA}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter*
-Comandos soportados por el robot SCARA
-\end_layout
-
-\begin_layout Standard
-A continuación se listan los comandos soportados por el robot SCARA
-\end_layout
-
-\begin_layout Subsubsection
-Comando para mover los motores del robot
-\end_layout
-
-\begin_layout Chapter*
-\begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
