@@ -20,6 +20,8 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.CoolItem;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.ExpandBar;
 import org.eclipse.swt.widgets.ExpandItem;
@@ -29,6 +31,8 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.ToolBar;
+import org.eclipse.swt.widgets.ToolItem;
 import org.eclipse.swt.layout.GridData;
 
 import java.io.FileNotFoundException;
@@ -37,6 +41,7 @@ import java.util.Vector;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.CoolBar;
 
 
 /**
@@ -87,6 +92,7 @@ public class Tesis {
 	
 	
 	private Punto puntoActual = new Punto(1,1,1);  //  @jve:decl-index=0:
+	private CoolBar coolBar = null;
 	
 	private void actualizarPuntoActual(Event e) {
 		vistaActual = vistasDiseno.getOpcion();
@@ -101,6 +107,8 @@ public class Tesis {
 			puntoActual = new Punto(z, e.x, e.y);
 			break;
 		}
+		
+
 	}
 	private Punto getPuntoActual() {
 		return new Punto(puntoActual.getX(), puntoActual.getY(), puntoActual.getZ());
@@ -159,6 +167,7 @@ public class Tesis {
 			public void handleEvent(Event e) {					
 				switch(e.type) {
 					case SWT.MouseMove:
+						
 						sShell.setCursor(new Cursor(sShell.getDisplay(), SWT.CURSOR_ARROW));
 						break;
 				}				
@@ -173,12 +182,13 @@ public class Tesis {
 		Listener listener2 = new Listener() {
 			
 			public void handleEvent(Event e) {
+				
 				actualizarPuntoActual(e);
 				Vector<Figuras> p = listaFiguras.figuras;
 				listaFiguras.setOpcVisual(vistaActual);
 
 				
-				
+				plotVista(plot);
 				switch(e.type) {
 					case SWT.MouseDown:												
 						plot.gc.fillRectangle(0, 0, 1200, 800);
@@ -188,7 +198,7 @@ public class Tesis {
 							if(listaFiguras.listFigura.getSelectionIndex()==i) {
 								plot.selecColor();
 								
-								System.out.println("Figura: "+i);
+								//System.out.println("Figura: "+i);
 							}else {
 								plot.unselecColor();
 							}
@@ -221,6 +231,7 @@ public class Tesis {
 							}					
 						}
 						canvas.redraw();
+						plotVista(plot);
 						break;
 				}				
 			}
@@ -231,13 +242,70 @@ public class Tesis {
 		vistasDiseno.bLado.addListener(SWT.MouseDown, listener2);
 	}
 	
-	private void crearListenerCanvas() {				
+	private void plotVista(Plot plot) {
+		int x = 20;
+		int y=520;
+		
+		y=this.sShell.getSize().y-170;
+		plot.unselecColor();
+		
+		plot.linea(new Punto(x, y+30, 0),new Punto(x+30, y+30, 0), DEF.vistaYX);				
+		plot.linea(new Punto(x+30, y+30, 0),new Punto(x+25, y+27, 0), DEF.vistaYX);				
+		plot.linea(new Punto(x+30, y+30, 0),new Punto(x+25, y+33, 0), DEF.vistaYX);
+						
+		plot.linea(new Punto(x, y, 0),new Punto(x, y+30, 0), DEF.vistaYX);				
+		plot.linea(new Punto(x, y, 0),new Punto(x-3, y+5, 0), DEF.vistaYX);
+		plot.linea(new Punto(x, y, 0),new Punto(x+3, y+5, 0), DEF.vistaYX);
+		
+		switch(vistaActual) {
+			case DEF.vistaYX:
+				plot.linea(new Punto(x, y-5, 0),new Punto(x+5, y-15, 0), DEF.vistaYX);
+				plot.linea(new Punto(x+2, y-10, 0),new Punto(x-2, y-15, 0), DEF.vistaYX);
+				break;
+			case DEF.vistaZX:
+				plot.linea(new Punto(x-4, y-5, 0),new Punto(x+4, y-15, 0), DEF.vistaYX);
+				plot.linea(new Punto(x-4, y-15, 0),new Punto(x+4, y-15, 0), DEF.vistaYX);
+				plot.linea(new Punto(x-4, y-5, 0),new Punto(x+4, y-5, 0), DEF.vistaYX);
+				break;
+			case DEF.vistaZY:
+				plot.linea(new Punto(x-4, y-5, 0),new Punto(x+4, y-15, 0), DEF.vistaYX);
+				plot.linea(new Punto(x-4, y-15, 0),new Punto(x+4, y-15, 0), DEF.vistaYX);
+				plot.linea(new Punto(x-4, y-5, 0),new Punto(x+4, y-5, 0), DEF.vistaYX);
+				break;
+		}
+		
+		x += 37;
+		y+=40;
+		
+		
+		switch(vistaActual) {
+			case DEF.vistaYX:
+				plot.linea(new Punto(x-4, y-5, 0),new Punto(x+4, y-15, 0), DEF.vistaYX);
+				plot.linea(new Punto(x+4, y-5, 0),new Punto(x-4, y-15, 0), DEF.vistaYX);
+				
+				break;
+			case DEF.vistaZX:
+				plot.linea(new Punto(x-4, y-5, 0),new Punto(x+4, y-15, 0), DEF.vistaYX);
+				plot.linea(new Punto(x+4, y-5, 0),new Punto(x-4, y-15, 0), DEF.vistaYX);
+				
+				break;
+			case DEF.vistaZY:
+				plot.linea(new Punto(x, y-5, 0),new Punto(x+5, y-15, 0), DEF.vistaYX);
+				plot.linea(new Punto(x+2, y-10, 0),new Punto(x-2, y-15, 0), DEF.vistaYX);
+				break;
+		}							
+	}
+	
+	private void crearListenerCanvas() {	
+		plotVista(plot);
 		Listener listener = new Listener() {						
 			public void handleEvent(Event e) {					
 				
 				tipoFigura.getTipo();
 				z = tipoFigura.getZ();
 				actualizarPuntoActual(e);
+				
+				
 				switch(e.type) {
 					case SWT.MouseDown:					
 						
@@ -422,6 +490,7 @@ public class Tesis {
 				}
 				if(redibujar) {
 					canvas.redraw();
+					plotVista(plot);
 					redibujar=false;
 				}
 			}
@@ -497,7 +566,7 @@ public class Tesis {
 		compositeBarras.setLayout(new FillLayout());
 		compositeBarras.setLayoutData(gridData2);
 		
-		ExpandBar bar = new ExpandBar (compositeBarras, SWT.V_SCROLL);
+		ExpandBar bar = new ExpandBar (compositeBarras, SWT.V_SCROLL);		
 			
 			tipoFigura = new TipoFigura2(bar, SWT.NONE);
 			ExpandItem item0 = new ExpandItem (bar, SWT.NONE, 0);				
@@ -537,6 +606,77 @@ public class Tesis {
 
 
 	/**
+	 * This method initializes coolBar	
+	 *
+	 */
+	private void createCoolBar() {
+		GridData gridData4 = new GridData();
+		gridData4.horizontalSpan = 2;
+		gridData4.grabExcessVerticalSpace = false;
+		gridData4.horizontalAlignment = GridData.BEGINNING;
+		gridData4.verticalAlignment = GridData.FILL;
+		gridData4.widthHint = -1;
+		gridData4.heightHint = -1;
+		gridData4.grabExcessHorizontalSpace = false;
+		coolBar = new CoolBar(sShell, SWT.NONE);
+		coolBar.setLayoutData(gridData4);		
+		ToolBar tb = new ToolBar(coolBar, SWT.FLAT);
+		
+		//CoolBar bar = new CoolBar (sShell, SWT.BORDER);
+		
+			CoolItem item1 = new CoolItem (coolBar, SWT.NONE);
+				ToolItem tNuevo = new ToolItem(tb, SWT.NONE);
+				tNuevo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/new.png")));
+				tNuevo.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						archivoNuevo();
+					}
+					public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
+			
+				ToolItem tAbrir = new ToolItem(tb, SWT.NONE);
+				tAbrir.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/open.png")));
+				tAbrir.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						archivoAbrir(sShell);
+					}
+					public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
+				
+				ToolItem tGuardar = new ToolItem(tb, SWT.NONE);
+				tGuardar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/save.png")));
+				tGuardar.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						archivoGuardarComo(sShell);
+					}
+					public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
+				
+				ToolItem tImportar = new ToolItem(tb, SWT.NONE);
+				tImportar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/font.png")));
+				tImportar.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						archivoImportar(sShell);
+					}
+					public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
+		
+				ToolItem tUndo = new ToolItem(tb, SWT.NONE);
+				tUndo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/undo.png")));
+			
+			Point p = tb.computeSize(SWT.DEFAULT, SWT.DEFAULT);
+			tb.setSize(p);
+			Point p2 = item1.computeSize(p.x, p.y);
+		    item1.setControl(tb);
+		    item1.setSize(p2);
+			
+		coolBar.pack ();
+	}
+	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -565,6 +705,7 @@ public class Tesis {
 		sShell = new Shell();
 		sShell.setText(".:: Roberto Loaeza Valerio ::.");
 		sShell.setMaximized(false);
+		createCoolBar();
 		createCompositePrincipal();
 		sShell.setLayout(gridLayout1);
 		sShell.setSize(new Point(959, 662));
@@ -733,7 +874,7 @@ public class Tesis {
 	}
 	private void archivoImportar(Shell s) {
 		 FileDialog fd = new FileDialog(s, SWT.OPEN);
-	        fd.setText(DEF.mArchivoAbrir);
+	        fd.setText(DEF.mArchivoImportar);
 	        fd.setFilterPath("/");
 	        String[] filterExt = { "*"+DEF.extpgm, "*.*" };
 	        fd.setFilterExtensions(filterExt);

@@ -4924,352 +4924,6 @@ La máquina virtual de Java (JVM) es un programa nativo (un ejecutable de
 \end_layout
 
 \begin_layout Section
-Elección de sistema de renderización.
-\end_layout
-
-\begin_layout Standard
-La elección debe realizarse tomando en cuenta ventajas y desventajas de
- las tecnologías disponibles, las cuales se muestran en la tabla 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Comparativa-entre-Direct3DJava3dOpenGl"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Float table
-placement h
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="4">
-<features>
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Direct3D
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Java3D
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-OpenGL
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Plataformas soportadas
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Windows
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Multiplataforma
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Multiplataforma
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Soporte nativo
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Si
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-No
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Si
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Licencia
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-EULA
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-GNU General Public
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-SGI
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Comparativa entre Direct3D, Java3D y OpenGL
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Comparativa-entre-Direct3DJava3dOpenGl"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Debido a que Direct3D solo soporta la plataforma MS-Windows fue deshechada
- y por otra parte Java3D tiene una dependencia con OpenGL o con Direct3D
- también fue deshecada dejando como sistema de renderización a OpenGL.
-\end_layout
-
-\begin_layout Subsection
-OpenGL
-\end_layout
-
-\begin_layout Standard
-OpenGL es una especificación estándar que define una API multilenguaje y
- multiplataforma para escribir aplicaciones que produzcan gráficos 2D y
- 3D.
- Fue desarrollada por Silicon Graphics Inc.
- (SGI) en 1992 .
-\end_layout
-
-\begin_layout Standard
-Las funciones y comandos de esta API están integrados en las tarjetas de
- aceleración gráfica 3D, o en su defecto son emuladas por el sistema operativo.
- Es claro que para el propósito específico de modelado 3D no se debe realizar
- emulación por software sino se debe tener acceso directo al hardware.
- 
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename imagenes/opengl-hw.png
-	lyxscale 50
-	width 70page%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Aplicación-OpenGL"
-
-\end_inset
-
-Aplicación utilizando OpenGL y aceleración gráfica por hardware
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-En la figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Aplicación-OpenGL"
-
-\end_inset
-
- se muestra una aplicación utilizando OpenGL y aceleración gráfica por hardware;
- se puede observar que las llamadas a la interfaz de aplicación OpenGL pasan
- directamente al hardware de aceleración y no pasan a través de la interfaz
- de dispositivo de gráfico (GDI) que sería el caso si se tratara de simulación
- por software.
-\end_layout
-
-\begin_layout Subsubsection
-GLUT
-\end_layout
-
-\begin_layout Standard
-Es un conjunto de herramientas OpenGL, un sistema de ventanas independientes
- para escribir programas OpenGL en lenguajes C y FORTRAN.
- Implementa una simple interfaz de programación para aplicaciones (API)
- para OpenGL.
- Por su parte GLUT hace considerablemente fácil la programación OpenGL.
-\end_layout
-
-\begin_layout Standard
-GLUT provee un soporte para las plataformas Windows, Linux, Mac.
- Con la única desventaja de tener que recompilar para ser usado en otra
- plataforma.
-\end_layout
-
-\begin_layout Subsubsection
-JOGL (JSR-231)
-\end_layout
-
-\begin_layout Standard
-Jogl es un enlace del lenguaje de programación Java para la API de OpenGL.
- Soporta integración con los estándares de Java AWT y Swing.
- Jogl provee aceso a las más recientes rutinas de OpenGL (OpenGL 2.0 con
- extensiones de fabricante) asi como una plataforma independiente para accesar
- a hardware acelerador.
- 
-\end_layout
-
-\begin_layout Standard
-Jogl tambien prvee algunas de las mas populares características, introducidas
- por otros enlaces existentes para OpenGL como son GL4Java, LWJGL, GLUT
- entre otros.
-\end_layout
-
-\begin_layout Standard
-Es importante mencionar que esta tecnologia es código abierto y fue iniciada
- por Game Technology Group.
-\end_layout
-
-\begin_layout Section
 Software desarrollado
 \end_layout
 
@@ -5293,15 +4947,174 @@ consistencia
 .
 \end_layout
 
+\begin_layout Standard
+Aunque en general pantalla es sinónimo de monitor del equipo, en lo sucesivo
+ se tomará como la parte del dibujo que se visualiza en un momento determinado.
+\end_layout
+
 \begin_layout Subsection
 Iniciando el software
 \end_layout
 
 \begin_layout Standard
+Al iniciar la aplicación nos encontramos con una pantalla como la que se
+ muestra en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Pantalla-principal"
+
+\end_inset
+
+ de donde se pueden resaltar cinco áreas importantes:
+\end_layout
+
+\begin_layout Itemize
+Área de menús 
+\end_layout
+
+\begin_layout Itemize
+Barra de herramientas de acceso rápido
+\end_layout
+
+\begin_layout Itemize
+Barra de herramientas de expasión
+\end_layout
+
+\begin_layout Itemize
+Area de trabajo
+\end_layout
+
+\begin_layout Itemize
+Descripción del punto actual
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/vgeneral.png
+	lyxscale 50
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pantalla principal
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Pantalla-principal"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Área de menús
+\end_layout
+
+\begin_layout Standard
+Esta área contiene las acciones que debe contener todo sistema computacional,
+ 
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Área-de-menús"
+
+\end_inset
+
+(a) se muestra las acciones básicas sobre manipulación de archivos:
+\end_layout
+
+\begin_layout Itemize
+Nuevo.
+ Cierra el proyecto actual y genera uno nuevo.
+\end_layout
+
+\begin_layout Itemize
+Abrir.
+ Abre un proyecto previamente almacenado.
+\end_layout
+
+\begin_layout Itemize
+Importar.
+ Permite importar archivos en formato PGM.
+\end_layout
+
+\begin_layout Itemize
+Cerrar.
+ Cierra el proyecto actual.
+\end_layout
+
+\begin_layout Itemize
+Guardar Como.
+ Permite almacenar el proyecto actual con un nombre determinado.
+\end_layout
+
+\begin_layout Itemize
+Salir.
+ Cierra el programa.
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Área-de-menús"
+
+\end_inset
+
+(b) se muestra las acciones pertinentes a la implementación del diseño:
+\end_layout
+
+\begin_layout Itemize
+Activar robot.
+ Comprueba y genera un enlace entre la aplicación y el puerto serial para
+ realizar la comunicación con el robot SCARA.
+\end_layout
+
+\begin_layout Itemize
+Iniciar proceso robot.
+ Inicia el proceso de convertir el diseño realizado en operaciones que el
+ robot SCARA pueda interpretar.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -5315,7 +5128,133 @@ status collapsed
 \noindent
 \align center
 \begin_inset Graphics
-	filename imagenes/herramientasdiseno.png
+	filename imagenes/mnuevo.png
+	lyxscale 40
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Menú archivo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/mherramientas.png
+	lyxscale 40
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Menú Herramientas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Área de menús
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Área-de-menús"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Barra de herramientas de acceso rápido
+\end_layout
+
+\begin_layout Standard
+Contiene acceso rápido a tareas comunes como crear un nuevo proyecto, abrir
+ un proyecto, importar de un formato diferente asi como la acción deshacer.
+ Esta seccion puede apreciarse en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Pantalla-principal"
+
+\end_inset
+
+ en la parte superior izquierda, justo debajo de la área de menús .
+\end_layout
+
+\begin_layout Subsubsection
+Barra de herramientas de expasión
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/herrdise.png
 	lyxscale 50
 	width 35page%
 
@@ -5336,10 +5275,6 @@ Herramientas de diseño
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -5352,7 +5287,7 @@ status collapsed
 \noindent
 \align center
 \begin_inset Graphics
-	filename imagenes/figurasproyecto.png
+	filename imagenes/figproy.png
 	lyxscale 50
 	width 35page%
 
@@ -5437,7 +5372,7 @@ Pantalla inicial
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -5593,13 +5528,35 @@ Vistas disponibles
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Area de trabajo
+\end_layout
+
+\begin_layout Standard
+El área de trabajo es la parte central donde se pueden realizar todos los
+ trazos.
+\end_layout
+
+\begin_layout Subsubsection
+Descripción del punto actual
+\end_layout
+
+\begin_layout Standard
+La descripción del punto actual se muestra en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Pantalla-principal"
+
+\end_inset
+
+ en la parte inferior izquierda, esta nos da información sobre la posición
+ actual donde se encuentra el cursor dentro del area de trabajo del robot,
+ además muestra el comando para mover el robot SCARA a la posición actual.
 \end_layout
 
 \begin_layout Chapter
@@ -7015,55 +6972,341 @@ Introducción
 
 \begin_layout Standard
 Para poder ejecutar la aplicación desarrollada es necesario tener un entorno
- adecuado para su ejecución, esto puede reducirse en los siguiente puntos:
+ adecuado para su ejecución.
 \end_layout
 
-\begin_layout Enumerate
-Descargar e instalar Java Runtime Enviorement 1.6 o superior.
-\begin_inset Newline newline
-\end_inset
-
-http://java.sun.com/javase/downloads/index.jsp
-\end_layout
-
-\begin_layout Enumerate
-Descargar e instalar las siguientes bibliotecas:
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-SWT 3.4 o superior
-\begin_inset Newline newline
-\end_inset
-
-http://eclipse.org/swt/
-\end_layout
-
-\begin_layout Enumerate
-RXTX 2.2 o superior
-\begin_inset Newline newline
-\end_inset
-
-http://users.frii.com/jarvi/rxtx/
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Descargar esta aplicacion
-\begin_inset Newline newline
-\end_inset
-
-http://code.google.com/p/modelando-madera/downloads/
+\begin_layout Subsubsection
+Requisitos mínimos del sistema
 \end_layout
 
 \begin_layout Standard
-Para realizar las pruebas correspondientes es necesario instalar los requisitos
- mencionados anteriormente, en un sistema MS-Windows se deben seguir los
- siguientes paso:
+El equipo necesario para ejecutar la aplicación desarrollada será el mostrado
+ en la tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Requisitos-mínimos-del"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features>
+<column alignment="center" valignment="middle" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Concepto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Procesador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Velocidad de 1 Ghz o superior
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memoria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+256 Mb como mínimo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Almacenamiento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20 Mb
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MS-Windows XP o superior
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema operativo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linux kernel 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MacOS Tiger
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Java
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+JRE 1.6 o superior
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bibliotecas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RXTX 2.2 o superior
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SWT 3.4 o superior
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Requisitos mínimos del sistema
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Requisitos-mínimos-del"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Instalando Java
+\end_layout
+
+\begin_layout Standard
+Descargar e instalar Java Runtime Enviorement 1.6 o superior de la página
+ oficial de Sun Microsystem: http://java.sun.com/javase/downloads/index.jsp.
+ Si el sistema operativo anfitrión es MS Windows solo es necesario ejecutar
+ el archivo ejecutable descargado.
+\end_layout
+
+\begin_layout Subsubsection
+Instalando bibliotecas
+\end_layout
+
+\begin_layout Standard
+Para instalar la biblioteca necesaria para la comunicación con el robot
+ es necesario descargar la version más actual del sitio oficial http://users.frii.
+com/jarvi/rxtx/ y descomprimir los archivos correspondientes al sistema
+ operativo anfitrion y mover los archivos a una carpeta común con la aplicación
+ desarrollada.
+\end_layout
+
+\begin_layout Standard
+Finalmente la biblioteca SWT necesaria para la interfaz gráfica es necesario
+ descargar la version más actual del sitio oficial http://eclipse.org/swt/
+ y descomprimir los archivos correspondientes al sistema operativo anfitrión
+ y mover los archivos a una carpeta común con la aplicación desarrollada.
+\end_layout
+
+\begin_layout Standard
+Instalando la aplicación desarrollada
+\end_layout
+
+\begin_layout Standard
+Para ejecutar la aplicación desarrollada en esta tesis hay dos formas:
 \end_layout
 
 \begin_layout Itemize
-Descargar e instalar Java: 
+Usar algun cliente svn y descargar la versión en desarrollo y compilarla
+ desde el código fuente.
+ Para esto se debe realizar los siguientes comandos:
+\begin_inset Newline newline
+\end_inset
+
+svn.....
+\begin_inset Newline newline
+\end_inset
+
+javac ide.Tesis.java
+\begin_inset Newline newline
+\end_inset
+
+java ide.Tesis
+\end_layout
+
+\begin_layout Itemize
+Descargar la última versión liberada por el autor desde la página oficial
+ http://modelando-madera.googlecode.com y ejecutarla dando doble click sobre
+ el archivo o bien ejecutando el comando:
+\begin_inset Newline newline
+\end_inset
+
+java -jar modelador.jar
 \end_layout
 
 \begin_layout Section
