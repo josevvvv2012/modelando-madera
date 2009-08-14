@@ -431,6 +431,7 @@ public class ListaFiguras extends Composite {
 		bRellenar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
+					//System.out.println("figuras:"+listFigura.getItemCount());
 					if(figuras.get(listFigura.getSelectionIndex()).relleno)
 						figuras.get(listFigura.getSelectionIndex()).relleno = false;
 					else
