@@ -17,7 +17,7 @@
 
 \graphics default
 \paperfontsize 11
-\spacing onehalf
+\spacing other 1.6
 \use_hyperref false
 \papersize letterpaper
 \use_geometry true
@@ -160,7 +160,7 @@ mainmatter
 
 
 \backslash
-setcounter{page}{8}
+setcounter{page}{9}
 \end_layout
 
 \end_inset
@@ -238,13 +238,13 @@ reference "tab:Costos-de-adquisición"
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="4">
+<lyxtabular version="3" rows="4" columns="4">
 <features>
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -302,7 +302,7 @@ PROCART
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Rovert
 \end_layout
 
 \end_inset
@@ -311,7 +311,7 @@ PROCART
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1'000'000.00
 \end_layout
 
 \end_inset
@@ -320,7 +320,7 @@ PROCART
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10'000.00
 \end_layout
 
 \end_inset
@@ -331,45 +331,7 @@ PROCART
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+Servimadera
 \end_layout
 
 \end_inset
@@ -407,7 +369,7 @@ PROCART
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Andalucia
 \end_layout
 
 \end_inset
@@ -1958,14 +1920,14 @@ reference "fig:Sistema-de-coordenadas3d"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename imagenes/tCoordenadas.png
-	width 20page%
+	width 30page%
 
 \end_inset
 
@@ -2481,7 +2443,7 @@ x=r*sin\left(\Theta\right)\\
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2489,7 +2451,7 @@ status collapsed
 \begin_inset Graphics
 	filename imagenes/tCirculo.png
 	lyxscale 50
-	width 40page%
+	width 20page%
 
 \end_inset
 
@@ -2725,7 +2687,7 @@ x=r_{2}*sin\left(\Theta\right)\\
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2733,7 +2695,7 @@ status collapsed
 \begin_inset Graphics
 	filename imagenes/tElipse.png
 	lyxscale 50
-	width 40page%
+	width 30page%
 
 \end_inset
 
@@ -3308,6 +3270,13 @@ name "fig:Elemento-compuesto"
 
 \begin_layout Section
 Transformaciones
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Transformaciones"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3725,17 +3694,6 @@ A pesar de las mejoras en la tecnología de los dispositivos de almacenamiento,
  de la mejor protección frente a los virus y de las mejoras en la formación,
  siguen ocurriendo desastres y caídas de sistemas en mayor número, haciendo
  de la pérdida de datos un acontecimiento cada vez más habitual.
-\end_layout
-
-\begin_layout Standard
-La recuperación de datos entra en juego porque incluso la protección que
- proporcionan los sistemas de copias de seguridad no es infalible.
- El tiempo que lleva restaurar las copias de seguridad puede causar problemas
- si no es suficientemente rápido, puesto que el proceso puede llevar varios
- días.
- Por último, la información puede no estar totalmente al día si la copia
- de seguridad es demasiado grande, lo que da lugar a la necesidad de recurrir
- a los servicios de recuperación.
 \end_layout
 
 \begin_layout Standard
@@ -4214,10 +4172,6 @@ Diseño de la interfaz gráfica.
 
 \begin_layout Itemize
 Eleccion de lenguaje de programación.
-\end_layout
-
-\begin_layout Itemize
-Elección de sistema de renderización.
 \end_layout
 
 \begin_layout Section
@@ -4883,7 +4837,7 @@ El software desarrollado fue elaborado en lenguaje de programación Java
  debido a sus ventajas mencionadas anteriormente, sin embargo el uso de
  Java en ambiente gráfico tiene desventajas visuales tales como la no integració
 n de colores y formas en los objetos visuales con los propios del sistema
- operativo, esto se puede apreciar en la figura X.
+ operativo.
  Debido a esta característica visual se optó por utilizar las biblioteca
  SWT desarrollada por IBM la cual obtiene una apariencia idéntica a las
  aplicaciones nativas al sistema operativo logrando cumplir asi unos de
@@ -5007,34 +4961,88 @@ reference "fig:Área-de-menús"
 
 \begin_layout Itemize
 Nuevo.
- Cierra el proyecto actual y genera uno nuevo.
+ 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Se utiliza para crear un nuevo diseño o un diseño sin nombre.
+\end_layout
+
+\begin_layout Itemize
+Todos los archivos recibirán la extensión xml.
+\end_layout
+
+\begin_layout Itemize
+Si se escogiera un nombre existente, se mostrará un mensaje indicando la
+ existencia de un diseño con ese nombre y dando la opción de sustituirlo.
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Abrir.
- Abre un proyecto previamente almacenado.
+ 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Con esta orden se cargan los diseños existentes, creados con anterioridad,
+ para su visualización, modificación o implementación.
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Importar.
- Permite importar archivos en formato PGM.
+ 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Permite transformar archivos en formato PGM en un diseño entendible por
+ el programa.
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Cerrar.
- Cierra el proyecto actual.
+ 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Este comando permite cerrar el diseño actual sin almacenar los cambios efectuado
+s al diseño.
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Guardar Como.
- Permite almacenar el proyecto actual con un nombre determinado.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Para almacenar los diseños realizados duarante una sesión de trabajo.
 \end_layout
 
 \begin_layout Itemize
-Salir.
- Cierra el programa.
+Si el proyecto tiene nombre solo se actualizará, en caso contrario se solicitará
+ un nombre para el diseño.
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+Salir.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Este comando sale del programa sin guardar los cambios efectuados en el
+ diseño actual, sólo preguntando si en realidad desea salir.
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 En la figura 
 \begin_inset CommandInset ref
@@ -5048,16 +5056,32 @@ reference "fig:Área-de-menús"
 
 \begin_layout Itemize
 Activar robot.
- Comprueba y genera un enlace entre la aplicación y el puerto serial para
- realizar la comunicación con el robot SCARA.
+ Con esta orden se realizan dos operaciones:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Se comprueba que el puerto mediante el cual se realizará la conexión sea
+ el indicado.
 \end_layout
 
 \begin_layout Itemize
-Iniciar proceso robot.
- Inicia el proceso de convertir el diseño realizado en operaciones que el
- robot SCARA pueda interpretar.
+Se realiza un proceso para bloquear el uso del puerto y así evitar fallas
+ en la comunicación con el robot.
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+Iniciar proceso robot.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Este comando inicia el proceso de transformación del diseño a comandos entendibl
+es por el robot SCARA y los envía al mismo.
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \noindent
 \align center
@@ -5065,7 +5089,7 @@ Iniciar proceso robot.
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -5188,7 +5212,53 @@ Barra de herramientas de expasión
 \end_layout
 
 \begin_layout Standard
+Estas herramientas están agrupadas en diferentes contenedores: 
+\begin_inset Quotes eld
+\end_inset
+
+Herramientas de diseño
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Figuras en proyecto
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Vistas
+\begin_inset Quotes erd
+\end_inset
+
+ y 
+\begin_inset Quotes eld
+\end_inset
+
+Envia robot
+\begin_inset Quotes erd
+\end_inset
+
+ para una mejor funcionabilidad cumpliendo así con los principios de un
+ buen diseño de la interfaz gráfica 
+\begin_inset Quotes eld
+\end_inset
+
+consistencia, eficiencia, disponibilidad y simplicidad
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status collapsed
@@ -5306,8 +5376,10 @@ Envia Robot
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Pantalla inicial
-\end_layout
+Barra de herramientas
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Barra-de-herramientas"
 
 \end_inset
 
@@ -5319,8 +5391,120 @@ Pantalla inicial
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Herramientas de diseño.
+ Este contenedor tiene las herramientas de diseño predefinidas asi como
+ los elementos compuestos generados por el usuario como se puede apreciar
+ en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Barra-de-herramientas"
+
+\end_inset
+
+(a).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Punto, Línea, Polilínea, Círculo, Elipse y Bezier son el conjunto de herramienta
+s predefinidas.
+\end_layout
+
+\begin_layout Itemize
+Elementos compuestos.
+ Aqui aparecerán todos aquellos diseños almacenados en la ubicación de galeria
+ como patrones para ser insertados como si se tratara de una herramienta
+ predefinida.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Figuras en proyecto.
+ Aquí se mantiene una lista de figuras que se encuentran en el diseño actual.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A cada figura existente se pueden aplicar las tranformaciones mencionadas
+ en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Transformaciones"
+
+\end_inset
+
+ utilizando los controles que se aprecian en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Barra-de-herramientas"
+
+\end_inset
+
+(b).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Vistas.
+ Permiten cambiar la vista del diseño, como se muestra en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Vistas-disponibles"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Arriba.
+ Permite la vista del plano x-y.
+\end_layout
+
+\begin_layout Itemize
+Frente Permite la vista del plano x-z.
+\end_layout
+
+\begin_layout Itemize
+Lateral.
+ Permite la vista del plano y-z.
+\end_layout
+
+\begin_layout Itemize
+Perspectiva.
+ Muestra una proyección en perspectiva del diseño activo.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Envia robot.
+ Permite el envio del diseño activo al robot SCARA.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Inicia / Detiene el envio hacia el robot SCARA, además de que muestra un
+ barra de progreso como se muestra en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Barra-de-herramientas"
+
+\end_inset
+
+(c).
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status collapsed
@@ -5472,6 +5656,13 @@ Perspectiva
 
 \begin_layout Plain Layout
 Vistas disponibles
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Vistas-disponibles"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5489,8 +5680,65 @@ Area de trabajo
 \end_layout
 
 \begin_layout Standard
-El área de trabajo es la parte central donde se pueden realizar todos los
- trazos.
+El área de trabajo es la parte central donde se pueden realizar los diferentes
+ trazos haciendo uso de la herramienta de diseño, puede pareciarse en la
+ figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Área-de-trabajo"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/areatrabajo.png
+	lyxscale 50
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Área de trabajo
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Área-de-trabajo"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En esta área de trabajo es donde se visualizarán todos los trazos realizados.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5505,9 +5753,10 @@ reference "fig:Pantalla-principal"
 
 \end_inset
 
- en la parte inferior izquierda, esta nos da información sobre la posición
- actual donde se encuentra el cursor dentro del area de trabajo del robot,
- además muestra el comando para mover el robot SCARA a la posición actual.
+ en la parte inferior izquierda, esta nos presenta información sobre la
+ posición actual donde se encuentra el cursor dentro del area de trabajo
+ del robot, además muestra el comando para mover el robot SCARA a la posición
+ relativa.
 \end_layout
 
 \begin_layout Chapter
@@ -5574,7 +5823,7 @@ key "tesisOmar"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -5645,11 +5894,8 @@ Arquitectura
 \end_layout
 
 \begin_layout Standard
-Como se mencionó en la seccion++ la arquitectura de un robot es:
-\end_layout
-
-\begin_layout Subsubsection
-Estructura mecánica.
+A continuación se listan algunas de las características más relevantes del
+ robot utilizado en el presente trabajo:
 \end_layout
 
 \begin_layout Subsubsection
@@ -5685,7 +5931,7 @@ Elementos terminales.
 \begin_layout Standard
 El robot cuenta con dos motores de pasos, uno para el hombro y otro para
  el codo, éstos permiten un movimiento sobre los ejes X y Y; y dos motores
- de CD con escobillas para el eje Theta y Theta-Z.
+ de CD con escobillas para el posicionador y para definir la profundidad.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5756,12 +6002,16 @@ key "tesisOmar"
 
 \end_layout
 
-\begin_layout Standard
-El lenguaje soportado se lista en el apendice A.
-\end_layout
-
 \begin_layout Subsection
 Limitantes
+\end_layout
+
+\begin_layout Standard
+Posiblemente la limitante más importante biene dada por el rango reducido
+ del área de trabajo, dejando un limitado conjunto de posibles aplicaciones.
+ También cabe mencionar la parte de control ya que esta se realiza en forma
+ secuencial y no paralela, es decir no se permite el movimiento simultáneo
+ de varias articulaciones.
 \end_layout
 
 \begin_layout Section
@@ -5883,14 +6133,14 @@ reference "fig:Orientación-del-ultimo"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename imagenes/tcinematica1.png
-	width 40page%
+	width 50page%
 
 \end_inset
 
@@ -5933,12 +6183,66 @@ reference "eq:leycos2"
 
 \end_inset
 
-:
+ (observar figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:CinematicaLongitudes"
+
+\end_inset
+
+):
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula \begin{equation}
 x^{2}+y^{2}=l_{1}^{2}+l_{2}^{2}-\left(2l_{1}l_{2}\right)\cos\left(180-\Theta_{2}\right)\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tcinematica3.png
+	lyxscale 50
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:CinematicaLongitudes"
+
+\end_inset
+
+Longitudes 
+\begin_inset Formula $L_{1}\, y\, L_{2}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -5976,7 +6280,7 @@ cos\left(\Theta_{2}\right)=\frac{x^{2}+y^{2}-l_{1}^{2}-l_{2}^{2}}{2l_{1}l_{2}}\e
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -5984,7 +6288,7 @@ status collapsed
 \begin_inset Graphics
 	filename imagenes/tcinematica2.png
 	lyxscale 50
-	width 30page%
+	width 40page%
 
 \end_inset
 
@@ -6402,13 +6706,13 @@ reference "tab:Bibliotecas-para-comuniación"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="4">
+<lyxtabular version="3" rows="3" columns="4">
 <features>
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -6491,7 +6795,7 @@ GPL
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6500,49 +6804,11 @@ rxtx
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 Si
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-GPL
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -6560,7 +6826,7 @@ GPL
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+GPL
 \end_layout
 
 \end_inset
@@ -6598,7 +6864,11 @@ name "tab:Bibliotecas-para-comuniación"
 \end_layout
 
 \begin_layout Standard
-Se utilizó la biblioteca RXTX para realizar la conexión con el robot.
+Debido a que la biblioteca RXTX si da soporte a la mayoría de las plataformas
+ (MS-Windows, Linux, Mac OS) se optó por utlizar esta biblioteca además
+ de que es transparente a la hora de programar, es decir no requiere hacerse
+ ningún cambio para que la comunicación se realize mediante puerto serial
+ en las diferentes plataformas.
 \end_layout
 
 \begin_layout Standard
@@ -6608,7 +6878,7 @@ A continuación se muestra el código realizado para la conexión con el robot
 
 \begin_layout Standard
 \begin_inset Float algorithm
-placement h
+placement H
 wide false
 sideways false
 status collapsed
@@ -6917,6 +7187,14 @@ name "cha:6_Pruebas"
 
 \end_layout
 
+\begin_layout Standard
+En este capítulo se describe brevemente los requerimientos del sistema así
+ como la forma de instalar las aplicaciones y bibliotecas en las diferentes
+ plataformas.
+ También se muestran los resultados de la realización de pruebas usando
+ el robot SCARA y el programa presentado en esta tesis.
+\end_layout
+
 \begin_layout Section
 Introducción 
 \end_layout
@@ -6949,7 +7227,7 @@ reference "tab:Requisitos-mínimos-del"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -7073,7 +7351,7 @@ Sistema operativo
 \begin_inset Text
 
 \begin_layout Plain Layout
-Linux kernel 
+Linux kernel 2.6 o superior
 \end_layout
 
 \end_inset
@@ -7093,7 +7371,7 @@ Linux kernel
 \begin_inset Text
 
 \begin_layout Plain Layout
-MacOS Tiger
+MacOS X Tiger o superior
 \end_layout
 
 \end_inset
@@ -7239,7 +7517,8 @@ Usar algun cliente svn y descargar la versión en desarrollo y compilarla
 \begin_inset Newline newline
 \end_inset
 
-svn.....
+svn checkout http://modelando-madera.googlecode.com/svn/trunk/ modelando-madera-re
+ad-only
 \begin_inset Newline newline
 \end_inset
 
@@ -7264,36 +7543,813 @@ java -jar modelador.jar
 Funcionalidad multiplataforma del software 3D
 \end_layout
 
-\begin_layout Subsection
-Windows
+\begin_layout Standard
+Como se puede apreciar en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Aplicación-ejecutándose-en"
+
+\end_inset
+
+ los controles usados para la manipulación de la aplicación existen en las
+ plataformas más usadas comunmente.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/vistaWindows.png
+	lyxscale 50
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Windows XP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/vistaLinux.png
+	lyxscale 50
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
 Linux
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Aplicación ejecutándose en diferentes plataformas
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Aplicación-ejecutándose-en"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Tiempos-de-carga"
+
+\end_inset
+
+ puede observarse que la aplicación funcionó perfectamente en los sistemas
+ operativos más comunes, además que cumple con la integración con el tema
+ de pantalla que el sistema operativo define.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema Operativo (s.o.)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Carga del programa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Redibujo (11000 figuras)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Integración con el s.o.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linux (openSuSE 11.0) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.20 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.0 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mac OS (tiger)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.20 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MS-Windows (Vista)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.20 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.50 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Tiempos de carga del programa
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Tiempos-de-carga"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 Conectividad multiplataforma entre software y el robot
 \end_layout
 
-\begin_layout Subsection
-Windows
+\begin_layout Standard
+Las pruebas de conectividad fueron realizadas con éxito gracias a la biblioteca
+ rxtx que soporta la mayoría de los sistemas operativos más usados actualmente.
+ En la tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Puerto-serial:-nombre"
+
+\end_inset
+
+ pueden apreciarse los únicos cambios realizados en cada uno de los sistemas
+ operativos, esto debido a que el puerto cambia de nombre en cada uno de
+ los sistemas operativos.
 \end_layout
 
-\begin_layout Subsection
-Linux
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema Operativo (s.o.)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nombre del puerto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permite modo exclusivo de puerto
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linux (openSuSE 11.0) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev/ttyUSB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mac OS (tiger)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/dev/tty.usbserial
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MS-Windows (Vista)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+COM5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Puerto serial: nombre y modo de uso
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Puerto-serial:-nombre"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Debido a que los sistemas operativos mostrados en la tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Puerto-serial:-nombre"
+
+\end_inset
+
+ soportan el modo exclusivo de un puerto en específico no se detectó ninguna
+ interferencia por algun otro programa que intentara utilizar el mismo puerto
+ dando como resultado una plena seguridad de que una vez activado el puerto
+ la comunicación con el robot SCARA se realizará con plena seguridad.
 \end_layout
 
 \begin_layout Section
 Pruebas en campo
 \end_layout
 
-\begin_layout Subsection
-Realizacion de primitivas
+\begin_layout Standard
+Los tiempos promedios realizados en campo utilizando madera suave se pueden
+ ver en la tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:tiemposejecucion"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="3">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Objeto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Numero de puntos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tiempo de procesamiento en robot
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Punto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 segundo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Línea (10 cm)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5 segundos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Círculo (rádio: 2 cm) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+450
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7 segundos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Elipse (2 y 1 cm para sus radios)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+400
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6 segundos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezier (aprox 10 cm)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+700
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 segundos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Imágen a relieve (15x15 cm)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21.5 minutos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pruebas y tiempos
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:tiemposejecucion"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Ejemplo-de-9"
+
+\end_inset
+
+ puede observarse la implementación de nueve primitvas realizadas en madera
+ en aproximadamente 1 minuto.
+ Además en la misma figura se realizó esta tarea 10 veces para apreciar
+ la precisión con la que trabaja el robot SCARA, como se puede observar
+ parece que solo se hubiera realizado una vez.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
@@ -7315,7 +8371,14 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Ejemplo realizado 1
+Ejemplo de 9 primitivas
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ejemplo-de-9"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -7323,17 +8386,9 @@ Ejemplo realizado 1
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Imagenes PGM
 \end_layout
 
 \begin_layout Standard
@@ -7344,7 +8399,8 @@ reference "fig:pgm_a_robot"
 
 \end_inset
 
- se muestra un ejemplo más complejo y su respectiva implementación en madera.
+ se muestra un ejemplo de una imagen en formato PGM y su respectiva implementaci
+ón en madera.
 \end_layout
 
 \begin_layout Standard
@@ -7359,7 +8415,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename imagenes/logo_a_robot.png
-	width 70page%
+	width 60page%
 
 \end_inset
 
@@ -7400,10 +8456,6 @@ name "cha:7_Conclusiones"
 
 \end_layout
 
-\begin_layout Section
-Conclusiones
-\end_layout
-
 \begin_layout Standard
 La aplicacion desarrollada termina con una gran cantidad de esfuerzos realizados
  para tener un primer robot industrial de bajo costo realizado completamente
@@ -7420,12 +8472,61 @@ Desarrollo electrónico/lógico de un robot SCARA
 \end_layout
 
 \begin_layout Itemize
-Desarrollo de una aplicación para diseñar y realizar tareas en un robot
- SCARA, esta tesis.
+Desarrollo de una aplicación para diseñar y realizar tareas utilizando un
+ robot SCARA.
+\end_layout
+
+\begin_layout Standard
+Siendo en la parte final donde se ubica la aplicación desarrollada en la
+ presente tesis.
 \end_layout
 
 \begin_layout Section
-Trabajos futuros 
+Conclusiones
+\end_layout
+
+\begin_layout Itemize
+Se diseñó eligió Java como lenguaje de programación debido a su gran virtud
+ que es la de poder ser ejecutado en la mayoría de las plataformas sin la
+ necesidad de alterar una línea de código fuente.
+\end_layout
+
+\begin_layout Itemize
+Se diseñó una aplicación modular dando la posibilidad de que en un futuro
+ a la aplicación se pueda agregar nuevos módulos o bien mejorar los existentes
+ pero sin la necesidad de modificar el código completo.
+\end_layout
+
+\begin_layout Itemize
+Se desarrollaron las diferentes clases para las primitivas Punto, Línea,
+ Círculo, Elipse, Bezier entre otras para un manejo más eficiente a la hora
+ de su programación.
+\end_layout
+
+\begin_layout Itemize
+Se resalta el uso de la biblioteca SWT que permite que la aplicación desarrollad
+a aparente ser una aplicación nativa del sistema operativo anfitrión.
+\end_layout
+
+\begin_layout Itemize
+Se cumplieron los objetivos fundamentales que son la creación de una aplicación
+ de software libre para el robot de bajo costo desarrollado en la División
+ de estudios de Posgrado de la F.I.E.
+ de la U.M.S.N.H.
+\end_layout
+
+\begin_layout Itemize
+Se culminó el proceso de la generación de un robot industrial de bajo costo
+ realizado con tecnología y conocimiento nacional.
+\end_layout
+
+\begin_layout Itemize
+Es posible usar el robot en la industria de la madera, en procesos de realizar
+ detalles a algunas partes de las guitarras.
+\end_layout
+
+\begin_layout Section
+Sugerencias para trabajos futuros 
 \end_layout
 
 \begin_layout Standard
@@ -7448,7 +8549,8 @@ Finalizar el importador/exportador de código G para la aplicación, actualmente
 
 \begin_layout Enumerate
 Revizar los códigos fuentes disponibles del software EMC2, software ampliamente
- desarrollado por la comunidad de software libre para robots CNC.
+ desarrollado por la comunidad de software libre para robots CNC y generar
+ un módulo de compatibilidad con la aplicacion desarrollada en esta tesis.
 \end_layout
 
 \begin_layout Subsection
@@ -7456,7 +8558,7 @@ Electrónica del robot SCARA
 \end_layout
 
 \begin_layout Enumerate
-Acondicionar la conexión actual del robot SCARA de serial (rs232) a serial,
+Acondicionar la conexión actual del robot SCARA de serial (rs232) a paralelo,
  ya que ésta última es utilizada por la mayoría de los programas actules
  de CNC.
 \end_layout
