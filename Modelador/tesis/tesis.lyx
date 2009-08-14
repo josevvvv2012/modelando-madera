@@ -3264,10 +3264,10 @@ reference "fig:Elemento-compuesto"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -3275,7 +3275,7 @@ status collapsed
 \begin_inset Graphics
 	filename imagenes/tCompuesto.png
 	lyxscale 50
-	width 20page%
+	width 15page%
 
 \end_inset
 
@@ -4044,14 +4044,7 @@ reference "fig:Ejemplo-PGM"
 \end_inset
 
  se aprecia su representación gráfica.
- En la figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:pgm_a_robot"
-
-\end_inset
-
- se muestra un ejemplo más complejo y su respectiva implementación en madera.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4180,48 +4173,6 @@ name "fig:Ejemplo-PGM"
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename imagenes/logo_a_robot.png
-	width 70page%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:pgm_a_robot"
-
-\end_inset
-
-PGM a Robot
 \end_layout
 
 \end_inset
@@ -7385,6 +7336,59 @@ Ejemplo realizado 1
 Imagenes PGM
 \end_layout
 
+\begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pgm_a_robot"
+
+\end_inset
+
+ se muestra un ejemplo más complejo y su respectiva implementación en madera.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/logo_a_robot.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pgm_a_robot"
+
+\end_inset
+
+PGM a Robot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Conclusiones
 \begin_inset CommandInset label
@@ -7478,7 +7482,7 @@ newpage
 
 
 \backslash
-addcontentsline{toc}{chapter}{Anexo}
+addcontentsline{toc}{chapter}{Glosario}
 \end_layout
 
 \end_inset
@@ -7487,7 +7491,7 @@ addcontentsline{toc}{chapter}{Anexo}
 \end_layout
 
 \begin_layout Subsection*
-Anexo Glosario
+Glosario
 \end_layout
 
 \begin_layout Description
