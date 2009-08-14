@@ -30,7 +30,7 @@ public class Calibracion {
 	private Button buttonMenos = null;
 	private Text textInc = null;
 	private int m = 0;
-	private int []motores = new int[]{5500, 5250, 30000, 200000};
+	private int []motores = new int[]{5500, 5250, 3000, 20000};
 	
 	private Comunicacion comuni = new Comunicacion();  //  @jve:decl-index=0:
 	private Text textRetorno = null;
@@ -63,7 +63,7 @@ public class Calibracion {
 	 */
 	private void createSShell() {
 		try {
-			comuni.connect("COM4");
+			comuni.connect("COM5");
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -197,6 +197,7 @@ public class Calibracion {
 		text3.setText(String.valueOf(motores[3]));
 		try {			
 				textRetorno.setText(comuni.escribe("W"+motores[0]+" "+motores[1]+" "+motores[2]+" "+motores[3]+"\n"));
+				
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
