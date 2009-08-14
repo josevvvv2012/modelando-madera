@@ -7345,17 +7345,13 @@ Realizacion de primitivas
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename imagenes/elipse.png
+	filename imagenes/elipse2.png
 	lyxscale 20
 	width 30page%
 
