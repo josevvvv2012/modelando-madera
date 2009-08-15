@@ -633,7 +633,7 @@ n hasta lograr una versión que tenga una velocidad aceptable a la hora de
 
 \begin_layout Standard
 Con el fin de mejorar el diseño se evaluará la aplicación continuamente
- en la empresa de la familia Cardiel.
+ en la empresa de la familia Cardiel Cervantes.
 \end_layout
 
 \begin_layout Section
@@ -657,7 +657,7 @@ Aplicación multiplataforma para la conexión entre la aplicacion de software
 \end_layout
 
 \begin_layout Itemize
-Aplicación abierta, el código fuente se distribuirá bajo la 
+Aplicación de código abierto, el código fuente se distribuirá bajo la 
 \begin_inset Quotes eld
 \end_inset
 
@@ -669,8 +669,9 @@ GNU General Public License v2
 \begin_inset Quotes erd
 \end_inset
 
- y puede ser accedido en la siguiente url: modelando-madera.googlecode.com
- para su mejoramiento y/o ser tomado como base para futuros proyectos.
+ y puede ser accedido en la siguiente dirección de internet: http://modelando-ma
+dera.googlecode.com para su mejoramiento y/o ser tomado como base para futuros
+ proyectos.
 \end_layout
 
 \begin_layout Section
@@ -769,7 +770,7 @@ name "cha:2_Ambiente"
 Por mucho tiempo el hombre ha elaborado máquinas que imitan las partes del
  cuerpo humano.
  Los antiguos egipcios unieron brazos mecánicos a las estatuas de sus dioses,
- estos brazos fueron operados por sacerdotes, quienes clamaban que el movimiento
+ éstos brazos fueron operados por sacerdotes, quienes clamaban que el movimiento
  de estos era inspiración de sus dioses.
  Los griegos contruyeron estatuas que operaban con sistemas hidráulicos
  para fascinar a los adoradores de los templos.
@@ -817,18 +818,14 @@ Sin embargo el término robot con el paso de los años ha cambiado su significad
 \end_layout
 
 \begin_layout Itemize
-La Organización Internacional de Estandares en su norma 8373 lo define como
- 
-\begin_inset Quotes eld
-\end_inset
-
-
-\emph on
-un manipulador multipropósito automaticamente controlado y reprogramable
+Un manipulador multipropósito automaticamente controlado y reprogramable
  de más de tres ejes
-\emph default
+\emph on
 
-\begin_inset Quotes erd
+\begin_inset CommandInset citation
+LatexCommand cite
+key "iso8373"
+
 \end_inset
 
 .
@@ -1534,7 +1531,8 @@ reference "fig:ProgramacionRobot"
 
 \end_inset
 
-:
+.
+ En la figura podemos observar tres componentes que se describen a continuación.
 \end_layout
 
 \begin_layout Standard
@@ -1613,25 +1611,16 @@ Computer Aided Manufacturing
 ) son sistemas informáticos para la planificación, gestión y control de
  las operaciones de una planta de fabricación, mediante una interfaz directa
  o indirecta entre el sistema informático y los recursos de producción.
- 
-\end_layout
-
-\begin_layout Itemize
-Interfaz directa.
- Son aquellos donde la computadora se conecta directamente con el proceso
+ En una interfaz directa la computadora se conecta directamente con el proceso
  de producción para monitorizar su actividad y realizar tareas de supervisión
  y control.
-\end_layout
-
-\begin_layout Itemize
-Interfaz indirecta.
- Se trata de de aquellos en las que la computadora se utiliza como herramienta
- de ayuda para la fabricación, pero en las que no existe conexión directa
- con el proceso de producción.
+ En una interfaz indirecta la computadora se utiliza como herramienta de
+ ayuda para la fabricación, pero en las que no existe conexión directa con
+ el proceso de producción.
 \end_layout
 
 \begin_layout Standard
-La entrada de estos softwares son generalmente los diseños generados con
+La entrada de estos sistemas son generalmente los diseños generados con
  software CAD.
 \end_layout
 
@@ -1683,10 +1672,10 @@ Programación de tareas
 \end_layout
 
 \begin_layout Standard
-Para utilizar un robot se requiere, como ya se describió una aplicación
+Para utilizar un robot se requiere, como ya se describió antes, una aplicación
  CAD-CAM-CNC que sirve de interfaz entre el usuario humano y el robot industrial.
- Los manipuladores de robots se diferencian a sí mismos de la automatización
- fija por ser 
+ Los robots manipuladores de robots se diferencian de la automatización
+ fija, por ser 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1709,8 +1698,15 @@ Generalmente la programación de los robots se realiza fuera de línea y no
 \end_layout
 
 \begin_layout Itemize
-Microsoft Robotic Studio con un costo aproximado de $ 4 000.00 M.N.
- consta de:
+Microsoft Robotic Studio
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MRS08"
+
+\end_inset
+
+ con un costo aproximado de $ 4,000.00 M.N.
+ tiene las siguientes características:
 \end_layout
 
 \begin_deeper
@@ -1739,8 +1735,15 @@ Robots soportados: CoroWare's CoroBot ($3 200), Lego Mindstorms NXT, iRobot
 
 \end_deeper
 \begin_layout Itemize
-KUKA.OfficeLite con un costo superior a los $5 500 000.00 M.N.
- consta de: 
+KUKA.OfficeLite
+\begin_inset CommandInset citation
+LatexCommand cite
+key "KUKA08"
+
+\end_inset
+
+ con un costo superior a los $5,500,000.00 M.N.
+ tiene las siguientes características: 
 \end_layout
 
 \begin_deeper
@@ -1774,7 +1777,7 @@ El Techware de KUKA para optimización de programas se puede utilizar e instalar
 \end_layout
 
 \begin_layout Itemize
-Las entradas originales se pueden simular.
+Las conexiones con el robot real se pueden simular.
 \end_layout
 
 \begin_layout Itemize
@@ -1786,63 +1789,241 @@ ar aplicaciones.
 \end_deeper
 \begin_layout Standard
 Algunos programas de software que pueden ser aplicados a la programación
- de tareas de robots son:
+ de tareas de robots se pueden observar en la tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tablaLenguajesProgramacion"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Software CAD
+\noindent
+\align center
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CAD
 \end_layout
 
-\begin_layout Itemize
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CAM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CNC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 AutoCAD
 \end_layout
 
-\begin_layout Itemize
-SolidWorks
-\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
 
-\begin_layout Itemize
-RhinoCAD
-\end_layout
-
-\begin_layout Itemize
-TurboCAD
-\end_layout
-
-\begin_layout Itemize
-Graphite One CAD
-\end_layout
-
-\begin_layout Standard
-Software CAM
-\end_layout
-
-\begin_layout Itemize
+\begin_layout Plain Layout
 ArtCAM
 \end_layout
 
-\begin_layout Itemize
-DeskCNC
-\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
 
-\begin_layout Itemize
-MeshCAM
-\end_layout
-
-\begin_layout Standard
-Software CNC
-\end_layout
-
-\begin_layout Itemize
+\begin_layout Plain Layout
 TurboCNC
 \end_layout
 
-\begin_layout Itemize
-EMC
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SolidWorks
 \end_layout
 
-\begin_layout Itemize
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SolidCAM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+EMC2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RhinoCAD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeskCAM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 DeskCNC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TurboCAD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MeshCAM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mach 3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Graphite One CAD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FreeMill
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+KCAM
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Listado de software CAD/CAM/CNC
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Listado-de-software"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1855,17 +2036,55 @@ La tecnología robótica propia en México no se ha desarrollado.
 \end_layout
 
 \begin_layout Standard
-Instituciones de nivel superior como el Tecnológico de Monterrey [Dirección
- de Vinculación y Desarrollo campus Guadalajara] se está enfocando más en
- la planeación de movimientos para robots, así como el Instituto Tecnológico
- Autónomo de México[Laboratorio de robótica, ITAM] se enfocan al área de
- robots móviles pequeños.
+En instituciones de nivel superior como el Tecnológico de Monterrey campus
+ Guadalajara se trabaja en la planeación de movimientos para robots.
+ En el laboratorio de robótica del Instituto Tecnológico Autónomo de México
+ se enfocan al área de uso de robots móviles pequeños.
 \end_layout
 
 \begin_layout Standard
-En el Departamento de Estudios de Posgrados de la Factuldad de Ingeniería
- Electrica de la Universidad Michoacana de San Nicolas de Hidalgo se han
- tenido avances significativos tanto en robots móviles así como en manipuladores.
+En la División de Estudios de Posgrado de la Factuldad de Ingeniería Electrica
+ de la Universidad Michoacana de San Nicolas de Hidalgo se han tenido avances
+ significativos tanto en robots móviles así como en manipuladores:
+\end_layout
+
+\begin_layout Itemize
+En el área de robots móviles, se construyó un robot movil
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tesis A Concha"
+
+\end_inset
+
+ con desempeño comparable al de los robots comerciales.
+ El lector interesado pude consultar la tesis de licenciatura para información
+ sobre el robot movil desarrolado.
+ 
+\end_layout
+
+\begin_layout Itemize
+En el áre de manipuladores se construyerón dos robots SCARA, uno con motores
+ de CD
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tesis O. Rios"
+
+\end_inset
+
+ y otro con motodes de CD y de pasos
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tesisOmar"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Para las pruebas del sistema desarrollado en esta tesis, se utilizó el robot
+ de motores de CD y pasos.
 \end_layout
 
 \begin_layout Chapter
@@ -1983,9 +2202,16 @@ El punto es el objeto más simple que puede representarse, es un elemento
 \end_layout
 
 \begin_layout Standard
-Para fines de programación se definió un punto en el espacio con el primitiva
+Para fines de programación se definió un punto en el espacio con la primitiva
  
 \begin_inset Formula $Punto\left(x,\, y,\, z\right)$
+\end_inset
+
+, puede observarse su implementación en el código 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Punto-(primitivas.Punto.java)"
+
 \end_inset
 
 .
@@ -2150,7 +2376,14 @@ t<z"+i+">"+z+"</z"+i+">";
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Punto (primitivas.Punto)
+Punto (primitivas.Punto.java)
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Punto-(primitivas.Punto.java)"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2164,61 +2397,20 @@ Punto (primitivas.Punto)
 \end_layout
 
 \begin_layout Subsection
-Linea
-\end_layout
-
-\begin_layout Standard
-Euclides, en su tratado denominado 
-\begin_inset Quotes eld
-\end_inset
-
-Los elementos
-\begin_inset Quotes erd
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "euclidesweb"
-
-\end_inset
-
-,establece varias definiciones para línea:
-\end_layout
-
-\begin_layout Itemize
-Los extremos de una linea son puntos.
-\end_layout
-
-\begin_layout Itemize
-Una línea es una longitud sin anchura.
+Línea
 \end_layout
 
 \begin_layout Standard
 La línea recta es la sucesión continua e indefinida de puntos en una sola
- dimensión
-\begin_inset CommandInset citation
-LatexCommand cite
-key "wikipediarecta"
-
-\end_inset
-
-.
- La ecuación general es: 
+ dimensión.
+ La ecuaciónes utilizadas son: 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \begin{equation}
-y=mx+B\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula \begin{equation}
-m=\frac{\left(y_{n}-y_{0}\right)}{\left(x_{n}-x_{0}\right)}\end{equation}
+\begin_inset Formula \begin{eqnarray}
+x_{i} & = & x_{1}+\lambda(x_{2}-x_{1})\\
+y_{i} & = & y_{1}+\lambda(y_{2}-y_{1})\\
+z_{i} & = & z_{1}+\lambda(z_{2}-z_{1})\end{eqnarray}
 
 \end_inset
 
@@ -2227,14 +2419,18 @@ m=\frac{\left(y_{n}-y_{0}\right)}{\left(x_{n}-x_{0}\right)}\end{equation}
 
 \begin_layout Standard
 donde 
-\begin_inset Formula $m$
+\begin_inset Formula $(x_{1},\, y_{1},\, z_{1})$
 \end_inset
 
- es la pendiente y 
-\begin_inset Formula $y$
+ pertenecen al punto inicial del segmento de la recta, 
+\begin_inset Formula $(x_{2},\, y_{2},\, z_{2})$
 \end_inset
 
- es la intercepción con el eje Y.
+ el punto final de la recta y 
+\begin_inset Formula $\lambda\in\left[0,1\right]$
+\end_inset
+
+.
  En la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2290,7 +2486,7 @@ name "fig:Linea"
 \end_layout
 
 \begin_layout Standard
-Para fines de programación se definió con el predicado 
+Para fines de programación se definió la clase 
 \begin_inset Formula $Línea\left(a,\, b\right)$
 \end_inset
 
@@ -2302,7 +2498,15 @@ Para fines de programación se definió con el predicado
 \begin_inset Formula $b$
 \end_inset
 
- son dos puntos diferentes cualesquiera en el espacio.
+ son los puntos extremos del segmento de línea, puede observarse su implementaci
+ón en el código 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Línea-(primitivas.Linea.java)"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2310,7 +2514,7 @@ Para fines de programación se definió con el predicado
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout LyX-Code
 
@@ -2388,7 +2592,14 @@ public void linea( Punto a, Punto b)
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Línea (primitivas.Linea)
+Línea (primitivas.Linea.java)
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Línea-(primitivas.Linea.java)"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2406,36 +2617,71 @@ Círculo
 \end_layout
 
 \begin_layout Standard
-Es una secuncia de puntos infinitos del plano equidistantes de otro fijo,
- llamado centro; la distancia del centro a cualquier punto se denomina radio(r).
- Su ecuación paramétrica puede apreciarse en la ecuación 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:Circulo"
-
-\end_inset
-
-.
- En la figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Circulo"
-
-\end_inset
-
- se puede observa un ejemplo.
+La ecuación paramétrica es:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula \begin{equation}
 \begin{array}{c}
 x=r*cos\left(\Theta\right)\\
-x=r*sin\left(\Theta\right)\\
-\Theta\in\left[0,2\pi\right]\end{array}\label{eq:Circulo}\end{equation}
+y=r*sin\left(\Theta\right)\end{array}\label{eq:Circulo}\end{equation}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+donde 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $\Theta\in\left[0,2\pi\right]$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+\lang spanish
+ y 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $r$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+\lang spanish
+ es el radio.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2483,7 +2729,7 @@ name "fig:Circulo"
 \end_layout
 
 \begin_layout Standard
-Para fines de programación se definió con el predicado 
+Para fines de programación se definió la clase 
 \begin_inset Formula $Circulo\left(c,\, r\right)$
 \end_inset
 
@@ -2499,11 +2745,30 @@ Para fines de programación se definió con el predicado
 \end_layout
 
 \begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Circulo"
+
+\end_inset
+
+ se puede observa un ejemplo, puede observarse su implementación en el código
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Círculo-(primitivas.Circulo.java)"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float algorithm
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout LyX-Code
 
@@ -2632,6 +2897,13 @@ void circulo(double radio, double oX, double oY, double oZ, int n, int opc)
 
 \begin_layout Plain Layout
 Círculo (primitivas.Circulo.java)
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Círculo-(primitivas.Circulo.java)"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2649,37 +2921,54 @@ Elipse
 \end_layout
 
 \begin_layout Standard
-Es una secuncia de puntos infinitos del plano tales que la suma de la distancia
- a dos puntos fijos llamados focos es una constante positiva e igual a la
- distancia entre los vértices.
- Su ecuación paramétrica puede apreciarse en la ecuación 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:Elipse"
-
-\end_inset
-
-.
- En la figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Elipse"
-
-\end_inset
-
- se puede observa un ejemplo.
+La ecuación paramétrica es:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula \begin{equation}
 \begin{array}{c}
 x=r_{1}*cos\left(\Theta\right)\\
-x=r_{2}*sin\left(\Theta\right)\\
-\Theta\in\left[0,2\pi\right]\end{array}\label{eq:Elipse}\end{equation}
+y=r_{2}*sin\left(\Theta\right)\end{array}\label{eq:Elipse}\end{equation}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+donde 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $\Theta\in\left[0,2\pi\right]$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+\lang spanish
+ , 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+ es la distancia al punto más alejado en el eje X y 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ es la distancia al punto más alejado sobre el eje Y.
 \end_layout
 
 \begin_layout Standard
@@ -2727,7 +3016,7 @@ name "fig:Elipse"
 \end_layout
 
 \begin_layout Standard
-Para fines de programación se definió con el predicado 
+Para fines de programación se definió la clase 
 \begin_inset Formula $Elipse\left(c,\, r_{1},\, r_{2}\right)$
 \end_inset
 
@@ -2743,7 +3032,26 @@ Para fines de programación se definió con el predicado
 \begin_inset Formula $r_{2}$
 \end_inset
 
- es la distancia al punto más alejado sobre el eje vertical.
+ es la distancia al punto más alejado sobre el eje vertical, puede observarse
+ su implementación en el código 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Elipse-(primitivas.Elipse.java)"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Elipse"
+
+\end_inset
+
+ se puede observa un ejemplo.
 \end_layout
 
 \begin_layout Standard
@@ -2885,6 +3193,13 @@ void elipse(double radio_a, double radio_b, double oX, double oY, double
 
 \begin_layout Plain Layout
 Elipse (primitivas.Elipse.java)
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Elipse-(primitivas.Elipse.java)"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2913,7 +3228,7 @@ La curva Bézier es un tipo de línea curva ideada por un ingeniero de Renault
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2953,27 +3268,56 @@ name "fig:Curva-de-Bezier"
 \end_layout
 
 \begin_layout Standard
-Una curva de Bézier tiene por lomenos cuatro puntos de control y es de orden
- cúbico como se puede apreciar en la figura 
+Una curva de Bézier tiene por lo menos cuatro puntos de control y es de
+ orden cúbico como se puede apreciar en la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Curva-de-Bezier"
 
 \end_inset
 
-, dos de los puntos corresponden a los extremos de la línea, son denominados
+, dos de los puntos corresponden a los extremos de la curva, son denominados
  nodos o puntos de anclaje y los otros puntos son denominados puntos de
  control o manejadores y determinan la dirección con que la curvatura ingresa
  a los extremos.
- 
+ La forma paramétrica es:
 \end_layout
 
 \begin_layout Standard
-Los manejadores o puntos de control aparecen representados unidos mediante
- una línea recta con un nodo pero realmente esta línea recta no forma parte
- de la línea, moviendo este manejador conseguiremos curvar o corregir la
- curvatura de nuestra línea.
- 
+\begin_inset Formula \begin{equation}
+B(t)=P_{0}(1-t)^{3}+3P_{1}t(1-t)^{2}+3P_{2}t^{2}(1-t)+P_{3}t^{3}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+donde 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $t\in\left[0,1\right]$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+\lang spanish
+ .
 \end_layout
 
 \begin_layout Standard
@@ -3180,6 +3524,13 @@ public void graficar(Vector<Punto> v) {
 
 \begin_layout Plain Layout
 Curva de Bezier (primitivas.Bezier.java)
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Curva-de-Bezier"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3193,7 +3544,7 @@ Curva de Bezier (primitivas.Bezier.java)
 \end_layout
 
 \begin_layout Standard
-Para fines de programación se definió con el predicado 
+Para fines de programación se definió la clase 
 \begin_inset Formula $Bezier\left(p\right)$
 \end_inset
 
@@ -3201,7 +3552,15 @@ Para fines de programación se definió con el predicado
 \begin_inset Formula $p$
 \end_inset
 
- es un conjunto definido de puntos que conforman la curva.
+ es un conjunto definido de puntos que conforman la curva, puede observarse
+ su implementación en el código 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Curva-de-Bezier"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -3209,10 +3568,8 @@ Elementos compuestos
 \end_layout
 
 \begin_layout Standard
-Es un objeto compuesto por una o más primitivas para formar un elemento
- compuesto.
- Este elemento puede contener un numero ilimitado de primitivas dentro de
- si misma.
+Un elemento compuesto se forma con uno o más primitivas u otros elementos
+ compuestos.
  En la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3220,8 +3577,45 @@ reference "fig:Elemento-compuesto"
 
 \end_inset
 
- se muestra un ejemplo de un elemento compuesto, este elemento contiene
- cuatro primitivas.
+ se muestra un ejemplo de un elemento compuesto, que contiene cuatro primitivas.
+ De forma formal tenemos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+E_{c}=(P_{1},\, P_{2},\, P_{3},\,...,\, P_{n})\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+donde 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $P_{i}\in\left\{ Punto,\, Línea,\, Polilinea,\, Círculo,\, Elipse,\, Bezier\right\} $
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+\lang spanish
+.
 \end_layout
 
 \begin_layout Standard
@@ -3280,31 +3674,20 @@ name "sec:Transformaciones"
 \end_layout
 
 \begin_layout Standard
-En principio, uno podría realizar cualquier transformación sobre todos los
- puntos de un objeto pero aquí trataremos con un conjunto limitado solamente
- a unas pocas transformaciones continuas: escalado, traslación, rotación
- y proyección de un objeto.
- Esas operaciones tienen la ventaja de que se pueden realizar mediante un
- producto matricial y que se pueden combinar multiplicando de antemano las
- matrices de transformación, y así evitar la gran cantidad de operaciones
- que llevaría hacerlas una por una.
- Cualquier transformación que no sea representable mediante matrices, también
- puede realizarse, pero en un procedimiento aparte que deberá ser programado
- para tal fin.
+En robótica son de particular interés las transformaciones: escalado, traslación
+, rotación y proyección isométrica de un objeto.
+ Estas operaciones tienen la ventaja de que se pueden realizar mediante
+ un producto matricial y que se pueden combinar multiplicando de antemano
+ las matrices de transformación.
 \end_layout
 
 \begin_layout Standard
 Como se mostró en las secciones anteriores, las primitivas se están definiendo
- mediante puntos de control, un punto en el espacio 3D homogéneo será un
- vector columna como el que se muestra en la ec.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:TransPunto"
-
+ mediante puntos de control, un punto 
+\begin_inset Formula $(x,\, y,\, z)$
 \end_inset
 
-.
+ en el espacio 3D homogéneo será un vector columna:
 \end_layout
 
 \begin_layout Standard
@@ -3333,7 +3716,7 @@ Escalado
 \end_layout
 
 \begin_layout Standard
-A continuación se muestra como quedaría el escalado de un punto de control.
+A continuación se muestra como quedaría el escalado de un punto de control:
 \end_layout
 
 \begin_layout Standard
@@ -3358,11 +3741,92 @@ z\\
 \end_layout
 
 \begin_layout Standard
+Donde 
+\begin_inset Formula $e_{x}$
+\end_inset
+
+ es el factor de escalado en la direccion del eje 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula $e_{y}$
+\end_inset
+
+ es el factor de escalado en la direccion del eje 
+\begin_inset Formula $Y$
+\end_inset
+
+ y 
+\begin_inset Formula $e_{z}$
+\end_inset
+
+ es el factor de escalado en la direccion del eje 
+\begin_inset Formula $Z$
+\end_inset
+
+.
+ El punto escalado 
+\begin_inset Formula $\left[x',\, y',\, z'\right]^{t}$
+\end_inset
+
+ proviene del punto original 
+\begin_inset Formula $\left[x,\, y,\, z\right]^{t}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Escalamiento"
+
+\end_inset
+
+ se muestra un ejemplo de escalamiento con 
+\begin_inset Formula $e_{x}=2$
+\end_inset
+
+ y 
+\begin_inset Formula $e_{y}=2$
+\end_inset
+
+ de los puntos 
+\begin_inset Formula $P_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $P_{2}$
+\end_inset
+
+ y 
+\begin_inset Formula $P_{3}$
+\end_inset
+
+ a los nuevos 
+\begin_inset Formula $P_{1}'$
+\end_inset
+
+, 
+\begin_inset Formula $P_{2}'$
+\end_inset
+
+ y 
+\begin_inset Formula $P_{3}'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -3381,6 +3845,13 @@ status collapsed
 
 \begin_layout Plain Layout
 Escalamiento
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Escalamiento"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3402,19 +3873,7 @@ Traslación
 \end_layout
 
 \begin_layout Standard
-La traslación 
-\begin_inset Formula $x´=x+t_{x}$
-\end_inset
-
-, 
-\begin_inset Formula $y´=y+t_{y}$
-\end_inset
-
-, 
-\begin_inset Formula $z´=z+t_{z}$
-\end_inset
-
- puede ser expresada como el producto:
+La traslación puede ser expresada como el producto:
 \end_layout
 
 \begin_layout Standard
@@ -3439,11 +3898,88 @@ z\\
 \end_layout
 
 \begin_layout Standard
+Donde 
+\begin_inset Formula $t_{x}$
+\end_inset
+
+ es el desplazamiento en la direccion del eje 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula $t_{y}$
+\end_inset
+
+ es el desplazamiento en la direccion del eje 
+\begin_inset Formula $Y$
+\end_inset
+
+ y 
+\begin_inset Formula $t_{z}$
+\end_inset
+
+ es el desplazamiento en la direccion del eje 
+\begin_inset Formula $Z$
+\end_inset
+
+.
+ El punto trasladado 
+\begin_inset Formula $\left[x',\, y',\, z'\right]^{t}$
+\end_inset
+
+ proviene del punto original 
+\begin_inset Formula $\left[x,\, y,\, z\right]^{t}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Traslación"
+
+\end_inset
+
+ se muestra un ejemplo de traslación con 
+\begin_inset Formula $t_{x}=2$
+\end_inset
+
+ de los puntos 
+\begin_inset Formula $P_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $P_{2}$
+\end_inset
+
+ y 
+\begin_inset Formula $P_{3}$
+\end_inset
+
+ a los nuevos 
+\begin_inset Formula $P_{1}'$
+\end_inset
+
+, 
+\begin_inset Formula $P_{2}'$
+\end_inset
+
+ y 
+\begin_inset Formula $P_{3}'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -3462,6 +3998,13 @@ status collapsed
 
 \begin_layout Plain Layout
 Traslación
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Traslación"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3479,15 +4022,15 @@ Rotación
 \end_layout
 
 \begin_layout Standard
-La rotación un ángulo 
-\begin_inset Formula $\Theta$
-\end_inset
-
- alrededor del eje 
+La rotación alrededor del eje 
 \begin_inset Formula $z$
 \end_inset
 
- es:
+ de un ángulo 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ esta definido por:
 \end_layout
 
 \begin_layout Standard
@@ -3512,15 +4055,15 @@ z\\
 \end_layout
 
 \begin_layout Standard
-La rotación un ángulo 
-\begin_inset Formula $\Theta$
-\end_inset
-
- alrededor del eje 
+La rotación alrededor del eje 
 \begin_inset Formula $y$
 \end_inset
 
- es:
+ de un ángulo 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ esta definido por:
 \end_layout
 
 \begin_layout Standard
@@ -3545,15 +4088,15 @@ z\\
 \end_layout
 
 \begin_layout Standard
-La rotación un ángulo 
-\begin_inset Formula $\Theta$
-\end_inset
-
- alrededor del eje 
+La rotación alrededor del eje 
 \begin_inset Formula $x$
 \end_inset
 
- es:
+ de un ángulo 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ esta definido por:
 \end_layout
 
 \begin_layout Standard
@@ -3578,11 +4121,68 @@ z\\
 \end_layout
 
 \begin_layout Standard
+Donde 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ es el ángulo a rotar en el eje correspondiente.
+ El punto rotado 
+\begin_inset Formula $\left[x',\, y',\, z'\right]^{t}$
+\end_inset
+
+ proviene del punto original 
+\begin_inset Formula $\left[x,\, y,\, z\right]^{t}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Rotación"
+
+\end_inset
+
+ se muestra un ejemplo de rotacion en el eje X con 
+\begin_inset Formula $\Theta=45$
+\end_inset
+
+ de los puntos 
+\begin_inset Formula $P_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $P_{2}$
+\end_inset
+
+ y 
+\begin_inset Formula $P_{3}$
+\end_inset
+
+ a los nuevos 
+\begin_inset Formula $P_{1}'$
+\end_inset
+
+, 
+\begin_inset Formula $P_{2}'$
+\end_inset
+
+ y 
+\begin_inset Formula $P_{3}'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -3601,6 +4201,13 @@ status collapsed
 
 \begin_layout Plain Layout
 Rotación
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Rotación"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -6843,7 +7450,7 @@ GPL
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Bibliotecas para comuniación RS232
+Bibliotecas para comunicación RS232
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Bibliotecas-para-comuniación"
@@ -8644,7 +9251,7 @@ key "key-3"
 
 \end_inset
 
-http://en.wikipedia.org/wiki/Industrial_robot
+http://en.wikipedia.org/wiki/Industrial_robot, 2008.
 \end_layout
 
 \begin_layout Bibliography
@@ -8792,12 +9399,12 @@ Sanchéz, O.
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-label "Instituto"
+label "IRA08"
 key "IRA"
 
 \end_inset
 
-Instituto de Robótica de América
+Instituto de Robótica de América, 2008
 \end_layout
 
 \begin_layout Bibliography
@@ -8841,17 +9448,6 @@ www.euclides.org: Los elementos
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-label "wikipedia09"
-key "wikipediarecta"
-
-\end_inset
-
-www.wikipedia.org: Recta
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
 label "Jones98"
 key "Jones98"
 
@@ -8863,6 +9459,80 @@ Jones, J.
  A.
  Mobile Robots.
  Cambridge University Press, 1998.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "mrs2008"
+key "MRS08"
+
+\end_inset
+
+Microsoft Robotics Studio, http://www.msdn.microsoft.com/en-us/robotics/default.aspx
+, 2008
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Kuka08"
+key "KUKA08"
+
+\end_inset
+
+Kuka robotics http://www.kuka-robotics.com, 2008
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "PROBOTIX09"
+key "Probotix"
+
+\end_inset
+
+CNC Stepper Motor Driver System & CNC Router Kits, http://www.probotix.com,
+ 2009.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Concha07"
+key "Tesis A Concha"
+
+\end_inset
+
+Concha, A.
+ Diseño y construcción de un robot móvil, Tesis de licenciatura, UMSNH,
+ 2007.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Ríos07"
+key "Tesis O. Rios"
+
+\end_inset
+
+Ríos, O.
+ Diseño e implementación del control de un brazo manipulador scara.
+ Tesis de licenciatura.
+ UMSNH, 2007.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "ISO8373:94"
+key "iso8373"
+
+\end_inset
+
+ISO Standard 8373, Manipulating Industrial Robots.
+ 1994
 \end_layout
 
 \end_body
