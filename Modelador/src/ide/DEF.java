@@ -32,8 +32,8 @@ public  class DEF {
 	public static final String vistaZXs = "Frente";
 	public static final String vistaPerspectivas = "Perspectiva";
 	
-	public static final Color frenteColor= new Color(Display.getCurrent(), 255, 255,255);
-	public static final Color fondoColor = new Color(Display.getCurrent(), 0, 0,0);
+	public static final Color frenteColor= new Color(Display.getCurrent(), 0, 0,0);
+	public static final Color fondoColor = new Color(Display.getCurrent(), 255, 255,255);
 	public static final Color colorSelec= new Color(Display.getCurrent(), 0, 0,255);
 	
 	public static final double incRobot = 0.12;
@@ -46,9 +46,16 @@ public  class DEF {
 	public static final String mArchivoAbrir = "Abrir";
 	public static final String mArchivoImportar = "Importar";
 	public static final String mArchivoCerrar = "Cerrar";
+	public static final String mArchivoGuardar = "Guardar";
 	public static final String mArchivoGuardarComo = "Guardar Como";
 	public static final String mArchivoSalir = "Salir";
 	
+	public static final String mEdicion = "Edición";
+	public static final String mEdicionDeshacer = "Deshacer";
+	public static final String mEdicionRehacer= "Rehacer";
+	public static final String mEdicionEliminar= "Eliminar primitiva";
+	public static final String mEdicionDuplicar= "Duplicar primitiva";
+	public static final String mEdicionConfiguracion= "Preferencias del sistema";
 
 	public static final String mHerramientas = "Herramienta";
 	public static final String mHerramientasActivarRobot = "Activar Robot";
