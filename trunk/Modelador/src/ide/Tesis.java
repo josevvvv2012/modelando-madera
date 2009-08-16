@@ -93,6 +93,7 @@ public class Tesis {
 	
 	private Punto puntoActual = new Punto(1,1,1);  //  @jve:decl-index=0:
 	private CoolBar coolBar = null;
+	private Menu submenu3 = null;
 	
 	private void actualizarPuntoActual(Event e) {
 		vistaActual = vistasDiseno.getOpcion();
@@ -613,67 +614,64 @@ public class Tesis {
 		GridData gridData4 = new GridData();
 		gridData4.horizontalSpan = 2;
 		gridData4.grabExcessVerticalSpace = false;
-		gridData4.horizontalAlignment = GridData.BEGINNING;
+		gridData4.horizontalAlignment = GridData.FILL;
 		gridData4.verticalAlignment = GridData.FILL;
 		gridData4.widthHint = -1;
 		gridData4.heightHint = -1;
-		gridData4.grabExcessHorizontalSpace = false;
+		gridData4.grabExcessHorizontalSpace = true;
 		coolBar = new CoolBar(sShell, SWT.NONE);
 		coolBar.setLayoutData(gridData4);		
 		ToolBar tb = new ToolBar(coolBar, SWT.FLAT);
 		
-		//CoolBar bar = new CoolBar (sShell, SWT.BORDER);
 		
-			CoolItem item1 = new CoolItem (coolBar, SWT.NONE);
-				ToolItem tNuevo = new ToolItem(tb, SWT.NONE);
-				tNuevo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/new.png")));
-				tNuevo.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
-					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-						archivoNuevo();
-					}
-					public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
-					}
-				});
-			
-				ToolItem tAbrir = new ToolItem(tb, SWT.NONE);
-				tAbrir.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/open.png")));
-				tAbrir.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
-					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-						archivoAbrir(sShell);
-					}
-					public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
-					}
-				});
-				
-				ToolItem tGuardar = new ToolItem(tb, SWT.NONE);
-				tGuardar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/save.png")));
-				tGuardar.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
-					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-						archivoGuardarComo(sShell);
-					}
-					public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
-					}
-				});
-				
-				ToolItem tImportar = new ToolItem(tb, SWT.NONE);
-				tImportar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/font.png")));
-				tImportar.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
-					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-						archivoImportar(sShell);
-					}
-					public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
-					}
-				});
+		CoolItem item1 = new CoolItem (coolBar, SWT.NONE);
+		ToolItem tNuevo = new ToolItem(tb, SWT.NONE);
+		tNuevo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/new.png")));
+		tNuevo.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				archivoNuevo();
+			}
+			public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
+			}
+		});
+		tNuevo.setToolTipText(DEF.mArchivoNuevo);
+	
+		ToolItem tAbrir = new ToolItem(tb, SWT.NONE);
+		tAbrir.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/open.png")));
+		tAbrir.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				archivoAbrir(sShell);
+			}
+			public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
+			}
+		});
+		tAbrir.setToolTipText(DEF.mArchivoAbrir);
 		
-				ToolItem tUndo = new ToolItem(tb, SWT.NONE);
-				tUndo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/undo.png")));
-			
-			Point p = tb.computeSize(SWT.DEFAULT, SWT.DEFAULT);
-			tb.setSize(p);
-			Point p2 = item1.computeSize(p.x, p.y);
-		    item1.setControl(tb);
-		    item1.setSize(p2);
-			
+		ToolItem tGuardar = new ToolItem(tb, SWT.NONE);
+		tGuardar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/save.png")));
+		tGuardar.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				archivoGuardarComo(sShell);
+			}
+			public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
+			}
+		});
+		tGuardar.setToolTipText(DEF.mArchivoGuardar);
+		
+		
+		ToolItem tUndo = new ToolItem(tb, SWT.NONE);
+		tUndo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/undo.png")));
+		tUndo.setToolTipText(DEF.mEdicionDeshacer);
+		ToolItem tRedo = new ToolItem(tb, SWT.NONE);
+		tRedo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/redo.png")));
+			tRedo.setToolTipText(DEF.mEdicionRehacer);
+		
+		Point p = tb.computeSize(SWT.DEFAULT, SWT.DEFAULT);
+		tb.setSize(p);
+		Point p2 = item1.computeSize(p.x, p.y);
+		item1.setControl(tb);
+		item1.setSize(p2);
+
 		coolBar.pack ();
 	}
 	/**
@@ -713,6 +711,27 @@ public class Tesis {
 		menuBar = new Menu(sShell, SWT.BAR);
 		MenuItem submenuItemArchivo = new MenuItem(menuBar, SWT.CASCADE);
 		submenuItemArchivo.setText(DEF.mArchivo);
+		MenuItem submenuItemEdicion = new MenuItem(menuBar, SWT.CASCADE);
+		submenuItemEdicion.setText(DEF.mEdicion);
+		submenu3 = new Menu(submenuItemEdicion);
+		MenuItem pushDeshacer = new MenuItem(submenu3, SWT.PUSH);
+		pushDeshacer.setText(DEF.mEdicionDeshacer);
+		pushDeshacer.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/undo.png")));
+		MenuItem pushRehacer = new MenuItem(submenu3, SWT.PUSH);
+		pushRehacer.setText(DEF.mEdicionRehacer);
+		pushRehacer.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/redo.png")));
+		MenuItem separator4 = new MenuItem(submenu3, SWT.SEPARATOR);
+		MenuItem pushEliminar = new MenuItem(submenu3, SWT.PUSH);
+		pushEliminar.setText(DEF.mEdicionEliminar);
+		pushEliminar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/del.png")));
+		MenuItem pushDuplicar = new MenuItem(submenu3, SWT.PUSH);
+		pushDuplicar.setText(DEF.mEdicionDuplicar);
+		pushDuplicar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/add.png")));
+		MenuItem separator5 = new MenuItem(submenu3, SWT.SEPARATOR);
+		MenuItem pushConfiguracion = new MenuItem(submenu3, SWT.PUSH);
+		pushConfiguracion.setText(DEF.mEdicionConfiguracion);
+		pushConfiguracion.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/conf.png")));
+		submenuItemEdicion.setMenu(submenu3);
 		MenuItem submenuItemHerramientas = new MenuItem(menuBar, SWT.CASCADE);
 		submenuItemHerramientas.setText(DEF.mHerramientas);
 		MenuItem submenuItemAyuda = new MenuItem(menuBar, SWT.CASCADE);
@@ -720,6 +739,7 @@ public class Tesis {
 		submenu2 = new Menu(submenuItemAyuda);
 		MenuItem pushAcercaDe = new MenuItem(submenu2, SWT.PUSH);
 		pushAcercaDe.setText(DEF.mAyudaAcercaDe);
+		pushAcercaDe.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/help.png")));
 		pushAcercaDe
 				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -733,8 +753,10 @@ public class Tesis {
 		submenu1 = new Menu(submenuItemHerramientas);
 		MenuItem pushActivarRobot = new MenuItem(submenu1, SWT.PUSH);
 		pushActivarRobot.setText(DEF.mHerramientasActivarRobot);
+		pushActivarRobot.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/run2.png")));
 		MenuItem pushRobotizar = new MenuItem(submenu1, SWT.PUSH);
 		pushRobotizar.setText(DEF.mHerramientasRobotizar);
+		pushRobotizar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/run.png")));
 		pushRobotizar
 				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {						
@@ -769,17 +791,8 @@ public class Tesis {
 		MenuItem pushAbrir = new MenuItem(submenu, SWT.PUSH);
 		pushAbrir.setText(DEF.mArchivoAbrir);
 		pushAbrir.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/open.png")));
-		MenuItem pushImportar = new MenuItem(submenu, SWT.PUSH);
-		pushImportar.setText(DEF.mArchivoImportar);
-		pushImportar
-				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
-					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-						archivoImportar(sShell);
-					}
-					public void widgetDefaultSelected(
-							org.eclipse.swt.events.SelectionEvent e) {
-					}
-				});
+		MenuItem separator1 = new MenuItem(submenu, SWT.SEPARATOR);
+		
 		pushAbrir.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				archivoAbrir(sShell);
@@ -789,6 +802,10 @@ public class Tesis {
 		});
 		MenuItem pushCerrar = new MenuItem(submenu, SWT.PUSH);
 		pushCerrar.setText(DEF.mArchivoCerrar);
+		MenuItem separator = new MenuItem(submenu, SWT.SEPARATOR);
+		MenuItem pushGuardar = new MenuItem(submenu, SWT.PUSH);
+		pushGuardar.setText(DEF.mArchivoGuardar);
+		pushGuardar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/save.png")));
 		pushCerrar.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				archivoCerrar();
@@ -799,6 +816,20 @@ public class Tesis {
 		MenuItem pushGuardarComo = new MenuItem(submenu, SWT.PUSH);
 		pushGuardarComo.setText(DEF.mArchivoGuardarComo);
 		pushGuardarComo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/saveas.png")));
+		MenuItem separator2 = new MenuItem(submenu, SWT.SEPARATOR);
+		MenuItem pushImportar = new MenuItem(submenu, SWT.PUSH);
+		pushImportar.setText(DEF.mArchivoImportar);
+		pushImportar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/importar.png")));
+		MenuItem separator3 = new MenuItem(submenu, SWT.SEPARATOR);
+		pushImportar
+		.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				archivoImportar(sShell);
+			}
+			public void widgetDefaultSelected(
+					org.eclipse.swt.events.SelectionEvent e) {
+			}
+		});
 		pushGuardarComo
 				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
