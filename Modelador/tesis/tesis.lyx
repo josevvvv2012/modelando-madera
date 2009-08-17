@@ -223,217 +223,11 @@ Teniendo las empresas la necesidad de contar con maquinaria industrial de
 
 \begin_layout Standard
 Al usar maquinaria de importación es evidente que los costos de compra,
- instalación y mantenimiento son elevados, en la tabla 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Costos-de-adquisición"
-
-\end_inset
-
- se muestran algunas maquinarias adquiridas por empresas de la localidad
- de Paracho, Michoacán.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="4">
-<features>
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Empresa
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Maquinaria
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Costo de Adquisición
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Costo de mantenimiento
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-PROCART
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Rovert
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1'000'000.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-10'000.00
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Servimadera
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Andalucia
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Costos-de-adquisición"
-
-\end_inset
-
-Costos de adquisición de maquina industrial
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+ instalación y mantenimiento son elevados, por ejemplo la empresa PROCART
+ de la localidad de Paracho Michoacán adquirió una maquinaria robotica por
+ el costo aproximado de 1,000,000 pesos con un costo de mantenimiento de
+ 10,000.
+ pesos.
 \end_layout
 
 \begin_layout Standard
@@ -2514,7 +2308,7 @@ reference "alg:Línea-(primitivas.Linea.java)"
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout LyX-Code
 
@@ -2689,7 +2483,7 @@ donde
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -3059,7 +2853,7 @@ reference "fig:Elipse"
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout LyX-Code
 
@@ -3623,7 +3417,7 @@ donde
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -4023,7 +3817,7 @@ Rotación
 
 \begin_layout Standard
 La rotación alrededor del eje 
-\begin_inset Formula $z$
+\begin_inset Formula $x$
 \end_inset
 
  de un ángulo 
@@ -4089,7 +3883,7 @@ z\\
 
 \begin_layout Standard
 La rotación alrededor del eje 
-\begin_inset Formula $x$
+\begin_inset Formula $z$
 \end_inset
 
  de un ángulo 
@@ -4225,15 +4019,22 @@ Proyección isométrica
 \end_layout
 
 \begin_layout Standard
-Es un método de representación visual de objetos de 3 dimensiones en 2 dimension
-es.
+La proyección isométrica es un método de representación visual de objetos
+ de 3 dimensiones en 2 dimensiones.
 \end_layout
 
 \begin_layout Standard
 Existen 8 diferentes vistas isómetricas, dependiendo del octante que se
- haya elejido.
- Esta transformación transforma un punto en 3 dimenciones en un punto en
- 2 dimenciones visto desde el primer octante.
+ haya elegido.
+ Esta transformación mapea un punto en el espacio 3D en un plano visto desde
+ el primer octante
+\begin_inset CommandInset citation
+LatexCommand cite
+key "transformaciones"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4267,13 +4068,14 @@ z\\
 
 \begin_layout Standard
 donde 
-\begin_inset Formula $\alpha=arcsin(tan(30))$
+\begin_inset Formula $\alpha=arcsin(tan(30º))$
 \end_inset
 
  y 
-\begin_inset Formula $\beta=45$
+\begin_inset Formula $\beta=45º$
 \end_inset
 
+.
  En la ecuación 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4281,11 +4083,11 @@ reference "eq:Perspectiva"
 
 \end_inset
 
- se realiza un rotación vertical (eje y) dado por 
+ se realiza un rotación al rededor del eje Y dado por 
 \begin_inset Formula $\beta$
 \end_inset
 
-, seguido por una rotación horizontal (eje x) dado por 
+, seguido por una rotación alrededor del eje X dado por 
 \begin_inset Formula $\alpha$
 \end_inset
 
@@ -4306,7 +4108,8 @@ A pesar de las mejoras en la tecnología de los dispositivos de almacenamiento,
 \begin_layout Standard
 Teniendo en cuenta lo anterior se eligió usar un formato flexible tanto
  para la implementación como para la recuperación en caso de alguna perdida
- parcial de la información, se eligió XML.
+ parcial de la información, se eligió el formato XML.
+ Brevemente enseguida se explican las características del formato XML.
 \end_layout
 
 \begin_layout Subsection
@@ -4315,8 +4118,14 @@ Almacenamiento en formato XML
 
 \begin_layout Standard
 El formato XML (del inglés eXtensible Markup Language) es un metalenguaje
- extensible de etiquetas desarrollado por el World Wide Web Consortium como
- una propuesta de estándar para el intercambio de información estructurada
+ extensible de etiquetas desarrollado por el World Wide Web Consortium
+\begin_inset CommandInset citation
+LatexCommand cite
+key "XML08"
+
+\end_inset
+
+ como una propuesta de estándar para el intercambio de información estructurada
  entre diferentes plataformas.
  Tiene un papel muy importante en la actualidad ya que permite la compatibilidad
  entre sistemas para compartir la información de una manera segura, fiable
@@ -4341,7 +4150,7 @@ El mismo documento define la estructura y los campos asi como los valores
 \end_layout
 
 \begin_layout Itemize
-Es basado en estándares internacionales.
+Está basado en estándares internacionales.
 \end_layout
 
 \begin_layout Subsection
@@ -4353,6 +4162,13 @@ La estructura de almacenamiento puede observarse en el código
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:EstructuraXML"
+
+\end_inset
+
+ y su representación gráfica en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Ejemplo-simple"
 
 \end_inset
 
@@ -4377,44 +4193,14 @@ status open
 \begin_layout LyX-Code
 
 \size footnotesize
-<fig tipo="5" >
+<fig tipo="1" >
 \end_layout
 
 \begin_deeper
 \begin_layout LyX-Code
 
 \size footnotesize
-	<x0>183.0</x0>
-\end_layout
-
-\begin_layout LyX-Code
-
-\size footnotesize
-	<y0>211.0</y0>
-\end_layout
-
-\begin_layout LyX-Code
-
-\size footnotesize
-	<z0>130.0</z0>
-\end_layout
-
-\begin_layout LyX-Code
-
-\size footnotesize
-	<x1>265.0</x1>
-\end_layout
-
-\begin_layout LyX-Code
-
-\size footnotesize
-	<y1>251.0</y1>
-\end_layout
-
-\begin_layout LyX-Code
-
-\size footnotesize
-	<z1>130.0</z1>
+<x0>32.0</x0><y0>32.0</y0><z0>70.0</z0>
 \end_layout
 
 \end_deeper
@@ -4434,37 +4220,147 @@ status open
 \begin_layout LyX-Code
 
 \size footnotesize
-	<x0>101.0</x0>
+<x0>23.0</x0><y0>45.0</y0><z0>70.0</z0>
 \end_layout
 
 \begin_layout LyX-Code
 
 \size footnotesize
-	<y0>211.0</y0>
+<x1>138.0</x1><y1>45.0</y1><z1>70.0</z1>
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size footnotesize
+</fig>
 \end_layout
 
 \begin_layout LyX-Code
 
 \size footnotesize
-	<z0>190.0</z0>
+<fig tipo="3" >
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size footnotesize
+<x0>23.0</x0><y0>61.0</y0><z0>70.0</z0>
 \end_layout
 
 \begin_layout LyX-Code
 
 \size footnotesize
-	<x1>187.0</x1>
+<x1>23.0</x1><y1>107.0</y1><z1>70.0</z1>
 \end_layout
 
 \begin_layout LyX-Code
 
 \size footnotesize
-	<y1>250.0</y1>
+<x2>134.0</x2><y2>108.0</y2><z2>70.0</z2>
 \end_layout
 
 \begin_layout LyX-Code
 
 \size footnotesize
-	<z1>190.0</z1>
+<x3>132.0</x3><y3>62.0</y3><z3>70.0</z3>
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+<x4>132.0</x4><y4>62.0</y4><z4>70.0</z4>
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size footnotesize
+</fig>
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+<fig tipo="4" >
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size footnotesize
+<x0>76.0</x0><y0>143.0</y0><z0>70.0</z0>
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+<x1>105.0</x1><y1>152.0</y1><z1>70.0</z1>
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size footnotesize
+</fig>
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+<fig tipo="5" >
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size footnotesize
+<x0>179.0</x0><y0>68.0</y0><z0>70.0</z0>
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+<x1>199.0</x1><y1>124.0</y1><z1>70.0</z1>
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size footnotesize
+</fig>
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+<fig tipo="6" >
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\size footnotesize
+<x0>138.0</x0><y0>171.0</y0><z0>70.0</z0>
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+<x1>195.0</x1><y1>166.0</y1><z1>70.0</z1>
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+<x2>225.0</x2><y2>130.0</y2><z2>70.0</z2>
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+<x3>230.0</x3><y3>55.0</y3><z3>70.0</z3>
 \end_layout
 
 \end_deeper
@@ -4479,6 +4375,10 @@ status open
 
 \size footnotesize
 </modelador>
+\end_layout
+
+\begin_layout LyX-Code
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -4505,6 +4405,53 @@ Estructura de almacenamiento
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/ejemplo1.png
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Ejemplo simple
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ejemplo-simple"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 En el segmento de codigo 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4516,12 +4463,13 @@ reference "fig:EstructuraXML"
 \end_layout
 
 \begin_layout Itemize
-No existe límite en la cantidad de primitivas usadas en un diseño.
+Es posible tener una gran cantidad de primitivas en un diseño.
 \end_layout
 
 \begin_layout Itemize
 Los puntos de control de una primitiva pueden no tener límite, es decir,
  una primitiva puede tener N puntos de control.
+ Sólo aplica a la polilínea y curva de bezier.
  
 \end_layout
 
@@ -4560,56 +4508,76 @@ Importación de otros formatos
 \end_layout
 
 \begin_layout Standard
-Una herramienta importante en toda aplicación de diseño es la compatibilidad
- que esta debe tener es la capacidad de importar formatos externos a ella.
+Una herramienta importante en toda aplicación de diseño es la capacidad
+ de importar formatos externos a ella.
  
 \end_layout
 
 \begin_layout Standard
 Como primer formato de importación se desarrolló un importador para el formato
  de imágenes PGM.
+ A petición del Sr.
+ Rafael Cardiel Cervantes se agregó esta capacidad con la intención de hacer
+ figuras en relieve sobre madera a partir de los tonos de grises de una
+ imagen en formato PGM.
+ En seguida se describe brevemente dicho formato.
 \end_layout
 
 \begin_layout Subsection
-Imágenes PGM
+Formato de Imágenes PGM
 \end_layout
 
 \begin_layout Standard
-El formato PGM (del inglés Portable GrayMap) es un formato sin compresión,
- diseñados para el fácil intercambio entre plataformas.
- 
+El formato PGM (del inglés Portable GrayMap) es un formato para imágenes
+ en tonos de gris de 8 bits sin compresión, diseñado para el fácil intercambio
+ entre plataformas
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pgm2003"
+
+\end_inset
+
+.
+ Existen dos formatos de almacenamiento: texto plano y binario; solamente
+ se trabajo con el formato de texto plano.
 \end_layout
 
 \begin_layout Standard
-Este formato esta compuesto por dos partes:
-\end_layout
-
-\begin_layout Itemize
-Un encabezado que da información sobre el tamaño de la imagen así como el
- máximo colos expresado (0 - 255)
-\end_layout
-
-\begin_layout Itemize
-El cuerpo de la imagen, descripcion de color en cada uno de los pixel's
-\end_layout
-
-\begin_layout Standard
-En el código 
+Este formato está compuesto por dos partes(ver código 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "alg:Código-PGM"
 
 \end_inset
 
- puede pareciarse un pequeño ejemplo de este formato y en la figura 
+ para un ejemplo):
+\end_layout
+
+\begin_layout Itemize
+Un encabezado que da información sobre el tamaño de la imagen (largo y ancho)
+ seguido del máximo color expresado (en el rango de 0 a 255)
+\end_layout
+
+\begin_layout Itemize
+El cuerpo de la imagen que incluye la información de cada pixel.
+\end_layout
+
+\begin_layout Standard
+La imágen codificada en formato PGM de la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Ejemplo-PGM"
 
 \end_inset
 
- se aprecia su representación gráfica.
- 
+ corresponde al formato presentado en el código 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Código-PGM"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4763,22 +4731,26 @@ name "cha:4_Interfaces3D"
 
 \begin_layout Standard
 La interfaz de usuario es uno de los apartados con más relevancia de un
- sistema de cómputo, en la actualidad todo sistema debe contener una herramienta
- con la que el usuario pueda ordenar a la computadora qué hacer.
+ sistema de cómputo.
+ En la actualidad todo sistema debe contener una herramienta con la que
+ el usuario pueda ordenar a la computadora qué hacer.
+ Una interfaz de usuario mal diseñada puede causar que el mejor sistema
+ de cómputo sea ineficaz y por lo tanto sea deshechado, es por esto que
+ se debe realizar un buen diseño de la interfaz de usuario, la cual incluye:
+\end_layout
+
+\begin_layout Itemize
+Consideraciones sobre el diseño de la interfaz gráfica.
+\end_layout
+
+\begin_layout Itemize
+La eleccion de un lenguaje de programación apropiado.
 \end_layout
 
 \begin_layout Standard
-Una interfaz de usuario mal diseñada puede causar que el mejor sistema de
- cómputo sea ineficaz y por lo tanto sea deshechado, es por esto que se
- debe realizar un buen diseño de la interfaz de usuario, la cual incluye:
-\end_layout
-
-\begin_layout Itemize
-Diseño de la interfaz gráfica.
-\end_layout
-
-\begin_layout Itemize
-Eleccion de lenguaje de programación.
+En este capítulo se presentan algunos elementos importantes del diseño de
+ interfaces gráficas, el lenguaje de programación y el software de modelado
+ desarrollado por el autor.
 \end_layout
 
 \begin_layout Section
@@ -4789,8 +4761,8 @@ Diseño de la interfaz de usuario
 La Interfaz Gráfica de Usuario (IGU) es la parte más importante de los sistemas
  computarizados debido a que el usuario interactúa de forma directa con
  ella.
- Las metas de una IGU son logar que el trabajo con la computadora sea fácil,
- productivo y agradable
+ Las metas de una IGU son lograr que el trabajo con la computadora sea fácil,
+ productivo y agradable 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "disenoInterface"
@@ -4844,7 +4816,7 @@ El sistema deberá poder ser usado por personas de diversas capacidades y
 \end_layout
 
 \begin_layout Standard
-Las principales caracterísitcas de un sistema accesible son: Perceptibilidad,
+Las principales características de un sistema accesible son: Perceptibilidad,
  Operatibilidad y Simplicidad.
 \end_layout
 
@@ -4855,7 +4827,7 @@ Disponibilidad
 \begin_layout Standard
 Todos los aspectos de un sistema deberán de estar disponibles en cualquier
  momento.
- Solo deberán de no estar disponibles en aquellas situaciones que no tenga
+ Sólo deberán no estar disponibles en aquellas situaciones que no tenga
  sentido.
 \end_layout
 
@@ -4864,7 +4836,7 @@ Claridad
 \end_layout
 
 \begin_layout Standard
-La interfaz debe ser clara en apariencia visual y concepto.
+La interfaz debe ser clara en apariencia visual y conceptual.
  Los elementos visuales deben ser entendibles, relacionados con objetos
  del mundo real.
  Los conceptos y textos deben ser simples y no confusos.
@@ -4884,7 +4856,7 @@ Consistencia es la uniformidad en apariencia y localizacion de los objetos
 \end_layout
 
 \begin_layout Standard
-Un sistema deberá lucir y operar de forma normal, es decir:
+Un sistema deberá lucir y operar de forma consistente, es decir:
 \end_layout
 
 \begin_layout Itemize
@@ -4943,8 +4915,8 @@ El sistema debe contar con un sistema de recuperación que permita deshacer
 \begin_layout Standard
 El ojetivo es mantener la estabilidad, es decir, cuando el usuario realice
  una acción errónea que pueda llevar a una situación peligrosa exista alguna
- forma de regresar al puto anterior estable.
- La recuperación debe ser obvia, automática, y simple de realizar.
+ forma de regresar al punto anterior estable.
+ La recuperación debe ser obvia, automática y simple de realizar.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5390,6 +5362,7 @@ os y más difundidos en la actualidad, dejando claro que Java es el lenguaje
  de programación con mayor portabilidad, debido a que se cuenta con intérpretes
  para todas las arquitecturas y además que no se requiere modificar el código
  fuente para ejecutarse en éstas.
+ En seguida se describe brevemente dicho lenguaje de programación.
 \end_layout
 
 \begin_layout Subsection
@@ -5420,9 +5393,9 @@ Un conjunto de bibliotecas estándar, conocidas como API.
 \end_layout
 
 \begin_layout Standard
-El lenguaje de programación usa la sintaxis de C++, incorpora sincronización,
- manejo de tareas e interfaces como un mecanismo alternativo a la herencia
- múltiple de C++.
+El lenguaje de programación usa una sintaxis similar al lenguaje C++, incorpora
+ sincronización, manejo de tareas e interfaces como un mecanismo alternativo
+ a la herencia múltiple de C++.
 \end_layout
 
 \begin_layout Standard
@@ -5431,8 +5404,14 @@ La máquina virtual de Java (JVM) es un programa nativo (un ejecutable de
  especial (llamado Java Bytecode), el cual es generado a partir del compilador
  de Java.
  Es por esto que Sun Microsystem ha liberado versiones de su JVM para las
- arquitecturas y sistemas operativos más utilizados, volviendo así a las
- aplicaciones desarrolladas en Java multiplataforma.
+ arquitecturas y sistemas operativos más utilizados.
+\end_layout
+
+\begin_layout Standard
+Debido al desarrollo de JVM en los sistemas operativos, las aplicaciones
+ desarrolladas en Java se convierten en aplicaciones multiplataforma.
+ Es por esto que para desarrollar la aplicación de modelado se utilizó Java.
+ En seguida se describe las secciones más relevantes de la aplicación.
 \end_layout
 
 \begin_layout Section
@@ -5440,15 +5419,10 @@ Software desarrollado
 \end_layout
 
 \begin_layout Standard
-El software desarrollado fue elaborado en lenguaje de programación Java
- debido a sus ventajas mencionadas anteriormente, sin embargo el uso de
- Java en ambiente gráfico tiene desventajas visuales tales como la no integració
-n de colores y formas en los objetos visuales con los propios del sistema
- operativo.
- Debido a esta característica visual se optó por utilizar las biblioteca
- SWT desarrollada por IBM la cual obtiene una apariencia idéntica a las
- aplicaciones nativas al sistema operativo logrando cumplir asi unos de
- los principios fundametales de un buen diseño de interfaz gráfica 
+El software desarrollado fue incluyó la biblioteca SWT desarrollada por
+ IBM, la cual obtiene una apariencia idéntica a las aplicaciones nativas
+ al sistema operativo, logrando cumplir así unos de los principios fundamentales
+ de un buen diseño de interfaz gráfica 
 \begin_inset Quotes eld
 \end_inset
 
@@ -5457,11 +5431,8 @@ consistencia
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Aunque en general pantalla es sinónimo de monitor del equipo, en lo sucesivo
- se tomará como la parte del dibujo que se visualiza en un momento determinado.
+ Es decir, mediante la biblioteca SWT se uniformiza la apariencia con las
+ aplicaciones del sistema operativo anfitrión.
 \end_layout
 
 \begin_layout Subsection
@@ -5477,27 +5448,31 @@ reference "fig:Pantalla-principal"
 
 \end_inset
 
- de donde se pueden resaltar cinco áreas importantes:
+, donde se pueden resaltar cinco secciones importantes:
 \end_layout
 
 \begin_layout Itemize
-Área de menús 
+Área de menús (1).
 \end_layout
 
 \begin_layout Itemize
-Barra de herramientas de acceso rápido
+Barra de herramientas de acceso rápido (2).
 \end_layout
 
 \begin_layout Itemize
-Barra de herramientas de expasión
+Barra de herramientas de expansión (3).
 \end_layout
 
 \begin_layout Itemize
-Area de trabajo
+Área de trabajo (4).
 \end_layout
 
 \begin_layout Itemize
-Descripción del punto actual
+Descripción del punto actual (5).
+\end_layout
+
+\begin_layout Standard
+A continuación se describe brevemente cada una de estas secciones.
 \end_layout
 
 \begin_layout Standard
@@ -5513,9 +5488,9 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename imagenes/vgeneral.png
+	filename imagenes/pinicial2.png
 	lyxscale 50
-	width 50page%
+	width 100line%
 
 \end_inset
 
@@ -5551,12 +5526,8 @@ name "fig:Pantalla-principal"
 \end_layout
 
 \begin_layout Standard
-Esta área contiene las acciones que debe contener todo sistema computacional,
- 
-\end_layout
-
-\begin_layout Standard
-En la figura 
+Esta área contiene las acciones que debe presentar todo sistema computacional.
+ En la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Área-de-menús"
@@ -5568,88 +5539,50 @@ reference "fig:Área-de-menús"
 
 \begin_layout Itemize
 Nuevo.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Se utiliza para crear un nuevo diseño o un diseño sin nombre.
-\end_layout
-
-\begin_layout Itemize
-Todos los archivos recibirán la extensión xml.
-\end_layout
-
-\begin_layout Itemize
-Si se escogiera un nombre existente, se mostrará un mensaje indicando la
+ Se utiliza para crear un nuevo diseño o un diseño sin nombre.
+ Todos los archivos recibirán la extensión xml.
+ Si se escogiera un nombre existente, se mostrará un mensaje indicando la
  existencia de un diseño con ese nombre y dando la opción de sustituirlo.
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Abrir.
+ Con esta orden se cargan los diseños existentes, creados con anterioridad,
+ para su visualización, modificación o implementación.
  
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Con esta orden se cargan los diseños existentes, creados con anterioridad,
- para su visualización, modificación o implementación.
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 Importar.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Permite transformar archivos en formato PGM en un diseño entendible por
+ Permite transformar archivos en formato PGM en un diseño entendible por
  el programa.
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Cerrar.
- 
+ Este comando permite cerrar el diseño actual sin almacenar los cambios
+ efectuados al diseño.
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-Este comando permite cerrar el diseño actual sin almacenar los cambios efectuado
-s al diseño.
+Guardar.
+ Para almacenar los diseños realizados duarante una sesión de trabajo.
+ Si el proyecto tiene nombre solo se actualizará, en caso contrario se solicitar
+á un nombre para el diseño.
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Guardar Como.
- 
+ Permite almacenar el diseño actual con un nombre diferente al que tiene,
+ si aún no tiene nombre se solicitara un nombre para el diseño.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Para almacenar los diseños realizados duarante una sesión de trabajo.
-\end_layout
-
-\begin_layout Itemize
-Si el proyecto tiene nombre solo se actualizará, en caso contrario se solicitará
- un nombre para el diseño.
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 Salir.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Este comando sale del programa sin guardar los cambios efectuados en el
+ Este comando sale del programa sin guardar los cambios efectuados en el
  diseño actual, sólo preguntando si en realidad desea salir.
 \end_layout
 
-\end_deeper
 \begin_layout Standard
 En la figura 
 \begin_inset CommandInset ref
@@ -5658,37 +5591,62 @@ reference "fig:Área-de-menús"
 
 \end_inset
 
-(b) se muestra las acciones pertinentes a la implementación del diseño:
+(b) se muestra las acciones disponibles de edición:
+\end_layout
+
+\begin_layout Itemize
+Deshacer.
+ Permite deshacer la ultima acción realizada.
+\end_layout
+
+\begin_layout Itemize
+Rehacer.
+ Permite rehacer una accion deshecha.
+\end_layout
+
+\begin_layout Itemize
+Eliminar primitiva.
+ Este comando permite eliminar una primitva seleccionada del diseño.
+\end_layout
+
+\begin_layout Itemize
+Duplicar primitiva.
+ Este comando duplica una primitiva seleccionada.
+\end_layout
+
+\begin_layout Itemize
+Preferencias del sistema.
+ Permite seleccionar opciones referentes al sistema, como nombre del puerto
+ y estilo de área de trabajo.
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Área-de-menús"
+
+\end_inset
+
+(c) se muestra las acciones pertinentes que permiten que el robot realice
+ el diseño activo.
+ Contiene las opciones de:
 \end_layout
 
 \begin_layout Itemize
 Activar robot.
- Con esta orden se realizan dos operaciones:
+ Con esta orden se realizan dos operaciones: Se comprueba que el puerto
+ serial mediante el cual se realizará la conexión sea el indicado y se realiza
+ un proceso para bloquear el uso del puerto y así evitar fallas en la comunicaci
+ón con el robot.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Se comprueba que el puerto mediante el cual se realizará la conexión sea
- el indicado.
-\end_layout
-
-\begin_layout Itemize
-Se realiza un proceso para bloquear el uso del puerto y así evitar fallas
- en la comunicación con el robot.
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 Iniciar proceso robot.
+ Este comando inicia el proceso de transformación del diseño a comandos
+ entendibles por el robot SCARA y los envía al mismo.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Este comando inicia el proceso de transformación del diseño a comandos entendibl
-es por el robot SCARA y los envía al mismo.
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 \noindent
 \align center
@@ -5710,9 +5668,9 @@ status collapsed
 \noindent
 \align center
 \begin_inset Graphics
-	filename imagenes/mnuevo.png
+	filename imagenes/marchivo.png
 	lyxscale 40
-	width 35page%
+	width 30page%
 
 \end_inset
 
@@ -5738,6 +5696,44 @@ Menú archivo
 \end_inset
 
 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/medicion.png
+	lyxscale 40
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Menú Edición
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -5802,20 +5798,67 @@ Barra de herramientas de acceso rápido
 \end_layout
 
 \begin_layout Standard
-Contiene acceso rápido a tareas comunes como crear un nuevo proyecto, abrir
- un proyecto, importar de un formato diferente asi como la acción deshacer.
+Contiene acceso rápido a tareas comunes como crear un nuevo diseño, abrir
+ un diseño, así como la acciónes de deshacer y rehacer.
  Esta seccion puede apreciarse en la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Pantalla-principal"
+reference "fig:Barra-de-herramientas-1"
 
 \end_inset
 
- en la parte superior izquierda, justo debajo de la área de menús .
+ en la parte superior izquierda, justo debajo del área de menús.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/baccesorapido.png
+	width 35page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Barra de herramientas de acceso rápido
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Barra-de-herramientas-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
-Barra de herramientas de expasión
+Barra de herramientas de expansión
 \end_layout
 
 \begin_layout Standard
@@ -5852,15 +5895,9 @@ Envia robot
 \end_inset
 
  para una mejor funcionabilidad cumpliendo así con los principios de un
- buen diseño de la interfaz gráfica 
-\begin_inset Quotes eld
-\end_inset
-
-consistencia, eficiencia, disponibilidad y simplicidad
-\begin_inset Quotes erd
-\end_inset
-
-.
+ buen diseño de la interfaz gráfica: consistencia, eficiencia, disponibilidad
+ y simplicidad.
+ A continuación se describe brevemente cada una de éstas.
 \end_layout
 
 \begin_layout Standard
@@ -5868,7 +5905,7 @@ consistencia, eficiencia, disponibilidad y simplicidad
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -5882,7 +5919,7 @@ status collapsed
 \noindent
 \align center
 \begin_inset Graphics
-	filename imagenes/herrdise.png
+	filename imagenes/herramientasdiseno.png
 	lyxscale 50
 	width 35page%
 
@@ -5915,7 +5952,7 @@ status collapsed
 \noindent
 \align center
 \begin_inset Graphics
-	filename imagenes/figproy.png
+	filename imagenes/figurasproyecto.png
 	lyxscale 50
 	width 35page%
 
@@ -6010,7 +6047,7 @@ Herramientas de diseño.
  en la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Barra-de-herramientas"
+reference "fig:Barra-de-herramientas-1"
 
 \end_inset
 
@@ -6019,13 +6056,21 @@ reference "fig:Barra-de-herramientas"
 
 \begin_deeper
 \begin_layout Itemize
-Punto, Línea, Polilínea, Círculo, Elipse y Bezier son el conjunto de herramienta
-s predefinidas.
+Las herramientas predefinidas son: Punto, Línea, Polilínea, Círculo, Elipse
+ y curvas de Bezier.
 \end_layout
 
 \begin_layout Itemize
 Elementos compuestos.
- Aqui aparecerán todos aquellos diseños almacenados en la ubicación de galeria
+ Aquí aparecerán todos aquellos diseños almacenados en un directorio denominado
+ 
+\begin_inset Quotes eld
+\end_inset
+
+galeria
+\begin_inset Quotes erd
+\end_inset
+
  como patrones para ser insertados como si se tratara de una herramienta
  predefinida.
 \end_layout
@@ -6034,11 +6079,7 @@ Elementos compuestos.
 \begin_layout Itemize
 Figuras en proyecto.
  Aquí se mantiene una lista de figuras que se encuentran en el diseño actual.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-A cada figura existente se pueden aplicar las tranformaciones mencionadas
+ A cada figura existente se pueden aplicar las tranformaciones mencionadas
  en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6046,17 +6087,18 @@ reference "sec:Transformaciones"
 
 \end_inset
 
- utilizando los controles que se aprecian en la figura 
+ rotación, escalado, traslación así como operaciones de duplicación y eliminació
+n de primitivas existentes utilizando los controles que se aprecian en la
+ figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Barra-de-herramientas"
+reference "fig:Barra-de-herramientas-1"
 
 \end_inset
 
 (b).
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Vistas.
  Permiten cambiar la vista del diseño, como se muestra en la figura 
@@ -6071,12 +6113,13 @@ reference "fig:Vistas-disponibles"
 
 \begin_deeper
 \begin_layout Itemize
-Arriba.
+Frente.
  Permite la vista del plano x-y.
 \end_layout
 
 \begin_layout Itemize
-Frente Permite la vista del plano x-z.
+Arriba.
+ Permite la vista del plano x-z.
 \end_layout
 
 \begin_layout Itemize
@@ -6085,7 +6128,7 @@ Lateral.
 \end_layout
 
 \begin_layout Itemize
-Perspectiva.
+Proyección isométrica.
  Muestra una proyección en perspectiva del diseño activo.
 \end_layout
 
@@ -6101,7 +6144,7 @@ Inicia / Detiene el envio hacia el robot SCARA, además de que muestra un
  barra de progreso como se muestra en la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Barra-de-herramientas"
+reference "fig:Barra-de-herramientas-1"
 
 \end_inset
 
@@ -6199,7 +6242,7 @@ status collapsed
 \noindent
 \align center
 \begin_inset Graphics
-	filename imagenes/vistalaterar.png
+	filename imagenes/vistalateral.png
 	lyxscale 50
 	width 35page%
 
@@ -6283,12 +6326,12 @@ name "fig:Vistas-disponibles"
 \end_layout
 
 \begin_layout Subsubsection
-Area de trabajo
+Área de trabajo
 \end_layout
 
 \begin_layout Standard
 El área de trabajo es la parte central donde se pueden realizar los diferentes
- trazos haciendo uso de la herramienta de diseño, puede pareciarse en la
+ trazos haciendo uso de la herramienta de diseño, puede apreciarse en la
  figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6366,6 +6409,70 @@ reference "fig:Pantalla-principal"
  relativa.
 \end_layout
 
+\begin_layout Subsection
+Versiones realizadas
+\end_layout
+
+\begin_layout Standard
+Las versiones de software desarrolladas se listan a continuación con una
+ pequeña descripción de los componentes usados y su desempeño.
+\end_layout
+
+\begin_layout Subsubsection*
+Versión 1
+\end_layout
+
+\begin_layout Standard
+En la versión 1 se implementó usando Java y OpenGL(usando jogl para realizar
+ el enlace con OpenGL
+\begin_inset CommandInset citation
+LatexCommand cite
+key "java.joglj3d"
+
+\end_inset
+
+) pero lamentablemente fue muy inestable debido a que si la computadora
+ no tiene una tarjeta de video dedicada el procesador tiene que realizar
+ la emulación y esto conlleva a una operación lenta de la aplicación.
+ Siendo uno de los puntos más relevantes la velocidad de la aplicación,
+ en específico para la comunicación con el robot mediante el puerto serial.
+ Fue deshechada esta implementación.
+\end_layout
+
+\begin_layout Subsubsection*
+Versión 2
+\end_layout
+
+\begin_layout Standard
+En ésta versión se implementarón dos hilos para intentar eliminar el problema
+ del envio retrasado por la emulación de OpenGL, sin embargo no siempre
+ se lograba enviar al robot con la velocidad y continuidad necesaria.
+ Esta versión también fue deshechada.
+\end_layout
+
+\begin_layout Subsubsection*
+Versión 3 
+\end_layout
+
+\begin_layout Standard
+En la versión 3 se decidió abandonar OpenGL por los motivos mencionados
+ anteriormente y se inicio la implementación con primitivas gráficas de
+ Java (canvas).
+ Se logró eliminar el problema del envio al robot.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Versión 4
+\end_layout
+
+\begin_layout Standard
+En esta última versión se cambiarón los controles de Java.swing(jframe, jbutton,
+ etc) por los correspondientes de la biblioteca SWT (shel, button, etc)
+ debido a que usando la biblioteca SWT la aplicación logra tener una apariencia
+ idéntica a las aplicaciones nativas del sistema operativo.
+\end_layout
+
 \begin_layout Chapter
 Interfaz con el robot SCARA
 \begin_inset CommandInset label
@@ -6388,7 +6495,8 @@ Robot SCARA
 \end_layout
 
 \begin_layout Standard
-El robot con el cual se trabajó se puede apreciar en la figura 
+El robot manipulador con el cual se trabajó se puede apreciar en la figura
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:RobotScara"
@@ -6396,13 +6504,9 @@ reference "fig:RobotScara"
 \end_inset
 
 .
- Este robot cuenta con 4 grados de libertad construido en la Factultad de
- Ingeniería Electrica de la Universidad Michoacan de San Nicolas de Hidalgo,
- fijo en su base y hecho de acero y aluminio.
-\end_layout
-
-\begin_layout Standard
-La estructura física fue realizada por una empresa dedicada a la robótica,
+ Este robot SCARA de 4 grados de libertad construido en la Facultad de Ingenierí
+a Electrica de la Universidad Michoacana de San Nicolás de Hidalgo.
+ La estructura física fue realizada por una empresa dedicada a la robótica,
  denominada 
 \begin_inset Quotes eld
 \end_inset
@@ -6412,17 +6516,15 @@ Cervantes Co.
 \end_inset
 
 , ubicada en Paracho Michoacán.
-\end_layout
-
-\begin_layout Standard
-La programación del controlador fue realizada por Omar Rodríguez Páez
+ La programación del controlador del robot SCARA fue realizada por Omar
+ Rodríguez Páez 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "tesisOmar"
 
 \end_inset
 
- .
+.
 \end_layout
 
 \begin_layout Standard
@@ -6430,7 +6532,7 @@ key "tesisOmar"
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -6473,7 +6575,7 @@ Características
 \end_layout
 
 \begin_layout Standard
-Entre las características más relevantes acerca del robot se tiene:
+Las características más relevantes acerca del robot son:
 \end_layout
 
 \begin_layout Itemize
@@ -6481,7 +6583,7 @@ Entre las características más relevantes acerca del robot se tiene:
 \end_layout
 
 \begin_layout Itemize
-Altura 60 cm.
+Altura de 60 cm.
 \end_layout
 
 \begin_layout Itemize
@@ -6493,7 +6595,7 @@ Construido en acero y aluminio.
 \end_layout
 
 \begin_layout Itemize
-Peso alrededor de 45 Kg.
+Peso aproximado de 45 Kg.
 \end_layout
 
 \begin_layout Subsection
@@ -6525,12 +6627,6 @@ Sensores de límite o de posición límite de cada articulación.
  robot SCARA.
 \end_layout
 
-\begin_layout Standard
-Además los convertidores analógico-digitales del microcontrolador, se usan
- como sensores de voltaje para medir indirectamente la corriente que circula
- por los motores a través de los controladores.
-\end_layout
-
 \begin_layout Subsubsection
 Elementos terminales.
 \end_layout
@@ -6538,7 +6634,8 @@ Elementos terminales.
 \begin_layout Standard
 El robot cuenta con dos motores de pasos, uno para el hombro y otro para
  el codo, éstos permiten un movimiento sobre los ejes X y Y; y dos motores
- de CD con escobillas para el posicionador y para definir la profundidad.
+ de CD con escobillas para la llamada rotación de muñeca y para definir
+ la profundidad.
 \end_layout
 
 \begin_layout Subsubsection
@@ -6628,8 +6725,181 @@ Conversión de modelado a acciones SCARA
 \begin_layout Standard
 Debido a que en el modelo sólo contamos con puntos definidos dentro del
  sistema de coordenadas cartesianas de tres dimensiones es necesario calcular
- el conjunto de ángulos de las articulaciones para logar el resultado deseado.
- Esto lo solucionaremos usando cinemática inversa.
+ el conjunto de ángulos de las articulaciones del robot para logar el resultado
+ deseado.
+ 
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $\left(\Theta_{1},\,\Theta_{2},\,\Theta_{3},\, D\right)$
+\end_inset
+
+ una configuración del robot donde 
+\begin_inset Formula $\Theta_{1}$
+\end_inset
+
+ se refiere a la rotación de la articulación del brazo, 
+\begin_inset Formula $\Theta_{2}$
+\end_inset
+
+ se refiere a la rotación del codo, 
+\begin_inset Formula $\Theta_{3}$
+\end_inset
+
+ se refiere a la rotación de la muñeca y 
+\begin_inset Formula $D$
+\end_inset
+
+ la profundiad de la herramienta, como se ilustra en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Configuración-de-un"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $\left(x,\, y,\, z,\,\Theta\right)$
+\end_inset
+
+ la posición y orientación final de la herramienta.
+\end_layout
+
+\begin_layout Standard
+En robótica se conoce como el problema de cinemática directa al problema
+ de determinar la posición y orientación de la herramienta 
+\begin_inset Formula $\left(x,\, y,\, z,\,\Theta\right)$
+\end_inset
+
+ si conocemos la configuración de las articulaciones 
+\begin_inset Formula $\left(\Theta_{1},\,\Theta_{2},\,\Theta_{3},\, D\right)$
+\end_inset
+
+.
+ Si lo que deseamos es encontrar la configuración de las articulaciones
+ 
+\begin_inset Formula $\left(\Theta_{1},\,\Theta_{2},\,\Theta_{3},\, D\right)$
+\end_inset
+
+ a partir de la especificación de una posición y orientación deseada de
+ la herramienta, el problema se conoce como cinemática inversa.
+\end_layout
+
+\begin_layout Standard
+Para nuestros fines, lo que tenemos son los puntos deseados y necesitamos
+ la configuración del robot para alcanzar dichos puntos, es decir, requerimos
+ solucionar el problema de cinemática inversa.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/scara1.png
+	width 30page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vista lateral
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/scara2.png
+	width 30page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vista superior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Configuración de un robot SCARA
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Configuración-de-un"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -6647,35 +6917,19 @@ Existen varias soluciones a este problema:
 \end_layout
 
 \begin_layout Itemize
-Soluciones Cerradas(analíticas)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Solución algebraica
+Soluciones Cerradas(analíticas): Solución algebraica y solución geométrica.
 \end_layout
 
 \begin_layout Itemize
-Solución geométrica
+Soluciones Numéricas Iterativas.
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Soluciones Numéricas
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Iterativas
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 Debido a su naturaleza iterativa, las soluciones numéricas son generalmente
- mucho más lentas que las solución de forma cerrada, en algunos casos las
- soluciones numéricas son tan lentas que pueden ocasionar problemas de cinemátic
-a, es por esto que sólo nos enfocaremos en las soluciones analíticas, en
- particular en la solución geométrica.
+ mucho más lentas que las solución de forma cerrada.
+ En este trabajo sólo nos enfocaremos en las soluciones analíticas, en particula
+r en la solución geométrica, porque para la configuración sencilla del robot
+ SCARA, presenta una solución muy rápida y sencilla.
 \end_layout
 
 \begin_layout Subsubsection
@@ -7021,17 +7275,24 @@ Finalmente se calcula
 \end_layout
 
 \begin_layout Subsection
-Implementación de cinemática inversa.
+Implementación de la cinemática inversa.
 \end_layout
 
 \begin_layout Standard
 La implementación de la solución geométrica para la cinemática inversa se
- muestra a continuación:
+ muestra en el codigo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Cinemática-inversa-(cinematica.Inversa.java)"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float algorithm
-placement H
+placement h
 wide false
 sideways false
 status collapsed
@@ -7271,6 +7532,13 @@ public class Inversa {
 
 \begin_layout Plain Layout
 Cinemática inversa (cinematica.Inversa.java)
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Cinemática-inversa-(cinematica.Inversa.java)"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -7294,9 +7562,10 @@ Debido a que el robot SCARA usa conexión mediante el puerto serial (RS232)
 \end_layout
 
 \begin_layout Standard
-Existen varias bibliotecas para la comunicación serial compatibles con lenguaje
- Java, algunas bibliotecas aún están en desarrollo, otras sólo son para
- un determinado sistema operativo.
+Existen varias bibliotecas para la comunicación serial, compatibles con
+ lenguaje Java.
+ Algunas bibliotecas aún están en desarrollo, otras sólo son para un determinado
+ sistema operativo.
  En la tabla 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -7313,7 +7582,7 @@ reference "tab:Bibliotecas-para-comuniación"
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -7471,7 +7740,7 @@ name "tab:Bibliotecas-para-comuniación"
 \end_layout
 
 \begin_layout Standard
-Debido a que la biblioteca RXTX si da soporte a la mayoría de las plataformas
+Debido a que la biblioteca rxtx da soporte a la mayoría de las plataformas
  (MS-Windows, Linux, Mac OS) se optó por utlizar esta biblioteca además
  de que es transparente a la hora de programar, es decir no requiere hacerse
  ningún cambio para que la comunicación se realize mediante puerto serial
@@ -7479,13 +7748,20 @@ Debido a que la biblioteca RXTX si da soporte a la mayoría de las plataformas
 \end_layout
 
 \begin_layout Standard
-A continuación se muestra el código realizado para la conexión con el robot
- (serial.Comuniacion.java):
+En el código 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Conexión-mediante-puerto"
+
+\end_inset
+
+ se muestra la implementación de la conexión con el robot SCARA mediante
+ el puerto serial.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float algorithm
-placement H
+placement h
 wide false
 sideways false
 status collapsed
@@ -7770,8 +8046,10 @@ SerialPort.STOPBITS_1,SerialPort.PARITY_NONE);
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Conexión mediante puerto serial (serial.Conexion.java)
-\end_layout
+Conexión mediante puerto serial (serial.Comunicacion.java)
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Conexión-mediante-puerto"
 
 \end_inset
 
@@ -7781,6 +8059,45 @@ Conexión mediante puerto serial (serial.Conexion.java)
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Versiones realizadas
+\end_layout
+
+\begin_layout Standard
+Los cambios más significativos de la implementación que llevarón a cambios
+ drásticos se mencionan a continuación con el nombre de versiones.
+\end_layout
+
+\begin_layout Subsubsection*
+Versión 1
+\end_layout
+
+\begin_layout Standard
+En la versión 1 se implementó la conexión con el robot SCARA usando un la
+ bibloteca javaconn.
+ Ésta versión opero de manera eficiente en el sistema operativo Linux, sin
+ embargo en MS-Windows no operó del todo bien, en ocasiones el sistema se
+ volvia inestable y la conexión con el puerto serial se perdía.
+ Esta versión fue deshecada.
+\end_layout
+
+\begin_layout Subsubsection*
+Versión 2
+\end_layout
+
+\begin_layout Standard
+En ésta versión se cambió la biblioteca de conexion de javaconn a rxtx dando
+ resultados muy buenos, es decir ya no se detectarón problemas en la conexión
+ en ambos sistemas operativos (Linux y MS Windows).
+ También la biblioteca rxtx permitió bloquear el puerto serial dando una
+ mayor seguridad durante el proceso de envio de comandos al robot.
 \end_layout
 
 \begin_layout Chapter
@@ -7799,7 +8116,7 @@ En este capítulo se describe brevemente los requerimientos del sistema así
  como la forma de instalar las aplicaciones y bibliotecas en las diferentes
  plataformas.
  También se muestran los resultados de la realización de pruebas usando
- el robot SCARA y el programa presentado en esta tesis.
+ el robot SCARA y el programa desarrollado en esta tesis.
 \end_layout
 
 \begin_layout Section
@@ -8084,7 +8401,7 @@ Instalando Java
 \end_layout
 
 \begin_layout Standard
-Descargar e instalar Java Runtime Enviorement 1.6 o superior de la página
+Descargar e instalar Java Runtime Enviroment 1.6 o superior de la página
  oficial de Sun Microsystem: http://java.sun.com/javase/downloads/index.jsp.
  Si el sistema operativo anfitrión es MS Windows solo es necesario ejecutar
  el archivo ejecutable descargado.
@@ -8109,7 +8426,7 @@ Finalmente la biblioteca SWT necesaria para la interfaz gráfica es necesario
  y mover los archivos a una carpeta común con la aplicación desarrollada.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection
 Instalando la aplicación desarrollada
 \end_layout
 
@@ -8118,21 +8435,38 @@ Para ejecutar la aplicación desarrollada en esta tesis hay dos formas:
 \end_layout
 
 \begin_layout Itemize
-Usar algun cliente svn y descargar la versión en desarrollo y compilarla
- desde el código fuente.
- Para esto se debe realizar los siguientes comandos:
+Usar algun cliente svn, svn es un sistema de control de versiones usado
+ para mantener el código fuente actual así como sus versiones previas
+\begin_inset CommandInset citation
+LatexCommand cite
+key "svn"
+
+\end_inset
+
+, y descargar la versión en desarrollo y compilarla desde el código fuente.
+ Para esto se deben realizar los siguientes comandos:
 \begin_inset Newline newline
 \end_inset
 
+[user@site]$ 
+\emph on
 svn checkout http://modelando-madera.googlecode.com/svn/trunk/ modelando-madera-re
 ad-only
+\emph default
+
 \begin_inset Newline newline
 \end_inset
 
+[user@site]$ 
+\emph on
 javac ide.Tesis.java
+\emph default
+
 \begin_inset Newline newline
 \end_inset
 
+[user@site]$ 
+\emph on
 java ide.Tesis
 \end_layout
 
@@ -8143,6 +8477,8 @@ Descargar la última versión liberada por el autor desde la página oficial
 \begin_inset Newline newline
 \end_inset
 
+[user@site]$ 
+\emph on
 java -jar modelador.jar
 \end_layout
 
@@ -8967,7 +9303,7 @@ status open
 \begin_inset Graphics
 	filename imagenes/elipse2.png
 	lyxscale 20
-	width 30page%
+	width 50page%
 
 \end_inset
 
@@ -9007,7 +9343,7 @@ reference "fig:pgm_a_robot"
 \end_inset
 
  se muestra un ejemplo de una imagen en formato PGM y su respectiva implementaci
-ón en madera.
+ón en madera se puede observar en la figura.
 \end_layout
 
 \begin_layout Standard
@@ -9021,8 +9357,9 @@ status collapsed
 \noindent
 \align center
 \begin_inset Graphics
-	filename imagenes/logo_a_robot.png
-	width 60page%
+	filename imagenes/logo_dgeti.jpg
+	lyxscale 40
+	width 30page%
 
 \end_inset
 
@@ -9039,7 +9376,50 @@ name "fig:pgm_a_robot"
 
 \end_inset
 
-PGM a Robot
+Ejemplo PGM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/dgti_robot.JPG
+	lyxscale 40
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pgm_a_robot-1"
+
+\end_inset
+
+Ejemplo PGM realizado en madera
 \end_layout
 
 \end_inset
@@ -9066,16 +9446,26 @@ name "cha:7_Conclusiones"
 \begin_layout Standard
 La aplicacion desarrollada termina con una gran cantidad de esfuerzos realizados
  para tener un primer robot industrial de bajo costo realizado completamente
- con tecnología y conocimiento nacional.
+ con tecnología y conocimiento propio.
  Este desarrollo consta de: 
 \end_layout
 
 \begin_layout Itemize
-Desarrollo mecánico de un robot SCARA
+Desarrollo mecánico de un robot SCARA, elaborado por el Sr.
+ Rafael Cardiel Cervantes.
 \end_layout
 
 \begin_layout Itemize
-Desarrollo electrónico/lógico de un robot SCARA
+Desarrollo electrónico/lógico de un robot SCARA, Trabajo realizado por Omar
+ Ríos y Omar Rodriguez en sus tesis de licenciaturoa de la Facultad de Ingenierí
+a Eléctrica de la Universidad Michoacana de San Nicolás de Hidalgo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tesis O. Rios,tesisOmar"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
@@ -9093,33 +9483,32 @@ Conclusiones
 \end_layout
 
 \begin_layout Itemize
-Se diseñó eligió Java como lenguaje de programación debido a su gran virtud
- que es la de poder ser ejecutado en la mayoría de las plataformas sin la
- necesidad de alterar una línea de código fuente.
+Se eligió Java como lenguaje de programación debido a su gran virtud de
+ poder ser ejecutado en la mayoría de las plataformas sin la necesidad de
+ alterar el código fuente o recompilar el mismo.
 \end_layout
 
 \begin_layout Itemize
 Se diseñó una aplicación modular dando la posibilidad de que en un futuro
  a la aplicación se pueda agregar nuevos módulos o bien mejorar los existentes
- pero sin la necesidad de modificar el código completo.
+ sin la necesidad de modificar el código completo.
 \end_layout
 
 \begin_layout Itemize
-Se desarrollaron las diferentes clases para las primitivas Punto, Línea,
- Círculo, Elipse, Bezier entre otras para un manejo más eficiente a la hora
- de su programación.
+Se desarrollaron diferentes clases para las primitivas Punto, Línea, Círculo,
+ Elipse, Bezier para un manejo más eficiente a la hora de su programación.
 \end_layout
 
 \begin_layout Itemize
-Se resalta el uso de la biblioteca SWT que permite que la aplicación desarrollad
-a aparente ser una aplicación nativa del sistema operativo anfitrión.
+Se destaca el uso de la biblioteca SWT que permite que la aplicación desarrollad
+a luzca como una aplicación nativa del sistema operativo anfitrión.
 \end_layout
 
 \begin_layout Itemize
 Se cumplieron los objetivos fundamentales que son la creación de una aplicación
  de software libre para el robot de bajo costo desarrollado en la División
- de estudios de Posgrado de la F.I.E.
- de la U.M.S.N.H.
+ de Estudios de Posgrado de la Facultad de Ingeniería Eléctrica de la Universida
+d Michoacana de San Nicolás de Hidalgo.
 \end_layout
 
 \begin_layout Itemize
@@ -9129,7 +9518,7 @@ Se culminó el proceso de la generación de un robot industrial de bajo costo
 
 \begin_layout Itemize
 Es posible usar el robot en la industria de la madera, en procesos de realizar
- detalles a algunas partes de las guitarras.
+ detalles de algunas partes de las guitarras.
 \end_layout
 
 \begin_layout Section
@@ -9140,8 +9529,8 @@ Sugerencias para trabajos futuros
 Las limitaciones mecánicas y electrónicas del robot para el cual fue desarrollad
 a la aplicación de este trabajo mostró puntos interesantes en los cuales
  se tiene que desarrollar nuevas soluciones.
- A continuación se listan algunos puntos en los que se podría mejorar o
- desarrollar.
+ A continuación se mencionan algunos puntos en los que se podría mejorar
+ o desarrollar.
 \end_layout
 
 \begin_layout Subsection
@@ -9149,15 +9538,16 @@ Aplicación desarrollada
 \end_layout
 
 \begin_layout Enumerate
-Finalizar el importador/exportador de código G para la aplicación, actualmente
- su desarrollo se encuentra en fase de prueba y no fue incluido en esta
- tesis por no ser parte de la propuesta inicial de esta tesis.
+Finalizar el importador/exportador de código G, el estándar del software
+ CNC para robots, para la aplicación.
+ Actualmente su desarrollo se encuentra en fase de prueba y no fue incluido
+ en esta tesis por no ser parte de la propuesta inicial.
 \end_layout
 
 \begin_layout Enumerate
-Revizar los códigos fuentes disponibles del software EMC2, software ampliamente
- desarrollado por la comunidad de software libre para robots CNC y generar
- un módulo de compatibilidad con la aplicacion desarrollada en esta tesis.
+Revisar los códigos fuentes disponibles del software EMC2, software desarrollado
+ por la comunidad de software libre para robots CNC y generar un módulo
+ de compatibilidad con la aplicacion desarrollada en esta tesis.
 \end_layout
 
 \begin_layout Subsection
@@ -9166,7 +9556,7 @@ Electrónica del robot SCARA
 
 \begin_layout Enumerate
 Acondicionar la conexión actual del robot SCARA de serial (rs232) a paralelo,
- ya que ésta última es utilizada por la mayoría de los programas actules
+ ya que ésta última es utilizada por la mayoría de los programas actuales
  de CNC.
 \end_layout
 
@@ -9240,6 +9630,10 @@ SCARA Selective Compliant Articulated Robot Arm.
 \end_layout
 
 \begin_layout Description
+SVN Subversion
+\end_layout
+
+\begin_layout Description
 XML Extensible Markup Language.
 \end_layout
 
@@ -9251,29 +9645,7 @@ key "key-3"
 
 \end_inset
 
-http://en.wikipedia.org/wiki/Industrial_robot, 2008.
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-label "GLUT"
-key "key-4"
-
-\end_inset
-
-http://www.opengl.org/resources/libraries/glut/
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-label "JOGL"
-key "key-5"
-
-\end_inset
-
-https://jogl.dev.java.net/
+Wikipedia, Industrial Robot, 2008, <http://en.wikipedia.org/wiki/Industrial_robot>.
 \end_layout
 
 \begin_layout Bibliography
@@ -9437,17 +9809,6 @@ Delrieux, C.
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-label "euclides09"
-key "euclidesweb"
-
-\end_inset
-
-www.euclides.org: Los elementos
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
 label "Jones98"
 key "Jones98"
 
@@ -9469,8 +9830,8 @@ key "MRS08"
 
 \end_inset
 
-Microsoft Robotics Studio, http://www.msdn.microsoft.com/en-us/robotics/default.aspx
-, 2008
+Microsoft Robotics Studio, 2008, <http://www.msdn.microsoft.com/en-us/robotics/defa
+ult.aspx>.
 \end_layout
 
 \begin_layout Bibliography
@@ -9481,7 +9842,7 @@ key "KUKA08"
 
 \end_inset
 
-Kuka robotics http://www.kuka-robotics.com, 2008
+Kuka robotics, 2008, <http://www.kuka-robotics.com>.
 \end_layout
 
 \begin_layout Bibliography
@@ -9492,8 +9853,7 @@ key "Probotix"
 
 \end_inset
 
-CNC Stepper Motor Driver System & CNC Router Kits, http://www.probotix.com,
- 2009.
+CNC Stepper Motor Driver System & CNC Router Kits, 2009, <http://www.probotix.com>
 \end_layout
 
 \begin_layout Bibliography
@@ -9533,6 +9893,57 @@ key "iso8373"
 
 ISO Standard 8373, Manipulating Industrial Robots.
  1994
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Carlbom78"
+key "transformaciones"
+
+\end_inset
+
+Carlbom, I., Paciorek, J.
+ Planar Geometric Projections and Viewing Transformations, ACM Computing
+ Surveys, 1978.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Bray08"
+key "XML08"
+
+\end_inset
+
+Bray, T., Paoli, J., Sperberg-McQueen, C., Maler, E.
+ Extensible Markup Language (XML) 1.0 (Fifth Edition), W3C Recommendation,
+ 2008 <http://www.w3.org/TR/2008/REC-xml-20081126/>.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Poskanzer03"
+key "pgm2003"
+
+\end_inset
+
+Poskanzer, J., PGM Format Specification, 2003 <http://netpbm.sourceforge.net/doc/pg
+m.html>.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Collins-Sussman08"
+key "svn"
+
+\end_inset
+
+Collins-Sussman, B., Fitzpatrick, B., Pilato, C., Version Control with Subversion,
+ Publicado: TBA, 2008.
 \end_layout
 
 \end_body
