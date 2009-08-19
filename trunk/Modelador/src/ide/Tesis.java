@@ -90,7 +90,7 @@ public class Tesis {
 	double xAnt, yAnt;
 	private boolean importar=false;
 	
-	
+	private String nombreArchivo="";
 	private Punto puntoActual = new Punto(1,1,1);  //  @jve:decl-index=0:
 	private CoolBar coolBar = null;
 	private Menu submenu3 = null;
@@ -651,7 +651,7 @@ public class Tesis {
 		tGuardar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/save.png")));
 		tGuardar.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				archivoGuardarComo(sShell);
+				guardar();
 			}
 			public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
 			}
@@ -661,9 +661,23 @@ public class Tesis {
 		
 		ToolItem tUndo = new ToolItem(tb, SWT.NONE);
 		tUndo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/undo.png")));
+		tUndo.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				listaFiguras.desHacer();
+			}
+			public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
+			}
+		});
 		tUndo.setToolTipText(DEF.mEdicionDeshacer);
 		ToolItem tRedo = new ToolItem(tb, SWT.NONE);
 		tRedo.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/redo.png")));
+		tRedo.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				listaFiguras.reHacer();
+			}
+			public void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent e) {
+			}
+		});
 			tRedo.setToolTipText(DEF.mEdicionRehacer);
 		
 		Point p = tb.computeSize(SWT.DEFAULT, SWT.DEFAULT);
@@ -717,20 +731,66 @@ public class Tesis {
 		MenuItem pushDeshacer = new MenuItem(submenu3, SWT.PUSH);
 		pushDeshacer.setText(DEF.mEdicionDeshacer);
 		pushDeshacer.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/undo.png")));
+		pushDeshacer
+				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						listaFiguras.desHacer();
+					}
+					public void widgetDefaultSelected(
+							org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
 		MenuItem pushRehacer = new MenuItem(submenu3, SWT.PUSH);
 		pushRehacer.setText(DEF.mEdicionRehacer);
 		pushRehacer.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/redo.png")));
+		pushRehacer
+				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						listaFiguras.reHacer();
+					}
+					public void widgetDefaultSelected(
+							org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
 		MenuItem separator4 = new MenuItem(submenu3, SWT.SEPARATOR);
 		MenuItem pushEliminar = new MenuItem(submenu3, SWT.PUSH);
 		pushEliminar.setText(DEF.mEdicionEliminar);
 		pushEliminar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/del.png")));
+		pushEliminar
+				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						listaFiguras.bEliminar();
+					}
+					public void widgetDefaultSelected(
+							org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
 		MenuItem pushDuplicar = new MenuItem(submenu3, SWT.PUSH);
 		pushDuplicar.setText(DEF.mEdicionDuplicar);
 		pushDuplicar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/add.png")));
+		pushDuplicar
+				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						listaFiguras.bDuplicar();
+					}
+					public void widgetDefaultSelected(
+							org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
 		MenuItem separator5 = new MenuItem(submenu3, SWT.SEPARATOR);
 		MenuItem pushConfiguracion = new MenuItem(submenu3, SWT.PUSH);
 		pushConfiguracion.setText(DEF.mEdicionConfiguracion);
 		pushConfiguracion.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/conf.png")));
+		pushConfiguracion
+				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						
+						
+					}
+					public void widgetDefaultSelected(
+							org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
 		submenuItemEdicion.setMenu(submenu3);
 		MenuItem submenuItemHerramientas = new MenuItem(menuBar, SWT.CASCADE);
 		submenuItemHerramientas.setText(DEF.mHerramientas);
@@ -806,6 +866,15 @@ public class Tesis {
 		MenuItem pushGuardar = new MenuItem(submenu, SWT.PUSH);
 		pushGuardar.setText(DEF.mArchivoGuardar);
 		pushGuardar.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/save.png")));
+		pushGuardar
+				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						guardar();
+					}
+					public void widgetDefaultSelected(
+							org.eclipse.swt.events.SelectionEvent e) {
+					}
+				});
 		pushCerrar.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				archivoCerrar();
@@ -878,7 +947,8 @@ public class Tesis {
 	private void archivoCerrar() {
 		if(DEF.pedirConfirmacion(DEF.pCerrar, DEF.mArchivoCerrar, sShell)==SWT.YES) {
 			listaFiguras.limpiarFiguras();
-			listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);	
+			listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
+			nombreArchivo="";
 		}
 		
 	}
@@ -887,6 +957,7 @@ public class Tesis {
 			listaFiguras.limpiarFiguras();
 			listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
 			importar=false;
+			nombreArchivo="";
 		}
 	}
 	private void archivoAbrir(Shell s) {
@@ -898,7 +969,8 @@ public class Tesis {
 	        String selected = fd.open();
 	        if(selected!=null) {
 	        	listaFiguras.limpiarFiguras();
-	        	le.leer(selected, listaFiguras, /*-1*/ null);	        	
+	        	le.leer(selected, listaFiguras, /*-1*/ null);	   
+	        	nombreArchivo=selected;
 	        	listaFiguras.bFijar.notifyListeners(SWT.MouseDown, null);
 	        	canvas.redraw();
 	        }
@@ -931,11 +1003,19 @@ public class Tesis {
 	        String[] filterExt = {"*"+DEF.ext};
 	        fd.setFilterExtensions(filterExt);
 	        String selected = fd.open();
-	        if(selected!= null)
+	        if(selected!= null) {
 	        	guardar(selected, listaFiguras.figuras);
+	        	nombreArchivo=selected;
+	        }
+	        	
 	}
 	
-	
+	private void guardar() {
+		if(nombreArchivo.equalsIgnoreCase(""))
+			archivoGuardarComo(sShell);
+		else
+			guardar(nombreArchivo, listaFiguras.figuras);
+	}
 	
 	private boolean guardar(String str, Vector<Figuras> figuras) {
 		

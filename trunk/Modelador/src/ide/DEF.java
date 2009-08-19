@@ -32,8 +32,8 @@ public  class DEF {
 	public static final String vistaZXs = "Frente";
 	public static final String vistaPerspectivas = "Perspectiva";
 	
-	public static final Color frenteColor= new Color(Display.getCurrent(), 0, 0,0);
-	public static final Color fondoColor = new Color(Display.getCurrent(), 255, 255,255);
+	public static final Color frenteColor= new Color(Display.getCurrent(), 255, 255,255);
+	public static final Color fondoColor = new Color(Display.getCurrent(), 0, 0,0);
 	public static final Color colorSelec= new Color(Display.getCurrent(), 0, 0,255);
 	
 	public static final double incRobot = 0.12;
@@ -119,6 +119,14 @@ public  class DEF {
 	public static final String bDer= ">";
 	public static final String bEnviaRobot= "Enviar ...";
 	public static final String bDetieneRobot= "Detener ...";
+	
+	public static final int oInsertar=1;
+	public static final int oEliminar=2;
+	public static final int oTrasladar=3;
+	public static final int oEscalar=4;
+	public static final int oRotar=5;
+	public static final int oFijar=6;
+	
 	
 	public static final void mostrarMSG(String str, String title,Shell sShell ) {
 		MessageBox messageBox = new MessageBox(sShell, SWT.ICON_INFORMATION
