@@ -12,6 +12,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Text;
 import primitivas.Figuras;
+import primitivas.Primitiva;
 import primitivas.Punto;
 import primitivas.Recorte;
 import primitivas.Transformaciones;
@@ -58,22 +59,225 @@ public class ListaFiguras extends Composite {
 	private Spinner spinnerEscala = null;
 	private Spinner spinnerRotar = null;
 	private int opcVisual=1;
-
 	
+	private Vector<DeshacerRehacer> deshacer=new Vector<DeshacerRehacer>();  //  @jve:decl-index=0:
+	private Vector<DeshacerRehacer> rehacer=new Vector<DeshacerRehacer>();  //  @jve:decl-index=0:
 	
+	private int id=0;
 	public void setOpcVisual(int opcVisual) {
 		this.opcVisual = opcVisual;
 	}
 
 	public void insertarFigura(int tipo, boolean relleno, Vector<Punto> p) {
-			figuras.add(new Figuras(tipo,relleno, p));
+			figuras.add(new Figuras(++id, tipo,relleno, p));
 			listFigura.add( figuras.get(figuras.size()-1).getText() );
+			deshacer.add(new DeshacerRehacer(id, DEF.oInsertar, new Punto(1,1,1)));
 	}
+	
+	public void eliminar(int index) {
+		figuras.remove(index);
+		listFigura.remove(index);
+	}
+	
+	public int getIndex(int id) {
+		for(int i=0; i<figuras.size(); i++) {
+			if(figuras.get(i).id==id)
+				return i;
+		}
+		return -1;
+	}
+	
+	public void reHacer(){
+		if(rehacer.size()!=0) {
+			
+			
+			DeshacerRehacer p = rehacer.get(rehacer.size()-1);
+			int index= getIndex(p.id);
+			double ix, iy, iz;
+			switch(p.operacion) {		
+				case DEF.oEliminar:
+					
+					deshacer.add(new DeshacerRehacer(p.id, DEF.oInsertar, new Punto(1,1,1)));
+					figuras.add(new Figuras(p.id, p.p.tipoFig, p.p.relleno, p.p.puntos));
+					listFigura.add( figuras.get(figuras.size()-1).getText() );
+					
+					rehacer.remove(rehacer.size()-1);
+					break;
+				case DEF.oInsertar:
+					deshacer.add(new DeshacerRehacer(figuras.get(index).id, DEF.oEliminar, figuras.get(index)));
+					figuras.remove(index);
+					listFigura.remove(index);
+					rehacer.remove(rehacer.size()-1);
+					break;
+					
+				case DEF.oTrasladar:
+					deshacer.add(new DeshacerRehacer(p.id,DEF.oTrasladar, p.p2));
+					for(int i=0; i<figuras.get(index).puntos.size(); i++) {			
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));			
+						trans.traslacion(p.p2.getX(), p.p2.getY(), p.p2.getZ());		
+					}			
+					rehacer.remove(rehacer.size()-1);
+					
+					break;
+				case DEF.oEscalar:
+					
+					ix = figuras.get(index).puntos.get(0).getX();
+					iy = figuras.get(index).puntos.get(0).getY();
+					iz = figuras.get(index).puntos.get(0).getZ();
+					deshacer.add(new DeshacerRehacer(p.id,DEF.oEscalar, p.p2));
+					for(int i=0; i<figuras.get(index).puntos.size(); i++) {
+	
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));
+						trans.traslacion(-ix, -iy, -iz);
+						
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));
+						
+						trans.escalamiento(p.p2.getX(), p.p2.getY(), p.p2.getZ());
+						
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));
+						trans.traslacion(ix,iy, iz);
+						
+						
+					}					
+					rehacer.remove(rehacer.size()-1);
+					break;		
+				case DEF.oRotar:
+					ix = figuras.get(index).puntos.get(0).getX();
+					iy = figuras.get(index).puntos.get(0).getY();
+					iz = figuras.get(index).puntos.get(0).getZ();	
+					deshacer.add(new DeshacerRehacer(figuras.get(index).id, DEF.oRotar, p.theta, p.vista));
+					for(int i=0; i<figuras.get(index).puntos.size(); i++) {
+										
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));
+						trans.traslacion(-ix, -iy, -iz);		
+						
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));
+						trans.rotacion(p.theta, p.vista);
+						
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));
+						trans.traslacion(ix, iy, iz);
+					
+					}
+					
+					rehacer.remove(rehacer.size()-1);
+					break;
+				case DEF.oFijar:
+					
+					deshacer.add(new DeshacerRehacer(figuras.get(index).id, DEF.oFijar, new Punto(figuras.get(index).puntos.get(p.punto).getX(), figuras.get(index).puntos.get(p.punto).getY(),figuras.get(index).puntos.get(p.punto).getZ()), p.punto));
+					figuras.get(index).puntos.get(p.punto).setX(p.p2.getX());
+					figuras.get(index).puntos.get(p.punto).setY(p.p2.getY());
+					figuras.get(index).puntos.get(p.punto).setZ(p.p2.getZ());
+					rehacer.remove(rehacer.size()-1);
+					break;
+				
+				
+			}
+	
+			comboFigura.removeAll();
+			limpiarCampos();							
+			bFijar.notifyListeners(SWT.MouseDown, null);
+		}
+	}
+	
+	public void desHacer(){
+
+		if(deshacer.size()!=0) {
+			
+			
+			DeshacerRehacer p = deshacer.get(deshacer.size()-1);
+			int index= getIndex(p.id);
+			double ix, iy, iz;
+			switch(p.operacion) {
+				case DEF.oInsertar:
+						rehacer.add(new DeshacerRehacer(p.id,DEF.oEliminar, figuras.get(index)));
+						figuras.remove(index);
+						listFigura.remove(index);	
+						deshacer.remove(deshacer.size()-1);
+						
+					break;
+				case DEF.oEliminar:
+					
+					figuras.add(new Figuras(p.id, p.p.tipoFig, p.p.relleno, p.p.puntos));
+					listFigura.add( figuras.get(figuras.size()-1).getText() );
+					rehacer.add(new DeshacerRehacer(p.id,DEF.oInsertar, figuras.get(figuras.size()-1)));
+					deshacer.remove(deshacer.size()-1);
+					break;
+				case DEF.oTrasladar:
+					rehacer.add(new DeshacerRehacer(p.id,DEF.oTrasladar, p.p2));
+					for(int i=0; i<figuras.get(index).puntos.size(); i++) {			
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));			
+						trans.traslacion(-p.p2.getX(), -p.p2.getY(), -p.p2.getZ());		
+					}			
+					deshacer.remove(deshacer.size()-1);
+					
+					break;
+					
+				case DEF.oEscalar:
+					
+					ix = figuras.get(index).puntos.get(0).getX();
+					iy = figuras.get(index).puntos.get(0).getY();
+					iz = figuras.get(index).puntos.get(0).getZ();
+					rehacer.add(new DeshacerRehacer(p.id,DEF.oEscalar, p.p2));
+					for(int i=0; i<figuras.get(index).puntos.size(); i++) {
+	
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));
+						trans.traslacion(-ix, -iy, -iz);
+						
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));
+						
+						trans.escalamiento(1/p.p2.getX(), 1/p.p2.getY(), 1/p.p2.getZ());
+						
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));
+						trans.traslacion(ix,iy, iz);
+						
+						
+					}					
+					deshacer.remove(deshacer.size()-1);
+					break;
+				case DEF.oRotar:
+					ix = figuras.get(index).puntos.get(0).getX();
+					iy = figuras.get(index).puntos.get(0).getY();
+					iz = figuras.get(index).puntos.get(0).getZ();	
+					rehacer.add(new DeshacerRehacer(figuras.get(index).id, DEF.oRotar, p.theta, p.vista));
+					for(int i=0; i<figuras.get(index).puntos.size(); i++) {
+										
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));
+						trans.traslacion(-ix, -iy, -iz);		
+						
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));
+						trans.rotacion(-p.theta, p.vista);
+						
+						trans = new Transformaciones(figuras.get(index).puntos.get(i));
+						trans.traslacion(ix, iy, iz);
+					
+					}
+					
+					deshacer.remove(deshacer.size()-1);
+					break;
+					
+				case DEF.oFijar:
+					rehacer.add(new DeshacerRehacer(figuras.get(index).id, DEF.oFijar, new Punto(figuras.get(index).puntos.get(p.punto).getX(), figuras.get(index).puntos.get(p.punto).getY(),figuras.get(index).puntos.get(p.punto).getZ()), p.punto));
+					figuras.get(index).puntos.get(p.punto).setX(p.p2.getX());
+					figuras.get(index).puntos.get(p.punto).setY(p.p2.getY());
+					figuras.get(index).puntos.get(p.punto).setZ(p.p2.getZ());
+					deshacer.remove(deshacer.size()-1);
+					break;
+			}
+	
+			comboFigura.removeAll();
+			limpiarCampos();							
+			bFijar.notifyListeners(SWT.MouseDown, null);
+		}
+	}
+	
 
 	public void limpiarFiguras() {
 		figuras.removeAllElements();
 		comboFigura.removeAll();
 		listFigura.removeAll();
+		deshacer.removeAllElements();
+		rehacer.removeAllElements();
+		id=0;
 	}
 	
 	public void limpiarCampos() {
@@ -92,8 +296,11 @@ public class ListaFiguras extends Composite {
 	}
 	
 	public void fijarPunto(int c) {	
+		
+		deshacer.add(new DeshacerRehacer(figuras.get(listFigura.getSelectionIndex()).id, DEF.oFijar, new Punto(figuras.get(listFigura.getSelectionIndex()).puntos.get(c).getX(),figuras.get(listFigura.getSelectionIndex()).puntos.get(c).getY(),figuras.get(listFigura.getSelectionIndex()).puntos.get(c).getZ()), c));		
 		figuras.get(listFigura.getSelectionIndex()).puntos.get(c).setX(Double.valueOf(textValorX.getText()));
-		figuras.get(listFigura.getSelectionIndex()).puntos.get(c).setY(Double.valueOf(textValorY.getText()));	
+		figuras.get(listFigura.getSelectionIndex()).puntos.get(c).setY(Double.valueOf(textValorY.getText()));
+		figuras.get(listFigura.getSelectionIndex()).puntos.get(c).setZ(Double.valueOf(textValorZ.getText()));
 		this.bFijar.notifyListeners(SWT.MouseDown, null);
 	}
 
@@ -370,18 +577,7 @@ public class ListaFiguras extends Composite {
 		buttonDuplicar
 				.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-						try {
-							int []indices = listFigura.getSelectionIndices();
-							for(int i=0; i<indices.length; i++) {
-								figuras.add(figuras.get(indices[i]).copiar());							
-								listFigura.add( figuras.get(figuras.size()-1).getText() );
-							}
-							//figuras.add(figuras.get(listFigura.getSelectionIndex()).copiar());							
-							//listFigura.add( figuras.get(figuras.size()-1).getText() );	
-						}
-						catch( java.lang.ArrayIndexOutOfBoundsException ex2) {			
-							errorMsg(DEF.error, DEF.errorNoFiguraSel);
-						}
+						bDuplicar();
 						
 						
 					}
@@ -400,21 +596,7 @@ public class ListaFiguras extends Composite {
 		});
 		buttonEliminar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-						try {							
-							while(listFigura.getSelectionIndex()!=-1) {								
-								figuras.remove(listFigura.getSelectionIndex());
-								listFigura.remove(listFigura.getSelectionIndex());	
-							}							
-							comboFigura.removeAll();
-							limpiarCampos();							
-							bFijar.notifyListeners(SWT.MouseDown, null);
-						}
-						catch(java.lang.NumberFormatException ex) {		
-							errorMsg(DEF.error, DEF.errorFormatoConv);
-						}
-						catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
-							errorMsg(DEF.error, DEF.errorNoFiguraSel);
-						}
+						bEliminar();
 					}
 				});
 		
@@ -431,7 +613,6 @@ public class ListaFiguras extends Composite {
 		bRellenar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				try {
-					//System.out.println("figuras:"+listFigura.getItemCount());
 					if(figuras.get(listFigura.getSelectionIndex()).relleno)
 						figuras.get(listFigura.getSelectionIndex()).relleno = false;
 					else
@@ -443,7 +624,6 @@ public class ListaFiguras extends Composite {
 			
 				
 				bFijar.notifyListeners(SWT.MouseDown, null);
-				//System.out.println("widgetSelected()"); // TODO Auto-generated Event stub widgetSelected()
 			}
 		});
 		bReflejar.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
@@ -491,6 +671,41 @@ public class ListaFiguras extends Composite {
 				}
 			}
 		});
+	}
+	public void bDuplicar() {
+		try {
+			int []indices = listFigura.getSelectionIndices();
+			for(int i=0; i<indices.length; i++) {
+				//figuras.add(figuras.get(indices[i]).copiar());							
+				//listFigura.add( figuras.get(figuras.size()-1).getText() );
+				//figuras.get(figuras.size()-1).id = id++;
+				insertarFigura(figuras.get(indices[i]).tipoFig, figuras.get(indices[i]).relleno, figuras.get(indices[i]).puntos);
+			}
+			//figuras.add(figuras.get(listFigura.getSelectionIndex()).copiar());							
+			//listFigura.add( figuras.get(figuras.size()-1).getText() );	
+		}
+		catch( java.lang.ArrayIndexOutOfBoundsException ex2) {			
+			errorMsg(DEF.error, DEF.errorNoFiguraSel);
+		}
+	}
+	public void bEliminar() {
+		try {							
+			while(listFigura.getSelectionIndex()!=-1) {		
+				deshacer.add(new DeshacerRehacer(figuras.get(listFigura.getSelectionIndex()).id, DEF.oEliminar, figuras.get(listFigura.getSelectionIndex())));
+				eliminar(listFigura.getSelectionIndex());
+				//figuras.remove(listFigura.getSelectionIndex());
+				//listFigura.remove(listFigura.getSelectionIndex());	
+			}							
+			comboFigura.removeAll();
+			limpiarCampos();							
+			bFijar.notifyListeners(SWT.MouseDown, null);
+		}
+		catch(java.lang.NumberFormatException ex) {		
+			errorMsg(DEF.error, DEF.errorFormatoConv);
+		}
+		catch( java.lang.ArrayIndexOutOfBoundsException ex2) {	
+			errorMsg(DEF.error, DEF.errorNoFiguraSel);
+		}
 	}
 	public void errorMsg(String titulo, String msg) {				
 		MessageBox m=new MessageBox(this.getShell(), SWT.ICON_ERROR);
@@ -553,9 +768,11 @@ public class ListaFiguras extends Composite {
 		}
 		
 		for(int i=0; i<figuras.get(index).puntos.size(); i++) {			
-			trans = new Transformaciones(figuras.get(index).puntos.get(i));
+			trans = new Transformaciones(figuras.get(index).puntos.get(i));			
 			trans.traslacion(tx, ty, tz);		
 		}
+	
+		deshacer.add(new DeshacerRehacer(figuras.get(index).id, DEF.oTrasladar, new Punto(tx,ty,tz)));
 		this.bFijar.notifyListeners(SWT.MouseDown, null);
 	}
 	
@@ -565,6 +782,7 @@ public class ListaFiguras extends Composite {
 		ix = figuras.get(index).puntos.get(0).getX();
 		iy = figuras.get(index).puntos.get(0).getY();
 		iz = figuras.get(index).puntos.get(0).getZ();
+		deshacer.add(new DeshacerRehacer(figuras.get(index).id, DEF.oRotar, theta, opcVisual));
 		for(int i=0; i<figuras.get(index).puntos.size(); i++) {
 			
 			//figuras.get(index).puntos.get(i).setX(figuras.get(index).puntos.get(i).getX()-ix);
@@ -615,6 +833,11 @@ public class ListaFiguras extends Composite {
 		iy = figuras.get(index).puntos.get(0).getY();
 		iz = figuras.get(index).puntos.get(0).getZ();
 		
+		switch(opcVisual) {
+			case DEF.vistaYX: deshacer.add(new DeshacerRehacer(figuras.get(index).id, DEF.oEscalar, new Punto(sx,sy,1))); break;
+			case DEF.vistaZX: deshacer.add(new DeshacerRehacer(figuras.get(index).id, DEF.oEscalar, new Punto(sx,1,sy))); break;
+			case DEF.vistaZY: deshacer.add(new DeshacerRehacer(figuras.get(index).id, DEF.oEscalar, new Punto(1,sx,sy))); break;		
+		}
 		
 		for(int i=0; i<figuras.get(listFigura.getSelectionIndex()).puntos.size(); i++) {
 			
@@ -626,9 +849,9 @@ public class ListaFiguras extends Composite {
 			
 			trans = new Transformaciones(figuras.get(index).puntos.get(i));
 			switch(opcVisual) {
-				case DEF.vistaYX: trans.escalamiento(sx, sy, 0); break;
-				case DEF.vistaZX: trans.escalamiento(sx, 0, sy); break;
-				case DEF.vistaZY: trans.escalamiento(0, sx, sy); break;		
+				case DEF.vistaYX: trans.escalamiento(sx, sy, 1); break;
+				case DEF.vistaZX: trans.escalamiento(sx, 1, sy); break;
+				case DEF.vistaZY: trans.escalamiento(1, sx, sy); break;		
 			}
 			trans = new Transformaciones(figuras.get(index).puntos.get(i));
 			trans.traslacion(ix,iy, iz);
