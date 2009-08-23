@@ -784,6 +784,7 @@ public class Tesis {
 		pushConfiguracion
 				.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						Ayuda ay = new Ayuda(sShell);
 						
 						
 					}
@@ -797,6 +798,18 @@ public class Tesis {
 		MenuItem submenuItemAyuda = new MenuItem(menuBar, SWT.CASCADE);
 		submenuItemAyuda.setText(DEF.mAyuda);
 		submenu2 = new Menu(submenuItemAyuda);
+		MenuItem pushAyuda = new MenuItem(submenu2, SWT.PUSH);
+		pushAyuda.setText(DEF.mAyuda);
+		
+		pushAyuda
+		.addSelectionListener(new org.eclipse.swt.events.SelectionListener() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				Ayuda ay = new Ayuda(sShell);
+			}
+			public void widgetDefaultSelected(
+					org.eclipse.swt.events.SelectionEvent e) {
+			}
+		});
 		MenuItem pushAcercaDe = new MenuItem(submenu2, SWT.PUSH);
 		pushAcercaDe.setText(DEF.mAyudaAcercaDe);
 		pushAcercaDe.setImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/iconos/help.png")));

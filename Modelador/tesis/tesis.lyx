@@ -36,8 +36,8 @@
 \defskip medskip
 \quotes_language english
 \papercolumns 1
-\papersides 1
-\paperpagestyle plain
+\papersides 2
+\paperpagestyle headings
 \tracking_changes false
 \output_changes false
 \author "" 
@@ -48,7 +48,7 @@
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -101,33 +101,95 @@ Roberto Loaeza Valerio
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset FloatList figure
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset FloatList table
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\backslash
+cleardoublepage
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+'Indice general} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tableofcontents
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\backslash
+cleardoublepage
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+'Indice de figuras} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+listoffigures
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\backslash
+cleardoublepage
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+'Indice de tablas} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+listoftables 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\backslash
+cleardoublepage 
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+'Indice de c
+\backslash
+'odigos} 
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -160,7 +222,7 @@ mainmatter
 
 
 \backslash
-setcounter{page}{9}
+setcounter{page}{13}
 \end_layout
 
 \end_inset
