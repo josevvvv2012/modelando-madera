@@ -1,18 +1,20 @@
 %% LyX 1.6.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[11pt,oneside,spanish]{book}
+\documentclass[11pt,english,spanish]{book}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage[letterpaper]{geometry}
-\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=2cm}
-\pagestyle{plain}
+\geometry{verbose,tmargin=3cm,bmargin=2.5cm,lmargin=3.5cm,rmargin=3cm}
+\pagestyle{headings}
 \setlength{\parskip}{\medskipamount}
 \setlength{\parindent}{0pt}
+\usepackage{array}
+\usepackage{float}
 \usepackage{textcomp}
 \usepackage{relsize}
 \usepackage{graphicx}
 \usepackage{setspace}
-\onehalfspacing
+\setstretch{1.6}
 
 \makeatletter
 
@@ -25,6 +27,9 @@
 
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}[chapter]
+\floatname{algorithm}{Algorithm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
 \newenvironment{lyxlist}[1]
@@ -34,44 +39,133 @@
  \addtolength{\leftmargin}{\labelsep}
  \renewcommand{\makelabel}[1]{##1\hfil}}}
 {\end{list}}
+\newenvironment{lyxcode}
+{\par\begin{list}{}{
+\setlength{\rightmargin}{\leftmargin}
+\setlength{\listparindent}{0pt}% needed for AMS classes
+\raggedright
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\normalfont\ttfamily}%
+ \item[]}
+{\end{list}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\newenvironment{abstractEN}
+{
+  \cleardoublepage
+  \thispagestyle{empty}
+    \@mkboth{\abstractname}{\abstractname}
+  \addcontentsline{toc}{section}{Abstract}
+  \centerline{\bf {\LARGE Abstract}}
+  \centerline{\ }
+} {}
+
+\newenvironment{abstractSP}
+{
+  \cleardoublepage
+  \thispagestyle{empty}
+    \@mkboth{\abstractname}{\abstractname}
+  \addcontentsline{toc}{section}{Resumen}
+  \centerline{\bf {\LARGE Resumen}}
+  \centerline{\ }
+} {}
+\newenvironment{dedication}
+{
+  \cleardoublepage
+  \thispagestyle{empty}
+  \vspace*{1in}
+  \addcontentsline{toc}{section}{Dedicatoria}
+}
+{}
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\listtablename}{\'Indice de tablas}
+\floatname{algorithm}{C\'odigo}
+\def\bibname{Referencias}
+
+\@ifundefined{showcaptionsetup}{}{%
+ \PassOptionsToPackage{caption=false}{subfig}}
+\usepackage{subfig}
 \makeatother
 
 \usepackage{babel}
 \addto\shorthandsspanish{\spanishdeactivate{~<>}}
 
 \begin{document}
-\renewcommand{\tablename}{Tabla}
-\renewcommand{\listtablename}{\'Indice de tablas}
 \frontmatter
 
+\newpage
+\thispagestyle{empty}
+\centerline{\ }
+\begin{center}
+    {\Large\bf{\MakeUppercase{Desarrollo de software para modelado y fabricación de objetos de madera usando un robot SCARA}}}
+\end{center}
+\centerline{\ }
+\centerline{\ }
+\centerline{\bf{TESIS}}
+\centerline{\ }
+\centerline{\ }
+\centerline{Que para obtener el grado de}
+\centerline{\MakeUppercase{\bf{Maestro en Ciencias en Ingeniería Eléctrica}}}
+\centerline{\ }
+\centerline{\ }
+\centerline{presenta}
+\centerline{\bf{Roberto Loaeza Valerio}}
+\centerline{\ }
+\centerline{\ }
+\centerline{\bf{Dr. Leonardo Romero Muñoz}}\centerline{\small{\bf{Director de Tesis}}}
+\centerline{\ }
+\centerline{\ }
+    
+\centerline{\ }
+\centerline{Universidad Michoacana de San Nicol\'as de Hidalgo}
+\centerline{\ }
+\centerline{{Agosto} {2009}}
+\setcounter{footnote}{0}
 
-\title{Desarrollo de software para modelado y fabricación de objetos de
-madera usando un robot SCARA}
+\begin{dedication} 
 
+\noindent \begin{flushright}
+\emph{A mi familia, etc.....}
+\par\end{flushright}
 
-\author{Roberto Loaeza Valerio}
+\end{dedication}
 
-\maketitle
-\tableofcontents{}
+\begin{abstractSP}
 
+Resumen Español
+
+\end{abstractSP}
+
+\begin{abstractEN}
+
+Resumen Ingles
+
+\end{abstractEN}
+
+\newpage\cleardoublepage\addcontentsline{toc}{section}{\'Indice general} 
+\tableofcontents
+
+\newpage\cleardoublepage\addcontentsline{toc}{section}{\'Indice de figuras} 
 \listoffigures
 
+\newpage\cleardoublepage\addcontentsline{toc}{section}{\'Indice de tablas} 
+\listoftables 
 
-\listoftables
-
+\newpage\cleardoublepage \addcontentsline{toc}{section}{\'Indice de c\'odigos} 
+\listof{algorithm}{\'Indice de c\'odigos}
 
 \mainmatter
-\setcounter{page}{6}
+\setcounter{page}{19}
 
 
 \chapter{Introducción}
 
 En la actualidad las pequeñas y medianas empresas de la región maderera
-del estado de Michoacán, más preciso en la localidad de Paracho, requieren
-tener la totalidad de sus procesos automatizados para poder competir
-en el mercado tan saturado actualmente. Desafortunadamente la mayoría
-de estas empresas no cuentan con todos los procesos automatizados.
+del estado de Michoacán requieren tener sus procesos automatizados
+para poder competir en el mercado tan saturado actualmente. Desafortunadamente
+la mayoría de estas empresas no cuentan con todos los procesos automatizados.
 
 Los procesos que pueden automatizarse los dividiremos en dos categorías
 para fines de su estudio:
@@ -80,59 +174,30 @@ para fines de su estudio:
 \item Procesos industriales
 \end{itemize}
 Los procesos administrativos abarcan todo proceso relacionado con
-documentación de la empresa, algunos ejemplos de estos procesos son
-los siguientes departamentos: recursos humanos, recursos financieros,
-ventas, compras, entre otros. Estos procesos o departamentos estan
-parcial o totalmente cubiertos por aplicaciones ofrecidas por el gobierno
-de forma gratuita o haciendo uso de aplicaciones de terceros, algunas
-de las aplicaciones utilizadas son:
-\begin{itemize}
-\item ContPAQ
-\item Compiere
-\item NomiPAQ
-\item SUA
-\end{itemize}
-Por otra parte, los procesos industriales son todos los procesos en
-los que se manipula una materia prima y es transformada en un producto
-final, mediante el uso de maquinaria industrial, es en estos procesos
-donde se centra el trabajo de la presente tesis.
+documentación de la empresa. Algunos ejemplos de estos procesos se
+dan en los siguientes departamentos: recursos humanos, recursos financieros,
+ventas, compras, entre otros. Estos procesos estan parcial o totalmente
+automatizados por aplicaciones de computo ofrecidas por el gobierno
+de forma gratuita o haciendo uso de aplicaciones de terceros
+
+Algunas de las aplicaciones mas comunes utilizadas en esta áre administrativa
+son: ContPAQ, Compiere, NomiPAQ, SUA entre otras.
+
+Por otra parte, los procesos industriales normalmente manipulan una
+materia prima y la transforman en un producto final, mediante el uso
+de maquinaria industrial. Precisamente en estos procesos se centra
+el trabajo de la presente tesis.
 
 Teniendo las empresas la necesidad de contar con maquinaria industrial
 de precisión se ven en la necesidad de adquirir esta maquinaria en
-el extrajero, debido a que en el país no existen empresas que presten
-estos servicios.
+el extrajero, debido a que en el país no existen empresas que ofrezcan
+estos productos.
 
-Al usar maquinaria extranjera es evidente que los costos de compra,
-instalación, mantenimiento y programación son elevados, en la tabla
-\ref{tab:Costos-de-adquisici=0000F3n} se muestran algunas maquinarias
-adquiridas por empresas de la localidad de Paracho, Michoacán.
-
-%
-\begin{table}
-\noindent \begin{centering}
-\begin{tabular}{|c|c|c|c|}
-\hline 
-Empresa & Maquinaria & Costo de Adquisición & Costo de mantenimiento\tabularnewline
-\hline
-\hline 
-PROCART &  &  & \tabularnewline
-\hline 
- &  &  & \tabularnewline
-\hline 
- &  &  & \tabularnewline
-\hline 
- &  &  & \tabularnewline
-\hline
-\end{tabular}
-\par\end{centering}
-
-\caption{\label{tab:Costos-de-adquisici=0000F3n}Costos de adquisición de maquina
-industrial}
-
-
-
-\end{table}
-
+Al usar maquinaria de importación es evidente que los costos de compra,
+instalación y mantenimiento son elevados, por ejemplo la empresa PROCART
+de la localidad de Paracho Michoacán adquirió una maquinaria robotica
+por el costo aproximado de 1,000,000 pesos con un costo de mantenimiento
+de 10,000. pesos.
 
 Observando la necesidad de la automatización en los procesos de fabricación
 de productos se optó por desarrollar una aplicación multiplataforma
@@ -143,22 +208,17 @@ Michoacana de San Nicolas de Hidalgo.
 
 \section{Motivación}
 
-Dos han sido las razones que motivaron la elaboración de la presente
-tesis:
-
-En la actualidad la mayoría de las pequeñas empresas de las regiónes
+Las razones principales que motivaron la elaboración de la presente
+tesis son las siguientes:
+\begin{itemize}
+\item En la actualidad la mayoría de las pequeñas empresas de las regiones
 de Michoacán, en particular las de Paracho, no cuentan con procesos
 automatizados en la manufactura de sus materias primas.
-
-Por otra parte, existen personas que tienen diseños muy innovadores;
-pero por falta de recursos económicos para adquirir una máquina industrial
-que lo realize, así como una aplicación para su diseño.
-
-La segunda razón es la que más me ha impulsado a trabajar en este
-campo, toda vez que nos permite aplicar los conocimientos adquiridos
-en la Maestría y la oportunidad de aportar la solución tecnológica
-a estos casos.
-
+\item Por otra parte, existen personas que tienen diseños muy innovadores
+de productos; pero por falta de recursos económicos para adquirir
+un robot que lo realize, así como un programa ed cómputo para su realización
+se han quedado solo en ideas que no llegan a materializarse.
+\end{itemize}
 
 \section{Antecedentes}
 
@@ -186,41 +246,40 @@ que tengan un importante impacto social y económico.
 \includegraphics[width=0.7\paperwidth]{imagenes/objetivosTesis}
 \par\end{centering}
 
-\caption{\label{fig:DiagramaObjetivos}Diagrama representativo del objetivo
-de la tesis}
+\caption{\label{fig:DiagramaObjetivos}Diagrama representativo de sistema de
+software desarrollado en esta tesis}
 
 \end{figure}
 
 \par\end{center}
 
-La figura \ref{fig:DiagramaObjetivos} representa gráficamente el
-objetivo, donde se puede apreciar que el presente proyecto de tesis,
+La figura \ref{fig:DiagramaObjetivos} representa gráficamente la
+ubicación del software de desarrollado; etiquetado como aplicacion
+modeladora. Donde se puede apreciar que el presente trabajo de tesis,
 tiene como entrada el diseño por parte de una persona el cual es interpretado
-para su futura producción en un robot SCARA. 
+para su futura producción en un robot SCARA.
 
 
 \subsection*{Objetivos específicos}
 \begin{itemize}
-\item Desarrollar una aplicación para diseñar objetos de madera.
-\item Desarrollar una aplicación para transferir el diseño elaborado hacía
-el robot SCARA. 
+\item Desarrollar una aplicación de software para modelado de objetos 3D.
+\item Desarrollar una interface de comunicación con el robot SCARA.
 \end{itemize}
 
 \section{Alcances}
 
 Los alcances previstos son:
 \begin{itemize}
-\item Implementación de algoritmos de gráficación sobre la aplicación de
-diseño:
+\item Implementación de algoritmos de gráficación en 3D.
 
 \begin{itemize}
 \item Puntos 
-\item Lineas
+\item Líneas
 \item Círculos
 \item Elipses
 \item Curvas de Bezier
 \end{itemize}
-\item Desarrollo de una aplicación multiplataforma(que pueda ejecutarse
+\item Desarrollo de una aplicación multiplataforma (que pueda ejecutarse
 en la mayoría de los sistemas operativos actuales) capaz de modelar
 objetos de madera para su producción utilizando un robot SCARA.
 \item Desarrollo de interfaz entre la aplicación multiplataforma para modelar
@@ -234,12 +293,12 @@ una aplicación multiplataforma para el modelado de objetos de madera
 en el lenguaje de programación Java.
 
 Para lograr una aplicación aceptable se desarrollarán prototipos de
-la aplicación hasta lograr una estabilidad considerable, la cual tenga
-una velocidad aceptable a la hora de generar los modelos en diferentes
-vistas.
+la aplicación hasta lograr una versión que tenga una velocidad aceptable
+a la hora de generar los modelos en diferentes vistas, así mismo que
+se genere con rapidez aceptable los movimientos del robot.
 
 Con el fin de mejorar el diseño se evaluará la aplicación continuamente
-en la empresa de señor Rafael Cardiel, domiciliado en esta población.
+en la empresa de la familia Cardiel Cervantes.
 
 
 \section{Contribuciones }
@@ -248,11 +307,12 @@ A continuación se describen brevemente las contribuciones de este
 trabajo:
 \begin{itemize}
 \item Desarrollo de una aplicación multiplataforma para la construcción
-de modelos físicos de madera. 
-\item Aplicación multiplataforma para la conexion entre el modelador y el
-robot SCARA. 
-\item Código fuente, éste se distribuirá bajo la {}``\emph{GNU General
-Public License v2}'' y puede ser accedido en la siguiente url: modelando-madera.googlecode.com
+de modelos 3D en madera. 
+\item Aplicación multiplataforma para la conexión entre la aplicacion de
+software 3D y el robot SCARA. 
+\item Aplicación de código abierto, el código fuente se distribuirá bajo
+la {}``\emph{GNU General Public License v2}'' y puede ser accedido
+en la siguiente dirección de internet: http://modelando-madera.googlecode.com
 para su mejoramiento y/o ser tomado como base para futuros proyectos.
 \end{itemize}
 
@@ -263,7 +323,7 @@ estado del arte asociado con la paqueteria de software existente para
 el modelado/fabricación de objetos de madera.
 
 El capítulo \ref{cha:3_Modelado3D} aborda las partes del software
-modelador, tanto los algoritmos de graficación como la forma de interacción
+3D, tanto los algoritmos de graficación como la forma de interacción
 con el usuario final. 
 
 En el capítulo \ref{cha:4_Interfaces3D} se mostrarán las principales
@@ -277,8 +337,8 @@ el robot entienda. También se describirá la interfaz entre el software
 de modelado y el robot.
 
 En el capítulo \ref{cha:6_Pruebas} se mostrarán resultados de pruebas
-realizadas en una primera instancia al software modelador, seguido
-de los resultados de la conectividad entre el software y el robot.
+realizadas al software 3D, seguido de los resultados de las pruebas
+de conectividad entre el software y el robot.
 
 En el capítulo \ref{cha:7_Conclusiones} se aportarán las conclusiones
 generales, resultado de la investigación abordada e ideas para trabajo
@@ -289,7 +349,7 @@ de investigación posterior a realizar en el mismo campo del conocimiento.
 
 Por mucho tiempo el hombre ha elaborado máquinas que imitan las partes
 del cuerpo humano. Los antiguos egipcios unieron brazos mecánicos
-a las estatuas de sus dioses, estos brazos fueron operados por sacerdotes,
+a las estatuas de sus dioses, éstos brazos fueron operados por sacerdotes,
 quienes clamaban que el movimiento de estos era inspiración de sus
 dioses. Los griegos contruyeron estatuas que operaban con sistemas
 hidráulicos para fascinar a los adoradores de los templos.
@@ -315,17 +375,18 @@ Capek en 1920. La palabra checa 'Robota' significa servidumbre o trabajador
 forzado, y cuando se tradujo al inglés se convirtió en el término
 \textbf{robot}.
 
-Sin embargo el término robot con el paso de los años ha cambiado,
-a continuación se listan algunas de las definiciones más aceptadas:
+Sin embargo el término robot con el paso de los años ha cambiado su
+significado, a continuación se listan algunas de las definiciones
+más aceptadas:
 \begin{itemize}
-\item La ISO 8373 lo define como {}``\emph{un manipulador multipropósito
-automaticamente controlado y reprogramable de más de tres ejes}''. 
+\item Un manipulador multipropósito automaticamente controlado y reprogramable
+de más de tres ejes\emph{\cite{iso8373}. }
 \item Manipulador multifuncional y reprogramable diseñado para mover material,
 partes, herramientas o dispositivos especializados mediante varios
 movimientos programados para la realización de una variedad de tareas\emph{\cite{IRA}.}
 \item Mecanismo formado generalmente por elementos en serie, articulados
-entre sí, destinado al agarre y desplazamiento de objetos. Es multifuncionaly
-puede ser gobernado directamente por un operador humano o dispositivo
+entre sí, destinado al agarre y desplazamiento de objetos. Es multifuncional
+y puede ser gobernado directamente por un operador humano o dispositivo
 lógico\cite{paperRobot}.
 \end{itemize}
 Para fines de estudio clasificaremos los robots en: 
@@ -338,21 +399,22 @@ por si mismos para realizar alguna tarea determinada. Para lograrlo,
 tienen sensores que les permiten conocer su ambiente así como actuadores
 que le permiten desplazarse.
 \end{itemize}
-La gran mayoría de los robots usados en la industria son de tipo manipuladores.
+La gran mayoría de los robots usados en la industria son de tipo manipuladores
+y en adelante solamente nos referiremos a éstos.
 
 
 \subsection{Estructura de los robots manipuladores}
 
 Básicamente la estructura de un robot manipulador es la de un brazo
-articulado.
-
-Se describe la estructura de un robot manipulador:
+articulado. Un robot manipulador consta de las siguientes partes:
 \begin{itemize}
 \item Estructura mecánica.
 \item Sistema sensorial.
 \item Elementos terminales.
 \item Sistema de control.
 \end{itemize}
+Las cuales se describen brevemente a continuación.
+
 
 \subsubsection{Estructura mecánica}
 
@@ -374,45 +436,70 @@ desplazamiento en un plano, tiene dos grados de libertad.
 \item [{e)}] Por último, la articulación esférica, combina tres giros en
 tres direcciones perpendiculares en el espacio.
 \end{lyxlist}
-\noindent \begin{center}
 %
 \begin{figure}[h]
 \noindent \begin{centering}
-\includegraphics[scale=0.8]{imagenes/articulaciones}
+\subfloat[Rotación]{\noindent \begin{centering}
+\includegraphics[scale=0.8]{imagenes/a_rotacion2}
 \par\end{centering}
 
-\caption{Tipos de articulaciones: a) rotación b) prismática c) cilíndrica d)
-planar e) esférica\label{fig:TiposArticulaciones}}
+
+
+}\subfloat[Prismática]{\noindent \begin{centering}
+\includegraphics[scale=0.8]{imagenes/a_prismatica}
+\par\end{centering}
+
+}\subfloat[Cilíndrica]{\noindent \begin{centering}
+\includegraphics[scale=0.8]{imagenes/a_cilindrica}
+\par\end{centering}
+
+}\subfloat[Planar]{\noindent \begin{centering}
+\includegraphics[scale=0.8]{imagenes/a_planar}
+\par\end{centering}
+
+}\subfloat[Esférica]{\noindent \begin{centering}
+\includegraphics[scale=0.8]{imagenes/a_esferica2}
+\par\end{centering}
+
+}
+\par\end{centering}
+
+\caption{Tipos de articulaciones\label{fig:TiposArticulaciones}}
+
+
 
 \end{figure}
 
-\par\end{center}
 
 
 \subsubsection{Sistema sensorial.}
 
 Los sensores son transductores que convierten algún fenómeno físico
-en señales eléctricas que el microcontrolador puede leer\cite{Jones98}.
+en señales eléctricas que el microcontrolador puede leer \cite{Jones98}.
 La principal función es trasladar la información del mundo real al
-mundo abstracto de la unidad lógica de procesamiento, para que ésta
-pueda responder de forma correcta. 
+mundo abstracto de la computadora, para que ésta pueda responder de
+forma correcta. 
 
 Algunos de los tipos de sensores son:
 \begin{itemize}
-\item Proporcionan datos de movimiento
-\item Cambios inerciales
-\item Estructura externa del ambiente
-\item Los interruptores de contacto son dispositivos simples que reportan
-un valor binario: cerrado o abierto. 
+\item De medición de desplazamiento.
+\item De velocidad y aceleración.
+\item Detectores de estructuras del ambiente del robot.
+\item De contacto.
 \end{itemize}
+Los interruptores de contacto son dispositivos simples que reportan
+un valor binario: cerrado o abierto, dependiendo de la ubicación de
+un elemento mecánico. En particular, el robot SCARA utilia estos sensores
+para ubicar los límites de trabajo de cada articulación.
+
 
 \subsubsection{Elementos terminales.}
 
 Existen muchos tipos de motores, pero sólo unos cuantos son útiles
 en robótica, y dentro de éstos se encuentran los motores de corriente
-directa\cite{Jones98}. Los motores o servomotores de CD son preferidos
+directa \cite{Jones98}. Los motores o servomotores de CD son preferidos
 debido a su relativa facilidad para ser controlados, comparados con
-otros tipos de motores de CD y con los motores de CA\cite{tesisCarlosE}.
+otros tipos de motores de CD y con los motores de CA \cite{tesisCarlosE}.
 
 
 \subsubsection{Sistema de control.}
@@ -423,7 +510,7 @@ Estas acciones son realizadas por actuadores y pueden depender de
 un evento del exterior captado por algún sensor.
 
 
-\subsection{Clasificación}
+\subsection{Clasificación de los robots}
 
 Existe una gran variedad de tipos de brazos manipuladores y se pueden
 clasificar de distintas formas: por su estructura, por su forma de
@@ -433,16 +520,44 @@ Hoy en día, los manipuladores están agrupados en clases de acuerdo
 a la combinación de uniones usadas en su construcción {[}Petriu06{]}
 como puede observarse en la figura \ref{fig:Categorias-robot}:
 \begin{itemize}
-\item Cilíndrico. Cuenta con dos articulaciones de rotación y una tipo planar.
-\item Esférico. Cuenta con una articulación de rotación y dos de tipo planar.
-\item S.C.A.R.A. Cuenta con dos articulaciones de rotación y una tipo planar.
-\item Cartesiano. Cuenta con tres articulaciones de tipo planar.
+\item Cilíndrico. Cuenta con dos articulaciones de rotación y una tipo prismática.
+\item Esférico. Cuenta con una articulación de rotación y dos de tipo prismática.
+\item S.C.A.R.A. Cuenta con dos articulaciones de rotación y una tipo prismática.
+\item Cartesiano. Cuenta con tres articulaciones de tipo prismática.
 \item Antropomórfico. Cuenta con tres articulaciones de tipo rotación.
 \end{itemize}
 %
-\begin{figure}[th]
+\begin{figure}[H]
 \noindent \begin{centering}
-\includegraphics[width=0.5\paperwidth]{imagenes/manipulador_alcance}
+\subfloat[Cilíndrico]{\noindent \begin{centering}
+\includegraphics[scale=0.3]{imagenes/espacio_cilindrico}
+\par\end{centering}
+
+}\subfloat[Esférico]{\noindent \begin{centering}
+\includegraphics[scale=0.3]{imagenes/espacio_esferico}
+\par\end{centering}
+
+}
+\par\end{centering}
+
+\noindent \begin{centering}
+\subfloat[S.C.A.R.A.]{\noindent \begin{centering}
+\includegraphics[scale=0.3]{imagenes/espacio_scara}
+\par\end{centering}
+
+}
+\par\end{centering}
+
+\noindent \begin{centering}
+\subfloat[Cartesiano]{\noindent \begin{centering}
+\includegraphics[scale=0.3]{imagenes/espacio_cartesiano}
+\par\end{centering}
+
+}\subfloat[Antropomórfico]{\noindent \begin{centering}
+\includegraphics[scale=0.65]{imagenes/espacio_antropomorfico}
+\par\end{centering}
+
+}
 \par\end{centering}
 
 \caption{\label{fig:Categorias-robot}Categorías de los robots manipuladores
@@ -456,12 +571,13 @@ y sus respectivas áreas de trabajo\cite{paperCinematica}.}
 
 La secuencia que se tiene que realizar para programar una tarea en
 un robot manipulador, generalmente sigue los pasos mostrados en la
-figura \ref{fig:ProgramacionRobot}:
+figura \ref{fig:ProgramacionRobot}. En la figura podemos observar
+tres componentes que se describen a continuación.
 
 %
 \begin{figure}[h]
 \noindent \begin{centering}
-\includegraphics[width=0.3\paperwidth]{imagenes/dCNC}
+\includegraphics[width=0.25\paperwidth]{imagenes/dCNC}
 \par\end{centering}
 
 \caption{\label{fig:ProgramacionRobot}Programación de un robot manipulador.}
@@ -472,71 +588,70 @@ figura \ref{fig:ProgramacionRobot}:
 
 \subsubsection{Software CAD}
 
-El software CAD(Diseño Asistido por Computadora, del inglés Computer
-Aided Design) son sitemas informáticos para realizar tareas de creación,
-modificación, análisis y optimización de un diseño.
+El software CAD (Diseño Asistido por Computadora, del inglés {}``Computer
+Aided Design'') son sitemas informáticos para realizar tareas de
+creación, modificación, análisis y optimización de un diseño.
 
 
 \subsubsection{Software CAM}
 
-El software CAM(Manufactura Asistida por Computadora, del inglés Computer
-Aided Manufacturing) son sistemas informáticos para la planificación,
-gestión y control de las operaciones de una planta de fabricación,
-mediante una interfaz directa o indirecta entre el sistema informático
-y los recursos de producción. 
-\begin{itemize}
-\item Interfaz directa. Son aquellos donde la computadora se conecta directamente
-con el proceso de producción para monitorizar su actividad y realizar
-tareas de supervisión y control.
-\item Interfaz indirecta. Se trata de de aquellos en las que la computadora
-se utiliza como herramienta de ayuda para la fabricación, pero en
-las que no existe conexión directa con el proceso de producción.
-\end{itemize}
-La entrada de estos softwares son generalmente los diseños generados
+El software CAM (Manufactura Asistida por Computadora, del inglés
+{}``Computer Aided Manufacturing'') son sistemas informáticos para
+la planificación, gestión y control de las operaciones de una planta
+de fabricación, mediante una interfaz directa o indirecta entre el
+sistema informático y los recursos de producción. En una interfaz
+directa la computadora se conecta directamente con el proceso de producción
+para monitorizar su actividad y realizar tareas de supervisión y control.
+En una interfaz indirecta la computadora se utiliza como herramienta
+de ayuda para la fabricación, pero en las que no existe conexión directa
+con el proceso de producción.
+
+La entrada de estos sistemas son generalmente los diseños generados
 con software CAD.
 
 
 \subsubsection{Software CNC }
 
-El software CNC generalmente lee código G y realiza las operaciones
-de comunicación con el robot necesarias para convertirlas en el movimiento
-deseado. 
+El software CNC (Control Numérico por Computadora, del inglés {}``Computer
+Numerical Control'') generalmente lee archivos generados en las aplicaciones
+CAM y realiza las operaciones de comunicación con el robot necesarias
+para convertirlas en el movimiento deseado. 
 
 
 \section{Revisión del Estado del Arte}
 
 En la actualidad los robots son usados para realizar tareas peligrosas,
-difíciles, repetitivas y/o complicadas para los humanos. Esto usualmente
-toma la forma de un robot industrial usado en las líneas de producción.
-Algunas aplicaciones incluyen la limpieza de residuos tóxicos, minería
-y localización de minas terrestres. 
+difíciles, repetitivas y/o complicadas para los humanos. En industrias
+grandes se utilizan frecuentemente robots industriales en las líneas
+de producción. Algunas aplicaciones incluyen la limpieza de residuos
+tóxicos, minería y localización de minas terrestres. 
 
-En la actualidad los robots son usados para realizar una gran cantidad
-de tareas entre las cuales se encuentran las de realizar actividades
-peligrosas, difíciles, repetitivas y/o complicadas para los humanos.
-
-Sin embargo la manufactura continúa siendo el principal mercado donde
+Sin embargo, la manufactura continúa siendo el principal mercado donde
 los robots son utilizados, en particular los robots articulados son
 los más usados comúnmente. Las aplicaciones incluyen soldado, pintado
 y carga de maquinaria. En este ramo la industria automotriz ha tomado
 gran ventaja de esta nueva tecnología donde los robots han sido programados
-para reemplazar el trabajo de los humanos en muchas tareas repetitivas.
+para reemplazar el trabajo de los humanos en muchas tareas repetitivas
+y peligrosas.
 
 
 \subsection{Programación de tareas}
 
-Un lenguaje de programación de robots sirve como interfaz entre el
-usuario humano y el robot industrial. Los manipuladores de robots
-se diferencian a sí mismos de la automatización fija por ser {}``flexibles'',
-es decir que son programables. No sólo son programables los movimientos
-de los manipuladores sino que, a través del uso de sensores y comunicación
-con otros tipos de automatización, los manipuladores pueden adaptarse
-a las variaciones a medida que realizan su tarea.
+Para utilizar un robot se requiere, como ya se describió antes, una
+aplicación CAD-CAM-CNC que sirve de interfaz entre el usuario humano
+y el robot industrial. Los robots manipuladores de robots se diferencian
+de la automatización fija, por ser {}``flexibles'', es decir, son
+programables. No sólo son programables los movimientos de los manipuladores
+sino que, a través del uso de sensores y comunicación con otros tipos
+de automatización, los manipuladores pueden adaptarse a las variaciones
+requeridas para realizar su tarea.
 
-Generalmente la programación de los robots se realiza fuera de linea,
-a continuación se listan paquetes existentes para programar:
+Generalmente la programación de los robots se realiza fuera de línea
+y no en tiempo real. A continuación se listan paquetes de sofware
+existentes para programar los robots:
 \begin{itemize}
-\item MS Robotic Studio ( \textasciitilde{} \$ 4 000.00 M.N)
+\item Microsoft Robotic Studio\cite{MRS08} con un costo aproximado de \$
+4,000.00 M.N. tiene las siguientes características:
 
 \begin{itemize}
 \item Herramienta de programación visual para crear y depurar aplicaciones
@@ -550,9 +665,11 @@ languages (Visual C\#\textregistered{} y Visual Basic\textregistered{}
 y lenguajes de terceros que se adecuen a la arquitectura basada en
 servicios.
 \item Robots soportados: CoroWare's CoroBot (\$3 200), Lego Mindstorms NXT,
-iRobot Create y Robosoft's robots (38 a 65 K¤).
+iRobot Create y Robosoft's robots (38 a 65 K¤). Estos robots son de
+entretenimiento o de propósito educativo.
 \end{itemize}
-\item KUKA.OfficeLite (> \$55 000.00 USD) 
+\item KUKA.OfficeLite\cite{KUKA08} con un costo superior a los \$5,500,000.00
+M.N. tiene las siguientes características: 
 
 \begin{itemize}
 \item Este sistema de programación posee las mismas características que
@@ -570,44 +687,70 @@ Ello permite optimizar la duración de los ciclos.
 e instalar en todo momento. De este modo, en un PC estándar se puede
 disponer de todo el software de sistema Original, sin necesidad de
 emulaciones.
-\item Las entradas originales se pueden simular.
-\item KUKA.OfficeLite no se puede utilizar para controlar un robot.
+\item Las conexiones con el robot real se pueden simular.
+\item KUKA.OfficeLite no se puede utilizar para controlar un robot, solo
+para desarrollar aplicaciones. De la versión profesional el autor
+no encontró más información.
 \end{itemize}
 \end{itemize}
-Algunos software que pueden ser aplicados a la programación de tareas
-son:
+Algunos programas de software que pueden ser aplicados a la programación
+de tareas de robots se pueden observar en la tabla \ref{tablaLenguajesProgramacion}.
 
-Software CAD
-\begin{itemize}
-\item AutoCAD
-\item SolidWorks
-\item RhinoCAD
-\item TurboCAD
-\item Graphite One CAD
-\end{itemize}
-Software CAM
-\begin{itemize}
-\item ArtCAM
-\item DeskCNC
-\item MeshCAM
-\end{itemize}
-Software CNC
-\begin{itemize}
-\item TurboCNC
-\item EMC
-\item DeskCNC
-\end{itemize}
+\noindent \begin{center}
+%
+\begin{table}[h]
+\noindent \begin{centering}
+\begin{tabular}{|c|c|c|}
+\hline 
+CAD & CAM & CNC\tabularnewline
+\hline
+\hline 
+AutoCAD & ArtCAM & TurboCNC\tabularnewline
+\hline 
+SolidWorks & SolidCAM & EMC2\tabularnewline
+\hline 
+RhinoCAD & DeskCAM & DeskCNC\tabularnewline
+\hline 
+TurboCAD & MeshCAM & Mach 3\tabularnewline
+\hline 
+Graphite One CAD & FreeMill & KCAM\tabularnewline
+\hline
+\end{tabular}
+\par\end{centering}
+
+\caption{Listado de software CAD/CAM/CNC\label{tab:Listado-de-software}}
+
+
+
+\end{table}
+
+\par\end{center}
+
 
 \subsection{Desarrollo tecnológico}
 
-Desafortunadamente, el desarrollo actual en el país está enfocado
-generalmente a robots móviles dejando a los manipuladores de lado.
+La tecnología robótica propia en México no se ha desarrollado. Existen
+casos aislados de avance en manipuladores y en móviles.
 
-Instituciones de nivel superior como el Tecnológico de Monterrey {[}Dirección
-de Vinculación y Desarrollo campus Guadalajara{]} se está enfocando
-más en la planeación de movimientos para robots, así como el Instituto
-Tecnológico Autónomo de México{[}Laboratorio de robótica, ITAM{]}
-se enfocan al área de robots móviles pequeños.
+En instituciones de nivel superior como el Tecnológico de Monterrey
+campus Guadalajara se trabaja en la planeación de movimientos para
+robots. En el laboratorio de robótica del Instituto Tecnológico Autónomo
+de México se enfocan al área de uso de robots móviles pequeños.
+
+En la División de Estudios de Posgrado de la Factuldad de Ingeniería
+Electrica de la Universidad Michoacana de San Nicolas de Hidalgo se
+han tenido avances significativos tanto en robots móviles así como
+en manipuladores:
+\begin{itemize}
+\item En el área de robots móviles, se construyó un robot movil\cite{Tesis A Concha}
+con desempeño comparable al de los robots comerciales. El lector interesado
+pude consultar la tesis de licenciatura para información sobre el
+robot movil desarrolado. 
+\item En el áre de manipuladores se construyerón dos robots SCARA, uno con
+motores de CD\cite{Tesis O. Rios} y otro con motodes de CD y de pasos\cite{tesisOmar}. 
+\end{itemize}
+Para las pruebas del sistema desarrollado en esta tesis, se utilizó
+el robot de motores de CD y pasos.
 
 
 \chapter{Modelado de objetos\label{cha:3_Modelado3D}}
@@ -629,13 +772,13 @@ recta proporcionando la posicion de los dos puntos extremos.
 \section{Sistemas de coordenadas}
 
 Un sistema de coordenadas es un conjunto de valores que permiten definir
-exactamente la posición de un punto cualesquiera en el espacio, debido
+exactamente la posición de un punto cualesquiera en el espacio. Debido
 a que se requiere poder realizar un modelo de un objeto real, se requieren
 el sistema de coordenadas de tres dimensiones como se muestra en la
 figura \ref{fig:Sistema-de-coordenadas3d}.
 
 %
-\begin{figure}
+\begin{figure}[h]
 \noindent \begin{centering}
 \includegraphics[width=0.3\paperwidth]{imagenes/tCoordenadas}
 \par\end{centering}
@@ -645,53 +788,99 @@ figura \ref{fig:Sistema-de-coordenadas3d}.
 \end{figure}
 
 
-Sin embargo, la aplicación desarrollada utiliza sólo dos dimensiones
-al mismo tiempo para el desarrollo de modelos.
-
 
 \section{Primitivas de graficación}
 
-Las primitivas gráficas que describen la geometría de los objetos
-se denominan normalmente primitivas geométricas. Entre las primitivas
-geométricas más simples son las que indican posiciones de puntos y
-segmentos de líneas rectas. Adicionalmente se pueden incluir circulos,
-elipses y curvas tipo bezier.
+Los elementos que describen la geometría de los objetos se denominan
+normalmente primitivas geométricas. Entre las primitivas geométricas
+más simples son las que indican posiciones de puntos y segmentos de
+líneas rectas. Adicionalmente se pueden incluir círculos, elipses
+y curvas tipo bezier, las cuales se abordan a continuación.
 
 
 \subsection{Punto}
 
 El punto es el objeto más simple que puede representarse, es un elemento
-geométrico adimensional que describe una posición en el espacio. Un
+geométrico que describe una ubicación o posición en el espacio. Un
 punto puede determinarse en el sistema de coordenadas cartesianas
 mediante las distancias a los ejes principales, que se indican con
 dos variables (x, y) en el plano y con tres variables (x, y, z) en
 el espacio tridimensional.
 
-Para fines de programación se definió un punto en el espacio con el
-predicado $Punto\left(x,\, y,\, z\right)$.
+Para fines de programación se definió un punto en el espacio con la
+primitiva $Punto\left(x,\, y,\, z\right)$, puede observarse su implementación
+en el código \ref{alg:Punto-(primitivas.Punto.java)}.
+
+%
+\begin{algorithm}[h]
+\begin{lyxcode}
+{\footnotesize public~class~Punto~\{~	}{\footnotesize \par}
+
+{\footnotesize{}~~private~double~x;~	}{\footnotesize \par}
+
+{\footnotesize{}~~private~double~y;~}{\footnotesize \par}
+
+{\footnotesize{}~~private~double~z;~}{\footnotesize \par}
+
+{\footnotesize{}~~public~Punto(double~x,~double~y,~double~z)~\{~		}{\footnotesize \par}
+
+{\footnotesize{}~~~~this.x~=~x;}{\footnotesize \par}
+
+{\footnotesize{}~~~~this.y~=~y;}{\footnotesize \par}
+
+{\footnotesize 	this.z~=~z;~	}{\footnotesize \par}
+
+{\footnotesize{}~~\}~}{\footnotesize \par}
+
+{\footnotesize{}~~public~double~getX()~\{~return~x;~\}}{\footnotesize \par}
+
+{\footnotesize{}~~public~double~getY()~\{~return~y;~\}}{\footnotesize \par}
+
+{\footnotesize{}~~public~double~getZ()~\{~return~z;~\}}{\footnotesize \par}
 
 
-\subsection{Linea}
 
-Euclides, en su tratado denominado {}``Los elementos''\cite{euclidesweb}
-,establece varias definiciones para línea:
-\begin{itemize}
-\item Los extremos de una linea son puntos.
-\item Una linea es una longitud sin anchura.
-\end{itemize}
+{\footnotesize{}~~public~void~setX(double~x)~\{~this.x~=~x;~\}}{\footnotesize \par}
+
+{\footnotesize{}~~public~void~setY(double~y)~\{~this.y~=~y;~\}}{\footnotesize \par}
+
+{\footnotesize{}~~public~void~setZ(double~z)~\{~this.z~=~z;~\}}{\footnotesize \par}
+
+
+
+{\footnotesize{}~~public~String~getXML(int~i)~\{~		}{\footnotesize \par}
+
+{\footnotesize{}~~~~return~\textquotedbl{}\textbackslash{}n\textbackslash{}t<x\textquotedbl{}+i+\textquotedbl{}>\textquotedbl{}+x+\textquotedbl{}</x\textquotedbl{}+i+\textquotedbl{}>\textquotedbl{}~+}{\footnotesize \par}
+
+{\footnotesize 	~~~~~~~\textquotedbl{}\textbackslash{}n\textbackslash{}t<y\textquotedbl{}+i+\textquotedbl{}>\textquotedbl{}+y+\textquotedbl{}</y\textquotedbl{}+i+\textquotedbl{}>\textquotedbl{}~+}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~\textquotedbl{}\textbackslash{}n\textbackslash{}t<z\textquotedbl{}+i+\textquotedbl{}>\textquotedbl{}+z+\textquotedbl{}</z\textquotedbl{}+i+\textquotedbl{}>\textquotedbl{};}{\footnotesize \par}
+
+{\footnotesize{}~~\}~	}{\footnotesize \par}
+
+{\footnotesize \}}{\scriptsize{}~}{\scriptsize \par}
+\end{lyxcode}
+\caption{Punto (primitivas.Punto.java)\label{alg:Punto-(primitivas.Punto.java)}}
+
+\end{algorithm}
+
+
+
+\subsection{Línea}
+
 La línea recta es la sucesión continua e indefinida de puntos en una
-sola dimensión\cite{wikipediarecta}. Su ecuación general es: 
+sola dimensión. La ecuaciónes utilizadas son: 
 
-\begin{equation}
-y=mx+B\end{equation}
-
-
-\begin{equation}
-m=\frac{\left(y_{n}-y_{0}\right)}{\left(x_{n}-x_{0}\right)}\end{equation}
+\begin{eqnarray}
+x_{i} & = & x_{1}+\lambda(x_{2}-x_{1})\\
+y_{i} & = & y_{1}+\lambda(y_{2}-y_{1})\\
+z_{i} & = & z_{1}+\lambda(z_{2}-z_{1})\end{eqnarray}
 
 
-donde $m$ es la pendiente y $y$ es la intercepción con el eje Y.
-En la figura \ref{fig:Linea} se puede observar un ejemplo de ésta.
+donde $(x_{1},\, y_{1},\, z_{1})$ pertenecen al punto inicial del
+segmento de la recta, $(x_{2},\, y_{2},\, z_{2})$ el punto final
+de la recta y $\lambda\in\left[0,1\right]$. En la figura \ref{fig:Linea}
+se puede observar un ejemplo de ésta.
 
 %
 \begin{figure}[h]
@@ -704,29 +893,60 @@ En la figura \ref{fig:Linea} se puede observar un ejemplo de ésta.
 \end{figure}
 
 
-Para fines de programación se definió con el predicado $L\acute{\imath}nea\left(a,\, b\right)$,
-donde $a$ y $b$ son dos puntos diferentes cualesquiera en el espacio. 
+Para fines de programación se definió la clase $L\acute{\imath}nea\left(a,\, b\right)$,
+donde $a$ y $b$ son los puntos extremos del segmento de línea, puede
+observarse su implementación en el código \ref{alg:L=0000EDnea-(primitivas.Linea.java)}.
+
+%
+\begin{algorithm}[h]
+\begin{lyxcode}
+{\footnotesize public~void~linea(~Punto~a,~Punto~b)}{\footnotesize \par}
+
+{\footnotesize \{}{\footnotesize \par}
+
+{\footnotesize{}~~int~i;}{\footnotesize \par}
+
+{\footnotesize{}~~int~n=(int)(dist(a.getX(),a.getY(),~b.getX(),b.getY()){*}ptosPixel);}{\footnotesize \par}
+
+{\footnotesize{}~~double~inc\_lambda~=~1.0~/~(n~-~1.0);}{\footnotesize \par}
+
+{\footnotesize{}~~for(i=0;~i~<~n;~i++)~\{}{\footnotesize \par}
+
+{\footnotesize{}~~~~grafPto(new~Punto(a.getX()~+~(i~{*}~inc\_lambda)~{*}~(b.getX()~-~a.getX()),}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~~~~~~~~~~a.getY()~+~(i~{*}~inc\_lambda)~{*}~(b.getY()~-~a.getY()),}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~~~~~~~~~~a.getZ()~+~(i~{*}~inc\_lambda)~{*}~(b.getZ()~-~a.getZ())}{\footnotesize \par}
+
+{\footnotesize{}~~~~));~}{\footnotesize \par}
+
+{\footnotesize{}~~\}~}{\footnotesize \par}
+
+{\footnotesize \}}{\footnotesize \par}
+\end{lyxcode}
+\caption{Línea (primitivas.Linea.java)\label{alg:L=0000EDnea-(primitivas.Linea.java)}}
+
+\end{algorithm}
+
 
 
 \subsection{Círculo}
 
-Es una secuncia de puntos infinitos del plano equidistantes de otro
-fijo, llamado centro; la distancia del centro a cualquier punto se
-denomina radio(r). Su ecuación paramétrica puede apreciarse en la
-ecuación \ref{eq:Circulo}. En la figura \ref{fig:Circulo} se puede
-observa un ejemplo.
+La ecuación paramétrica es:
 
 \begin{equation}
 \begin{array}{c}
 x=r*cos\left(\Theta\right)\\
-x=r*sin\left(\Theta\right)\\
-\Theta\in\left[0,2\pi\right]\end{array}\label{eq:Circulo}\end{equation}
+y=r*sin\left(\Theta\right)\end{array}\label{eq:Circulo}\end{equation}
 
+
+donde \foreignlanguage{english}{$\Theta\in\left[0,2\pi\right]$} y
+\foreignlanguage{english}{$r$} es el radio. 
 
 %
 \begin{figure}[h]
 \noindent \begin{centering}
-\includegraphics[width=0.4\paperwidth]{imagenes/tCirculo}
+\includegraphics[width=0.2\paperwidth]{imagenes/tCirculo}
 \par\end{centering}
 
 \caption{Círculo\label{fig:Circulo}}
@@ -734,30 +954,80 @@ x=r*sin\left(\Theta\right)\\
 \end{figure}
 
 
-Para fines de programación se definió con el predicado $Circulo\left(c,\, r\right)$
+Para fines de programación se definió la clase $Circulo\left(c,\, r\right)$
 donde $c$ es el punto definido como centro y $r$ es el radio o distancia
 del centro a cualquier otro punto.
+
+En la figura \ref{fig:Circulo} se puede observa un ejemplo, puede
+observarse su implementación en el código \ref{alg:C=0000EDrculo-(primitivas.Circulo.java)}.
+
+%
+\begin{algorithm}[h]
+\begin{lyxcode}
+{\footnotesize void~circulo(double~radio,~double~oX,~double~oY,~double~oZ,~int~n,~int~opc)}{\footnotesize \par}
+
+{\footnotesize \{}{\footnotesize \par}
+
+{\footnotesize{}~~int~i;}{\footnotesize \par}
+
+{\footnotesize{}~~double~inc\_ang,~ang;}{\footnotesize \par}
+
+{\footnotesize{}~~inc\_ang~=~360.0~/~n~{*}~Math.PI~/~180.0;}{\footnotesize \par}
+
+{\footnotesize{}~~for(i=0;~i~<~n;~i++)~\{}{\footnotesize \par}
+
+{\footnotesize{}~~~~~ang~=~inc\_ang~{*}~i;	~~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~switch(opc)~\{}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~case~DEF.vistaYX:~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~grafPto(new~Punto(~oX~+~radio~{*}~Math.cos(ang),~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~~~~~~~~~oY~+~radio~{*}~Math.sin(ang),~oZ~));~~break;								}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~case~DEF.vistaZX:~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~grafPto(new~Punto(~oX~+~radio~{*}~Math.cos(ang),~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~~~~~~~~~oY,~oZ~+~radio~{*}~Math.sin(ang)));~~~break;}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~case~DEF.vistaZY:~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~grafPto(new~Punto(~oX,~oY~+~radio~{*}~Math.cos(ang),~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~~~~~~~~oZ~+~radio\_b~{*}~Math.sin(ang)));~~~~~~break;}{\footnotesize \par}
+
+{\footnotesize{}~~~~~\}}{\footnotesize \par}
+
+{\footnotesize{}~~\}}{\footnotesize \par}
+
+{\footnotesize \}}	
+\end{lyxcode}
+\caption{Círculo (primitivas.Circulo.java)\label{alg:C=0000EDrculo-(primitivas.Circulo.java)}}
+
+\end{algorithm}
+
 
 
 \subsection{Elipse}
 
-Es una secuncia de puntos infinitos del plano tales que la suma de
-la distancia a dos puntos fijos llamados focos es una constante positiva
-e igual a la distancia entre los vértices. Su ecuación paramétrica
-puede apreciarse en la ecuación \ref{eq:Elipse}. En la figura \ref{fig:Elipse}
-se puede observa un ejemplo.
+La ecuación paramétrica es:
 
 \begin{equation}
 \begin{array}{c}
 x=r_{1}*cos\left(\Theta\right)\\
-x=r_{2}*sin\left(\Theta\right)\\
-\Theta\in\left[0,2\pi\right]\end{array}\label{eq:Elipse}\end{equation}
+y=r_{2}*sin\left(\Theta\right)\end{array}\label{eq:Elipse}\end{equation}
 
+
+donde \foreignlanguage{english}{$\Theta\in\left[0,2\pi\right]$} ,
+$r_{1}$ es la distancia al punto más alejado en el eje X y $r_{2}$
+es la distancia al punto más alejado sobre el eje Y.
 
 %
-\begin{figure}[h]
+\begin{figure}[H]
 \noindent \begin{centering}
-\includegraphics[width=0.4\paperwidth]{imagenes/tElipse}
+\includegraphics[width=0.3\paperwidth]{imagenes/tElipse}
 \par\end{centering}
 
 \caption{Elipse\label{fig:Elipse}}
@@ -765,26 +1035,189 @@ x=r_{2}*sin\left(\Theta\right)\\
 \end{figure}
 
 
-Para fines de programación se definió con el predicado $Elipse\left(c,\, r_{1},\, r_{2}\right)$
+Para fines de programación se definió la clase $Elipse\left(c,\, r_{1},\, r_{2}\right)$
 donde $c$ es el punto definido como centro, $r_{1}$ es la distancia
 al punto más alejado en el eje horizontal y $r_{2}$ es la distancia
-al punto más alejado sobre el eje vertical.
+al punto más alejado sobre el eje vertical, puede observarse su implementación
+en el código \ref{alg:Elipse-(primitivas.Elipse.java)}.
+
+En la figura \ref{fig:Elipse} se puede observa un ejemplo.
+
+%
+\begin{algorithm}[h]
+\begin{lyxcode}
+{\footnotesize void~elipse(double~radio\_a,~double~radio\_b,~double~oX,~double~oY,~double~oZ,}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~int~n,~int~opc)}{\footnotesize \par}
+
+{\footnotesize \{}{\footnotesize \par}
+
+{\footnotesize{}~~int~i;}{\footnotesize \par}
+
+{\footnotesize{}~~double~inc\_ang,~ang;}{\footnotesize \par}
+
+{\footnotesize{}~~inc\_ang~=~360.0~/~n~{*}~Math.PI~/~180.0;}{\footnotesize \par}
+
+{\footnotesize{}~~for(i=0;~i~<~n;~i++)~\{}{\footnotesize \par}
+
+{\footnotesize{}~~~~~ang~=~inc\_ang~{*}~i;	~~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~switch(opc)~\{}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~case~DEF.vistaYX:~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~grafPto(new~Punto(~oX~+~radio\_a~{*}~Math.cos(ang),~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~~~~~~~~~oY~+~radio\_b~{*}~Math.sin(ang),~oZ~));~~~break;								}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~case~DEF.vistaZX:~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~grafPto(new~Punto(~oX~+~radio\_a~{*}~Math.cos(ang),~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~~~~~~~~~oY,~oZ~+~radio\_b~{*}~Math.sin(ang)));~~~~break;}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~case~DEF.vistaZY:~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~grafPto(new~Punto(~oX,~oY~+~radio\_a~{*}~Math.cos(ang),~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~~~~~~~~~oZ~+~radio\_b~{*}~Math.sin(ang)));~~~~~~~~break;}{\footnotesize \par}
+
+{\footnotesize{}~~~~~\}}{\footnotesize \par}
+
+{\footnotesize{}~~\}}{\footnotesize \par}
+
+{\footnotesize \}	}{\footnotesize \par}
+\end{lyxcode}
+\caption{Elipse (primitivas.Elipse.java)\label{alg:Elipse-(primitivas.Elipse.java)}}
+
+\end{algorithm}
+
 
 
 \subsection{Curva de Bezier}
 
+La curva Bézier es un tipo de línea curva ideada por un ingeniero
+de Renault en los años 60 por medio de un método de descripción matemática
+que conseguía definir las transiciones suaves de las curvaturas. 
+
+%
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=0.4\paperwidth]{imagenes/bezier}
+\par\end{centering}
+
+\caption{Curva de Bezier\label{fig:Curva-de-Bezier}}
+
+\end{figure}
+
+
+Una curva de Bézier tiene por lo menos cuatro puntos de control y
+es de orden cúbico como se puede apreciar en la figura \ref{fig:Curva-de-Bezier},
+dos de los puntos corresponden a los extremos de la curva, son denominados
+nodos o puntos de anclaje y los otros puntos son denominados puntos
+de control o manejadores y determinan la dirección con que la curvatura
+ingresa a los extremos. La forma paramétrica es:
+
+\begin{equation}
+B(t)=P_{0}(1-t)^{3}+3P_{1}t(1-t)^{2}+3P_{2}t^{2}(1-t)+P_{3}t^{3}\end{equation}
+
+
+donde \foreignlanguage{english}{$t\in\left[0,1\right]$} .
+
+%
+\begin{algorithm}[h]
+\begin{lyxcode}
+{\footnotesize public~void~graficar(Vector<Punto>~v)~\{}{\footnotesize \par}
+
+{\footnotesize{}~~double~step=~1/maxPts;		}{\footnotesize \par}
+
+{\footnotesize{}~~double{[}{]}~Pxi,~Pyi,~X,~Y,~t~=~step;}{\footnotesize \par}
+
+{\footnotesize{}~~Pxi~=~new~double{[}v.size(){]};~~~Pyi~=~new~double{[}v.size(){]};}{\footnotesize \par}
+
+{\footnotesize{}~~for(int~i=0;~i<v.size();~i++)~\{	}{\footnotesize \par}
+
+{\footnotesize{}~~~~switch(opc)~\{}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~case~DEF.vistaYX:~Pxi{[}i{]}=v.get(i).getX();~Pyi{[}i{]}=v.get(i).getY();~break;}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~case~DEF.vistaZY:~Pxi{[}i{]}=v.get(i).getY();~Pyi{[}i{]}=v.get(i).getZ();~break;}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~case~DEF.vistaZX:~Pxi{[}i{]}=v.get(i).getX();~Pyi{[}i{]}=v.get(i).getZ();~break;}{\footnotesize \par}
+
+{\footnotesize{}~~~~\}}{\footnotesize \par}
+
+{\footnotesize{}~~\}~~}{\footnotesize \par}
+
+{\footnotesize{}~~Xant~=~-1000;~~~~Yant~=~-1000;}{\footnotesize \par}
+
+{\footnotesize{}~~while(t<=1)~\{}{\footnotesize \par}
+
+{\footnotesize{}~~~~for~(int~j~=~Pxi.length-1;~j~>~0;~j-{}-)}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~for~(int~i~=~0;~i~<~j;~i++)\{}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~Pxi{[}i{]}~=~(1-t){*}Pxi{[}i{]}~+~t{*}Pxi{[}i+1{]};}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~Pyi{[}i{]}~=~(1-t){*}Pyi{[}i{]}~+~t{*}Pyi{[}i+1{]};}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~\}}{\footnotesize \par}
+
+{\footnotesize{}~~~~X~=~Pxi{[}0{]};~~Y~=~Pyi{[}0{]};}{\footnotesize \par}
+
+{\footnotesize{}~~~~if(Xant!=-1000\&\&Yant!=-1000)~\{}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~switch(opc)~\{}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~case~DEF.vistaYX:~new~Linea(plot,~new~Punto(Xant,~Yant,~z),~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~~~~~~~~~~~~~~new~Punto(X,~Y,~z),~vista);~break;}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~case~DEF.vistaZY:~new~Linea(plot,~new~Punto(x,~Xant,~Yant),~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~~~~~~~~~~~~~~new~Punto(x,~X,~Y),~vista);~break;}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~case~DEF.vistaZX:~new~Linea(plot,~new~Punto(Xant,~y,~Yant),~}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~~~~~~~~~~~~~~~~~~~~~new~Punto(X,~y,~Y),~vista);~break;}{\footnotesize \par}
+
+{\footnotesize{}~~~~~~\}}{\footnotesize \par}
+
+{\footnotesize{}~~~~\}}{\footnotesize \par}
+
+{\footnotesize{}~~~~Xant~=~X;~Yant~=~Y;~t~+=~step;}{\footnotesize \par}
+
+{\footnotesize{}~~\}}{\footnotesize \par}
+
+{\footnotesize \}}{\footnotesize \par}
+\end{lyxcode}
+\caption{Curva de Bezier (primitivas.Bezier.java)\label{alg:Curva-de-Bezier}}
+
+\end{algorithm}
+
+
+Para fines de programación se definió la clase $Bezier\left(p\right)$
+donde $p$ es un conjunto definido de puntos que conforman la curva,
+puede observarse su implementación en el código \ref{alg:Curva-de-Bezier}.
+
 
 \subsection{Elementos compuestos}
 
-Es un objeto compuesto por una o más primitivas para formar un elemento
-compuesto. Este elemento puede contener infinitas primitivas dentro
-de si misma. En la figura \ref{fig:Elemento-compuesto} se muestra
-un ejemplo de un elemento compuesto, este elemento contiene tres líneas.
+Un elemento compuesto se forma con uno o más primitivas u otros elementos
+compuestos. En la figura \ref{fig:Elemento-compuesto} se muestra
+un ejemplo de un elemento compuesto, que contiene cuatro primitivas.
+De forma formal tenemos:
+
+\begin{equation}
+E_{c}=(P_{1},\, P_{2},\, P_{3},\,...,\, P_{n})\end{equation}
+
+
+donde \foreignlanguage{english}{$P_{i}\in\left\{ Punto,\, L\acute{\imath}nea,\, Polilinea,\, C\acute{\imath}rculo,\, Elipse,\, Bezier\right\} $}.
 
 %
-\begin{figure}
+\begin{figure}[H]
 \noindent \begin{centering}
-\includegraphics[width=0.2\paperwidth]{imagenes/tCompuesto}
+\includegraphics[width=0.15\paperwidth]{imagenes/tCompuesto}
 \par\end{centering}
 
 \caption{Elemento compuesto\label{fig:Elemento-compuesto}}
@@ -793,11 +1226,17 @@ un ejemplo de un elemento compuesto, este elemento contiene tres líneas.
 
 
 
-\section{Transformaciones}
+\section{Transformaciones\label{sec:Transformaciones}}
+
+En robótica son de particular interés las transformaciones: escalado,
+traslación, rotación y proyección isométrica de un objeto. Estas operaciones
+tienen la ventaja de que se pueden realizar mediante un producto matricial
+y que se pueden combinar multiplicando de antemano las matrices de
+transformación.
 
 Como se mostró en las secciones anteriores, las primitivas se están
-definiendo mediante puntos de control, un punto en el espacio 3D homogéneo
-será un vector columna como el que se muestra en la ec. \ref{eq:TransPunto}.
+definiendo mediante puntos de control, un punto $(x,\, y,\, z)$ en
+el espacio 3D homogéneo será un vector columna:
 
 \begin{equation}
 p=\left[\begin{array}{c}
@@ -807,11 +1246,16 @@ z\\
 1\end{array}\right]\label{eq:TransPunto}\end{equation}
 
 
+A continuación se muestran los productos matriciales para: escalado,
+traslación, rotación y proyección de un punto de control. Aplicando
+dichas transformaciones a todos los puntos de control de una primitiva
+se realiza la tranformación a todos los puntos que contiene la misma.
+
 
 \subsection{Escalado}
 
 A continuación se muestra como quedaría el escalado de un punto de
-control.
+control:
 
 \begin{equation}
 \left[\begin{array}{c}
@@ -829,13 +1273,22 @@ z\\
 1\end{array}\right]\label{eq:TransEscalamiento}\end{equation}
 
 
+Donde $e_{x}$ es el factor de escalado en la direccion del eje $X$,
+$e_{y}$ es el factor de escalado en la direccion del eje $Y$ y $e_{z}$
+es el factor de escalado en la direccion del eje $Z$. El punto escalado
+$\left[x',\, y',\, z'\right]^{t}$ proviene del punto original $\left[x,\, y,\, z\right]^{t}$. 
+
+En la figura \ref{fig:Escalamiento} se muestra un ejemplo de escalamiento
+con $e_{x}=2$ y $e_{y}=2$ de los puntos $P_{1}$, $P_{2}$ y $P_{3}$
+a los nuevos $P_{1}'$, $P_{2}'$ y $P_{3}'$.
+
 %
 \begin{figure}[h]
 \noindent \begin{centering}
 \includegraphics[width=0.4\paperwidth]{imagenes/tEscalamiento}
 \par\end{centering}
 
-\caption{Escalamiento}
+\caption{Escalamiento\label{fig:Escalamiento}}
 
 
 
@@ -845,9 +1298,7 @@ z\\
 
 \subsection{Traslación}
 
-La traslación $x\lyxmathsym{\textasciiacute}=x+t_{x}$, $y\lyxmathsym{\textasciiacute}=y+t_{y}$,
-$z\lyxmathsym{\textasciiacute}=z+t_{z}$ puede ser expresada como
-el producto:
+La traslación puede ser expresada como el producto:
 
 \begin{equation}
 \left[\begin{array}{c}
@@ -865,13 +1316,22 @@ z\\
 1\end{array}\right]\label{eq:TransTrans}\end{equation}
 
 
+Donde $t_{x}$ es el desplazamiento en la direccion del eje $X$,
+$t_{y}$ es el desplazamiento en la direccion del eje $Y$ y $t_{z}$
+es el desplazamiento en la direccion del eje $Z$. El punto trasladado
+$\left[x',\, y',\, z'\right]^{t}$ proviene del punto original $\left[x,\, y,\, z\right]^{t}$. 
+
+En la figura \ref{fig:Traslaci=0000F3n} se muestra un ejemplo de
+traslación con $t_{x}=2$ de los puntos $P_{1}$, $P_{2}$ y $P_{3}$
+a los nuevos $P_{1}'$, $P_{2}'$ y $P_{3}'$.
+
 %
 \begin{figure}[h]
 \noindent \begin{centering}
 \includegraphics[width=0.4\paperwidth]{imagenes/tTraslacion}
 \par\end{centering}
 
-\caption{Traslación}
+\caption{Traslación\label{fig:Traslaci=0000F3n}}
 
 \end{figure}
 
@@ -879,7 +1339,8 @@ z\\
 
 \subsection{Rotación}
 
-La rotación un ángulo $\Theta$ alrededor del eje $z$ es:
+La rotación alrededor del eje $x$ de un ángulo $\Theta$ esta definido
+por:
 
 \begin{equation}
 \left[\begin{array}{c}
@@ -897,7 +1358,8 @@ z\\
 1\end{array}\right]\label{eq:TransRotaZ}\end{equation}
 
 
-La rotación un ángulo $\Theta$ alrededor del eje $y$ es:
+La rotación alrededor del eje $y$ de un ángulo $\Theta$ esta definido
+por:
 
 \begin{equation}
 \left[\begin{array}{c}
@@ -915,7 +1377,8 @@ z\\
 1\end{array}\right]\label{eq:TransRotaY}\end{equation}
 
 
-La rotación un ángulo $\Theta$ alrededor del eje $x$ es:
+La rotación alrededor del eje $z$ de un ángulo $\Theta$ esta definido
+por:
 
 \begin{equation}
 \left[\begin{array}{c}
@@ -933,27 +1396,87 @@ z\\
 1\end{array}\right]\label{eq:TransRotaX}\end{equation}
 
 
+Donde $\Theta$ es el ángulo a rotar en el eje correspondiente. El
+punto rotado $\left[x',\, y',\, z'\right]^{t}$ proviene del punto
+original $\left[x,\, y,\, z\right]^{t}$. 
+
+En la figura \ref{fig:Rotaci=0000F3n} se muestra un ejemplo de rotacion
+en el eje X con $\Theta=45$ de los puntos $P_{1}$, $P_{2}$ y $P_{3}$
+a los nuevos $P_{1}'$, $P_{2}'$ y $P_{3}'$.
+
 %
 \begin{figure}[h]
 \noindent \begin{centering}
 \includegraphics[width=0.4\paperwidth]{imagenes/tRotacion}
 \par\end{centering}
 
-\caption{Rotación}
+\caption{Rotación\label{fig:Rotaci=0000F3n}}
 
 \end{figure}
 
 
 
+\subsection{Proyección isométrica}
+
+La proyección isométrica es un método de representación visual de
+objetos de 3 dimensiones en 2 dimensiones.
+
+Existen 8 diferentes vistas isómetricas, dependiendo del octante que
+se haya elegido. Esta transformación mapea un punto en el espacio
+3D en un plano visto desde el primer octante\cite{transformaciones}.
+
+\begin{equation}
+\left[\begin{array}{c}
+x\lyxmathsym{\textasciiacute}\\
+y\lyxmathsym{\textasciiacute}\\
+0\\
+1\end{array}\right]=\left[\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1\end{array}\right]\left[\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & cos\left(\alpha\right) & sin(\alpha) & 0\\
+0 & -sin(\alpha) & cos(\alpha) & 0\\
+0 & 0 & 0 & 1\end{array}\right]\left[\begin{array}{cccc}
+cos\left(\beta\right) & 0 & -sin(\beta) & 0\\
+0 & 1 & 0 & 0\\
+sin(\beta) & 0 & cos(\beta) & 0\\
+0 & 0 & 0 & 1\end{array}\right]\left[\begin{array}{c}
+x\\
+y\\
+z\\
+1\end{array}\right]\label{eq:Perspectiva}\end{equation}
+
+
+donde $\alpha=arcsin(tan(30\lyxmathsym{º}))$ y $\beta=45\lyxmathsym{º}$.
+En la ecuación \ref{eq:Perspectiva} se realiza un rotación al rededor
+del eje Y dado por $\beta$, seguido por una rotación alrededor del
+eje X dado por $\alpha$, y finalmente se realiza una proyección sobre
+el plano x-y.
+
+
 \section{Almacenamiento y recuperación}
 
-El almacenamiento y recuperación es una de las operaciones más importantes
-en un sistema, 
+A pesar de las mejoras en la tecnología de los dispositivos de almacenamiento,
+de la mejor protección frente a los virus y de las mejoras en la formación,
+siguen ocurriendo desastres y caídas de sistemas en mayor número,
+haciendo de la pérdida de datos un acontecimiento cada vez más habitual.
+
+Teniendo en cuenta lo anterior se eligió usar un formato flexible
+tanto para la implementación como para la recuperación en caso de
+alguna perdida parcial de la información, se eligió el formato XML.
+Brevemente enseguida se explican las características del formato XML.
 
 
 \subsection{Almacenamiento en formato XML}
 
-El formato XML
+El formato XML (del inglés eXtensible Markup Language) es un metalenguaje
+extensible de etiquetas desarrollado por el World Wide Web Consortium\cite{XML08}
+como una propuesta de estándar para el intercambio de información
+estructurada entre diferentes plataformas. Tiene un papel muy importante
+en la actualidad ya que permite la compatibilidad entre sistemas para
+compartir la información de una manera segura, fiable y fácil.
 
 Algunas de las ventajas de este formato son:
 \begin{itemize}
@@ -961,30 +1484,104 @@ Algunas de las ventajas de este formato son:
 \item Soporta código Unicode.
 \item El mismo documento define la estructura y los campos asi como los
 valores respectivos.
-\item Es basado en estándares internacionales.
+\item Está basado en estándares internacionales.
 \end{itemize}
 
 \subsection{Estructura de almacenamiento}
 
-La estructura de almacenamiento puede observarse en la figura \ref{fig:EstructuraXML}.
+La estructura de almacenamiento puede observarse en el código \ref{fig:EstructuraXML}
+y su representación gráfica en la figura \ref{fig:Ejemplo-simple}.
 Como puede verse la estructura es simple, compacta y fácil de entender.
+
+%
+\begin{algorithm}[H]
+\begin{lyxcode}
+{\footnotesize <modelador>}{\footnotesize \par}
+\begin{lyxcode}
+{\footnotesize <fig~tipo=\textquotedbl{}1\textquotedbl{}~>}{\footnotesize \par}
+\begin{lyxcode}
+{\footnotesize <x0>32.0</x0><y0>32.0</y0><z0>70.0</z0>}{\footnotesize \par}
+\end{lyxcode}
+{\footnotesize </fig>}{\footnotesize \par}
+
+{\footnotesize <fig~tipo=\textquotedbl{}2\textquotedbl{}~>}{\footnotesize \par}
+\begin{lyxcode}
+{\footnotesize <x0>23.0</x0><y0>45.0</y0><z0>70.0</z0>}{\footnotesize \par}
+
+{\footnotesize <x1>138.0</x1><y1>45.0</y1><z1>70.0</z1>}{\footnotesize \par}
+\end{lyxcode}
+{\footnotesize </fig>}{\footnotesize \par}
+
+{\footnotesize <fig~tipo=\textquotedbl{}3\textquotedbl{}~>}{\footnotesize \par}
+\begin{lyxcode}
+{\footnotesize <x0>23.0</x0><y0>61.0</y0><z0>70.0</z0>}{\footnotesize \par}
+
+{\footnotesize <x1>23.0</x1><y1>107.0</y1><z1>70.0</z1>}{\footnotesize \par}
+
+{\footnotesize <x2>134.0</x2><y2>108.0</y2><z2>70.0</z2>}{\footnotesize \par}
+
+{\footnotesize <x3>132.0</x3><y3>62.0</y3><z3>70.0</z3>}{\footnotesize \par}
+
+{\footnotesize <x4>132.0</x4><y4>62.0</y4><z4>70.0</z4>}{\footnotesize \par}
+\end{lyxcode}
+{\footnotesize </fig>}{\footnotesize \par}
+
+{\footnotesize <fig~tipo=\textquotedbl{}4\textquotedbl{}~>}{\footnotesize \par}
+\begin{lyxcode}
+{\footnotesize <x0>76.0</x0><y0>143.0</y0><z0>70.0</z0>}{\footnotesize \par}
+
+{\footnotesize <x1>105.0</x1><y1>152.0</y1><z1>70.0</z1>}{\footnotesize \par}
+\end{lyxcode}
+{\footnotesize </fig>}{\footnotesize \par}
+
+{\footnotesize <fig~tipo=\textquotedbl{}5\textquotedbl{}~>}{\footnotesize \par}
+\begin{lyxcode}
+{\footnotesize <x0>179.0</x0><y0>68.0</y0><z0>70.0</z0>}{\footnotesize \par}
+
+{\footnotesize <x1>199.0</x1><y1>124.0</y1><z1>70.0</z1>}{\footnotesize \par}
+\end{lyxcode}
+{\footnotesize </fig>}{\footnotesize \par}
+
+{\footnotesize <fig~tipo=\textquotedbl{}6\textquotedbl{}~>}{\footnotesize \par}
+\begin{lyxcode}
+{\footnotesize <x0>138.0</x0><y0>171.0</y0><z0>70.0</z0>}{\footnotesize \par}
+
+{\footnotesize <x1>195.0</x1><y1>166.0</y1><z1>70.0</z1>}{\footnotesize \par}
+
+{\footnotesize <x2>225.0</x2><y2>130.0</y2><z2>70.0</z2>}{\footnotesize \par}
+
+{\footnotesize <x3>230.0</x3><y3>55.0</y3><z3>70.0</z3>}{\footnotesize \par}
+\end{lyxcode}
+{\footnotesize </fig>}{\footnotesize \par}
+\end{lyxcode}
+{\footnotesize </modelador>}{\footnotesize \par}
+
+
+\end{lyxcode}
+\caption{\label{fig:EstructuraXML}Estructura de almacenamiento}
+
+\end{algorithm}
+
 
 %
 \begin{figure}[h]
 \noindent \begin{centering}
-\includegraphics[width=0.5\paperwidth]{imagenes/estructura_xml}
+\includegraphics[width=0.4\paperwidth]{imagenes/ejemplo1}
 \par\end{centering}
 
-\caption{\label{fig:EstructuraXML}Estructura de almacenamiento}
+\caption{Ejemplo simple\label{fig:Ejemplo-simple}}
+
+
 
 \end{figure}
 
 
-En la figura \ref{fig:EstructuraXML} puede observarse:
+En el segmento de codigo \ref{fig:EstructuraXML} puede observarse:
 \begin{itemize}
-\item No existe límite en la cantidad de primitivas usadas en un diseño.
+\item Es posible tener una gran cantidad de primitivas en un diseño.
 \item Los puntos de control de una primitiva pueden no tener límite, es
-decir, una primitiva puede tener N puntos de control. 
+decir, una primitiva puede tener N puntos de control. Sólo aplica
+a la polilínea y curva de bezier. 
 \item Cada primitiva es identificada mediante un número entero (tipo):
 
 \begin{itemize}
@@ -999,18 +1596,71 @@ decir, una primitiva puede tener N puntos de control.
 
 \section{Importación de otros formatos}
 
+Una herramienta importante en toda aplicación de diseño es la capacidad
+de importar formatos externos a ella. 
 
-\subsection{Imágenes PGM}
+Como primer formato de importación se desarrolló un importador para
+el formato de imágenes PGM. A petición del Sr. Rafael Cardiel Cervantes
+se agregó esta capacidad con la intención de hacer figuras en relieve
+sobre madera a partir de los tonos de grises de una imagen en formato
+PGM. En seguida se describe brevemente dicho formato.
 
-Una imagen PGM es la representación a escala de grises de una imagen. 
+
+\subsection{Formato de Imágenes PGM}
+
+El formato PGM (del inglés Portable GrayMap) es un formato para imágenes
+en tonos de gris de 8 bits sin compresión, diseñado para el fácil
+intercambio entre plataformas\cite{pgm2003}. Existen dos formatos
+de almacenamiento: texto plano y binario; solamente se trabajo con
+el formato de texto plano.
+
+Este formato está compuesto por dos partes(ver código \ref{alg:C=0000F3digo-PGM}
+para un ejemplo):
+\begin{itemize}
+\item Un encabezado que da información sobre el tamaño de la imagen (largo
+y ancho) seguido del máximo color expresado (en el rango de 0 a 255)
+\item El cuerpo de la imagen que incluye la información de cada pixel.
+\end{itemize}
+La imágen codificada en formato PGM de la figura \ref{fig:Ejemplo-PGM}
+corresponde al formato presentado en el código \ref{alg:C=0000F3digo-PGM}.
+
+%
+\begin{algorithm}[h]
+\begin{lyxcode}
+{\footnotesize P2}{\footnotesize \par}
+
+{\footnotesize 10~7~}{\footnotesize \par}
+
+{\footnotesize 255}{\footnotesize \par}
+
+
+
+{\footnotesize 255~~~255~~~255~~~255~~~255~~~255~~~255~~~255~~~255~~~255	~}{\footnotesize \par}
+
+{\footnotesize 255~~~~0~~~~~0~~~~~0~~~~255~~~255~~~164~~~164~~~164~~~255}{\footnotesize \par}
+
+{\footnotesize 255~~~~0~~~~255~~~~0~~~~255~~~255~~~164~~~255~~~255~~~255}{\footnotesize \par}
+
+{\footnotesize 255~~~~0~~~~~0~~~~~0~~~~255~~~255~~~164~~~164~~~255~~~255}{\footnotesize \par}
+
+{\footnotesize 255~~~~0~~~~255~~~~0~~~~255~~~255~~~164~~~255~~~255~~~255}{\footnotesize \par}
+
+{\footnotesize 255~~~~0~~~~255~~~~0~~~~255~~~255~~~164~~~164~~~164~~~255}{\footnotesize \par}
+
+{\footnotesize 255~~~255~~~255~~~255~~~255~~~255~~~255~~~255~~~255~~~255}{\footnotesize \par}
+\end{lyxcode}
+\caption{Código PGM\label{alg:C=0000F3digo-PGM}}
+
+\end{algorithm}
+
 
 %
 \begin{figure}[h]
 \noindent \begin{centering}
-\includegraphics[width=0.7\paperwidth]{imagenes/logo_a_robot}
+\includegraphics[width=0.2\paperwidth]{imagenes/ejemplopgm}
 \par\end{centering}
 
-\caption{\label{fig:pgm_a_robot}PGM a Robot}
+\caption{Ejemplo PGM\label{fig:Ejemplo-PGM}}
 
 \end{figure}
 
@@ -1019,86 +1669,83 @@ Una imagen PGM es la representación a escala de grises de una imagen.
 \chapter{Interfaz de software\label{cha:4_Interfaces3D}}
 
 La interfaz de usuario es uno de los apartados con más relevancia
-de un sistema de cómputo, en la actualidad todo sistema debe contener
+de un sistema de cómputo. En la actualidad todo sistema debe contener
 una herramienta con la que el usuario pueda ordenar a la computadora
-qué hacer.
-
-Una interfaz de usuario mal diseñada puede causar que el mejor sistema
-de cómputo sea ineficaz y por lo tanto sea deshechado, es por esto
-que se debe realizar un buen diseño de la interfaz de usuario, la
-cual incluye:
+qué hacer. Una interfaz de usuario mal diseñada puede causar que el
+mejor sistema de cómputo sea ineficaz y por lo tanto sea deshechado,
+es por esto que se debe realizar un buen diseño de la interfaz de
+usuario, la cual incluye:
 \begin{itemize}
-\item Diseño de la interfaz gráfica.
-\item Eleccion de lenguaje de programación.
-\item Elección de sistema de renderización.
+\item Consideraciones sobre el diseño de la interfaz gráfica.
+\item La eleccion de un lenguaje de programación apropiado.
 \end{itemize}
+En este capítulo se presentan algunos elementos importantes del diseño
+de interfaces gráficas, el lenguaje de programación y el software
+de modelado desarrollado por el autor.
+
 
 \section{Diseño de la interfaz de usuario}
 
-La interfaz gráfica de usuario (IGU) es la parte más importante de
-los sistemas computarizados debido aque es con la que el usuario interactúa
-de forma directa. Las metas de una interfaz de ususario son: hacer
-que el trabajo con la computadora sea fácil, productivo y agradable\cite{disenoInterface}.
+La Interfaz Gráfica de Usuario (IGU) es la parte más importante de
+los sistemas computarizados debido a que el usuario interactúa de
+forma directa con ella. Las metas de una IGU son lograr que el trabajo
+con la computadora sea fácil, productivo y agradable \cite{disenoInterface}.
 
-La interfaz de usaurio se conforma de dos componentes: entrada y salida.
-La entrada es la forma en que los usuarios comunican sus necesidades
-a la computadora. La salida es el medio por el cual la computadora
-muestra los resultados de las operaciones requeridas por el usuario.
+La IGU se conforma de dos componentes: entrada y salida. La entrada
+es la forma en que los usuarios comunican sus necesidades a la computadora.
+La salida es el medio por el cual la computadora muestra los resultados
+de las operaciones requeridas por el usuario.
 
 Propiamente, una interfaz de usuario provee la mezcla de: mecanismo
 de entrada y salida que de manera eficiente satisfagan las necesidades
-del usaurio, capabilities, y limitaciones en la forma más eficiente.
+del usuario, capacidades, y limitaciones en la forma más eficiente.
 
 
 \subsection{Principios generales de un buen diseño}
 
-Estos principios son características generales para la interfaz en
-todos sus aspectos:
+Enseguida se revizan algunos principios generales para la IGU que
+deben ser tomados en cuenta \cite{disenoInterface}:
 
 
 \subsubsection{Accesibilidad}
 
-El sistema deberá de ser usado por usuarios de diversas capacidades
-sin diseños especiales ni modificaciones. Originalmente este término
-fue usado para referirse a sistemas accesibles a usuarios con discapacidades.
-Actualmente el término accesibilidad se refiere a cubrir la mayoría
+El sistema deberá poder ser usado por personas de diversas capacidades
+y limitantes. Originalmente este término fue usado para referirse
+a sistemas accesibles a usuarios con discapacidades. Actualmente el
+término accesibilidad se refiere a cubrir las necesidades de la mayoría
 de los usuarios.
 
-Las principales caracterísitcas de un sistema accesible son:
-\begin{itemize}
-\item Perceptibilidad
-\item Operatibilidad
-\item Simplicidad
-\end{itemize}
+Las principales características de un sistema accesible son: Perceptibilidad,
+Operatibilidad y Simplicidad.
+
 
 \subsubsection{Disponibilidad}
 
 Todos los aspectos de un sistema deberán de estar disponibles en cualquier
-momento en cualquier tarea. Solo deberán de no estar disponibles en
-aquellas tareas que así se definan.
+momento. Sólo deberán no estar disponibles en aquellas situaciones
+que no tenga sentido.
 
 
 \subsubsection{Claridad}
 
-La interfaz debe ser clara en apariencia visual y concepto. Los elementos
-visuales deben ser entendibles, relacionados con objetos del mundo
-real. Los coneptos y textos deben ser simples y no consfusos.
+La interfaz debe ser clara en apariencia visual y conceptual. Los
+elementos visuales deben ser entendibles, relacionados con objetos
+del mundo real. Los conceptos y textos deben ser simples y no confusos.
 
 
 \subsubsection{Consistencia}
 
-Consistency is uniformity in appearance, placement, and behavior within
-the user interface. 
+Consistencia es la uniformidad en apariencia y localizacion de los
+objetos dentro de la IGU. Es importante ya que puede reducir la necesidad
+de adquirir nuevas habilidades para una actividad que puede ser similar
+a otra. Si un nuevo sistema impone necesidades de aprender nuevas
+habilidades en los usuarios, este puede convertirse en un sistema
+no productivo e innecesario.
 
-Es importante ya que puede reducir la necesidad de adquirir nuevas
-habilidades para una actividad que puede ser similar a otra. Si un
-nuevo sistema impone necesidades de aprender nuevas habilidades en
-los usuarios, este puede convertirse en un sistema no productivo e
-innecesario.
-
-Un sistema deberá lucir y operar de forma normal(throughout), es decir:
+Un sistema deberá lucir y operar de forma consistente, es decir:
 \begin{itemize}
-\item Una función siempre deberá devolver el mismo resultado.
+\item Una acción realizada sobre los mismos datos siempre deberá devolver
+el mismo resultado.
 \item La posición de los elementos estándares no cambiará.
 \end{itemize}
 
@@ -1134,8 +1781,8 @@ de tiempo.
 
 El ojetivo es mantener la estabilidad, es decir, cuando el usuario
 realice una acción errónea que pueda llevar a una situación peligrosa
-exista alguna forma de regresar al puto anterior estable. La recuperación
-debe ser obvia, automática, y simple de realizar.
+exista alguna forma de regresar al punto anterior estable. La recuperación
+debe ser obvia, automática y simple de realizar.
 
 
 \subsubsection{Simplicidad}
@@ -1149,34 +1796,17 @@ simple entender y usar un sistema con la mínima experiencia y documentación.
 Los sistemas son más usables cuando de una manera clara indican el
 estado y los resultados de las acciones realizadas por los usuarios. 
 
-%
-\begin{figure}[h]
-\noindent \begin{centering}
-\includegraphics[width=0.7\paperwidth]{imagenes/igu_tesis}
-\par\end{centering}
-
-\caption{\label{fig:igu_dise=0000F1o}Diseño de la interfaz gráfica}
-
-\end{figure}
-
-
 
 \section{Lenguaje de programación}
 
 En la actualidad existe una gran cantidad de lenguajes de programación,
 la mayoría de propósito general y el resto de propósito específico,
-a continuación se listan los más populares de ambas categorías:
-\begin{itemize}
-\item C.
-\item Basic.
-\item Java.
-\item .Net.
-\item Perl.
-\item PHP.
-\end{itemize}
-Estos podrían ser los más utilizados hoy por hoy, pero debido a la
-heterogeneidad de sistemas operativos y arquitecturas, no todos los
-lenguajes de programación son aplicables. 
+a continuación se listan los más populares de ambas categorías: C,
+Basic, Java, MS .Net, Perl y PHP.
+
+Estos podrían ser los más utilizados en la actualidad, pero debido
+a la heterogeneidad de sistemas operativos y arquitecturas, no todos
+los lenguajes de programación son aplicables en todos los casos. 
 
 En el caso de los lenguajes compilados es poco probable su funcionalidad
 en diferentes plataformas debido a la dependencia de tipo de procesador
@@ -1195,26 +1825,27 @@ escritos en este lenguaje no se ejecutarán.
 %
 \begin{table}[h]
 \begin{centering}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|}
 \hline 
- & Windows & Linux & MacOS\tabularnewline
+ & Windows & Linux & MacOS & Portabilidad\tabularnewline
 \hline
-C & X & X & X\tabularnewline
+C & X & X & X & \tabularnewline
 \hline 
-Basic & X &  & \tabularnewline
+Basic & X &  &  & \tabularnewline
 \hline 
-Java & X & X & X\tabularnewline
+Java & X & X & X & X\tabularnewline
 \hline 
-.Net & X & X & \tabularnewline
+.Net & X & X &  & \tabularnewline
 \hline
-Perl & X & X & X\tabularnewline
+Perl & X & X & X & \tabularnewline
 \hline
-PHP & X & X & \tabularnewline
+PHP & X & X &  & X\tabularnewline
 \hline
 \end{tabular}
 \par\end{centering}
 
-\caption{\label{tablaLenguajesProgramacion}Lenguajes Sistemas Operativos}
+\caption{\label{tablaLenguajesProgramacion}Lenguajes de programación y Sistemas
+Operativos}
 
 \end{table}
 
@@ -1224,7 +1855,8 @@ alcances de los lenguajes de programación más desarrollados y más
 difundidos en la actualidad, dejando claro que Java es el lenguaje
 de programación con mayor portabilidad, debido a que se cuenta con
 intérpretes para todas las arquitecturas y además que no se requiere
-modificar el código fuente para ejecutarse en éstas.
+modificar el código fuente para ejecutarse en éstas. En seguida se
+describe brevemente dicho lenguaje de programación.
 
 
 \subsection{Java}
@@ -1239,118 +1871,337 @@ Esta plataforma está compuesta por:
 \item La máquina virtual de Java (JVM).
 \item Un conjunto de bibliotecas estándar, conocidas como API.
 \end{itemize}
-El lenguaje de programación usa la sintaxis de C++, incorpora sincronización,
-manejo de tareas e interfaces como un mecanismo alternativo a la herencia
-múltiple de C++.
+El lenguaje de programación usa una sintaxis similar al lenguaje C++,
+incorpora sincronización, manejo de tareas e interfaces como un mecanismo
+alternativo a la herencia múltiple de C++.
 
 La máquina virtual de Java (JVM) es un programa nativo (un ejecutable
 de una plataforma específica) capaz de interpretar y ejecutar código
 binario especial (llamado Java Bytecode), el cual es generado a partir
 del compilador de Java. Es por esto que Sun Microsystem ha liberado
 versiones de su JVM para las arquitecturas y sistemas operativos más
-utilizados, volviendo así a las aplicaciones desarrolladas en Java
-multiplataforma.
+utilizados.
+
+Debido al desarrollo de JVM en los sistemas operativos, las aplicaciones
+desarrolladas en Java se convierten en aplicaciones multiplataforma.
+Es por esto que para desarrollar la aplicación de modelado se utilizó
+Java. En seguida se describe las secciones más relevantes de la aplicación.
 
 
-\section{Elección de sistema de renderización.}
+\section{Software desarrollado}
 
-La elección debe realizarse tomando en cuenta ventajas y desventajas
-de las tecnologías disponibles, las cuales se muestran en la tabla
-\ref{tab:Comparativa-entre-Direct3DJava3dOpenGl}.
-
-\noindent \begin{center}
-%
-\begin{table}[h]
-\noindent \begin{centering}
-\begin{tabular}{|c|c|c|c|}
-\hline 
- & Direct3D & Java3D & OpenGL\tabularnewline
-\hline
-\hline 
-Plataformas soportadas & Windows & Multiplataforma & Multiplataforma\tabularnewline
-\hline 
-Soporte nativo & Si & No & Si\tabularnewline
-\hline 
-Licencia & EULA & GNU General Public & SGI\tabularnewline
-\hline
-\end{tabular}
-\par\end{centering}
-
-\caption{Comparativa entre Direct3D, Java3D y OpenGL\label{tab:Comparativa-entre-Direct3DJava3dOpenGl}}
-
-\end{table}
-
-\par\end{center}
-
-Debido a que Direct3D solo soporta la plataforma MS-Windows fue deshechada
-y por otra parte Java3D tiene una dependencia con OpenGL o con Direct3D
-también fue deshecada dejando como sistema de renderización a OpenGL.
+El software desarrollado fue incluyó la biblioteca SWT desarrollada
+por IBM, la cual obtiene una apariencia idéntica a las aplicaciones
+nativas al sistema operativo, logrando cumplir así unos de los principios
+fundamentales de un buen diseño de interfaz gráfica {}``consistencia''.
+Es decir, mediante la biblioteca SWT se uniformiza la apariencia con
+las aplicaciones del sistema operativo anfitrión.
 
 
-\subsection{OpenGL}
+\subsection{Iniciando el software}
 
-OpenGL es una especificación estándar que define una API multilenguaje
-y multiplataforma para escribir aplicaciones que produzcan gráficos
-2D y 3D. Fue desarrollada por Silicon Graphics Inc. (SGI) en 1992
-.
-
-Las funciones y comandos de esta API están integrados en las tarjetas
-de aceleración gráfica 3D, o en su defecto son emuladas por el sistema
-operativo. Es claro que para el propósito específico de modelado 3D
-no se debe realizar emulación por software sino se debe tener acceso
-directo al hardware. 
+Al iniciar la aplicación nos encontramos con una pantalla como la
+que se muestra en la figura \ref{fig:Pantalla-principal}, donde se
+pueden resaltar cinco secciones importantes:
+\begin{itemize}
+\item Área de menús (1).
+\item Barra de herramientas de acceso rápido (2).
+\item Barra de herramientas de expansión (3).
+\item Área de trabajo (4).
+\item Descripción del punto actual (5).
+\end{itemize}
+A continuación se describe brevemente cada una de estas secciones.
 
 \noindent \begin{center}
 %
 \begin{figure}[h]
 \noindent \begin{centering}
-\includegraphics[width=0.7\paperwidth]{imagenes/opengl-hw}
+\includegraphics[width=1\linewidth]{imagenes/pinicial2}
 \par\end{centering}
 
-\caption{\label{fig:Aplicaci=0000F3n-OpenGL}Aplicación utilizando OpenG y
-aceleración gráfica por hardware}
+\caption{Pantalla principal\label{fig:Pantalla-principal}}
 
 \end{figure}
 
 \par\end{center}
 
-En la figura \ref{fig:Aplicaci=0000F3n-OpenGL} se muestra una aplicación
-utilizando OpenGL y aceleración gráfica por hardware; se puede observar
-que las llamadas a la interfaz de aplicación OpenGL pasan directamente
-al hardware de aceleración y no pasan a través de la interfaz de dispositivo
-de gráfico (GDI) que sería el caso si se tratara de simulación por
-software.
+
+\subsubsection{Área de menús}
+
+Esta área contiene las acciones que debe presentar todo sistema computacional.
+En la figura \ref{fig:=0000C1rea-de-men=0000FAs}(a) se muestra las
+acciones básicas sobre manipulación de archivos:
+\begin{itemize}
+\item Nuevo. Se utiliza para crear un nuevo diseño o un diseño sin nombre.
+Todos los archivos recibirán la extensión xml. Si se escogiera un
+nombre existente, se mostrará un mensaje indicando la existencia de
+un diseño con ese nombre y dando la opción de sustituirlo.
+\item Abrir. Con esta orden se cargan los diseños existentes, creados con
+anterioridad, para su visualización, modificación o implementación. 
+\item Importar. Permite transformar archivos en formato PGM en un diseño
+entendible por el programa.
+\item Cerrar. Este comando permite cerrar el diseño actual sin almacenar
+los cambios efectuados al diseño.
+\item Guardar. Para almacenar los diseños realizados duarante una sesión
+de trabajo. Si el proyecto tiene nombre solo se actualizará, en caso
+contrario se solicitará un nombre para el diseño.
+\item Guardar Como. Permite almacenar el diseño actual con un nombre diferente
+al que tiene, si aún no tiene nombre se solicitara un nombre para
+el diseño.
+\item Salir. Este comando sale del programa sin guardar los cambios efectuados
+en el diseño actual, sólo preguntando si en realidad desea salir.
+\end{itemize}
+En la figura \ref{fig:=0000C1rea-de-men=0000FAs}(b) se muestra las
+acciones disponibles de edición:
+\begin{itemize}
+\item Deshacer. Permite deshacer la ultima acción realizada.
+\item Rehacer. Permite rehacer una accion deshecha.
+\item Eliminar primitiva. Este comando permite eliminar una primitva seleccionada
+del diseño.
+\item Duplicar primitiva. Este comando duplica una primitiva seleccionada.
+\item Preferencias del sistema. Permite seleccionar opciones referentes
+al sistema, como nombre del puerto y estilo de área de trabajo.
+\end{itemize}
+En la figura \ref{fig:=0000C1rea-de-men=0000FAs}(c) se muestra las
+acciones pertinentes que permiten que el robot realice el diseño activo.
+Contiene las opciones de:
+\begin{itemize}
+\item Activar robot. Con esta orden se realizan dos operaciones: Se comprueba
+que el puerto serial mediante el cual se realizará la conexión sea
+el indicado y se realiza un proceso para bloquear el uso del puerto
+y así evitar fallas en la comunicación con el robot.
+\item Iniciar proceso robot. Este comando inicia el proceso de transformación
+del diseño a comandos entendibles por el robot SCARA y los envía al
+mismo.
+\end{itemize}
+\noindent \begin{center}
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\subfloat[Menú archivo]{\noindent \begin{centering}
+\includegraphics[width=0.3\paperwidth]{imagenes/marchivo}
+\par\end{centering}
 
 
-\subsubsection{GLUT}
 
-Es un conjunto de herramientas OpenGL, un sistema de ventanas independientes
-para escribir programas OpenGL en lenguajes C y FORTRAN. Implementa
-una simple interfaz de programación para aplicaciones (API) para OpenGL.
-Por su parte GLUT hace considerablemente fácil la programación OpenGL.
+}\subfloat[Menú Edición]{\noindent \begin{centering}
+\includegraphics[width=0.35\paperwidth]{imagenes/medicion}
+\par\end{centering}
 
-GLUT provee un soporte para las plataformas Windows, Linux, Mac. Con
-la única desventaja de tener que recompilar para ser usado en otra
-plataforma.
+}
+\par\end{centering}
 
+\noindent \begin{centering}
+\subfloat[Menú Herramientas]{\noindent \begin{centering}
+\includegraphics[width=0.35\paperwidth]{imagenes/mherramientas}
+\par\end{centering}
 
-\subsubsection{JOGL (JSR-231)}
+}
+\par\end{centering}
 
-Jogl es un enlace del lenguaje de programación Java para la API de
-OpenGL. Soporta integración con los estándares de Java AWT y Swing.
-Jogl provee aceso a las más recientes rutinas de OpenGL (OpenGL 2.0
-con extensiones de fabricante) asi como una plataforma independiente
-para accesar a hardware acelerador. 
+\caption{Área de menús\label{fig:=0000C1rea-de-men=0000FAs}}
 
-Jogl tambien prvee algunas de las mas populares características, introducidas
-por otros enlaces existentes para OpenGL como son GL4Java, LWJGL,
-GLUT entre otros.
+\end{figure}
 
-Es importante mencionar que esta tecnologia es código abierto y fue
-iniciada por Game Technology Group.
+\par\end{center}
 
 
-\chapter{Interfaz entre modelado y el robot SCARA\label{cha:5_InterfazModelado}}
+\subsubsection{Barra de herramientas de acceso rápido}
+
+Contiene acceso rápido a tareas comunes como crear un nuevo diseño,
+abrir un diseño, así como la acciónes de deshacer y rehacer. Esta
+seccion puede apreciarse en la figura \ref{fig:Barra-de-herramientas-1}
+en la parte superior izquierda, justo debajo del área de menús.
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.35\paperwidth]{imagenes/baccesorapido}
+\par\end{centering}
+
+\caption{Barra de herramientas de acceso rápido\label{fig:Barra-de-herramientas-1}}
+
+
+
+\end{figure}
+
+
+
+\subsubsection{Barra de herramientas de expansión}
+
+Estas herramientas están agrupadas en diferentes contenedores: {}``Herramientas
+de diseño'', {}``Figuras en proyecto'', {}``Vistas'' y {}``Envia
+robot'' para una mejor funcionabilidad cumpliendo así con los principios
+de un buen diseño de la interfaz gráfica: consistencia, eficiencia,
+disponibilidad y simplicidad. A continuación se describe brevemente
+cada una de éstas.
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\subfloat[Herramientas de diseño]{\noindent \begin{centering}
+\includegraphics[width=0.35\paperwidth]{imagenes/herramientasdiseno}
+\par\end{centering}
+
+}\subfloat[Figuras en proyecto]{\noindent \begin{centering}
+\includegraphics[width=0.35\paperwidth]{imagenes/figurasproyecto}
+\par\end{centering}
+
+}
+\par\end{centering}
+
+\noindent \begin{centering}
+\subfloat[Envia Robot]{\noindent \begin{centering}
+\includegraphics[width=0.35\paperwidth]{imagenes/enviarobot}
+\par\end{centering}
+
+}
+\par\end{centering}
+
+\caption{Barra de herramientas\label{fig:Barra-de-herramientas}}
+
+\end{figure}
+
+\begin{itemize}
+\item Herramientas de diseño. Este contenedor tiene las herramientas de
+diseño predefinidas asi como los elementos compuestos generados por
+el usuario como se puede apreciar en la figura \ref{fig:Barra-de-herramientas-1}(a).
+
+\begin{itemize}
+\item Las herramientas predefinidas son: Punto, Línea, Polilínea, Círculo,
+Elipse y curvas de Bezier.
+\item Elementos compuestos. Aquí aparecerán todos aquellos diseños almacenados
+en un directorio denominado {}``galeria'' como patrones para ser
+insertados como si se tratara de una herramienta predefinida.
+\end{itemize}
+\item Figuras en proyecto. Aquí se mantiene una lista de figuras que se
+encuentran en el diseño actual. A cada figura existente se pueden
+aplicar las tranformaciones mencionadas en la sección \ref{sec:Transformaciones}
+rotación, escalado, traslación así como operaciones de duplicación
+y eliminación de primitivas existentes utilizando los controles que
+se aprecian en la figura \ref{fig:Barra-de-herramientas-1}(b).
+\item Vistas. Permiten cambiar la vista del diseño, como se muestra en la
+figura \ref{fig:Vistas-disponibles}.
+
+\begin{itemize}
+\item Frente. Permite la vista del plano x-y.
+\item Arriba. Permite la vista del plano x-z.
+\item Lateral. Permite la vista del plano y-z.
+\item Proyección isométrica. Muestra una proyección en perspectiva del diseño
+activo.
+\end{itemize}
+\item Envia robot. Permite el envio del diseño activo al robot SCARA.
+
+\begin{itemize}
+\item Inicia / Detiene el envio hacia el robot SCARA, además de que muestra
+un barra de progreso como se muestra en la figura \ref{fig:Barra-de-herramientas-1}(c).
+\end{itemize}
+\end{itemize}
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\subfloat[Arriba]{\noindent \begin{centering}
+\includegraphics[width=0.35\paperwidth]{imagenes/vistaarriba}
+\par\end{centering}
+
+}\subfloat[Frente]{\noindent \begin{centering}
+\includegraphics[width=0.35\paperwidth]{imagenes/vistafrente}
+\par\end{centering}
+
+}
+\par\end{centering}
+
+\noindent \begin{centering}
+\subfloat[Lateral]{\noindent \begin{centering}
+\includegraphics[width=0.35\paperwidth]{imagenes/vistalateral}
+\par\end{centering}
+
+}\subfloat[Perspectiva]{\noindent \begin{centering}
+\includegraphics[width=0.35\paperwidth]{imagenes/vistaperspectiva}
+\par\end{centering}
+
+}
+\par\end{centering}
+
+\caption{Vistas disponibles\label{fig:Vistas-disponibles}}
+
+\end{figure}
+
+
+
+\subsubsection{Área de trabajo}
+
+El área de trabajo es la parte central donde se pueden realizar los
+diferentes trazos haciendo uso de la herramienta de diseño, puede
+apreciarse en la figura \ref{fig:=0000C1rea-de-trabajo}. 
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.5\paperwidth]{imagenes/areatrabajo}
+\par\end{centering}
+
+\caption{Área de trabajo\label{fig:=0000C1rea-de-trabajo}}
+
+\end{figure}
+
+
+En esta área de trabajo es donde se visualizarán todos los trazos
+realizados.
+
+
+\subsubsection{Descripción del punto actual}
+
+La descripción del punto actual se muestra en la figura \ref{fig:Pantalla-principal}
+en la parte inferior izquierda, esta nos presenta información sobre
+la posición actual donde se encuentra el cursor dentro del area de
+trabajo del robot, además muestra el comando para mover el robot SCARA
+a la posición relativa.
+
+
+\subsection{Versiones realizadas}
+
+Las versiones de software desarrolladas se listan a continuación con
+una pequeña descripción de los componentes usados y su desempeño.
+
+
+\subsubsection*{Versión 1}
+
+En la versión 1 se implementó usando Java y OpenGL(usando jogl para
+realizar el enlace con OpenGL\cite{java.joglj3d}) pero lamentablemente
+fue muy inestable debido a que si la computadora no tiene una tarjeta
+de video dedicada el procesador tiene que realizar la emulación y
+esto conlleva a una operación lenta de la aplicación. Siendo uno de
+los puntos más relevantes la velocidad de la aplicación, en específico
+para la comunicación con el robot mediante el puerto serial. Fue deshechada
+esta implementación.
+
+
+\subsubsection*{Versión 2}
+
+En ésta versión se implementarón dos hilos para intentar eliminar
+el problema del envio retrasado por la emulación de OpenGL, sin embargo
+no siempre se lograba enviar al robot con la velocidad y continuidad
+necesaria. Esta versión también fue deshechada.
+
+
+\subsubsection*{Versión 3 }
+
+En la versión 3 se decidió abandonar OpenGL por los motivos mencionados
+anteriormente y se inicio la implementación con primitivas gráficas
+de Java (canvas). Se logró eliminar el problema del envio al robot. 
+
+
+\subsubsection*{Versión 4}
+
+En esta última versión se cambiarón los controles de Java.swing(jframe,
+jbutton, etc) por los correspondientes de la biblioteca SWT (shel,
+button, etc) debido a que usando la biblioteca SWT la aplicación logra
+tener una apariencia idéntica a las aplicaciones nativas del sistema
+operativo.
+
+
+\chapter{Interfaz con el robot SCARA\label{cha:5_InterfazModelado}}
 
 La interfaz entre el software modelador y el robot es una parte muy
 importante, ya que si ésta llega a colapsar o mal-funcionar, se verá
@@ -1359,16 +2210,13 @@ reflejado en un trabajo final no satisfactorio.
 
 \section{Robot SCARA}
 
-El robot con el cual se trabajó se puede apreciar en la figura \ref{fig:RobotScara}.
-Este robot cuenta con 4 grados de libertad construido en la Factultad
-de Ingeniería Electrica de la Universidad Michoacan de San Nicolas
-de Hidalgo, fijo en su base y hecho de acero y aluminio.
-
-La estructura física fue realizada por una empresa dedicada a la robótica,
-denominada {}``Cervantes Co.'', ubicada en Paracho Michoacán.
-
-La programación del controlador fue realizada por Omar Rodríguez Páez\cite{tesisOmar}
-.
+El robot manipulador con el cual se trabajó se puede apreciar en la
+figura \ref{fig:RobotScara}. Este robot SCARA de 4 grados de libertad
+construido en la Facultad de Ingeniería Electrica de la Universidad
+Michoacana de San Nicolás de Hidalgo. La estructura física fue realizada
+por una empresa dedicada a la robótica, denominada {}``Cervantes
+Co.'', ubicada en Paracho Michoacán. La programación del controlador
+del robot SCARA fue realizada por Omar Rodríguez Páez \cite{tesisOmar}.
 
 %
 \begin{figure}[h]
@@ -1384,21 +2232,19 @@ La programación del controlador fue realizada por Omar Rodríguez Páez\cite{tesis
 
 \subsection{Características}
 
-Entre las características más relevantes acerca del robot se tiene:
+Las características más relevantes acerca del robot son:
 \begin{itemize}
 \item 4 Grados de libertad.
-\item Altura 60 cm.
+\item Altura de 60 cm.
 \item Alcance máximo de su brazo, 50 cm.
 \item Construido en acero y aluminio.
-\item Peso alrededor de 45 Kg.
+\item Peso aproximado de 45 Kg.
 \end{itemize}
 
 \subsection{Arquitectura}
 
-Como se mencionó en la seccion++ la arquitectura de un robot es:
-
-
-\subsubsection{Estructura mecánica.}
+A continuación se listan algunas de las características más relevantes
+del robot utilizado en el presente trabajo:
 
 
 \subsubsection{Sistema sensorial.}
@@ -1412,16 +2258,13 @@ dispositivo muy simple que provee una gran fiabilidad para conocer
 con certeza las posiciones de inicio y final de cada uno de los ejes
 del robot SCARA.
 \end{itemize}
-Además los convertidores analógico-digitales del microcontrolador,
-se usan como sensores de voltaje para medir indirectamente la corriente
-que circula por los motores a través de los controladores.
-
 
 \subsubsection{Elementos terminales.}
 
 El robot cuenta con dos motores de pasos, uno para el hombro y otro
 para el codo, éstos permiten un movimiento sobre los ejes X y Y; y
-dos motores de CD con escobillas para el eje Theta y Theta-Z.
+dos motores de CD con escobillas para la llamada rotación de muñeca
+y para definir la profundidad.
 
 
 \subsubsection{Sistema de control.}
@@ -1444,18 +2287,66 @@ El robot utiliza un sólo módulo Adapt9S12DP256 con el microcontrolador
 \end{figure}
 
 
-El lenguaje soportado se lista en el apendice A.
-
 
 \subsection{Limitantes}
+
+Posiblemente la limitante más importante biene dada por el rango reducido
+del área de trabajo, dejando un limitado conjunto de posibles aplicaciones.
+También cabe mencionar la parte de control ya que esta se realiza
+en forma secuencial y no paralela, es decir no se permite el movimiento
+simultáneo de varias articulaciones.
 
 
 \section{Conversión de modelado a acciones SCARA}
 
 Debido a que en el modelo sólo contamos con puntos definidos dentro
 del sistema de coordenadas cartesianas de tres dimensiones es necesario
-calcular el conjunto de ángulos de las articulaciones para logar el
-resultado deseado. Esto lo solucionaremos usando cinemática inversa.
+calcular el conjunto de ángulos de las articulaciones del robot para
+logar el resultado deseado. 
+
+Sea $\left(\Theta_{1},\,\Theta_{2},\,\Theta_{3},\, D\right)$ una
+configuración del robot donde $\Theta_{1}$ se refiere a la rotación
+de la articulación del brazo, $\Theta_{2}$ se refiere a la rotación
+del codo, $\Theta_{3}$ se refiere a la rotación de la muñeca y $D$
+la profundiad de la herramienta, como se ilustra en la figura \ref{fig:Configuraci=0000F3n-de-un}.
+
+Sea $\left(x,\, y,\, z,\,\Theta\right)$ la posición y orientación
+final de la herramienta.
+
+En robótica se conoce como el problema de cinemática directa al problema
+de determinar la posición y orientación de la herramienta $\left(x,\, y,\, z,\,\Theta\right)$
+si conocemos la configuración de las articulaciones $\left(\Theta_{1},\,\Theta_{2},\,\Theta_{3},\, D\right)$.
+Si lo que deseamos es encontrar la configuración de las articulaciones
+$\left(\Theta_{1},\,\Theta_{2},\,\Theta_{3},\, D\right)$ a partir
+de la especificación de una posición y orientación deseada de la herramienta,
+el problema se conoce como cinemática inversa.
+
+Para nuestros fines, lo que tenemos son los puntos deseados y necesitamos
+la configuración del robot para alcanzar dichos puntos, es decir,
+requerimos solucionar el problema de cinemática inversa.
+
+\noindent \begin{center}
+%
+\begin{figure}
+\noindent \begin{centering}
+\subfloat[Vista lateral]{\noindent \begin{centering}
+\includegraphics[width=0.3\paperwidth]{imagenes/scara1}
+\par\end{centering}
+
+
+
+}\subfloat[Vista superior]{\includegraphics[width=0.3\paperwidth]{imagenes/scara2}
+
+}
+\par\end{centering}
+
+\caption{Configuración de un robot SCARA\label{fig:Configuraci=0000F3n-de-un}}
+
+
+
+\end{figure}
+
+\par\end{center}
 
 
 \subsection{Cinemática inversa}
@@ -1466,23 +2357,14 @@ articulares para alcanzar dicha posición.
 
 Existen varias soluciones a este problema:
 \begin{itemize}
-\item Soluciones Cerradas(analíticas)
-
-\begin{itemize}
-\item Solución algebraica
-\item Solución geométrica
-\end{itemize}
-\item Soluciones Numéricas
-
-\begin{itemize}
-\item Iterativas
-\end{itemize}
+\item Soluciones Cerradas(analíticas): Solución algebraica y solución geométrica.
+\item Soluciones Numéricas Iterativas.
 \end{itemize}
 Debido a su naturaleza iterativa, las soluciones numéricas son generalmente
-mucho más lentas que las solución de forma cerrada, en algunos casos
-las soluciones numéricas son tan lentas que pueden ocasionar problemas
-de cinemática, es por esto que sólo nos enfocaremos en las soluciones
-analíticas, en particular en la solución geométrica.
+mucho más lentas que las solución de forma cerrada. En este trabajo
+sólo nos enfocaremos en las soluciones analíticas, en particular en
+la solución geométrica, porque para la configuración sencilla del
+robot SCARA, presenta una solución muy rápida y sencilla.
 
 
 \subsubsection{Solución Geométrica}
@@ -1511,7 +2393,7 @@ las variables articulares, como se muestra en la figura \ref{fig:Orientaci=0000F
 %
 \begin{figure}[h]
 \noindent \begin{centering}
-\includegraphics[width=0.4\paperwidth]{imagenes/tcinematica1}
+\includegraphics[width=0.5\paperwidth]{imagenes/tcinematica1}
 \par\end{centering}
 
 \caption{\label{fig:Orientaci=0000F3n-del-ultimo}Orientación del último eslabón}
@@ -1519,10 +2401,22 @@ las variables articulares, como se muestra en la figura \ref{fig:Orientaci=0000F
 \end{figure}
 
 
-Se calcula $\theta_{2}$ aplicando ec. \ref{eq:leycos2}:
+Se calcula $\theta_{2}$ aplicando ec. \ref{eq:leycos2} (observar
+figura \ref{fig:CinematicaLongitudes}):
 
 \begin{equation}
 x^{2}+y^{2}=l_{1}^{2}+l_{2}^{2}-\left(2l_{1}l_{2}\right)\cos\left(180-\Theta_{2}\right)\end{equation}
+
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.4\paperwidth]{imagenes/tcinematica3}
+\par\end{centering}
+
+\caption{\label{fig:CinematicaLongitudes}Longitudes $L_{1}\, y\, L_{2}$ }
+
+\end{figure}
 
 
 debido a que:
@@ -1540,7 +2434,7 @@ cos\left(\Theta_{2}\right)=\frac{x^{2}+y^{2}-l_{1}^{2}-l_{2}^{2}}{2l_{1}l_{2}}\e
 %
 \begin{figure}[h]
 \noindent \begin{centering}
-\includegraphics[width=0.3\paperwidth]{imagenes/tcinematica2}
+\includegraphics[width=0.4\paperwidth]{imagenes/tcinematica2}
 \par\end{centering}
 
 \caption{\label{fig:CinematicaAngulos}Ángulos $\beta,\,\psi\, y\,\Theta_{1}$ }
@@ -1578,6 +2472,96 @@ Finalmente se calcula $\theta_{3}$ usando la siguiente ecuación:
 
 
 
+\subsection{Implementación de la cinemática inversa.}
+
+La implementación de la solución geométrica para la cinemática inversa
+se muestra en el codigo \ref{alg:Cinem=0000E1tica-inversa-(cinematica.Inversa.java)}.
+
+%
+\begin{algorithm}[h]
+\begin{lyxcode}
+{\scriptsize package~cinematica;}{\scriptsize \par}
+
+{\scriptsize import~primitivas.Punto;}{\scriptsize \par}
+
+{\scriptsize public~class~Inversa~\{~}{\scriptsize \par}
+
+{\scriptsize{}~double~Res\_M{[}{]}~=~new~double{[}{]}\{~}{\scriptsize \par}
+
+{\scriptsize{}~~(360.0~/~800.0)~{*}~(8.0~/~44.0)~{*}~(8.0~/~60.0)~{*}~(Math.PI~/~180.0),}{\scriptsize \par}
+
+{\scriptsize{}~~(360.0~/~800.0)~{*}~(8.0~/~32.0)~{*}~(8.0~/~36.0)~{*}~(Math.PI~/~180.0),}{\scriptsize \par}
+
+{\scriptsize{}~~(360.0~/~2000.0)~{*}~(1.0~/~19.7)~{*}~(8.0~/~20.0)~{*}~(Math.PI~/~180.0),}{\scriptsize \par}
+
+{\scriptsize{}~~(1.0~/~2000.0)~{*}~(1.0~/~6.3)~{*}~(25.4~/~11.0)~}{\scriptsize \par}
+
+{\scriptsize{}~\};~}{\scriptsize \par}
+
+{\scriptsize{}~int~Def\_M{[}{]}~=~new~int{[}{]}\{~5000,~5350,~42500,~150000~\};~}{\scriptsize \par}
+
+{\scriptsize{}~double~longs{[}{]}=~new~double{[}{]}~\{~200.0,~200.0\};~}{\scriptsize \par}
+
+{\scriptsize{}~double~teta\_global~=~90.0{*}(Math.PI/180.0);~}{\scriptsize \par}
+
+{\scriptsize{}~double~minx~=~-200;~double~miny~=~66;~}{\scriptsize \par}
+
+{\scriptsize{}~double~div~=~2.4;~}{\scriptsize \par}
+
+{\scriptsize{}~public~void~get\_angles(Punto~p,~int~M{[}{]})\{~}{\scriptsize \par}
+
+{\scriptsize{}~~~get\_angles((p.getX()/div)+minx,~(p.getY()/div)+miny,~M);}{\scriptsize \par}
+
+{\scriptsize{}~~~M{[}3{]}=(int)p.getZ();~}{\scriptsize \par}
+
+{\scriptsize{}~\}~}{\scriptsize \par}
+
+{\scriptsize{}~public~void~get\_angles(double~x,~double~y,~int~M{[}{]})~\{~}{\scriptsize \par}
+
+{\scriptsize{}~~double~x2~=~Math.pow(x,~2);~}{\scriptsize \par}
+
+{\scriptsize{}~~double~y2~=~Math.pow(y,~2);~}{\scriptsize \par}
+
+{\scriptsize{}~~double~l1~=~Math.pow(longs{[}0{]},~2);~}{\scriptsize \par}
+
+{\scriptsize{}~~double~l2~=~Math.pow(longs{[}1{]},~2);~}{\scriptsize \par}
+
+{\scriptsize{}~~double~angs{[}{]}~=~new~double{[}3{]};~}{\scriptsize \par}
+
+{\scriptsize{}~~double~beta,~phi;~}{\scriptsize \par}
+
+{\scriptsize{}~~beta~=~Math.asin(~y~/~(~Math.sqrt~(x2~+~y2)~)~);~}{\scriptsize \par}
+
+{\scriptsize{}~~if~(x~<~0)~}{\scriptsize \par}
+
+{\scriptsize{}~~~~beta~=~Math.PI~-~beta;}{\scriptsize \par}
+
+{\scriptsize{}~~phi~=~Math.acos~(~(x2~+~y2~+~l1~-~l2)~/(~2~{*}~longs{[}0{]}~{*}~Math.sqrt(x2~+~y2)~)~);~}{\scriptsize \par}
+
+{\scriptsize{}~~angs{[}0{]}~=beta~-~phi;~}{\scriptsize \par}
+
+{\scriptsize{}~~angs{[}1{]}=~Math.acos(~(x2~+~y2~-~l1~-~l2~)/~(2~{*}~longs{[}0{]}~{*}~longs{[}1{]})~);~}{\scriptsize \par}
+
+{\scriptsize{}~~angs{[}2{]}=~(teta\_global~-~angs{[}0{]}~-~angs{[}1{]});~}{\scriptsize \par}
+
+{\scriptsize{}~~M{[}0{]}~=~(int)~(angs{[}0{]}~/~Res\_M{[}0{]})~+~Def\_M{[}0{]};~}{\scriptsize \par}
+
+{\scriptsize{}~~M{[}1{]}~=~(int)~(angs{[}1{]}~/~Res\_M{[}1{]})~+~Def\_M{[}1{]};~}{\scriptsize \par}
+
+{\scriptsize{}~~M{[}2{]}~=~(int)~(angs{[}2{]}~/~Res\_M{[}2{]})~+~Def\_M{[}2{]};~}{\scriptsize \par}
+
+{\scriptsize{}~~M{[}3{]}~=~Def\_M{[}3{]};~}{\scriptsize \par}
+
+{\scriptsize{}~\}~}{\scriptsize \par}
+
+{\scriptsize \}~}{\scriptsize \par}
+\end{lyxcode}
+\caption{Cinemática inversa (cinematica.Inversa.java)\label{alg:Cinem=0000E1tica-inversa-(cinematica.Inversa.java)}}
+
+\end{algorithm}
+
+
+
 \section{Conectividad PC-Robot}
 
 Debido a que el robot SCARA usa conexión mediante el puerto serial
@@ -1585,16 +2569,14 @@ Debido a que el robot SCARA usa conexión mediante el puerto serial
 desarrollada en lenguaje Java, con el sistema de control del robot
 SCARA.
 
-Existen varias bibliotecas para la comunicación serial compatibles
-con lenguaje Java, algunas bibliotecas aún están en desarrollo, otras
+Existen varias bibliotecas para la comunicación serial, compatibles
+con lenguaje Java. Algunas bibliotecas aún están en desarrollo, otras
 sólo son para un determinado sistema operativo. En la tabla \ref{tab:Bibliotecas-para-comuniaci=0000F3n}
 se muestran algunas de las bibliotecas más usadas para la conexión
 mediante puerto serial.
 
 %
 \begin{table}[h]
-
-
 \noindent \begin{centering}
 \begin{tabular}{|c|c|c|c|}
 \hline 
@@ -1604,81 +2586,485 @@ Biblioteca & Multiplataforma &  & Tipo de licencia\tabularnewline
 javaconn & No &  & GPL\tabularnewline
 \hline 
 rxtx & Si &  & GPL\tabularnewline
-\hline 
- &  &  & \tabularnewline
 \hline
 \end{tabular}
 \par\end{centering}
 
-\caption{Bibliotecas para comuniación RS232\label{tab:Bibliotecas-para-comuniaci=0000F3n}}
+\caption{Bibliotecas para comunicación RS232\label{tab:Bibliotecas-para-comuniaci=0000F3n}}
+
+\end{table}
+
+
+Debido a que la biblioteca rxtx da soporte a la mayoría de las plataformas
+(MS-Windows, Linux, Mac OS) se optó por utlizar esta biblioteca además
+de que es transparente a la hora de programar, es decir no requiere
+hacerse ningún cambio para que la comunicación se realize mediante
+puerto serial en las diferentes plataformas.
+
+En el código \ref{alg:Conexi=0000F3n-mediante-puerto} se muestra
+la implementación de la conexión con el robot SCARA mediante el puerto
+serial.
+
+%
+\begin{algorithm}[h]
+\begin{lyxcode}
+\noindent {\scriptsize package~serial;}{\scriptsize \par}
+
+\noindent {\scriptsize /{*}~~...~~{*}/}{\scriptsize \par}
+
+\noindent {\scriptsize public~class~Comunicacion~\{~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~/{*}~~...~~{*}/}{\scriptsize \par}
+
+\noindent {\scriptsize{}~public~void~connect~(String~nombrePuerto)~throws~Exception~\{~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~CommPortIdentifier~portIdentifier~=~CommPortIdentifier.getPortIdentifier(nombrePuerto);~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~if~(~portIdentifier.isCurrentlyOwned()~)~\{~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~System.out.println(\textquotedbl{}Error:~El~puerto~está~en~uso\textquotedbl{});~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~\}~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~else~\{~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~CommPort~commPort~=~portIdentifier.open(this.getClass().getName(),2000);}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~if~(~commPort~instanceof~SerialPort~)~\{~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~~~SerialPort~serialPort~=~(SerialPort)~commPort;}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~~serialPort.setSerialPortParams(velPto,SerialPort.DATABITS\_8,}{\scriptsize \par}
+
+\noindent {\scriptsize SerialPort.STOPBITS\_1,SerialPort.PARITY\_NONE);~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~~in~=~serialPort.getInputStream();~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~~out~=~serialPort.getOutputStream();~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~\}~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~else~\{~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~~System.out.println(\textquotedbl{}Error:~Solo~soporta~puerto~serial.\textquotedbl{});~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~\}~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~\}~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~\}~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~public~String~leer()~throws~IOException~\{~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~byte{[}{]}~buffer~=~new~byte{[}2{]};~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~in.read(buffer,0,~1);~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~String~s=\textquotedbl{}\textquotedbl{};~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~do~\{~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~~in.read(buffer,0,~2);~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~\}~while(new~String(buffer).equalsIgnoreCase(\textquotedbl{}W\textquotedbl{})==false);~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~return~\textquotedbl{}W\textquotedbl{};~~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~\}~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~public~String~escribe(String~str)~throws~IOException~\{~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~for(int~i=0;~i<str.length();~i++)~\{~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~~out.write((int)str.charAt(i));~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~\}~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~~return~leer();~}{\scriptsize \par}
+
+\noindent {\scriptsize{}~\}~}{\scriptsize \par}
+
+\noindent {\scriptsize \}~}{\scriptsize \par}
+\end{lyxcode}
+\caption{Conexión mediante puerto serial (serial.Comunicacion.java)\label{alg:Conexi=0000F3n-mediante-puerto}}
+
+\end{algorithm}
+
+
+
+\subsection{Versiones realizadas}
+
+Los cambios más significativos de la implementación que llevarón a
+cambios drásticos se mencionan a continuación con el nombre de versiones.
+
+
+\subsubsection*{Versión 1}
+
+En la versión 1 se implementó la conexión con el robot SCARA usando
+un la bibloteca javaconn. Ésta versión opero de manera eficiente en
+el sistema operativo Linux, sin embargo en MS-Windows no operó del
+todo bien, en ocasiones el sistema se volvia inestable y la conexión
+con el puerto serial se perdía. Esta versión fue deshecada.
+
+
+\subsubsection*{Versión 2}
+
+En ésta versión se cambió la biblioteca de conexion de javaconn a
+rxtx dando resultados muy buenos, es decir ya no se detectarón problemas
+en la conexión en ambos sistemas operativos (Linux y MS Windows).
+También la biblioteca rxtx permitió bloquear el puerto serial dando
+una mayor seguridad durante el proceso de envio de comandos al robot.
+
+
+\chapter{Pruebas\label{cha:6_Pruebas}}
+
+En este capítulo se describe brevemente los requerimientos del sistema
+así como la forma de instalar las aplicaciones y bibliotecas en las
+diferentes plataformas. También se muestran los resultados de la realización
+de pruebas usando el robot SCARA y el programa desarrollado en esta
+tesis.
+
+
+\section{Introducción }
+
+Para poder ejecutar la aplicación desarrollada es necesario tener
+un entorno adecuado para su ejecución.
+
+
+\subsubsection{Requisitos mínimos del sistema}
+
+El equipo necesario para ejecutar la aplicación desarrollada será
+el mostrado en la tabla \ref{tab:Requisitos-m=0000EDnimos-del}.
+
+\noindent \begin{center}
+%
+\begin{table}[h]
+\noindent \begin{centering}
+\begin{tabular}{|c|c|}
+\hline 
+Concepto & Valor\tabularnewline
+\hline
+\hline 
+Procesador & Velocidad de 1 Ghz o superior\tabularnewline
+\hline 
+Memoria & 256 Mb como mínimo\tabularnewline
+\hline 
+Almacenamiento & 20 Mb\tabularnewline
+\hline 
+ & \multicolumn{1}{c|}{MS-Windows XP o superior}\tabularnewline
+\cline{2-2} 
+Sistema operativo & Linux kernel 2.6 o superior\tabularnewline
+\cline{2-2} 
+ & MacOS X Tiger o superior\tabularnewline
+\hline
+Java & JRE 1.6 o superior\tabularnewline
+\hline
+Bibliotecas & RXTX 2.2 o superior\tabularnewline
+\cline{2-2} 
+ & SWT 3.4 o superior\tabularnewline
+\hline
+\end{tabular}
+\par\end{centering}
+
+\caption{Requisitos mínimos del sistema\label{tab:Requisitos-m=0000EDnimos-del}}
 
 
 
 \end{table}
 
-
-Se utilizó la biblioteca RXTX para realizar la conexión con el robot.
-
-
-\chapter{Pruebas\label{cha:6_Pruebas}}
+\par\end{center}
 
 
-\section{Introducción }
+\subsubsection{Instalando Java}
 
+Descargar e instalar Java Runtime Enviroment 1.6 o superior de la
+página oficial de Sun Microsystem: http://java.sun.com/javase/downloads/index.jsp.
+Si el sistema operativo anfitrión es MS Windows solo es necesario
+ejecutar el archivo ejecutable descargado.
+
+
+\subsubsection{Instalando bibliotecas}
+
+Para instalar la biblioteca necesaria para la comunicación con el
+robot es necesario descargar la version más actual del sitio oficial
+http://users.frii.com/jarvi/rxtx/ y descomprimir los archivos correspondientes
+al sistema operativo anfitrion y mover los archivos a una carpeta
+común con la aplicación desarrollada.
+
+Finalmente la biblioteca SWT necesaria para la interfaz gráfica es
+necesario descargar la version más actual del sitio oficial http://eclipse.org/swt/
+y descomprimir los archivos correspondientes al sistema operativo
+anfitrión y mover los archivos a una carpeta común con la aplicación
+desarrollada.
+
+
+\subsubsection{Instalando la aplicación desarrollada}
+
+Para ejecutar la aplicación desarrollada en esta tesis hay dos formas:
+\begin{itemize}
+\item Usar algun cliente svn, svn es un sistema de control de versiones
+usado para mantener el código fuente actual así como sus versiones
+previas\cite{svn}, y descargar la versión en desarrollo y compilarla
+desde el código fuente. Para esto se deben realizar los siguientes
+comandos:\\
+{[}user@site{]}\$ \emph{svn checkout http://modelando-madera.googlecode.com/svn/trunk/
+modelando-madera-read-only}\\
+{[}user@site{]}\$ \emph{javac ide.Tesis.java}\\
+{[}user@site{]}\$ \emph{java ide.Tesis}
+\item Descargar la última versión liberada por el autor desde la página
+oficial http://modelando-madera.googlecode.com y ejecutarla dando
+doble click sobre el archivo o bien ejecutando el comando:\\
+{[}user@site{]}\$ \emph{java -jar modelador.jar}
+\end{itemize}
 
 \section{Funcionalidad multiplataforma del software 3D}
 
+Como se puede apreciar en la figura \ref{fig:Aplicaci=0000F3n-ejecut=0000E1ndose-en}
+los controles usados para la manipulación de la aplicación existen
+en las plataformas más usadas comunmente.
 
-\subsection{Windows}
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\subfloat[Windows XP]{\noindent \begin{centering}
+\includegraphics[width=0.35\paperwidth]{imagenes/vistaWindows}
+\par\end{centering}
+
+}\subfloat[Linux]{\noindent \begin{centering}
+\includegraphics[width=0.35\paperwidth]{imagenes/vistaLinux}
+\par\end{centering}
+
+}
+\par\end{centering}
+
+\caption{Aplicación ejecutándose en diferentes plataformas\label{fig:Aplicaci=0000F3n-ejecut=0000E1ndose-en}}
+
+\end{figure}
 
 
-\subsection{Linux}
+En la tabla \ref{tab:Tiempos-de-carga} puede observarse que la aplicación
+funcionó perfectamente en los sistemas operativos más comunes, además
+que cumple con la integración con el tema de pantalla que el sistema
+operativo define.
+
+%
+\begin{table}[h]
+\noindent \begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Sistema Operativo (s.o.) & Carga del programa & Redibujo (11000 figuras) & Integración con el s.o.\tabularnewline
+\hline
+\hline 
+Linux (openSuSE 11.0)  & 1.20 seg & 7.0 seg & Sí\tabularnewline
+\hline 
+Mac OS (tiger) & 2 seg & 7.20 seg & Sí\tabularnewline
+\hline 
+MS-Windows (Vista) & 1.20 seg & 7.50 seg & Sí\tabularnewline
+\hline
+\end{tabular}
+\par\end{centering}
+
+\caption{Tiempos de carga del programa\label{tab:Tiempos-de-carga}}
+
+\end{table}
+
 
 
 \section{Conectividad multiplataforma entre software y el robot}
 
+Las pruebas de conectividad fueron realizadas con éxito gracias a
+la biblioteca rxtx que soporta la mayoría de los sistemas operativos
+más usados actualmente. En la tabla \ref{tab:Puerto-serial:-nombre}
+pueden apreciarse los únicos cambios realizados en cada uno de los
+sistemas operativos, esto debido a que el puerto cambia de nombre
+en cada uno de los sistemas operativos.
 
-\subsection{Windows}
+%
+\begin{table}[h]
+\noindent \begin{centering}
+\begin{tabular}{|c|c|c|}
+\hline 
+Sistema Operativo (s.o.) & Nombre del puerto & Permite modo exclusivo de puerto\tabularnewline
+\hline
+\hline 
+Linux (openSuSE 11.0)  & /dev/ttyUSB & Si\tabularnewline
+\hline 
+Mac OS (tiger) & /dev/tty.usbserial & Si\tabularnewline
+\hline 
+MS-Windows (Vista) & COM5 & Si\tabularnewline
+\hline
+\end{tabular}
+\par\end{centering}
+
+\caption{Puerto serial: nombre y modo de uso\label{tab:Puerto-serial:-nombre}}
+
+\end{table}
 
 
-\subsection{Linux}
+Debido a que los sistemas operativos mostrados en la tabla \ref{tab:Puerto-serial:-nombre}
+soportan el modo exclusivo de un puerto en específico no se detectó
+ninguna interferencia por algun otro programa que intentara utilizar
+el mismo puerto dando como resultado una plena seguridad de que una
+vez activado el puerto la comunicación con el robot SCARA se realizará
+con plena seguridad.
 
 
 \section{Pruebas en campo}
 
+Los tiempos promedios realizados en campo utilizando madera suave
+se pueden ver en la tabla \ref{tab:tiemposejecucion}.
 
-\subsection{Realizacion de primitivas}
+%
+\begin{table}[h]
+\noindent \begin{centering}
+\begin{tabular}{|c|c|c|}
+\hline 
+Objeto & Numero de puntos & Tiempo de procesamiento en robot\tabularnewline
+\hline
+\hline 
+Punto & 1 & 1 segundo\tabularnewline
+\hline 
+Línea (10 cm) & 500 & 5 segundos\tabularnewline
+\hline 
+Círculo (rádio: 2 cm)  & 450 & 7 segundos\tabularnewline
+\hline 
+Elipse (2 y 1 cm para sus radios) & 400 & 6 segundos\tabularnewline
+\hline 
+Bezier (aprox 10 cm) & 700 & 8 segundos\tabularnewline
+\hline 
+Imágen a relieve (15x15 cm) & 11000 & 21.5 minutos\tabularnewline
+\hline
+\end{tabular}
+\par\end{centering}
+
+\caption{Pruebas y tiempos\label{tab:tiemposejecucion}}
+
+\end{table}
 
 
-\subsection{Imagenes PGM}
+En la figura \ref{fig:Ejemplo-de-9} puede observarse la implementación
+de nueve primitvas realizadas en madera en aproximadamente 1 minuto.
+Además en la misma figura se realizó esta tarea 10 veces para apreciar
+la precisión con la que trabaja el robot SCARA, como se puede observar
+parece que solo se hubiera realizado una vez.
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.5\paperwidth]{imagenes/elipse2}
+\par\end{centering}
+
+\caption{Ejemplo de 9 primitivas\label{fig:Ejemplo-de-9}}
+
+\end{figure}
+
+
+En la figura \ref{fig:pgm_a_robot} se muestra un ejemplo de una imagen
+en formato PGM y su respectiva implementación en madera se puede observar
+en la figura.
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.3\paperwidth]{imagenes/logo_dgeti}
+\par\end{centering}
+
+\caption{\label{fig:pgm_a_robot}Ejemplo PGM}
+
+\end{figure}
+
+
+%
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.7\paperwidth]{imagenes/dgti_robot.JPG}
+\par\end{centering}
+
+\caption{\label{fig:pgm_a_robot-1}Ejemplo PGM realizado en madera}
+
+\end{figure}
+
 
 
 \chapter{Conclusiones\label{cha:7_Conclusiones}}
 
+La aplicacion desarrollada termina con una gran cantidad de esfuerzos
+realizados para tener un primer robot industrial de bajo costo realizado
+completamente con tecnología y conocimiento propio. Este desarrollo
+consta de: 
+\begin{itemize}
+\item Desarrollo mecánico de un robot SCARA, elaborado por el Sr. Rafael
+Cardiel Cervantes.
+\item Desarrollo electrónico/lógico de un robot SCARA, Trabajo realizado
+por Omar Ríos y Omar Rodriguez en sus tesis de licenciaturoa de la
+Facultad de Ingeniería Eléctrica de la Universidad Michoacana de San
+Nicolás de Hidalgo \cite{Tesis O. Rios,tesisOmar}.
+\item Desarrollo de una aplicación para diseñar y realizar tareas utilizando
+un robot SCARA.
+\end{itemize}
+Siendo en la parte final donde se ubica la aplicación desarrollada
+en la presente tesis.
+
 
 \section{Conclusiones}
+\begin{itemize}
+\item Se eligió Java como lenguaje de programación debido a su gran virtud
+de poder ser ejecutado en la mayoría de las plataformas sin la necesidad
+de alterar el código fuente o recompilar el mismo.
+\item Se diseñó una aplicación modular dando la posibilidad de que en un
+futuro a la aplicación se pueda agregar nuevos módulos o bien mejorar
+los existentes sin la necesidad de modificar el código completo.
+\item Se desarrollaron diferentes clases para las primitivas Punto, Línea,
+Círculo, Elipse, Bezier para un manejo más eficiente a la hora de
+su programación.
+\item Se destaca el uso de la biblioteca SWT que permite que la aplicación
+desarrollada luzca como una aplicación nativa del sistema operativo
+anfitrión.
+\item Se cumplieron los objetivos fundamentales que son la creación de una
+aplicación de software libre para el robot de bajo costo desarrollado
+en la División de Estudios de Posgrado de la Facultad de Ingeniería
+Eléctrica de la Universidad Michoacana de San Nicolás de Hidalgo.
+\item Se culminó el proceso de la generación de un robot industrial de bajo
+costo realizado con tecnología y conocimiento nacional.
+\item Es posible usar el robot en la industria de la madera, en procesos
+de realizar detalles de algunas partes de las guitarras.
+\end{itemize}
+
+\section{Sugerencias para trabajos futuros }
+
+Las limitaciones mecánicas y electrónicas del robot para el cual fue
+desarrollada la aplicación de este trabajo mostró puntos interesantes
+en los cuales se tiene que desarrollar nuevas soluciones. A continuación
+se mencionan algunos puntos en los que se podría mejorar o desarrollar.
 
 
-\section{Trabajos futuros }
+\subsection{Aplicación desarrollada}
+\begin{enumerate}
+\item Finalizar el importador/exportador de código G, el estándar del software
+CNC para robots, para la aplicación. Actualmente su desarrollo se
+encuentra en fase de prueba y no fue incluido en esta tesis por no
+ser parte de la propuesta inicial.
+\item Revisar los códigos fuentes disponibles del software EMC2, software
+desarrollado por la comunidad de software libre para robots CNC y
+generar un módulo de compatibilidad con la aplicacion desarrollada
+en esta tesis.
+\end{enumerate}
 
+\subsection{Electrónica del robot SCARA}
+\begin{enumerate}
+\item Acondicionar la conexión actual del robot SCARA de serial (rs232)
+a paralelo, ya que ésta última es utilizada por la mayoría de los
+programas actuales de CNC.
+\item Reprogramar el controlador del robot SCARA para realizar movimientos
+simultáneos, debido a que actualmente los realiza en secuencia y esto
+ocaciona movimientos no deseados.
+\end{enumerate}
 
 \chapter*{\newpage
-\addcontentsline{toc}{chapter}{Comandos soportados por el robot SCARA}}
+\addcontentsline{toc}{chapter}{Glosario}}
 
 
-\chapter*{Comandos soportados por el robot SCARA}
-
-A continuación se listan los comandos soportados por el robot SCARA
-
-
-\subsubsection{Comando para mover los motores del robot}
-
-
-\chapter*{\newpage
-\addcontentsline{toc}{chapter}{Anexo}}
-
-
-\subsection*{Anexo Glosario}
+\subsection*{Glosario}
 \begin{description}
 \item [{CISC}] Complex-Intruction-Set Computing.
 \item [{CRM}] Customer Relationship Management.
@@ -1689,13 +3075,10 @@ A continuación se listan los comandos soportados por el robot SCARA
 \item [{PGM}] Portable GrayMap.
 \item [{RISC}] Reduced-Intruction-Set Computing.
 \item [{SCARA}] Selective Compliant Articulated Robot Arm.
+\item [{SVN}] Subversion
 \item [{XML}] Extensible Markup Language.\end{description}
-\begin{thebibliography}{Jones98}
-\bibitem[WIKI-ROBOT]{key-3}http://en.wikipedia.org/wiki/Industrial\_robot
-
-\bibitem[GLUT]{key-4}http://www.opengl.org/resources/libraries/glut/
-
-\bibitem[JOGL]{key-5}https://jogl.dev.java.net/
+\begin{thebibliography}{Collins-Sussman08}
+\bibitem[WIKI-ROBOT]{key-3}Wikipedia, Industrial Robot, 2008, <http://en.wikipedia.org/wiki/Industrial\_robot>.
 
 \bibitem[Kurfess05]{roboAutomata}Kurfess, T. Robotics and Automation
 Handbook. Ed. CRC PRESS, 2005.
@@ -1726,7 +3109,7 @@ manipuladores, Universidad Huelva, Huelva España. 2007
 \bibitem[Sanchez06]{paperRobot}Sanchéz, O. Robot, Universidad Huelva,
 Huelva España. 2006
 
-\bibitem[Instituto]{IRA}Instituto de Robótica de América
+\bibitem[IRA08]{IRA}Instituto de Robótica de América, 2008
 
 \bibitem[Kurfess05]{roboticayautomatizacion}Kurfess, T .Robotics
 and automation handbook. Ed. CRC Press, 2005
@@ -1735,12 +3118,39 @@ and automation handbook. Ed. CRC Press, 2005
 Gráfica. Dpto Ingeniería Eléctrica, Universidad nacional del sur.
 2000.
 
-\bibitem[euclides09]{euclidesweb}www.euclides.org: Los elementos
-
-\bibitem[wikipedia09]{wikipediarecta}www.wikipedia.org: Recta
-
 \bibitem[Jones98]{Jones98}Jones, J. L., Flynn, A. M., y Seiger, B.
 A. Mobile Robots. Cambridge University Press, 1998.
+
+\bibitem[mrs2008]{MRS08}Microsoft Robotics Studio, 2008, <http://www.msdn.microsoft.com/en-us/robotics/default.aspx>.
+
+\bibitem[Kuka08]{KUKA08}Kuka robotics, 2008, <http://www.kuka-robotics.com>.
+
+\bibitem[PROBOTIX09]{Probotix}CNC Stepper Motor Driver System \&
+CNC Router Kits, 2009, <http://www.probotix.com>
+
+\bibitem[Concha07]{Tesis A Concha}Concha, A. Diseño y construcción
+de un robot móvil, Tesis de licenciatura, UMSNH, 2007.
+
+\bibitem[Ríos07]{Tesis O. Rios}Ríos, O. Diseño e implementación del
+control de un brazo manipulador scara. Tesis de licenciatura. UMSNH,
+2007.
+
+\bibitem[ISO8373:94]{iso8373}ISO Standard 8373, Manipulating Industrial
+Robots. 1994
+
+\bibitem[Carlbom78]{transformaciones}Carlbom, I., Paciorek, J. Planar
+Geometric Projections and Viewing Transformations, ACM Computing Surveys,
+1978.
+
+\bibitem[Bray08]{XML08}Bray, T., Paoli, J., Sperberg-McQueen, C.,
+Maler, E. Extensible Markup Language (XML) 1.0 (Fifth Edition), W3C
+Recommendation, 2008 <http://www.w3.org/TR/2008/REC-xml-20081126/>. 
+
+\bibitem[Poskanzer03]{pgm2003}Poskanzer, J., PGM Format Specification,
+2003 <http://netpbm.sourceforge.net/doc/pgm.html>.
+
+\bibitem[Collins-Sussman08]{svn}Collins-Sussman, B., Fitzpatrick,
+B., Pilato, C., Version Control with Subversion, Publicado: TBA, 2008.
 \end{thebibliography}
 
 \end{document}
