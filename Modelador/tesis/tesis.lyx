@@ -31,6 +31,11 @@
   \addcontentsline{toc}{section}{Dedicatoria}
 }
 {}
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\listtablename}{\'Indice de tablas}
+\floatname{algorithm}{C\'odigo}
+\def\bibname{Referencias}
 \end_preamble
 \use_default_options false
 \language spanish
@@ -83,45 +88,7 @@ status open
 
 
 \backslash
-renewcommand{
-\backslash
-tablename}{Tabla}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand{
-\backslash
-listtablename}{
-\backslash
-'Indice de tablas}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-floatname{algorithm}{C
-\backslash
-'odigo}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
 frontmatter
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-def
-\backslash
-bibname{Referencias}
 \end_layout
 
 \end_inset
