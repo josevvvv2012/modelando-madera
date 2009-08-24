@@ -3,6 +3,35 @@
 \begin_document
 \begin_header
 \textclass book
+\begin_preamble
+\newenvironment{abstractEN}
+{
+  \cleardoublepage
+  \thispagestyle{empty}
+    \@mkboth{\abstractname}{\abstractname}
+  \addcontentsline{toc}{section}{Abstract}
+  \centerline{\bf {\LARGE Abstract}}
+  \centerline{\ }
+} {}
+
+\newenvironment{abstractSP}
+{
+  \cleardoublepage
+  \thispagestyle{empty}
+    \@mkboth{\abstractname}{\abstractname}
+  \addcontentsline{toc}{section}{Resumen}
+  \centerline{\bf {\LARGE Resumen}}
+  \centerline{\ }
+} {}
+\newenvironment{dedication}
+{
+  \cleardoublepage
+  \thispagestyle{empty}
+  \vspace*{1in}
+  \addcontentsline{toc}{section}{Dedicatoria}
+}
+{}
+\end_preamble
 \use_default_options false
 \language spanish
 \inputencoding auto
@@ -86,18 +115,383 @@ floatname{algorithm}{C
 frontmatter
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+bibname{Referencias}
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
-\begin_layout Title
-Desarrollo de software para modelado y fabricación de objetos de madera
- usando un robot SCARA
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
 \end_layout
 
-\begin_layout Author
-Roberto Loaeza Valerio
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\backslash
+Large
+\backslash
+bf{
+\backslash
+MakeUppercase{Desarrollo de software para modelado y fabricación de objetos
+ de madera usando un robot SCARA}}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+bf{TESIS}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{Que para obtener el grado de}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+MakeUppercase{
+\backslash
+bf{Maestro en Ciencias en Ingeniería Eléctrica}}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{presenta}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+bf{Roberto Loaeza Valerio}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+bf{Dr.
+ Leonardo Romero Muñoz}}
+\backslash
+centerline{
+\backslash
+small{
+\backslash
+bf{Director de Tesis}}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{Universidad Michoacana de San Nicol
+\backslash
+'as de Hidalgo}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\backslash
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{{Agosto} {2009}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{footnote}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{dedication} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+
+\emph on
+A mi familia, etc.....
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{dedication}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{abstractSP}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Resumen Español
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{abstractSP}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{abstractEN}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Resumen Ingles
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{abstractEN}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -222,7 +616,7 @@ mainmatter
 
 
 \backslash
-setcounter{page}{13}
+setcounter{page}{19}
 \end_layout
 
 \end_inset
