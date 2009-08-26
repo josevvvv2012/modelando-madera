@@ -32,10 +32,14 @@
 }
 {}
 
-\renewcommand{\tablename}{Tabla}
-\renewcommand{\listtablename}{\'Indice de tablas}
-\floatname{algorithm}{C\'odigo}
-\def\bibname{Referencias}
+\newenvironment{agradece}
+{
+  \cleardoublepage
+  \thispagestyle{empty}
+  \vspace*{1in}
+  \addcontentsline{toc}{section}{Agradecimientos}
+}
+{}
 \end_preamble
 \use_default_options false
 \language spanish
@@ -83,6 +87,44 @@
 \begin_layout Standard
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+tablename}{Tabla} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+listtablename}{
+\backslash
+'Indice de tablas} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+floatname{algorithm}{C
+\backslash
+'odigo} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+bibname{Referencias}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -370,7 +412,7 @@ begin{dedication}
 \align right
 
 \emph on
-A mi familia, etc.....
+A todas las personas que han creído en mi...
 \end_layout
 
 \begin_layout Standard
@@ -397,6 +439,80 @@ status open
 
 
 \backslash
+begin{agradece} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size larger
+Agradecimientos
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+
+\emph on
+A mis padres, hermanos y esposa, por su constante e infinito cariño.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+
+\emph on
+A mis maestros, por transmitirme su conocimiento.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+
+\emph on
+A mi asesor Leonardo Romero por su valiosa asesoría y dirección académica.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+
+\emph on
+A la Universidad Michoacana de San Nicolás de Hidalgo y al Consejo Nacional
+ de Ciencia y Tecnología, por el apoyo otorgado para realizar estos estudios.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{agradece}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 begin{abstractSP}
 \end_layout
 
@@ -406,7 +522,27 @@ begin{abstractSP}
 \end_layout
 
 \begin_layout Standard
-Resumen Español
+Desarrollo de software para modelado y fabricación de objetos de madera
+ usando un robot SCARA
+\end_layout
+
+\begin_layout Standard
+En este trabajo se presenta el desarrollo de una aplicación de diseño e
+ implementación de objetos para el robot SCARA desarrollado en la División
+ de Estudios de Posgrado de la Facultad de Ingeniería Eléctrica de la Universida
+d Michoacana de San Nicolás de Hidalgo.
+ Primero se describen los algoritmos de diseño así como su implementación
+ para realizar un seguimientos de puntos que serán convertidos en comandos
+ que el robot entienda para su implementación en madera.
+ Se describe la interfaz gráfica de usuario, una de las partes mas importantes
+ de toda aplicación, tomando en cuenta ciertos criterios de diseño bien
+ establecidos.
+ Se describe también la forma de conexión con el robot mediante el uso de
+ bibliotecas externas bien definidas.
+ Se presentan los resultados de varias pruebas realizadas, las cuales van
+ desde diseños simples hasta diseños complejos.
+ Y finalmente las conclusiones.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -418,42 +554,6 @@ status open
 
 \backslash
 end{abstractSP}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{abstractEN}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Resumen Ingles
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{abstractEN}
 \end_layout
 
 \end_inset
@@ -7417,7 +7517,7 @@ reference "fig:Orientación-del-ultimo"
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -7456,7 +7556,7 @@ Orientación del último eslabón
 
 \begin_layout Standard
 Se calcula 
-\begin_inset Formula $\theta_{2}$
+\begin_inset Formula $\Theta_{2}$
 \end_inset
 
  aplicando ec.
@@ -7601,10 +7701,6 @@ name "fig:CinematicaAngulos"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -7612,7 +7708,7 @@ name "fig:CinematicaAngulos"
 
 \begin_layout Standard
 Se calcula 
-\begin_inset Formula $\theta_{1}$
+\begin_inset Formula $\Theta_{1}$
 \end_inset
 
  :
@@ -7682,7 +7778,7 @@ cos\left(\psi\right)=\frac{x^{2}+y^{2}+l_{1}^{2}-l_{2}^{2}}{2l_{1}\sqrt{x^{2}+y^
 
 \begin_layout Standard
 Finalmente se calcula 
-\begin_inset Formula $\theta_{3}$
+\begin_inset Formula $\Theta_{3}$
 \end_inset
 
  usando la siguiente ecuación:
