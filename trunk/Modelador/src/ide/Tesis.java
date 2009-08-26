@@ -777,6 +777,7 @@ public class Tesis {
 							org.eclipse.swt.events.SelectionEvent e) {
 					}
 				});
+		/*
 		MenuItem separator5 = new MenuItem(submenu3, SWT.SEPARATOR);
 		MenuItem pushConfiguracion = new MenuItem(submenu3, SWT.PUSH);
 		pushConfiguracion.setText(DEF.mEdicionConfiguracion);
@@ -792,6 +793,7 @@ public class Tesis {
 							org.eclipse.swt.events.SelectionEvent e) {
 					}
 				});
+		*/
 		submenuItemEdicion.setMenu(submenu3);
 		MenuItem submenuItemHerramientas = new MenuItem(menuBar, SWT.CASCADE);
 		submenuItemHerramientas.setText(DEF.mHerramientas);
